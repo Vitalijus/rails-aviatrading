@@ -8,15 +8,59 @@
 </head>
 <body>
 
+<div id="header-wrapper">
+	<div class="header">
+  		<div class="header_navigation">
+				<ul>
+					<li><%= link_to courses_path do %>
+						COURSES
+						<% end %>
+					</li>
+
+					<% if teacher_signed_in? %>
+						<li><%= link_to new_course_path do %>
+							MY COURSES
+						<% end %>
+					</li>
+
+						<li><%= link_to new_course_path do %>
+							NEW COURSE
+						<% end %>
+					</li>
+
+				  		<li><%= link_to edit_teacher_registration_path do %>
+				  			PROFILE
+				  		<% end %>
+					</li>
+
+					<li><%= link_to destroy_teacher_session_path, method: :delete  do %>
+					  		LOGOUT
+					  	<% end %>
+					</li>
+
+					<% end %>
+				</ul>
+			</div>
+	</div>
+</div>
+------------------------------
 <div id="user_nav">
+  <% if student_signed_in? %>
+    Signed in as <%= current_student.email %>. Not you?
+    <%= link_to "Sign out", destroy_student_session_path, :method => :delete %>
+  <% else %>
+    <%= link_to "Sign up", new_student_registration_path %> or <%= link_to "sign in", new_student_session_path %>
+  <% end %>
+</div>
+
+<div class="user_nav">
   <% if teacher_signed_in? %>
     Signed in as <%= current_teacher.email %>. Not you?
     <%= link_to "Sign out", destroy_teacher_session_path, :method => :delete %>
   <% else %>
     <%= link_to "Sign up", new_teacher_registration_path %> or <%= link_to "sign in", new_teacher_session_path %>
   <% end %>
-</div>
-
+  		</div>
 
 
 <%= yield %>

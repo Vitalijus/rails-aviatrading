@@ -11,3 +11,196 @@
  *= require_self
  *= require_tree .
  */
+
+html {
+	position: relative;
+    min-height: 100%;
+}
+
+ body {
+  background-color: #E9EAED;
+  font-family: 'Ubuntu', sans-serif;
+  color: #444444;   
+  margin: 0 0 80px; /* bottom = footer height */
+  /*height: 100%;*/
+}
+
+{
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  border : 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 0;
+}
+
+h3 {
+  margin: 0;
+}
+
+/* HEADER */
+
+#header-wrapper {
+	background-color: #00AEEF;
+	height: 45px;
+	-webkit-box-shadow: 0px 1px 2px 0px rgba(100, 100, 100, 0.75);
+	-moz-box-shadow:    0px 1px 2px 0px rgba(100, 100, 100, 0.75);
+	box-shadow:         0px 1px 2px 0px rgba(100, 100, 100, 0.75);
+}
+
+.header {
+	max-width: 960px;
+	margin: 0 auto;
+	height: 45px;
+	border: 0px solid red;
+}
+
+.social-network-navigation {
+	float: right;
+	height: 80px;
+	overflow: hidden;
+	border: 0px solid green;
+}
+
+.social-network-navigation ul {
+	border: 0px solid red;
+	height: 80px;
+	float: left;
+	line-height: 80px;
+	font-family: 'Pathway Gothic One', sans-serif;
+	font-size: 25px;
+}
+
+.social-network-navigation li {
+	border: 0px solid red;
+	float: left;
+	padding: 0 10px 0 10px;
+	height: 80px;
+	line-height: 87px;
+	position: relative;
+}
+
+.social-network-navigation a {
+	color: #38A2A5;
+	-webkit-transition: color 250ms linear;
+  	-moz-transition: color 250ms linear;
+  	-o-transition: color 250ms linear;
+  	-ms-transition: color 250ms linear;
+  	transition: color 250ms linear;
+}
+
+.social-network-navigation a:hover {
+	color: white;
+}
+
+.icon-opacity {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0px;
+	left: 0px;
+	margin: auto;
+	-webkit-transition: opacity 250ms linear;
+  	-moz-transition: opacity 250ms linear;
+  	-o-transition: opacity 250ms linear;
+  	-ms-transition: opacity 250ms linear;
+  	transition: opacity 250ms linear;
+}
+
+.icon-opacity:hover {
+	opacity: 0;
+}
+
+.icon-opacity-p {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0px;
+	left: 10px;
+	margin: auto;
+	-webkit-transition: opacity 250ms linear;
+  	-moz-transition: opacity 250ms linear;
+  	-o-transition: opacity 250ms linear;
+  	-ms-transition: opacity 250ms linear;
+  	transition: opacity 250ms linear;
+}
+
+.icon-opacity-p:hover {
+	opacity: 0;
+}
+
+a .header-logo {
+	border: 0px solid red;
+	font-family: 'Alegreya Sans SC', sans-serif;
+	float: left;
+	width: 275px;
+}
+
+a .header-logo img{
+	padding-top: 5px;
+}
+
+a .header-logo .webpage-title {
+	border: 0px solid green;
+	float: right;
+	height: 80px;
+	line-height: 80px;
+	color: #ffffff;
+	font-size: 30px;
+}
+
+a:hover .header-logo {
+	color: #777777;
+}
+
+.header_navigation {
+	width: 60%;
+	float: right;
+	height: 45px;
+	margin-right: 15px;
+	border: 0px solid yellow;
+}
+
+.header_navigation ul {
+	border: 0px solid red;
+	height: 45px;
+	float: right;
+	line-height: 45px;
+	font-size: 12px;
+}
+
+.header_navigation li {
+	border: 0px solid red;
+	float: left;
+	padding: 0 10px 0 10px;
+}
+
+.header_navigation a {
+	color: white;
+}
+
+.header_navigation a:hover {
+	border-bottom: 1px solid white;
+}
+
+/*------------------*/

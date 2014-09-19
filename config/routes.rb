@@ -1,4 +1,5 @@
 School::Application.routes.draw do
+  devise_for :students
   devise_for :teachers
   root 'courses#index'
   resources :courses
