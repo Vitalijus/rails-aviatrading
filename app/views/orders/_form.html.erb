@@ -1,0 +1,49 @@
+<%= form_for([@course, @order]) do |f| %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% @order.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= @course.title %>
+
+  <div class="pay-with-card"> 
+
+    <%= f.hidden_field :stripe_card_token %>   
+
+    <div class="field">
+      <%= text_field_tag :card_number, nil, name: nil, placeholder: "Credit Card Number" %>
+    </div>
+
+    <div class="field">
+      <%= text_field_tag :card_code, nil, name: nil, placeholder: "3 Digits Security Code on Card (CVV)" %>
+    </div>
+
+    <div class="field">
+      <%= label_tag :card_month, "Card Expiration" %></br>
+      <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month"} %>
+      <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year"} %>
+    </div>
+
+  <div class="field">
+    <%= f.label :name_on_card %><br>
+    <%= f.text_field :name_on_card %>
+  </div>
+
+<div id="stripe_error">
+    <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
+  </div>
+    <div class="button-wrapper">
+      <%= f.submit "CONTINUE", :class => "pay-button" %>
+    </div>
+  </div>
+  <% end %>
+
+
+

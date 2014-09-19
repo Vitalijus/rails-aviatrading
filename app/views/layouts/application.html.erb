@@ -3,8 +3,9 @@
 <head>
   <title>School</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "https://js.stripe.com/v2/", "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <%= tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY %>
 </head>
 <body>
 
@@ -12,7 +13,7 @@
 	<div class="header">
   		<div class="header_navigation">
 				<ul>
-					<li><%= link_to courses_path do %>
+					<li><%= link_to courses_path, data: { no_turbolink: true } do %>
 						COURSES
 						<% end %>
 					</li>
@@ -64,6 +65,20 @@
     <%= link_to "Sign up", new_teacher_registration_path %> or <%= link_to "sign in", new_teacher_session_path %>
   <% end %>
   		</div>
+
+	<div class="footer">
+        <div class="footer-left">
+        </div>
+
+        <div class="footer-image">
+          <%= image_tag "rails.png", data: {pin_no_hover: "true"}, width: 30 %>
+        </div>
+
+        <div class="footer-right">
+        </div>
+    </div>
+
+<!-- ---------------------------------------->
 
 <!-- MASONRY WORKS WHEN IS BELOW YIELD-->
     <script src="assets/masonry/masonry.pkgd.js"></script> 

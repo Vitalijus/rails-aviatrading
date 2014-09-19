@@ -1,8 +1,13 @@
 School::Application.routes.draw do
+  root 'courses#index'
+  
+
   devise_for :students
   devise_for :teachers
-  root 'courses#index'
-  resources :courses
+  
+  resources :courses do
+    resources :orders
+  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.

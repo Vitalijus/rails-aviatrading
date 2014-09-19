@@ -1,6 +1,6 @@
 <div id="banner_wrapper">
 
-<div>
+</div>
 
 
 
@@ -12,16 +12,18 @@
 
       <% @courses.each do |course| %>
         <div class="box">
-          <div class="box-image-wrapper">
+          <div class="box_image_wrapper">
+            <%= link_to course do %>
+              <div class="course_title">
+                <%= course.title %>
+              </div>
+            <% end %>
 
             <tr>
-              <td><%= course.title %></td>
-              <td><%= course.teacher_name %></td>
-              <td><%= link_to 'Show', course %></td>
               <td><%= link_to 'Edit', edit_course_path(course) %></td>
               <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
-
+            
           </div>
         </div>
       <% end %>
