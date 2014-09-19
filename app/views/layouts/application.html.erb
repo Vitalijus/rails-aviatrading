@@ -43,7 +43,10 @@
 			</div>
 	</div>
 </div>
-------------------------------
+
+
+<%= yield %>
+
 <div id="user_nav">
   <% if student_signed_in? %>
     Signed in as <%= current_student.email %>. Not you?
@@ -62,8 +65,24 @@
   <% end %>
   		</div>
 
+<!-- MASONRY WORKS WHEN IS BELOW YIELD-->
+    <script src="assets/masonry/masonry.pkgd.js"></script> 
+    	<script>
+     		var $container = $('#masonry_container');
+     			$(window).load(function(){
 
-<%= yield %>
+				  $container.imagesLoaded(function(){
+				    $container.masonry({
+				      itemSelector: '.box',
+				      stamp: ".stamp"
+				    });
+				  });
+
+			});
+		</script>
+
+ <!-- JQUERY -->   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 </body>
 </html>

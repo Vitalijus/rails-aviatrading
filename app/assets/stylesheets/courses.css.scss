@@ -1,3 +1,93 @@
 // Place all the styles related to the Courses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#banner_wrapper {
+	border-bottom: 1px solid #babbbd;
+	width: 100%;
+	height: 300px;
+	margin-top: 2px;
+	padding-top: 20px;
+	background:url("../assets/banner.jpg") repeat-x;
+	background-color: white;
+}
+
+.banner {
+	border: 0px solid red;
+	height: 300px;
+	margin-top: 2px;
+	padding-top: 20px;
+	background:url("../assets/banner.jpg") repeat-x;
+	background-color: white;
+}
+
+/* STAMP */
+
+.stamp {
+	background-color: white;
+	position: absolute;
+	width: 380px;
+	height: 200px;
+	left: 15px;
+	margin-bottom: 20px;
+  	-moz-box-shadow:  0px 0px 2px #777777;
+  	-webkit-box-shadow: 0px 0px 2px #777777;
+  	box-shadow: 0px 0px 2px #777777;
+ 	-webkit-border-radius: 1px;
+ 	-moz-border-radius: 1px;
+ 	border-radius: 1px;
+}
+
+/*.stamp_box1 {
+	width: 189px;
+	height: 50%;
+	position: relative;
+	background-color: #FF9D74;
+	float: left;
+	text-align: center;
+	line-height: 190px;
+	color: white;
+	font-size: 20px;
+	font-family: "Open Sans", helvetica, arial;
+	border-right: 1px solid white;
+	border-bottom: 1px solid white;
+}*/
+
+/*---------------------------*/
+
+/* MASONRY */
+
+#masonry_container {
+  border: 0px solid red;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 5px;
+  top: 300px;
+  margin-top: 16px;
+  max-width: 1210px;
+  min-width: 660px;
+  position: relative;
+}
+
+.box {
+  margin: 0px 10px 20px 10px;
+  background-color: #ffffff;
+  width: 380px;
+  font-size: 12px;
+  position: relative;
+  overflow: hidden;
+  -moz-box-shadow:  0px 0px 2px #777777;
+  -webkit-box-shadow: 0px 0px 2px #777777;
+  box-shadow: 0px 0px 2px #777777;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+  border: 0px solid #e0e0e0;
+  padding: 0px 0 0px 0;
+}
+
+.box-image-wrapper {
+	height: 200px;
+}
+
+/* ---------------------*/

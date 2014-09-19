@@ -11,6 +11,8 @@ gem 'carrierwave' #The CarrierWave GEM should be loaded before the Cloudinary GE
 gem 'cloudinary'
 gem 'thin'
 gem 'devise'
+gem 'jquery-turbolinks'
+gem 'masonry-rails'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

@@ -1,29 +1,28 @@
-<h1>Listing courses</h1>
+<div id="banner_wrapper">
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Teacher name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<div>
 
-  <tbody>
-    <% @courses.each do |course| %>
-      <tr>
-        <td><%= course.title %></td>
-        <td><%= course.teacher_name %></td>
-        <td><%= link_to 'Show', course %></td>
-        <td><%= link_to 'Edit', edit_course_path(course) %></td>
-        <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
 
-<%= link_to 'New Course', new_course_path %>
+<div id="masonry_container">
+    
+      <div class="stamp">
+        STAMP
+      </div>
+
+      <% @courses.each do |course| %>
+        <div class="box">
+          <div class="box-image-wrapper">
+
+            <tr>
+              <td><%= course.title %></td>
+              <td><%= course.teacher_name %></td>
+              <td><%= link_to 'Show', course %></td>
+              <td><%= link_to 'Edit', edit_course_path(course) %></td>
+              <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+
+          </div>
+        </div>
+      <% end %>
+    </div>
