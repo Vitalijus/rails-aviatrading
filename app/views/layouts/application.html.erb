@@ -47,8 +47,11 @@
 
 
 <%= yield %>
-
+	
 <div id="user_nav">
+	<% current_student.orders.each do |order| %>
+	<%= order.name_on_card %>
+	<% end %><br>
   <% if student_signed_in? %>
     Signed in as <%= current_student.email %>. Not you?
     <%= link_to "Sign out", destroy_student_session_path, :method => :delete %>

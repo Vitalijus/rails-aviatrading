@@ -1,5 +1,6 @@
 class Order < ActiveRecord::Base
 	belongs_to :course
+	belongs_to :student
 	attr_accessor :stripe_card_token
 
 	def save_with_payment

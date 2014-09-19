@@ -27,6 +27,8 @@ class OrdersController < ApplicationController
   def create
     @order = @course.orders.new(order_params)
 
+    current_student.orders << @order
+
     respond_to do |format|
       if @order.save_with_payment
         format.html { redirect_to [@course, @order], notice: 'Order was successfully created.' }

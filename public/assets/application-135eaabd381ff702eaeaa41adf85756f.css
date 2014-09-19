@@ -8,9 +8,10 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
- *= require_tree .
+
+
  */
+
 
 html {
 	position: relative;
@@ -242,3 +243,127 @@ a:hover .header-logo {
 	height: 35px;
 	border-bottom: 1px solid #b4b4b4;
 }
+/* line 5, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+#banner_wrapper {
+  border-bottom: 0px solid #cecfc0;
+  width: 100%;
+  height: 200;
+  margin-top: 20px;
+  /*background:url("../assets/Blur-3.png");*/
+}
+
+/* line 13, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.banner {
+  border: 1px solid #cecfc0;
+  background-color: #ffffff;
+  height: 200px;
+  margin: auto;
+  width: 1190px;
+}
+
+/* line 21, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.banner_box {
+  float: left;
+  width: 296px;
+  height: 100%;
+  border-right: 1px solid #eaeaeb;
+}
+
+/* line 28, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.banner_box_last {
+  border: none;
+}
+
+/* STAMP */
+/* line 36, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.stamp {
+  background-color: white;
+  position: absolute;
+  width: 223px;
+  height: 300px;
+  left: 15px;
+  margin-bottom: 20px;
+  /*-moz-box-shadow:  0px 0px 2px #777777;
+  -webkit-box-shadow: 0px 0px 2px #777777;
+  box-shadow: 0px 0px 2px #777777;*/
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+  border: 1px solid #cecfc0;
+}
+
+/*.stamp_box1 {
+	width: 189px;
+	height: 50%;
+	position: relative;
+	background-color: #FF9D74;
+	float: left;
+	text-align: center;
+	line-height: 190px;
+	color: white;
+	font-size: 20px;
+	font-family: "Open Sans", helvetica, arial;
+	border-right: 1px solid white;
+	border-bottom: 1px solid white;
+}*/
+/*---------------------------*/
+/* MASONRY */
+/* line 72, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+#masonry_container {
+  border: 0px solid red;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 5px;
+  margin-top: 16px;
+  max-width: 1210px;
+  min-width: 660px;
+  position: relative;
+}
+
+/* line 83, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.box {
+  margin: 0px 10px 20px 10px;
+  background-color: #ffffff;
+  width: 222px;
+  font-size: 12px;
+  position: relative;
+  overflow: hidden;
+  /*-moz-box-shadow:  0px 0px 2px #777777;
+  -webkit-box-shadow: 0px 0px 2px #777777;
+  box-shadow: 0px 0px 2px #777777;*/
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+  border: 1px solid #cecfc0;
+  padding: 0px 0 0px 0;
+}
+
+/* line 100, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.box_image_wrapper {
+  height: 300px;
+}
+
+/* line 104, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.course_title {
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  border-bottom: 1px solid #eaeaeb;
+}
+
+/* line 111, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+a .course_title {
+  color: #555555;
+  -webkit-transition: color 150ms linear;
+  -moz-transition: color 150ms linear;
+  -o-transition: color 150ms linear;
+  -ms-transition: color 150ms linear;
+  transition: color 150ms linear;
+}
+
+/* line 120, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+a:hover .course_title {
+  color: #2AA4CF;
+}
+
+/* ---------------------*/
