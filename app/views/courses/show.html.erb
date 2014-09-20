@@ -10,6 +10,36 @@
   <%= @course.teacher_name %>
 </p>
 
+<p>
+  <strong>Description:</strong>
+  <%= @course.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @course.price %>
+</p>
+
+<p>
+  <strong>Level:</strong>
+  <%= @course.level %>
+</p>
+
+<p>
+  <strong>Language:</strong>
+  <%= @course.language %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @course.duration %>
+</p>
+
+<p>
+  <strong>Course type:</strong>
+  <%= @course.course_type %>
+</p>
+
 <%= link_to 'Continue', new_course_order_path(@course) %>
 
 
