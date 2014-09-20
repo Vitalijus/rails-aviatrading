@@ -6,38 +6,72 @@
   <%= javascript_include_tag "https://js.stripe.com/v2/", "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
   <%= tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY %>
+
+  <!-- FAVICON -->
+  	<%= favicon_link_tag 'favicon.ico' %>
+
+  <!-- GOOGLE FONTS -->
+  	<link href='https://fonts.googleapis.com/css?family=Pathway+Gothic+One|Open+Sans:300|Alegreya+Sans+SC|Julius+Sans+One' rel='stylesheet' type='text/css'>
+
 </head>
 <body>
 
+<div class="header_login_wrapper">
+	<div class="header_login">
+		<div class="header_login_nav">
+
+			<%= image_tag "lock.png", width: 12 %>
+			  <% if student_signed_in? %>
+			    <%= link_to "Sign out", destroy_student_session_path, :method => :delete %>
+			  		
+			  		<% elsif teacher_signed_in? %>
+			  			<%= link_to "Sign out", destroy_teacher_session_path, :method => :delete %>
+
+			  				<% else %>
+			    				<%= link_to "Student", new_student_session_path %> | <%= link_to "Teacher", new_teacher_session_path %>
+			  <% end %>
+		</div>
+	</div>
+</div>
+
 <div id="header-wrapper">
 	<div class="header">
+
+		<%= link_to root_url, data: { no_turbolink: true } do %>
+			<div class="header-logo"> 
+				<div class="webpage-title">
+					Foreign Language School
+				</div>
+			</div>
+		<% end %>
+
   		<div class="header_navigation">
 				<ul>
 					<li><%= link_to courses_path, data: { no_turbolink: true } do %>
-						COURSES
+						HOME
 						<% end %>
 					</li>
+
+					<% if student_signed_in? %>
+
+				  		<li><%= link_to edit_student_registration_path do %>
+				  			DASHBOARD
+				  		<% end %>
+						</li>
+
+					<% end %>
 
 					<% if teacher_signed_in? %>
-						<li><%= link_to new_course_path do %>
-							MY COURSES
-						<% end %>
-					</li>
 
 						<li><%= link_to new_course_path do %>
-							NEW COURSE
-						<% end %>
-					</li>
+								NEW COURSE
+							<% end %>
+						</li>
 
 				  		<li><%= link_to edit_teacher_registration_path do %>
-				  			PROFILE
+				  			DASHBOARD
 				  		<% end %>
-					</li>
-
-					<li><%= link_to destroy_teacher_session_path, method: :delete  do %>
-					  		LOGOUT
-					  	<% end %>
-					</li>
+						</li>
 
 					<% end %>
 				</ul>
@@ -47,24 +81,6 @@
 
 
 <%= yield %>
-	
-<div id="user_nav">
-  <% if student_signed_in? %>
-    Signed in as <%= current_student.email %>. Not you?
-    <%= link_to "Sign out", destroy_student_session_path, :method => :delete %>
-  <% else %>
-    <%= link_to "Sign up", new_student_registration_path %> or <%= link_to "sign in", new_student_session_path %>
-  <% end %>
-</div>
-
-<div class="user_nav">
-  <% if teacher_signed_in? %>
-    Signed in as <%= current_teacher.email %>. Not you?
-    <%= link_to "Sign out", destroy_teacher_session_path, :method => :delete %>
-  <% else %>
-    <%= link_to "Sign up", new_teacher_registration_path %> or <%= link_to "sign in", new_teacher_session_path %>
-  <% end %>
-  		</div>
 
 	<div class="footer">
         <div class="footer-left">
