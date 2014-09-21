@@ -1,4 +1,5 @@
 School::Application.routes.draw do
+
   root 'courses#index'
   
 
@@ -7,6 +8,7 @@ School::Application.routes.draw do
   
   resources :courses do
     resources :orders
+    resources :lessons
   end
 
 

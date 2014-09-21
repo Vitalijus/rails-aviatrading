@@ -1,48 +1,80 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @course.title %>
-</p>
-
-<p>
-  <strong>Teacher name:</strong>
-  <%= @course.teacher_name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @course.description %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @course.price %>
-</p>
-
-<p>
-  <strong>Level:</strong>
-  <%= @course.level %>
-</p>
-
-<p>
-  <strong>Language:</strong>
-  <%= @course.language %>
-</p>
-
-<p>
-  <strong>Duration:</strong>
-  <%= @course.duration %>
-</p>
-
-<p>
-  <strong>Course type:</strong>
-  <%= @course.course_type %>
-</p>
-
-<%= link_to 'Continue', new_course_order_path(@course) %>
 
 
+<div id="course_content_wrapper">
 
-<br/><br/><br/>
+	<div class="course_lesson_wrapper">
 
+		<div class="course_lesson_list">
+			Lessons
+		</div>
+	
+		<% @course.lessons.each do |lesson| %>
+			<%= link_to course_lesson_path(@course, lesson) do %>
+				<div class="course_lesson">
+					<%= lesson.title %>
+				</div>
+			<% end %>
+		<% end %>
+	</div>
+
+	<div class="course_content">
+		
+		<% if teacher_signed_in? %>
+
+			<%= link_to new_course_lesson_path(@course) do %>
+				<div class="enroll_button">
+					NEW LESSON
+				</div>
+			<% end %>
+
+		<% else %>
+			<%= link_to new_course_order_path(@course) do %>
+				<div class="enroll_button">
+					ENROLL
+				</div>
+			<% end %>
+		<% end %>
+
+			<p>
+			  <strong>Title:</strong>
+			  <%= @course.title %>
+			</p>
+
+			<p>
+			  <strong>Teacher name:</strong>
+			  <%= @course.teacher_name %>
+			</p>
+
+			<p>
+			  <strong>Description:</strong>
+			  <%= @course.description %>
+			</p>
+
+			<p>
+			  <strong>Price:</strong>
+			  <%= @course.price %>
+			</p>
+
+			<p>
+			  <strong>Level:</strong>
+			  <%= @course.level %>
+			</p>
+
+			<p>
+			  <strong>Language:</strong>
+			  <%= @course.language %>
+			</p>
+
+			<p>
+			  <strong>Duration:</strong>
+			  <%= @course.duration %>
+			</p>
+
+			<p>
+			  <strong>Course type:</strong>
+			  <%= @course.course_type %>
+			</p>
+		
+	</div>
+
+</div>
