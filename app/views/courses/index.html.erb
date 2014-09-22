@@ -2,11 +2,11 @@
   <div class="banner">
     <div class="banner_box">
       <div class="banner_box_title">
-        Learn foreign language online
+        learn foreign language online
       </div>
 
       <div class="banner_box_logo">
-        <%= image_tag "globe.png" %>
+        <%= image_tag "globe.png", width: 40 %>
       </div>
 
       <div class="banner_box_content">
@@ -18,12 +18,12 @@
 
           <tr>
             <td><%= image_tag "tick.png", width: 12 %></td>
-            <td>Choice in prices</td>
+            <td>Find a native speaker</td>
           </tr>
 
           <tr>
             <td><%= image_tag "tick.png", width: 12 %></td>
-            <td>Find native speaker</td>
+            <td>Choice in prices</td>
           </tr>
           
         </table>
@@ -32,23 +32,23 @@
 
     <div class="banner_box">
       <div class="banner_box_title">
-        Private classes
+        private classes
       </div>
 
       <div class="banner_box_logo">
-        <%= image_tag "private.png" %>
+        <%= image_tag "private.png", width: 35 %>
       </div>
 
       <div class="banner_box_content">
         <table>
           <tr>
             <td><%= image_tag "tick.png", width: 12 %></td>
-            <td>Face-to-face classes</td>
+            <td>Effective way to improve skills</td>
           </tr>
 
           <tr>
             <td><%= image_tag "tick.png", width: 12 %></td>
-            <td>Effective way to improve skills</td>
+            <td>Face-to-face classes</td>
           </tr>
 
           <tr>
@@ -62,15 +62,20 @@
 
     <div class="banner_box">
       <div class="banner_box_title">
-        Group classes
+        group classes
       </div>
 
       <div class="banner_box_logo">
-        <%= image_tag "group.png" %>
+        <%= image_tag "group.png", width: 45 %>
       </div>
 
       <div class="banner_box_content">
         <table>
+          <tr>
+            <td><%= image_tag "tick.png", width: 12 %></td>
+            <td>Students from all over the world</td>
+          </tr>
+
           <tr>
             <td><%= image_tag "tick.png", width: 12 %></td>
             <td>Only up to 5 students per class</td>
@@ -80,11 +85,6 @@
             <td><%= image_tag "tick.png", width: 12 %></td>
             <td>Schedule of upcoming classes</td>
           </tr>
-
-          <tr>
-            <td><%= image_tag "tick.png", width: 12 %></td>
-            <td>Students from all over the world</td>
-          </tr>
           
         </table>
       </div>
@@ -92,15 +92,20 @@
 
     <div class="banner_box_last">
       <div class="banner_box_title">
-        Certified teachers
+        certified teachers
       </div>
 
       <div class="banner_box_logo">
-        <%= image_tag "hat.png", width: 78 %>
+        <%= image_tag "hat.png", width: 60 %>
       </div>
 
       <div class="banner_box_content">
         <table>
+          <tr>
+            <td><%= image_tag "tick.png", width: 12 %></td>
+            <td>Teachers from all over the world</td>
+          </tr>
+
           <tr>
             <td><%= image_tag "tick.png", width: 12 %></td>
             <td>Experienced in teaching</td>
@@ -108,12 +113,7 @@
 
           <tr>
             <td><%= image_tag "tick.png", width: 12 %></td>
-            <td>Choice in prices</td>
-          </tr>
-
-          <tr>
-            <td><%= image_tag "tick.png", width: 12 %></td>
-            <td>Teachers from all over the world</td>
+            <td>Want to be a <%= link_to "teacher at FLS?", courses_path, data: { no_turbolink: true } %></td>
           </tr>
           
         </table>
@@ -129,7 +129,7 @@
 <div id="masonry_container">
     
       <div class="stamp">
-        STAMP
+        <%= image_tag "student.jpg", width: 464 %>
       </div>
 
       <% @courses.each do |course| %>
@@ -151,8 +151,18 @@
               </tr>
 
               <tr>
-                <td>Price:</td>
-                <td><%= course.price %></td>
+                <td>Registration until:</td>
+                <td><%= course.registration_until %></td>
+              </tr>
+
+              <tr>
+                <td>Start:</td>
+                <td><%= course.course_start %></td>
+              </tr>
+
+              <tr>
+                <td>End:</td>
+                <td><%= course.course_end %></td>
               </tr>
 
               <tr>
@@ -175,6 +185,10 @@
                 <td><%= link_to 'Edit', edit_course_path(course) %></td><br/>
                 <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
               </tr>
+            </div>
+
+            <div class="box_price">
+              <%= course.price %>€
             </div>
 
         </div>

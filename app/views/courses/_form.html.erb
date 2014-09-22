@@ -11,6 +11,22 @@
     </div>
   <% end %>
 
+
+    <div class="field">
+      <%= f.label :registration_until %><br>
+      <%= f.date_select :registration_until, {start_year: Date.today.year, end_year: Date.today.year+1} %>
+    </div>
+
+    <div class="field">
+      <%= f.label :course_start %><br>
+      <%= f.date_select :course_start, {start_year: Date.today.year, end_year: Date.today.year+1} %>
+    </div>
+
+    <div class="field">
+      <%= f.label :course_end %><br>
+      <%= f.date_select :course_end, {start_year: Date.today.year, end_year: Date.today.year+1} %>
+    </div>
+
   <div class="field">
     <%= f.label :title %><br>
     <%= f.text_field :title %>

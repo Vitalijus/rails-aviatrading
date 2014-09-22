@@ -25,7 +25,7 @@ html {
   /*height: 100%;*/
 }
 
-{
+* {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
@@ -66,7 +66,7 @@ h3 {
 
 .header_login {
 	background-color: #ffffff;
-	width: 1190px;
+	width: 1180px;
 	margin: auto;
 	padding-top: 7px;
 	padding-bottom: 7px;
@@ -114,7 +114,7 @@ h3 {
 }
 
 .header {
-	max-width: 1190px;
+	max-width: 1180px;
 	margin: 0 auto;
 	height: 45px;
 	border: 0px solid red;

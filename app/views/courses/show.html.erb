@@ -1,5 +1,3 @@
-
-
 <div id="course_content_wrapper">
 
 	<div class="course_lesson_wrapper">
@@ -18,6 +16,7 @@
 	</div>
 
 	<div class="course_content">
+	 	<%= image_tag "teacher.jpg", width: 695 %>
 		
 		<% if teacher_signed_in? %>
 
@@ -34,7 +33,16 @@
 				</div>
 			<% end %>
 		<% end %>
+		
+	</div>
 
+	<div class="course_content">
+
+		<div class="course_content_title">
+			<%= @course.language %> <%= @course.level %>
+		</div>
+
+		<div class="course_content_left">
 			<p>
 			  <strong>Title:</strong>
 			  <%= @course.title %>
@@ -74,6 +82,11 @@
 			  <strong>Course type:</strong>
 			  <%= @course.course_type %>
 			</p>
+		</div>
+
+		<div class="course_content_right">
+			right
+		</div>
 		
 	</div>
 
