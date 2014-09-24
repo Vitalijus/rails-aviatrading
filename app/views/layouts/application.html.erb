@@ -11,35 +11,21 @@
   	<%= favicon_link_tag 'favicon.ico' %>
 
   <!-- GOOGLE FONTS -->
-  	<link href='https://fonts.googleapis.com/css?family=Pathway+Gothic+One|Open+Sans:300|Alegreya+Sans+SC|Julius+Sans+One' rel='stylesheet' type='text/css'>
+  	<link href='https://fonts.googleapis.com/css?family=Pathway+Gothic+One|Open+Sans:300|Alegreya+Sans+SC|Julius+Sans+One|Josefin+Sans|Lato' rel='stylesheet' type='text/css'>
 
 </head>
 <body>
 
-<div class="header_login_wrapper">
-	<div class="header_login">
-		<div class="header_login_nav">
+<% if !signed_in? %>
 
-			<%= image_tag "lock.png", width: 12 %>
-			  <% if student_signed_in? %>
-			    <%= link_to "Sign out", destroy_student_session_path, :method => :delete %>
-			  		
-			  		<% elsif teacher_signed_in? %>
-			  			<%= link_to "Sign out", destroy_teacher_session_path, :method => :delete %>
+<div id="bg_image">
 
-			  				<% else %>
-			    				<%= link_to "Student", new_student_session_path %> | <%= link_to "Teacher", new_teacher_session_path %>
-			  <% end %>
-		</div>
-	</div>
-</div>
-
-<div id="header-wrapper">
+	<div id="header_wrapper">
 	<div class="header">
 
 		<%= link_to root_url, data: { no_turbolink: true } do %>
-			<div class="header-logo"> 
-				<div class="webpage-title">
+			<div class="header_logo"> 
+				<div class="webpage_title">
 					Foreign Language School
 				</div>
 			</div>
@@ -74,11 +60,138 @@
 						</li>
 
 					<% end %>
+
 				</ul>
 			</div>
 	</div>
 </div>
 
+  <div class="bg_image_text">
+
+    <div class="bg_image_left">
+      Learn foreign language online<br/>
+      <span>How it works?</span><br/>
+
+    <div class="bg_steps">
+    	<table>
+    		<tr>
+    			<td><%= image_tag "arrow.png", width: 18 %></td> 
+    			<td>Find a language course</td>
+    		</tr>
+
+    		<tr>
+	      		<td><%= image_tag "arrow.png", width: 18 %></td>
+	      		<td>Enroll to this course</td>
+	      	</tr>
+
+	      	<tr>
+	      		<td><%= image_tag "arrow.png", width: 18 %></td>
+	      		<td>Teacher will call you</td>
+	      	</tr>
+      	</table>
+	</div>
+    </div>
+
+    <%= link_to new_student_session_path do %>
+	    <div class="bg_image_sign_student">
+	      <%= image_tag "key.png", width: 30 %> Student 
+	    </div>
+	<% end %>
+
+    <%= link_to new_teacher_session_path do %>
+	    <div class="bg_image_sign_teacher">
+	      <%= image_tag "key.png", width: 30 %> Teacher
+	    </div>
+	<% end %>
+
+    <div class="bg_image_right">
+      <%= image_tag "tablet.png", width: 500 %>
+    </div>
+
+  </div>
+</div>
+<% end %>
+
+
+<!--<div class="header_login_wrapper">
+	<div class="header_login">
+		<div class="header_login_nav">
+
+			<%= image_tag "lock.png", width: 12 %>
+			  <% if student_signed_in? %>
+			    <%= link_to "Sign out", destroy_student_session_path, :method => :delete %>
+			  		
+			  		<% elsif teacher_signed_in? %>
+			  			<%= link_to "Sign out", destroy_teacher_session_path, :method => :delete %>
+
+			  				<% else %>
+			    				<%= link_to "Student", new_student_session_path %> | <%= link_to "Teacher", new_teacher_session_path %>
+			  <% end %>
+		</div>
+	</div>
+</div>-->
+
+
+<% if signed_in? %>
+<div id="header_wrapper2">
+	<div class="header2">
+
+		<%= link_to root_url, data: { no_turbolink: true } do %>
+			<div class="header_logo2"> 
+				<div class="webpage_title">
+					Foreign Language School
+				</div>
+			</div>
+		<% end %>
+
+  		<div class="header_navigation2">
+				<ul>
+					<%= link_to courses_path, data: { no_turbolink: true } do %>
+						<li>COURSES</li>
+					<% end %>
+					
+
+					<% if student_signed_in? %>
+				  		<%= link_to edit_student_registration_path do %>
+				  			<li>DASHBOARD</li>
+				  		<% end %>
+					<% end %>
+
+
+					<% if teacher_signed_in? %>
+
+						<%= link_to new_course_path do %>
+							<li>NEW COURSE</li>
+						<% end %>
+						
+
+				  		<%= link_to edit_teacher_registration_path do %>
+				  			<li>DASHBOARD</li>
+				  		<% end %>
+						
+
+						<!--<%= image_tag "lock.png", width: 12 %>-->
+						  <% if student_signed_in? %>
+						    
+						    <%= link_to destroy_student_session_path, :method => :delete do %>
+						  		<li>Sign out</li>
+						  	<% end %>
+
+						  		<% elsif teacher_signed_in? %>
+
+						  			<%= link_to destroy_teacher_session_path, :method => :delete do %>
+						  				<li>Sign out</li>
+						  			<% end %>
+
+						  <% end %>
+						  
+
+					<% end %>
+				</ul>
+			</div>
+	</div>
+</div>
+<% end %>
 
 <%= yield %>
 

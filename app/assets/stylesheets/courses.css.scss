@@ -2,10 +2,154 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/* BG IMAGE */
+
+#bg_image {
+	border-bottom: 1px solid #cecfc0;
+	width: 100%;
+	height: 450px;
+	background:url("../assets/coffee_shop.jpg");
+	position: relative;
+}
+
+.bg_image_text {
+	border: 0px solid red;
+	color: #ffffff;
+	width: 1180px;
+	height: 450px;
+	top: 65px;
+	left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+	position: absolute;
+}
+
+.bg_image_left {
+	/*font-family: "Open Sans", helvetica, arial;*/
+	font-family: 'Lato', sans-serif;
+	font-size: 35px;
+	/*text-shadow: 0px 1px 2px rgba(58, 58, 58, 1);*/
+	position: absolute;
+	left: 0;
+	top: 30px;
+	border: 0px solid red;
+}
+
+.bg_image_left span {
+	font-family: "Open Sans", helvetica, arial;
+	font-size: 20px;
+	/*text-shadow: 0px 1px 2px rgba(58, 58, 58, 1);*/
+	position: absolute;
+	left: 0;
+	top: 50px;
+	text-align: center;
+	border: 0px solid red;
+}
+
+.bg_steps {
+	position: absolute;
+	left: 50px;
+	top: 90px;
+	font-family: "Open Sans", helvetica, arial;
+	font-size: 18px;
+}
+
+.bg_steps table tr td {
+	border: 0px solid red;
+	padding-bottom: 5px;
+	padding-right: 20px;
+}
+
+.bg_image_right {
+	position: absolute;
+	right: 50px;
+	top: 45px;
+}
+
+.bg_image_sign_student {
+	position: absolute;
+	left: 0px;
+	top: 250px;
+	width: 130px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	font-size: 18px;
+	font-family: 'Alegreya Sans SC', sans-serif;
+	background-color: #3AC162;
+	-webkit-border-radius: 1px;
+ 	-moz-border-radius: 1px;
+ 	border-radius: 3px;
+	border: 0px solid red;
+}
+
+a .bg_image_sign_student{
+	color: white;
+	-webkit-transition: background-color 150ms linear;
+  	-moz-transition: background-color 150ms linear;
+  	-o-transition: background-color 150ms linear;
+  	-ms-transition: background-color 150ms linear;
+  	transition: background-color 150ms linear;
+}
+
+a:hover .bg_image_sign_student {
+	background-color: #5FCF80;
+}
+
+.bg_image_sign_student img {
+	border: 0px solid green;
+	float: left;
+	margin-left: 7px;
+	margin-top: 10px;
+}
+
+.bg_image_sign_teacher {
+	position: absolute;
+	left: 170px;
+	top: 250px;
+	width: 130px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	font-size: 18px;
+	font-family: 'Alegreya Sans SC', sans-serif;
+	background-color: #3AC162;
+	-webkit-border-radius: 1px;
+ 	-moz-border-radius: 1px;
+ 	border-radius: 3px;
+	border: 0px solid red;
+}
+
+a .bg_image_sign_teacher {
+	color: white;
+	-webkit-transition: background-color 150ms linear;
+  	-moz-transition: background-color 150ms linear;
+  	-o-transition: background-color 150ms linear;
+  	-ms-transition: background-color 150ms linear;
+  	transition: background-color 150ms linear;
+}
+
+a:hover .bg_image_sign_teacher {
+	background-color: #5FCF80;
+}
+
+.bg_image_sign_teacher img {
+	border: 0px solid green;
+	float: left;
+	margin-left: 7px;
+	margin-top: 10px;
+}
+
+
+/*-------------------------------------------*/
+
+/* BANNER */
+
 #banner_wrapper {
 	border: 0px solid red;
 	width: 100%;
-	height: 190px;
+	overflow: hidden;
 	margin-top: 20px;
 	/*background:url("../assets/Blur-3.png");*/
 }
@@ -13,7 +157,7 @@
 .banner {
 	border: 1px solid #cecfc0;
 	background-color: #F9FAFC;
-	height: 190px;
+	overflow: hidden;
 	margin: auto;
 	width: 1180px;	
 }
@@ -26,25 +170,37 @@
 }
 
 .banner_box_last {
-	border: 0px solid red;
+	border: 0px solid green;
 	float: left;
 	width: 286px;
-	height: 190px;
 }
 
 .banner_box_title {
-	font-family: 'Alegreya Sans SC', sans-serif;
+	/*font-family: 'Alegreya Sans SC', sans-serif;*/
+	font-family: 'Lato', sans-serif;
 	text-align: center;
-	padding: 15px 10px 5px 10px;
+	height: 50px;
+	line-height: 50px;
 	font-size: 20px;
 	border: 0px solid red;
 	color: #428BCA;
+}
 
+.banner_box_logo {
+	height: 50px;
+	border: 0px solid blue;
+}
+
+.banner_box_logo img {
+	border: 0px solid green;
+	display: block;
+    margin: auto;  
+    margin-top: 20px;
 }
 
 .banner_box_content {
 	border: 0px solid red;
-	height: 150px;
+	
 }
 
 .banner_box_content table {
@@ -61,48 +217,35 @@
 }
 
 .banner_box_content tr td {
-	padding: 5px 0 5px 10px;
+	padding: 0px 0 10px 10px;
 	border-bottom: 0px solid #e9e9e9;
 }
 
-.banner_box_content tr td {
-	padding: 5px 0 5px 10px;
-	border-bottom: 0px solid #e9e9e9;
-}
 
-.banner_box_logo {
-	height: 40px;
-}
-
-.banner_box_logo img {
-	border: 0px solid green;
-	display:block;
-    margin:auto;
-}
+/*--------------------------------------*/
 
 
 /* STAMP */
 
 .stamp {
-	background-color: white;
+	background-color: #F9FAFC;
 	position: absolute;
-	width: 466px;
-	height: 302px;
+	width: 280px;
+	height: 350px;
 	left: 15px;
-	margin-bottom: 10px;
-  	/*-moz-box-shadow:  0px 0px 2px #777777;
-  	-webkit-box-shadow: 0px 0px 2px #777777;
-  	box-shadow: 0px 0px 2px #777777;*/
- 	-webkit-border-radius: 1px;
- 	-moz-border-radius: 1px;
- 	border-radius: 1px;
-  	border: 1px solid #cecfc0;
+	margin-bottom: 20px;
+  	moz-box-shadow:  0px 0px 2px #999999;
+  	-webkit-box-shadow: 0px 0px 2px #999999;
+  	box-shadow: 0px 0px 2px #999999;
+ 	-webkit-border-radius: 2px;
+ 	-moz-border-radius: 2px;
+ 	border-radius: 2px;
+  	border: 0px solid #cecfc0;
 
 }
 
 .stamp img {
 	height: 300px;
-
 }
 
 /*.stamp_box1 {
@@ -136,35 +279,37 @@
 }
 
 .box {
-  margin: 0px 0px 10px 10px;
+  margin: 0px 10px 20px 10px;
   background-color: #ffffff;
-  width: 228px;
+  width: 280px;
   font-size: 12px;
-  position: relative;
   overflow: hidden;
-  /*-moz-box-shadow:  0px 0px 2px #777777;
-  -webkit-box-shadow: 0px 0px 2px #777777;
-  box-shadow: 0px 0px 2px #777777;*/
-  -webkit-border-radius: 1px;
-  -moz-border-radius: 1px;
-  border-radius: 1px;
-  border: 1px solid #cecfc0;
-  padding: 0px 0 0px 0;
+  -moz-box-shadow:  0px 0px 2px #999999;
+  -webkit-box-shadow: 0px 0px 2px #999999;
+  box-shadow: 0px 0px 2px #999999;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  border: 0px solid #cecfc0;
+  padding: 0;
 }
 
-.course_title {
-	height: 50px;
-	line-height: 50px;
-	text-align: center;
+.box_course_title {
+	width: 65.715%;
+	/*text-align: center;*/
+	float: left;
 	font-size: 20px;
 	text-transform: lowercase;
 	border-bottom: 1px solid #eaeaeb;
+	padding-bottom: 15px;
+	padding-left: 10px;
+	margin: 20px 0px 0 20px;
 	font-family: 'Alegreya Sans SC', sans-serif;
-	background-color: #F6F7F8;
+	background-color: #ffffff;
 }
 
-a .course_title {
-	color: #428BCA;
+.box_course_title a {
+	color: #346fa1;
 	-webkit-transition: color 150ms linear;
   	-moz-transition: color 150ms linear;
   	-o-transition: color 150ms linear;
@@ -172,51 +317,46 @@ a .course_title {
   	transition: color 150ms linear;
 }
 
-a:hover .course_title {
-	color: #8db9df;
+.box_course_title a:hover {
+	color: #428BCA;
 }
 
-.box_content {
-	border: 0px solid red;
-	height: 200px;
-}
-
-.box_content table {
-	color: #222222;
-	font-size: 12px;
-	border: 0px solid green;
-	padding-left: 0px;
-	font-family: "Open Sans", helvetica, arial;
-}
-
-.box_content tr td {
-	padding: 5px 0 0px 10px;
-	border-bottom: 0px solid #e9e9e9;
-	border: 0px solid red;
-}
-
-.box_teacher {
-	width: 77%;
-	border-top: 1px solid #eaeaeb;
-	height: 50px;
-	float: left;
-	background-color: #F6F7F8;
-}
-
-.box_price {
-	width: 23%;
-	border-top: 1px solid #eaeaeb;
-	border-left: 1px solid #eaeaeb;
-	height: 50px;
+.box_course_price {
+	width: 20%;
+	border-bottom: 1px solid #eaeaeb;
 	float: right;
-	line-height: 50px;
 	text-align: center;
 	color: #999999;
 	font-size: 14px;
-	background-color: #F6F7F8;
+	background-color: #ffffff;
+	padding-top: 3px;
+	margin: 20px 20px 0 0;
+	padding-bottom: 19px;
+}
+
+.box table {
+	color: #222222;
+	font-size: 12px;
+	border: 0px solid green;
+	margin: 20px;
+	padding-top: 15px;
+	font-family: "Open Sans", helvetica, arial;
+}
+
+.box table tr td {
+	padding-left: 10px;
+	padding-bottom: 5px;
+}
+
+.box_footer {
+	width: 100%;
+	border-top: 1px solid #eaeaeb;
+	padding: 20px 10px 10px 10px;
+	background-color: #ffffff;
 }
 
 /* ---------------------*/
+
 
 /* COURSE */
 

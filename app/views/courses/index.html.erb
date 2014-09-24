@@ -1,12 +1,31 @@
+<!--<div id="bg_image">
+  <div class="bg_image_text">
+
+    <div class="bg_image_left">
+      Learn foreign language online<br/>
+      <span>How it works?</span>
+    </div>
+
+    <div class="bg_image_right">
+      <%= image_tag "laptop.png", width: 500 %>
+    </div>
+
+  </div>
+
+</div>-->
+
+
+<% if !signed_in? %>
 <div id="banner_wrapper">
   <div class="banner">
     <div class="banner_box">
-      <div class="banner_box_title">
-        learn foreign language online
+      
+      <div class="banner_box_logo">
+        <%= image_tag "wifi.png", width: 50 %>
       </div>
 
-      <div class="banner_box_logo">
-        <%= image_tag "globe.png", width: 40 %>
+      <div class="banner_box_title">
+        Learn foreign language online
       </div>
 
       <div class="banner_box_content">
@@ -31,12 +50,13 @@
     </div>
 
     <div class="banner_box">
-      <div class="banner_box_title">
-        private classes
-      </div>
 
       <div class="banner_box_logo">
-        <%= image_tag "private.png", width: 35 %>
+        <%= image_tag "user_face.png", width: 50 %>
+      </div>
+
+      <div class="banner_box_title">
+        Private classes
       </div>
 
       <div class="banner_box_content">
@@ -61,12 +81,13 @@
     </div>
 
     <div class="banner_box">
-      <div class="banner_box_title">
-        group classes
-      </div>
 
       <div class="banner_box_logo">
-        <%= image_tag "group.png", width: 45 %>
+        <%= image_tag "two_faces.png", width: 80 %>
+      </div>
+
+      <div class="banner_box_title">
+        Group classes
       </div>
 
       <div class="banner_box_content">
@@ -91,12 +112,13 @@
     </div>
 
     <div class="banner_box_last">
-      <div class="banner_box_title">
-        certified teachers
-      </div>
 
       <div class="banner_box_logo">
-        <%= image_tag "hat.png", width: 60 %>
+        <%= image_tag "book.png", width: 50 %>
+      </div>
+
+      <div class="banner_box_title">
+        Certified teachers
       </div>
 
       <div class="banner_box_content">
@@ -123,72 +145,64 @@
   </div>
 
 </div>
+<% end %>
 
 
 
 <div id="masonry_container">
     
       <div class="stamp">
-        <%= image_tag "student.jpg", width: 464 %>
+        <!--<%= image_tag "student.jpg", width: 464 %>-->
+        STAMP
       </div>
 
       <% @courses.each do |course| %>
         <div class="box">
-          
-            <%= link_to course do %>
-              <div class="course_title">
+            
+            <div class="box_course_title">
+              <%= link_to course do %>
                 <%= course.language %> <%= course.level %>
-              </div>
-            <% end %>
-
-            <div class="box_content">
-
-            <table>
-
-              <tr>
-                <td>Course type:</td>
-                <td><%= course.course_type %></td>
-              </tr>
-
-              <tr>
-                <td>Registration until:</td>
-                <td><%= course.registration_until %></td>
-              </tr>
-
-              <tr>
-                <td>Start:</td>
-                <td><%= course.course_start %></td>
-              </tr>
-
-              <tr>
-                <td>End:</td>
-                <td><%= course.course_end %></td>
-              </tr>
-
-              <tr>
-                <td>Duration:</td>
-                <td><%= course.duration %></td>
-              </tr>
-
-              <tr>
-                <td>Description:</td>
-                <td><%= course.description %></td>
-              </tr>
-              
-            </table>
-
+              <% end %>
             </div>
 
-            <div class="box_teacher">
+            <div class="box_course_price">
+              <%= course.price %>€
+            </div>  
 
+              <table>
+
+                <tr>
+                  <td>Course type:</td>
+                  <td><strong><%= course.course_type %></strong></td>
+                </tr>
+
+                <tr>  
+                  <td>Registration until:</td>
+                  <td><strong><%= course.registration_until %></strong></td>
+                </tr>
+
+                <tr>
+                  <td>Start:</td>
+                  <td><strong><%= course.course_start %></strong></td>
+                </tr>
+
+                <tr>
+                  <td>End:</td>
+                  <td><strong><%= course.course_end %></strong></td>
+                </tr>
+
+                <tr>
+                  <td>Duration:</td>
+                  <td><strong><%= course.duration %></strong></td>
+                </tr>
+                
+              </table>
+
+            <div class="box_footer">
               <tr>
                 <td><%= link_to 'Edit', edit_course_path(course) %></td><br/>
                 <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
               </tr>
-            </div>
-
-            <div class="box_price">
-              <%= course.price %>€
             </div>
 
         </div>
