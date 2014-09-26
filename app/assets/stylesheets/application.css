@@ -118,7 +118,7 @@ h3 {
 }
 
 #header_wrapper2 {
-	background-color: #F6F7F8;
+	background-color: #2AA4CF;
 	/*background:url("../assets/blur.png");*/
 	height: 50px;
 	-webkit-box-shadow: 0px 0px 2px 0px rgba(100, 100, 100, 0.75);
@@ -179,7 +179,7 @@ a .header_logo2 .webpage_title {
 	float: left;
 	height: 50px;
 	line-height: 50px;
-	color: #555555;
+	color: #ffffff;
 	/*text-shadow: 0px 1px 1px rgba(58, 58, 58, 1);*/
 	font-size: 25px;
 
@@ -241,19 +241,19 @@ a .header_logo2 .webpage_title {
 	float: right;
 	line-height: 50px;
 	font-size: 12px;
-	border-left: 1px solid #e6e8eb;
-	border-right: 1px solid #ffffff;
+	border-left: 1px solid #2593ba;
+	border-right: 1px solid #69bfdd;
 }
 
 .header_navigation2 li {
-	border-left: 1px solid #ffffff;
-	border-right: 1px solid #e6e8eb;
+	border-right: 1px solid #2593ba;
+  	border-left: 1px solid #69bfdd;
 	float: left;
 	padding: 0 15px 0 15px;
 }
 
 .header_navigation2 a li {
-	color: #666666;
+	color: #ffffff;
 	-webkit-transition: background-color 250ms linear;
   	-moz-transition: background-color 250ms linear;
   	-o-transition: background-color 250ms linear;
@@ -262,7 +262,7 @@ a .header_logo2 .webpage_title {
 }
 
 .header_navigation2 a:hover li {
-	background-color: #eff1f3;
+	background-color: #54b6d8;
 }
 
 .header_navigation2 img {

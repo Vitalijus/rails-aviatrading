@@ -25,14 +25,14 @@
       </div>
 
       <div class="banner_box_title">
-        Learn foreign language online
+        Learn language online
       </div>
 
       <div class="banner_box_content">
         <table>
           <tr>
             <td><%= image_tag "tick.png", width: 12 %></td>
-            <td>Convinient & effective way of learning</td>
+            <td>Convinient way of learning</td>
           </tr>
 
           <tr>
@@ -163,11 +163,17 @@
               <%= link_to course do %>
                 <%= course.language %> <%= course.level %>
               <% end %>
-            </div>
 
-            <div class="box_course_price">
-              <%= course.price %>€
-            </div>  
+               <div class="box_course_price">
+                <%= course.price %>€
+              </div>
+
+              <div class="box_teacher_name">
+                <!--<%= course.teacher.email %>-->
+                with Albert Einstein
+              </div>
+  
+            </div>
 
               <table>
 
@@ -199,10 +205,25 @@
               </table>
 
             <div class="box_footer">
-              <tr>
-                <td><%= link_to 'Edit', edit_course_path(course) %></td><br/>
-                <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-              </tr>
+
+              <ul>
+                <!--<li><%= link_to 'Edit', edit_course_path(course) %></li>
+                <li><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></li>-->
+                  <li>
+                    <%= image_tag "tw_grey.png", width: 25, :class => "box_icon_opacity", :title => "share" %>
+                    <%= image_tag "tw_blue.png", width: 25 %>
+                  </li>
+
+                  <li>
+                    <%= image_tag "f_grey.png", width: 25, :class => "box_icon_opacity", :title => "share" %>
+                    <%= image_tag "f_blue.png", width: 25 %>
+                  </li>
+
+                  <li>
+                    <%= image_tag "add_blue.png", width: 23 %>
+                    <%= image_tag "add_grey.png", width: 23, :class => "box_icon_add_opacity", :title => "add to list" %>
+                  </li>
+              </ul>
             </div>
 
         </div>
