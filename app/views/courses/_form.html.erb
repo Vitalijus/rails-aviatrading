@@ -1,65 +1,71 @@
-<%= form_for(@course) do |f| %>
-  <% if @course.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
+<div class="new_course_wrapper">
+  <div class="new_course_title">
+  Create New Course
+  </div>
 
-      <ul>
-      <% @course.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+  <div class="new_course_form">
+
+    <%= form_for(@course) do |f| %>
+      <% if @course.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@course.errors.count, "error") %> prohibited this course from being saved:</h2>
+
+          <ul>
+          <% @course.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
 
-    <div class="field">
-      <%= f.label :registration_until %><br>
-      <%= f.date_select :registration_until, {start_year: Date.today.year, end_year: Date.today.year+1} %>
-    </div>
-
-    <div class="field">
-      <%= f.label :course_start %><br>
-      <%= f.date_select :course_start, {start_year: Date.today.year, end_year: Date.today.year+1} %>
-    </div>
-
-    <div class="field">
-      <%= f.label :course_end %><br>
-      <%= f.date_select :course_end, {start_year: Date.today.year, end_year: Date.today.year+1} %>
-    </div>
-
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :teacher_name %><br>
-    <%= f.text_field :teacher_name %>
-  </div>
-
- 
-  <div class="field">
-    <%= f.label :price %><br>
-    <%= f.number_field :price %>
-  </div>
-
-  <div class="field">
-    <%= f.label :level %><br>
-    <%= f.text_field :level %>
-  </div>
-  <div class="field">
+  <div class="new_course_field">
     <%= f.label :language %><br>
-    <%= f.text_field :language %>
+    <%= f.text_field :language %> 
   </div>
 
-  <div class="field">
-    <%= f.label :duration %><br>
-    <%= f.text_field :duration %>
+  <div class="new_course_field">
+    <%= f.label :level %><br>
+    <%= f.text_field :level %> 
   </div>
-  <div class="field">
+
+  <div class="new_course_field">
     <%= f.label :course_type %><br>
-    <%= f.text_field :course_type %>
+    <%= f.text_field :course_type %>  
   </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="new_course_field">
+    <%= f.label :price %><br>
+    <%= f.number_field :price %> 
+  </div>
+
+  <div class="new_course_field">
+    <%= f.label :duration %><br>
+    <%= f.text_field :duration %> 
+  </div>
+
+  
+
+    <div class="new_course_field">
+      <%= f.label :registration_until %><br>
+      <%= f.date_select :registration_until, {:order => [:day, :month, :year], start_year: Date.today.year, end_year: Date.today.year+1 }, {:class => "new_course_date_select"} %>  
+    </div>
+
+    <div class="new_course_field">
+      <%= f.label :course_start %><br>
+      <%= f.date_select :course_start, {:order => [:day, :month, :year], start_year: Date.today.year, end_year: Date.today.year+1}, {:class => "new_course_date_select"} %>
+    </div>
+
+    <div class="new_course_field">
+      <%= f.label :course_end %><br>
+      <%= f.date_select :course_end, {:order => [:day, :month, :year], start_year: Date.today.year, end_year: Date.today.year+1}, {:class => "new_course_date_select"} %>
+    </div>
+
+  <div class="action">
+    <%= f.submit "Create New Course", {:class => "new_course_create_button"} %>
   </div>
 <% end %>
+  
+  </div>
+
+</div>

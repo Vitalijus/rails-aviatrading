@@ -155,6 +155,10 @@
 				  		<%= link_to edit_student_registration_path do %>
 				  			<li>DASHBOARD</li>
 				  		<% end %>
+
+				  	<%= link_to destroy_student_session_path, :method => :delete do %>
+					  		<li>Sign out</li>
+					  	<% end %>
 					<% end %>
 
 
@@ -168,25 +172,13 @@
 				  		<%= link_to edit_teacher_registration_path do %>
 				  			<li>DASHBOARD</li>
 				  		<% end %>
-						
 
-						<!--<%= image_tag "lock.png", width: 12 %>-->
-						  <% if student_signed_in? %>
-						    
-						    <%= link_to destroy_student_session_path, :method => :delete do %>
-						  		<li>Sign out</li>
-						  	<% end %>
+				  		<%= link_to destroy_teacher_session_path, :method => :delete do %>
+			  				<li>Sign out</li>
+			  			<% end %>
 
-						  		<% elsif teacher_signed_in? %>
+			  		<% end %>
 
-						  			<%= link_to destroy_teacher_session_path, :method => :delete do %>
-						  				<li>Sign out</li>
-						  			<% end %>
-
-						  <% end %>
-						  
-
-					<% end %>
 				</ul>
 			</div>
 	</div>

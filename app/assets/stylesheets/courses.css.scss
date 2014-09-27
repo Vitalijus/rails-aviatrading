@@ -393,7 +393,7 @@ a:hover .bg_image_sign_teacher {
 	padding: 0px;
 	position: absolute;
 	top: 10px;
-	left: 21px;
+	left: 22px;
 }
 
 .box_icon_opacity:hover {
@@ -413,7 +413,7 @@ a:hover .bg_image_sign_teacher {
 	padding: 0px;
 	position: absolute;
 	top: 12px;
-	left: 23px;
+	left: 22px;
 }
 
 .box_icon_add_opacity:hover {
@@ -448,9 +448,9 @@ a:hover .bg_image_sign_teacher {
 	background-color: white;
 	position: relative;
 	margin-bottom: 10px;
-	-webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    border-radius: 2px;
+	-webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
 
 }
 
@@ -483,9 +483,9 @@ a:hover .bg_image_sign_teacher {
 	float: left;
 	overflow: hidden;
 	border: 1px solid #DFE0E4;
-	-webkit-border-radius: 2px;
-  	-moz-border-radius: 2px;
-  	border-radius: 5px;
+	-webkit-border-radius: 3px;
+  	-moz-border-radius: 3px;
+  	border-radius: 3px;
 }
 
 .course_lesson_list {
@@ -562,3 +562,80 @@ a:hover .enroll_button {
 }
 
 /*---------------------------------*/
+
+/* NEW COURSE */
+
+.new_course_wrapper {
+	width: 600px;
+	margin: auto;
+	margin-top: 20px;
+	background-color: #ffffff;
+	border: 0px solid red;
+	-moz-box-shadow:  0px 0px 2px #777777;
+    -webkit-box-shadow: 0px 0px 2px #777777;
+    box-shadow: 0px 0px 2px #777777;
+    -webkit-border-radius: 3px;
+  	-moz-border-radius: 3px;
+  	border-radius: 3px;
+}
+
+.new_course_title {
+	border: 0px solid red;
+	font-family: 'Lato', sans-serif;
+	font-size: 25px;
+	padding: 20px;
+}
+
+.new_course_form {
+	border: 0px solid red;
+	padding: 0px 20px 20px 20px;
+}
+
+.new_course_field input {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 10px;
+	margin-top: 2px;
+	color: #555555;
+	border: 1px solid #cecfc0;
+}
+
+.new_course_field label {
+	color: #555555;
+	font-family: 'Lato', sans-serif;
+	font-size: 15px;
+	border: 0px solid #cecfc0;
+}
+
+.new_course_date_select {
+	background-color:  #ffffff;
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #cecfc0;
+}
+
+.new_course_create_button  {
+	border: 1px solid #cecfc0;
+	text-align: center;
+	width: 100%;
+	padding: 10px;
+	margin-top: 10px;
+	font-size: 16px;
+	font-weight: bold;
+	color: white;
+	font-family: "Open Sans", helvetica, arial;
+	background-color: #3AC162;
+	cursor: pointer;
+	-webkit-transition: background-color 150ms linear;
+  	-moz-transition: background-color 150ms linear;
+  	-o-transition: background-color 150ms linear;
+  	-ms-transition: background-color 150ms linear;
+  	transition: background-color 150ms linear;
+}
+
+.new_course_create_button:hover {
+	background-color: #5FCF80;
+}
+
+
+/* ------------------------------ */

@@ -135,7 +135,7 @@
 
           <tr>
             <td><%= image_tag "tick.png", width: 12 %></td>
-            <td>Want to be a <%= link_to "teacher at FLS?", courses_path, data: { no_turbolink: true } %></td>
+            <td>Want to become a <%= link_to "teacher at FLS?", courses_path, data: { no_turbolink: true } %></td>
           </tr>
           
         </table>
@@ -169,8 +169,9 @@
               </div>
 
               <div class="box_teacher_name">
-                <!--<%= course.teacher.email %>-->
-                with Albert Einstein
+                with <%= link_to edit_teacher_registration_path do %>
+                  <%= course.teacher.name %> <%= course.teacher.surname %>
+                <% end %>
               </div>
   
             </div>
