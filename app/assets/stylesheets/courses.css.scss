@@ -234,12 +234,13 @@ a:hover .bg_image_sign_teacher {
 
 /* STAMP */
 
-.stamp {
+ .stamp1 {
 	background-color: #F9FAFC;
 	position: absolute;
 	width: 245px;
 	height: 350px;
-	left: 15px;
+	right: 15px;
+	top: 225px;
 	margin-bottom: 20px;
   	moz-box-shadow:  0px 0px 2px #999999;
   	-webkit-box-shadow: 0px 0px 2px #999999;
@@ -251,24 +252,22 @@ a:hover .bg_image_sign_teacher {
 
 }
 
-.stamp img {
-	height: 300px;
-}
+.stamp2 {
+	background-color: #ffffff;
+	position: absolute;
+	width: 245px;
+	height: 200px;
+	right: 15px;
+	margin-bottom: 20px;
+  	moz-box-shadow:  0px 0px 2px #999999;
+  	-webkit-box-shadow: 0px 0px 2px #999999;
+  	box-shadow: 0px 0px 2px #999999;
+ 	-webkit-border-radius: 3px;
+ 	-moz-border-radius: 3px;
+ 	border-radius: 3px;
+  	border: 0px solid #cecfc0;
 
-/*.stamp_box1 {
-	width: 189px;
-	height: 50%;
-	position: relative;
-	background-color: #FF9D74;
-	float: left;
-	text-align: center;
-	line-height: 190px;
-	color: white;
-	font-size: 20px;
-	font-family: "Open Sans", helvetica, arial;
-	border-right: 1px solid white;
-	border-bottom: 1px solid white;
-}*/
+}
 
 /*---------------------------*/
 
@@ -299,6 +298,7 @@ a:hover .bg_image_sign_teacher {
   border-radius: 3px;
   border: 0px solid #cecfc0;
   padding: 0;
+  position: relative;
 }
 
 .box_course_title {
@@ -443,6 +443,7 @@ a:hover .bg_image_sign_teacher {
 
 .course_content {
 	width: 695px;
+	height: 350px;
 	border: 1px solid #cecfc0;
 	float: right;
 	background-color: white;
@@ -589,6 +590,17 @@ a:hover .enroll_button {
 .new_course_form {
 	border: 0px solid red;
 	padding: 0px 20px 20px 20px;
+	font-size: 12px;
+}
+
+.new_course_area {
+	width: 100%;
+	padding: 10px;
+	height: 90px;
+	color: #555555;
+	margin-bottom: 10px;
+	margin-top: 2px;
+	border: 1px solid #cecfc0;
 }
 
 .new_course_field input {
@@ -600,18 +612,43 @@ a:hover .enroll_button {
 	border: 1px solid #cecfc0;
 }
 
+.new_course_field select {
+     -webkit-appearance: none;  /*Removes default chrome and safari style*/
+     -moz-appearance: none;  /*Removes default style Firefox*/
+     width: 100%;
+     background-color: #ffffff;
+     border:1px solid #cecfc0;
+     padding: 10px;
+     margin-bottom: 10px;
+     margin-top: 2px;
+     font-size: 12px;
+     background: url("dropdown.png") no-repeat;
+     background-position: 98% 13px; /*Position of the background-image*/
+     text-indent: 0.01px; /* Removes default arrow from firefox*/
+     text-overflow: "";   /*Removes default arrow from firefox*/
+}
+
 .new_course_field label {
 	color: #555555;
 	font-family: 'Lato', sans-serif;
-	font-size: 15px;
+	font-size: 12px;
 	border: 0px solid #cecfc0;
 }
 
-.new_course_date_select {
-	background-color:  #ffffff;
-	padding: 10px;
-	margin-bottom: 10px;
-	border: 1px solid #cecfc0;
+.new_course_field_date select {
+	 -webkit-appearance: none;  /*Removes default chrome and safari style*/
+     -moz-appearance: none;  /*Removes default style Firefox*/
+     background-color: #ffffff;
+     border:1px solid #cecfc0;
+     padding: 10px 30px 10px 10px;
+     margin-bottom: 10px;
+     margin-right: 10px;
+     margin-top: 2px;
+     font-size: 12px;
+     background: url("dropdown.png") no-repeat;
+     background-position: 85% 13px; /*Position of the background-image*/
+     text-indent: 0.01px; /* Removes default arrow from firefox*/
+     text-overflow: "";   /*Removes default arrow from firefox*/
 }
 
 .new_course_create_button  {
@@ -637,5 +674,97 @@ a:hover .enroll_button {
 	background-color: #5FCF80;
 }
 
+/*.new_course_field {
+    overflow:hidden;
+    width:350px;
+    margin-left:35px;
+    background: url("images/arrow_left.png") no-repeat #fff 319px 2px;
+     dropdown_arrow.png is a 31x28 image 
+}*/
+
+/* ------------------------------ */
+
+/* TEACHER EDIT */
+
+.teacher_edit {
+	width: 960px;
+	margin: auto;
+	margin-top: 20px;
+}
+
+.teacher_edit_left_sidebar_wrapper {
+	width: 300px;
+	overflow: hidden;
+	-moz-box-shadow:  0px 0px 2px #777777;
+    -webkit-box-shadow: 0px 0px 2px #777777;
+    box-shadow: 0px 0px 2px #777777;
+    -webkit-border-radius: 3px;
+  	-moz-border-radius: 3px;
+  	border-radius: 3px;
+	float: left;
+}
+
+.teacher_edit_left_sidebar {
+	width: 300px;
+	float: left;
+	border-bottom: 1px solid #cecfc0;
+	padding: 20px;
+	background-color: #ffffff;
+	
+}
+
+.teacher_edit_right_sidebar {
+	width: 640px;
+	float: right;
+	padding: 20px;
+	background-color: #ffffff;
+	-moz-box-shadow:  0px 0px 2px #777777;
+    -webkit-box-shadow: 0px 0px 2px #777777;
+    box-shadow: 0px 0px 2px #777777;
+    -webkit-border-radius: 3px;
+  	-moz-border-radius: 3px;
+  	border-radius: 3px;
+}
+
+.teacher_edit_right_sidebar input {
+	 width: 100%;
+     border:1px solid #cecfc0;
+     padding: 10px 30px 10px 10px;
+     margin-bottom: 10px;
+     margin-right: 10px;
+     font-size: 12px;
+}
+
+.teacher_edit_right_sidebar label {
+	color: #555555;
+	font-family: 'Lato', sans-serif;
+	font-size: 12px;
+	border: 0px solid #cecfc0;
+}
+
+.teacher_edit_right_sidebar_title {
+	padding: 0 0 20px 0;
+	width: 100%;
+	border: 0px solid red;
+	font-family: 'Lato', sans-serif;
+	font-size: 25px;
+}
+
+.teacher_edit_right_sidebar_button {
+	margin-top: 10px;
+	background-color: #3AC162;
+	font-size: 16px;
+	font-weight: bold;
+	color: white;
+	border: 1px solid #cecfc0;
+	font-family: "Open Sans", helvetica, arial;
+	background-color: #3AC162;
+	cursor: pointer;
+}
+
+.teacher_edit_right_sidebar_cancel {
+	margin-top: 10px;
+	border: 0px solid red;
+}
 
 /* ------------------------------ */

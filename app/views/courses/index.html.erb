@@ -151,9 +151,12 @@
 
 <div id="masonry_container">
     
-      <div class="stamp">
-        <!--<%= image_tag "student.jpg", width: 464 %>-->
+      <div class="stamp stamp1">
         STAMP
+      </div>
+
+      <div class="stamp stamp2">
+        FACEBOOK
       </div>
 
       <% @courses.each do |course| %>
@@ -183,6 +186,11 @@
                   <td><strong><%= course.course_type %></strong></td>
                 </tr>
 
+                <tr>
+                  <td>Length:</td>
+                  <td><strong><%= course.duration %></strong></td>
+                </tr>
+
                 <tr>  
                   <td>Registration until:</td>
                   <td><strong><%= course.registration_until %></strong></td>
@@ -196,11 +204,6 @@
                 <tr>
                   <td>End:</td>
                   <td><strong><%= course.course_end %></strong></td>
-                </tr>
-
-                <tr>
-                  <td>Duration:</td>
-                  <td><strong><%= course.duration %></strong></td>
                 </tr>
                 
               </table>

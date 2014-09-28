@@ -1,7 +1,4 @@
-<div class="new_course_wrapper">
-  <div class="new_course_title">
-  Create New Course
-  </div>
+
 
   <div class="new_course_form">
 
@@ -21,17 +18,22 @@
 
   <div class="new_course_field">
     <%= f.label :language %><br>
-    <%= f.text_field :language %> 
+    <%= f.select :language, ['German', 'English', 'Lithuanian'], :prompt => 'Select a language' %> 
   </div>
 
   <div class="new_course_field">
-    <%= f.label :level %><br>
-    <%= f.text_field :level %> 
+    <%= f.label :level, "Level (description of levels.pdf)" %> <br>
+    <%= f.select :level, ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'], :prompt => 'Select a level' %> 
   </div>
 
   <div class="new_course_field">
-    <%= f.label :course_type %><br>
-    <%= f.text_field :course_type %>  
+    <%= f.label :course_type, "Type of course (description of types.pdf)" %><br>
+    <%= f.select :course_type, ['General course', 'Intensive course', 'Immersion course', 'One-to-one', 'Course for children', 'Course for senior students'], :prompt => 'Select a course'  %>  
+  </div>
+
+  <div class="new_course_field">
+    <%= f.label :length %><br>
+    <%= f.select :duration, ['30 minutes', '45 minutes', '60 minutes', '75 minutes', '90 minutes', '105 minutes', '120 minutes'], :prompt => 'Select length of a lesson' %> 
   </div>
 
   <div class="new_course_field">
@@ -40,32 +42,30 @@
   </div>
 
   <div class="new_course_field">
-    <%= f.label :duration %><br>
-    <%= f.text_field :duration %> 
+    <%= f.label :description %><br>
+    <%= f.text_area :description, :class => "new_course_area" %> 
   </div>
 
-  
 
-    <div class="new_course_field">
+    <div class="new_course_field_date">
       <%= f.label :registration_until %><br>
       <%= f.date_select :registration_until, {:order => [:day, :month, :year], start_year: Date.today.year, end_year: Date.today.year+1 }, {:class => "new_course_date_select"} %>  
     </div>
 
-    <div class="new_course_field">
+    <div class="new_course_field_date">
       <%= f.label :course_start %><br>
       <%= f.date_select :course_start, {:order => [:day, :month, :year], start_year: Date.today.year, end_year: Date.today.year+1}, {:class => "new_course_date_select"} %>
     </div>
 
-    <div class="new_course_field">
+    <div class="new_course_field_date">
       <%= f.label :course_end %><br>
       <%= f.date_select :course_end, {:order => [:day, :month, :year], start_year: Date.today.year, end_year: Date.today.year+1}, {:class => "new_course_date_select"} %>
     </div>
 
   <div class="action">
-    <%= f.submit "Create New Course", {:class => "new_course_create_button"} %>
+    <%= f.submit  ({:class => "new_course_create_button"}) %>
   </div>
 <% end %>
   
   </div>
 
-</div>

@@ -1,7 +1,37 @@
-<h2>Edits <%= resource_name.to_s.humanize %></h2>
+<div class="teacher_edit">
+
+<div class="teacher_edit_left_sidebar_wrapper">
+  <div class="teacher_edit_left_sidebar">
+    Dashboar
+  </div>
+
+  <div class="teacher_edit_left_sidebar">
+    Courses
+  </div>
+
+  <div class="teacher_edit_left_sidebar">
+    Lessons
+  </div>
+
+  <div class="teacher_edit_left_sidebar">
+    Profile
+  </div>
+</div>
+
+   <div class="teacher_edit_right_sidebar">
+    <div class="teacher_edit_right_sidebar_title">
+      Profile
+    </div>
+
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
+
+  <div><%= f.label :name %><br />
+      <%= f.text_field :name %></div>
+
+  <div><%= f.label :surname %><br />
+    <%= f.text_field :surname %></div>
 
   <div><%= f.label :email %><br />
   <%= f.email_field :email, autofocus: true %></div>
@@ -19,17 +49,25 @@
   <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %></div>
 
-    <div><%= f.label :name %><br />
-      <%= f.text_field :name %></div>
+    
+      <%= f.submit "Update", {:class => "teacher_edit_right_sidebar_button"} %>
+    
 
-    <div><%= f.label :surname %><br />
-      <%= f.text_field :surname %></div>
-
-  <div><%= f.submit "Update" %></div>
 <% end %>
 
-<h3>Cancel my account</h3>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<div class="teacher_edit_right_sidebar_cancel">
+  <h3>Cancel my account</h3>
 
-<%= link_to "Back", :back %>
+  <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+</div>
+
+
+    <% @teacher.courses.each do |course| %>
+      <%= course.price %><br>
+      <%= link_to course.language, edit_course_path(course) %><br>
+    <% end %>
+  </div>
+
+
+</div>
