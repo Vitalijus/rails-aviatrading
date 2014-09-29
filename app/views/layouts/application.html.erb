@@ -26,7 +26,7 @@
 	  fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));</script>
 
-<% if !signed_in? %>
+<!--<% if !signed_in? %>
 
 <div id="bg_image">
 
@@ -120,7 +120,7 @@
 
   </div>
 </div>
-<% end %>
+<% end %>-->
 
 
 <!--<div class="header_login_wrapper">
@@ -142,7 +142,6 @@
 </div>-->
 
 
-<% if signed_in? %>
 <div id="header_wrapper2">
 	<div class="header2">
 
@@ -156,8 +155,18 @@
 
   		<div class="header_navigation2">
 				<ul>
-					<%= link_to courses_path, data: { no_turbolink: true } do %>
-						<li>COURSES</li>
+					<% if !signed_in? %>
+						<%= link_to courses_path, data: { no_turbolink: true } do %>
+							<li>COURSES</li>
+						<% end %>
+
+						<%= link_to new_student_session_path do %>
+						      <li><%= image_tag "key.png", width: 20 %> Student</li>
+						<% end %>
+
+						<%= link_to new_teacher_session_path do %>
+						      <li><%= image_tag "key.png", width: 20 %> Teacher</li>
+						<% end %>
 					<% end %>
 					
 
@@ -194,7 +203,6 @@
 
 	</div>
 </div>
-<% end %>
 
 <%= yield %>
 

@@ -2,144 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/* BG IMAGE */
+/* BANNER IMAGE SLIDER */
 
-#bg_image {
-	border-bottom: 1px solid #cecfc0;
-	width: 100%;
-	height: 450px;
-	background:url("../assets/coffee_shop.jpg");
-	position: relative;
+.banner_image_slider {
+	width: 920px;
+	margin: auto;
+	height: 340px;
+	background-color: #ffffff;
+	margin-top: 20px;
+	border: 0px solid #DFE0E4;
+	-webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
 }
 
-.bg_image_text {
-	border: 0px solid red;
-	color: #ffffff;
-	width: 1180px;
-	height: 450px;
-	top: 65px;
-	left:0;
-    right:0;
-    margin-left:auto;
-    margin-right:auto;
-	position: absolute;
-}
-
-.bg_image_left {
-	/*font-family: "Open Sans", helvetica, arial;*/
-	font-family: 'Roboto', sans-serif;
-	font-size: 35px;
-	/*text-shadow: 0px 1px 2px rgba(58, 58, 58, 1);*/
-	position: absolute;
-	left: 0;
-	top: 30px;
-	border: 0px solid red;
-}
-
-.bg_image_left span {
-	font-family: 'Roboto', sans-serif;
-	font-size: 20px;
-	/*text-shadow: 0px 1px 2px rgba(58, 58, 58, 1);*/
-	position: absolute;
-	left: 0;
-	top: 50px;
-	text-align: center;
-	border: 0px solid red;
-}
-
-.bg_steps {
-	position: absolute;
-	left: 50px;
-	top: 90px;
-	font-family: 'Roboto', sans-serif;;
-	font-size: 18px;
-}
-
-.bg_steps table tr td {
-	border: 0px solid red;
-	padding-bottom: 5px;
-	padding-right: 20px;
-}
-
-.bg_image_right {
-	position: absolute;
-	right: 50px;
-	top: 45px;
-}
-
-.bg_image_sign_student {
-	position: absolute;
-	left: 0px;
-	top: 250px;
-	width: 130px;
-	height: 50px;
-	line-height: 50px;
-	text-align: center;
-	font-size: 18px;
-	font-family: 'Alegreya Sans SC', sans-serif;
-	background-color: #3AC162;
-	-webkit-border-radius: 1px;
- 	-moz-border-radius: 1px;
- 	border-radius: 3px;
-	border: 0px solid red;
-}
-
-a .bg_image_sign_student{
-	color: white;
-	-webkit-transition: background-color 150ms linear;
-  	-moz-transition: background-color 150ms linear;
-  	-o-transition: background-color 150ms linear;
-  	-ms-transition: background-color 150ms linear;
-  	transition: background-color 150ms linear;
-}
-
-a:hover .bg_image_sign_student {
-	background-color: #5FCF80;
-}
-
-.bg_image_sign_student img {
-	border: 0px solid green;
-	float: left;
-	margin-left: 7px;
-	margin-top: 10px;
-}
-
-.bg_image_sign_teacher {
-	position: absolute;
-	left: 170px;
-	top: 250px;
-	width: 130px;
-	height: 50px;
-	line-height: 50px;
-	text-align: center;
-	font-size: 18px;
-	font-family: 'Alegreya Sans SC', sans-serif;
-	background-color: #3AC162;
-	-webkit-border-radius: 1px;
- 	-moz-border-radius: 1px;
- 	border-radius: 3px;
-	border: 0px solid red;
-}
-
-a .bg_image_sign_teacher {
-	color: white;
-	-webkit-transition: background-color 150ms linear;
-  	-moz-transition: background-color 150ms linear;
-  	-o-transition: background-color 150ms linear;
-  	-ms-transition: background-color 150ms linear;
-  	transition: background-color 150ms linear;
-}
-
-a:hover .bg_image_sign_teacher {
-	background-color: #5FCF80;
-}
-
-.bg_image_sign_teacher img {
-	border: 0px solid green;
-	float: left;
-	margin-left: 7px;
-	margin-top: 10px;
-}
 
 
 /*-------------------------------------------*/
@@ -162,7 +38,7 @@ a:hover .bg_image_sign_teacher {
 .banner_box {
 	float: left;	
 	height: 100%;
-	padding: 0 20px 0 0;
+	padding: 0 15px 0 0;
 	border: 0px solid red;
 }
 
@@ -173,7 +49,8 @@ a:hover .bg_image_sign_teacher {
 	text-align: center;
 	height: 100%;
 	line-height: 65px;
-	font-size: 14px;
+	font-size: 12px;
+	font-weight: bold;
 	border: 0px solid red;
 	color: #555555;
 }
@@ -187,7 +64,7 @@ a:hover .bg_image_sign_teacher {
 	border: 0px solid green;
 	display: block;
     margin: auto;  
-    margin-top: 18px;
+    margin-top: 20px;
     margin-left: 20px;
     margin-right: 10px;
 }
@@ -200,11 +77,11 @@ a:hover .bg_image_sign_teacher {
  .stamp1 {
 	background-color: #F9FAFC;
 	position: absolute;
-	width: 294px;
+	width: 224px;
 	height: 350px;
 	right: 15px;
-	top: 283px;
-	margin-bottom: 20px;
+	top: 275px;
+	margin-bottom: 10px;
   	border: 1px solid #DFE0E4;
 
 }
@@ -212,10 +89,10 @@ a:hover .bg_image_sign_teacher {
 .stamp2 {
 	background-color: #ffffff;
 	position: absolute;
-	width: 294px;
+	width: 224px;
 	height: 260px;
 	right: 15px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
  	-webkit-border-radius: 3px;
  	-moz-border-radius: 3px;
  	border-radius: 3px;
@@ -239,29 +116,27 @@ a:hover .bg_image_sign_teacher {
 }
 
 .box {
-  margin: 0px 10px 20px 10px;
+  margin: 0px 0px 10px 10px;
   background-color: #ffffff;
-  width: 293px;
+  width: 222px;
   font-size: 12px;
   overflow: hidden;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
   border: 1px solid #DFE0E4;
-  padding: 0;
+  padding: 15px 15px 0 15px;
   position: relative;
 }
 
 .box_course_title {
-	width: 240px;
+	width: 100%;
 	/*text-align: center;*/
 	float: left;
 	font-size: 20px;
+	padding-bottom: 10px;
 	text-transform: lowercase;
 	border-bottom: 1px solid #eaeaeb;
-	padding-bottom: 15px;
-	padding-left: 10px;
-	margin: 20px 0px 0 20px;
 	font-family: 'Alegreya Sans SC', sans-serif;
 	background-color: #ffffff;
 }
@@ -303,22 +178,21 @@ a:hover .bg_image_sign_teacher {
 
 .box table {
 	color: #666666;
-	font-size: 12px;
+	font-size: 11px;
 	border: 0px solid green;
-	margin: 0px 20px 10px 20px;
-	padding-top: 10px;
+	padding-top: 5px;
+	width: 100%;
 	font-family: "Open Sans", helvetica, arial;
 }
 
 .box table tr td {
-	padding-left: 5px;
+	padding-left: 0px;
 	padding-right: 5px;
 	padding-bottom: 5px;
 }
 
 .box_footer {
 	border-top: 1px solid #eaeaeb;
-	margin: 0 20px 0 20px;
 	background-color: #ffffff;
 	overflow: hidden;
 	height: 48px;
@@ -333,7 +207,7 @@ a:hover .bg_image_sign_teacher {
 .box_footer li {
 	border: 0px solid red;
 	width: 33.3%;
-	height: 60px;
+	height: 100%;
 	line-height: 60px;
 	float: left;
 	position: relative;
@@ -344,7 +218,7 @@ a:hover .bg_image_sign_teacher {
 	padding: 0px;
 	position: absolute;
 	top: 10px;
-	left: 22px;
+	left: 19px;
 }
 
 .box_icon_opacity:hover {
@@ -364,7 +238,7 @@ a:hover .bg_image_sign_teacher {
 	padding: 0px;
 	position: absolute;
 	top: 12px;
-	left: 22px;
+	left: 20px;
 }
 
 .box_icon_add_opacity:hover {

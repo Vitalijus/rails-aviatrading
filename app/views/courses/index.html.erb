@@ -14,146 +14,91 @@
 
 </div>-->
 
+  <div class="banner_image_slider">
+    <%= image_tag "bg_image.jpg" %>
+  </div>
 
-<% if !signed_in? %>
+
   <div class="banner">
+    
     <div class="banner_box">
-      
+
       <div class="banner_box_logo">
-        <%= image_tag "wifi.png", width: 30 %>
+        <%= image_tag "wifi.png", width: 27 %>
       </div>
 
       <div class="banner_box_title">
         Learn online
       </div>
 
-      <!--<div class="banner_box_content">
-        <table>
-          <tr>
-            <td><%= image_tag "tick.png", width: 12 %></td>
-            <td>Convinient way of learning</td>
-          </tr>
-
-          <tr>
-            <td><%= image_tag "tick.png", width: 12 %></td>
-            <td>Find a native speaker</td>
-          </tr>
-
-          <tr>
-            <td><%= image_tag "tick.png", width: 12 %></td>
-            <td>Choice in prices</td>
-          </tr>
-          
-        </table>
-      </div>-->
     </div>
+
 
     <div class="banner_box">
 
       <div class="banner_box_logo">
-        <%= image_tag "user_face.png", width: 30 %>
+        <%= image_tag "user_face.png", width: 27 %>
       </div>
 
       <div class="banner_box_title">
         Private classes
       </div>
 
-      <!--<div class="banner_box_content">
-        <table>
-          <tr>
-            <td><%= image_tag "tick.png", width: 12 %></td>
-            <td>Effective way to improve skills</td>
-          </tr>
-
-          <tr>
-            <td><%= image_tag "tick.png", width: 12 %></td>
-            <td>Face-to-face classes</td>
-          </tr>
-
-          <tr>
-            <td><%= image_tag "tick.png", width: 12 %></td>
-            <td>Flexible schedule</td>
-          </tr>
-          
-        </table>
-      </div>-->
     </div>
+
 
     <div class="banner_box">
 
       <div class="banner_box_logo">
-        <%= image_tag "two_faces.png", width: 50 %>
+        <%= image_tag "two_faces.png", width: 45 %>
       </div>
 
       <div class="banner_box_title">
         Group classes
       </div>
 
-      <!--<div class="banner_box_content">
-        <table>
-          <tr>
-            <td><%= image_tag "tick.png", width: 12 %></td>
-            <td>Students from all over the world</td>
-          </tr>
-
-          <tr>
-            <td><%= image_tag "tick.png", width: 12 %></td>
-            <td>Only up to 5 students per class</td>
-          </tr>
-
-          <tr>
-            <td><%= image_tag "tick.png", width: 12 %></td>
-            <td>Schedule of upcoming classes</td>
-          </tr>
-          
-        </table>
-      </div>-->
     </div>
+
 
     <div class="banner_box">
 
       <div class="banner_box_logo">
-        <%= image_tag "book.png", width: 30 %>
+        <%= image_tag "book.png", width: 27 %>
       </div>
 
       <div class="banner_box_title">
         Teachers
       </div>
 
-      <!--<div class="banner_box_content">
-        <table>
-          <tr>
-            <td><%= image_tag "tick.png", width: 12 %></td>
-            <td>Teachers from all over the world</td>
-          </tr>
-
-          <tr>
-            <td><%= image_tag "tick.png", width: 12 %></td>
-            <td>Experienced in teaching</td>
-          </tr>
-
-          <tr>
-            <td><%= image_tag "tick.png", width: 12 %></td>
-            <td>Want to become a <%= link_to "teacher at FLS?", courses_path, data: { no_turbolink: true } %></td>
-          </tr>
-          
-        </table>
-      </div>-->
     </div>
+
 
     <div class="banner_box">
 
       <div class="banner_box_logo">
-        <%= image_tag "book.png", width: 30 %>
+        <%= image_tag "gift.png", width: 27 %>
       </div>
 
       <div class="banner_box_title">
-        Teachers
+        Free try
       </div>
+
+    </div>
+
+
+    <div class="banner_box">
+
+      <div class="banner_box_logo">
+        <%= image_tag "time.png", width: 27 %>
+      </div>
+
+      <div class="banner_box_title">
+        7-day money back
+      </div>
+      
     </div>
 
   </div>
-<% end %>
 
 
 
@@ -198,18 +143,18 @@
                 </tr>
 
                 <tr>  
-                  <td>Registration until:</td>
-                  <td><strong><%= course.registration_until %></strong></td>
+                  <td>Enroll until:</td>
+                  <td><strong><%= course.registration_until.to_formatted_s(:rfc822) %></strong></td>
                 </tr>
 
                 <tr>
-                  <td>Start:</td>
-                  <td><strong><%= course.course_start %></strong></td>
+                  <td>Class start:</td>
+                  <td><strong><%= course.course_start.to_formatted_s(:rfc822) %></strong></td>
                 </tr>
 
                 <tr>
-                  <td>End:</td>
-                  <td><strong><%= course.course_end %></strong></td>
+                  <td>Class end:</td>
+                  <td><strong><%= course.course_end.to_formatted_s(:rfc822) %></strong></td>
                 </tr>
                 
               </table>
