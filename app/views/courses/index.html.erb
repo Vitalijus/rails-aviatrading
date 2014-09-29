@@ -16,19 +16,18 @@
 
 
 <% if !signed_in? %>
-<div id="banner_wrapper">
   <div class="banner">
     <div class="banner_box">
       
       <div class="banner_box_logo">
-        <%= image_tag "wifi.png", width: 50 %>
+        <%= image_tag "wifi.png", width: 30 %>
       </div>
 
       <div class="banner_box_title">
-        Learn language online
+        Learn online
       </div>
 
-      <div class="banner_box_content">
+      <!--<div class="banner_box_content">
         <table>
           <tr>
             <td><%= image_tag "tick.png", width: 12 %></td>
@@ -46,20 +45,20 @@
           </tr>
           
         </table>
-      </div>
+      </div>-->
     </div>
 
     <div class="banner_box">
 
       <div class="banner_box_logo">
-        <%= image_tag "user_face.png", width: 50 %>
+        <%= image_tag "user_face.png", width: 30 %>
       </div>
 
       <div class="banner_box_title">
         Private classes
       </div>
 
-      <div class="banner_box_content">
+      <!--<div class="banner_box_content">
         <table>
           <tr>
             <td><%= image_tag "tick.png", width: 12 %></td>
@@ -77,20 +76,20 @@
           </tr>
           
         </table>
-      </div>
+      </div>-->
     </div>
 
     <div class="banner_box">
 
       <div class="banner_box_logo">
-        <%= image_tag "two_faces.png", width: 80 %>
+        <%= image_tag "two_faces.png", width: 50 %>
       </div>
 
       <div class="banner_box_title">
         Group classes
       </div>
 
-      <div class="banner_box_content">
+      <!--<div class="banner_box_content">
         <table>
           <tr>
             <td><%= image_tag "tick.png", width: 12 %></td>
@@ -108,20 +107,20 @@
           </tr>
           
         </table>
-      </div>
+      </div>-->
     </div>
 
-    <div class="banner_box_last">
+    <div class="banner_box">
 
       <div class="banner_box_logo">
-        <%= image_tag "book.png", width: 50 %>
+        <%= image_tag "book.png", width: 30 %>
       </div>
 
       <div class="banner_box_title">
-        Certified teachers
+        Teachers
       </div>
 
-      <div class="banner_box_content">
+      <!--<div class="banner_box_content">
         <table>
           <tr>
             <td><%= image_tag "tick.png", width: 12 %></td>
@@ -139,24 +138,33 @@
           </tr>
           
         </table>
+      </div>-->
+    </div>
+
+    <div class="banner_box">
+
+      <div class="banner_box_logo">
+        <%= image_tag "book.png", width: 30 %>
+      </div>
+
+      <div class="banner_box_title">
+        Teachers
       </div>
     </div>
 
   </div>
-
-</div>
 <% end %>
 
 
 
 <div id="masonry_container">
-    
-      <div class="stamp stamp1">
-        STAMP
-      </div>
 
+       <div class="stamp stamp1">
+        <div class="fb-like-box" data-href="https://www.facebook.com/FacebookDevelopers" data-width="255" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
+      </div>
+    
       <div class="stamp stamp2">
-        FACEBOOK
+        STAMP
       </div>
 
       <% @courses.each do |course| %>
@@ -172,9 +180,7 @@
               </div>
 
               <div class="box_teacher_name">
-                with <%= link_to edit_teacher_registration_path do %>
-                  <%= course.teacher.name %> <%= course.teacher.surname %>
-                <% end %>
+                with <%= course.teacher.name %> <%= course.teacher.surname %>
               </div>
   
             </div>

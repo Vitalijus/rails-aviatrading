@@ -1,6 +1,18 @@
 <div id="course_content_wrapper">
 
-	<div class="course_lesson_wrapper">
+	<div class="course_enroll_banner">
+		<div class="course_enroll_banner_icon">
+			<%= image_tag "tick2.png", width: 30 %>
+		</div>
+
+		<div class="course_enroll_banner_text">
+			<b>We guarantee:</b> 7-day money back.<br>
+			<b>Secure payment with:</b> Visa, MasterCard, American Express.<br>
+			<b>We guarantee:</b> 7-day money back.
+		</div>
+	</div>
+
+	<!--<div class="course_lesson_wrapper">
 
 		<div class="course_lesson_list">
 			Lessons
@@ -13,9 +25,71 @@
 				</div>
 			<% end %>
 		<% end %>
-	</div>
+	</div>-->
 
 	<div class="course_content">
+
+		<div class="course_content_title">
+			Course: <%= @course.language %> <%= @course.level %>
+		</div>
+
+		<div class="course_content_left">
+			<table>
+
+				<tr>
+			  		<td><strong>Price:</strong></td>
+			  		<td><%= @course.price %></td>
+			  	</tr>
+
+			  	<tr>
+			  		<td><strong>Level:</strong></td>
+			  		<td><%= @course.level %></td>
+				</tr>
+
+				<tr>
+			  		<td><strong>Language:</strong></td>
+			  		<td><%= @course.language %></td>
+			  	</tr>
+
+			  	<tr>
+			  		<td><strong>Duration:</strong></td>
+			  		<td><%= @course.duration %></td>
+			  	</tr>
+
+			  	<tr>
+			  		<td><strong>Course type:</strong></td>
+			 		<td><%= @course.course_type %></td>
+			 	</tr>
+
+			 	<tr>
+            		<td><strong>Description:</strong></td>
+			  		<td><%= @course.description %></td>
+				</tr>
+
+			</table>
+
+		</div>
+
+		<div class="course_content_right">
+			<%= image_tag "laptop.png", width: 350 %>
+		</div>
+		
+	</div>
+</div>
+
+
+	<div class="course_info_banner">
+		<div class="course_info_banner_icon">
+			<%= image_tag "info_i.png", width: 12 %>
+		</div>
+
+		<div class="course_info_banner_text">
+			<b>What you need:</b> internet connection, microphone and speaker, webcam (optional).
+		</div>
+	</div>
+
+
+	<!--<div class="course_content">
 	 	<%= image_tag "teacher.jpg", width: 695 %>
 		
 		<% if teacher_signed_in? %>
@@ -34,51 +108,99 @@
 			<% end %>
 		<% end %>
 		
-	</div>
+	</div>-->
+
+
+<div id="course_content_wrapper">
+
+	
+
+	<!--<div class="course_lesson_wrapper">
+
+		<div class="course_lesson_list">
+			Lessons
+		</div>
+	
+		<% @course.lessons.each do |lesson| %>
+			<%= link_to course_lesson_path(@course, lesson) do %>
+				<div class="course_lesson">
+					<%= lesson.title %>
+				</div>
+			<% end %>
+		<% end %>
+	</div>-->
 
 	<div class="course_content">
 
 		<div class="course_content_title">
-			<%= @course.language %> <%= @course.level %>
+			Teacher: <%= @course.teacher.name %> <%= @course.teacher.surname %>
 		</div>
 
 		<div class="course_content_left">
+			<table>
 
-			<p>
-			  <strong>Description:</strong>
-			  <%= @course.description %>
-			</p>
+				<tr>
+			  		<td><strong>Price:</strong></td>
+			  		<td><%= @course.price %></td>
+			  	</tr>
 
-			<p>
-			  <strong>Price:</strong>
-			  <%= @course.price %>
-			</p>
+			  	<tr>
+			  		<td><strong>Level:</strong></td>
+			  		<td><%= @course.level %></td>
+				</tr>
 
-			<p>
-			  <strong>Level:</strong>
-			  <%= @course.level %>
-			</p>
+				<tr>
+			  		<td><strong>Language:</strong></td>
+			  		<td><%= @course.language %></td>
+			  	</tr>
 
-			<p>
-			  <strong>Language:</strong>
-			  <%= @course.language %>
-			</p>
+			  	<tr>
+			  		<td><strong>Duration:</strong></td>
+			  		<td><%= @course.duration %></td>
+			  	</tr>
 
-			<p>
-			  <strong>Duration:</strong>
-			  <%= @course.duration %>
-			</p>
+			  	<tr>
+			  		<td><strong>Course type:</strong></td>
+			 		<td><%= @course.course_type %></td>
+			 	</tr>
 
-			<p>
-			  <strong>Course type:</strong>
-			  <%= @course.course_type %>
-			</p>
+			 	<tr>
+            		<td><strong>Description:</strong></td>
+			  		<td><%= @course.description %></td>
+				</tr>
+
+			</table>
+
 		</div>
 
 		<div class="course_content_right">
-			right
+			<%= image_tag "headset_man.jpg", width: 200 %>
 		</div>
 		
 	</div>
+</div>
+
+<div class="course_info_banner">
+	<div class="course_info_banner_icon">
+		<%= image_tag "info_i.png", width: 12 %>
+	</div>
+
+	<div class="course_info_banner_text">
+		<b>How to contact a teacher:</b> enroll to this course. By email you will receive contact details (skype, adobe connector, email etc.).
+	</div>
+</div>
+
+<div class="course_other_courses_by_teacher">
+	<div class="course_other_courses_by_teacher_title">
+		Other courses by <%= @course.teacher.name %> <%= @course.teacher.surname %>:
+	</div>
+</div>
+
+<div class="course_list_courses_by_teacher">
+	<% @courses_by_teacher = Course.find_all_by_teacher_id(@course.teacher.id) %>
+
+		<% @courses_by_teacher.each do |course| %>
+			<%= course.language %> <%= course.level %>
+		<% end %>
 
 </div>

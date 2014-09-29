@@ -129,14 +129,14 @@ h3 {
 }
 
 .header {
-	max-width: 1180px;
+	max-width: 920px;
 	margin: 0 auto;
 	height: 65px;
 	border: 0px solid red;
 }
 
 .header2 {
-	max-width: 1180px;
+	max-width: 920px;
 	margin: 0 auto;
 	height: 65px;
 	border: 0px solid red;
@@ -171,7 +171,7 @@ a .header_logo2 {
 	/*font-family: 'Alegreya Sans SC', sans-serif;*/
 	font-family: 'Josefin Sans', sans-serif;
 	float: left;
-	width: 400px;
+	width: 260px;
 }
 
 a .header_logo2 .webpage_title {
@@ -267,7 +267,7 @@ a .header_logo2 .webpage_title {
 
 .header_navigation2 img {
 	border: 0px solid red;
-	margin-left: 5px;
+
 }
 
 /*------------------*/
