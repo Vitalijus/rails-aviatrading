@@ -5,15 +5,19 @@
 /* BANNER IMAGE SLIDER */
 
 .banner_image_slider {
-	width: 920px;
+	width: 100%;
+	background: url("../assets/bg.jpg") repeat;
 	margin: auto;
-	height: 340px;
+	height: 500px;
 	background-color: #ffffff;
-	margin-top: 20px;
+	margin-top: 0px;
 	border: 0px solid #DFE0E4;
 	-webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
+    -webkit-box-shadow: 0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+	-moz-box-shadow:    0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+	box-shadow:         0px 0px 0px 0px rgba(150, 150, 150, 0.25);
 }
 
 
@@ -23,16 +27,19 @@
 /* BANNER */
 
 .banner {
-	border: 1px solid #DFE0E4;
+	border: 0px solid #DFE0E4;
 	background-color: #ffffff;
 	overflow: hidden;
 	margin: auto;
-	width: 920px;
+	width: 100%;
 	height: 65px;
-	margin-top: 20px;
+	margin-top: 00px;
 	-webkit-border-radius: 3px;
  	-moz-border-radius: 3px;
  	border-radius: 3px;	
+ 	-webkit-box-shadow: 0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+	-moz-box-shadow:    0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+	box-shadow:         0px 0px 0px 0px rgba(150, 150, 150, 0.25);
 }
 
 .banner_box {
@@ -77,26 +84,32 @@
  .stamp1 {
 	background-color: #F9FAFC;
 	position: absolute;
-	width: 224px;
+	width: 262px;
 	height: 350px;
 	right: 15px;
 	top: 275px;
 	margin-bottom: 10px;
-  	border: 1px solid #DFE0E4;
+  	border: 0px solid #DFE0E4;
+  	-webkit-box-shadow: 0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+	-moz-box-shadow:    0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+	box-shadow:         0px 0px 0px 1px rgba(150, 150, 150, 0.25);
 
 }
 
 .stamp2 {
 	background-color: #ffffff;
 	position: absolute;
-	width: 224px;
+	width: 262px;
 	height: 260px;
 	right: 15px;
 	margin-bottom: 10px;
  	-webkit-border-radius: 3px;
  	-moz-border-radius: 3px;
  	border-radius: 3px;
-  	border: 1px solid #DFE0E4;
+  	border: 0px solid #DFE0E4;
+  	-webkit-box-shadow: 0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+	-moz-box-shadow:    0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+	box-shadow:         0px 0px 0px 1px rgba(150, 150, 150, 0.25);
 
 }
 
@@ -110,22 +123,25 @@
   overflow: hidden;
   padding: 5px;
   margin-top: 16px;
-  max-width: 950px;
+  max-width: 1140px;
   min-width: 660px;
   position: relative;
 }
 
 .box {
-  margin: 0px 0px 10px 10px;
+  margin: 0px 10px 20px 10px;
   background-color: #ffffff;
-  width: 222px;
+  width: 262px;
   font-size: 12px;
   overflow: hidden;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  border: 1px solid #DFE0E4;
-  padding: 15px 15px 0 15px;
+  -webkit-box-shadow: 0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+  -moz-box-shadow:    0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+  box-shadow:         0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+  border: 0px solid #DFE0E4;
+  padding: 20px 20px 0px 20px;
   position: relative;
 }
 
@@ -134,7 +150,7 @@
 	/*text-align: center;*/
 	float: left;
 	font-size: 20px;
-	padding-bottom: 10px;
+	padding-bottom: 15px;
 	text-transform: lowercase;
 	border-bottom: 1px solid #eaeaeb;
 	font-family: 'Alegreya Sans SC', sans-serif;
@@ -180,7 +196,8 @@
 	color: #666666;
 	font-size: 11px;
 	border: 0px solid green;
-	padding-top: 5px;
+	padding-top: 10px;
+	padding-bottom: 5px;
 	width: 100%;
 	font-family: "Open Sans", helvetica, arial;
 }
@@ -191,34 +208,84 @@
 	padding-bottom: 5px;
 }
 
+.box_description {
+	padding: 0px 0 10px 0;
+	color: #555555;
+	line-height: 20px;
+	font-family: "Open Sans", helvetica, arial;
+	border: 0px solid red;
+}
+
+.box_button_wrapper {
+	border: 0px solid red;
+	width: 100%;
+	overflow: hidden;
+	height: 35px;
+	margin-bottom: 10px;
+
+}
+
+.box_button_enroll {
+	border: 1px solid #30C76A;
+	width: 100%;
+	color: #30C76A;
+	height: 35px;
+	text-align: center;
+	line-height: 35px;
+	font-size: 14px;
+	padding: 0 15px 0 15px;
+	font-family: 'Lato', sans-serif;
+	-webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
 .box_footer {
 	border-top: 1px solid #eaeaeb;
 	background-color: #ffffff;
 	overflow: hidden;
-	height: 48px;
+	height: 55px;
 }
 
 .box_footer ul {
 	border: 0px solid green;
 	text-align: center;
+	float: left;
 	height: 100%;
 }
 
 .box_footer li {
 	border: 0px solid red;
-	width: 33.3%;
-	height: 100%;
-	line-height: 60px;
+	width: 50%;
 	float: left;
 	position: relative;
+	padding: 15px 40px 0 0px;
+	/*height: 100%;
+	line-height: 50px;*/
+}
+
+.box_button_try {
+	border: 1px solid #30C76A;
+	float: right;
+	height: 35px;
+	line-height: 33px;
+	text-align: center;
+	font-size: 14px;
+	color: #30C76A;
+	padding: 0 20px 0 20px;
+	margin-top: 10px;
+	font-family: 'Lato', sans-serif;
+	-webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
 }
 
 .box_icon_opacity {
 	border: 0px solid red;
 	padding: 0px;
 	position: absolute;
-	top: 10px;
-	left: 19px;
+	top: 15px;
+	left: 0px;
 }
 
 .box_icon_opacity:hover {
@@ -237,8 +304,8 @@
 	border: 0px solid red;
 	padding: 0px;
 	position: absolute;
-	top: 12px;
-	left: 20px;
+	top: 10px;
+	left: 21px;
 }
 
 .box_icon_add_opacity:hover {
@@ -264,15 +331,14 @@
 	margin: auto;
 	margin-top: 20px;
 	overflow: hidden;
-
+	border: 0px solid red;
 }
 
 .course_content {
-	width: 100%;
+	width: 450px;
 	padding: 50px;
-	height: 350px;
 	border: 1px solid #DFE0E4;
-	float: right;
+	float: left;
 	background-color: #ffffff;
 	margin-bottom: 10px;
 	-webkit-border-radius: 3px;
@@ -281,29 +347,49 @@
 
 }
 
+.course_content_image {
+	width: 100%;
+	text-align: center;
+	margin: 0 0px 0 0px;
+	padding-top: 0px;
+	border: 0px solid red;
+}
+
+.course_content_image img {
+	border: 0px solid red;
+}
+
 .course_content_title {
 	border-bottom: 0px solid #DFE0E4;
 	padding: 0 0px 10px 0;
+	margin-top: 20px;
 	font-family: "Open Sans", helvetica, arial;
 	font-size: 30px;
 	color: #555555;
 }
 
 .course_content_left {
-	width: 55%;
-	float: left;
+	width: 100%;
 	padding: 0;
 	border: 0px solid red;
 	font-size: 13px;
 	font-family: "Open Sans", helvetica, arial;
 }
 
-.course_content_right {
-	width: 45%;
-	float: right;
-	margin: 0 0px 0 0px;
-	padding-top: 0px;
+.course_content_left table {
+	width: 100%;
 	border: 0px solid red;
+}
+
+.course_content_footer {
+	border: 0px solid red;
+	width: 100%;
+	overflow: hidden;
+	line-height: 25px;
+	padding: 20px 0 0 0;
+	font-size: 13px;
+	color: #777777;
+	font-family: "Open Sans", helvetica, arial;
 }
 
 /*ENROLL BANNER*/
@@ -337,9 +423,14 @@
 
 .course_enroll_banner_text {
 	border: 0px solid red;
-	float: left;
+	width: 776px;
+	text-align: center;
 	height: 100%;
-	padding: 10px 20px 10px 20px;
+	padding: 20px;
+	font-size: 20px;
+	float: left;
+	color: #444444;
+	font-family: 'Lato', sans-serif;
 }
 
 /*-----------------------------*/
@@ -499,9 +590,9 @@ a:hover .enroll_button {
 	margin-top: 20px;
 	background-color: #ffffff;
 	border: 0px solid red;
-	-moz-box-shadow:  0px 0px 2px #777777;
-    -webkit-box-shadow: 0px 0px 2px #777777;
-    box-shadow: 0px 0px 2px #777777;
+	-webkit-box-shadow: 0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+	-moz-box-shadow:    0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+	box-shadow:         0px 0px 0px 1px rgba(150, 150, 150, 0.25);
     -webkit-border-radius: 3px;
   	-moz-border-radius: 3px;
   	border-radius: 3px;
@@ -614,17 +705,17 @@ a:hover .enroll_button {
 /* TEACHER EDIT */
 
 .teacher_edit {
-	width: 960px;
+	width: 920px;
 	margin: auto;
 	margin-top: 20px;
 }
 
 .teacher_edit_left_sidebar_wrapper {
-	width: 300px;
+	width: 260px;
 	overflow: hidden;
-	-moz-box-shadow:  0px 0px 2px #777777;
-    -webkit-box-shadow: 0px 0px 2px #777777;
-    box-shadow: 0px 0px 2px #777777;
+	-webkit-box-shadow: 0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+	-moz-box-shadow:    0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+	box-shadow:         0px 0px 0px 1px rgba(150, 150, 150, 0.25);
     -webkit-border-radius: 3px;
   	-moz-border-radius: 3px;
   	border-radius: 3px;
@@ -645,9 +736,9 @@ a:hover .enroll_button {
 	float: right;
 	padding: 20px;
 	background-color: #ffffff;
-	-moz-box-shadow:  0px 0px 2px #777777;
-    -webkit-box-shadow: 0px 0px 2px #777777;
-    box-shadow: 0px 0px 2px #777777;
+	-webkit-box-shadow: 0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+	-moz-box-shadow:    0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+	box-shadow:         0px 0px 0px 1px rgba(150, 150, 150, 0.25);
     -webkit-border-radius: 3px;
   	-moz-border-radius: 3px;
   	border-radius: 3px;

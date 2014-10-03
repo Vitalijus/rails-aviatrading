@@ -1,5 +1,9 @@
 <h2>Log in</h2>
 
+<%= link_to new_teacher_session_path do %>
+      <li><%= image_tag "key.png", width: 20 %> Teacher</li>
+<% end %>
+
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div><%= f.label :email %><br />
   <%= f.email_field :email, autofocus: true %></div>

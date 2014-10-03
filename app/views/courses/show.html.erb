@@ -6,9 +6,11 @@
 		</div>
 
 		<div class="course_enroll_banner_text">
-			<b>We guarantee:</b> 7-day money back.<br>
-			<b>Secure payment with:</b> Visa, MasterCard, American Express.<br>
-			<b>We guarantee:</b> 7-day money back.
+			Enroll to a course or Arrange free trial lesson
+		</div>
+
+		<div class="course_enroll_banner_icon">
+			<%= image_tag "tick2.png", width: 30 %>
 		</div>
 	</div>
 
@@ -29,6 +31,10 @@
 
 	<div class="course_content">
 
+		<div class="course_content_image">
+			<%= image_tag "mix_device.png", width: 350 %>
+		</div>
+
 		<div class="course_content_title">
 			Course: <%= @course.language %> <%= @course.level %>
 		</div>
@@ -37,41 +43,46 @@
 			<table>
 
 				<tr>
-			  		<td><strong>Price:</strong></td>
-			  		<td><%= @course.price %></td>
-			  	</tr>
-
-			  	<tr>
-			  		<td><strong>Level:</strong></td>
-			  		<td><%= @course.level %></td>
-				</tr>
-
-				<tr>
-			  		<td><strong>Language:</strong></td>
-			  		<td><%= @course.language %></td>
-			  	</tr>
-
-			  	<tr>
-			  		<td><strong>Duration:</strong></td>
-			  		<td><%= @course.duration %></td>
-			  	</tr>
-
-			  	<tr>
 			  		<td><strong>Course type:</strong></td>
 			 		<td><%= @course.course_type %></td>
 			 	</tr>
 
 			 	<tr>
-            		<td><strong>Description:</strong></td>
-			  		<td><%= @course.description %></td>
+			  		<td><strong>Nr. of lessons:</strong></td>
+			  		<td><%= 6 %></td>
+			  	</tr>
+
+			 	<tr>
+			  		<td><strong>Length:</strong></td>
+			  		<td><%= @course.duration %></td>
+			  	</tr>
+
+				<tr>
+			  		<td><strong>Enroll until:</strong></td>
+			  		<td><%= @course.registration_until.to_formatted_s(:rfc822) %></td>
+			  	</tr>
+
+			  	<tr>
+			  		<td><strong>Class start:</strong></td>
+			  		<td><%= @course.course_start.to_formatted_s(:rfc822) %></td>
 				</tr>
+
+				<tr>
+			  		<td><strong>Class end:</strong></td>
+			  		<td><%= @course.course_end.to_formatted_s(:rfc822) %></td>
+			  	</tr>
+
+			  	
+
+
 
 			</table>
 
 		</div>
 
-		<div class="course_content_right">
-			<%= image_tag "laptop.png", width: 350 %>
+
+		<div class="course_content_footer">
+			<%= @course.description %>
 		</div>
 		
 	</div>

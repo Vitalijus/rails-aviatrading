@@ -148,7 +148,7 @@
 		<%= link_to root_url, data: { no_turbolink: true } do %>
 			<div class="header_logo2"> 
 				<div class="webpage_title">
-					Foreign Language School
+					<%= image_tag "quill.png", width: 50 %> Foreign Language School
 				</div>
 			</div>
 		<% end %>
@@ -161,12 +161,9 @@
 						<% end %>
 
 						<%= link_to new_student_session_path do %>
-						      <li><%= image_tag "key.png", width: 20 %> Student</li>
+						      <li>Login</li>
 						<% end %>
 
-						<%= link_to new_teacher_session_path do %>
-						      <li><%= image_tag "key.png", width: 20 %> Teacher</li>
-						<% end %>
 					<% end %>
 					
 

@@ -15,7 +15,7 @@
 </div>-->
 
   <div class="banner_image_slider">
-    <%= image_tag "bg_image.jpg" %>
+    <!--<%= image_tag "bg_image.jpg" %>-->
   </div>
 
 
@@ -159,6 +159,20 @@
                 
               </table>
 
+            <div class="box_description">
+              <%= course.description %>
+            </div>
+
+            <div class="box_button_wrapper">
+              <!--<div class="box_button_try">
+                Free try
+              </div>-->
+
+              <div class="box_button_enroll">
+                Enroll
+              </div>
+            </div>
+
             <div class="box_footer">
 
               <ul>
@@ -173,12 +187,12 @@
                     <%= image_tag "f_grey.png", width: 25, :class => "box_icon_opacity", :title => "share" %>
                     <%= image_tag "f_blue.png", width: 25 %>
                   </li>
-
-                  <li>
-                    <%= image_tag "add_blue.png", width: 23 %>
-                    <%= image_tag "add_grey.png", width: 23, :class => "box_icon_add_opacity", :title => "add to list" %>
-                  </li>
+                  
               </ul>
+
+              <div class="box_button_try">
+                Free try
+              </div>
             </div>
 
         </div>

@@ -168,10 +168,10 @@ a .header_logo .webpage_title {
 
 a .header_logo2 {
 	border: 0px solid red;
-	/*font-family: 'Alegreya Sans SC', sans-serif;*/
-	font-family: 'Josefin Sans', sans-serif;
+	font-family: 'Alegreya Sans SC', sans-serif;
+	/*font-family: 'Josefin Sans', sans-serif;*/
 	float: left;
-	width: 260px;
+	width: 350px;
 }
 
 a .header_logo2 .webpage_title {
