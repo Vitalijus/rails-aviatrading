@@ -147,8 +147,13 @@
 
 		<%= link_to root_url, data: { no_turbolink: true } do %>
 			<div class="header_logo2"> 
+
+				<div class="webpage_logo">
+					<%= image_tag "education.png", width: 35 %>
+				</div>
+
 				<div class="webpage_title">
-					<%= image_tag "quill.png", width: 50 %> Foreign Language School
+					Online Language School
 				</div>
 			</div>
 		<% end %>
@@ -156,12 +161,12 @@
   		<div class="header_navigation2">
 				<ul>
 					<% if !signed_in? %>
-						<%= link_to courses_path, data: { no_turbolink: true } do %>
+						<!--<%= link_to courses_path, data: { no_turbolink: true } do %>
 							<li>COURSES</li>
-						<% end %>
+						<% end %>-->
 
 						<%= link_to new_student_session_path do %>
-						      <li>Login</li>
+						      <li>SIGN UP</li>
 						<% end %>
 
 					<% end %>

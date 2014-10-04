@@ -111,20 +111,20 @@ h3 {
 	/*-webkit-box-shadow: 0px 1px 2px 0px rgba(100, 100, 100, 0.75);
 	-moz-box-shadow:    0px 1px 2px 0px rgba(100, 100, 100, 0.75);
 	box-shadow:         0px 1px 2px 0px rgba(100, 100, 100, 0.75);*/
-	border-bottom: 1px solid #cecfc0;
+	border-bottom: 0px solid #cecfc0;
 	position: absolute;
 	width: 100%;
 	top: 0;
 }
 
 #header_wrapper2 {
-	background-color: #2AA4CF;
+	background-color: #316A7E;
 	/*background:url("../assets/blur.png");*/
-	height: 50px;
+	height: 65px;
 	-webkit-box-shadow: 0px 0px 2px 0px rgba(100, 100, 100, 0.75);
 	-moz-box-shadow:    0px 0px 2px 0px rgba(100, 100, 100, 0.75);
 	box-shadow:         0px 1px 2px 0px rgba(100, 100, 100, 0.75);
-	border-bottom: 0px solid #cecfc0;
+	border: 0px solid red;
 	width: 100%;
 }
 
@@ -136,7 +136,7 @@ h3 {
 }
 
 .header2 {
-	max-width: 920px;
+	max-width: 1110px;
 	margin: 0 auto;
 	height: 65px;
 	border: 0px solid red;
@@ -168,17 +168,26 @@ a .header_logo .webpage_title {
 
 a .header_logo2 {
 	border: 0px solid red;
+	/*font-family: 'Josefin Sans', sans-serif;
+	font-family: 'Lato', sans-serif;*/
 	font-family: 'Alegreya Sans SC', sans-serif;
-	/*font-family: 'Josefin Sans', sans-serif;*/
 	float: left;
 	width: 350px;
+
 }
 
-a .header_logo2 .webpage_title {
-	border: 0px solid green;
+a .header_logo2 img {
+	border: 0px solid red;
 	float: left;
-	height: 50px;
-	line-height: 50px;
+	margin-top: 12px;
+	margin-right: 10px;
+}
+
+a .webpage_title {
+	border: 0px solid black;
+	float: left;
+	height: 65px;
+	line-height: 65px;
 	color: #ffffff;
 	/*text-shadow: 0px 1px 1px rgba(58, 58, 58, 1);*/
 	font-size: 25px;
@@ -231,23 +240,25 @@ a .header_logo2 .webpage_title {
 .header_navigation2 {
 	width: 60%;
 	float: right;
-	height: 50px;
+	height: 65px;
 	border: 0px solid yellow;
 }
 
 .header_navigation2 ul {
 	border: 0px solid red;
-	height: 50px;
+	height: 565px;
 	float: right;
-	line-height: 50px;
+	line-height: 65px;
 	font-size: 12px;
-	border-left: 1px solid #2593ba;
-	border-right: 1px solid #69bfdd;
+	border-left: 0px solid #2593ba;
+	border-right: 0px solid #69bfdd;
+	border-bottom: 0px solid #69bfdd;
 }
 
 .header_navigation2 li {
-	border-right: 1px solid #2593ba;
-  	border-left: 1px solid #69bfdd;
+	border-right: 0px solid #2593ba;
+  	border-left: 0px solid #69bfdd;
+  	border-bottom: 0px solid #2593ba;
 	float: left;
 	padding: 0 15px 0 15px;
 }
@@ -262,13 +273,13 @@ a .header_logo2 .webpage_title {
 }
 
 .header_navigation2 a:hover li {
-	background-color: #54b6d8;
+	background-color: #397B93;
 }
 
-.header_navigation2 img {
+/*.header_navigation2 img {
 	border: 0px solid red;
 
-}
+}*/
 
 /*------------------*/
 

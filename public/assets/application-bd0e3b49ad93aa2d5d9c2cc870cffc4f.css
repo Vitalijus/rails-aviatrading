@@ -1,0 +1,1238 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+
+ */
+
+
+html {
+	position: relative;
+    min-height: 100%;
+}
+
+ body {
+  background-color: #E9EAED;
+  font-family: 'Ubuntu', sans-serif;
+  color: #444444;   
+  margin: 0 0 80px; /* bottom = footer height */
+  /*height: 100%;*/
+}
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  border : 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 0;
+}
+
+h3 {
+  margin: 0;
+}
+
+/* HEADER LOGIN */
+
+.header_login_wrapper {
+	background-color: #ffffff;
+}
+
+.header_login {
+	background-color: #ffffff;
+	width: 1180px;
+	margin: auto;
+	height: 30px;
+	line-height: 30px;
+	border-bottom: 1px solid #eaeaeb;
+	font-size: 12px;
+	overflow: hidden;
+}
+
+.header_login_nav {
+	float: right;
+	border: 0px solid red;
+	width: 300px;
+	text-align: right;
+}
+
+.header_login_nav a {
+	color: #333333;
+	-webkit-transition: color 150ms linear;
+  	-moz-transition: color 150ms linear;
+  	-o-transition: color 150ms linear;
+  	-ms-transition: color 150ms linear;
+  	transition: color 150ms linear;
+}
+
+.header_login_nav a:hover {
+	color: #00AEEF;
+}
+
+.header_login_nav img {
+	border: 0px solid red;
+	margin-right: 5px;
+}
+
+/*--------------------------------------*/
+
+/* HEADER */
+
+#header_wrapper {
+	/*background-color: #ffffff;*/
+	/*background:url("../assets/blur.png");*/
+	height: 65px;
+	/*-webkit-box-shadow: 0px 1px 2px 0px rgba(100, 100, 100, 0.75);
+	-moz-box-shadow:    0px 1px 2px 0px rgba(100, 100, 100, 0.75);
+	box-shadow:         0px 1px 2px 0px rgba(100, 100, 100, 0.75);*/
+	border-bottom: 0px solid #cecfc0;
+	position: absolute;
+	width: 100%;
+	top: 0;
+}
+
+#header_wrapper2 {
+	background-color: #316A7E;
+	/*background:url("../assets/blur.png");*/
+	height: 65px;
+	-webkit-box-shadow: 0px 0px 2px 0px rgba(100, 100, 100, 0.75);
+	-moz-box-shadow:    0px 0px 2px 0px rgba(100, 100, 100, 0.75);
+	box-shadow:         0px 1px 2px 0px rgba(100, 100, 100, 0.75);
+	border: 0px solid red;
+	width: 100%;
+}
+
+.header {
+	max-width: 920px;
+	margin: 0 auto;
+	height: 65px;
+	border: 0px solid red;
+}
+
+.header2 {
+	max-width: 1110px;
+	margin: 0 auto;
+	height: 65px;
+	border: 0px solid red;
+}
+
+/* HEADER LOGO */
+
+a .header_logo {
+	border: 0px solid red;
+	/*font-family: 'Alegreya Sans SC', sans-serif;*/
+	font-family: 'Josefin Sans', sans-serif;
+	float: left;
+	width: 400px;
+}
+
+a .header_logo .webpage_title {
+	border: 0px solid green;
+	float: left;
+	height: 65px;
+	line-height: 65px;
+	color: #ffffff;
+	/*text-shadow: 0px 1px 1px rgba(58, 58, 58, 1);*/
+	font-size: 30px;
+}
+
+/*-------------------------------*/
+
+/* HEADER LOGO2 */
+
+a .header_logo2 {
+	border: 0px solid red;
+	/*font-family: 'Josefin Sans', sans-serif;
+	font-family: 'Lato', sans-serif;*/
+	font-family: 'Alegreya Sans SC', sans-serif;
+	float: left;
+	width: 350px;
+
+}
+
+a .header_logo2 img {
+	border: 0px solid red;
+	float: left;
+	margin-top: 12px;
+	margin-right: 10px;
+}
+
+a .webpage_title {
+	border: 0px solid black;
+	float: left;
+	height: 65px;
+	line-height: 65px;
+	color: #ffffff;
+	/*text-shadow: 0px 1px 1px rgba(58, 58, 58, 1);*/
+	font-size: 25px;
+
+}
+
+
+/*-------------------------*/
+
+/* HEADER NAVIGATION */
+
+.header_navigation {
+	width: 60%;
+	float: right;
+	height: 65px;
+	border: 0px solid yellow;
+}
+
+.header_navigation ul {
+	border: 0px solid red;
+	height: 65px;
+	float: right;
+	line-height: 65px;
+	font-size: 12px;
+}
+
+.header_navigation li {
+	border: 0px solid red;
+	float: left;
+	padding: 0 0px 0 20px;
+}
+
+.header_navigation a {
+	color: #ececec;
+	-webkit-transition: color 150ms linear;
+  	-moz-transition: color 150ms linear;
+  	-o-transition: color 150ms linear;
+  	-ms-transition: color 150ms linear;
+  	transition: color 150ms linear;
+}
+
+.header_navigation a:hover {
+	color: #00AEEF;
+}
+
+/*------------------*/
+
+/* HEADER NAVIGATION2 */
+
+.header_navigation2 {
+	width: 60%;
+	float: right;
+	height: 65px;
+	border: 0px solid yellow;
+}
+
+.header_navigation2 ul {
+	border: 0px solid red;
+	height: 565px;
+	float: right;
+	line-height: 65px;
+	font-size: 12px;
+	border-left: 0px solid #2593ba;
+	border-right: 0px solid #69bfdd;
+	border-bottom: 0px solid #69bfdd;
+}
+
+.header_navigation2 li {
+	border-right: 0px solid #2593ba;
+  	border-left: 0px solid #69bfdd;
+  	border-bottom: 0px solid #2593ba;
+	float: left;
+	padding: 0 15px 0 15px;
+}
+
+.header_navigation2 a li {
+	color: #ffffff;
+	-webkit-transition: background-color 250ms linear;
+  	-moz-transition: background-color 250ms linear;
+  	-o-transition: background-color 250ms linear;
+  	-ms-transition: background-color 250ms linear;
+  	transition: background-color 250ms linear;
+}
+
+.header_navigation2 a:hover li {
+	background-color: #397B93;
+}
+
+/*.header_navigation2 img {
+	border: 0px solid red;
+
+}*/
+
+/*------------------*/
+
+/* FOOTER */
+
+.footer {
+	position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 80px;
+    width: 100%;
+	border: 0px solid red;
+}
+
+.footer-left {
+	width: 48%;
+	position: absolute;
+	left: 0;
+	height: 35px;
+	border-bottom: 1px solid #b4b4b4;
+}
+
+.footer-image {
+	width: 30px;
+	position: absolute;
+	right: 0;
+	left: 0;
+	margin: 0 auto;
+	padding: 20px 0 20px 0;
+	border: 0px solid red;
+}
+
+.footer-right {
+	width: 48%;
+	position: absolute;
+	right: 0;
+	height: 35px;
+	border-bottom: 1px solid #b4b4b4;
+}
+/* BANNER IMAGE SLIDER */
+/* line 8, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.banner_image_wrapper {
+  width: 100%;
+  background: url("../assets/bg.jpg") repeat;
+  /*325f70 85% opacity*/
+  margin: auto;
+  height: 450px;
+  background-color: #ffffff;
+  margin-top: 0px;
+  border-top: 0px solid #2593ba;
+}
+
+/* line 18, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.banner_image {
+  border: 0px solid red;
+  width: 1120px;
+  margin: auto;
+  padding-top: 40px;
+  overflow: hidden;
+}
+
+/* line 26, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.banner_image_left {
+  width: 100%;
+  text-align: center;
+  float: left;
+  color: #ffffff;
+  font-family: "Open Sans", helvetica, arial;
+  font-size: 50px;
+  border: 0px solid red;
+}
+
+/* line 36, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.banner_image_left p {
+  font-size: 25px;
+  text-align: center;
+  margin-top: 10px;
+  border: 0px solid red;
+}
+
+/* line 43, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.banner_image_button {
+  width: 200px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 20px;
+  margin: auto;
+  margin-top: 60px;
+  background-color: #2BC265;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  font-family: 'Lato', sans-serif;
+}
+
+/* line 57, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.banner_image_right {
+  width: 50%;
+  text-align: center;
+  float: left;
+  border: 0px solid red;
+}
+
+/*-------------------------------------------*/
+/* BANNER */
+/* line 68, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.banner_wrapper {
+  border: 0px solid red;
+  background-color: #ffffff;
+  overflow: hidden;
+  margin: auto;
+  width: 100%;
+  height: 350px;
+  position: relative;
+}
+
+/* line 78, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.banner_box_wrapper {
+  margin: auto;
+  width: 1110px;
+  overflow: hidden;
+  border: 0px solid blue;
+}
+
+/* line 85, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.banner_box {
+  float: left;
+  height: 100%;
+  padding: 40px 33px 0 33px;
+  border: 0px solid red;
+}
+
+/* line 92, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.banner_box_text {
+  float: left;
+  height: 100%;
+  padding: 0;
+  border: 1px solid red;
+}
+
+/* line 99, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.banner_box_title {
+  /*font-family: 'Alegreya Sans SC', sans-serif;*/
+  float: left;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  height: 100%;
+  line-height: 65px;
+  font-size: 12px;
+  font-weight: bold;
+  border: 0px solid red;
+  color: #555555;
+}
+
+/* line 112, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.banner_box_logo {
+  float: left;
+  border: 0px solid blue;
+}
+
+/* line 117, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.banner_box_logo img {
+  border: 0px solid green;
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 10px;
+}
+
+/* line 126, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.banner_triangle {
+  left: 49%;
+  right: 51%;
+  top: -1px;
+  position: absolute;
+}
+
+/*--------------------------------------*/
+/* STAMP */
+/* line 138, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.stamp1 {
+  background-color: #F9FAFC;
+  position: absolute;
+  width: 262px;
+  height: 350px;
+  right: 15px;
+  top: 275px;
+  margin-bottom: 10px;
+  border: 0px solid #DFE0E4;
+  -webkit-box-shadow: 0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+  -moz-box-shadow: 0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+  box-shadow: 0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+}
+
+/* line 153, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.stamp2 {
+  background-color: #ffffff;
+  position: absolute;
+  width: 262px;
+  height: 260px;
+  right: 15px;
+  margin-bottom: 10px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  border: 0px solid #DFE0E4;
+  -webkit-box-shadow: 0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+  -moz-box-shadow: 0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+  box-shadow: 0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+}
+
+/*---------------------------*/
+/* MASONRY */
+/* line 174, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+#masonry_container {
+  border: 0px solid red;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 5px;
+  margin-top: 16px;
+  max-width: 1140px;
+  min-width: 660px;
+  position: relative;
+}
+
+/* line 185, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.box {
+  margin: 0px 10px 20px 10px;
+  background-color: #ffffff;
+  width: 262px;
+  font-size: 12px;
+  overflow: hidden;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+  -moz-box-shadow: 0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+  box-shadow: 0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+  border: 0px solid #DFE0E4;
+  padding: 20px 20px 0px 20px;
+  position: relative;
+}
+
+/* line 202, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.box_course_title {
+  width: 100%;
+  /*text-align: center;*/
+  float: left;
+  font-size: 20px;
+  padding-bottom: 15px;
+  text-transform: lowercase;
+  border-bottom: 1px solid #eaeaeb;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  background-color: #ffffff;
+}
+
+/* line 214, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.box_course_title a {
+  color: #346fa1;
+  -webkit-transition: color 150ms linear;
+  -moz-transition: color 150ms linear;
+  -o-transition: color 150ms linear;
+  -ms-transition: color 150ms linear;
+  transition: color 150ms linear;
+}
+
+/* line 223, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.box_course_title a:hover {
+  color: #428BCA;
+}
+
+/* line 227, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.box_teacher_name {
+  text-transform: none;
+  border: 0px solid red;
+  width: auto;
+  font-family: 'Lato', sans-serif;
+  font-size: 10px;
+  color: #999999;
+}
+
+/* line 236, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.box_course_price {
+  width: 50px;
+  border: 0px solid #eaeaeb;
+  float: right;
+  text-align: center;
+  color: #999999;
+  font-size: 14px;
+  background-color: #ffffff;
+  padding-top: 4px;
+  font-family: 'Lato', sans-serif;
+}
+
+/* line 249, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.box table {
+  color: #666666;
+  font-size: 11px;
+  border: 0px solid green;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  width: 100%;
+  font-family: "Open Sans", helvetica, arial;
+}
+
+/* line 259, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.box table tr td {
+  padding-left: 0px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+}
+
+/* line 265, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.box_description {
+  padding: 0px 0 10px 0;
+  color: #555555;
+  line-height: 20px;
+  font-family: "Open Sans", helvetica, arial;
+  border: 0px solid red;
+}
+
+/* line 273, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.box_button_wrapper {
+  border: 0px solid red;
+  width: 100%;
+  overflow: hidden;
+  height: 35px;
+  margin-bottom: 10px;
+}
+
+/* line 282, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.box_button_enroll {
+  border: 1px solid #30C76A;
+  width: 100%;
+  color: #30C76A;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+  font-size: 14px;
+  padding: 0 15px 0 15px;
+  font-family: 'Lato', sans-serif;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+/* line 297, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.box_footer {
+  border-top: 1px solid #eaeaeb;
+  background-color: #ffffff;
+  overflow: hidden;
+  height: 55px;
+}
+
+/* line 304, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.box_footer ul {
+  border: 0px solid green;
+  text-align: center;
+  float: left;
+  height: 100%;
+}
+
+/* line 311, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.box_footer li {
+  border: 0px solid red;
+  width: 50%;
+  float: left;
+  position: relative;
+  padding: 15px 40px 0 0px;
+  /*height: 100%;
+  line-height: 50px;*/
+}
+
+/* line 321, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.box_button_try {
+  border: 1px solid #30C76A;
+  float: right;
+  height: 35px;
+  line-height: 33px;
+  text-align: center;
+  font-size: 14px;
+  color: #30C76A;
+  padding: 0 20px 0 20px;
+  margin-top: 10px;
+  font-family: 'Lato', sans-serif;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+/* line 337, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.box_icon_opacity {
+  border: 0px solid red;
+  padding: 0px;
+  position: absolute;
+  top: 15px;
+  left: 0px;
+}
+
+/* line 345, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.box_icon_opacity:hover {
+  opacity: 0;
+}
+
+/* line 349, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.box_icon_opacity {
+  -webkit-transition: opacity 250ms linear;
+  -moz-transition: opacity 250ms linear;
+  -o-transition: opacity 250ms linear;
+  -ms-transition: opacity 250ms linear;
+  transition: opacity 250ms linear;
+}
+
+/* line 357, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.box_icon_add_opacity {
+  border: 0px solid red;
+  padding: 0px;
+  position: absolute;
+  top: 10px;
+  left: 21px;
+}
+
+/* line 365, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.box_icon_add_opacity:hover {
+  opacity: 0;
+}
+
+/* line 369, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.box_icon_add_opacity {
+  -webkit-transition: opacity 250ms linear;
+  -moz-transition: opacity 250ms linear;
+  -o-transition: opacity 250ms linear;
+  -ms-transition: opacity 250ms linear;
+  transition: opacity 250ms linear;
+}
+
+/* ---------------------*/
+/* COURSE */
+/* line 383, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+#course_content_wrapper {
+  width: 920px;
+  margin: auto;
+  margin-top: 20px;
+  overflow: hidden;
+  border: 0px solid red;
+}
+
+/* line 391, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.course_content {
+  width: 450px;
+  padding: 50px;
+  border: 1px solid #DFE0E4;
+  float: left;
+  background-color: #ffffff;
+  margin-bottom: 10px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+/* line 404, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.course_content_image {
+  width: 100%;
+  text-align: center;
+  margin: 0 0px 0 0px;
+  padding-top: 0px;
+  border: 0px solid red;
+}
+
+/* line 412, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.course_content_image img {
+  border: 0px solid red;
+}
+
+/* line 416, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.course_content_title {
+  border-bottom: 0px solid #DFE0E4;
+  padding: 0 0px 10px 0;
+  margin-top: 20px;
+  font-family: "Open Sans", helvetica, arial;
+  font-size: 30px;
+  color: #555555;
+}
+
+/* line 425, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.course_content_left {
+  width: 100%;
+  padding: 0;
+  border: 0px solid red;
+  font-size: 13px;
+  font-family: "Open Sans", helvetica, arial;
+}
+
+/* line 433, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.course_content_left table {
+  width: 100%;
+  border: 0px solid red;
+}
+
+/* line 438, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.course_content_footer {
+  border: 0px solid red;
+  width: 100%;
+  overflow: hidden;
+  line-height: 25px;
+  padding: 20px 0 0 0;
+  font-size: 13px;
+  color: #777777;
+  font-family: "Open Sans", helvetica, arial;
+}
+
+/*ENROLL BANNER*/
+/* line 451, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.course_enroll_banner {
+  width: 920px;
+  margin: auto;
+  height: 65px;
+  background-color: #ffffff;
+  margin-bottom: 20px;
+  border: 1px solid #DFE0E4;
+  font-size: 12px;
+  color: #666666;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+/* line 465, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.course_enroll_banner_icon {
+  border-right: 1px solid #DFE0E4;
+  float: left;
+  height: 100%;
+  padding: 0 20px 0 20px;
+  background-color: #51E98C;
+}
+
+/* line 473, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.course_enroll_banner_icon img {
+  border: 0px solid red;
+  padding-top: 15px;
+}
+
+/* line 478, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.course_enroll_banner_text {
+  border: 0px solid red;
+  width: 776px;
+  text-align: center;
+  height: 100%;
+  padding: 20px;
+  font-size: 20px;
+  float: left;
+  color: #444444;
+  font-family: 'Lato', sans-serif;
+}
+
+/*-----------------------------*/
+/*INFO BANNER*/
+/* line 494, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.course_info_banner {
+  width: 920px;
+  margin: auto;
+  height: 50px;
+  background-color: #ffffff;
+  margin-bottom: 20px;
+  border: 1px solid #DFE0E4;
+  font-size: 12px;
+  color: #666666;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+/* line 508, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.course_info_banner_icon {
+  border-right: 1px solid #DFE0E4;
+  float: left;
+  height: 100%;
+  padding: 0 20px 0 20px;
+  background-color: #e1827e;
+}
+
+/* line 516, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.course_info_banner_icon img {
+  border: 0px solid red;
+  padding-top: 10px;
+}
+
+/* line 521, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.course_info_banner_text {
+  border: 0px solid red;
+  float: left;
+  height: 100%;
+  line-height: 48px;
+  padding: 0 10px 0 10px;
+}
+
+/*----------------------------*/
+/* line 531, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.course_other_courses_by_teacher {
+  width: 920px;
+  margin: auto;
+  background-color: #ffffff;
+  margin-bottom: 10px;
+  border: 1px solid #DFE0E4;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+/* line 542, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.course_other_courses_by_teacher_title {
+  font-family: 'Lato', sans-serif;
+  font-size: 25px;
+  color: #555555;
+  padding: 20px;
+}
+
+/* line 549, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.course_list_courses_by_teacher {
+  width: 960px;
+  margin: auto;
+  border: 1px solid #DFE0E4;
+}
+
+/*.course_lesson_wrapper {
+	width: 250px;
+	float: left;
+	overflow: hidden;
+	border: 1px solid #DFE0E4;
+	-webkit-border-radius: 3px;
+  	-moz-border-radius: 3px;
+  	border-radius: 3px;
+}
+
+.course_lesson_list {
+	height: 60px;
+	border-bottom: 1px solid #DFE0E4;
+	background-color: #F6F7F8;
+	color: #888888;
+	font-size: 16px;
+	line-height: 60px;
+	padding: 0 10px 0 10px;
+}
+
+.course_lesson {
+	height: 50px;
+	line-height: 50px;
+	border-top: 0px solid #ffffff;
+	border-bottom: 1px solid #DFE0E4;
+	background-color: #ffffff;
+	font-family: 'Roboto', sans-serif;
+	font-size: 13px;
+	padding: 0px 10px 0px 10px;
+}
+
+a .course_lesson {
+	color: #222222;
+	-webkit-transition: background-color 150ms linear;
+  	-moz-transition: background-color 150ms linear;
+  	-o-transition: background-color 150ms linear;
+  	-ms-transition: background-color 150ms linear;
+  	transition: background-color 150ms linear;
+}
+
+a:hover .course_lesson {
+	background-color: #F6F7F8;
+}*/
+/* line 598, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.enroll_button {
+  border: 0px solid red;
+  width: auto;
+  padding: 0 10px 0 10px;
+  height: 50px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  text-align: center;
+  line-height: 50px;
+  color: white;
+  -moz-box-shadow: 0px 0px 2px #777777;
+  -webkit-box-shadow: 0px 0px 2px #777777;
+  box-shadow: 0px 0px 2px #777777;
+  text-shadow: 2px 2px 2px #464646;
+}
+
+/* line 615, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+a .enroll_button {
+  background: #00aeef;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #00aeef 0%, #009cd7 50%, #00aeef 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #00aeef), color-stop(50%, #009cd7), color-stop(100%, #00aeef));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #00aeef 0%, #009cd7 50%, #00aeef 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #00aeef 0%, #009cd7 50%, #00aeef 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #00aeef 0%, #009cd7 50%, #00aeef 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #00aeef 0%, #009cd7 50%, #00aeef 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00aeef', endColorstr='#00aeef',GradientType=0 );
+  /* IE6-9 */
+}
+
+/* line 626, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+a:hover .enroll_button {
+  background: #009cd7;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #009cd7 0%, #00aeef 50%, #009cd7 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #009cd7), color-stop(50%, #00aeef), color-stop(100%, #009cd7));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #009cd7 0%, #00aeef 50%, #009cd7 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #009cd7 0%, #00aeef 50%, #009cd7 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #009cd7 0%, #00aeef 50%, #009cd7 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #009cd7 0%, #00aeef 50%, #009cd7 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#009cd7', endColorstr='#009cd7',GradientType=0 );
+  /* IE6-9 */
+}
+
+/*---------------------------------*/
+/* NEW COURSE */
+/* line 641, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.new_course_wrapper {
+  width: 600px;
+  margin: auto;
+  margin-top: 20px;
+  background-color: #ffffff;
+  border: 0px solid red;
+  -webkit-box-shadow: 0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+  -moz-box-shadow: 0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+  box-shadow: 0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+/* line 655, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.new_course_title {
+  border: 0px solid red;
+  font-family: 'Lato', sans-serif;
+  font-size: 25px;
+  padding: 20px;
+}
+
+/* line 662, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.new_course_form {
+  border: 0px solid red;
+  padding: 0px 20px 20px 20px;
+  font-size: 12px;
+}
+
+/* line 668, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.new_course_area {
+  width: 100%;
+  padding: 10px;
+  height: 90px;
+  color: #555555;
+  margin-bottom: 10px;
+  margin-top: 2px;
+  border: 1px solid #cecfc0;
+}
+
+/* line 678, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.new_course_field input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-top: 2px;
+  color: #555555;
+  border: 1px solid #cecfc0;
+}
+
+/* line 687, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.new_course_field select {
+  -webkit-appearance: none;
+  /*Removes default chrome and safari style*/
+  -moz-appearance: none;
+  /*Removes default style Firefox*/
+  width: 100%;
+  background-color: #ffffff;
+  border: 1px solid #cecfc0;
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-top: 2px;
+  font-size: 12px;
+  background: url("dropdown.png") no-repeat;
+  background-position: 98% 13px;
+  /*Position of the background-image*/
+  text-indent: 0.01px;
+  /* Removes default arrow from firefox*/
+  text-overflow: "";
+  /*Removes default arrow from firefox*/
+}
+
+/* line 703, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.new_course_field label {
+  color: #555555;
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  border: 0px solid #cecfc0;
+}
+
+/* line 710, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.new_course_field_date select {
+  -webkit-appearance: none;
+  /*Removes default chrome and safari style*/
+  -moz-appearance: none;
+  /*Removes default style Firefox*/
+  background-color: #ffffff;
+  border: 1px solid #cecfc0;
+  padding: 10px 30px 10px 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  margin-top: 2px;
+  font-size: 12px;
+  background: url("dropdown.png") no-repeat;
+  background-position: 85% 13px;
+  /*Position of the background-image*/
+  text-indent: 0.01px;
+  /* Removes default arrow from firefox*/
+  text-overflow: "";
+  /*Removes default arrow from firefox*/
+}
+
+/* line 726, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.new_course_create_button {
+  border: 1px solid #cecfc0;
+  text-align: center;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  font-family: "Open Sans", helvetica, arial;
+  background-color: #3AC162;
+  cursor: pointer;
+  -webkit-transition: background-color 150ms linear;
+  -moz-transition: background-color 150ms linear;
+  -o-transition: background-color 150ms linear;
+  -ms-transition: background-color 150ms linear;
+  transition: background-color 150ms linear;
+}
+
+/* line 745, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.new_course_create_button:hover {
+  background-color: #5FCF80;
+}
+
+/*.new_course_field {
+    overflow:hidden;
+    width:350px;
+    margin-left:35px;
+    background: url("images/arrow_left.png") no-repeat #fff 319px 2px;
+     dropdown_arrow.png is a 31x28 image 
+}*/
+/* ------------------------------ */
+/* TEACHER EDIT */
+/* line 761, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.teacher_edit {
+  width: 920px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+/* line 767, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.teacher_edit_left_sidebar_wrapper {
+  width: 260px;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+  -moz-box-shadow: 0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+  box-shadow: 0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  float: left;
+}
+
+/* line 779, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.teacher_edit_left_sidebar {
+  width: 300px;
+  float: left;
+  border-bottom: 1px solid #cecfc0;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+/* line 788, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.teacher_edit_right_sidebar {
+  width: 640px;
+  float: right;
+  padding: 20px;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+  -moz-box-shadow: 0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+  box-shadow: 0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+/* line 801, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.teacher_edit_right_sidebar input {
+  width: 100%;
+  border: 1px solid #cecfc0;
+  padding: 10px 30px 10px 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  font-size: 12px;
+}
+
+/* line 810, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.teacher_edit_right_sidebar label {
+  color: #555555;
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  border: 0px solid #cecfc0;
+}
+
+/* line 817, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.teacher_edit_right_sidebar_title {
+  padding: 0 0 20px 0;
+  width: 100%;
+  border: 0px solid red;
+  font-family: 'Lato', sans-serif;
+  font-size: 25px;
+}
+
+/* line 825, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.teacher_edit_right_sidebar_button {
+  margin-top: 10px;
+  background-color: #3AC162;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  border: 1px solid #cecfc0;
+  font-family: "Open Sans", helvetica, arial;
+  background-color: #3AC162;
+  cursor: pointer;
+}
+
+/* line 837, /home/vitalijus/rails/school/app/assets/stylesheets/courses.css.scss */
+.teacher_edit_right_sidebar_cancel {
+  margin-top: 10px;
+  border: 0px solid red;
+}
+
+/* ------------------------------ */
