@@ -6,7 +6,7 @@
 
 .banner_image_wrapper {
 	width: 100%;
-	background: url("../assets/bg.jpg") repeat; /*325f70 85% opacity*/
+	background: url("../assets/bg_stamped.jpg") repeat; /*325f70 85% opacity*/
 	margin: auto;
 	height: 450px;
 	background-color: #ffffff;
@@ -67,10 +67,8 @@
 .banner_wrapper {
 	border: 0px solid red;
 	background-color: #ffffff;
-	overflow: hidden;
 	margin: auto;
 	width: 100%;
-	height: 350px;
 	position: relative;
 }
 
@@ -81,45 +79,30 @@
 	border: 0px solid blue;
 }
 
-.banner_box {
-	float: left;	
-	height: 100%;
-	padding: 40px 33px 0 33px;
-	border: 0px solid red;
-}
-
-.banner_box_text {
-	float: left;	
-	height: 100%;
-	padding: 0;
-	border: 1px solid red;
-}
-
-.banner_box_title {
-	/*font-family: 'Alegreya Sans SC', sans-serif;*/
+.banner_box ul {
 	float: left;
-	font-family: 'Lato', sans-serif;
+	width: 185px;
+	padding: 40px 10px 0 10px;
+	margin-bottom: 55px;
 	text-align: center;
-	height: 100%;
-	line-height: 65px;
-	font-size: 12px;
-	font-weight: bold;
-	border: 0px solid red;
-	color: #555555;
+	border: 0px solid black;
 }
 
-.banner_box_logo {
-	float: left;
-	border: 0px solid blue;
-}
-
-.banner_box_logo img {
+.banner_box li {
+	padding: 15px 0 0 0;
+	font-family: 'Lato', sans-serif;
+	font-size: 20px;
+	color: #2AA4CF;
 	border: 0px solid green;
-	display: block;
-    margin: auto;  
-    margin-top: 20px;
-    margin-left: 20px;
-    margin-right: 10px;
+}
+
+.banner_box li p {
+	margin: 0px 0 0 0;
+	font-size: 14px;
+	font-family: "Open Sans", helvetica, arial;
+	color: #777777;
+	line-height: 25px;
+	border: 0px solid green;
 }
 
 .banner_triangle {
