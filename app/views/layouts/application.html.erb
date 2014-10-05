@@ -160,6 +160,19 @@
 
   		<div class="header_navigation2">
 				<ul>
+
+					<%= link_to new_student_session_path do %>
+					      <li>WHY OLS?</li>
+					<% end %>
+
+					<%= link_to new_student_session_path do %>
+					      <li>HOW IT WORKS?</li>
+					<% end %>
+
+					<%= link_to new_student_session_path do %>
+					      <li>CONTACT</li>
+					<% end %>
+
 					<% if !signed_in? %>
 						<!--<%= link_to courses_path, data: { no_turbolink: true } do %>
 							<li>COURSES</li>
@@ -213,7 +226,7 @@
         </div>
 
         <div class="footer-image">
-          <%= image_tag "rails.png", data: {pin_no_hover: "true"}, width: 30 %>
+          <%= image_tag "footer_logo.png", width: 30 %>
         </div>
 
         <div class="footer-right">

@@ -14,6 +14,8 @@
 
 </div>-->
 
+<% if !signed_in? %>
+
   <div class="banner_image_wrapper">
     <div class="banner_image">
       <div class="banner_image_left">
@@ -45,7 +47,7 @@
 
       <div class="banner_box">
         <ul>
-          <li><%= image_tag "wifi_round.png", width: 132 %></li>
+          <li><%= image_tag "wifi_round.png", width: 100 %></li>
           <li>Learn online</li>
           <li><p>Live classes via conferencing platform (Adobe Connect, Skype etc.)</p></li>
         </ul>
@@ -54,7 +56,7 @@
 
       <div class="banner_box">
         <ul>
-          <li><%= image_tag "user_private.png", width: 132 %></li>
+          <li><%= image_tag "user_private.png", width: 100 %></li>
           <li>Private Classes</li>
           <li><p>The most effective way to improve your language skills</p></li>
         </ul>
@@ -63,7 +65,7 @@
 
       <div class="banner_box">
         <ul>
-          <li><%= image_tag "user_group.png", width: 132 %></li>
+          <li><%= image_tag "user_group.png", width: 100 %></li>
           <li>Group Classes</li>
           <li><p>Students from all over the world, typically no more than 5 students per class </p></li>
         </ul>
@@ -72,7 +74,7 @@
 
       <div class="banner_box">
         <ul>
-          <li><%= image_tag "teacher.png", width: 132 %></li>
+          <li><%= image_tag "teacher.png", width: 100 %></li>
           <li>Real Teachers</li>
           <li><p>Experienced teachers from all over the world</p></li>
         </ul>
@@ -81,7 +83,7 @@
 
       <div class="banner_box">
         <ul>
-          <li><%= image_tag "free_try.png", width: 132 %></li>
+          <li><%= image_tag "free_try.png", width: 100 %></li>
           <li>Free Try</li>
           <li><p>Make free lesson before you enroll to a course</p></li>
         </ul>
@@ -90,7 +92,7 @@
 
       <div class="banner_box">
         <ul>
-          <li><%= image_tag "money.png", width: 132 %></li>
+          <li><%= image_tag "money.png", width: 100 %></li>
           <li>7-day money back</li>
           <li><p>All courses come with a 7-day money back guarantee </p></li>
         </ul>
@@ -100,7 +102,7 @@
 
   </div>
 
-
+<% end %>
 
 <div id="masonry_container">
 
@@ -128,6 +130,10 @@
                 with <%= course.teacher.name %> <%= course.teacher.surname %>
               </div>
   
+            </div>
+
+            <div class="box_description">
+              <%= course.description %>
             </div>
 
               <table>
@@ -159,26 +165,13 @@
                 
               </table>
 
-            <div class="box_description">
-              <%= course.description %>
-            </div>
 
-            <div class="box_button_wrapper">
-              <!--<div class="box_button_try">
-                Free try
-              </div>-->
-
-              <div class="box_button_enroll">
-                Enroll
-              </div>
-            </div>
-
-            <div class="box_footer">
+            <!--<div class="box_footer">
 
               <ul>
-                <!--<li><%= link_to 'Edit', edit_course_path(course) %></li>
+                <li><%= link_to 'Edit', edit_course_path(course) %></li>
                 <li><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></li>-->
-                  <li>
+                  <!--<li>
                     <%= image_tag "tw_grey.png", width: 25, :class => "box_icon_opacity", :title => "share" %>
                     <%= image_tag "tw_blue.png", width: 25 %>
                   </li>
@@ -190,8 +183,20 @@
                   
               </ul>
 
+            </div>-->
+
+            <div class="box_button_wrapper">
+
+              <div class="box_button_icon">
+                <%= image_tag "button_icon.png", width: 60 %>
+              </div>
+
               <div class="box_button_try">
-                Free try
+                FREE TRY
+              </div>
+
+              <div class="box_button_enroll">
+                ENROLL
               </div>
             </div>
 
