@@ -14,25 +14,46 @@
 
 </div>-->
 
+<script>
+function show() { 
+    if(document.getElementById('benefits').style.display=='none') { 
+        document.getElementById('benefits').style.display='block'; 
+    } 
+    return false;
+} 
+function hide() { 
+    if(document.getElementById('benefits').style.display=='block') { 
+        document.getElementById('benefits').style.display='none'; 
+    } 
+    return false;
+}
+</script>
+
+
+
 <% if !signed_in? %>
 
-  <div class="banner_image_wrapper">
-    <div class="banner_image">
-      <div class="banner_image_left">
+  <div class="display_wrapper">
+      <div class="display_phrase">
         Re-think Language Learning
         <p>Find language course you like, enroll or first try it out for free </p>
-
-          <div class="banner_image_button">
-            Log in
-          </div>
-        <!--<p>Find language course you like</p>
-        <p>Enroll to this course</p>
-        <p>Or try it out for free by sending request to a teacher</p>-->
       </div>
 
-      <!--<div class="banner_image_right">
-        <%= image_tag "tablet.png", width: 400 %>
-      </div>-->
+
+      <div id="display_login_wrapper">
+        
+        <%= link_to new_student_session_path do %>
+          <div id="display_login_button_student">
+            Student's Log In
+          </div>
+        <% end %>
+
+        <%= link_to new_teacher_session_path do %>
+          <div id="display_login_button_tutor">
+            Tutor's Log In
+          </div>
+        <% end %>
+
     </div>
   </div>
 
@@ -165,6 +186,8 @@
                 
               </table>
 
+                         
+
 
             <!--<div class="box_footer">
 
@@ -191,15 +214,38 @@
                 <%= image_tag "button_icon.png", width: 60 %>
               </div>
 
-              <div class="box_button_try">
-                FREE TRY
-              </div>
+          <a href="#1" name="1" onclick="return show();">  
+            <div class="box_button_try">
+              FREE TRY
+            </div> 
+          </a> 
+           
+              <div id="benefits" style="display:none;">
+              
+                <%= form_for [course, course.trials.build] do |f| %>
+                      <%= f.label :name %><br/>
+                      <%= f.text_field :name %>
 
+                      <p><%= f.submit "Add comment" %></p>
+                    <% end %>
+                
+                <div id="display_popup_close">
+                  <a onclick="return hide();">click here</a>
+                </div> 
+              </div>
+            
+              
+              
+
+            <%= link_to new_course_order_path(course) do %>
               <div class="box_button_enroll">
                 ENROLL
               </div>
+            <% end %>
             </div>
 
         </div>
       <% end %>
     </div>
+
+         

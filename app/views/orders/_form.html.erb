@@ -1,3 +1,5 @@
+<div id="order_wrapper">
+
 <%= form_for([@course, @order]) do |f| %>
   <% if @order.errors.any? %>
     <div id="error_explanation">
@@ -11,7 +13,7 @@
     </div>
   <% end %>
 
-  <%= @course.title %>
+  <%= @course.language %> <%= @course.level %>
 
   <div class="pay-with-card"> 
 
@@ -45,5 +47,4 @@
   </div>
   <% end %>
 
-
-
+</div>

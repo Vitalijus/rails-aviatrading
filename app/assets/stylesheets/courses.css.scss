@@ -4,60 +4,76 @@
 
 /* BANNER IMAGE SLIDER */
 
-.banner_image_wrapper {
+.display_wrapper {
 	width: 100%;
 	background: url("../assets/bg_stamped.jpg") repeat; /*325f70 85% opacity*/
 	margin: auto;
 	height: 450px;
 	background-color: #ffffff;
-	margin-top: 0px;
-	border-top: 0px solid #2593ba;
-}
-
-.banner_image {
 	border: 0px solid red;
-	width: 1120px;
-	margin: auto;
-	padding-top: 40px;
-	overflow: hidden;
 }
 
-.banner_image_left {
+.display_phrase {
 	width: 100%;
 	text-align: center;
-	float:left;
 	color: #ffffff;
 	font-family: "Open Sans", helvetica, arial;
 	font-size: 50px;
-	border: 0px solid red;
+	padding-top: 40px;
+	border: 0px solid blue;
 }
 
-.banner_image_left p {
+.display_phrase p {
 	font-size: 25px;
 	text-align: center;
 	margin-top: 10px;
 	border: 0px solid red;
 }
 
-.banner_image_button {
+#display_login_wrapper {
+	border: 0px solid red;
+	width: 450px;
+	overflow: hidden;
+	margin: auto;
+	margin-top: 60px;
+}
+
+#display_login_button_tutor {
 	width: 200px;
 	height: 50px;
 	line-height: 50px;
 	font-size: 20px;
-	margin: auto;
-	margin-top: 60px;
+	float: right;
+	text-align: center;
 	background-color: #2BC265;
 	-webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
     font-family: 'Lato', sans-serif;
+    border: 0px solid red;
 }
 
-.banner_image_right {
-	width: 50%;
+a #display_login_button_tutor {
+	color: #ffffff;
+}
+
+#display_login_button_student {
+	width: 200px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 20px;
+	float: left;
 	text-align: center;
-	float:left;
-	border: 0px solid red;
+	background-color: #2BC265;
+	-webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    font-family: 'Lato', sans-serif;
+    border: 0px solid red;
+}
+
+a #display_login_button_student {
+	color: #ffffff;
 }
 
 /*-------------------------------------------*/
@@ -126,6 +142,9 @@
 	top: 275px;
 	margin-bottom: 10px;
   	border: 0px solid #DFE0E4;
+  	-webkit-border-radius: 3px;
+ 	-moz-border-radius: 3px;
+ 	border-radius: 3px;
   	-webkit-box-shadow: 0px 0px 0px 1px rgba(150, 150, 150, 0.25);
 	-moz-box-shadow:    0px 0px 0px 1px rgba(150, 150, 150, 0.25);
 	box-shadow:         0px 0px 0px 1px rgba(150, 150, 150, 0.25);
@@ -259,7 +278,7 @@
 .box_button_wrapper {
 	border: 0px solid red;
 	width: 100%;
-	height: 35px;
+	height: 40px;
 	margin-bottom: 0px;
 	position: relative;
 
@@ -295,8 +314,37 @@
 	color: #ffffff;
 	padding: 0 20px 0 25px;
 	font-family: 'Lato', sans-serif;
-
 }
+
+#benefits {
+	border: 0px solid red;
+	width: 350px;
+	height: 200px;
+	padding: 20px;
+	font-size: 14px;
+	background-color: #E9EAED;
+	color: #444444;
+	position: absolute;
+	top: 50px;
+	right: -75px;
+	z-index: 9999;
+	-webkit-border-radius: 3px;
+ 	-moz-border-radius: 3px;
+ 	border-radius: 5px;
+ 	-webkit-box-shadow: 0px 0px 2px 2px rgba(100, 100, 100, 0.75);
+	-moz-box-shadow:    0px 0px 2px 2px rgba(100, 100, 100, 0.75);
+	box-shadow:         0px 0px 2px 2px rgba(100, 100, 100, 0.75);
+}
+
+#display_popup_close a {
+	right: 0;
+	top: 0;
+	position: absolute;
+	color: #444444;
+	cursor: pointer;
+	border: 1px solid red;
+}
+
 
 .box_footer {
 	border-top: 1px solid #eaeaeb;

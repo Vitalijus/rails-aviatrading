@@ -2,13 +2,13 @@ School::Application.routes.draw do
 
   root 'courses#index'
   
-
   devise_for :students
   devise_for :teachers
   
   resources :courses do
     resources :orders
     resources :lessons
+    resources :trials, only: [:create]
   end
 
 
