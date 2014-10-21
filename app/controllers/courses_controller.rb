@@ -5,6 +5,7 @@ class CoursesController < ApplicationController
   # GET /courses.json
   def index
     @courses = Course.order("created_at DESC")
+    @trial = Trial.new
   end
 
   # GET /courses/1

@@ -1,0 +1,28 @@
+<div id="trial_wrapper">
+	<div id="trial_box_header">
+		Ask <%= @course.teacher.name %> <%= @course.teacher.surname %> for Free Trial Lesson
+	</div>
+
+	<div id="trial_box_info">
+		Tutor: <%= @course.teacher.name %> <%= @course.teacher.surname %>
+	</div>
+
+
+	<div id="trial_box_form">
+	  <%= form_for([@course, @trial]) do |f| %>
+
+		<div class="trial_box_field">    
+		    <%= f.label :name %><br/>
+		    <%= f.text_field :name %>
+	    </div>
+
+	    <div class="trial_box_field">
+		    <%= f.label :email %><br/>
+		    <%= f.text_field :email %>
+		</div>
+
+	    	<%= f.submit "ASK", :class=> "trial_box_button"%>
+	  <% end %>
+	  </div>
+	
+</div>

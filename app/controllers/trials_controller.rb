@@ -1,11 +1,14 @@
 class TrialsController < ApplicationController
 	before_filter :load_course
 
+	def new
+		@trial = @course.trials.new
+	end
 
 	def create
 		@trial = @course.trials.build(trial_params)
 		@trial.save
-		redirect_to :back
+		redirect_to courses_path
 	end
 
 	private

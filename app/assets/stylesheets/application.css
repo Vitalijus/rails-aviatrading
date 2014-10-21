@@ -15,6 +15,7 @@
 html {
 	position: relative;
     min-height: 100%;
+    top: 60px;
 }
 
  body {
@@ -120,25 +121,28 @@ h3 {
 #header_wrapper2 {
 	background-color: #316A7E;
 	/*background:url("../assets/blur.png");*/
-	height: 65px;
-	-webkit-box-shadow: 0px 0px 2px 0px rgba(100, 100, 100, 0.75);
+	height: 60px;
+	/*-webkit-box-shadow: 0px 0px 2px 0px rgba(100, 100, 100, 0.75);
 	-moz-box-shadow:    0px 0px 2px 0px rgba(100, 100, 100, 0.75);
-	box-shadow:         0px 1px 2px 0px rgba(100, 100, 100, 0.75);
+	box-shadow:         0px 1px 2px 0px rgba(100, 100, 100, 0.75);*/
 	border: 0px solid red;
+	position: fixed;
+	top: 0;
+	z-index: 100;
 	width: 100%;
 }
 
 .header {
 	max-width: 920px;
 	margin: 0 auto;
-	height: 65px;
+	height: 60px;
 	border: 0px solid red;
 }
 
 .header2 {
 	max-width: 1110px;
 	margin: 0 auto;
-	height: 65px;
+	height: 60px;
 	border: 0px solid red;
 }
 
@@ -155,8 +159,8 @@ a .header_logo {
 a .header_logo .webpage_title {
 	border: 0px solid green;
 	float: left;
-	height: 65px;
-	line-height: 65px;
+	height: 60px;
+	line-height: 60px;
 	color: #ffffff;
 	/*text-shadow: 0px 1px 1px rgba(58, 58, 58, 1);*/
 	font-size: 30px;
@@ -179,18 +183,18 @@ a .header_logo2 {
 a .header_logo2 img {
 	border: 0px solid red;
 	float: left;
-	margin-top: 12px;
+	margin-top: 14px;
 	margin-right: 10px;
 }
 
 a .webpage_title {
 	border: 0px solid black;
 	float: left;
-	height: 65px;
-	line-height: 65px;
+	height: 60px;
+	line-height: 60px;
 	color: #ffffff;
 	/*text-shadow: 0px 1px 1px rgba(58, 58, 58, 1);*/
-	font-size: 25px;
+	font-size: 22px;
 
 }
 
@@ -240,7 +244,7 @@ a .webpage_title {
 .header_navigation2 {
 	width: 60%;
 	float: right;
-	height: 65px;
+	height: 60px;
 	border: 0px solid yellow;
 }
 
@@ -248,7 +252,7 @@ a .webpage_title {
 	border: 0px solid red;
 	height: 565px;
 	float: right;
-	line-height: 65px;
+	line-height: 60px;
 	font-size: 12px;
 	border-left: 0px solid #2593ba;
 	border-right: 0px solid #69bfdd;
@@ -275,11 +279,6 @@ a .webpage_title {
 .header_navigation2 a:hover li {
 	background-color: #397B93;
 }
-
-/*.header_navigation2 img {
-	border: 0px solid red;
-
-}*/
 
 /*------------------*/
 

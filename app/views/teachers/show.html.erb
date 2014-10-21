@@ -1,0 +1,5 @@
+	<%= @teacher.name %>
+
+	<% @teacher.courses.each do |course| %>
+		<%= course.language %> <%= course.level %>
+	<% end %>

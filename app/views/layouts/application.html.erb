@@ -24,124 +24,10 @@
 	  js = d.createElement(s); js.id = id;
 	  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&appId=178872632300191&version=v2.0";
 	  fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));</script>
+	}(document, 'script', 'facebook-jssdk'));
+	</script>
 
-<!--<% if !signed_in? %>
-
-<div id="bg_image">
-
-	<div id="header_wrapper">
-	<div class="header">
-
-		<%= link_to root_url, data: { no_turbolink: true } do %>
-			<div class="header_logo"> 
-				<div class="webpage_title">
-					Foreign Language School
-				</div>
-			</div>
-		<% end %>
-
-  		<div class="header_navigation">
-				<ul>
-					<li><%= link_to courses_path, data: { no_turbolink: true } do %>
-						HOME
-						<% end %>
-					</li>
-
-					<% if student_signed_in? %>
-
-				  		<li><%= link_to edit_student_registration_path do %>
-				  			DASHBOARD
-				  		<% end %>
-						</li>
-
-					<% end %>
-
-					<% if teacher_signed_in? %>
-
-						<li><%= link_to new_course_path do %>
-								NEW COURSE
-							<% end %>
-						</li>
-
-				  		<li><%= link_to edit_teacher_registration_path do %>
-				  			DASHBOARD
-				  		<% end %>
-						</li>
-
-					<% end %>
-
-				</ul>
-			</div>
-	</div>
-</div>
-
-  <div class="bg_image_text">
-
-    <div class="bg_image_left">
-      Learn foreign language online<br/>
-      <span>How it works?</span><br/>
-
-    <div class="bg_steps">
-    	<table>
-    		<tr>
-    			<td><%= image_tag "arrow.png", width: 18 %></td> 
-    			<td>Find a language course</td>
-    		</tr>
-
-    		<tr>
-	      		<td><%= image_tag "arrow.png", width: 18 %></td>
-	      		<td>Enroll to this course</td>
-	      	</tr>
-
-	      	<tr>
-	      		<td><%= image_tag "arrow.png", width: 18 %></td>
-	      		<td>Teacher will call you</td>
-	      	</tr>
-      	</table>
-	</div>
-    </div>
-
-    <%= link_to new_student_session_path do %>
-	    <div class="bg_image_sign_student">
-	      <%= image_tag "key.png", width: 30 %> Student 
-	    </div>
-	<% end %>
-
-    <%= link_to new_teacher_session_path do %>
-	    <div class="bg_image_sign_teacher">
-	      <%= image_tag "key.png", width: 30 %> Teacher
-	    </div>
-	<% end %>
-
-    <div class="bg_image_right">
-      <%= image_tag "tablet.png", width: 500 %>
-    </div>
-
-  </div>
-</div>
-<% end %>-->
-
-
-<!--<div class="header_login_wrapper">
-	<div class="header_login">
-		<div class="header_login_nav">
-
-			<%= image_tag "lock.png", width: 12 %>
-			  <% if student_signed_in? %>
-			    <%= link_to "Sign out", destroy_student_session_path, :method => :delete %>
-			  		
-			  		<% elsif teacher_signed_in? %>
-			  			<%= link_to "Sign out", destroy_teacher_session_path, :method => :delete %>
-
-			  				<% else %>
-			    				<%= link_to "Student", new_student_session_path %> | <%= link_to "Teacher", new_teacher_session_path %>
-			  <% end %>
-		</div>
-	</div>
-</div>-->
-
-
+<header>
 <div id="header_wrapper2">
 	<div class="header2">
 
@@ -149,7 +35,7 @@
 			<div class="header_logo2"> 
 
 				<div class="webpage_logo">
-					<%= image_tag "education.png", width: 35 %>
+					<%= image_tag "education.png", width: 30 %>
 				</div>
 
 				<div class="webpage_title">
@@ -160,64 +46,73 @@
 
   		<div class="header_navigation2">
 				<ul>
-
-					<%= link_to new_student_session_path do %>
-					      <li>WHY OLS?</li>
-					<% end %>
-
-					<%= link_to new_student_session_path do %>
-					      <li>HOW IT WORKS?</li>
-					<% end %>
-
-					<%= link_to new_student_session_path do %>
-					      <li>CONTACT</li>
-					<% end %>
-
 					<% if !signed_in? %>
-						<!--<%= link_to courses_path, data: { no_turbolink: true } do %>
-							<li>COURSES</li>
-						<% end %>-->
+						<%= link_to new_student_session_path do %>
+						      <li>WHY OLS?</li>
+						<% end %>
+
+						<%= link_to new_student_session_path do %>
+						      <li>HOW IT WORKS?</li>
+						<% end %>
+
+						<%= link_to new_student_session_path do %>
+						      <li>CONTACT</li>
+						<% end %>
 
 						<%= link_to new_student_registration_path do %>
 						      <li>SIGN UP</li>
 						<% end %>
-
 					<% end %>
-					
 
-					<% if student_signed_in? %>
-				  		<%= link_to edit_student_registration_path do %>
-				  			<li>DASHBOARD</li>
-				  		<% end %>
-
-				  	<%= link_to destroy_student_session_path, :method => :delete do %>
-					  		<li><%= image_tag "key.png", width: 25 %></li>
-					  	<% end %>
-					<% end %>
 
 
 					<% if teacher_signed_in? %>
+						<%= link_to courses_path, data: { no_turbolink: true } do %>
+							<li>COURSES</li>
+						<% end %>
 
 						<%= link_to new_course_path do %>
 							<li>NEW COURSE</li>
 						<% end %>
-						
 
-				  		<%= link_to edit_teacher_registration_path do %>
+						<%= link_to teacher_path(current_teacher) do %>
+							<li>DASHBOARD</li>
+						<% end %>
+					
+						<%= link_to edit_teacher_registration_path do %>
+							<li>SETTINGS</li>
+						<% end %>
+
+						<%= link_to destroy_teacher_session_path, :method => :delete do %>
+			  				<li><%= image_tag "locked.png", width: 15 %></li>
+			  			<% end %>
+					<% end %>
+					
+
+					<% if student_signed_in? %>
+						<%= link_to courses_path, data: { no_turbolink: true } do %>
+							<li>COURSES</li>
+						<% end %>
+
+				  		<%= link_to edit_student_registration_path do %>
 				  			<li>DASHBOARD</li>
 				  		<% end %>
 
-				  		<%= link_to destroy_teacher_session_path, :method => :delete do %>
-			  				<li><%= image_tag "key.png", width: 25 %></li>
-			  			<% end %>
+				  		<%= link_to edit_student_registration_path do %>
+							<li>SETTINGS</li>
+						<% end %>
 
-			  		<% end %>
+				  		<%= link_to destroy_student_session_path, :method => :delete do %>
+					  		<li><%= image_tag "locked.png", width: 15 %></li>
+					  	<% end %>
+					<% end %>
 
 				</ul>
 			</div>
 
 	</div>
 </div>
+</header>
 
 <%= yield %>
 
@@ -250,6 +145,7 @@
 
 			});
 		</script>
+
 
  <!-- JQUERY -->   
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

@@ -1,4 +1,7 @@
 <div id="order_wrapper">
+  <div id="order_box_header">
+     <%= @course.language %> <%= @course.level %> with <%= @course.teacher.name %> <%= @course.teacher.surname %>
+  </div>
 
 <%= form_for([@course, @order]) do |f| %>
   <% if @order.errors.any? %>
@@ -13,36 +16,40 @@
     </div>
   <% end %>
 
-  <%= @course.language %> <%= @course.level %>
+  <div id="order_box_info">
+    test
+  </div>
 
-  <div class="pay-with-card"> 
+  <div id="order_box_payment_form"> 
 
     <%= f.hidden_field :stripe_card_token %>   
 
-    <div class="field">
-      <%= text_field_tag :card_number, nil, name: nil, placeholder: "Credit Card Number" %>
+    <div class="order_box_field">
+      <%= f.label :card_number %><br>
+      <%= text_field_tag :card_number, nil, name: nil, placeholder: "XXXX XXXX XXXX XXXX" %>
     </div>
 
-    <div class="field">
-      <%= text_field_tag :card_code, nil, name: nil, placeholder: "3 Digits Security Code on Card (CVV)" %>
+    <div class="order_box_field">
+      <%= f.label :card_code, "3 Digits Security Code on Card (CVV)" %><br>
+      <%= text_field_tag :card_code, nil, name: nil, placeholder: "XXX" %>
     </div>
 
-    <div class="field">
+    <div class="order_box_field">
       <%= label_tag :card_month, "Card Expiration" %></br>
       <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month"} %>
       <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year"} %>
     </div>
 
-  <div class="field">
+  <div class="order_box_field">
     <%= f.label :name_on_card %><br>
-    <%= f.text_field :name_on_card %>
+    <%= f.text_field :name_on_card, placeholder: "Xxxx Xxxxxxx" %>
   </div>
 
 <div id="stripe_error">
     <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
   </div>
-    <div class="button-wrapper">
-      <%= f.submit "CONTINUE", :class => "pay-button" %>
+    <div id="order_box_button">
+      <%= f.submit ["ENROLL", @course.price,"€"], :class => "pay_button" %>
     </div>
   </div>
   <% end %>

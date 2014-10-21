@@ -14,23 +14,6 @@
 
 </div>-->
 
-<script>
-function show() { 
-    if(document.getElementById('benefits').style.display=='none') { 
-        document.getElementById('benefits').style.display='block'; 
-    } 
-    return false;
-} 
-function hide() { 
-    if(document.getElementById('benefits').style.display=='block') { 
-        document.getElementById('benefits').style.display='none'; 
-    } 
-    return false;
-}
-</script>
-
-
-
 <% if !signed_in? %>
 
   <div class="display_wrapper">
@@ -57,7 +40,7 @@ function hide() {
     </div>
   </div>
 
-
+<div id="parallax_container">
   <div class="banner_wrapper">
 
     <div class="banner_triangle">
@@ -147,9 +130,11 @@ function hide() {
                 <%= course.price %>€
               </div>
 
-              <div class="box_teacher_name">
-                with <%= course.teacher.name %> <%= course.teacher.surname %>
-              </div>
+              <%= link_to course.teacher do %>
+                <div class="box_teacher_name">
+                  with <%= course.teacher.name %> <%= course.teacher.surname %>
+                </div>
+              <% end %>
   
             </div>
 
@@ -189,12 +174,12 @@ function hide() {
                          
 
 
-            <!--<div class="box_footer">
+            <div class="box_footer">
 
               <ul>
-                <li><%= link_to 'Edit', edit_course_path(course) %></li>
+                <!--<li><%= link_to 'Edit', edit_course_path(course) %></li>
                 <li><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></li>-->
-                  <!--<li>
+                  <li>
                     <%= image_tag "tw_grey.png", width: 25, :class => "box_icon_opacity", :title => "share" %>
                     <%= image_tag "tw_blue.png", width: 25 %>
                   </li>
@@ -206,7 +191,7 @@ function hide() {
                   
               </ul>
 
-            </div>-->
+            </div>
 
             <div class="box_button_wrapper">
 
@@ -214,26 +199,33 @@ function hide() {
                 <%= image_tag "button_icon.png", width: 60 %>
               </div>
 
-          <a href="#1" name="1" onclick="return show();">  
+          
+          <%= link_to new_course_trial_path(course) do %>
             <div class="box_button_try">
               FREE TRY
             </div> 
-          </a> 
-           
+          <% end %>
+
+            
+            
+
+            <!--<%= form_for ([course, course.trials.build]) do |f| %>
+          <a href="#1" name="1" onclick="return show();">  </a> 
+
               <div id="benefits" style="display:none;">
-              
-                <%= form_for [course, course.trials.build] do |f| %>
+                
                       <%= f.label :name %><br/>
                       <%= f.text_field :name %>
 
                       <p><%= f.submit "Add comment" %></p>
-                    <% end %>
+                      <%= course.price %>€
+                    
                 
                 <div id="display_popup_close">
                   <a onclick="return hide();">click here</a>
                 </div> 
               </div>
-            
+            <% end %>-->
               
               
 
@@ -247,5 +239,6 @@ function hide() {
         </div>
       <% end %>
     </div>
+  </div>
 
          

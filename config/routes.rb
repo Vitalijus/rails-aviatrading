@@ -1,14 +1,19 @@
 School::Application.routes.draw do
 
   root 'courses#index'
+  #get "teachers/tutor", path: "tutor"
   
   devise_for :students
-  devise_for :teachers
+  devise_for :teachers #do
+    #get :tutor, on: :collection
+  #end
+
+  resources :teachers
   
   resources :courses do
     resources :orders
     resources :lessons
-    resources :trials, only: [:create]
+    resources :trials, only: [:create, :new]
   end
 
 
