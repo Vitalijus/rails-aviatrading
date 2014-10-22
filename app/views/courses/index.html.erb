@@ -111,4 +111,6 @@
 <%= render "masonry" %>
   </div>
 
-         
+<div class="digg_pagination" data-no-turbolink>
+  <%= will_paginate @courses, :page_links => false %>
+</div>

@@ -28,11 +28,11 @@
 	</script>
 
 <header>
-<div id="header_wrapper2">
-	<div class="header2">
+<div id="header_wrapper">
+	<div class="header">
 
 		<%= link_to root_url, data: { no_turbolink: true } do %>
-			<div class="header_logo2"> 
+			<div class="header_logo"> 
 
 				<div class="webpage_logo">
 					<%= image_tag "education.png", width: 30 %>
@@ -44,7 +44,7 @@
 			</div>
 		<% end %>
 
-  		<div class="header_navigation2">
+  		<div class="header_navigation">
 				<ul>
 					<% if !signed_in? %>
 						<%= link_to new_student_session_path do %>

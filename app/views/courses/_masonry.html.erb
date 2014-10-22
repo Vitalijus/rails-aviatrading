@@ -1,11 +1,23 @@
 <div id="masonry_container">
 
        <div class="stamp stamp1">
-        <div class="fb-like-box" data-href="https://www.facebook.com/FacebookDevelopers" data-width="255" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
+        <div class="fb-like-box" data-href="https://www.facebook.com/FacebookDevelopers" data-width="250" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
       </div>
     
       <div class="stamp stamp2">
-        STAMP
+
+      <div id="stamp_header">
+        find courses
+      </div>
+
+        <%= search_form_for @q do |f| %>
+
+          <%= f.select :language_cont, ['German', 'English', 'Lithuanian'], :prompt => 'Choose language' %>
+
+          <%= f.select :level_cont, ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'], :prompt => 'Choose language level' %>
+
+          <%= f.submit :class => "search_button" %>
+        <% end %>
       </div>
 
       <% @courses.each do |course| %>

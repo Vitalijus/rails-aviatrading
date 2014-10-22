@@ -59,72 +59,11 @@ h3 {
   margin: 0;
 }
 
-/* HEADER LOGIN */
-
-.header_login_wrapper {
-	background-color: #ffffff;
-}
-
-.header_login {
-	background-color: #ffffff;
-	width: 1180px;
-	margin: auto;
-	height: 30px;
-	line-height: 30px;
-	border-bottom: 1px solid #eaeaeb;
-	font-size: 12px;
-	overflow: hidden;
-}
-
-.header_login_nav {
-	float: right;
-	border: 0px solid red;
-	width: 300px;
-	text-align: right;
-}
-
-.header_login_nav a {
-	color: #333333;
-	-webkit-transition: color 150ms linear;
-  	-moz-transition: color 150ms linear;
-  	-o-transition: color 150ms linear;
-  	-ms-transition: color 150ms linear;
-  	transition: color 150ms linear;
-}
-
-.header_login_nav a:hover {
-	color: #00AEEF;
-}
-
-.header_login_nav img {
-	border: 0px solid red;
-	margin-right: 5px;
-}
-
-/*--------------------------------------*/
-
 /* HEADER */
 
 #header_wrapper {
-	/*background-color: #ffffff;*/
-	/*background:url("../assets/blur.png");*/
-	height: 65px;
-	/*-webkit-box-shadow: 0px 1px 2px 0px rgba(100, 100, 100, 0.75);
-	-moz-box-shadow:    0px 1px 2px 0px rgba(100, 100, 100, 0.75);
-	box-shadow:         0px 1px 2px 0px rgba(100, 100, 100, 0.75);*/
-	border-bottom: 0px solid #cecfc0;
-	position: absolute;
-	width: 100%;
-	top: 0;
-}
-
-#header_wrapper2 {
 	background-color: #316A7E;
-	/*background:url("../assets/blur.png");*/
 	height: 60px;
-	/*-webkit-box-shadow: 0px 0px 2px 0px rgba(100, 100, 100, 0.75);
-	-moz-box-shadow:    0px 0px 2px 0px rgba(100, 100, 100, 0.75);
-	box-shadow:         0px 1px 2px 0px rgba(100, 100, 100, 0.75);*/
 	border: 0px solid red;
 	position: fixed;
 	top: 0;
@@ -133,44 +72,17 @@ h3 {
 }
 
 .header {
-	max-width: 920px;
-	margin: 0 auto;
-	height: 60px;
-	border: 0px solid red;
-}
-
-.header2 {
 	max-width: 1110px;
 	margin: 0 auto;
 	height: 60px;
 	border: 0px solid red;
 }
 
+/*-------------------------*/
+
 /* HEADER LOGO */
 
 a .header_logo {
-	border: 0px solid red;
-	/*font-family: 'Alegreya Sans SC', sans-serif;*/
-	font-family: 'Josefin Sans', sans-serif;
-	float: left;
-	width: 400px;
-}
-
-a .header_logo .webpage_title {
-	border: 0px solid green;
-	float: left;
-	height: 60px;
-	line-height: 60px;
-	color: #ffffff;
-	/*text-shadow: 0px 1px 1px rgba(58, 58, 58, 1);*/
-	font-size: 30px;
-}
-
-/*-------------------------------*/
-
-/* HEADER LOGO2 */
-
-a .header_logo2 {
 	border: 0px solid red;
 	/*font-family: 'Josefin Sans', sans-serif;
 	font-family: 'Lato', sans-serif;*/
@@ -180,7 +92,7 @@ a .header_logo2 {
 
 }
 
-a .header_logo2 img {
+a .header_logo img {
 	border: 0px solid red;
 	float: left;
 	margin-top: 14px;
@@ -198,59 +110,20 @@ a .webpage_title {
 
 }
 
-
 /*-------------------------*/
+
 
 /* HEADER NAVIGATION */
 
 .header_navigation {
 	width: 60%;
 	float: right;
-	height: 65px;
+	height: 60px;
 	border: 0px solid yellow;
 }
 
 .header_navigation ul {
 	border: 0px solid red;
-	height: 65px;
-	float: right;
-	line-height: 65px;
-	font-size: 12px;
-}
-
-.header_navigation li {
-	border: 0px solid red;
-	float: left;
-	padding: 0 0px 0 20px;
-}
-
-.header_navigation a {
-	color: #ececec;
-	-webkit-transition: color 150ms linear;
-  	-moz-transition: color 150ms linear;
-  	-o-transition: color 150ms linear;
-  	-ms-transition: color 150ms linear;
-  	transition: color 150ms linear;
-}
-
-.header_navigation a:hover {
-	color: #00AEEF;
-}
-
-/*------------------*/
-
-/* HEADER NAVIGATION2 */
-
-.header_navigation2 {
-	width: 60%;
-	float: right;
-	height: 60px;
-	border: 0px solid yellow;
-}
-
-.header_navigation2 ul {
-	border: 0px solid red;
-	height: 565px;
 	float: right;
 	line-height: 60px;
 	font-size: 12px;
@@ -259,7 +132,7 @@ a .webpage_title {
 	border-bottom: 0px solid #69bfdd;
 }
 
-.header_navigation2 li {
+.header_navigation li {
 	border-right: 0px solid #2593ba;
   	border-left: 0px solid #69bfdd;
   	border-bottom: 0px solid #2593ba;
@@ -267,7 +140,7 @@ a .webpage_title {
 	padding: 0 15px 0 15px;
 }
 
-.header_navigation2 a li {
+.header_navigation a li {
 	color: #ffffff;
 	-webkit-transition: background-color 250ms linear;
   	-moz-transition: background-color 250ms linear;
@@ -276,7 +149,7 @@ a .webpage_title {
   	transition: background-color 250ms linear;
 }
 
-.header_navigation2 a:hover li {
+.header_navigation a:hover li {
 	background-color: #397B93;
 }
 

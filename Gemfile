@@ -13,6 +13,8 @@ gem 'thin'
 gem 'devise'
 gem 'jquery-turbolinks'
 gem 'masonry-rails'
+gem 'ransack'
+gem 'will_paginate', '~> 3.0'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
