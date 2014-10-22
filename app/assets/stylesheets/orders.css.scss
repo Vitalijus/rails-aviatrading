@@ -25,18 +25,66 @@
 	background-color: #316A7E;
 }
 
+#order_box_info {
+	width: 60%;
+	float: left;
+	font-family: "Open Sans", helvetica, arial;
+	font-size: 14px;
+	padding: 20px 0 20px 20px;
+	border: 0px solid red;
+}
+
+#order_box_info_detail {
+	padding: 10px;
+	background-color: #F6F7F8;
+	border: 1px solid #dbdbdb;
+}
+
+#order_box_info li {
+	border: 0px solid green;
+	padding: 5px 0 5px 0;
+}
+
+#order_box_info span {
+	float: right;
+}
+
+#order_box_info span a {
+	float: right;
+	color: #346fa1;
+	-webkit-transition: color 150ms linear;
+  	-moz-transition: color 150ms linear;
+  	-o-transition: color 150ms linear;
+  	-ms-transition: color 150ms linear;
+  	transition: color 150ms linear;
+}
+
+#order_box_info span a:hover {
+	color: #7aadd9;
+}
+
 #order_box_payment_form {
 	width: 40%;
 	float: right;
 	padding: 20px;
-	border-left: 1px solid #dbdbdb;
+	border-left: 0px solid #dbdbdb;
 }
 
-#order_box_info {
-	width: 60%;
+#order_box_secure_pay {
+	width: 100%;
+	margin-bottom: 20px;
+	border: 0px solid red;
+}
+
+#order_box_secure_pay ul {
+	overflow: hidden;
+	border: 0px solid red;
+}
+
+#order_box_secure_pay li{
 	float: left;
-	padding: 20px;
-	border: 1px solid red;
+	padding: 0 9px 0 9px;
+	border: 0px solid red;
 }
 
 .order_box_field input[type="text"] {

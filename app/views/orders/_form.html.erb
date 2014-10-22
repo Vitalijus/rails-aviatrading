@@ -17,10 +17,45 @@
   <% end %>
 
   <div id="order_box_info">
-    test
+    <div id="order_box_info_detail">
+        <ul>
+          <li><b>Tutor:</b> <span>
+                    <%= link_to @course.teacher, data: { no_turbolink: true }  do %>
+                       <%= @course.teacher.name %> <%= @course.teacher.surname %>
+                    <% end %>
+                    </span>
+          </li>
+
+          <li><b>Language:</b><span>
+                      <%= @course.language %>&nbsp 
+                        <%= link_to @course.teacher, data: { no_turbolink: true }  do %>
+                           <%= @course.level %>
+                        <% end %>
+                      </span>
+          </li>
+
+          <li>
+            <b>Starting Date:</b><span><%= @course.course_start.to_formatted_s(:rfc822) %></span>
+          </li>
+
+          <li>
+            <b>Price:</b><span><%= @course.price %></span>
+          </li>
+
+        </ul>
+      </div>
+
   </div>
 
   <div id="order_box_payment_form"> 
+    <div id="order_box_secure_pay">
+      <ul>
+        <li><%= image_tag "ssl.png", width: 115 %></li>
+        <li><%= image_tag "visa.png", width: 50 %></li>
+        <li><%= image_tag "mastercard.png", width: 50 %></li>
+        <li><%= image_tag "amex.png", width: 50 %></li>
+      </ul>
+    </div>
 
     <%= f.hidden_field :stripe_card_token %>   
 

@@ -1,0 +1,102 @@
+#teacher_wrapper {
+	width: 1110px;
+	height: 100px;
+	background-color: #ffffff;
+	margin: 0 auto;
+	margin-top: 20px;
+	padding: 20px;
+	-webkit-box-shadow: 0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+  	-moz-box-shadow:    0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+  	box-shadow:         0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+}
+
+#teacher_profile_image {
+	float: left;
+	border: 0px solid red;
+}
+
+#teacher_profile_name {
+	color: #555555;
+	font-family: 'Lato', sans-serif;
+	font-size: 25px;
+	line-height: 60px;
+	float: left;
+	padding: 0 20px 0 20px;
+	border: 0px solid red;
+}
+
+#teacher_profile_navigation a {
+	color: #555555;
+	font-family: 'Lato', sans-serif;
+	font-size: 15px;
+	line-height: 60px;
+	float: right;
+	padding: 7px 20px 0 20px;
+	border: 0px solid red;
+}
+
+.box_delete {
+	position: absolute;
+	top: 3px;
+	right: 3px;
+}
+
+
+/* TEACHER EDIT */
+
+.teacher_edit {
+	width: 640px;
+	margin: auto;
+	margin-top: 20px;
+}
+
+.teacher_edit_box {
+	padding: 20px;
+	background-color: #ffffff;
+	-webkit-box-shadow: 0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+  	-moz-box-shadow:    0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+  	box-shadow:         0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+}
+
+.teacher_edit_box input {
+	 width: 100%;
+     border:1px solid #cecfc0;
+     padding: 10px 30px 10px 10px;
+     margin-bottom: 10px;
+     margin-right: 10px;
+     font-size: 12px;
+}
+
+.teacher_edit_box label {
+	color: #555555;
+	font-family: 'Lato', sans-serif;
+	font-size: 12px;
+	border: 0px solid #cecfc0;
+}
+
+.teacher_edit_box_title {
+	padding: 0 0 20px 0;
+	width: 100%;
+	border: 0px solid red;
+	font-family: 'Lato', sans-serif;
+	font-size: 25px;
+}
+
+.teacher_edit_box_button {
+	margin-top: 10px;
+	background-color: #3AC162;
+	font-size: 16px;
+	font-weight: bold;
+	color: white;
+	border: 1px solid #cecfc0;
+	font-family: "Open Sans", helvetica, arial;
+	background-color: #3AC162;
+	cursor: pointer;
+}
+
+.teacher_edit_box_cancel {
+	margin-top: 10px;
+	border: 0px solid red;
+}
+
+/* ------------------------------ */

@@ -21,6 +21,7 @@
 	color: #ffffff;
 	font-size: 20px;
 	font-family: "Open Sans", helvetica, arial;
+	font-weight: bold;
 	background-color: #316A7E;
 }
 
@@ -28,23 +29,97 @@
 	width: 60%;
 	height: 100%;
 	float: left;
-	padding: 20px;
+	padding: 20px 0 20px 20px;
 	font-family: "Open Sans", helvetica, arial;
-	font-weight: bold;
 	font-size: 14px;
+	border: 0px solid red;
+}
+
+#trial_box_info_details {
 	border: 1px solid red;
+	background-color: #F6F7F8;
+	border: 1px solid #dbdbdb;
+	padding: 10px;
+}
+
+#trial_box_info_details li {
+	padding: 5px 0 5px 0;
+}
+
+
+#trial_box_info_details span {
+	float: right;
+}
+
+#trial_box_info_details span a {
+	float: right;
+	color: #346fa1;
+	-webkit-transition: color 150ms linear;
+  	-moz-transition: color 150ms linear;
+  	-o-transition: color 150ms linear;
+  	-ms-transition: color 150ms linear;
+  	transition: color 150ms linear;
+}
+
+#trial_box_info_details span a:hover {
+	color: #7aadd9;
+}
+
+#trial_box_info_step {
+	border: 1px solid #dbdbdb;
+	width: 91.1%;
+	float: right;
+	padding: 10px 10px 0 10px;
+	background-color: #F6F7F8;
+	margin-top: 20px;
+	position: relative;
+}
+
+#trial_box_info_step ul {
+	border: 0px solid red;
+}
+
+#trial_box_info_step li {
+	border: 0px solid red;
+	color: #111111;
+	font-size: 13px;
+	padding-bottom: 10px;
+}
+
+#trial_box_info_flag {
+	border-left: 1px solid #dbdbdb;
+	border-top: 1px solid #dbdbdb;
+	border-bottom: 1px solid #dbdbdb;
+	padding: 10px 10px 6px 13px;
+	background-color: #F6F7F8;
+	position: absolute;
+	width: 45px;
+	top: -1px;
+	left: -45px;
+}
+
+#trial_box_info_info {
+	border-left: 1px solid #dbdbdb;
+	border-top: 1px solid #dbdbdb;
+	border-bottom: 1px solid #dbdbdb;
+	padding: 10px 10px 6px 15px;
+	background-color: #F6F7F8;
+	position: absolute;
+	width: 45px;
+	top: -1px;
+	left: -45px;
 }
 
 #trial_box_form {
 	width: 40%;
 	float: right;
 	padding: 20px;
-	border-left: 1px solid #dbdbdb;
+	border-left: 0px solid #dbdbdb;
 }
 
 .trial_box_field input[type="text"] {
 	width: 100%;
-	padding: 15px;
+	padding: 10px;
 	margin-bottom: 15px;
 	margin-top: 2px;
 	color: #555555;

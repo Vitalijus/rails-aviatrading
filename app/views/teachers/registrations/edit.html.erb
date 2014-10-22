@@ -1,25 +1,7 @@
 <div class="teacher_edit">
 
-<div class="teacher_edit_left_sidebar_wrapper">
-  <div class="teacher_edit_left_sidebar">
-    Dashboar
-  </div>
-
-  <div class="teacher_edit_left_sidebar">
-    Courses
-  </div>
-
-  <div class="teacher_edit_left_sidebar">
-    Lessons
-  </div>
-
-  <div class="teacher_edit_left_sidebar">
-    Profile
-  </div>
-</div>
-
-   <div class="teacher_edit_right_sidebar">
-    <div class="teacher_edit_right_sidebar_title">
+   <div class="teacher_edit_box">
+    <div class="teacher_edit_box_title">
       Profile
     </div>
 
@@ -56,17 +38,11 @@
 <% end %>
 
 
-<div class="teacher_edit_right_sidebar_cancel">
+<div class="teacher_edit_box_cancel">
   <h3>Cancel my account</h3>
 
   <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 </div>
-
-
-    <% @teacher.courses.each do |course| %>
-      <%= course.price %><br>
-      <%= link_to course.language, edit_course_path(course) %><br>
-    <% end %>
   </div>
 
 

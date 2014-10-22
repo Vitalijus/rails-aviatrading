@@ -4,11 +4,9 @@ School::Application.routes.draw do
   #get "teachers/tutor", path: "tutor"
   
   devise_for :students
-  devise_for :teachers #do
-    #get :tutor, on: :collection
-  #end
+  devise_for :teachers 
 
-  resources :teachers
+  resources :teachers, only: [:show]
   
   resources :courses do
     resources :orders

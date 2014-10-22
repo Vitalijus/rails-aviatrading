@@ -75,12 +75,12 @@
 							<li>NEW COURSE</li>
 						<% end %>
 
-						<%= link_to teacher_path(current_teacher) do %>
-							<li>DASHBOARD</li>
+						<%= link_to teacher_path(current_teacher), data: { no_turbolink: true } do %>
+							<li>MY COURSES</li>
 						<% end %>
 					
 						<%= link_to edit_teacher_registration_path do %>
-							<li>SETTINGS</li>
+							<li>PROFILE</li>
 						<% end %>
 
 						<%= link_to destroy_teacher_session_path, :method => :delete do %>
@@ -94,12 +94,12 @@
 							<li>COURSES</li>
 						<% end %>
 
-				  		<%= link_to edit_student_registration_path do %>
+				  		<%= link_to edit_student_registration_path, data: { no_turbolink: true } do %>
 				  			<li>DASHBOARD</li>
 				  		<% end %>
 
 				  		<%= link_to edit_student_registration_path do %>
-							<li>SETTINGS</li>
+							<li>PROFILE</li>
 						<% end %>
 
 				  		<%= link_to destroy_student_session_path, :method => :delete do %>

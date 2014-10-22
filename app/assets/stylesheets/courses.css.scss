@@ -346,25 +346,26 @@ a #display_login_button_student {
 
 
 .box_footer {
-	border-top: 1px solid #eaeaeb;
+	border: 0px solid red;
 	background-color: #ffffff;
 	overflow: hidden;
-	height: 55px;
+	height: 50px;
 }
 
 .box_footer ul {
 	border: 0px solid green;
 	text-align: center;
 	float: left;
+	width: 100%;
 	height: 100%;
 }
 
 .box_footer li {
 	border: 0px solid red;
-	width: 50%;
+	width: 33%;
 	float: left;
 	position: relative;
-	padding: 15px 40px 0 0px;
+	padding: 0px 20px 0 20px;
 	/*height: 100%;
 	line-height: 50px;*/
 }
@@ -373,8 +374,8 @@ a #display_login_button_student {
 	border: 0px solid red;
 	padding: 0px;
 	position: absolute;
-	top: 15px;
-	left: 0px;
+	top: 0px;
+	left: 31px;
 }
 
 .box_icon_opacity:hover {
@@ -389,19 +390,19 @@ a #display_login_button_student {
   	transition: opacity 250ms linear;
  }
 
- .box_icon_add_opacity {
+ .box_icon_file_opacity {
 	border: 0px solid red;
 	padding: 0px;
 	position: absolute;
-	top: 10px;
-	left: 21px;
+	top: 0px;
+	left: 34px;
 }
 
-.box_icon_add_opacity:hover {
+.box_icon_file_opacity:hover {
 	opacity: 0;
 }
 
-.box_icon_add_opacity {
+.box_icon_file_opacity {
 	-webkit-transition: opacity 250ms linear;
   	-moz-transition: opacity 250ms linear;
   	-o-transition: opacity 250ms linear;
@@ -788,91 +789,6 @@ a:hover .enroll_button {
     background: url("images/arrow_left.png") no-repeat #fff 319px 2px;
      dropdown_arrow.png is a 31x28 image 
 }*/
-
-/* ------------------------------ */
-
-/* TEACHER EDIT */
-
-.teacher_edit {
-	width: 920px;
-	margin: auto;
-	margin-top: 20px;
-}
-
-.teacher_edit_left_sidebar_wrapper {
-	width: 260px;
-	overflow: hidden;
-	-webkit-box-shadow: 0px 0px 0px 1px rgba(150, 150, 150, 0.25);
-	-moz-box-shadow:    0px 0px 0px 1px rgba(150, 150, 150, 0.25);
-	box-shadow:         0px 0px 0px 1px rgba(150, 150, 150, 0.25);
-    -webkit-border-radius: 3px;
-  	-moz-border-radius: 3px;
-  	border-radius: 3px;
-	float: left;
-}
-
-.teacher_edit_left_sidebar {
-	width: 300px;
-	float: left;
-	border-bottom: 1px solid #cecfc0;
-	padding: 20px;
-	background-color: #ffffff;
-	
-}
-
-.teacher_edit_right_sidebar {
-	width: 640px;
-	float: right;
-	padding: 20px;
-	background-color: #ffffff;
-	-webkit-box-shadow: 0px 0px 0px 1px rgba(150, 150, 150, 0.25);
-	-moz-box-shadow:    0px 0px 0px 1px rgba(150, 150, 150, 0.25);
-	box-shadow:         0px 0px 0px 1px rgba(150, 150, 150, 0.25);
-    -webkit-border-radius: 3px;
-  	-moz-border-radius: 3px;
-  	border-radius: 3px;
-}
-
-.teacher_edit_right_sidebar input {
-	 width: 100%;
-     border:1px solid #cecfc0;
-     padding: 10px 30px 10px 10px;
-     margin-bottom: 10px;
-     margin-right: 10px;
-     font-size: 12px;
-}
-
-.teacher_edit_right_sidebar label {
-	color: #555555;
-	font-family: 'Lato', sans-serif;
-	font-size: 12px;
-	border: 0px solid #cecfc0;
-}
-
-.teacher_edit_right_sidebar_title {
-	padding: 0 0 20px 0;
-	width: 100%;
-	border: 0px solid red;
-	font-family: 'Lato', sans-serif;
-	font-size: 25px;
-}
-
-.teacher_edit_right_sidebar_button {
-	margin-top: 10px;
-	background-color: #3AC162;
-	font-size: 16px;
-	font-weight: bold;
-	color: white;
-	border: 1px solid #cecfc0;
-	font-family: "Open Sans", helvetica, arial;
-	background-color: #3AC162;
-	cursor: pointer;
-}
-
-.teacher_edit_right_sidebar_cancel {
-	margin-top: 10px;
-	border: 0px solid red;
-}
 
 /* ------------------------------ */
 
