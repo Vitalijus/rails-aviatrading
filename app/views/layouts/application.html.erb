@@ -80,11 +80,11 @@
 						<% end %>
 					
 						<%= link_to edit_teacher_registration_path do %>
-							<li>PROFILE</li>
+							<li>SETTINGS</li>
 						<% end %>
 
 						<%= link_to destroy_teacher_session_path, :method => :delete do %>
-			  				<li><%= image_tag "locked.png", width: 15 %></li>
+			  				<li>LOG OUT</li>
 			  			<% end %>
 					<% end %>
 					
@@ -95,15 +95,15 @@
 						<% end %>
 
 				  		<%= link_to edit_student_registration_path, data: { no_turbolink: true } do %>
-				  			<li>DASHBOARD</li>
+				  			<li>MY COURSES</li>
 				  		<% end %>
 
 				  		<%= link_to edit_student_registration_path do %>
-							<li>PROFILE</li>
+							<li>SETTINGS</li>
 						<% end %>
 
 				  		<%= link_to destroy_student_session_path, :method => :delete do %>
-					  		<li><%= image_tag "locked.png", width: 15 %></li>
+					  		<li>LOG OUT</li>
 					  	<% end %>
 					<% end %>
 

@@ -82,8 +82,10 @@
 
               <ul>
                   <li>
-                    <%= image_tag "tw_grey.png", width: 25, :class => "box_icon_opacity", :title => "share" %>
-                    <%= image_tag "tw_blue.png", width: 25 %>
+                    <a href="https://twitter.com/share?url=https%3A%2F%2Fwww.http://fierce-plains-8197.herokuapp.com/"  target="blank">
+                      <%= image_tag "tw_grey.png", width: 25, :class => "box_icon_opacity", :title => "share" %>
+                      <%= image_tag "tw_blue.png", width: 25 %>
+                    </a>
                   </li>
 
                   <li>
@@ -92,8 +94,10 @@
                   </li>
 
                   <li>
+                  <%= link_to course.course_pdf_url, :target => "_blank" do %>
                     <%= image_tag "file_grey.png", width: 20, :class => "box_icon_file_opacity", :title => "download" %>
                     <%= image_tag "file_red.png", width: 20 %>
+                  <% end %>
                   </li>
                   
               </ul>
@@ -111,29 +115,7 @@
             <div class="box_button_try">
               FREE TRY
             </div> 
-          <% end %>
-
-            
-            
-
-            <!--<%= form_for ([course, course.trials.build]) do |f| %>
-          <a href="#1" name="1" onclick="return show();">  </a> 
-
-              <div id="benefits" style="display:none;">
-                
-                      <%= f.label :name %><br/>
-                      <%= f.text_field :name %>
-
-                      <p><%= f.submit "Add comment" %></p>
-                      <%= course.price %>€
-                    
-                
-                <div id="display_popup_close">
-                  <a onclick="return hide();">click here</a>
-                </div> 
-              </div>
-            <% end %>-->
-              
+          <% end %>            
               
 
             <%= link_to new_course_order_path(course) do %>

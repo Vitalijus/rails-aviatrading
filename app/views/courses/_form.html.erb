@@ -26,6 +26,11 @@
     <%= f.select :level, ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'], :prompt => 'Select a level' %> 
   </div>
 
+  <div class="new_course_field_pdf">
+    <%= f.label :course_pdf, "PDF file" %><br>
+    <%= f.file_field :course_pdf %> 
+  </div>
+
   <div class="new_course_field">
     <%= f.label :course_type, "Type of course (description of types.pdf)" %><br>
     <%= f.select :course_type, ['General course', 'Intensive course', 'Immersion course', 'One-to-one', 'Course for children', 'Course for senior students'], :prompt => 'Select a course'  %>  
