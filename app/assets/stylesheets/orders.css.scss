@@ -131,18 +131,18 @@
 	color: #ffffff;
 	font-size: 20px;
 	font-family: "Open Sans", helvetica, arial;
-	background-color: #3399CC;
+	background-color: #26ae5a;
 	border: none;
 	cursor: pointer;
-	-webkit-box-shadow: 0px 0px 0px 1px rgba(150, 150, 150, 0.25);
-  	-moz-box-shadow:    0px 0px 0px 1px rgba(150, 150, 150, 0.25);
-  	box-shadow:         0px 0px 0px 1px rgba(150, 150, 150, 0.25);
-  	transition:background .3s;
-  	-webkit-transition:background .3s;
+  	-webkit-transition: background-color 150ms linear;
+  	-moz-transition: background-color 150ms linear;
+  	-o-transition: background-color 150ms linear;
+  	-ms-transition: background-color 150ms linear;
+  	transition: background-color 150ms linear;
 }
 
 .pay_button:hover{
-  background:#2288bb;
+  background-color: #229c51;
 }
 
 #stripe_error {

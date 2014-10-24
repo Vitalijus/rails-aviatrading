@@ -1,7 +1,27 @@
+<div id="trial_box_header">
+	 <%= image_tag "eye.png" %> Free Trial
+</div>
+
 <div id="trial_wrapper">
-	<div id="trial_box_header">
-		 FREE TRIAL
+	<div id="trial_box">
+		<ul>
+
+		<li><%= image_tag "mic.png", width: 50 %><b>You need:</b> Microphone, speaker & webcam (optional)</li>
+
+			<li>
+				<%= image_tag "user.png", width: 50 %>
+					<b>Tutor:</b><%= link_to @course.teacher, data: { no_turbolink: true }  do %>
+						 <%= @course.teacher.name %> <%= @course.teacher.surname %>
+					<% end %>
+			</li>
+
+			<li><%= image_tag "message.png", width: 50 %> <b>1st step:</b> Get email with details</li>
+			<li><%= image_tag "user.png", width: 50 %><b>2nd step:</b> Connect to conferencing platform</li>
+			<li><%= image_tag "user.png", width: 50 %><b>Need some help?</b> Take a look at this guide </li>
+			<li><%= image_tag "user.png", width: 50 %><b>Still need some help?</b> Feel free to contact us email@email.com</li>
+		</ul>
 	</div>
+	
 
 	<div id="trial_box_info">
 
