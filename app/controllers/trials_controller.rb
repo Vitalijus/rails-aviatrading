@@ -18,6 +18,6 @@ class TrialsController < ApplicationController
     end
 
 	def trial_params
-      params.require(:trial).permit(:email, :name, :course_id)
+      params.require(:trial).permit(:email, :name, :course_id, :notice)
     end
 end

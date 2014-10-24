@@ -5,7 +5,6 @@
 #order_wrapper {
 	width: 960px;
 	margin: 0 auto;
-	margin-top: 20px;
 	margin-bottom: 100px;
 	background-color: #ffffff;
 	overflow: hidden;
@@ -16,18 +15,28 @@
 }
 
 #order_box_header {
-	width: 100%;
-	height: 60px;
-	line-height: 60px;
-	color: #ffffff;
-	font-size: 20px;
-	font-family: "Open Sans", helvetica, arial;
-	padding: 0 20px 0 20px;
-	background-color: #316A7E;
+	width: 960px;
+	margin: auto;
+	margin-top: 0px;
+	padding-left: 50px;
+	height: 80px;
+	line-height: 80px;
+	color: #B2B2B2;
+	font-size: 25px;
+	font-family: 'Lato', sans-serif;
+	border: 0px solid red;
+	position: relative;
+}
+
+#order_box_header img {
+	position: absolute;
+	top: 30px;
+	left:0;
+	border: 0px solid red;
 }
 
 #order_box_info {
-	width: 60%;
+	width: 67.5%;
 	float: left;
 	font-family: "Open Sans", helvetica, arial;
 	font-size: 14px;
@@ -35,24 +44,28 @@
 	border: 0px solid red;
 }
 
-#order_box_info_detail {
-	padding: 10px;
-	background-color: #F6F7F8;
-	border: 1px solid #dbdbdb;
+#order_box_info ul {
+	border: 0px solid red;
+	overflow: hidden;
 }
 
 #order_box_info li {
-	border: 0px solid green;
-	padding: 5px 0 5px 0;
+	float: left;
+	width: 293px;
+	height: 150px;
+	padding: 90px 20px 20px 20px;
+	text-align: center;
+	margin: 0 20px 20px 0;
+	background-color: #F5F5F5;
+	font-family: 'Lato', sans-serif;
+	font-size: 16px;
+	position: relative;
+	color: #b6b6b6;
+	border: 0px solid red;
 }
 
-#order_box_info span {
-	float: right;
-}
-
-#order_box_info span a {
-	float: right;
-	color: #346fa1;
+#order_box_info li a {
+	color: #bcd6ec;
 	-webkit-transition: color 150ms linear;
   	-moz-transition: color 150ms linear;
   	-o-transition: color 150ms linear;
@@ -60,15 +73,22 @@
   	transition: color 150ms linear;
 }
 
-#order_box_info span a:hover {
-	color: #7aadd9;
+#order_box_info li a:hover {
+	color: #346fa1;
+}
+
+#order_box_info img {
+	position: absolute;
+	top: 25px;
+	right: 120px;
+	border: 0px solid red;
 }
 
 #order_box_payment_form {
-	width: 40%;
+	width: 32.5%;
 	float: right;
-	padding: 20px;
-	border-left: 0px solid #dbdbdb;
+	padding: 20px 20px 20px 0;
+	border: 0px solid red;
 }
 
 #order_box_secure_pay {
@@ -91,7 +111,7 @@
 .order_box_field input[type="text"] {
 	width: 100%;
 	padding: 10px;
-	margin-bottom: 15px;
+	margin-bottom: 10px;
 	margin-top: 2px;
 	color: #555555;
 	border: 1px solid #cecfc0;
@@ -150,5 +170,5 @@
 	border: 0px solid red;
 	font-family: 'Lato', sans-serif;
 	font-size: 14px;
-	padding-bottom: 10px;
+	padding-bottom: 0px;
 }

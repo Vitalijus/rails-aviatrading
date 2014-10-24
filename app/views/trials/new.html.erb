@@ -1,12 +1,15 @@
 <div id="trial_box_header">
-	 <%= image_tag "eye.png" %> Free Trial
+	 <%= image_tag "eye.png" %> <%= @course.language %> <%= truncate(@course.level, :length => 2, :omission => "") %> Free Lesson Request
 </div>
 
 <div id="trial_wrapper">
 	<div id="trial_box">
 		<ul>
 
-		<li><%= image_tag "mic.png", width: 50 %><b>You need:</b> Microphone, speaker & webcam (optional)</li>
+			<li><%= image_tag "message.png", width: 50 %> <b>1st step:</b> Get email with details from tutor</li>
+			<li><%= image_tag "wifi.png", width: 50 %><b>2nd step:</b> Connect to conferencing platform (Adobe Connect)</li>
+
+			<li><%= image_tag "mic.png", width: 50 %><b>You will need:</b> Microphone, speaker & webcam (optional)</li>
 
 			<li>
 				<%= image_tag "user.png", width: 50 %>
@@ -14,77 +17,30 @@
 						 <%= @course.teacher.name %> <%= @course.teacher.surname %>
 					<% end %>
 			</li>
-
-			<li><%= image_tag "message.png", width: 50 %> <b>1st step:</b> Get email with details</li>
-			<li><%= image_tag "user.png", width: 50 %><b>2nd step:</b> Connect to conferencing platform</li>
-			<li><%= image_tag "user.png", width: 50 %><b>Need some help?</b> Take a look at this guide </li>
+			
 			<li><%= image_tag "user.png", width: 50 %><b>Still need some help?</b> Feel free to contact us email@email.com</li>
+
+			<li><%= image_tag "chat.png", width: 50 %><b>Need help?</b> Take a look at this <%= link_to @course.teacher, data: { no_turbolink: true }  do %>guide<% end %> or contact us email@email.com </li>
 		</ul>
 	</div>
 	
-
-	<div id="trial_box_info">
-
-		<div id="trial_box_info_details">
-			<ul>
-				<li><b>Tutor:</b> <span>
-									<%= link_to @course.teacher, data: { no_turbolink: true }  do %>
-										 <%= @course.teacher.name %> <%= @course.teacher.surname %>
-									<% end %>
-								  </span>
-				</li>
-
-				<li><b>Language:</b><span>
-										<%= @course.language %>&nbsp 
-											<%= link_to @course.teacher, data: { no_turbolink: true }  do %>
-												 <%= @course.level %>
-											<% end %>
-								  	</span>
-				</li>
-			</ul>
-		</div>
-
-		<div id="trial_box_info_step">
-
-			<div id="trial_box_info_flag">
-				<%= image_tag "flag.png" %>
-			</div>
-
-			<ul>
-				<li><b>What you need:</b> Microphone and speaker. Internet connection. Webcam (optional).</li>
-				<li><b>1st step:</b> You will receive email from <%= @course.teacher.name %> <%= @course.teacher.surname %> with details and proposal on date and time.</li>
-				<li><b>2nd step:</b> Right before lesson start, connect with given link and code to conferencing platform (Adobe Connect).</li>
-			</ul>
-		</div>
-
-		<div id="trial_box_info_step">
-
-			<div id="trial_box_info_info">
-				<%= image_tag "info.png", width: 15 %>
-			</div>
-
-			<ul>
-				<li><b>Need some help with Abobe Connect?</b> Take a look at this guide.</li>
-				<li><b>Still need some help?</b> Feel free to contact us email@email.com</li>
-			</ul>
-		</div>
-	</div>
-
 
 	<div id="trial_box_form">
 	  <%= form_for([@course, @trial]) do |f| %>
 
 		<div class="trial_box_field">    
-		    <%= f.label :name %><br/>
-		    <%= f.text_field :name %>
+		    <%= f.text_field :name, :placeholder => "Name" %>
 	    </div>
 
 	    <div class="trial_box_field">
-		    <%= f.label :email %><br/>
-		    <%= f.text_field :email %>
+		    <%= f.text_field :email, :placeholder => "Email" %>
 		</div>
 
-	    	<%= f.submit "ASK", :class=> "trial_box_button"%>
+		<div class="trial_box_field">
+		    <%= f.text_area :notice, :class => "trial_box_area", :placeholder => "Write you achievements in language learning" %>
+		</div>
+
+	    	<%= f.submit "Send Request", :class=> "trial_box_button"%>
 	  <% end %>
 	  </div>
 	

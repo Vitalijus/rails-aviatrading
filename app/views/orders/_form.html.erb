@@ -1,7 +1,8 @@
+<div id="order_box_header">
+   <%= image_tag "display.png" %> Start <%= @course.language %> <%= truncate(@course.level, :length => 2, :omission => "") %> Course
+</div>
+
 <div id="order_wrapper">
-  <div id="order_box_header">
-     ENROLL
-  </div>
 
 <%= form_for([@course, @order]) do |f| %>
   <% if @order.errors.any? %>
@@ -17,56 +18,36 @@
   <% end %>
 
   <div id="order_box_info">
-    <div id="order_box_info_detail">
-        <ul>
-          <li><b>Tutor:</b> <span>
-                    <%= link_to @course.teacher, data: { no_turbolink: true }  do %>
-                       <%= @course.teacher.name %> <%= @course.teacher.surname %>
-                    <% end %>
-                    </span>
-          </li>
+    <ul>
+      <li><%= image_tag "message.png", width: 50 %> <b>1st step:</b> Get email with details from tutor</li>
+      <li><%= image_tag "wifi.png", width: 50 %><b>2nd step:</b> Connect to conferencing platform (Adobe Connect)</li>
 
-          <li><b>Language:</b><span>
-                      <%= @course.language %>&nbsp 
-                        <%= link_to @course.teacher, data: { no_turbolink: true }  do %>
-                           <%= @course.level %>
-                        <% end %>
-                      </span>
-          </li>
+      <li><%= image_tag "mic.png", width: 50 %><b>You will need:</b> Microphone, speaker & webcam (optional)</li>
 
-          <li>
-            <b>Starting Date:</b><span><%= @course.course_start.to_formatted_s(:rfc822) %></span>
-          </li>
+      <li>
+        <%= image_tag "user.png", width: 50 %>
+          <b>Tutor:</b><%= link_to @course.teacher, data: { no_turbolink: true }  do %>
+             <%= @course.teacher.name %> <%= @course.teacher.surname %>
+          <% end %>
+      </li>
+      
+      <li><%= image_tag "user.png", width: 50 %><b>Still need some help?</b> Feel free to contact us email@email.com</li>
 
-          <li>
-            <b>Price:</b><span><%= @course.price %></span>
-          </li>
-
-        </ul>
-      </div>
+      <li><%= image_tag "chat.png", width: 50 %><b>Need help?</b> Take a look at this <%= link_to @course.teacher, data: { no_turbolink: true }  do %>guide<% end %> or contact us email@email.com </li>
+    </ul>
 
   </div>
 
   <div id="order_box_payment_form"> 
-    <div id="order_box_secure_pay">
-      <ul>
-        <li><%= image_tag "ssl.png", width: 115 %></li>
-        <li><%= image_tag "visa.png", width: 50 %></li>
-        <li><%= image_tag "mastercard.png", width: 50 %></li>
-        <li><%= image_tag "amex.png", width: 50 %></li>
-      </ul>
-    </div>
 
     <%= f.hidden_field :stripe_card_token %>   
 
     <div class="order_box_field">
-      <%= f.label :card_number %><br>
-      <%= text_field_tag :card_number, nil, name: nil, placeholder: "XXXX XXXX XXXX XXXX" %>
+      <%= text_field_tag :card_number, nil, name: nil, placeholder: "Card Number" %>
     </div>
 
     <div class="order_box_field">
-      <%= f.label :card_code, "3 Digits Security Code on Card (CVV)" %><br>
-      <%= text_field_tag :card_code, nil, name: nil, placeholder: "XXX" %>
+      <%= text_field_tag :card_code, nil, name: nil, placeholder: "3 Digits Security Code on Card (CVV)" %>
     </div>
 
     <div class="order_box_field">
@@ -76,8 +57,7 @@
     </div>
 
   <div class="order_box_field">
-    <%= f.label :name_on_card %><br>
-    <%= f.text_field :name_on_card, placeholder: "Xxxx Xxxxxxx" %>
+    <%= f.text_field :name_on_card, placeholder: "Name on card" %>
   </div>
 
 <div id="stripe_error">
@@ -85,6 +65,14 @@
   </div>
     <div id="order_box_button">
       <%= f.submit ["ENROLL", @course.price,"€"], :class => "pay_button" %>
+    </div>
+    <div id="order_box_secure_pay">
+      <ul>
+        <li><%= image_tag "ssl.png", width: 115 %></li>
+        <li><%= image_tag "visa.png", width: 50 %></li>
+        <li><%= image_tag "mastercard.png", width: 50 %></li>
+        <li><%= image_tag "amex.png", width: 50 %></li>
+      </ul>
     </div>
   </div>
   <% end %>

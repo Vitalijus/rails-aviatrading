@@ -18,12 +18,37 @@
 
   <div class="new_course_field">
     <%= f.label :language %><br>
-    <%= f.select :language, ['German', 'English', 'Lithuanian'], :prompt => 'Select a language' %> 
+    <%= f.select :language, ['English', 'German'], :prompt => 'Select a language' %> 
   </div>
 
   <div class="new_course_field">
     <%= f.label :level, "Level (description of levels.pdf)" %> <br>
-    <%= f.select :level, ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'], :prompt => 'Select a level' %> 
+    <%= f.select :level, ['A1 Beginner', 'A2 Elementary', 'B1 Intermediate', 'B2 Upper intermediate', 'C1 Advanced', 'C2 Mastery'], :prompt => 'Select a level' %> 
+  </div>
+
+  <div class="new_course_field">
+    <%= f.label :course_type, "Type of course (description of types.pdf)" %><br>
+    <%= f.select :course_type, ['Private regular', 'Private intensive', 'Group regular', 'Group intensive'], :prompt => 'Select a course'  %>  
+  </div>
+
+  <div class="new_course_field">
+    <%= f.label :time_zone %><br>
+    <%= f.select :time_zone, ["American Samoa", "International Date Line West", "Midway Island", "Hawaii", "Alaska", "Pacific Time (US & Canada)", "Tijuana", "Arizona", "Chihuahua", "Mazatlan", "Mountain Time (US & Canada)", "Central America", "Central Time (US & Canada)", "Guadalajara", "Mexico City", "Monterrey", "Saskatchewan", "Bogota", "Eastern Time (US & Canada)", "Indiana (East)", "Lima", "Quito", "Caracas", "Atlantic Time (Canada)", "Georgetown", "La Paz", "Santiago", "Newfoundland", "Brasilia", "Buenos Aires", "Greenland", "Montevideo", "Mid-Atlantic", "Azores", "Cape Verde Is.", "Casablanca", "Dublin", "Edinburgh", "Lisbon", "London", "Monrovia", "UTC", "Amsterdam", "Belgrade", "Berlin", "Bern", "Bratislava", "Brussels", "Budapest", "Copenhagen", "Ljubljana", "Madrid", "Paris", "Prague", "Rome", "Sarajevo", "Skopje", "Stockholm", "Vienna", "Warsaw", "West Central Africa", "Zagreb", "Athens", "Bucharest", "Cairo", "Harare", "Helsinki", "Istanbul", "Jerusalem", "Kyiv", "Pretoria", "Riga", "Sofia", "Tallinn", "Vilnius", "Baghdad", "Kuwait", "Minsk", "Nairobi", "Riyadh", "Tehran", "Abu Dhabi", "Baku", "Moscow", "Muscat", "St. Petersburg", "Tbilisi", "Volgograd", "Yerevan", "Kabul", "Islamabad", "Karachi", "Tashkent", "Chennai", "Kolkata", "Mumbai", "New Delhi", "Sri Jayawardenepura", "Kathmandu", "Almaty", "Astana", "Dhaka", "Ekaterinburg", "Urumqi", "Rangoon", "Bangkok", "Hanoi", "Jakarta", "Novosibirsk", "Beijing", "Chongqing", "Hong Kong", "Krasnoyarsk", "Kuala Lumpur", "Perth", "Singapore", "Taipei", "Ulaanbaatar", "Irkutsk", "Osaka", "Sapporo", "Seoul", "Tokyo", "Adelaide", "Darwin", "Brisbane", "Canberra", "Guam", "Hobart", "Melbourne", "Port Moresby", "Sydney", "Yakutsk", "New Caledonia", "Solomon Is.", "Vladivostok", "Auckland", "Fiji", "Kamchatka", "Magadan", "Marshall Is.", "Wellington", "Chatham Is.", "Nuku'alofa", "Samoa", "Tokelau Is."], :prompt => 'Select timezone'  %>  
+  </div>
+
+  <div class="new_course_field">
+    <%= f.label :length %><br>
+    <%= f.select :duration, ['30 minutes', '45 minutes', '60 minutes', '75 minutes', '90 minutes', '105 minutes', '120 minutes'], :prompt => 'Select length of a lesson' %> 
+  </div>
+
+   <div class="new_course_field">
+    <%= f.label :lesson_per_week, "Lessons per week" %><br>
+    <%= f.number_field :lesson_per_week %>  
+  </div>
+
+  <div class="new_course_field">
+    <%= f.label :price %><br>
+    <%= f.number_field :price %> 
   </div>
 
   <div class="new_course_field_pdf">
@@ -32,30 +57,15 @@
   </div>
 
   <div class="new_course_field">
-    <%= f.label :course_type, "Type of course (description of types.pdf)" %><br>
-    <%= f.select :course_type, ['General course', 'Intensive course', 'Immersion course', 'One-to-one', 'Course for children', 'Course for senior students'], :prompt => 'Select a course'  %>  
-  </div>
-
-  <div class="new_course_field">
-    <%= f.label :length %><br>
-    <%= f.select :duration, ['30 minutes', '45 minutes', '60 minutes', '75 minutes', '90 minutes', '105 minutes', '120 minutes'], :prompt => 'Select length of a lesson' %> 
-  </div>
-
-  <div class="new_course_field">
-    <%= f.label :price %><br>
-    <%= f.number_field :price %> 
-  </div>
-
-  <div class="new_course_field">
     <%= f.label :description %><br>
     <%= f.text_area :description, :class => "new_course_area" %> 
   </div>
 
 
-    <div class="new_course_field_date">
+    <!--<div class="new_course_field_date">
       <%= f.label :registration_until %><br>
       <%= f.date_select :registration_until, {:order => [:day, :month, :year], start_year: Date.today.year, end_year: Date.today.year+1 }, {:class => "new_course_date_select"} %>  
-    </div>
+    </div>-->
 
     <div class="new_course_field_date">
       <%= f.label :course_start %><br>

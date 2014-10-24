@@ -12,9 +12,17 @@
 
         <%= search_form_for @q do |f| %>
 
-          <%= f.select :language_cont, ['German', 'English', 'Lithuanian'], :prompt => 'Choose language' %>
+          <%= f.select :language_cont, ['German', 'English'], :prompt => 'Choose language' %>
 
-          <%= f.select :level_cont, ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'], :prompt => 'Choose language level' %>
+          <%= f.select :level_cont, ['A1 Beginner', 'A2 Elementary', 'B1 Intermediate', 'B2 Upper intermediate', 'C1 Advanced', 'C2 Mastery'], :prompt => 'Choose language level' %>
+
+          <%= f.select :course_type_cont, ['Private regular', 'Private intensive', 'Group regular', 'Group intensive'], :prompt => 'Choose course type' %>
+
+          <%= f.select :time_zone_cont, ["American Samoa", "International Date Line West", "Midway Island", "Hawaii", "Alaska", "Pacific Time (US & Canada)", "Tijuana", "Arizona", "Chihuahua", "Mazatlan", "Mountain Time (US & Canada)", "Central America", "Central Time (US & Canada)", "Guadalajara", "Mexico City", "Monterrey", "Saskatchewan", "Bogota", "Eastern Time (US & Canada)", "Indiana (East)", "Lima", "Quito", "Caracas", "Atlantic Time (Canada)", "Georgetown", "La Paz", "Santiago", "Newfoundland", "Brasilia", "Buenos Aires", "Greenland", "Montevideo", "Mid-Atlantic", "Azores", "Cape Verde Is.", "Casablanca", "Dublin", "Edinburgh", "Lisbon", "London", "Monrovia", "UTC", "Amsterdam", "Belgrade", "Berlin", "Bern", "Bratislava", "Brussels", "Budapest", "Copenhagen", "Ljubljana", "Madrid", "Paris", "Prague", "Rome", "Sarajevo", "Skopje", "Stockholm", "Vienna", "Warsaw", "West Central Africa", "Zagreb", "Athens", "Bucharest", "Cairo", "Harare", "Helsinki", "Istanbul", "Jerusalem", "Kyiv", "Pretoria", "Riga", "Sofia", "Tallinn", "Vilnius", "Baghdad", "Kuwait", "Minsk", "Nairobi", "Riyadh", "Tehran", "Abu Dhabi", "Baku", "Moscow", "Muscat", "St. Petersburg", "Tbilisi", "Volgograd", "Yerevan", "Kabul", "Islamabad", "Karachi", "Tashkent", "Chennai", "Kolkata", "Mumbai", "New Delhi", "Sri Jayawardenepura", "Kathmandu", "Almaty", "Astana", "Dhaka", "Ekaterinburg", "Urumqi", "Rangoon", "Bangkok", "Hanoi", "Jakarta", "Novosibirsk", "Beijing", "Chongqing", "Hong Kong", "Krasnoyarsk", "Kuala Lumpur", "Perth", "Singapore", "Taipei", "Ulaanbaatar", "Irkutsk", "Osaka", "Sapporo", "Seoul", "Tokyo", "Adelaide", "Darwin", "Brisbane", "Canberra", "Guam", "Hobart", "Melbourne", "Port Moresby", "Sydney", "Yakutsk", "New Caledonia", "Solomon Is.", "Vladivostok", "Auckland", "Fiji", "Kamchatka", "Magadan", "Marshall Is.", "Wellington", "Chatham Is.", "Nuku'alofa", "Samoa", "Tokelau Is."], :prompt => 'Choose time zone' %>
+
+          <%= f.select :duration_cont, ['30 minutes', '45 minutes', '60 minutes', '75 minutes', '90 minutes', '105 minutes', '120 minutes'], :prompt => 'Choose lesson length' %>
+
+          <%= f.number_field :lesson_per_week_cont, :placeholder => 'Number of lessons per week' %>
 
           <%= f.submit :class => "search_button" %>
         <% end %>
@@ -24,7 +32,9 @@
         <div class="box">
             
             <div class="box_course_title">
-                <%= course.language %> <%= course.level %>
+              <%= link_to course do %>
+                <%= course.language %> <%= truncate(course.level, :length => 2, :omission => "") %>
+              <% end %>
 
                <div class="box_course_price">
                 <%= course.price %>€
@@ -36,8 +46,6 @@
                   <%= course.teacher.name %> <%= course.teacher.surname %>
                 <% end %>
               </div>
-              
-  
             </div>
 
             <div class="box_description">
@@ -47,27 +55,37 @@
               <table>
 
                 <tr>
+                  <td>Course level:</td>
+                  <td><strong><%= course.level %></strong></td>
+                </tr>
+
+                <tr>
                   <td>Course type:</td>
                   <td><strong><%= course.course_type %></strong></td>
                 </tr>
 
                 <tr>
-                  <td>Length:</td>
-                  <td><strong><%= course.duration %></strong></td>
-                </tr>
-
-                <tr>  
-                  <td>Enroll until:</td>
-                  <td><strong><%= course.registration_until.to_formatted_s(:rfc822) %></strong></td>
+                  <td>Time zone:</td>
+                  <td><strong><%= course.time_zone %></strong></td>
                 </tr>
 
                 <tr>
-                  <td>Class start:</td>
+                  <td>Lesson length:</td>
+                  <td><strong><%= course.duration %></strong></td>
+                </tr>
+
+                <tr>
+                  <td>Lessons per week:</td>
+                  <td><strong><%= course.lesson_per_week %></strong></td>
+                </tr>
+
+                <tr>
+                  <td>Course start:</td>
                   <td><strong><%= course.course_start.to_formatted_s(:rfc822) %></strong></td>
                 </tr>
 
                 <tr>
-                  <td>Class end:</td>
+                  <td>Course end:</td>
                   <td><strong><%= course.course_end.to_formatted_s(:rfc822) %></strong></td>
                 </tr>
                 

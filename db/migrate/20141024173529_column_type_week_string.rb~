@@ -1,0 +1,4 @@
+class ColumnTypeWeekString < ActiveRecord::Migration
+  def change
+  end
+end
