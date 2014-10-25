@@ -7,8 +7,12 @@ class TrialsController < ApplicationController
 
 	def create
 		@trial = @course.trials.build(trial_params)
-		@trial.save
-		redirect_to courses_path
+		
+		if @trial.save
+			redirect_to courses_path, notice: "Request was successfully sent." 
+		else
+			render action: 'new' 
+		end
 	end
 
 	private

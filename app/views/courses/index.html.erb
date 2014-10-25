@@ -98,6 +98,23 @@
 
 <% end %>
 
+<!--<% if notice || alert %>
+  <div class="alert">
+   <%= image_tag "tick.png", width: 20 %> <%= notice %>
+  </div>
+<% end %>-->
+
+ <% if notice %>
+      <div class = "alert">
+        <%= image_tag "tick.png", width: 20 %> <%= notice %>
+      </div>
+
+  <% elsif flash[:error] %>
+      <div class = "error">
+         <%= flash[:error] %>
+      </div>
+  <% end %>
+
 <%= render "masonry" %>
   </div>
 

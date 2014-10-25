@@ -6,27 +6,53 @@
 	<div id="trial_box">
 		<ul>
 
-			<li><%= image_tag "message.png", width: 50 %> <b>1st step:</b> Get email with details from tutor</li>
-			<li><%= image_tag "wifi.png", width: 50 %><b>2nd step:</b> Connect to conferencing platform (Adobe Connect)</li>
-
-			<li><%= image_tag "mic.png", width: 50 %><b>You will need:</b> Microphone, speaker & webcam (optional)</li>
-
-			<li>
-				<%= image_tag "user.png", width: 50 %>
-					<b>Tutor:</b><%= link_to @course.teacher, data: { no_turbolink: true }  do %>
-						 <%= @course.teacher.name %> <%= @course.teacher.surname %>
-					<% end %>
+		<%= link_to courses_path, data: { no_turbolink: true }  do %>
+			<li><%= image_tag "ribbon.png", :class => "trial_box_ribbon", width: 40 %><%= image_tag "message.png", width: 50 %> <b>1st step:</b> Get email with details from tutor
 			</li>
-			
-			<li><%= image_tag "user.png", width: 50 %><b>Still need some help?</b> Feel free to contact us email@email.com</li>
+		<% end %>
 
-			<li><%= image_tag "chat.png", width: 50 %><b>Need help?</b> Take a look at this <%= link_to @course.teacher, data: { no_turbolink: true }  do %>guide<% end %> or contact us email@email.com </li>
+		<%= link_to courses_path, data: { no_turbolink: true }  do %>
+			<li><%= image_tag "ribbon.png", :class => "trial_box_ribbon", width: 40 %><%= image_tag "wifi.png", width: 50 %><b>2nd step:</b> Connect to conferencing platform (Adobe Connect)
+			</li>
+		<% end %>
+
+		<%= link_to courses_path, data: { no_turbolink: true }  do %>
+			<li><%= image_tag "ribbon.png", :class => "trial_box_ribbon", width: 40 %><%= image_tag "mic.png", width: 50 %><b>You will need:</b> Microphone, speaker & webcam (optional)
+			</li>
+		<% end %>
+
+		<%= link_to @course.teacher, data: { no_turbolink: true }  do %>
+			<li><%= image_tag "ribbon.png", :class => "trial_box_ribbon", width: 40 %><%= image_tag "user.png", width: 50 %><b>Tutor:</b> <%= @course.teacher.name %> <%= @course.teacher.surname %>
+			</li>
+		<% end %>
+			
+		<%= link_to courses_path, data: { no_turbolink: true }  do %>
+			<li>
+				<%= image_tag "ribbon.png", :class => "trial_box_ribbon", width: 40 %><%= image_tag "guide.png", width: 50 %><b>Need help?</b> Take a look at this guide
+			</li>
+		<% end %>
+
+		<%= link_to courses_path, data: { no_turbolink: true }  do %>
+			<li><%= image_tag "ribbon.png", :class => "trial_box_ribbon", width: 40 %><%= image_tag "chat.png", width: 50 %><b>Still need some help?</b> Feel free to contact us
+			</li>
+		<% end %>
+
 		</ul>
-	</div>
-	
+	</div>      
+    	
 
 	<div id="trial_box_form">
 	  <%= form_for([@course, @trial]) do |f| %>
+
+	  	<% if @trial.errors.any? %>
+	        <div id="error_explanation">
+	          <ul>
+	            <% @trial.errors.full_messages.each do |msg| %>
+	              <li><%= msg %></li>
+	            <% end %>
+	        </ul>
+	      </div>
+	    <% end %>
 
 		<div class="trial_box_field">    
 		    <%= f.text_field :name, :placeholder => "Name" %>

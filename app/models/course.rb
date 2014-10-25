@@ -5,4 +5,8 @@ class Course < ActiveRecord::Base
 	has_many :lessons
 	has_many :trials
 
+	validates :language, :level, :price, :duration, :course_type, :course_start,
+			  :course_end, :course_pdf, :time_zone, :lesson_per_week, presence: true
+	validates :description, length: {maximum: 300}
+
 end

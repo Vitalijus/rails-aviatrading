@@ -57,26 +57,28 @@
 	position: relative;
 	color: #b6b6b6;
 	border: 0px solid red;
+	-webkit-transition: background-color 150ms linear;
+  	-moz-transition: background-color 150ms linear;
+  	-o-transition: background-color 150ms linear;
+  	-ms-transition: background-color 150ms linear;
+  	transition: background-color 150ms linear;
 }
 
-#trial_box li a {
-	color: #bcd6ec;
-	-webkit-transition: color 150ms linear;
-  	-moz-transition: color 150ms linear;
-  	-o-transition: color 150ms linear;
-  	-ms-transition: color 150ms linear;
-  	transition: color 150ms linear;
+#trial_box li:hover {
+	background-color: #f0f0f0;
 }
 
-#trial_box li a:hover {
-	color: #346fa1;
-}
-
-#trial_box img {
+#trial_box li img {
 	position: absolute;
 	top: 25px;
 	right: 120px;
 	border: 0px solid red;
+}
+
+#trial_box  .trial_box_ribbon {
+	position: absolute;
+	top: -10px;
+	right: 10px;
 }
 
 #trial_box_form {

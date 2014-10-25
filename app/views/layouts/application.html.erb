@@ -27,9 +27,24 @@
 	}(document, 'script', 'facebook-jssdk'));
 	</script>
 
+
+<!-- NOTICE MESSAGE -->
+<script>
+	$(function () {
+	  var alert = $('.alert');
+	  if (alert.length > 0) {
+	    alert.show();
+	    window.setTimeout(function() {
+	      alert.fadeOut();
+	    }, 4000);
+	  }
+	});
+</script>
+
 <header>
 <div id="header_wrapper">
 	<div class="header">
+
 
 		<%= link_to root_url, data: { no_turbolink: true } do %>
 			<div class="header_logo"> 
@@ -80,7 +95,7 @@
 						<% end %>
 
 						<%= link_to destroy_teacher_session_path, :method => :delete do %>
-			  				<li>LOG OUT</li>
+			  				<li>SIGN OUT</li>
 			  			<% end %>
 					<% end %>
 					
@@ -99,7 +114,7 @@
 						<% end %>
 
 				  		<%= link_to destroy_student_session_path, :method => :delete do %>
-					  		<li>LOG OUT</li>
+					  		<li>SIGN OUT</li>
 					  	<% end %>
 					<% end %>
 

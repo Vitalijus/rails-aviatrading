@@ -1,9 +1,28 @@
+#teacher_header {
+	width: 1110px;
+	margin: 0 auto;
+	padding-left: 40px;
+	height: 80px;
+	line-height: 80px;
+	color: #B2B2B2;
+	font-size: 25px;
+	font-family: 'Lato', sans-serif;
+	border: 0px solid red;
+	position: relative;
+}
+
+#teacher_header img {
+	position: absolute;
+	top: 22px;
+	left:0;
+	border: 0px solid red;
+}
+
 #teacher_wrapper {
 	width: 1110px;
 	height: 100px;
 	background-color: #ffffff;
 	margin: 0 auto;
-	margin-top: 20px;
 	padding: 20px;
 	-webkit-box-shadow: 0px 0px 0px 1px rgba(150, 150, 150, 0.25);
   	-moz-box-shadow:    0px 0px 0px 1px rgba(150, 150, 150, 0.25);
@@ -53,7 +72,16 @@
 .teacher_edit {
 	width: 640px;
 	margin: auto;
-	margin-top: 20px;
+}
+
+.teacher_edit_box_title {
+	width: 100%;
+	height: 80px;
+	line-height: 80px;
+	border: 0px solid red;
+	color: #b2b2b2;
+	font-family: 'Lato', sans-serif;
+	font-size: 25px;
 }
 
 .teacher_edit_box {
@@ -73,6 +101,39 @@
      font-size: 12px;
 }
 
+.teacher_edit_box select {
+     -webkit-appearance: none;  /*Removes default chrome and safari style*/
+     -moz-appearance: none;  /*Removes default style Firefox*/
+     width: 100%;
+     background-color: #ffffff;
+     border: 1px solid #cecfc0;
+     padding: 10px;
+     margin-bottom: 10px;
+     margin-top: 2px;
+     font-size: 12px;
+     background: url("dropdown.png") no-repeat;
+     background-position: 98% 13px; /*Position of the background-image*/
+     text-indent: 0.01px; /* Removes default arrow from firefox*/
+     text-overflow: "";   /*Removes default arrow from firefox*/
+}
+
+.teacher_avatar  {
+	width: 100%;
+     border:0px solid red;
+     padding: 10px 30px 10px 10px;
+     margin-bottom: 10px;
+     margin-right: 10px;
+     font-size: 12px;
+}
+
+.teacher_about_me {
+	width: 100%;
+	height: 100px;
+	border:1px solid #cecfc0;
+	padding: 10px;
+	color: #777777;
+}
+
 .teacher_edit_box label {
 	color: #555555;
 	font-family: 'Lato', sans-serif;
@@ -80,24 +141,28 @@
 	border: 0px solid #cecfc0;
 }
 
-.teacher_edit_box_title {
-	padding: 0 0 20px 0;
-	width: 100%;
-	border: 0px solid red;
-	font-family: 'Lato', sans-serif;
-	font-size: 25px;
+.teacher_save_changes_button {
+
 }
 
-.teacher_edit_box_button {
+.teacher_save_changes_button {
 	margin-top: 10px;
-	background-color: #3AC162;
-	font-size: 16px;
-	font-weight: bold;
+	background-color: #26AE5A;
+	font-size: 20px;
 	color: white;
-	border: 1px solid #cecfc0;
+	border: 0px solid #cecfc0;
 	font-family: "Open Sans", helvetica, arial;
 	background-color: #3AC162;
 	cursor: pointer;
+	-webkit-transition: background-color 150ms linear;
+  	-moz-transition: background-color 150ms linear;
+  	-o-transition: background-color 150ms linear;
+  	-ms-transition: background-color 150ms linear;
+  	transition: background-color 150ms linear;
+}
+
+.teacher_save_changes_button:hover {
+	background-color: #229c51;
 }
 
 .teacher_edit_box_cancel {
