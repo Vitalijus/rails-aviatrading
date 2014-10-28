@@ -13,8 +13,22 @@ School::Application.configure do
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
 
+  config.action_mailer.perform_deliveries = true
+
+  # Change mail delvery to either :smtp, :sendmail, :file, :test
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+    address: "smtpout.secureserver.net",
+    port: 3535,
+    domain: "www.chocolaticpost.com",
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: "info@chocolaticpost.com",
+    password: "pedagogika"
+  }
+
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   #Devise
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }

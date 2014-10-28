@@ -31,8 +31,10 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save_with_payment
+
         format.html { redirect_to [@course, @order], notice: 'Order was successfully created.' }
         format.json { render action: 'show', status: :created, location: @order }
+        OrderMailer.order_confirmation(@order).deliver
       else
         format.html { render action: 'new' }
         format.json { render json: @order.errors, status: :unprocessable_entity }

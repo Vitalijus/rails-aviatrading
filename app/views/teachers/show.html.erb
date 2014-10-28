@@ -1,24 +1,55 @@
-<div id="teacher_header">
-  <%= image_tag "about.png" %> About <%= @teacher.name %> <%= @teacher.surname %>
-</div>
-
 <div id="teacher_wrapper">
-	<div id="teacher_profile_image">
-    <%= image_tag @teacher.avatar_url(:avatar) %>
-	</div>
+  <div id="teacher_profile_wrapper">
+  	<div id="teacher_profile_image">
+      <%= image_tag @teacher.avatar_url(:avatar) %>
+  	</div>
+
+    <div id="teacher_profile_social_network">
+      <ul>
+        <li><%= image_tag "f_grey.png", width: 25 %></li>
+        <li><%= image_tag "tw_grey.png", width: 25 %></li>
+      </ul>
+    </div>
+  </div>
     
-	<div id="teacher_profile_name">
-		<%= @teacher.name %> <%= @teacher.surname %>
+	<div id="teacher_profile_attributes_wrapper">
+		<div id="teacher_profile_name">
+      <%= @teacher.name %> <%= @teacher.surname %>
+
+      <% if current_teacher == @teacher%>
+        <%= link_to edit_teacher_registration_path do %>
+          <%= image_tag "pencil.png", width: 17 %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div id="teacher_profile_attribute">
+      I teach <%= @teacher.iteach %> & I speak <%= @teacher.ispeak %>
+    </div>
+
+    <div id="teacher_profile_attribute">
+      Native language: <%= @teacher.native_language %>
+    </div>
+
+    <div id="teacher_profile_attribute">
+      Location: <%= @teacher.location %>
+    </div>
+
+    <div id="teacher_profile_attribute">
+      Time Zone: <%= @teacher.time_zone %>
+    </div>
+
+    <div id="teacher_profile_attribute">
+      Age: <%= @teacher.age %>
+    </div>
 	</div>
 
-
-<% if current_teacher == @teacher%>
-	<div id="teacher_profile_navigation">
-		<%= link_to edit_teacher_registration_path do %>
-			<%= image_tag "pencil.png", width: 25 %>
-		<% end %>
+	<div id="teacher_profile_about_me">
+    <div id="teacher_profile_about_me_header">
+    About Me
+    </div>
+		<%= @teacher.about_me %>
 	</div>
-<% end %>
 </div>
 
 <div id="masonry_container">
@@ -33,26 +64,29 @@
 	            	<%= image_tag "remove.png", width: 10 %>
 	            <% end %>
 	        </div>
-
-          <div class="box_edit">
-              <%= link_to edit_course_path(course) do %>
-                <%= image_tag "pencil.png", width: 16 %>
-              <% end %>
-          </div>
 	    <% end %>
 
             <div class="box_course_title">
-                <%= course.language %> <%= course.level %>
+              <%= course.language %> <%= truncate(course.level, :length => 2, :omission => "") %>
 
-               <div class="box_course_price">
+              <div class="box_course_price">
                 <%= course.price %>€
               </div>
 
-                <div class="box_teacher_name">
-                  with <%= course.teacher.name %> <%= course.teacher.surname %>
-                </div>
-  
+              <div class="box_teacher_name">
+                with <%= course.teacher.name %> <%= course.teacher.surname %>
+              </div>
             </div>
+
+            
+
+            <div class="box_edit">
+              <%= link_to edit_course_path(course) do %>
+                <%= image_tag "pencil.png", width: 14 %>
+              <% end %>
+            </div>
+
+
 
             <div class="box_description">
               <%= course.description %>

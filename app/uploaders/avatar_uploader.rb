@@ -6,7 +6,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   process :tags => ['teacher_avatar']
 
   version :avatar do
-     process :resize_to_fill => [60, 60]
+     process :resize_to_fill => [120, 120]
   end
 
   # Include RMagick or MiniMagick support:
