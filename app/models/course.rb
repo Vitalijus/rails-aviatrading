@@ -8,5 +8,5 @@ class Course < ActiveRecord::Base
 	validates :language, :level, :price, :duration, :course_type, :course_start,
 			  :course_end, :course_pdf, :time_zone, :lesson_per_week, presence: true
 	validates :description, length: {maximum: 300}
-
+	validates :price, numericality: { greater_than: 2 }
 end

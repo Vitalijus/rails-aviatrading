@@ -30,20 +30,20 @@
     </div>
   </div>
 
-<div id="parallax_container">
   <div class="banner_wrapper">
+    
 
     <div class="banner_triangle">
       <%= image_tag "triangle.png", width: 35 %>
     </div>
 
     <div class="banner_box_wrapper">
+      <div class="banner_content_wrapper">
 
       <div class="banner_box">
         <ul>
           <li><%= image_tag "wifi_round.png", width: 100 %></li>
           <li>Learn online</li>
-          <li><p>Live classes via conferencing platform (Adobe Connect)</p></li>
         </ul>
       </div>
 
@@ -52,7 +52,6 @@
         <ul>
           <li><%= image_tag "user_private.png", width: 100 %></li>
           <li>Private Classes</li>
-          <li><p>The most effective way to improve your language skills</p></li>
         </ul>
       </div>
 
@@ -61,7 +60,6 @@
         <ul>
           <li><%= image_tag "user_group.png", width: 100 %></li>
           <li>Group Classes</li>
-          <li><p>Students from all over the world, typically no more than 5 students per class </p></li>
         </ul>
       </div>
 
@@ -70,7 +68,6 @@
         <ul>
           <li><%= image_tag "teacher.png", width: 100 %></li>
           <li>Real Teachers</li>
-          <li><p>Experienced teachers from all over the world</p></li>
         </ul>
       </div>
 
@@ -79,7 +76,6 @@
         <ul>
           <li><%= image_tag "free_try.png", width: 100 %></li>
           <li>Free Try</li>
-          <li><p>Make free lesson before you enroll to a course</p></li>
         </ul>
       </div>
 
@@ -88,12 +84,16 @@
         <ul>
           <li><%= image_tag "money.png", width: 100 %></li>
           <li>7-day money back</li>
-          <li><p>All courses come with a 7-day money back guarantee </p></li>
         </ul>
       </div>
 
     </div>
 
+    <div class="banner_video">
+      <iframe width="540" height="315" src="//www.youtube.com/embed/QPF8JmvXGw0" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    </div>
   </div>
 
 <% end %>
@@ -116,7 +116,6 @@
   <% end %>
 
 <%= render "masonry" %>
-  </div>
 
 <div class="digg_pagination" data-no-turbolink>
   <%= will_paginate @courses, :page_links => false %>

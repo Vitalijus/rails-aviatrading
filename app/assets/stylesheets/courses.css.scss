@@ -195,14 +195,22 @@ a:hover #display_login_button_student {
 	margin: auto;
 	width: 1110px;
 	overflow: hidden;
+	border: 0px solid red;
+}
+
+.banner_content_wrapper {
+	width: 557px;
+	overflow: hidden;
+	float: left;
+	margin-bottom: 50px;
 	border: 0px solid blue;
 }
 
 .banner_box ul {
 	float: left;
 	width: 185px;
-	padding: 40px 10px 0 10px;
-	margin-bottom: 55px;
+	padding: 30px 10px 0 10px;
+	margin-bottom: 0px;
 	text-align: center;
 	border: 0px solid black;
 }
@@ -215,13 +223,11 @@ a:hover #display_login_button_student {
 	border: 0px solid green;
 }
 
-.banner_box li p {
-	margin: 0px 0 0 0;
-	font-size: 14px;
-	font-family: "Open Sans", helvetica, arial;
-	color: #666666;
-	line-height: 25px;
-	border: 0px solid green;
+.banner_video {
+	float: right;
+	height: 400px;
+	padding-top: 60px;
+	border: 0px solid red;
 }
 
 .banner_triangle {
