@@ -41,8 +41,11 @@
 
 
     <%= f.hidden_field :stripe_card_token %> 
-    <%= f.hidden_field :amount, :value => @course.price*100 %>  
-    <%= f.hidden_field :email, :value => @course.teacher.email %>  
+
+    <% if student_signed_in? %>
+      <%= f.hidden_field :amount, :value => @course.price*100 %>  
+      <%= f.hidden_field :email, :value => current_student.email %>  
+    <% end %>
 
     <!--<div class="order_box_field">
       <%= f.text_field :email, placeholder: "Email for invoice" %>
