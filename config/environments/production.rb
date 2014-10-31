@@ -27,7 +27,7 @@ School::Application.configure do
   }
 
   # Specify what domain to use for mailer URLs
-  config.action_mailer.default_url_options = {host: "http://www.lingonas.com"}
+  config.action_mailer.default_url_options = {host: "http://fierce-plains-8197.herokuapp.com/"}
 
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
   # Add `rack-cache` to your Gemfile before enabling this.

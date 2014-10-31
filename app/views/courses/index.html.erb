@@ -6,12 +6,20 @@
         <p>Find language course you like, enroll or first try it out for free </p>
       </div>
 
+
+  <div id="display_howitworks_wrapper">
     <%= link_to courses_path do %>
       <div id="display_howitworks">
         How it works?
       </div>
     <% end %>
 
+    <%= link_to courses_path do %>
+      <div id="display_view_courses">
+        View courses
+      </div>
+    <% end %>
+  </div>
 
       <div id="display_login_wrapper">
         
@@ -23,7 +31,7 @@
 
         <%= link_to new_teacher_session_path do %>
           <div id="display_login_button_tutor">
-            Tutor
+            Teacher
           </div>
         <% end %>
 
@@ -32,12 +40,33 @@
 
   <div class="banner_wrapper">
     
-
     <div class="banner_triangle">
       <%= image_tag "triangle.png", width: 35 %>
     </div>
 
     <div class="banner_box_wrapper">
+
+      <div class="banner_box_video_title">
+        INTRODUCING LINGONAS
+      </div>
+
+      <div class="banner_box_video_title_small">
+        Take a look at what we offer you
+      </div>
+
+      <div class="banner_video">
+        <!--<iframe src="//fast.wistia.net/embed/iframe/0l5lpvn3f1" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="620" height="350"></iframe>-->
+        <video id="example_video_1" class="video-js vjs-default-skin"
+          controls preload="auto" width="620" height="350"
+          poster=""
+          data-setup='{"example_option":true}'>
+         <source src="https://dl.dropboxusercontent.com/u/60193860/lingonas.mp4" type='video/mp4' />
+         <source src="https://dl.dropboxusercontent.com/u/60193860/lingonas.webm" type='video/webm' />
+         <source src="https://dl.dropboxusercontent.com/u/60193860/lingonas.ogv" type='video/ogg' />
+         <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+        </video>
+      </div>
+
       <div class="banner_content_wrapper">
 
       <div class="banner_box">
@@ -89,9 +118,9 @@
 
     </div>
 
-    <div class="banner_video">
+    <!--<div class="banner_video">
       <iframe width="540" height="315" src="//www.youtube.com/embed/QPF8JmvXGw0" frameborder="0" allowfullscreen></iframe>
-    </div>
+    </div>-->
 
     </div>
   </div>
