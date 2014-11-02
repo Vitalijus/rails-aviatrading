@@ -5,9 +5,27 @@
   	</div>
 
     <div id="teacher_profile_social_network">
-      <ul>
-        <li><%= image_tag "f_grey.png", width: 25 %></li>
-        <li><%= image_tag "tw_grey.png", width: 25 %></li>
+        <ul>
+          <li>
+            <%= link_to "https://twitter.com/share?url=https%3A%2F%2Flingonas.com#{teacher_path(@teacher)}", :target => "_blank" do %>
+              <%= image_tag "tw_blue.png", width: 25 %>
+            <% end %>
+          </li>
+
+          <%= fb_share('178872632300191', 'https://www.lingonas.com/', { 
+                    :name => "#{@teacher.name} #{@teacher.surname} teacher at Lingonas",
+                    :method => "feed",
+                    :description => "#{@teacher.about_me}",
+                    :link => "https://lingonas.com/#{teacher_path(@teacher)}",
+                    :picture => "#{@teacher.avatar_url}",
+                    :caption => "lingonas.com. Re-think language learning."
+                    }) %>
+        <%= link_to $facebook_url do %>
+          <li>
+            <%= image_tag "f_blue.png", width: 25 %>
+          </li>
+        <% end %>
+
       </ul>
     </div>
   </div>
@@ -64,7 +82,13 @@
 	            	<%= image_tag "remove.png", width: 10 %>
 	            <% end %>
 	        </div>
-	    <% end %>
+
+          <div class="box_edit">
+            <%= link_to edit_course_path(course) do %>
+              <%= image_tag "pencil.png", width: 14 %>
+            <% end %>
+          </div>
+	      <% end %>
 
             <div class="box_course_title">
               <%= course.language %> <%= truncate(course.level, :length => 2, :omission => "") %>
@@ -78,16 +102,6 @@
               </div>
             </div>
 
-            
-
-            <div class="box_edit">
-              <%= link_to edit_course_path(course) do %>
-                <%= image_tag "pencil.png", width: 14 %>
-              <% end %>
-            </div>
-
-
-
             <div class="box_description">
               <%= course.description %>
             </div>
@@ -95,22 +109,37 @@
               <table>
 
                 <tr>
+                  <td>Course level:</td>
+                  <td><strong><%= course.level %></strong></td>
+                </tr>
+
+                <tr>
                   <td>Course type:</td>
                   <td><strong><%= course.course_type %></strong></td>
                 </tr>
 
                 <tr>
-                  <td>Length:</td>
+                  <td>Time zone:</td>
+                  <td><strong><%= course.time_zone %></strong></td>
+                </tr>
+
+                <tr>
+                  <td>Lesson length:</td>
                   <td><strong><%= course.duration %></strong></td>
                 </tr>
 
                 <tr>
-                  <td>Class start:</td>
+                  <td>Lessons per week:</td>
+                  <td><strong><%= course.lesson_per_week %></strong></td>
+                </tr>
+
+                <tr>
+                  <td>Course start:</td>
                   <td><strong><%= course.course_start.to_formatted_s(:rfc822) %></strong></td>
                 </tr>
 
                 <tr>
-                  <td>Class end:</td>
+                  <td>Course end:</td>
                   <td><strong><%= course.course_end.to_formatted_s(:rfc822) %></strong></td>
                 </tr>
                 
@@ -122,16 +151,30 @@
             <div class="box_footer">
 
               <ul>
-                <!--<li><%= link_to 'Edit', edit_course_path(course) %></li>
-                <li><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></li>-->
                   <li>
-                    <%= image_tag "tw_grey.png", width: 25, :class => "box_icon_opacity", :title => "share" %>
-                    <%= image_tag "tw_blue.png", width: 25 %>
+                    <%= link_to "https://twitter.com/share?url=https%3A%2F%2Flingonas.com#{teacher_path(course.teacher_id)}", :target => "_blank" do %>
+                      <%= image_tag "tw_blue.png", width: 25 %>
+                    <% end %>
                   </li>
 
+                  <%= fb_share('178872632300191', 'https://www.lingonas.com/', { 
+                            :name => "#{course.teacher.name} #{course.teacher.surname} - I teach #{course.language} #{course.level}",
+                            :method => "feed",
+                            :description => "#{course.teacher.about_me}",
+                            :link => "https://lingonas.com/#{teacher_path(course.teacher_id)}",
+                            :picture => "#{course.teacher.avatar_url}",
+                            :caption => "lingonas.com. Re-think language learning."
+                            }) %>
+                <%= link_to $facebook_url do %>
                   <li>
-                    <%= image_tag "f_grey.png", width: 25, :class => "box_icon_opacity", :title => "share" %>
                     <%= image_tag "f_blue.png", width: 25 %>
+                  </li>
+                <% end %>
+
+                  <li>
+                    <%= link_to course.course_pdf_url, :target => "_blank" do %>
+                      <%= image_tag "file_red.png", width: 20 %>
+                    <% end %>
                   </li>
                   
               </ul>
@@ -139,10 +182,6 @@
             </div>
 
             <div class="box_button_wrapper">
-
-              <div class="box_button_icon">
-                <%= image_tag "button_icon.png", width: 60 %>
-              </div>
 
           
           <%= link_to new_course_trial_path(course) do %>

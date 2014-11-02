@@ -5,7 +5,8 @@
 #order_wrapper {
 	width: 960px;
 	margin: 0 auto;
-	margin-bottom: 100px;
+	margin-top: 20px;
+	padding-bottom: 20px;
 	background-color: #ffffff;
 	overflow: hidden;
 	border: 0px solid red;
@@ -15,32 +16,20 @@
 }
 
 #order_box_header {
-	width: 960px;
-	margin: auto;
-	margin-top: 0px;
-	padding-left: 50px;
-	height: 80px;
-	line-height: 80px;
-	color: #B2B2B2;
+	width: 100%;
+	color: #777777;
 	font-size: 25px;
+	padding: 20px 20px 0 20px;
 	font-family: 'Lato', sans-serif;
 	border: 0px solid red;
 	position: relative;
 }
 
-#order_box_header img {
-	position: absolute;
-	top: 30px;
-	left:0;
-	border: 0px solid red;
-}
-
 #order_box_info {
-	width: 67.5%;
-	float: left;
+	width: 100%;
 	font-family: "Open Sans", helvetica, arial;
 	font-size: 14px;
-	padding: 20px 0 20px 20px;
+	padding: 20px 0 0px 20px;
 	border: 0px solid red;
 }
 
@@ -62,19 +51,15 @@
 	position: relative;
 	color: #b6b6b6;
 	border: 0px solid red;
+	-webkit-transition: background-color 150ms linear;
+  	-moz-transition: background-color 150ms linear;
+  	-o-transition: background-color 150ms linear;
+  	-ms-transition: background-color 150ms linear;
+  	transition: background-color 150ms linear;
 }
 
-#order_box_info li a {
-	color: #bcd6ec;
-	-webkit-transition: color 150ms linear;
-  	-moz-transition: color 150ms linear;
-  	-o-transition: color 150ms linear;
-  	-ms-transition: color 150ms linear;
-  	transition: color 150ms linear;
-}
-
-#order_box_info li a:hover {
-	color: #346fa1;
+#order_box_info li:hover {
+	background-color: #f0f0f0;
 }
 
 #order_box_info img {
@@ -84,27 +69,15 @@
 	border: 0px solid red;
 }
 
+#order_box_info  .trial_box_ribbon {
+	position: absolute;
+	top: -10px;
+	right: 10px;
+}
+
 #order_box_payment_form {
-	width: 32.5%;
-	float: right;
-	padding: 20px 20px 20px 0;
-	border: 0px solid red;
-}
-
-#order_box_secure_pay {
-	width: 100%;
-	margin-bottom: 20px;
-	border: 0px solid red;
-}
-
-#order_box_secure_pay ul {
-	overflow: hidden;
-	border: 0px solid red;
-}
-
-#order_box_secure_pay li{
-	float: left;
-	padding: 0 9px 0 9px;
+	width: 40%;
+	margin: 0 auto;
 	border: 0px solid red;
 }
 
@@ -165,10 +138,86 @@
   background-color: #229c51;
 }
 
+#order_box_please_sign_in {
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	color: #ffffff;
+	font-size: 20px;
+	font-family: "Open Sans", helvetica, arial;
+	background-color: #26ae5a;
+	border: none;
+	cursor: pointer;
+  	-webkit-transition: background-color 150ms linear;
+  	-moz-transition: background-color 150ms linear;
+  	-o-transition: background-color 150ms linear;
+  	-ms-transition: background-color 150ms linear;
+  	transition: background-color 150ms linear;
+}
+
+#order_box_please_sign_in:hover {
+	background-color: #229c51;
+}
+
 #stripe_error {
 	color: red;
 	border: 0px solid red;
 	font-family: 'Lato', sans-serif;
 	font-size: 14px;
 	padding-bottom: 0px;
+}
+
+#order_box_secure_pay_wrapper {
+	width: 960px;
+	margin: 0 auto;
+	overflow: hidden;
+	margin-top: 20px;
+  	margin-bottom: 100px;
+	border: 0px solid red;
+}
+
+#order_box_secure_pay {
+	width: 40%;
+	float: left;
+	padding: 20px 20px 17px 20px;
+	background-color: #ffffff;
+	-webkit-box-shadow: 0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+  	-moz-box-shadow:    0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+  	box-shadow:         0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+	border: 0px solid red;
+}
+
+#order_box_secure_pay ul {
+	overflow: hidden;
+	border: 0px solid red;
+}
+
+#order_box_secure_pay li{
+	float: left;
+	padding: 0 9px 0 9px;
+	border: 0px solid red;
+}
+
+#order_box_money_back {
+	width: 57.9%;
+	float: left;
+	margin-left: 20px;
+	padding: 20px;
+	background-color: #ffffff;
+	-webkit-box-shadow: 0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+  	-moz-box-shadow:    0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+  	box-shadow:         0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+	border: 0px solid red;
+}
+
+#order_box_money_back span {
+	color: #555555;
+	font-family: "Open Sans", helvetica, arial;
+	font-size: 12px;
+}
+
+#order_box_money_back img {
+	float: left;
+	margin: 0 20px 0 0;
 }

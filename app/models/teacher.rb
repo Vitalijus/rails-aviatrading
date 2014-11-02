@@ -10,4 +10,8 @@ class Teacher < ActiveRecord::Base
 
   validates :name, :surname, presence: true
 
+  def to_param
+	"#{id} #{name} #{surname}".parameterize
+  end
+
 end

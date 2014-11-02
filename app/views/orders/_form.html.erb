@@ -1,28 +1,37 @@
-<div id="order_box_header">
-   <%= image_tag "display.png" %> Start <%= @course.language %> <%= truncate(@course.level, :length => 2, :omission => "") %> Course
-</div>
-
 <div id="order_wrapper">
+
+  <div id="order_box_header">
+   Start <%= @course.language %> <%= truncate(@course.level, :length => 2, :omission => "") %> course
+  </div>
 
 <%= form_for([@course, @order]) do |f| %>
   
   <div id="order_box_info">
     <ul>
-      <li><%= image_tag "message.png", width: 50 %> <b>1st step:</b> Get email with details from tutor</li>
-      <li><%= image_tag "wifi.png", width: 50 %><b>2nd step:</b> Connect to conferencing platform (Adobe Connect)</li>
-
-      <li><%= image_tag "mic.png", width: 50 %><b>You will need:</b> Microphone, speaker & webcam (optional)</li>
-
-      <li>
-        <%= image_tag "user.png", width: 50 %>
-          <b>Tutor:</b><%= link_to @course.teacher, data: { no_turbolink: true }  do %>
-             <%= @course.teacher.name %> <%= @course.teacher.surname %>
-          <% end %>
+      <li><%= image_tag "message.png", width: 50 %> <b>1st step:</b> Get email with details from tutor
       </li>
-      
-      <li><%= image_tag "user.png", width: 50 %><b>Still need some help?</b> Feel free to contact us email@email.com</li>
 
-      <li><%= image_tag "chat.png", width: 50 %><b>Need help?</b> Take a look at this <%= link_to @course.teacher, data: { no_turbolink: true }  do %>guide<% end %> or contact us email@email.com </li>
+      <li><%= image_tag "wifi.png", width: 50 %><b>2nd step:</b> Connect to conferencing platform (Adobe Connect)
+      </li>
+
+      <li><%= image_tag "mic.png", width: 50 %><b>You will need:</b> Microphone, speaker & webcam (optional)
+      </li>
+
+      <%= link_to @course.teacher, data: { no_turbolink: true }  do %>
+      <li><%= image_tag "ribbon.png", :class => "trial_box_ribbon", width: 40 %><%= image_tag "user.png", width: 50 %><b>Tutor:</b> <%= @course.teacher.name %> <%= @course.teacher.surname %>
+      </li>
+    <% end %>
+      
+      <%= link_to "http://res.cloudinary.com/dhgsrpwf7/image/upload/v1414797713/participants_bbsf3i.pdf", :target => "_blank", data: { no_turbolink: true }  do %>
+      <li>
+        <%= image_tag "ribbon.png", :class => "trial_box_ribbon", width: 40 %><%= image_tag "guide.png", width: 50 %><b>Need help?</b> Take a look at this guide
+      </li>
+    <% end %>
+
+      <%= link_to courses_path, data: { no_turbolink: true }  do %>
+      <li><%= image_tag "ribbon.png", :class => "trial_box_ribbon", width: 40 %><%= image_tag "chat.png", width: 50 %><b>Still need some help?</b> Feel free to contact us
+      </li>
+    <% end %>
     </ul>
 
   </div>
@@ -69,11 +78,8 @@
       <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year"} %>
     </div>
 
-    <div class="order_box_field">
-      <%= label_tag :currency %></br>
-      <%= f.select :currency, ["eur", "usd" ], :prompt => 'Choose currency'  %>
-    </div>
     <% end %>
+
   <div class="order_box_field">
     <%= f.text_field :name_on_card, placeholder: "Name on card" %>
   </div>
@@ -81,18 +87,39 @@
 <div id="stripe_error">
     <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
   </div>
+
+  <% if student_signed_in? %>
     <div id="order_box_button">
-      <%= f.submit ["ENROLL", @course.price,"€"], :class => "pay_button" %>
+      <%= f.submit ["Enroll", @course.price,"€"], :class => "pay_button" %>
     </div>
-    <div id="order_box_secure_pay">
-      <ul>
-        <li><%= image_tag "ssl.png", width: 115 %></li>
-        <li><%= image_tag "visa.png", width: 50 %></li>
-        <li><%= image_tag "mastercard.png", width: 50 %></li>
-        <li><%= image_tag "amex.png", width: 50 %></li>
-      </ul>
-    </div>
+  <% else %>
+    <%= link_to student_session_path do %>
+      <div id="order_box_please_sign_in">
+        Sing in 
+      </div>
+    <% end %>
+  <% end %>
+
   </div>
   <% end %>
 
+</div>
+
+
+<div id="order_box_secure_pay_wrapper">
+  <div id="order_box_secure_pay">
+    <ul>
+      <li><%= image_tag "ssl.png", width: 115 %></li>
+      <li><%= image_tag "visa.png", width: 50 %></li>
+      <li><%= image_tag "mastercard.png", width: 50 %></li>
+      <li><%= image_tag "amex.png", width: 50 %></li>
+    </ul>
+  </div>
+
+  <div id="order_box_money_back">
+    <%= image_tag "calendar.jpg", width: 60 %>
+    <b>7-day money back guarantee</b><br/>
+    <span>Every course includes a 7-day money back guarantee. Risk free. No questions asked.</span>
+
+  </div>
 </div>

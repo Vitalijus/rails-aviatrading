@@ -88,42 +88,16 @@
 }
 
 #display_howitworks_wrapper {
-	width: 450px;
+	width: 200px;
 	margin: 0 auto;
 	overflow: hidden;
 	border: 0px solid red;
-}
-
-#display_howitworks {
-	width: 200px;
-	height: 50px;
-	margin: 0 auto;
-	float: left;
-	line-height: 48px;
-	font-size: 18px;
-	text-align: center;
-	color: #ffffff;
-	border: 1px solid #ffffff;
-	font-family: 'Lato', sans-serif;
-	-webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    border-radius: 2px;
-    -webkit-transition: background-color 150ms linear;
-  	-moz-transition: background-color 150ms linear;
-  	-o-transition: background-color 150ms linear;
-  	-ms-transition: background-color 150ms linear;
-  	transition: background-color 150ms linear;
-}
-
-#display_howitworks:hover {
-	background-color: #2c5f79;
 }
 
 #display_view_courses { 
 	width: 200px;
 	height: 50px;
 	margin: 0 auto;
-	float: right;
 	line-height: 48px;
 	font-size: 18px;
 	text-align: center;
@@ -491,23 +465,16 @@ a:hover #display_login_button_student {
 
 }
 
-.box_button_icon {
-	top: -10px;
-	left: 100px;
-	position: absolute;
-}
-
 .box_button_enroll {
-	border: 0px solid #316A87;
-	background-color: #316A87;
+	border-left: 0px solid #4b87b0;
+	background-color: #5498c6;
 	width: 50%;
 	color: #ffffff;
 	height: 40px;
 	float: right;
-	text-align: right;
+	text-align: center;
 	line-height: 40px;
 	font-size: 13px;
-	padding: 0 28px 0 15px;
 	font-family: 'Lato', sans-serif;
 	-webkit-transition: background-color 150ms linear;
   	-moz-transition: background-color 150ms linear;
@@ -517,18 +484,19 @@ a:hover #display_login_button_student {
 }
 
 .box_button_enroll:hover {
-	background-color: #2c5f79;
+	background-color: #4b88b2;
 }
 
 .box_button_try {
-	background-color: #316A87;
+	background-color: #5498c6;
+	border-right: 1px solid #76acd1;
 	width: 50%;
 	float: left;
 	height: 40px;
 	line-height: 40px;
 	font-size: 14px;
 	color: #ffffff;
-	padding: 0 20px 0 25px;
+	text-align: center;
 	font-family: 'Lato', sans-serif;
 	-webkit-transition: background-color 150ms linear;
   	-moz-transition: background-color 150ms linear;
@@ -538,7 +506,7 @@ a:hover #display_login_button_student {
 }
 
 .box_button_try:hover {
-	background-color: #2c5f79;
+	background-color: #4b88b2;
 }
 
 
@@ -546,7 +514,7 @@ a:hover #display_login_button_student {
 	border: 0px solid red;
 	background-color: #ffffff;
 	overflow: hidden;
-	height: 50px;
+	height: 40px;
 }
 
 .box_footer ul {
@@ -554,58 +522,16 @@ a:hover #display_login_button_student {
 	text-align: center;
 	float: left;
 	width: 100%;
-	height: 100%;
 }
 
 .box_footer li {
 	border: 0px solid red;
 	width: 33.3333%;
 	float: left;
-	position: relative;
 	padding: 0px 20px 0 20px;
 	/*height: 100%;
 	line-height: 50px;*/
 }
-
-.box_icon_opacity {
-	border: 0px solid red;
-	padding: 0px;
-	position: absolute;
-	top: 0px;
-	left: 31px;
-}
-
-.box_icon_opacity:hover {
-	opacity: 0;
-}
-
-.box_icon_opacity {
-	-webkit-transition: opacity 250ms linear;
-  	-moz-transition: opacity 250ms linear;
-  	-o-transition: opacity 250ms linear;
-  	-ms-transition: opacity 250ms linear;
-  	transition: opacity 250ms linear;
- }
-
- .box_icon_file_opacity {
-	border: 0px solid red;
-	padding: 0px;
-	position: absolute;
-	top: 0px;
-	left: 34px;
-}
-
-.box_icon_file_opacity:hover {
-	opacity: 0;
-}
-
-.box_icon_file_opacity {
-	-webkit-transition: opacity 250ms linear;
-  	-moz-transition: opacity 250ms linear;
-  	-o-transition: opacity 250ms linear;
-  	-ms-transition: opacity 250ms linear;
-  	transition: opacity 250ms linear;
- }
 
 
 /* ---------------------*/

@@ -6,6 +6,7 @@ School::Application.routes.draw do
   devise_for :students
   devise_for :teachers 
 
+  resources :students, only: [:show]
   resources :teachers, only: [:show]
   
   resources :courses do

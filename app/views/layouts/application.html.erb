@@ -54,7 +54,7 @@
 			<div class="header_logo"> 
 
 				<div class="webpage_logo">
-					<%= image_tag "education.png", width: 30 %>
+					<%= image_tag "logo 75x75.png", width: 35 %>
 				</div>
 
 				<div class="webpage_title">
@@ -67,7 +67,7 @@
 				<ul>
 					<% if !signed_in? %>
 						<%= link_to new_student_session_path do %>
-						      <li>WHY OLS?</li>
+						      <li>WHY LINGONAS?</li>
 						<% end %>
 
 						<%= link_to new_student_session_path do %>
@@ -109,7 +109,7 @@
 							<li>COURSES</li>
 						<% end %>
 
-				  		<%= link_to edit_student_registration_path, data: { no_turbolink: true } do %>
+				  		<%= link_to student_path(current_student), data: { no_turbolink: true } do %>
 				  			<li>MY COURSES</li>
 				  		<% end %>
 
@@ -136,7 +136,7 @@
         </div>
 
         <div class="footer-image">
-          <%= image_tag "footer_logo.png", width: 30 %>
+          <%= image_tag "logo_footer.png", width: 30 %>
         </div>
 
         <div class="footer-right">

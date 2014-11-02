@@ -8,17 +8,11 @@
 
 
   <div id="display_howitworks_wrapper">
-    <%= link_to courses_path do %>
-      <div id="display_howitworks">
-        How it works?
-      </div>
-    <% end %>
-
-    <%= link_to courses_path do %>
+    <a href="#view_courses">
       <div id="display_view_courses">
         View courses
       </div>
-    <% end %>
+    </a>
   </div>
 
       <div id="display_login_wrapper">
@@ -55,7 +49,6 @@
       </div>
 
       <div class="banner_video">
-        <!--<iframe src="//fast.wistia.net/embed/iframe/0l5lpvn3f1" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="620" height="350"></iframe>-->
         <video id="example_video_1" class="video-js vjs-default-skin"
           controls preload="auto" width="620" height="350"
           poster=""
@@ -76,6 +69,20 @@
         </ul>
       </div>
 
+      <div class="banner_box">
+        <ul>
+          <li><%= image_tag "free_try.png", width: 100 %></li>
+          <li>Free Try</li>
+        </ul>
+      </div>
+
+      <div class="banner_box">
+        <ul>
+          <li><%= image_tag "teacher.png", width: 100 %></li>
+          <li>Real Teachers</li>
+        </ul>
+      </div>
+
 
       <div class="banner_box">
         <ul>
@@ -91,23 +98,7 @@
           <li>Group Classes</li>
         </ul>
       </div>
-
-
-      <div class="banner_box">
-        <ul>
-          <li><%= image_tag "teacher.png", width: 100 %></li>
-          <li>Real Teachers</li>
-        </ul>
-      </div>
-
-
-      <div class="banner_box">
-        <ul>
-          <li><%= image_tag "free_try.png", width: 100 %></li>
-          <li>Free Try</li>
-        </ul>
-      </div>
-
+      
 
       <div class="banner_box">
         <ul>
@@ -117,10 +108,6 @@
       </div>
 
     </div>
-
-    <!--<div class="banner_video">
-      <iframe width="540" height="315" src="//www.youtube.com/embed/QPF8JmvXGw0" frameborder="0" allowfullscreen></iframe>
-    </div>-->
 
     </div>
   </div>

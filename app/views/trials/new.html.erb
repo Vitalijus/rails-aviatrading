@@ -1,32 +1,26 @@
-<div id="trial_box_header">
-	 <%= image_tag "eye.png" %> <%= @course.language %> <%= truncate(@course.level, :length => 2, :omission => "") %> Free Lesson Request
-</div>
-
 <div id="trial_wrapper">
+	<div id="trial_box_header">
+		<%= @course.language %> <%= truncate(@course.level, :length => 2, :omission => "") %> free lesson request
+	</div>
+
 	<div id="trial_box">
 		<ul>
 
-		<%= link_to courses_path, data: { no_turbolink: true }  do %>
-			<li><%= image_tag "ribbon.png", :class => "trial_box_ribbon", width: 40 %><%= image_tag "message.png", width: 50 %> <b>1st step:</b> Get email with details from tutor
+			<li><%= image_tag "message.png", width: 50 %> <b>1st step:</b> Get email with details from tutor
 			</li>
-		<% end %>
 
-		<%= link_to courses_path, data: { no_turbolink: true }  do %>
-			<li><%= image_tag "ribbon.png", :class => "trial_box_ribbon", width: 40 %><%= image_tag "wifi.png", width: 50 %><b>2nd step:</b> Connect to conferencing platform (Adobe Connect)
+			<li><%= image_tag "wifi.png", width: 50 %><b>2nd step:</b> Connect to conferencing platform (Adobe Connect)
 			</li>
-		<% end %>
 
-		<%= link_to courses_path, data: { no_turbolink: true }  do %>
-			<li><%= image_tag "ribbon.png", :class => "trial_box_ribbon", width: 40 %><%= image_tag "mic.png", width: 50 %><b>You will need:</b> Microphone, speaker & webcam (optional)
+			<li><%= image_tag "mic.png", width: 50 %><b>You will need:</b> Microphone, speaker & webcam (optional)
 			</li>
-		<% end %>
 
 		<%= link_to @course.teacher, data: { no_turbolink: true }  do %>
 			<li><%= image_tag "ribbon.png", :class => "trial_box_ribbon", width: 40 %><%= image_tag "user.png", width: 50 %><b>Tutor:</b> <%= @course.teacher.name %> <%= @course.teacher.surname %>
 			</li>
 		<% end %>
 			
-		<%= link_to courses_path, data: { no_turbolink: true }  do %>
+		<%= link_to "http://res.cloudinary.com/dhgsrpwf7/image/upload/v1414797713/participants_bbsf3i.pdf", :target => "_blank", data: { no_turbolink: true }  do %>
 			<li>
 				<%= image_tag "ribbon.png", :class => "trial_box_ribbon", width: 40 %><%= image_tag "guide.png", width: 50 %><b>Need help?</b> Take a look at this guide
 			</li>

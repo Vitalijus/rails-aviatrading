@@ -5,6 +5,7 @@
 #trial_wrapper {
 	width: 960px;
 	margin: 0 auto;
+	margin-top: 20px;
 	background-color: #ffffff;
 	overflow: hidden;
 	-webkit-box-shadow: 0px 0px 0px 1px rgba(150, 150, 150, 0.25);
@@ -15,21 +16,10 @@
 #trial_box_header {
 	width: 960px;
 	margin: auto;
-	margin-top: 0px;
-	padding-left: 60px;
-	height: 80px;
-	line-height: 80px;
-	color: #B2B2B2;
+	padding: 20px 20px 0 20px;
+	color: #777777;
 	font-size: 25px;
 	font-family: 'Lato', sans-serif;
-	border: 0px solid red;
-	position: relative;
-}
-
-#trial_box_header img {
-	position: absolute;
-	top: 30px;
-	left:0;
 	border: 0px solid red;
 }
 

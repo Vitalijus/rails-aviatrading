@@ -1,0 +1,136 @@
+<% @student.orders.each do |order| %>
+  <%= order.id %>
+<% end %>
+
+<div id="masonry_container">
+
+      <% @student.courses.each do |course| %>
+               		
+        <div class="box">
+
+        <% if current_student == @student %>
+	        <div class="box_delete">
+	            <%= link_to course, method: :delete, data: { confirm: 'Want to delete this course?'  } do %>
+	            	<%= image_tag "remove.png", width: 10 %>
+	            <% end %>
+	        </div>
+	    <% end %>
+
+            <div class="box_course_title">
+              <%= course.language %> <%= truncate(course.level, :length => 2, :omission => "") %>
+
+              <div class="box_course_price">
+                <%= course.price %>€
+              </div>
+
+              <div class="box_teacher_name">
+                with <%= course.teacher.name %> <%= course.teacher.surname %>
+              </div>
+            </div>
+
+            
+
+            <div class="box_edit">
+              <%= link_to edit_course_path(course) do %>
+                <%= image_tag "pencil.png", width: 14 %>
+              <% end %>
+            </div>
+
+
+
+            <div class="box_description">
+              <%= course.description %>
+            </div>
+
+              <table>
+
+                <tr>
+                  <td>Course type:</td>
+                  <td><strong><%= course.course_type %></strong></td>
+                </tr>
+
+                <tr>
+                  <td>Length:</td>
+                  <td><strong><%= course.duration %></strong></td>
+                </tr>
+
+                <tr>
+                  <td>Class start:</td>
+                  <td><strong><%= course.course_start.to_formatted_s(:rfc822) %></strong></td>
+                </tr>
+
+                <tr>
+                  <td>Class end:</td>
+                  <td><strong><%= course.course_end.to_formatted_s(:rfc822) %></strong></td>
+                </tr>
+                
+              </table>
+
+                         
+
+
+            <div class="box_footer">
+
+              <ul>
+                <!--<li><%= link_to 'Edit', edit_course_path(course) %></li>
+                <li><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></li>-->
+                  <li>
+                    <%= image_tag "tw_grey.png", width: 25, :class => "box_icon_opacity", :title => "share" %>
+                    <%= image_tag "tw_blue.png", width: 25 %>
+                  </li>
+
+                  <li>
+                    <%= image_tag "f_grey.png", width: 25, :class => "box_icon_opacity", :title => "share" %>
+                    <%= image_tag "f_blue.png", width: 25 %>
+                  </li>
+                  
+              </ul>
+
+            </div>
+
+            <div class="box_button_wrapper">
+
+              <div class="box_button_icon">
+                <%= image_tag "button_icon.png", width: 60 %>
+              </div>
+
+          
+          <%= link_to new_course_trial_path(course) do %>
+            <div class="box_button_try">
+              FREE TRY
+            </div> 
+          <% end %>
+
+            
+            
+
+            <!--<%= form_for ([course, course.trials.build]) do |f| %>
+          <a href="#1" name="1" onclick="return show();">  </a> 
+
+              <div id="benefits" style="display:none;">
+                
+                      <%= f.label :name %><br/>
+                      <%= f.text_field :name %>
+
+                      <p><%= f.submit "Add comment" %></p>
+                      <%= course.price %>€
+                    
+                
+                <div id="display_popup_close">
+                  <a onclick="return hide();">click here</a>
+                </div> 
+              </div>
+            <% end %>-->
+              
+              
+
+            <%= link_to new_course_order_path(course) do %>
+              <div class="box_button_enroll">
+                ENROLL
+              </div>
+            <% end %>
+            </div>
+
+        </div>
+      <% end %>
+    </div>

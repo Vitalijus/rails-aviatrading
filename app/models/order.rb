@@ -10,7 +10,7 @@ class Order < ActiveRecord::Base
 	  if valid?
 	  	customer = Stripe::Charge.create(description: email, 
 	  									 amount: amount, 
-	  									 currency: currency, 
+	  									 currency: "eur", 
 	  									 card: stripe_card_token
 	  									 )
 	    self.stripe_customer_token = customer.id
