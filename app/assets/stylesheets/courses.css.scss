@@ -387,9 +387,9 @@ a:hover #display_login_button_student {
 	font-size: 25px;
 	padding: 15px 15px 0px 15px;
 	text-transform: lowercase;
-	border: 0px solid red; /*#eaeaeb*/
+	border-bottom: 1px solid #eaeaeb; /*#eaeaeb*/
 	font-family: 'Alegreya Sans SC', sans-serif;
-	background-color: #ffffff;
+	background-color: #F6F7F8;
 	color: #333333;
 }
 
@@ -399,7 +399,7 @@ a:hover #display_login_button_student {
 
 .box_teacher_name {
 	text-transform: none;
-	border-bottom: 1px solid #eaeaeb;
+	border-bottom: 0px solid #eaeaeb;
 	padding: 0 15px 10px 0px;
 	font-family: 'Lato', sans-serif;
 	font-size: 10px;
@@ -425,7 +425,6 @@ a:hover #display_login_button_student {
 	border: 0px solid red;
 	color: #999999;
 	font-size: 14px;
-	background-color: #ffffff;
 	margin: 7px 0px 0 15px;
 	font-family: 'Lato', sans-serif;
 

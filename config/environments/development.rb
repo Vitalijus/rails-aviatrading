@@ -20,7 +20,7 @@ School::Application.configure do
     config.action_mailer.smtp_settings = {
     address: "smtpout.secureserver.net",
     port: 3535,
-    domain: "www.chocolaticpost.com",
+    domain: "www.lingonas.com",
     authentication: "plain",
     enable_starttls_auto: true,
     user_name: "info@chocolaticpost.com",

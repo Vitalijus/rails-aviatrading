@@ -3,7 +3,7 @@ class Order < ActiveRecord::Base
 	belongs_to :student
 	attr_accessor :stripe_card_token
 
-	validates :name_on_card, :currency, presence: true
+	validates :name_on_card, presence: true
 
 
 	def save_with_payment

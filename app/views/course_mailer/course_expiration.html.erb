@@ -12,7 +12,7 @@
 
 <div class="wrapper", style= "width: 640px; background-color: #F5F5F5; padding: 50px;">
 
-	<div class="header", style= "width: 600px; font-family: 'Alegreya Sans SC', sans-serif; padding: 30px 20px 30px 20px; margin: 0 auto; background: #316A7E; font-size: 30px; color: #ffffff;">LINGONAS: free lesson request.
+	<div class="header", style= "width: 600px; font-family: 'Alegreya Sans SC', sans-serif; padding: 30px 20px 30px 20px; margin: 0 auto; background: #316A7E; font-size: 30px; color: #ffffff;">LINGONAS: new course confirmation.
   </div>
 
 	<div class="content", style="width: 598px; margin: 0 auto; border-left: 1px solid #dbdbdb; border-right: 1px solid #dbdbdb; border-bottom: 1px solid #dbdbdb; padding: 0px 20px 40px 20px; color: #666C74; font-size: 12px; background-color: #ffffff;">
@@ -20,52 +20,54 @@
   <div class="triangle", style="width: 0; height: 0; border-style: solid; border-width: 15px 15px 0 15px; border-color: #31697e transparent transparent transparent;">
   </div>
 
-    <div style="font-family: 'Open Sans', helvetica, arial; font-size: 25px; padding: 20px 0 20px 0;"><%= @trial.name %> has sent you free lesson request!<br/>
-    Send <%= @trial.name %> your feedback.</div>
+    <div style="font-family: 'Open Sans', helvetica, arial; font-size: 25px; padding: 20px 0 20px 0;">
+    	 has sent you free lesson request!<br/>
+    	Send  your feedback.
+    </div>
 
 	   <table>
         <tr>
           <td>Course level:</td>
-          <td><strong><%= @trial.course.level %></strong></td>
+          <td><strong><%= @course.level %></strong></td>
         </tr>
 
         <tr>
           <td>Course type:</td>
-          <td><strong><%= @trial.course.course_type %></strong></td>
+          <td><strong><%= @course.course_type %></strong></td>
         </tr>
 
         <tr>
           <td>Time zone:</td>
-          <td><strong><%= @trial.course.time_zone %></strong></td>
+          <td><strong><%= @course.time_zone %></strong></td>
         </tr>
 
         <tr>
           <td>Lesson time:</td>
-          <td><strong><%= @trial.course.time_start %> to <%= @trial.course.time_end %></strong></td>
+          <td><strong><%= @course.time_start %> to <%= @order.course.time_end %></strong></td>
         </tr>
 
         <tr>
           <td>Lessons per week:</td>
-          <td><strong><%= @trial.course.lesson_per_week %></strong></td>
+          <td><strong><%= @course.lesson_per_week %></strong></td>
         </tr>
 
         <tr>
           <td>Course start:</td>
-          <td><strong><%= @trial.course.course_start.to_formatted_s(:rfc822) %></strong></td>
+          <td><strong><%= @course.course_start.to_formatted_s(:rfc822) %></strong></td>
         </tr>
 
         <tr>
           <td>Course end:</td>
-          <td><strong><%= @trial.course.course_end.to_formatted_s(:rfc822) %></strong></td>
+          <td><strong><%= @course.course_end.to_formatted_s(:rfc822) %></strong></td>
         </tr>  
       </table>
 	
   	<div class="notice", style="width: 100%; padding: 20px 0 20px 0;">
-      <%= @trial.notice %>
+      
     </div>
 
     <div class="notice", style="width: 100%;">
-      <b>Contact:</b> <%= @trial.email %>
+      <b>Contact:</b> 
     </div>
 
 	</div>

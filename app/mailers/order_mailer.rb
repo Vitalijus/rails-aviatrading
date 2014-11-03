@@ -5,6 +5,6 @@ class OrderMailer < ActionMailer::Base
     attachments["SL.pdf"] = File.read("#{Rails.root}/public/attachments/SL.pdf")
     mail(to: "vitalij.desuk@gmail.com", 
     	 subject: "Order Confirmation",
-    	 from: "info@chocolaticpost.com")
+    	 from: "vitalij.desuk@gmail.com")
   end
 end

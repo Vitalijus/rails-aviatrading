@@ -5,7 +5,8 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
   def index
-    @q = Course.order("created_at DESC").paginate(:page => params[:page], :per_page => 10).search(params[:q])
+    time_range = Time.now..(Time.now + 30.day)
+    @q = Course.where("courses.course_start" => time_range).order("created_at DESC").paginate(:page => params[:page], :per_page => 10).search(params[:q])
     @courses = @q.result(distinct: true)
   end
 
@@ -31,6 +32,7 @@ class CoursesController < ApplicationController
 
       if @course.save
         redirect_to courses_path, notice: "Course was successfully created." 
+        CourseMailer.course_expiration(@course).deliver
       else
         render action: 'new'
       end
@@ -66,7 +68,7 @@ class CoursesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
       params.require(:course).permit(:description, :price, :level, :language,
-                                      :duration, :course_type, :course_start, :course_end, 
+                                      :time_start, :time_end, :course_type, :course_start, :course_end, 
                                       :registration_until, :course_pdf, :time_zone,
                                       :lesson_per_week, :student_id)
     end

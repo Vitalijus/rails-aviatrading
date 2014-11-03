@@ -1,0 +1,4 @@
+class AddTimeRangeToCourses < ActiveRecord::Migration
+  def change
+  end
+end

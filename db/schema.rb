@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141029192110) do
+ActiveRecord::Schema.define(version: 20141103085803) do
+
+  create_table "contacts", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "message"
+    t.string   "name"
+    t.string   "email"
+  end
 
   create_table "courses", force: true do |t|
     t.datetime "created_at"
@@ -21,7 +29,7 @@ ActiveRecord::Schema.define(version: 20141029192110) do
     t.integer  "price"
     t.string   "level"
     t.string   "language"
-    t.string   "duration"
+    t.string   "time_start"
     t.string   "course_type"
     t.date     "course_start"
     t.date     "course_end"
@@ -30,6 +38,7 @@ ActiveRecord::Schema.define(version: 20141029192110) do
     t.string   "lesson_per_week"
     t.string   "time_zone"
     t.integer  "student_id"
+    t.string   "time_end"
   end
 
   create_table "lessons", force: true do |t|
