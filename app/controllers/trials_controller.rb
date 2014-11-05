@@ -10,6 +10,7 @@ class TrialsController < ApplicationController
 		
 		if @trial.save
 			TrialMailer.new_trial_request(@trial).deliver
+			TrialMailer.new_trial_request_confirmation(@trial).deliver
 			redirect_to courses_path, notice: "Request was successfully sent." 
 		else
 			render action: 'new' 

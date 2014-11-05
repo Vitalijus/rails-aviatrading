@@ -22,8 +22,8 @@ School::Application.configure do
     domain: "www.lingonas.com",
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: "info@chocolaticpost.com",
-    password: "pedagogika"
+    user_name: "support@lingonas.com",
+    password: "Pedagogika_1"
   }
 
   # Specify what domain to use for mailer URLs

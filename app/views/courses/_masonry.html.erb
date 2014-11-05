@@ -102,15 +102,15 @@
                     <%= link_to "https://twitter.com/share?url=https%3A%2F%2Flingonas.com#{teacher_path(course.teacher_id)}", :target => "_blank" do %>
                       <%= image_tag "tw_blue.png", width: 25 %>
                     <% end %>
-                  </li>
+                  </li>               
 
-                  <%= fb_share('178872632300191', 'https://www.lingonas.com/', { 
-                            :name => "#{course.teacher.name} #{course.teacher.surname} - I teach #{course.language} #{course.level}",
+                <%= fb_share('178872632300191', 'https://www.lingonas.com/', { 
+                            :name => "Learning #{course.language} #{course.level} with #{course.teacher.name} #{course.teacher.surname}",
                             :method => "feed",
-                            :description => "#{course.teacher.about_me}",
-                            :link => "https://lingonas.com/#{teacher_path(course.teacher_id)}",
+                            :description => "#{course.description}",
+                            :link => "https://www.lingonas.com/#{teacher_path(course)}",
                             :picture => "#{course.teacher.avatar_url}",
-                            :caption => "lingonas.com. Re-think language learning."
+                            :caption => "Lingonas. Re-think language learning"
                             }) %>
                 <%= link_to $facebook_url do %>
                   <li>

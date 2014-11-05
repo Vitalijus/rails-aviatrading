@@ -30,6 +30,9 @@ School::Application.configure do
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = true
 
+  # this will make your emails display images
+  #config.action_mailer.asset_host = 'http://localhost:3000'
+
   #Devise
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 

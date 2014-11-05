@@ -1,6 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-  <head>
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
       <title>Lingoda: free lesson request</title>
         <style>
@@ -18,11 +16,13 @@
 
 	<div class="content", style="width: 558px; margin: 0 auto; border-left: 1px solid #dbdbdb; border-right: 1px solid #dbdbdb; border-bottom: 1px solid #dbdbdb; padding: 0px 40px 40px 40px; color: #666C74; font-size: 12px; background-color: #ffffff; font-family: 'Open Sans', helvetica, arial;">
 
-  <div style="font-size: 25px; padding: 20px 0 20px 0; text-align: center;"><%= @trial.name %> has sent you free lesson request!</div>
+  <div style="font-size: 25px; padding: 20px 0 20px 0; text-align: center;">Thank you for your request!</div>
 
   <div style="font-size: 14px; padding: 0px 0 20px 0;">
-    <%= @trial.name %> is interested in <%= @trial.course.language %> <%= @trial.course.level %> course and is asking you for a free trial lesson. Send <%= @trial.name %> your feedback. In your email propose time and include Adobe Connect link.<br/><br/> 
-    In attachment you can find Adobe Connect guide on how to host a meeting.
+     Congrats! You have taken first step towards free trial lesson.<br/><br/>
+      Next <%= @trial.course.language %> <%= @trial.course.level %> language course teacher will contact you with proposed time, date and will include Adobe Connect link. With this link you will have access to classroom.<br/><br/>
+      If you have any questions feel free to contact support@lingonas.com<br/><br/>
+      In attachment you can find Adobe Connect quick user guide, which can help you if you have access problems. <br/>
   </div>
 
 	   <table style="font-size: 13px";>
@@ -67,14 +67,6 @@
           <td><strong><%= @trial.course.course_end.to_formatted_s(:rfc822) %></strong></td>
         </tr>  
       </table>
-	
-  	<div class="notice", style="width: 100%; padding: 20px 0 20px 0; font-size: 14px">
-      <%= @trial.notice %>
-    </div>
-
-    <div class="notice", style="width: 100%; font-size: 14px">
-      <b>Contact:</b> <%= @trial.email %>
-    </div>
 
 	</div>
 

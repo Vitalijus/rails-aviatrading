@@ -18,24 +18,16 @@
   <div class="content", style="width: 558px; margin: 0 auto; border-left: 1px solid #dbdbdb; border-right: 1px solid #dbdbdb; border-bottom: 1px solid #dbdbdb; padding: 0px 40px 40px 40px; color: #666C74; font-size: 12px; background-color: #ffffff; font-family: 'Open Sans', helvetica, arial;">
 
     <div style="font-family: 'Open Sans', helvetica, arial; font-size: 25px; padding: 20px 0 20px 0; text-align: center;">
-       Thank you for enrolling!
+       New enrollment confirmation!
     </div>
 
     <div style="font-size: 14px; padding: 0px 0 0px 0;">
-      Hey! We are happy to have you onboard. Lingonas team will gladly support you whenever you feel you need it. We also would appreciate if you give us any feedback or suggestion on how to improve our service. Just drop us some lines with your criticism, suggestions or compliments at support@lingonas.com.
+      Congrats! <%= @order.name_on_card %> has enrolled to <%= @order.course.language %> <%= @order.course.level %> language course. Welcome your new student: <%= @order.email %>.
     </div>
 
     <div style="font-size: 14px; padding: 20px 0 20px 0;">
-      <b>Course start:</b> <%= @order.course.course_start.to_formatted_s(:rfc822) %><br/>
-      <b>Lesson time:</b> <%= @order.course.time_start %> to <%= @order.course.time_end %><br/>
-      <b>Adobe Connect link:</b> link here<br/>
-      In attachment you can find Adobe Connect quick user guide.
-    </div>
-
-    <div style="font-size: 14px; padding: 0px 0 20px 0;">
-      <b>Order confirmation for:</b> <%= @order.name_on_card %><br/>
       <b>Order date:</b> <%= @order.created_at.to_formatted_s(:rfc822) %><br/>
-      <b>Amount:</b> <%= @order.amount / 100 %>€
+      <b>Amount:</b> <%= @order.amount / 100 %>€<br/>
     </div>
 
 	   <table>

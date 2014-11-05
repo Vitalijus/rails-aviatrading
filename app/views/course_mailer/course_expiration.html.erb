@@ -12,20 +12,35 @@
 
 <div class="wrapper", style= "width: 640px; background-color: #F5F5F5; padding: 50px;">
 
-	<div class="header", style= "width: 600px; font-family: 'Alegreya Sans SC', sans-serif; padding: 30px 20px 30px 20px; margin: 0 auto; background: #316A7E; font-size: 30px; color: #ffffff;">LINGONAS: new course confirmation.
+	<div class="header", style= "width: 640px; background-color: #316A7E; ">
+  <%= image_tag attachments['bg.jpg'].url, width: 640 %>
   </div>
 
-	<div class="content", style="width: 598px; margin: 0 auto; border-left: 1px solid #dbdbdb; border-right: 1px solid #dbdbdb; border-bottom: 1px solid #dbdbdb; padding: 0px 20px 40px 20px; color: #666C74; font-size: 12px; background-color: #ffffff;">
+	<div class="content", style="width: 558px; margin: 0 auto; border-left: 1px solid #dbdbdb; border-right: 1px solid #dbdbdb; border-bottom: 1px solid #dbdbdb; padding: 0px 40px 40px 40px; color: #666C74; font-size: 12px; background-color: #ffffff; font-family: 'Open Sans', helvetica, arial;">
 
-  <div class="triangle", style="width: 0; height: 0; border-style: solid; border-width: 15px 15px 0 15px; border-color: #31697e transparent transparent transparent;">
-  </div>
-
-    <div style="font-family: 'Open Sans', helvetica, arial; font-size: 25px; padding: 20px 0 20px 0;">
-    	 has sent you free lesson request!<br/>
-    	Send  your feedback.
+    <div style="font-family: 'Open Sans', helvetica, arial; font-size: 25px; padding: 20px 0 20px 0; text-align: center;">
+    	 Successfully created course!
     </div>
 
-	   <table>
+    <div style="font-size: 14px; padding: 0px 0 20px 0;">
+      <b><%= @course.teacher.name %> <%= @course.teacher.surname %> you have created course at Lingonas. Couple things you need to be aware of:</b><br/>
+      
+      <ul style="list-style: none; margin: 0 auto; margin: 0; padding: 0;">
+        <li style="margin: auto; margin-top: 10px; margin-bottom: 10px; padding: 0;"><b>1.</b> <%= @course.language %> language course will be visible at the "view all courses" area until the first day of the course. At the day course start it will be hidden, but you still can see this course under "My Courses". Update course start date to see it again in "view all courses" area. </li>
+        <li style="margin: auto; margin-top: 10px; margin-bottom: 10px; padding: 0;"><b>2.</b> All courses where start date falls between today +30 days will be visible at the "view all courses" area.</li>
+        <li style="margin: auto; margin-top: 10px; margin-bottom: 10px; padding: 0;"><b>3.</b> We highly recommend you not to wait for student to knock you doors, but rather to take some efforts to find them. For example, in thousand of facebook language groups, by making your own facebook promo page, just let people know through various social media and you will see how fast you will find lots of students. </li>
+        <li style="margin: auto; margin-top: 10px; margin-bottom: 10px; padding: 0;"><b>4.</b> Student might ask you for a free trial lesson, obviously, it's in your interests to show your skills and attract more students. </li>
+        <li style="margin: auto; margin-top: 10px; margin-bottom: 10px; padding: 0;"><b>5.</b> If you have any questions feel free to contact us support@lingonas.com or take a look at Adobe Connect guide on how to host a meeting(file attached). </li>
+      </ul>
+    </div>
+
+	   <table style="font-size: 13px";>
+
+        <tr>
+          <td>Course language:</td>
+          <td><strong><%= @course.language %></strong></td>
+        </tr>
+
         <tr>
           <td>Course level:</td>
           <td><strong><%= @course.level %></strong></td>
@@ -43,7 +58,7 @@
 
         <tr>
           <td>Lesson time:</td>
-          <td><strong><%= @course.time_start %> to <%= @order.course.time_end %></strong></td>
+          <td><strong><%= @course.time_start %> to <%= @course.time_end %></strong></td>
         </tr>
 
         <tr>
@@ -61,18 +76,10 @@
           <td><strong><%= @course.course_end.to_formatted_s(:rfc822) %></strong></td>
         </tr>  
       </table>
-	
-  	<div class="notice", style="width: 100%; padding: 20px 0 20px 0;">
-      
-    </div>
-
-    <div class="notice", style="width: 100%;">
-      <b>Contact:</b> 
-    </div>
 
 	</div>
 
-    <div class="footer", style="width: 600px; padding: 20px; margin: auto; background-color: #666C74; text-align: center; font-size: 13px; color: #ffffff;">
+    <div class="footer", style="width: 600px; padding: 20px; margin: auto; background-color: #79878E; text-align: center; font-size: 13px; color: #ffffff;">
       <b>Questions? support@lingonas.com</b><br/>
       Lingonas, Romanstr. 60, Munich, D - 80639, Germany
     </div>
