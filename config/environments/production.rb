@@ -15,12 +15,23 @@ School::Application.configure do
   config.action_controller.perform_caching = true
 
   # Change mail delvery to either :smtp, :sendmail, :file, :test
+    #config.action_mailer.delivery_method = :smtp
+    #config.action_mailer.smtp_settings = {
+    #address: "smtpout.secureserver.net",
+    #port: 3535,
+    #domain: "www.lingonas.com",
+    #authentication: "plain",
+    #enable_starttls_auto: true,
+    #user_name: "support@lingonas.com",
+    #password: "Pedagogika_1"
+  #}
+
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.smtp_settings = {
-    address: "smtpout.secureserver.net",
-    port: 3535,
-    domain: "www.lingonas.com",
-    authentication: "plain",
+    address: "smtp.office365.com",
+    port: 587,
+    domain: "lingonas.com",
+    authentication: :login,
     enable_starttls_auto: true,
     user_name: "support@lingonas.com",
     password: "Pedagogika_1"

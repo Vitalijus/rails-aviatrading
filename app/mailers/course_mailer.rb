@@ -5,9 +5,9 @@ class CourseMailer < ActionMailer::Base
     attachments["hosts.pdf"] = File.read("#{Rails.root}/public/attachments/hosts.pdf")
     #attachments["template.pdf"] = File.read("#{Rails.root}/public/attachments/template.pdf")
     attachments.inline['bg.jpg'] = File.read("#{Rails.root}/public/images_attached/bg.jpg")
-    mail(to: "support@lingonas.com", 
+    mail(to: "vitalij.desuk@gmail.com", 
     	 subject: "Lingonas: course confirmation",
-    	 from: "#{@course.teacher.email}")
+    	 from: "support@lingonas.com")
   end
   
 end

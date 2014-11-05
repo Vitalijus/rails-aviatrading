@@ -5,7 +5,7 @@ class ContactMailer < ActionMailer::Base
     #attachments["SL.pdf"] = File.read("#{Rails.root}/public/attachments/SL.pdf")
     mail(to: "vitalij.desuk@gmail.com", 
     	 subject: "Customer Message",
-    	 from: "vitalij.desuk@gmail.com")
+    	 from: "support@lingonas.com")
   end
 
 end

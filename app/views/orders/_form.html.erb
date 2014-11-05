@@ -92,6 +92,10 @@
     <div id="order_box_button">
       <%= f.submit ["Enroll", @course.price,"€"], :class => "pay_button" %>
     </div>
+  <% elsif teacher_signed_in?%>
+      <div id="order_box_please_sign_in">
+        Sing in as student
+      </div>
   <% else %>
     <%= link_to student_session_path do %>
       <div id="order_box_please_sign_in">
