@@ -16,15 +16,26 @@ School::Application.configure do
   config.action_mailer.perform_deliveries = true
 
   # Change mail delvery to either :smtp, :sendmail, :file, :test
-    config.action_mailer.delivery_method = :smtp
+  #  config.action_mailer.delivery_method = :smtp
+  #  config.action_mailer.smtp_settings = {
+  #  address: "smtpout.secureserver.net",
+  #  port: 3535,
+  #  domain: "www.lingonas.com",
+   # authentication: "plain",
+  #  enable_starttls_auto: true,
+  #  user_name: "info@chocolaticpost.com",
+  #  password: "pedagogika"
+  #}
+
+  config.action_mailer.delivery_method = :smtp
     config.action_mailer.smtp_settings = {
-    address: "smtpout.secureserver.net",
-    port: 3535,
-    domain: "www.lingonas.com",
-    authentication: "plain",
+    address: "smtp.office365.com",
+    port: 587,
+    domain: "lingonas.com",
+    authentication: :login,
     enable_starttls_auto: true,
-    user_name: "info@chocolaticpost.com",
-    password: "pedagogika"
+    user_name: "support@lingonas.com",
+    password: "Pedagogika_1"
   }
 
   # Don't care if the mailer can't send.

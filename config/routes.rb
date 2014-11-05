@@ -11,7 +11,7 @@ School::Application.routes.draw do
   resources :teachers, only: [:show]
   
   resources :courses do
-    resources :orders, only: [:create, :new]
+    resources :orders, only: [:create, :new, :show]
     resources :lessons
     resources :trials, only: [:create, :new]
   end
