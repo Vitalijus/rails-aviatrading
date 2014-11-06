@@ -13,19 +13,108 @@
   </thead>
 
   <tbody>
+
     <% @orders.each do |order| %>
       <tr>
         <td><%= order.name_on_card %></td>
         <td><%= order.stripe_customer_token %></td>
         <td><%= order.course_id %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <td><%= order.student_id %></td>
+        <td><%= order.course.language unless order.course.nil? %></td>
+        <td><%= order.course.teacher.name unless order.course.nil? %></td>
+      </tr> 
     <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Order', new_order_path %>
+<div id="masonry_container">
+
+      <% @orders.each do |order| %>
+                  
+        <div class="box">
+
+            <div class="box_course_title">
+              <%= order.course.language unless order.course.nil? %> <%= order.course.level unless order.course.nil? %>
+
+              <div class="box_course_price">
+                <%= order.course.price unless order.course.nil? %>€
+              </div>
+
+              <div class="box_teacher_name">
+                with <%= link_to teacher_path(order.course.teacher_id), data: { no_turbolink: true } unless order.course.nil?  do %><%= order.course.teacher.name unless order.course.nil? %> <%= order.course.teacher.surname unless order.course.nil? %><% end %>
+              </div>
+            </div>
+
+            <div class="box_description">
+              <%= order.course.description unless order.course.nil? %>
+            </div>
+
+              <table>
+
+                <tr>
+                  <td>Course type:</td>
+                  <td><strong><%= order.course.course_type unless order.course.nil? %></strong></td>
+                </tr>
+
+                <tr>
+                  <td>Course time:</td>
+                  <td><strong><%= order.course.time_start unless order.course.nil? %> to <%= order.course.time_end unless order.course.nil? %></strong></td>
+                </tr>
+
+                <tr>
+                  <td>Class start:</td>
+                  <td><strong><%= order.course.course_start.to_formatted_s(:rfc822) unless order.course.nil? %></strong></td>
+                </tr>
+
+                <tr>
+                  <td>Class end:</td>
+                  <td><strong><%= order.course.course_end.to_formatted_s(:rfc822) unless order.course.nil? %></strong></td>
+                </tr>
+                
+              </table>
+
+                         
+
+
+            <div class="box_footer">
+
+              <ul>
+
+                  <li>
+                    <%= image_tag "tw_blue.png", width: 25 %>
+                  </li>
+
+                  <li>
+                    <%= image_tag "f_blue.png", width: 25 %>
+                  </li>
+                  
+              </ul>
+
+            </div>
+
+            <div class="box_button_wrapper">
+
+              <div class="box_button_icon">
+                <%= image_tag "button_icon.png", width: 60 %>
+              </div>
+
+          
+          <%= link_to new_course_trial_path(order.course_id) do %>
+            <div class="box_button_try">
+              FREE TRY
+            </div> 
+          <% end %>
+              
+
+            <%= link_to new_course_order_path(order.course_id) do %>
+              <div class="box_button_enroll">
+                ENROLL
+              </div>
+            <% end %>
+            </div>
+
+        </div>
+      <% end %>
+    </div>

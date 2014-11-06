@@ -1,4 +1,5 @@
 class Order < ActiveRecord::Base
+	default_scope { order('created_at DESC') }
 	belongs_to :course
 	belongs_to :student
 	attr_accessor :stripe_card_token

@@ -13,6 +13,25 @@
       </div>
     <% end %>
 
+  <div class="days_wrapper">
+    <ul>
+      <li><%= f.label :mon, "Monday" %><br>
+      <%= f.radio_button :mon, 'mon', :value => 'mon' %></li>
+      <li><%= f.label :tue, "Tuesday" %><br>
+      <%= f.radio_button :tue, 'tue', :value => 'tue' %></li>
+      <li><%= f.label :wed, "Wednesday" %><br>
+      <%= f.radio_button :wed, 'wed', :value => 'wed' %></li>
+      <li><%= f.label :thu, "Thursday" %><br>
+      <%= f.radio_button :thu, 'thu', :value => 'thu' %></li>
+      <li><%= f.label :fri, "Friday" %><br>
+      <%= f.radio_button :fri, 'fri', :value => 'fri' %></li>
+      <li><%= f.label :sat, "Saturday" %><br>
+      <%= f.radio_button :sat, 'sat', :value => 'sat' %></li>
+      <li><%= f.label :sun, "Sunday" %><br>
+      <%= f.radio_button :sun, 'sun', :value => 'sun' %></li> 
+    </ul>
+  </div>
+
 
   <div class="new_course_field">
     <%= f.label :language %><br>
@@ -44,9 +63,9 @@
     <%= f.select :time_end, ['08:00', '08:30', '09:00', '09:30', '10:00', '10:30', '11:00', '11:30', '12:00', '12:30', '13:00', '13:30', '14:00', '14:30', '15:00', '15:30', '16:00', '16:30', '17:00', '17:30', '18:00', '18:30', '19:00', '19:30', '20:00', '20:30', '21:00', '21:30', '22:00', '22:30', '23:00', '23:30'], :prompt => 'Select time' %> 
   </div>
 
-   <div class="new_course_field">
-    <%= f.label :lesson_per_week, "Lessons per week" %><br>
-    <%= f.number_field :lesson_per_week %>  
+  <div class="new_course_field">
+    <%= f.label :adobe_connect, "Adobe Connect link" %><br>
+    <%= f.text_field :adobe_connect %>  
   </div>
 
   <div class="new_course_field">

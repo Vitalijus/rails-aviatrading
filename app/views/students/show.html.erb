@@ -1,163 +1,64 @@
-<% @student.orders.each do |order| %>
-  <%= order.id %>
-<% end %>
-<br/>
-
-<% @student.orders.each do |order| %>
-  <%= @loop = order.course %>
-<% end %>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <div id="masonry_container">
 
-      <% @student.courses.each do |course| %>
+      <% @student.orders.each do |order| %>
                		
         <div class="box">
 
-        <% if current_student == @student %>
-	        <div class="box_delete">
-	            <%= link_to course, method: :delete, data: { confirm: 'Want to delete this course?'  } do %>
-	            	<%= image_tag "remove.png", width: 10 %>
-	            <% end %>
-	        </div>
-	    <% end %>
-
             <div class="box_course_title">
-              <%= course.language %> <%= truncate(course.level, :length => 2, :omission => "") %>
+              <%= order.course.language unless order.course.nil? %> <%= truncate(order.course.level, :length => 2, :omission => "") unless order.course.nil? %>
 
               <div class="box_course_price">
-                <%= course.price %>€
+                <%= order.course.price unless order.course.nil? %>€
               </div>
 
               <div class="box_teacher_name">
-                with <%= course.teacher.name %> <%= course.teacher.surname %>
+                with <%= link_to teacher_path(order.course.teacher_id), data: { no_turbolink: true } unless order.course.nil?  do %> <%= order.course.teacher.name unless order.course.nil? %> <%= order.course.teacher.surname unless order.course.nil? %><% end %>
               </div>
             </div>
 
-            
-
-            <div class="box_edit">
-              <%= link_to edit_course_path(course) do %>
-                <%= image_tag "pencil.png", width: 14 %>
-              <% end %>
-            </div>
-
-
-
             <div class="box_description">
-              <%= course.description %>
+              <%= order.course.description unless order.course.nil? %>
             </div>
 
               <table>
 
                 <tr>
-                  <td>Course type:</td>
-                  <td><strong><%= course.course_type %></strong></td>
+                  <td>Course level:</td>
+                  <td><strong><%= order.course.level unless order.course.nil? %></strong></td>
                 </tr>
 
                 <tr>
-                  <td>Course time:</td>
-                  <td><strong><%= course.time_start %> to <%= course.time_end %></strong></td>
+                  <td>Course type:</td>
+                  <td><strong><%= order.course.course_type unless order.course.nil? %></strong></td>
+                </tr>
+
+                <tr>
+                  <td>Time zone:</td>
+                  <td><strong><%= order.course.time_zone unless order.course.nil? %></strong></td>
+                </tr>
+
+                <tr>
+                  <td>Lesson time:</td>
+                  <td><strong><%= order.course.time_start unless order.course.nil? %> to <%= order.course.time_end unless order.course.nil? %></strong></td>
+                </tr>
+
+                <tr>
+                  <td>Days:</td>
+                  <td><strong><%= order.course.mon unless order.course.nil? %> <%= order.course.tue unless order.course.nil? %> <%= order.course.wed unless order.course.nil? %> <%= order.course.thu unless order.course.nil? %> <%= order.course.fri unless order.course.nil? %> <%= order.course.sat unless order.course.nil? %> <%= order.course.sun unless order.course.nil? %></strong></td>
                 </tr>
 
                 <tr>
                   <td>Class start:</td>
-                  <td><strong><%= course.course_start.to_formatted_s(:rfc822) %></strong></td>
+                  <td><strong><%= order.course.course_start.to_formatted_s(:rfc822) unless order.course.nil? %></strong></td>
                 </tr>
 
                 <tr>
                   <td>Class end:</td>
-                  <td><strong><%= course.course_end.to_formatted_s(:rfc822) %></strong></td>
+                  <td><strong><%= order.course.course_end.to_formatted_s(:rfc822) unless order.course.nil? %></strong></td>
                 </tr>
                 
               </table>
-
-                         
-
-
-            <div class="box_footer">
-
-              <ul>
-                <!--<li><%= link_to 'Edit', edit_course_path(course) %></li>
-                <li><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></li>-->
-                  <li>
-                    <%= image_tag "tw_grey.png", width: 25, :class => "box_icon_opacity", :title => "share" %>
-                    <%= image_tag "tw_blue.png", width: 25 %>
-                  </li>
-
-                  <li>
-                    <%= image_tag "f_grey.png", width: 25, :class => "box_icon_opacity", :title => "share" %>
-                    <%= image_tag "f_blue.png", width: 25 %>
-                  </li>
-                  
-              </ul>
-
-            </div>
-
-            <div class="box_button_wrapper">
-
-              <div class="box_button_icon">
-                <%= image_tag "button_icon.png", width: 60 %>
-              </div>
-
-          
-          <%= link_to new_course_trial_path(course) do %>
-            <div class="box_button_try">
-              FREE TRY
-            </div> 
-          <% end %>
-
-            
-            
-
-            <!--<%= form_for ([course, course.trials.build]) do |f| %>
-          <a href="#1" name="1" onclick="return show();">  </a> 
-
-              <div id="benefits" style="display:none;">
-                
-                      <%= f.label :name %><br/>
-                      <%= f.text_field :name %>
-
-                      <p><%= f.submit "Add comment" %></p>
-                      <%= course.price %>€
-                    
-                
-                <div id="display_popup_close">
-                  <a onclick="return hide();">click here</a>
-                </div> 
-              </div>
-            <% end %>-->
-              
-              
-
-            <%= link_to new_course_order_path(course) do %>
-              <div class="box_button_enroll">
-                ENROLL
-              </div>
-            <% end %>
-            </div>
 
         </div>
       <% end %>

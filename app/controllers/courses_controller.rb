@@ -70,6 +70,7 @@ class CoursesController < ApplicationController
       params.require(:course).permit(:description, :price, :level, :language,
                                       :time_start, :time_end, :course_type, :course_start, :course_end, 
                                       :registration_until, :course_pdf, :time_zone,
-                                      :lesson_per_week, :student_id)
+                                      :lesson_per_week, :student_id, :adobe_connect, :mon,
+                                      :tue, :wed, :thu, :fri, :sat, :sun)
     end
 end

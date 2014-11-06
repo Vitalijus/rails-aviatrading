@@ -4,14 +4,15 @@ School::Application.routes.draw do
   #get 'contacts#new'
   
   devise_for :students
-  devise_for :teachers 
+  devise_for :teachers
 
-  resources :contacts
+  resources :contacts, only: [:create, :new]
   resources :students, only: [:show]
   resources :teachers, only: [:show]
+  resources :orders, only: [:index]
   
   resources :courses do
-    resources :orders, only: [:create, :new, :show]
+    resources :orders, only: [:create, :new]
     resources :lessons
     resources :trials, only: [:create, :new]
   end

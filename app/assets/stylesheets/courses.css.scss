@@ -406,7 +406,7 @@ a:hover #display_login_button_student {
 }
 
 .box_teacher_name a {
-	color: #346fa1;
+	color: #346fa1; 
 	-webkit-transition: color 150ms linear;
   	-moz-transition: color 150ms linear;
   	-o-transition: color 150ms linear;
@@ -435,6 +435,7 @@ a:hover #display_login_button_student {
 	color: #111111;
 	line-height: 20px;
 	font-family: "Open Sans", helvetica, arial;
+	font-size: 12px;
 	border: 0px solid red;
 }
 
@@ -449,9 +450,7 @@ a:hover #display_login_button_student {
 }
 
 .box table tr td {
-	padding-left: 0px;
-	padding-right: 0px;
-	padding-bottom: 5px;
+	padding-bottom: 0px;
 	border: 0px solid red;
 }
 
@@ -461,51 +460,51 @@ a:hover #display_login_button_student {
 	height: 40px;
 	margin-bottom: 0px;
 	position: relative;
-
 }
 
 .box_button_enroll {
-	border-left: 0px solid #4b87b0;
-	background-color: #5498c6;
+	border-top: 1px solid #eaeaeb;
+	background-color: #F6F7F8;
 	width: 50%;
-	color: #ffffff;
+	color: #428BCA;
 	height: 40px;
 	float: right;
 	text-align: center;
 	line-height: 40px;
 	font-size: 13px;
 	font-family: 'Lato', sans-serif;
-	-webkit-transition: background-color 150ms linear;
-  	-moz-transition: background-color 150ms linear;
-  	-o-transition: background-color 150ms linear;
-  	-ms-transition: background-color 150ms linear;
-  	transition: background-color 150ms linear;
+	-webkit-transition: color 150ms linear;
+  	-moz-transition: color 150ms linear;
+  	-o-transition: color 150ms linear;
+  	-ms-transition: color 150ms linear;
+  	transition: color 150ms linear;
 }
 
 .box_button_enroll:hover {
-	background-color: #4b88b2;
+	color: #346fa1;
 }
 
 .box_button_try {
-	background-color: #5498c6;
-	border-right: 1px solid #76acd1;
+	background-color: #F6F7F8;
+	border-right: 1px solid #eaeaeb;
+	border-top: 1px solid #eaeaeb;
 	width: 50%;
 	float: left;
 	height: 40px;
 	line-height: 40px;
 	font-size: 14px;
-	color: #ffffff;
+	color: #428BCA;
 	text-align: center;
 	font-family: 'Lato', sans-serif;
-	-webkit-transition: background-color 150ms linear;
-  	-moz-transition: background-color 150ms linear;
-  	-o-transition: background-color 150ms linear;
-  	-ms-transition: background-color 150ms linear;
-  	transition: background-color 150ms linear;
+	-webkit-transition: color 150ms linear;
+  	-moz-transition: color 150ms linear;
+  	-o-transition: color 150ms linear;
+  	-ms-transition: color 150ms linear;
+  	transition: color 150ms linear;
 }
 
 .box_button_try:hover {
-	background-color: #4b88b2;
+	color: #346fa1;
 }
 
 
@@ -717,6 +716,19 @@ a:hover #display_login_button_student {
 	font-family: 'Lato', sans-serif;
 	font-size: 12px;
 	border: 0px solid #cecfc0;
+}
+
+.days_wrapper {
+	overflow: hidden;
+	margin-bottom: 10px;
+	border: 0px solid red;
+}
+
+.days_wrapper li {
+	width: 80px;
+	text-align: center;
+	float: left;
+	border: 0px solid red;
 }
 
 .new_course_field_date select {
