@@ -1,4 +1,6 @@
 School::Application.configure do
+  ENV["REDISTOGO_URL"] = 'redis://redistogo:5d5002dfa8f1ba45355eaf10bed55a87@dab.redistogo.com:9132/'
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
