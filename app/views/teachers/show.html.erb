@@ -1,14 +1,19 @@
 <div id="teacher_wrapper">
-  <div id="teacher_profile_wrapper">
-  	<div id="teacher_profile_image">
-      <%= image_tag @teacher.avatar_url(:avatar) %>
-  	</div>
 
-    <div id="teacher_profile_social_network">
+  <div id="teacher_profile_social_network">
         <ul>
+
+        <% if current_teacher == @teacher%>
+          <li>
+            <%= link_to edit_teacher_registration_path do %>
+              <%= image_tag "pencil.png", width: 25 %>
+            <% end %>
+          </li>
+        <% end %>
+
           <li>
             <%= link_to "https://twitter.com/share?url=https%3A%2F%2Flingonas.com#{teacher_path(@teacher)}", :target => "_blank" do %>
-              <%= image_tag "tw_blue.png", width: 25 %>
+              <%= image_tag "tw_grey.png", width: 25 %>
             <% end %>
           </li>
 
@@ -22,23 +27,22 @@
                     }) %>
         <%= link_to $facebook_url do %>
           <li>
-            <%= image_tag "f_blue.png", width: 25 %>
+            <%= image_tag "f_grey.png", width: 25 %>
           </li>
         <% end %>
 
       </ul>
     </div>
+
+  <div id="teacher_profile_wrapper">
+  	<div id="teacher_profile_image">
+      <%= image_tag @teacher.avatar_url(:avatar) %>
+  	</div>
   </div>
     
 	<div id="teacher_profile_attributes_wrapper">
 		<div id="teacher_profile_name">
       <%= @teacher.name %> <%= @teacher.surname %>
-
-      <% if current_teacher == @teacher%>
-        <%= link_to edit_teacher_registration_path do %>
-          <%= image_tag "pencil.png", width: 17 %>
-        <% end %>
-      <% end %>
     </div>
 
     <div id="teacher_profile_attribute">
@@ -70,158 +74,102 @@
 	</div>
 </div>
 
-<div id="masonry_container">
-
-      <% @teacher.courses.each do |course| %>
-               		
-        <div class="box">
-
-        <% if current_teacher == @teacher %>
-	        <div class="box_delete">
-	            <%= link_to course, method: :delete, data: { confirm: 'Want to delete this course?'  } do %>
-	            	<%= image_tag "remove.png", width: 10 %>
-	            <% end %>
-	        </div>
-
-          <div class="box_edit">
-            <%= link_to edit_course_path(course) do %>
-              <%= image_tag "pencil.png", width: 14 %>
-            <% end %>
-          </div>
-	      <% end %>
-
-            <div class="box_course_title">
-              <%= course.language %> <%= truncate(course.level, :length => 2, :omission => "") %>
-
-              <div class="box_course_price">
-                <%= course.price %>€
-              </div>
-
-              <div class="box_teacher_name">
-                with <%= course.teacher.name %> <%= course.teacher.surname %>
-              </div>
-            </div>
-
-            <div class="box_description">
-              <%= course.description %>
-            </div>
-
-              <table>
-
-                <tr>
-                  <td>Course level:</td>
-                  <td><strong><%= course.level %></strong></td>
-                </tr>
-
-                <tr>
-                  <td>Course type:</td>
-                  <td><strong><%= course.course_type %></strong></td>
-                </tr>
-
-                <tr>
-                  <td>Time zone:</td>
-                  <td><strong><%= course.time_zone %></strong></td>
-                </tr>
-
-                <tr>
-                  <td>Lesson time:</td>
-                  <td><strong><%= course.time_start %> to <%= course.time_end %></strong></td>
-                </tr>
-
-                <tr>
-                  <td>Days:</td>
-                  <td><strong><%= course.mon %> <%= course.tue %> <%= course.wed %> <%= course.thu %> <%= course.fri %> <%= course.sat %> <%= course.sun %></strong></td>
-                </tr>
-
-                <tr>
-                  <td>Course start:</td>
-                  <td><strong><%= course.course_start.to_formatted_s(:rfc822) %></strong></td>
-                </tr>
-
-                <tr>
-                  <td>Course end:</td>
-                  <td><strong><%= course.course_end.to_formatted_s(:rfc822) %></strong></td>
-                </tr>
-                
-              </table>
-
-                         
 
 
-            <div class="box_footer">
+<% @teacher.courses.reverse_each do |course| %>
 
-              <ul>
-                  <li>
-                    <%= link_to "https://twitter.com/share?url=https%3A%2F%2Flingonas.com#{teacher_path(course.teacher_id)}", :target => "_blank" do %>
-                      <%= image_tag "tw_blue.png", width: 25 %>
-                    <% end %>
-                  </li>
+<div id="course_post_wrapper">
 
-                  <%= fb_share('178872632300191', 'https://www.lingonas.com/', { 
-                            :name => "#{course.teacher.name} #{course.teacher.surname} - I teach #{course.language} #{course.level}",
-                            :method => "feed",
-                            :description => "#{course.teacher.about_me}",
-                            :link => "https://lingonas.com/#{teacher_path(course.teacher_id)}",
-                            :picture => "#{course.teacher.avatar_url}",
-                            :caption => "lingonas.com. Re-think language learning."
-                            }) %>
-                <%= link_to $facebook_url do %>
-                  <li>
-                    <%= image_tag "f_blue.png", width: 25 %>
-                  </li>
-                <% end %>
+  <div id="course_post">
 
-                  <li>
-                    <%= link_to course.course_pdf_url, :target => "_blank" do %>
-                      <%= image_tag "file_red.png", width: 20 %>
-                    <% end %>
-                  </li>
-                  
-              </ul>
+  <div id="course_post_header_wrapper">
 
-            </div>
-
-            <div class="box_button_wrapper">
-
-          
-          <%= link_to new_course_trial_path(course) do %>
-            <div class="box_button_try">
-              FREE TRY
-            </div> 
-          <% end %>
-
-            
-            
-
-            <!--<%= form_for ([course, course.trials.build]) do |f| %>
-          <a href="#1" name="1" onclick="return show();">  </a> 
-
-              <div id="benefits" style="display:none;">
-                
-                      <%= f.label :name %><br/>
-                      <%= f.text_field :name %>
-
-                      <p><%= f.submit "Add comment" %></p>
-                      <%= course.price %>€
-                    
-                
-                <div id="display_popup_close">
-                  <a onclick="return hide();">click here</a>
-                </div> 
-              </div>
-            <% end %>-->
-              
-              
-
-            <%= link_to new_course_order_path(course) do %>
-              <div class="box_button_enroll">
-                ENROLL
-              </div>
-            <% end %>
-            </div>
-
-        </div>
-      <% end %>
+  <% if current_teacher == @teacher %>
+    <div class="box_delete">
+        <%= link_to course, method: :delete, data: { confirm: 'Want to delete this course?'  } do %>
+          <%= image_tag "remove.png", width: 15 %>
+        <% end %>
     </div>
 
-	
+    <div class="box_edit">
+      <%= link_to edit_course_path(course) do %>
+        <%= image_tag "pencil_white.png", width: 19 %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <% if course.course_start > Time.now %>
+    <div id="course_post_header_enroll">
+      <%= link_to new_course_order_path(course) do %>enroll<% end %>
+    </div>
+  <% else %>
+    <div id="course_post_header_enroll_expired">
+      expired
+    </div>
+  <% end %>
+
+    <div id="course_post_header_small">
+      with <%= course.teacher.name %> <%= course.teacher.surname %>
+    </div>
+
+    <div id="course_post_header_title">
+      <%= course.language %> <%= course.level %>
+    </div>
+
+  </div>
+
+    <table>
+      <tr> 
+        <th>Course type</th>
+        <th>Time zone</th>
+        <th>Lesson time</th>
+        <th>Days</th>
+        <th>Course start</th>
+        <th>Course end</th>
+        <th>Price</th>
+      </tr>
+      <tr>
+        <td><%= course.course_type %></td>
+        <td><%= course.time_zone %></td>
+        <td><%= course.time_start %> to <%= course.time_end %></td>
+        <td><%= course.mon %> <%= course.tue %> <%= course.wed %> <%= course.thu %> <%= course.fri %> <%= course.sat %> <%= course.sun %></td>
+        <td><%= course.course_start.to_formatted_s(:rfc822) %></td>
+        <td><%= course.course_end.to_formatted_s(:rfc822) %></td>
+        <td><%= course.price %>€</td>
+      </tr>
+    </table> 
+  </div>
+
+  <div id="course_post_icons">
+    <ul>
+        <%= link_to "https://twitter.com/share?url=https%3A%2F%2Flingonas.com#{teacher_path(course.teacher_id)}", :target => "_blank" do %>
+          <li><%= image_tag "tw_grey.png", width: 27 %><br/>tweet</li>
+
+        <% end %>
+      
+      <%= fb_share('178872632300191', 'https://www.lingonas.com/', { 
+                            :name => "Learning #{course.language} #{course.level} with #{course.teacher.name} #{course.teacher.surname}",
+                            :method => "feed",
+                            :description => "#{course.description}",
+                            :link => "https://www.lingonas.com/#{teacher_path(course)}",
+                            :picture => "#{course.teacher.avatar_url}",
+                            :caption => "Lingonas. Re-think language learning"
+                            }) %>
+        <%= link_to $facebook_url do %>
+          <li><%= image_tag "f_grey.png", width: 27 %><br/>share</li>
+        <% end %>
+
+        <%= link_to course.course_pdf_url, :target => "_blank" do %>
+          <li><%= image_tag "file_grey.png", width: 20 %><br/>pdf</li>
+        <% end %>
+      
+        <%= link_to new_course_trial_path(course) do %>
+          <li><%= image_tag "try.png", width: 13 %><br/>try</li>
+        <% end %>
+    </ul>
+
+  </div>
+
+</div>
+
+<% end %> 

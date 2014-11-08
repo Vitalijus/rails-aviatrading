@@ -32,7 +32,7 @@ class CoursesController < ApplicationController
 
       if @course.save
         redirect_to courses_path, notice: "Course was successfully created." 
-        CourseMailer.course_expiration(@course).deliver
+        CourseWorker.perform_async(@course.id)
       else
         render action: 'new'
       end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141105035518) do
+ActiveRecord::Schema.define(version: 20141108081824) do
 
   create_table "contacts", force: true do |t|
     t.datetime "created_at"
@@ -67,6 +67,21 @@ ActiveRecord::Schema.define(version: 20141105035518) do
     t.string   "currency"
     t.string   "email"
     t.integer  "amount"
+    t.string   "level"
+    t.string   "language"
+    t.string   "time_start"
+    t.string   "time_end"
+    t.string   "course_type"
+    t.string   "course_start"
+    t.string   "course_end"
+    t.string   "time_zone"
+    t.string   "mon"
+    t.string   "tue"
+    t.string   "wed"
+    t.string   "thu"
+    t.string   "fri"
+    t.string   "sat"
+    t.string   "sun"
   end
 
   create_table "sessions", force: true do |t|

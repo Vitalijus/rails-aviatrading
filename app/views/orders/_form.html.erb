@@ -53,7 +53,22 @@
 
     <% if student_signed_in? %>
       <%= f.hidden_field :amount, :value => @course.price*100 %>  
-      <%= f.hidden_field :email, :value => current_student.email %>  
+      <%= f.hidden_field :email, :value => current_student.email %> 
+      <%= f.hidden_field :level, :value => @course.level %> 
+      <%= f.hidden_field :language, :value => @course.language %>
+      <%= f.hidden_field :time_start, :value => @course.time_start %>
+      <%= f.hidden_field :time_end, :value => @course.time_end %>
+      <%= f.hidden_field :course_type, :value => @course.course_type %>
+      <%= f.hidden_field :course_start, :value => @course.course_start %>
+      <%= f.hidden_field :course_end, :value => @course.course_end %>
+      <%= f.hidden_field :time_zone, :value => @course.time_zone %>
+      <%= f.hidden_field :mon, :value => @course.mon %>
+      <%= f.hidden_field :tue, :value => @course.tue %>
+      <%= f.hidden_field :wed, :value => @course.wed %>
+      <%= f.hidden_field :thu, :value => @course.thu %>
+      <%= f.hidden_field :fri, :value => @course.fri %>
+      <%= f.hidden_field :sat, :value => @course.sat %>
+      <%= f.hidden_field :sun, :value => @course.sun %>
     <% end %>
 
     <!--<div class="order_box_field">
@@ -74,6 +89,7 @@
 
     <div class="order_box_field">
       <%= label_tag :card_month, "Card Expiration" %></br>
+      <%= image_tag "dropdown.png" %>
       <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month"} %>
       <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year"} %>
     </div>

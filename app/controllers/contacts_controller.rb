@@ -8,8 +8,8 @@ class ContactsController < ApplicationController
 		@contact = Contact.new(contact_params)
 
 		if @contact.save
-			ContactMailer.contact_message(@contact).deliver
 			redirect_to courses_path, notice: "Message has been sent successfully."
+			ContactWorker.perform_async(@contact.id)
 		else
 			render action: "new"
 		end

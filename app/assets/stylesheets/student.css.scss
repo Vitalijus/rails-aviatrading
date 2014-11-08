@@ -80,3 +80,123 @@
 #student_login_links a:hover {
 	text-decoration: underline;
 }
+
+/* HISTORY */
+
+#history_wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+#history_header {
+  width: 100%;
+  padding: 20px 20px 15px 20px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #eaeaeb;
+  background-color: #F6F7F8;
+  font-weight: bold;
+  font-size: 20px;
+  overflow: hidden;
+}
+
+#history_header_small {
+  width: 100%;
+  padding-bottom: 3px;
+  font-size: 12px;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: #999999; 
+}
+
+#history_header_small a {
+  color: #346fa1; 
+  -webkit-transition: color 150ms linear;
+  -moz-transition: color 150ms linear;
+  -o-transition: color 150ms linear;
+  -ms-transition: color 150ms linear;
+  transition: color 150ms linear;
+}
+
+#history_header_small a:hover {
+  color: #428BCA;
+}
+
+#history_course {
+  width: 76.9%;
+  float: left;
+  padding: 0px 0px 17px 0px;
+  background-color: #ffffff;
+  margin-right: 20px;
+  border: 1px solid #DFE0E4;
+  overflow: hidden;
+}
+
+#history_course table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 20px 0px ;
+  border: 0px solid #DFE0E4;
+}
+
+#history_course th {
+  padding-bottom: 5px;
+  color: #278998;
+  vertical-align: bottom;
+  font-family: "Lato", helvetica, arial;
+  font-size: 14px;
+  text-align: left;
+  border-bottom: 2px solid #278998;
+}
+
+#history_course td {
+  padding-top: 3px;
+  vertical-align: top;
+  font-size: 14px;
+  font-family: "Open Sans", helvetica, arial;
+  border: 0px solid #DFE0E4;
+}
+
+#history_order {
+  width: 21%;
+  float: left;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #DFE0E4;
+}
+
+#history_order table {
+  width: 100%;
+}
+
+#history_order th {
+  padding-bottom: 5px;
+  color: #278998;
+  font-size: 14px;
+  vertical-align: bottom;
+  text-align: left;
+  border-bottom: 2px solid #278998;
+}
+
+#history_order td {
+  padding-top: 3px;
+  vertical-align: top;
+  font-size: 14px;
+  font-family: "Open Sans", helvetica, arial;
+  border: 0px solid #DFE0E4;
+}
+
+#history_no_records {
+  width: 1000px;
+  height: 200px;
+  line-height: 198px;
+  margin: 0 auto;
+  margin-top: 20px;
+  font-size: 40px;
+  color: #DFE0E4;
+  text-align: center;
+  border: 1px solid #DFE0E4;
+  background-color: #F6F7F8;
+}

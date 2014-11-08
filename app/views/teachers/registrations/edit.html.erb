@@ -17,9 +17,6 @@
   <div><%= f.label :email %><br />
   <%= f.email_field :email %></div>
 
-  <%= f.label :avatar, "Profile image" %><br />
-  <%= f.file_field :avatar, :class => "teacher_avatar" %>
-
   <div><%= f.label :native_language %><br />
     <%= f.text_field :native_language %></div>
 
@@ -35,11 +32,17 @@
     <div><%= f.label :location %><br />
     <%= f.text_field :location %></div>
 
-    <div><%= f.label :time_zone %><br />
-    <%= f.select :time_zone,  ["American Samoa", "International Date Line West", "Midway Island", "Hawaii", "Alaska", "Pacific Time (US & Canada)", "Tijuana", "Arizona", "Chihuahua", "Mazatlan", "Mountain Time (US & Canada)", "Central America", "Central Time (US & Canada)", "Guadalajara", "Mexico City", "Monterrey", "Saskatchewan", "Bogota", "Eastern Time (US & Canada)", "Indiana (East)", "Lima", "Quito", "Caracas", "Atlantic Time (Canada)", "Georgetown", "La Paz", "Santiago", "Newfoundland", "Brasilia", "Buenos Aires", "Greenland", "Montevideo", "Mid-Atlantic", "Azores", "Cape Verde Is.", "Casablanca", "Dublin", "Edinburgh", "Lisbon", "London", "Monrovia", "UTC", "Amsterdam", "Belgrade", "Berlin", "Bern", "Bratislava", "Brussels", "Budapest", "Copenhagen", "Ljubljana", "Madrid", "Paris", "Prague", "Rome", "Sarajevo", "Skopje", "Stockholm", "Vienna", "Warsaw", "West Central Africa", "Zagreb", "Athens", "Bucharest", "Cairo", "Harare", "Helsinki", "Istanbul", "Jerusalem", "Kyiv", "Pretoria", "Riga", "Sofia", "Tallinn", "Vilnius", "Baghdad", "Kuwait", "Minsk", "Nairobi", "Riyadh", "Tehran", "Abu Dhabi", "Baku", "Moscow", "Muscat", "St. Petersburg", "Tbilisi", "Volgograd", "Yerevan", "Kabul", "Islamabad", "Karachi", "Tashkent", "Chennai", "Kolkata", "Mumbai", "New Delhi", "Sri Jayawardenepura", "Kathmandu", "Almaty", "Astana", "Dhaka", "Ekaterinburg", "Urumqi", "Rangoon", "Bangkok", "Hanoi", "Jakarta", "Novosibirsk", "Beijing", "Chongqing", "Hong Kong", "Krasnoyarsk", "Kuala Lumpur", "Perth", "Singapore", "Taipei", "Ulaanbaatar", "Irkutsk", "Osaka", "Sapporo", "Seoul", "Tokyo", "Adelaide", "Darwin", "Brisbane", "Canberra", "Guam", "Hobart", "Melbourne", "Port Moresby", "Sydney", "Yakutsk", "New Caledonia", "Solomon Is.", "Vladivostok", "Auckland", "Fiji", "Kamchatka", "Magadan", "Marshall Is.", "Wellington", "Chatham Is.", "Nuku'alofa", "Samoa", "Tokelau Is."], :prompt => 'Select timezone' %></div>
+    <div class="custom-dropdown">
+    <%= f.select :time_zone,  ["American Samoa", "International Date Line West", "Midway Island", "Hawaii", "Alaska", "Pacific Time (US & Canada)", "Tijuana", "Arizona", "Chihuahua", "Mazatlan", "Mountain Time (US & Canada)", "Central America", "Central Time (US & Canada)", "Guadalajara", "Mexico City", "Monterrey", "Saskatchewan", "Bogota", "Eastern Time (US & Canada)", "Indiana (East)", "Lima", "Quito", "Caracas", "Atlantic Time (Canada)", "Georgetown", "La Paz", "Santiago", "Newfoundland", "Brasilia", "Buenos Aires", "Greenland", "Montevideo", "Mid-Atlantic", "Azores", "Cape Verde Is.", "Casablanca", "Dublin", "Edinburgh", "Lisbon", "London", "Monrovia", "UTC", "Amsterdam", "Belgrade", "Berlin", "Bern", "Bratislava", "Brussels", "Budapest", "Copenhagen", "Ljubljana", "Madrid", "Paris", "Prague", "Rome", "Sarajevo", "Skopje", "Stockholm", "Vienna", "Warsaw", "West Central Africa", "Zagreb", "Athens", "Bucharest", "Cairo", "Harare", "Helsinki", "Istanbul", "Jerusalem", "Kyiv", "Pretoria", "Riga", "Sofia", "Tallinn", "Vilnius", "Baghdad", "Kuwait", "Minsk", "Nairobi", "Riyadh", "Tehran", "Abu Dhabi", "Baku", "Moscow", "Muscat", "St. Petersburg", "Tbilisi", "Volgograd", "Yerevan", "Kabul", "Islamabad", "Karachi", "Tashkent", "Chennai", "Kolkata", "Mumbai", "New Delhi", "Sri Jayawardenepura", "Kathmandu", "Almaty", "Astana", "Dhaka", "Ekaterinburg", "Urumqi", "Rangoon", "Bangkok", "Hanoi", "Jakarta", "Novosibirsk", "Beijing", "Chongqing", "Hong Kong", "Krasnoyarsk", "Kuala Lumpur", "Perth", "Singapore", "Taipei", "Ulaanbaatar", "Irkutsk", "Osaka", "Sapporo", "Seoul", "Tokyo", "Adelaide", "Darwin", "Brisbane", "Canberra", "Guam", "Hobart", "Melbourne", "Port Moresby", "Sydney", "Yakutsk", "New Caledonia", "Solomon Is.", "Vladivostok", "Auckland", "Fiji", "Kamchatka", "Magadan", "Marshall Is.", "Wellington", "Chatham Is.", "Nuku'alofa", "Samoa", "Tokelau Is."], :prompt => 'Select timezone' %>
+    </div>
 
     <%= f.label :about_me %><br />
     <%= f.text_area :about_me, :class => "teacher_about_me" %>
+
+    <div class="edit_teacher_avatar">
+      <%= f.label :avatar, "Profile image" %><br />
+      <%= f.file_field :avatar, :class => "teacher_avatar" %>
+    </div>
 
   </div>
 

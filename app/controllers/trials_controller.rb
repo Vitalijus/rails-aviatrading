@@ -9,9 +9,8 @@ class TrialsController < ApplicationController
 		@trial = @course.trials.build(trial_params)
 		
 		if @trial.save
-			TrialMailer.new_trial_request(@trial).deliver
-			TrialMailer.new_trial_request_confirmation(@trial).deliver
 			redirect_to courses_path, notice: "Request was successfully sent." 
+			TrialWorker.perform_async(@trial.id)
 		else
 			render action: 'new' 
 		end

@@ -1,65 +1,57 @@
+<% if @student.orders.count > 0 %>
 
-<div id="masonry_container">
+<% @student.orders.each do |order| %> 
 
-      <% @student.orders.each do |order| %>
-               		
-        <div class="box">
+<div id="history_wrapper">
 
-            <div class="box_course_title">
-              <%= order.course.language unless order.course.nil? %> <%= truncate(order.course.level, :length => 2, :omission => "") unless order.course.nil? %>
+  <div id="history_course">
 
-              <div class="box_course_price">
-                <%= order.course.price unless order.course.nil? %>€
-              </div>
-
-              <div class="box_teacher_name">
-                with <%= link_to teacher_path(order.course.teacher_id), data: { no_turbolink: true } unless order.course.nil?  do %> <%= order.course.teacher.name unless order.course.nil? %> <%= order.course.teacher.surname unless order.course.nil? %><% end %>
-              </div>
-            </div>
-
-            <div class="box_description">
-              <%= order.course.description unless order.course.nil? %>
-            </div>
-
-              <table>
-
-                <tr>
-                  <td>Course level:</td>
-                  <td><strong><%= order.course.level unless order.course.nil? %></strong></td>
-                </tr>
-
-                <tr>
-                  <td>Course type:</td>
-                  <td><strong><%= order.course.course_type unless order.course.nil? %></strong></td>
-                </tr>
-
-                <tr>
-                  <td>Time zone:</td>
-                  <td><strong><%= order.course.time_zone unless order.course.nil? %></strong></td>
-                </tr>
-
-                <tr>
-                  <td>Lesson time:</td>
-                  <td><strong><%= order.course.time_start unless order.course.nil? %> to <%= order.course.time_end unless order.course.nil? %></strong></td>
-                </tr>
-
-                <tr>
-                  <td>Days:</td>
-                  <td><strong><%= order.course.mon unless order.course.nil? %> <%= order.course.tue unless order.course.nil? %> <%= order.course.wed unless order.course.nil? %> <%= order.course.thu unless order.course.nil? %> <%= order.course.fri unless order.course.nil? %> <%= order.course.sat unless order.course.nil? %> <%= order.course.sun unless order.course.nil? %></strong></td>
-                </tr>
-
-                <tr>
-                  <td>Class start:</td>
-                  <td><strong><%= order.course.course_start.to_formatted_s(:rfc822) unless order.course.nil? %></strong></td>
-                </tr>
-
-                <tr>
-                  <td>Class end:</td>
-                  <td><strong><%= order.course.course_end.to_formatted_s(:rfc822) unless order.course.nil? %></strong></td>
-                </tr>
-                
-              </table>
-
-        </div>
+  <div id="history_header">
+    <div id="history_header_small">
+      <% if !order.course.nil? %>
+        with <%= link_to teacher_path(order.course.teacher_id), data: { no_turbolink: true }  do %><%= order.course.teacher.name unless order.course.nil? %> <%= order.course.teacher.surname unless order.course.nil? %><% end %>
       <% end %>
     </div>
+
+      English B1 Elementary
+  </div>
+
+    <table>
+      <tr> 
+        <th>Course type</th>
+        <th>Time zone</th>
+        <th>Lesson time</th>
+        <th>Days</th>
+        <th>Course start</th>
+        <th>Course end</th>
+      </tr>
+      <tr>
+        <td><%= order.course_type %></td>
+        <td><%= order.time_zone %></td>
+        <td><%= order.time_start %> to <%= order.time_end %></td>
+        <td><%= order.mon %> <%= order.tue %> <%= order.wed %> <%= order.thu %> <%= order.fri %> <%= order.sat %> <%= order.sun %></td>
+        <td><%= order.course_start %></td>
+        <td><%= order.course_end %></td>
+      </tr>
+    </table> 
+  </div>
+
+  <div id="history_order">
+    <table>
+      <tr>
+        <th>Order</th>
+      </tr>
+      <tr>
+        <td><%= order.created_at.strftime("%b. %d %Y") %> - Price €<%= price_helper(order.amount) %></td>
+      </tr>
+    </table> 
+  </div>
+</div>
+
+<% end %>
+
+<% else %>
+  <div id="history_no_records">
+    No history yet
+  </div>
+<% end %>

@@ -35,7 +35,7 @@ class OrdersController < ApplicationController
         format.html { redirect_to courses_path, notice: 'Order was successfully created.' }
         format.json { render action: 'show', status: :created, location: @order }
         
-        MailsWorker.perform_async(@order.id)
+        OrderWorker.perform_async(@order.id)
         
       else
         format.html { render action: 'new' }
@@ -81,6 +81,8 @@ class OrdersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
       params.require(:order).permit(:name_on_card, :stripe_customer_token, :course_id, :stripe_card_token,
-                                    :currency, :email, :amount)
+                                    :currency, :email, :amount, :level, :language,
+                                      :time_start, :time_end, :course_type, :course_start, :course_end,
+                                      :time_zone,:mon,:tue, :wed, :thu, :fri, :sat, :sun)
     end
 end

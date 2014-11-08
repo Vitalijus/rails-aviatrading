@@ -5,7 +5,7 @@
 /* COURSE NOTICE */
 
 .alert {
-	width: 1110px;
+	width: 1000px;
 	margin: auto;
 	height: 50px;
 	line-height: 48px;
@@ -269,83 +269,92 @@ a:hover #display_login_button_student {
 
 /*--------------------------------------*/
 
+/*COURSE POST*/
 
-/* STAMP */
+#course_post_wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 20px;
+  overflow: hidden;
+}
 
- .stamp1 {
+#find_course_wrapper {
+	width: 1000px;
+	margin: 0 auto;
+	margin-top: 20px;
 	background-color: #ffffff;
-	position: absolute;
-	width: 262px;
-	height: 350px;
-	right: 15px;
-	top: 428px;
-	padding: 5px;
 	margin-bottom: 20px;
-  	border: 0px solid #DFE0E4;
-  	-webkit-box-shadow: 0px 0px 0px 1px rgba(150, 150, 150, 0.25);
-	-moz-box-shadow:    0px 0px 0px 1px rgba(150, 150, 150, 0.25);
-	box-shadow:         0px 0px 0px 1px rgba(150, 150, 150, 0.25);
-
+	padding: 20px;
+  	border: 1px solid #DFE0E4;
 }
 
-.stamp2 {
-	background-color: #ffffff;
-	position: absolute;
-	width: 262px;
-	right: 15px;
-	margin-bottom: 20px;
-	padding: 15px;
-  	border: 0px solid #DFE0E4;
-  	-webkit-box-shadow: 0px 0px 0px 1px rgba(150, 150, 150, 0.25);
-	-moz-box-shadow:    0px 0px 0px 1px rgba(150, 150, 150, 0.25);
-	box-shadow:         0px 0px 0px 1px rgba(150, 150, 150, 0.25);
-
+#find_course_wrapper ul {
+	width: 208px;
+	float:left;
+	margin-bottom: 10px;
+	margin-right: 10px;
+  	border: 0px solid red;
 }
 
-#stamp_header {
-	border-bottom: 1px solid #ececec;
-	height: 40px;
-	text-align: center;
-	line-height: 30px;
-	margin-bottom: 15px;
-	font-size: 25px;
-	font-family: 'Alegreya Sans SC', sans-serif;
-	color: #333333;
+#find_course_wrapper li {
+	border: 0px solid red;
 }
 
-.stamp2 select {
-     -webkit-appearance: none;  /*Removes default chrome and safari style*/
-     -moz-appearance: none;  /*Removes default style Firefox*/
-     width: 100%;
-     color: #999999;
-     background-color: #ffffff;
-     border: 1px solid #cecfc0;
-     padding: 10px;
-     margin-bottom: 5px;
-     font-size: 12px;
-     background: url("dropdown.png") no-repeat;
-     background-position: 95% 13px; /*Position of the background-image*/
-     text-indent: 0.01px; /* Removes default arrow from firefox*/
-     text-overflow: "";   /*Removes default arrow from firefox*/
+#find_course_wrapper select {
+    font-size: inherit;
+    width: 100%;
+    font-size: 12px;
+    color: #777777;
+    padding: 10px;
+    background-color: transparent;
+    opacity:1;
+    -moz-appearance: none;
+    border: 0 none;
+    border-radius: 0px;
+    border:1px solid #cecfc0;
+    padding-right: 2.5em;
 }
 
-.stamp2 input {
-     width: 100%;
-     color: #999999;
-     background-color: #ffffff;
-     border: 1px solid #cecfc0;
-     padding: 10px;
-     margin-bottom: 5px;
-     font-size: 12px;
-}
-
-.stamp2 .search_button {
+.custom-dropdown {
 	width: 100%;
-	margin-top: 10px;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+}
+
+.custom-dropdown:before, .custom-dropdown:after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+}
+
+.custom-dropdown:after {
+    content: "▼";
+    font-size: 0.625em;
+    height: 1em;
+    line-height: 1;
+    margin-top: -0.7em;
+    right: 1.2em;
+    top: 50%;
+    color:#fff;
+}
+.custom-dropdown:before {
+    right: 0px;
+    top: 0px;
+    height: 39px;
+    width: 2em;
+    border: 0px solid red;
+    background-color: #29ACC0;
+    /*background: url("dropdown.png") no-repeat;*/
+}
+
+#find_course_wrapper .search_button {
+	width: 85px;
+	height: 39px;
 	text-align: center;
 	color: #ffffff;
-	font-size: 17px;
-	font-family: "Open Sans", helvetica, arial;
+	font-size: 13px;
+	text-transform: uppercase;
 	background-color: #26ae5a;
 	border: none;
 	cursor: pointer;
@@ -353,60 +362,174 @@ a:hover #display_login_button_student {
   	-webkit-transition:background .3s;
 }
 
-.stamp2 .search_button:hover {
+#find_course_wrapper .search_button:hover {
 	background: #229c51;
 }
-/*---------------------------*/
 
-/* MASONRY */
-
-#masonry_container {
-  border: 0px solid red;
-  margin: 0 auto;
+#course_post_header_wrapper {
+  width: 100%;
+  padding: 20px 20px 20px 20px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #eaeaeb;
+  background-color: #F6F7F8;
   overflow: hidden;
-  padding: 5px;
-  margin-top: 16px;
-  max-width: 1138px;
-  min-width: 660px;
   position: relative;
 }
 
-.box {
-  margin: 0px 10px 20px 10px;
-  background-color: #ffffff;
-  width: 262px;
+#course_post_header_avatar {
+  width: 120px;
+  height: 120px;
+  margin-right: 20px;
+  float: left;
+  font-weight: bold;
+  font-size: 20px;
+  border: 0px solid red;
+}
+
+#course_post_header_title {
+  width: 80%;
+  float: left;
+  font-weight: bold;
+  font-size: 20px;
+  border: 0px solid red;
+}
+
+#course_post_header_small {
+  width: 80%;
+  float: left;
+  padding-bottom: 3px;
   font-size: 12px;
-  -webkit-box-shadow: 0px 0px 0px 1px rgba(150, 150, 150, 0.25);
-  -moz-box-shadow:    0px 0px 0px 1px rgba(150, 150, 150, 0.25);
-  box-shadow:         0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+  border: 0px solid red;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: #999999; 
+}
+
+#course_post_header_small a {
+  color: #346fa1; 
+  -webkit-transition: color 150ms linear;
+  -moz-transition: color 150ms linear;
+  -o-transition: color 150ms linear;
+  -ms-transition: color 150ms linear;
+  transition: color 150ms linear;
+}
+
+#course_post_header_small a:hover {
+  color: #428BCA;
+}
+
+#course_post_header_enroll a {
+	width: 100px;
+	height: 40px;
+	position: absolute;
+	top: 19px;
+	right: 20px;
+	color: #ffffff;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 14px;
+	line-height: 40px;
+	background-color: #26ae5a;
+  	border: 0px solid red;
+  	-webkit-transition: background-color 150ms linear;
+  	-moz-transition: background-color 150ms linear;
+  	-o-transition: background-color 150ms linear;
+  	-ms-transition: background-color 150ms linear;
+  	transition: background-color 150ms linear;
+}
+
+#course_post_header_enroll a:hover {
+	background-color: #229c51;
+}
+
+#course_post_header_enroll_expired {
+	width: 100px;
+	height: 40px;
+	position: absolute;
+	top: 19px;
+	right: 20px;
+	color: #ffffff;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 14px;
+	line-height: 40px;
+	background-color: #A4A7AF;
+  	border: 0px solid red;
+}
+
+#course_post_header_attr {
+  width: 80%;
+  float: left;
+  padding-top: 3px;
+  font-size: 12px;
+  border: 0px solid red;
+  color: #666666;
+}
+
+#course_post {
+  width: 80.9%;
+  float: left;
+  padding: 0px 0px 17px 0px;
+  background-color: #ffffff;
+  margin-right: 20px;
+  border: 1px solid #DFE0E4;
+  overflow: hidden;
+}
+
+#course_post table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 20px 0px ;
   border: 0px solid #DFE0E4;
-  padding: 0;
 }
 
-.box_course_title {
-	font-size: 25px;
-	padding: 15px 15px 0px 15px;
-	text-transform: lowercase;
-	border-bottom: 1px solid #eaeaeb; /*#eaeaeb*/
-	font-family: 'Alegreya Sans SC', sans-serif;
-	background-color: #F6F7F8;
-	color: #333333;
+#course_post th {
+  padding-bottom: 5px;
+  color: #278998;
+  vertical-align: bottom;
+  font-family: "Lato", helvetica, arial;
+  font-size: 14px;
+  text-align: left;
+  border-bottom: 2px solid #278998;
 }
 
-.box_course_title a {
-	color: #444444;
+#course_post td {
+  padding-top: 3px;
+  vertical-align: top;
+  font-size: 14px;
+  font-family: "Open Sans", helvetica, arial;
+  border: 0px solid #DFE0E4;
 }
 
-.box_teacher_name {
-	text-transform: none;
-	border-bottom: 0px solid #eaeaeb;
-	padding: 0 15px 10px 0px;
-	font-family: 'Lato', sans-serif;
-	font-size: 10px;
+#course_post_icons {
+  width: 17%;
+  float: left;
+  border-bottom: 1px solid #DFE0E4;
+  border-left: 1px solid #DFE0E4;
 }
 
-.box_teacher_name a {
-	color: #346fa1; 
+#course_post_icons ul {
+  border: 0px solid red;
+  overflow: hidden;
+}
+
+#course_post_icons li {
+  width: 50%;
+  padding-top: 22px;
+  height: 82px;
+  float: left;
+  font-size: 13px;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  background-color: #F8F7F8;
+  border-right: 1px solid #DFE0E4;
+  border-top: 1px solid #DFE0E4;
+}
+
+#course_post_icons a li {
+	color: #7C808D;
 	-webkit-transition: color 150ms linear;
   	-moz-transition: color 150ms linear;
   	-o-transition: color 150ms linear;
@@ -414,130 +537,15 @@ a:hover #display_login_button_student {
   	transition: color 150ms linear;
 }
 
-.box_teacher_name a:hover {
-	color: #428BCA;
+#course_post_icons a:hover li {
+	color: #598BFF;
 }
 
-.box_course_price {
-	width: 40px;
-	float: right;
-	text-align: right;
-	border: 0px solid red;
-	color: #999999;
-	font-size: 14px;
-	margin: 7px 0px 0 15px;
-	font-family: 'Lato', sans-serif;
-
-}
-
-.box_description {
-	padding: 7px 15px 0 15px;
-	color: #111111;
-	line-height: 20px;
-	font-family: "Open Sans", helvetica, arial;
-	font-size: 12px;
-	border: 0px solid red;
-}
-
-
-.box table {
-	color: #666666;
-	font-size: 11px;
-	border: 0px solid green;
-	padding: 10px 15px 15px 15px;
-	width: 100%;
-	font-family: "Open Sans", helvetica, arial;
-}
-
-.box table tr td {
-	padding-bottom: 0px;
-	border: 0px solid red;
-}
-
-.box_button_wrapper {
-	border: 0px solid red;
-	width: 100%;
-	height: 40px;
-	margin-bottom: 0px;
-	position: relative;
-}
-
-.box_button_enroll {
-	border-top: 1px solid #eaeaeb;
-	background-color: #F6F7F8;
-	width: 50%;
-	color: #428BCA;
-	height: 40px;
-	float: right;
-	text-align: center;
-	line-height: 40px;
-	font-size: 13px;
-	font-family: 'Lato', sans-serif;
-	-webkit-transition: color 150ms linear;
-  	-moz-transition: color 150ms linear;
-  	-o-transition: color 150ms linear;
-  	-ms-transition: color 150ms linear;
-  	transition: color 150ms linear;
-}
-
-.box_button_enroll:hover {
-	color: #346fa1;
-}
-
-.box_button_try {
-	background-color: #F6F7F8;
-	border-right: 1px solid #eaeaeb;
-	border-top: 1px solid #eaeaeb;
-	width: 50%;
-	float: left;
-	height: 40px;
-	line-height: 40px;
-	font-size: 14px;
-	color: #428BCA;
-	text-align: center;
-	font-family: 'Lato', sans-serif;
-	-webkit-transition: color 150ms linear;
-  	-moz-transition: color 150ms linear;
-  	-o-transition: color 150ms linear;
-  	-ms-transition: color 150ms linear;
-  	transition: color 150ms linear;
-}
-
-.box_button_try:hover {
-	color: #346fa1;
-}
-
-
-.box_footer {
-	border: 0px solid red;
-	background-color: #ffffff;
-	overflow: hidden;
-	height: 40px;
-}
-
-.box_footer ul {
-	border: 0px solid green;
-	text-align: center;
-	float: left;
-	width: 100%;
-}
-
-.box_footer li {
-	border: 0px solid red;
-	width: 33.3333%;
-	float: left;
-	padding: 0px 20px 0 20px;
-	/*height: 100%;
-	line-height: 50px;*/
-}
-
-
-/* ---------------------*/
-
+/*----------------------------*/
 
 /* COURSE */
 
-#course_content_wrapper {
+/*#course_content_wrapper {
 	width: 920px;
 	margin: auto;
 	margin-top: 20px;
@@ -601,7 +609,7 @@ a:hover #display_login_button_student {
 	font-size: 13px;
 	color: #777777;
 	font-family: "Open Sans", helvetica, arial;
-}
+}*/
 
 /*ENROLL BANNER*/
 
@@ -676,46 +684,20 @@ a:hover #display_login_button_student {
 	font-size: 12px;
 }
 
-.new_course_area {
-	width: 100%;
-	padding: 10px;
-	height: 90px;
-	color: #555555;
-	margin-bottom: 10px;
-	margin-top: 2px;
-	border: 1px solid #cecfc0;
-}
-
-.new_course_field input {
-	width: 100%;
-	padding: 10px;
-	margin-bottom: 10px;
-	margin-top: 2px;
-	color: #555555;
-	border: 1px solid #cecfc0;
-}
-
-.new_course_field select {
-     -webkit-appearance: none;  /*Removes default chrome and safari style*/
-     -moz-appearance: none;  /*Removes default style Firefox*/
-     width: 100%;
-     background-color: #ffffff;
-     border: 1px solid #cecfc0;
-     padding: 10px;
-     margin-bottom: 10px;
-     margin-top: 2px;
-     font-size: 12px;
-     background: url("dropdown.png") no-repeat;
-     background-position: 98% 13px; /*Position of the background-image*/
-     text-indent: 0.01px; /* Removes default arrow from firefox*/
-     text-overflow: "";   /*Removes default arrow from firefox*/
-}
-
-.new_course_field label {
-	color: #555555;
-	font-family: 'Lato', sans-serif;
-	font-size: 12px;
-	border: 0px solid #cecfc0;
+.new_course_form select {
+	font-size: inherit;
+    width: 100%;
+    font-size: 12px;
+    color: #777777;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: transparent;
+    opacity:1;
+    -moz-appearance: none;
+    border: 0 none;
+    border-radius: 0px;
+    border:1px solid #cecfc0;
+    padding-right: 2.5em;
 }
 
 .days_wrapper {
@@ -731,20 +713,47 @@ a:hover #display_login_button_student {
 	border: 0px solid red;
 }
 
+.new_course_field input {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 15px;
+	margin-top: 2px;
+	font-size: 12px;
+	color: #555555;
+	border: 1px solid #cecfc0;
+}
+
+.new_course_description_area {
+	width: 100%;
+	padding: 10px;
+	height: 90px;
+	color: #555555;
+	margin-bottom: 15px;
+	margin-top: 2px;
+	border: 1px solid #cecfc0;
+	font-size: 12px;
+}
+
 .new_course_field_date select {
-	 -webkit-appearance: none;  /*Removes default chrome and safari style*/
-     -moz-appearance: none;  /*Removes default style Firefox*/
-     background-color: #ffffff;
-     border:1px solid #cecfc0;
-     padding: 10px 30px 10px 10px;
-     margin-bottom: 10px;
-     margin-right: 10px;
-     margin-top: 2px;
-     font-size: 12px;
-     background: url("dropdown.png") no-repeat;
-     background-position: 85% 13px; /*Position of the background-image*/
-     text-indent: 0.01px; /* Removes default arrow from firefox*/
-     text-overflow: "";   /*Removes default arrow from firefox*/
+	font-size: inherit;
+    width: 80%;
+    font-size: 12px;
+    color: #777777;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: transparent;
+    opacity:1;
+    -moz-appearance: none;
+    border: 0 none;
+    border-radius: 0px;
+    border:1px solid #cecfc0;
+    padding-right: 2.5em;
+}
+
+.new_course_field_pdf {
+	border: 2px dashed #cecfc0;
+	padding: 20px;
+	margin-bottom: 10px;
 }
 
 .new_course_field_pdf input {
@@ -754,28 +763,28 @@ a:hover #display_login_button_student {
 	color: #555555;
 	font-size: 14px;
 	font-family: 'Lato', sans-serif;
-	border: 0px solid #cecfc0;
+	border: 0px dashed #cecfc0;
 }
 
 .new_course_field_pdf label {
-	color: #555555;
+	color: #777777;
 	font-family: 'Lato', sans-serif;
-	font-size: 12px;
-	padding-bottom: 5px;
+	font-size: 13px;
+	text-align: center;
+	padding: 0px 0 0 100px;
 	border: 0px solid #cecfc0;
 }
 
-.new_course_create_button  {
-	border: 1px solid #cecfc0;
+.new_course_submit_button {
+	border: none;
 	text-align: center;
 	width: 100%;
 	padding: 10px;
 	margin-top: 10px;
-	font-size: 16px;
-	font-weight: bold;
-	color: white;
+	color: #ffffff;
+	font-size: 17px;
 	font-family: "Open Sans", helvetica, arial;
-	background-color: #3AC162;
+	background-color: #26ae5a;
 	cursor: pointer;
 	-webkit-transition: background-color 150ms linear;
   	-moz-transition: background-color 150ms linear;
@@ -784,8 +793,8 @@ a:hover #display_login_button_student {
   	transition: background-color 150ms linear;
 }
 
-.new_course_create_button:hover {
-	background-color: #5FCF80;
+.new_course_submit_button:hover {
+	background-color: #229c51;
 }
 
 /* ------------------------------ */
@@ -796,7 +805,7 @@ a:hover #display_login_button_student {
   border: 0px solid red;
   margin: 0 auto;
   width: 280px;
-  margin-top: 0px;
+  margin-top: 30px;
   margin-bottom: 80px;
   /* self-clearing method: */ 
 }
@@ -836,10 +845,7 @@ a:hover #display_login_button_student {
     padding: 10px;
     margin: 10px;
     background-color: white;
-    -webkit-box-shadow: 0px 0px 0px 1px rgba(150, 150, 150, 0.25);
- 	-moz-box-shadow:    0px 0px 0px 1px rgba(150, 150, 150, 0.25);
- 	box-shadow:         0px 0px 0px 1px rgba(150, 150, 150, 0.25);
-    border: 0px solid red;
+    border: 1px solid #DFE0E4;
     -webkit-transition: color 150ms linear;
   	-moz-transition: color 150ms linear;
   	-o-transition: color 150ms linear;
