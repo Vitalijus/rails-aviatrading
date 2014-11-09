@@ -3,7 +3,7 @@ class Course < ActiveRecord::Base
 	belongs_to :teacher
 	belongs_to :student
 	has_many :orders
-	has_many :lessons
+	#has_many :lessons
 	has_many :trials
 
 	validates :language, :level, :price, :time_start, :time_end, :course_type, :course_start,

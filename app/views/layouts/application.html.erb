@@ -92,7 +92,7 @@
 							<li>MY COURSES</li>
 						<% end %>
 					
-						<%= link_to edit_teacher_registration_path do %>
+						<%= link_to edit_teacher_registration_path, data: { no_turbolink: true } do %>
 							<li>SETTINGS</li>
 						<% end %>
 
@@ -111,7 +111,7 @@
 				  			<li>HISTORY</li>
 				  		<% end %>
 
-				  		<%= link_to edit_student_registration_path do %>
+				  		<%= link_to edit_student_registration_path, data: { no_turbolink: true } do %>
 							<li>SETTINGS</li>
 						<% end %>
 
