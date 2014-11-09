@@ -18,9 +18,9 @@
           </li>
 
           <%= fb_share('178872632300191', 'https://www.lingonas.com/', { 
-                    :name => "#{@teacher.name} #{@teacher.surname} teacher at Lingonas",
+                    :name => "Learning foreign language with #{@teacher.name} #{@teacher.surname}",
                     :method => "feed",
-                    :description => "#{@teacher.about_me}",
+                    :description => "Hey! I'm foreign language teacher at Lingonas. I teach #{@teacher.iteach} and I can speak #{@teacher.ispeak}. I live in #{@teacher.location} and if you need help in language learning take a look at my profile!",
                     :link => "https://lingonas.com/#{teacher_path(@teacher)}",
                     :picture => "#{@teacher.avatar_url}",
                     :caption => "lingonas.com. Re-think language learning."
@@ -150,7 +150,7 @@
       <%= fb_share('178872632300191', 'https://www.lingonas.com/', { 
                             :name => "Learning #{course.language} #{course.level} with #{course.teacher.name} #{course.teacher.surname}",
                             :method => "feed",
-                            :description => "#{course.description}",
+                            :description => "Hey! I teach #{course.language} #{course.level} at Lingonas. I will start this course on #{course.course_start}. Join me!",
                             :link => "https://www.lingonas.com/#{teacher_path(course)}",
                             :picture => "#{course.teacher.avatar_url}",
                             :caption => "Lingonas. Re-think language learning"

@@ -1,9 +1,5 @@
 <div id="order_wrapper">
 
-  <div id="order_box_header">
-   Start <%= @course.language %> <%= truncate(@course.level, :length => 2, :omission => "") %> course
-  </div>
-
 <%= form_for([@course, @order]) do |f| %>
   
   <div id="order_box_info">
@@ -37,6 +33,13 @@
   </div>
 
   <div id="order_box_payment_form"> 
+
+    <div id="order_box_payment_form_line">
+      Credit Card
+      <div id="order_box_gateway_payment">
+          <%= image_tag "cclogos.png", width: 220 %>
+      </div>
+    </div>
 
   <% if @order.errors.any? %>
     <div id="error_explanation">
@@ -79,24 +82,28 @@
       Credit card has been provided.
     <% else %>
 
-    <div class="order_box_field">
-      <%= text_field_tag :card_number, nil, name: nil, placeholder: "Card Number" %>
-    </div>
+    <div class="order_box_card_and_cvv_wrapper">
+      <div class="order_box_card_number">
+        <%= label_tag :card_number, "Card Number" %></br>
+        <%= text_field_tag :card_number, nil, name: nil, placeholder: "0000 0000 0000 0000" %>
+      </div>
 
-    <div class="order_box_field">
-      <%= text_field_tag :card_code, nil, name: nil, placeholder: "3 Digits Security Code on Card (CVV)" %>
+      <div class="order_box_ccv">
+        <%= label_tag :card_code, "3 Digits CVV code" %></br>
+        <%= text_field_tag :card_code, nil, name: nil, placeholder: "000" %>
+      </div>
     </div>
 
     <div class="order_box_field">
       <%= label_tag :card_month, "Card Expiration" %></br>
-      <%= image_tag "dropdown.png" %>
       <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month"} %>
       <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year"} %>
     </div>
 
     <% end %>
 
-  <div class="order_box_field">
+  <div class="order_box_name_on_card">
+    <%= label_tag :name_on_card, "Your name" %></br>
     <%= f.text_field :name_on_card, placeholder: "Name on card" %>
   </div>
 
@@ -115,7 +122,7 @@
   <% else %>
     <%= link_to student_session_path do %>
       <div id="order_box_please_sign_in">
-        Sing in 
+        Sing in to enroll
       </div>
     <% end %>
   <% end %>
@@ -123,23 +130,12 @@
   </div>
   <% end %>
 
-</div>
+    <div id="order_box_money_back">
+      <ul>
+        </li><%= image_tag "money_back.jpg", width: 200 %></li>
+        <li class="order_box_money_back_title">7-day money back guarantee</li>
+        <li>If you don't like our service, we'll be happy to refund your payment. Notify us within 7 days of your enrollment. Risk free. No questions asked.</li>
+      </ul>
+    </div>
 
-
-<div id="order_box_secure_pay_wrapper">
-  <div id="order_box_secure_pay">
-    <ul>
-      <li><%= image_tag "ssl.png", width: 115 %></li>
-      <li><%= image_tag "visa.png", width: 50 %></li>
-      <li><%= image_tag "mastercard.png", width: 50 %></li>
-      <li><%= image_tag "amex.png", width: 50 %></li>
-    </ul>
-  </div>
-
-  <div id="order_box_money_back">
-    <%= image_tag "calendar.jpg", width: 60 %>
-    <b>7-day money back guarantee</b><br/>
-    <span>Every course includes a 7-day money back guarantee. Risk free. No questions asked.</span>
-
-  </div>
 </div>
