@@ -13,6 +13,8 @@
 
 			  <div><%= f.label :password_confirmation %><br />
 			    <%= f.password_field :password_confirmation, autocomplete: "off", :class => "student_login_field" %></div>
+			
+				<div style="text-align: right;">By signing up you agree to <%= link_to "terms & conditions", "https://lingonas.com/terms_and_conditions/terms%20and%20conditions.pdf" %> </div>
 
 			  <div class="action"><%= f.submit "Sign up", :class => "login_submit_button" %></div>
 			<% end %>
