@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <title>Lingonas - re-think language learning</title>
+        <style>
+            @import url(http://fonts.googleapis.com/css?family=Open+Sans);
+        </style>
+  </head>
+    <body>
+
+<div class="wrapper", style= "width: 640px; background-color: #F5F5F5; padding: 50px;">
+
+	<div class="header", style= "width: 640px; background-color: #316A7E; ">
+  <%= image_tag attachments['bg.jpg'].url, width: 640 %>
+  </div>
+
+  <div class="content", style="width: 558px; margin: 0 auto; border-left: 1px solid #dbdbdb; border-right: 1px solid #dbdbdb; border-bottom: 1px solid #dbdbdb; padding: 0px 40px 40px 40px; color: #666C74; font-size: 12px; background-color: #ffffff; font-family: 'Open Sans', helvetica, arial;">
+
+    <div style="font-family: 'Open Sans', helvetica, arial; font-size: 25px; padding: 20px 0 20px 0; text-align: center;">
+       Thank you for enrolling!
+    </div>
+
+    <div style="font-size: 14px; padding: 0px 0 0px 0;">
+      Hey! We are happy to have you onboard. Lingonas team will gladly support you whenever you feel you need it. We also would appreciate if you give us any feedback or suggestion on how to improve our service. Just drop us some lines with your criticism, suggestions or compliments at support@lingonas.com.
+    </div>
+
+    <div style="font-size: 14px; padding: 20px 0 20px 0;">
+      <b>Course start:</b> <%= @order.course.course_start.to_formatted_s(:rfc822) %><br/>
+      <b>Lesson time:</b> <%= @order.course.time_start %> to <%= @order.course.time_end %><br/>
+      <b>Adobe Connect link:</b> <%= @order.course.adobe_connect %><br/>
+      In attachment you can find Adobe Connect quick user guide.
+    </div>
+
+    <div style="font-size: 14px; padding: 0px 0 20px 0;">
+      <b>Order confirmation for:</b> <%= @order.name_on_card %><br/>
+      <b>Order date:</b> <%= @order.created_at.to_formatted_s(:rfc822) %><br/>
+      <b>Amount:</b> <%= @order.amount / 100 %>€
+    </div>
+
+	   <table>
+
+        <tr>
+          <td>Course language:</td>
+          <td><strong><%= @order.course.language %></strong></td>
+        </tr>
+
+        <tr>
+          <td>Course level:</td>
+          <td><strong><%= @order.course.level %></strong></td>
+        </tr>
+
+        <tr>
+          <td>Course type:</td>
+          <td><strong><%= @order.course.course_type %></strong></td>
+        </tr>
+
+        <tr>
+          <td>Time zone:</td>
+          <td><strong><%= @order.course.time_zone %></strong></td>
+        </tr>
+
+        <tr>
+          <td>Lesson time:</td>
+          <td><strong><%= @order.course.time_start %> to <%= @order.course.time_end %></strong></td>
+        </tr>
+
+        <tr>
+          <td>Days:</td>
+          <td><strong><%= @order.course.mon %> <%= @order.course.tue %> <%= @order.course.wed %> <%= @order.course.thu %> <%= @order.course.fri %> <%= @order.course.sat %> <%= @order.course.sun %></strong></td>
+        </tr>
+
+        <tr>
+          <td>Course start:</td>
+          <td><strong><%= @order.course.course_start.to_formatted_s(:rfc822) %></strong></td>
+        </tr>
+
+        <tr>
+          <td>Course end:</td>
+          <td><strong><%= @order.course.course_end.to_formatted_s(:rfc822) %></strong></td>
+        </tr>  
+      </table>
+
+	</div>
+
+    <div class="footer", style="width: 600px; padding: 20px; margin: auto; background-color: #666C74; text-align: center; font-size: 13px; color: #ffffff;">
+      <b>Questions? support@lingonas.com</b><br/>
+      Lingonas, Romanstr. 60, Munich, D - 80639, Germany
+    </div>
+
+</div>
+  </body>
+</html>
