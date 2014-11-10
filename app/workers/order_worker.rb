@@ -6,5 +6,6 @@ class OrderWorker
   	order = Order.find(order_id)
     OrderMailer.order_confirmation(order).deliver
     OrderMailer.order_confirmation_teacher(order).deliver
+    OrderMailer.order_confirmation_notifier(order).deliver
   end
 end

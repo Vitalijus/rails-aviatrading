@@ -6,5 +6,6 @@ class TrialWorker
   	trial = Trial.find(trial_id)
     TrialMailer.new_trial_request(trial).deliver
 	TrialMailer.new_trial_request_confirmation(trial).deliver
+	TrialMailer.new_trial_notifier(trial).deliver
   end
 end
