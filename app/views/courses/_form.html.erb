@@ -66,16 +66,15 @@
   </div>
 
     <div class="new_course_field_date">
-      <div class="custom-dropdown">
+
         <%= f.label :course_start %><br/>
         <%= f.date_select :course_start, {:order => [:day, :month, :year], start_year: Date.today.year, end_year: Date.today.year+1}, {:class => "new_course_date_select"} %>
-      </div>
+    </div>
 
-      <div class="custom-dropdown">
+      <div class="new_course_field_date">
         <%= f.label :course_end %><br>
         <%= f.date_select :course_end, {:order => [:day, :month, :year], start_year: Date.today.year, end_year: Date.today.year+1}, {:class => "new_course_date_select"} %>
       </div>
-    </div>
 
     <div class="new_course_field_pdf">
       <%= f.label :course_pdf, "PDF file (upload learning materials in one file, max. 5MB)" %><br>

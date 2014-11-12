@@ -110,7 +110,7 @@
                             :name => "Learning #{course.language} #{course.level} with #{course.teacher.name} #{course.teacher.surname}",
                             :method => "feed",
                             :description => "Hey! I teach #{course.language} #{course.level} at Lingonas. I will start this course on #{course.course_start}. Join me!",
-                            :link => "https://www.lingonas.com/#{teacher_path(course)}",
+                            :link => "https://www.lingonas.com/#{teacher_path(course.teacher_id)}",
                             :picture => "#{course.teacher.avatar_url}",
                             :caption => "Lingonas. Re-think language learning"
                             }) %>
