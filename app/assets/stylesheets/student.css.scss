@@ -20,10 +20,6 @@
   border: 0px solid red;
 }
 
-#student_login_form a {
-  color: #29ACC0;
-}
-
 /*#triangle{
   width:0;
   border-top:12x solid transparent;
@@ -83,6 +79,76 @@
 
 #student_login_links a:hover {
 	text-decoration: underline;
+}
+
+
+.terms_and_conditions {
+  width: 20px;
+  float: left;
+  border: 0px solid red;
+  position: relative;
+}
+
+.terms_and_conditions label {
+  cursor: pointer;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  left: 0;
+  background: #eee;
+  border:1px solid #ddd;
+}
+
+/**
+ * Display the tick inside the checkbox
+ */
+.terms_and_conditions label:after {
+  opacity: 0.2;
+  content: '';
+  position: absolute;
+  width: 7px;
+  height: 3px;
+  background: transparent;
+  top: 5px;
+  left: 5px;
+  border: 3px solid #333;
+  border-top: none;
+  border-right: none;
+
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+/**
+ * Create the hover event of the tick
+ */
+.terms_and_conditions label:hover::after {
+  opacity: 0.5;
+}
+
+/**
+ * Create the checkbox state for the tick
+ */
+.terms_and_conditions input[type=checkbox]:checked + label:after {
+  opacity: 1;
+}
+
+.terms_link {
+  height: 20px;
+  line-height: 20px;
+  margin-left: 10px;
+  font-size: 11px;
+  font-family: 'Lato', sans-serif;
+  float: left;
+  border: 0px solid red;
+}
+
+.terms_link a {
+  color: #29ACC0;
 }
 
 /* HISTORY */

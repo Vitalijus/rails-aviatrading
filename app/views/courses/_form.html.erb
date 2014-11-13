@@ -13,47 +13,116 @@
       </div>
     <% end %>
 
-  <div class="days_wrapper">
+    <div class="new_course_price">
+      <%= f.number_field :price, :placeholder => "€" %>
+    </div>
+
+  <div class="new_course_days_checkboxes">
     <ul>
-      <li><%= f.label :mon, "Monday" %><br>
-      <%= f.radio_button :mon, 'mon', :value => 'mon' %></li>
-      <li><%= f.label :tue, "Tuesday" %><br>
-      <%= f.radio_button :tue, 'tue', :value => 'tue' %></li>
-      <li><%= f.label :wed, "Wednesday" %><br>
-      <%= f.radio_button :wed, 'wed', :value => 'wed' %></li>
-      <li><%= f.label :thu, "Thursday" %><br>
-      <%= f.radio_button :thu, 'thu', :value => 'thu' %></li>
-      <li><%= f.label :fri, "Friday" %><br>
-      <%= f.radio_button :fri, 'fri', :value => 'fri' %></li>
-      <li><%= f.label :sat, "Saturday" %><br>
-      <%= f.radio_button :sat, 'sat', :value => 'sat' %></li>
-      <li><%= f.label :sun, "Sunday" %><br>
-      <%= f.radio_button :sun, 'sun', :value => 'sun' %></li> 
+      <li>Monday</li>
+      <li class="day_checkbox">
+        <div class="new_course_days">
+          <%= f.check_box :mon, {:id => "checkbox_mon"}, "mon", "" %>
+            <label for="checkbox_mon"></label>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="new_course_days_checkboxes">
+    <ul>
+      <li>Tuesday</li>
+      <li class="day_checkbox">
+        <div class="new_course_days">
+          <%= f.check_box :tue, {:id => "checkbox_tue"}, "tue", "" %>
+            <label for="checkbox_tue"></label>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="new_course_days_checkboxes">
+    <ul>
+      <li>Wednesday</li>
+      <li class="day_checkbox">
+        <div class="new_course_days">
+          <%= f.check_box :wed, {:id => "checkbox_wed"}, "wed", "" %>
+            <label for="checkbox_wed"></label>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="new_course_days_checkboxes">
+    <ul>
+      <li>Thursday</li>
+      <li class="day_checkbox">
+        <div class="new_course_days">
+          <%= f.check_box :thu, {:id => "checkbox_thu"}, "thu", "" %>
+            <label for="checkbox_thu"></label>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="new_course_days_checkboxes">
+    <ul>
+      <li>Friday</li>
+      <li class="day_checkbox">
+        <div class="new_course_days">
+          <%= f.check_box :fri, {:id => "checkbox_fri"}, "fri", "" %>
+            <label for="checkbox_fri"></label>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="new_course_days_checkboxes">
+    <ul>
+      <li>Saturday</li>
+      <li class="day_checkbox">
+        <div class="new_course_days">
+          <%= f.check_box :sat, {:id => "checkbox_sat"}, "sat", "" %>
+            <label for="checkbox_sat"></label>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="new_course_days_checkboxes">
+    <ul>
+      <li>Sunday</li>
+      <li class="day_checkbox">
+        <div class="new_course_days">
+          <%= f.check_box :sun, {:id => "checkbox_sun"}, "sun", "" %>
+            <label for="checkbox_sun"></label>
+        </div>
+      </li>
     </ul>
   </div>
 
 
-  <div class="custom-dropdown">
+  <div>
     <%= f.select :language, ['Arabic', 'Chinese, Mandarin', 'Chinese, Cantonese', 'English', 'French', 'German', 'Hindi', 'Italian', 'Japanese', 'Portuguese', 'Russian', 'Spanish'], :prompt => 'Select language' %> 
   </div>
 
-  <div class="custom-dropdown">
+  <div>
     <%= f.select :level, ['A1 Beginner', 'A2 Elementary', 'B1 Intermediate', 'B2 Upper intermediate', 'C1 Advanced', 'C2 Mastery'], :prompt => 'Select level' %> 
   </div>
 
-  <div class="custom-dropdown">
+  <div>
     <%= f.select :course_type, ['Private regular', 'Private intensive', 'Group regular', 'Group intensive'], :prompt => 'Select course type'  %>  
   </div>
 
-  <div class="custom-dropdown">
+  <div>
     <%= f.select :time_zone, ["American Samoa", "International Date Line West", "Midway Island", "Hawaii", "Alaska", "Pacific Time (US & Canada)", "Tijuana", "Arizona", "Chihuahua", "Mazatlan", "Mountain Time (US & Canada)", "Central America", "Central Time (US & Canada)", "Guadalajara", "Mexico City", "Monterrey", "Saskatchewan", "Bogota", "Eastern Time (US & Canada)", "Indiana (East)", "Lima", "Quito", "Caracas ", "Atlantic Time (Canada)", "Georgetown", "La Paz", "Santiago", "Newfoundland", "Brasilia", "Buenos Aires", "Greenland", "Montevideo", "Mid-Atlantic", "Azores", "Cape Verde Is.", "Casablanca", "Dublin" ,"Edinburgh", "Lisbon", "London", "Monrovia", "UTC +00:00", "Amsterdam", "Belgrade", "Berlin", "Bern", "Bratislava", "Brussels", "Budapest" ,"Copenhagen", "Ljubljana", "Madrid", "Paris", "Prague", "Rome", "Sarajevo", "Skopje", "Stockholm", "Vienna", "Warsaw", "West Central Africa", "Zagreb", "Athens", "Bucharest", "Cairo", "Harare", "Helsinki", "Istanbul", "Jerusalem", "Kyiv", "Pretoria", "Riga", "Sofia", "Tallinn", "Vilnius", "Baghdad", "Kuwait", "Minsk", "Moscow", "Nairobi", "Riyadh", "St. Petersburg", "Volgograd", "Tehran", "Abu Dhabi", "Baku", "Muscat", "Tbilisi", "Yerevan", "Kabul", "Ekaterinburg", "Islamabad", "Karachi", "Tashkent", "Chennai", "Kolkata", "Mumbai", "New Delhi", "Sri Jayawardenepura", "Kathmandu", "Almaty", "Astana", "Dhaka", "Novosibirsk", "Urumqi", "Rangoon", "Bangkok", "Hanoi", "Jakarta", "Krasnoyarsk", "Beijing", "Chongqing", "Hong Kong", "Irkutsk", "Kuala Lumpur", "Perth", "Singapore", "Taipei", "Ulaanbaatar", "Osaka", "Sapporo", "Seoul", "Tokyo", "Yakutsk", "Adelaide", "Darwin", "Brisbane", "Canberra", "Guam", "Hobart", "Magadan", "Melbourne", "Port Moresby", "Sydney", "Vladivostok", "New Caledonia", "Solomon Is.", "Auckland", "Fiji", "Kamchatka", "Marshall Is.", "Wellington", "Chatham Is.", "Nuku'alofa", "Samoa", "Tokelau Is."], :prompt => 'Select timezone'  %>  
   </div>
 
-  <div class="custom-dropdown">
+  <div>
     <%= f.select :time_start, ['08:00', '08:30', '09:00', '09:30', '10:00', '10:30', '11:00', '11:30', '12:00', '12:30', '13:00', '13:30', '14:00', '14:30', '15:00', '15:30', '16:00', '16:30', '17:00', '17:30', '18:00', '18:30', '19:00', '19:30', '20:00', '20:30', '21:00', '21:30', '22:00', '22:30', '23:00', '23:30'], :prompt => 'Lesson start time' %> 
   </div>
 
-  <div class="custom-dropdown">
+  <div>
     <%= f.select :time_end, ['08:00', '08:30', '09:00', '09:30', '10:00', '10:30', '11:00', '11:30', '12:00', '12:30', '13:00', '13:30', '14:00', '14:30', '15:00', '15:30', '16:00', '16:30', '17:00', '17:30', '18:00', '18:30', '19:00', '19:30', '20:00', '20:30', '21:00', '21:30', '22:00', '22:30', '23:00', '23:30'], :prompt => 'Lesson end time' %> 
   </div>
 
@@ -61,12 +130,7 @@
     <%= f.text_field :adobe_connect, :placeholder => "Add Adobe Connect link" %>  
   </div>
 
-  <div class="new_course_field">
-    <%= f.number_field :price, :placeholder => "Course price" %> 
-  </div>
-
     <div class="new_course_field_date">
-
         <%= f.label :course_start %><br/>
         <%= f.date_select :course_start, {:order => [:day, :month, :year], start_year: Date.today.year, end_year: Date.today.year+1}, {:class => "new_course_date_select"} %>
     </div>

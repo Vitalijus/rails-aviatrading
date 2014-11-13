@@ -10,6 +10,6 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:account_update) << [:name, :surname, :avatar, :native_language, :iteach, 
     													:ispeak, :age, :location, :time_zone, :about_me]
-    devise_parameter_sanitizer.for(:sign_up) << [:name, :surname]
+    devise_parameter_sanitizer.for(:sign_up) << [:name, :surname, :terms_conditions]
   end
 end

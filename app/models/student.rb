@@ -6,4 +6,6 @@ class Student < ActiveRecord::Base
 
   has_many :orders
   has_many :courses
+
+  validates :terms_conditions , acceptance: { accept: 'accepted' }
 end
