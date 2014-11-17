@@ -1,0 +1,258 @@
+
+
+  <div class="display_wrapper">
+      <div class="display_phrase">
+        ONLINE LANGUAGE COURSES
+        <p>Effective and comfortable way to improve your skills.</p>
+      </div>
+
+
+  <div id="display_howitworks_wrapper">
+    <%= link_to courses_path do %>
+      <div id="display_view_courses">
+        VIEW COURSES
+      </div>
+    <% end %>
+  </div>
+
+      <div id="display_login_wrapper">
+        
+        <%= link_to new_student_session_path do %>
+          <div id="display_login_button_student">
+            STUDENT
+          </div>
+        <% end %>
+
+        <%= link_to new_teacher_session_path do %>
+          <div id="display_login_button_tutor">
+            TEACHER
+          </div>
+        <% end %>
+
+    </div>
+  </div>
+
+  <div class="banner_wrapper">
+    
+    <div class="banner_triangle">
+      <%= image_tag "triangle.png", width: 40 %>
+    </div>
+
+    <!--<div class="banner_triangle_close">
+      <%= image_tag "triangle_white.png", width: 40 %>
+    </div>-->
+
+    <div class="banner_box_wrapper">
+
+      <!--<div class="banner_box_video_title">
+        Intoducing Lingonas
+      </div>
+
+      <div class="banner_box_video_title_small">
+        Take a look at how it works
+      </div>
+
+      <div class="banner_video">
+        <video id="example_video_1" class="video-js vjs-default-skin"
+          controls preload="auto" width="620" height="350"
+          poster=""
+          data-setup='{"example_option":true}'>
+         <source src="https://dl.dropboxusercontent.com/u/60193860/lingonas.webm" type='video/webm' />
+         <source src="https://dl.dropboxusercontent.com/u/60193860/lingonas.ogv" type='video/ogg' />
+         <source src="https://dl.dropboxusercontent.com/u/60193860/lingonas.mp4" type='video/mp4' />
+         <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+        </video>
+      </div>-->
+
+      <div class="banner_content_wrapper">
+
+      <div class="banner_box">
+        <ul>
+          <li><%= image_tag "display.png", width: 80 %></li>
+          <li>LEARN ONLINE</li>
+          <li class="banner_box_helper">Learning online has all the advantages of traditional education as well as extra benefits.</li>
+        </ul>
+      </div>
+
+      <div class="banner_box">
+        <ul>
+          <li><%= image_tag "eye.png", width: 80 %></li>
+          <li>FREE TRY</li>
+          <li class="banner_box_helper">Before enrolling to any course you can request free lesson to see how it works and feels like.</li>
+        </ul>
+      </div>
+
+      <div class="banner_box">
+        <ul>
+          <li><%= image_tag "study.png", width: 80 %></li>
+          <li>REAL TEACHERS</li>
+          <li class="banner_box_helper">All teachers at Lingonas has required qualification or experience to teach languages.</li>
+        </ul>
+      </div>
+
+
+      <div class="banner_box">
+        <ul>
+          <li><%= image_tag "user_icon.png", width: 80 %></li>
+          <li>PRIVATE CLASSES</li>
+          <li class="banner_box_helper_reverse">Private classes are the most effective way to learn and to improve your language skills fast.</li>
+        </ul>
+      </div>
+
+
+      <div class="banner_box">
+        <ul>
+          <li><%= image_tag "group_users.png", width: 160 %></li>
+          <li>GROUP CLASSES</li>
+          <li class="banner_box_helper_reverse">We bring students together from all over the world to engage in interactive learning experience.</li>
+        </ul>
+      </div>
+      
+
+      <div class="banner_box">
+        <ul>
+          <li><%= image_tag "tag.png", width: 80 %></li>
+          <li>7-DAY MONEY BACK</li>
+          <li class="banner_box_helper_reverse">All Lingonas course comes with 7-day money back guarantee. No risk. No questions asked.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    </div>
+  </div>
+
+  <div class="student_guide_wrapper">
+
+    <div class="student_guide_title_small">
+      STUDENT'S GUIDE 
+    </div>
+    
+    <div class="student_guide_title">
+      How language learning with Lingonas looks like 
+    </div>
+    
+   <div class="student_guide">
+
+    <div class="student_guide_laptop">
+      <%= image_tag "laptop.png", width: 655 %>
+
+      <div class="student_guide_video_icon">
+        <ul>
+          <li class="student_guide_video_icon_title">VIDEO STREAMING</li>
+          <li><%= image_tag "video2.png", width: 100 %></li>
+        </ul>
+      </div>
+
+      <div class="student_guide_wifi_icon">
+        <ul>
+          <li class="student_guide_wifi_icon_title">CONNECT WITH LINK</li>
+          <li><%= image_tag "wifi_connect.png", width: 115 %></li>
+        </ul>
+      </div>
+
+      <div class="student_guide_chat_icon">
+        <ul>
+          <li class="student_guide_chat_icon_title">CHAT</li>
+          <li><%= image_tag "chat_icon.png", width: 115 %></li>
+        </ul>
+      </div>
+
+      <div class="student_guide_share_doc_icon">
+        <ul>
+          <li class="student_guide_share_doc_icon_title">SHARE DOCUMENTS</li>
+          <li><%= image_tag "share_doc.png", width: 80 %></li>
+        </ul>
+      </div>
+
+      <div class="student_guide_interactive_learning_icon">
+        <ul>
+          <li class="student_guide_interactive_learning_icon_title">INTERACTIVE LEARNING</li>
+          <li><%= image_tag "interactive_learning.png", width: 100 %></li>
+        </ul>
+      </div>
+
+      <div class="student_guide_coffee_cup_icon">
+        <ul>
+          <li class="student_guide_coffee_cup_icon_title">MAKE COFFEE</li>
+          <li><%= image_tag "coffee_cup.png", width: 115 %></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="how_to_wrapper">
+    <div class="how_to">
+
+      <div class="how_to_title">
+        HOW TO START
+      </div>
+
+      <div class="how_to_box">
+        <ul>
+          <li class="how_to_icon"><%= image_tag "email.png", width: 60 %>
+          </li>
+
+          <li class="how_to_box_title"> CONTACT TEACHER
+          </li>
+
+          <li>Find language course you like and ask teacher for a free trial lesson or enroll to the course right away.
+          </li>
+        </ul>
+
+        <ul>
+          <li class="how_to_icon"><%= image_tag "wifi_icon.png", width: 60 %>
+          </li>
+
+          <li class="how_to_box_title">JOIN CLASS
+          </li>
+
+          <li>With given link connect to your class at agreed date and time. Now you can start learning language.
+          </li>
+        </ul>
+
+        <ul>
+          <li class="how_to_icon"><%= image_tag "mic_icon.png", width: 60 %>
+          </li>
+
+          <li class="how_to_box_title">WHAT YOU NEED
+          </li>
+
+          <li>You need microphone, speaker and webcam (optional). That's all you need to get start using Lingonas service.
+          </li>
+        </ul>
+      </div> 
+    </div>
+
+  </div>
+</div>
+
+
+  <div class="ready_lingonas">
+
+    <div class="ready_lingonas_title">
+      ARE YOU READY TO USE LINGONAS?
+
+        <div class="ready_lingonas_triangle">
+          <%= image_tag "triangle_white.png", width: 40 %>
+        </div>
+    </div>
+
+    <div class="ready_lingonas_button_wrapper">
+      <%= link_to new_student_registration_path do %>
+        <div class="ready_lingonas_sign_in">
+          Yes, sign me in!
+        </div>
+      <% end %>
+
+      <%= link_to new_contact_path do %>
+        <div class="ready_lingonas_questions">
+          No, I still have questions!
+        </div>
+      <% end %>
+    </div>
+  </div>
+

@@ -2,6 +2,14 @@ class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
 
 
+  def home
+    if teacher_signed_in?
+      redirect_to courses_path
+    elsif student_signed_in?
+      redirect_to courses_path
+    end
+  end
+
   # GET /courses
   # GET /courses.json
   def index

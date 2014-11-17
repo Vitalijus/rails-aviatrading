@@ -1,6 +1,6 @@
 School::Application.routes.draw do
 
-  root 'courses#index'
+  root 'courses#home'
   #get 'contacts#new'
   
   devise_for :students

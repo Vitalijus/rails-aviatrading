@@ -22,7 +22,7 @@ html {
   background-color: #E9EAED;
   font-family: 'Ubuntu', sans-serif;
   color: #444444;   
-  margin: 0 0 80px; /* bottom = footer height */
+  margin: 0 0 40px; /* bottom = footer height */
   /*height: 100%;*/
 }
 
@@ -159,9 +159,21 @@ a .webpage_title {
 	position: absolute;
     left: 0;
     bottom: 0;
-    height: 80px;
+    height: 40px;
     width: 100%;
+    background-color: #384452;
 	border: 0px solid red;
+}
+
+.footer_content {
+	width: 1000px;
+	margin: 0 auto;
+	height: 40px;
+	line-height: 40px;
+	color: #ffffff;
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+	font-size: 11px;
 }
 
 .footer-left {

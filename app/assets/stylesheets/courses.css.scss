@@ -74,7 +74,8 @@
 	text-align: center;
 	color: #ffffff;
 	font-family: "Open Sans", helvetica, arial;
-	font-size: 50px;
+	letter-spacing: 5px;
+	font-size: 45px;
 	padding-top: 40px;
 	padding-bottom: 10px;
 	border: 0px solid blue;
@@ -83,6 +84,7 @@
 .display_phrase p {
 	font-size: 25px;
 	text-align: center;
+	letter-spacing: 0;
 	margin-top: 10px;
 	border: 0px solid red;
 }
@@ -99,7 +101,7 @@
 	height: 50px;
 	margin: 0 auto;
 	line-height: 48px;
-	font-size: 18px;
+	font-size: 14px;
 	text-align: center;
 	color: #ffffff;
 	border: 1px solid #ffffff;
@@ -131,7 +133,7 @@
 	width: 200px;
 	height: 50px;
 	line-height: 50px;
-	font-size: 18px;
+	font-size: 16px;
 	float: right;
 	text-align: center;
 	background-color: #26ae5a;
@@ -159,7 +161,7 @@ a:hover #display_login_button_tutor {
 	width: 200px;
 	height: 50px;
 	line-height: 50px;
-	font-size: 20px;
+	font-size: 16px;
 	float: left;
 	text-align: center;
 	background-color: #26ae5a;
@@ -185,14 +187,10 @@ a:hover #display_login_button_student {
 
 /*-------------------------------------------*/
 
-
-
-
-
 /* BANNER */
 
 .banner_wrapper {
-	border: 0px solid red;
+	border-bottom: 0px solid #316A87;
 	background-color: #ffffff;
 	margin: auto;
 	width: 100%;
@@ -201,7 +199,7 @@ a:hover #display_login_button_student {
 
 .banner_box_wrapper {
 	margin: auto;
-	width: 1110px;
+	width: 1020px;
 	overflow: hidden;
 	border: 0px solid red;
 }
@@ -209,25 +207,44 @@ a:hover #display_login_button_student {
 .banner_content_wrapper {
 	overflow: hidden;
 	margin: 0 auto;
-	margin-bottom: 40px;
+	margin-top: 30px;
+	margin-bottom: 20px;
 	border: 0px solid blue;
 }
 
 .banner_box ul {
 	float: left;
-	width: 185px;
-	padding: 0px 10px 0 10px;
-	margin-bottom: 0px;
+	width: 340px;
+	padding: 0px 20px 0 20px;
+	margin-bottom: 10px;
 	text-align: center;
 	border: 0px solid black;
 }
 
 .banner_box li {
-	padding: 15px 0 0 0;
-	font-family: 'Lato', sans-serif;
-	font-size: 20px;
+	padding: 10px 0 0 0;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16;
 	color: #444444;
 	border: 0px solid green;
+}
+
+.banner_box .banner_box_helper {
+	font-family: "Open Sans", helvetica, arial;
+	padding-bottom: 20px;
+	padding-top: 2px;
+	font-size: 15px;
+	color: #666666;
+	border-bottom: 1px solid #dbdbdb;
+}
+
+.banner_box .banner_box_helper_reverse {
+	font-family: "Open Sans", helvetica, arial;
+	padding-bottom: 20px;
+	padding-top: 2px;
+	font-size: 15px;
+	color: #666666;
+	border-bottom: 0px solid #dbdbdb;
 }
 
 .banner_box_video_title {
@@ -235,7 +252,7 @@ a:hover #display_login_button_student {
 	padding-top: 40px;
 	padding-bottom: 0px;
 	font-family: "Open Sans", helvetica, arial;
-	font-size: 45px;
+	font-size: 50px;
 	margin: 0 auto;
 	text-align: center;
 	border: 0px solid red;
@@ -263,11 +280,328 @@ a:hover #display_login_button_student {
 .banner_triangle {
 	left:49%;
     right:51%;
-    top: -1px;
+    top: 0px;
+    position: absolute;
+}
+
+.banner_triangle_close {
+	left:49%;
+    right:51%;
+    bottom: -25px;
     position: absolute;
 }
 
 /*--------------------------------------*/
+
+/* Student Guide */
+
+.student_guide_wrapper {
+	width: 100%;
+	background-color: #E7E6E6;
+	border: 0px solid red;
+}
+
+.student_guide_title_small {
+	width: 255px;
+	margin: 0 auto;
+	font-family: 'PT Sans Narrow', sans-serif;
+	font-size: 40px;
+	padding: 50px 0 0px 0;
+	margin-bottom: 20px;
+	text-align: center;
+	color: #777777;
+	border-top: 0px solid #999999;
+	border-bottom: 3px solid #777777;
+}
+
+.student_guide_title {
+	width: 100%;
+	margin: 0 auto;
+	font-family: "Open Sans", helvetica, arial;
+	font-size: 25px;
+	color: #777777;
+	margin-bottom: 200px;
+	text-align: center;
+	border-top: 0px solid #999999;
+	border-bottom: 0px solid #999999;
+}
+
+.student_guide {
+	width: 1000px;
+	height: 289px;
+	margin: 0 auto;
+	padding-top: 0px;
+	position: relative;
+	border: 0px solid red;
+}
+
+.student_guide_laptop {
+	width: 655px;
+	margin: 0 auto;
+	text-align: center;
+	position: relative;
+	border: 0px solid red;
+}
+
+.student_guide_video_icon li {
+	border: 0px solid red;
+	font-family: 'PT Sans Narrow', sans-serif;
+	font-size: 18px;
+	color: #208797;
+	text-align: center;
+	position: absolute;
+	top: -55px;
+	right: -68px;
+}
+
+.student_guide_video_icon .student_guide_video_icon_title {
+	position: absolute;
+	top: -85px;
+	right: -95px;
+}
+
+.student_guide_wifi_icon li {
+	border: 0px solid red;
+	font-family: 'PT Sans Narrow', sans-serif;
+	font-size: 18px;
+	color: #208797;
+	text-align: center;
+	position: absolute;
+	top: -55px;
+	left: -68px;
+}
+
+.student_guide_wifi_icon .student_guide_wifi_icon_title {
+	position: absolute;
+	top: -85px;
+	left: -105px;
+}
+
+.student_guide_chat_icon li {
+	border: 0px solid red;
+	font-family: 'PT Sans Narrow', sans-serif;
+	font-size: 18px;
+	color: #208797;
+	text-align: center;
+	position: absolute;
+	bottom: 55px;
+	right: -89px;
+}
+
+.student_guide_chat_icon .student_guide_chat_icon_title {
+	position: absolute;
+	bottom: 125px;
+	right: -77px;
+}
+
+.student_guide_share_doc_icon li {
+	border: 0px solid red;
+	font-family: 'PT Sans Narrow', sans-serif;
+	font-size: 18px;
+	color: #208797;
+	text-align: center;
+	position: absolute;
+	top: -117px;
+	right: 170px;
+}
+
+.student_guide_share_doc_icon .student_guide_share_doc_icon_title {
+	position: absolute;
+	top: -145px;
+	right: 140px;
+}
+
+.student_guide_interactive_learning_icon li {
+	border: 0px solid red;
+	font-family: 'PT Sans Narrow', sans-serif;
+	font-size: 18px;
+	color: #208797;
+	text-align: center;
+	position: absolute;
+	top: -117px;
+	left: 170px;
+}
+
+.student_guide_interactive_learning_icon .student_guide_interactive_learning_icon_title {
+	position: absolute;
+	top: -145px;
+	left: 125px;
+}
+
+.student_guide_coffee_cup_icon li {
+	border: 0px solid red;
+	font-family: 'PT Sans Narrow', sans-serif;
+	font-size: 18px;
+	color: #208797;
+	text-align: center;
+	position: absolute;
+	bottom: 55px;
+	left: -89px;
+}
+
+.student_guide_coffee_cup_icon .student_guide_coffee_cup_icon_title {
+	position: absolute;
+	bottom: 125px;
+	left: -100px;
+}
+
+/*----------------------------*/
+
+/* HOW TO START */
+
+.how_to_wrapper {
+	width: 100%;
+	overflow: hidden;
+	background-color: #ffffff;
+}
+
+.how_to {
+	width: 1020px;
+	margin: 0 auto;
+	background-color: #ffffff;
+	overflow: hidden;
+	margin-top: 40px;
+	margin-bottom: 80px;
+	border: 0px solid red;
+}
+
+.how_to_title {
+	width: 215px;
+	margin: 0 auto;
+	font-family: 'PT Sans Narrow', sans-serif;
+	font-size: 40px;
+	margin-bottom: 100px;
+	text-align: center;
+	color: #777777;
+	border-top: 0px solid #999999;
+	border-bottom: 3px solid #777777;
+}
+
+.how_to_box ul {
+	width: 320px;
+	float: left;
+	text-align: center;
+	margin: 0 10px 0 10px;
+	position: relative;
+	border: 3px solid #4297A6;
+	background-color: #ffffff;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 5px;
+}
+
+.how_to_box li {
+	border: 0px solid red;
+	font-family: "Open Sans", helvetica, arial;
+	font-size: 15px;
+	color: #777777;
+	padding: 0px 20px 20px 20px;
+}
+
+.how_to_box .how_to_box_title {
+	font-family: 'Roboto', sans-serif;
+	padding: 80px 20px 10px 20px;
+	color: #777777;
+	font-size: 20px;
+}
+
+.how_to_box .how_to_icon {
+	position: absolute;
+	top: -60px;
+	left: 100px;
+	border: 3px solid #4297A6;
+	padding: 25px;
+	background-color: #ffffff;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+	border-radius: 150px;
+}
+
+/*-----------------------*/
+
+/* ARE YOU READY TO USE LINGONAS */
+
+.ready_lingonas {
+	width: 100%;
+	background-color: #384452;
+	border-bottom: 1px solid #5f6974;
+}
+
+.ready_lingonas_title {
+	width: 100%;
+	padding: 60px 0 40px 0;
+	text-align: center;
+	font-size: 40px;
+	color: #ffffff;
+	position: relative;
+	font-family: 'Roboto', sans-serif;
+}
+
+.ready_lingonas_button_wrapper {
+	width: 600px;
+	margin: 0 auto;
+	padding-bottom: 50px;
+	overflow: hidden;
+	border: 0px solid red;
+}
+
+.ready_lingonas_sign_in {
+	width: 43%;
+	float: left;
+	height: 50px;
+	line-height: 48px;
+	font-size: 18px;
+	color: #ffffff;
+	text-align: center;
+	-webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    font-family: 'Lato', sans-serif;
+    border: 1px solid #ffffff;
+    -webkit-transition: background-color 150ms linear;
+  	-moz-transition: background-color 150ms linear;
+  	-o-transition: background-color 150ms linear;
+  	-ms-transition: background-color 150ms linear;
+  	transition: background-color 150ms linear;
+}
+
+a:hover .ready_lingonas_sign_in {
+	background-color: #323d49;
+}
+
+
+.ready_lingonas_questions {
+	width: 43%;
+	float: right;
+	height: 50px;
+	line-height: 48px;
+	font-size: 18px;
+	color: #ffffff;
+	text-align: center;
+	-webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    font-family: 'Lato', sans-serif;
+    border: 1px solid #ffffff;
+    -webkit-transition: background-color 150ms linear;
+  	-moz-transition: background-color 150ms linear;
+  	-o-transition: background-color 150ms linear;
+  	-ms-transition: background-color 150ms linear;
+  	transition: background-color 150ms linear;
+}
+
+a:hover .ready_lingonas_questions {
+	background-color: #323d49;
+}
+
+.ready_lingonas_triangle {
+	position: absolute;
+	left: 49%;
+    right: 51%;
+	top: -22px;
+}
+
+/*-----------------*/
 
 /*COURSE POST*/
 
