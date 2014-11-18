@@ -222,7 +222,7 @@ a:hover #display_login_button_student {
 }
 
 .banner_box li {
-	padding: 10px 0 0 0;
+	padding: 10px 20px 0 20px;
 	font-family: 'Roboto', sans-serif;
 	font-size: 16;
 	color: #444444;
@@ -234,7 +234,7 @@ a:hover #display_login_button_student {
 	padding-bottom: 20px;
 	padding-top: 2px;
 	font-size: 15px;
-	color: #666666;
+	color: #333333;
 	border-bottom: 1px solid #dbdbdb;
 }
 
@@ -243,7 +243,7 @@ a:hover #display_login_button_student {
 	padding-bottom: 20px;
 	padding-top: 2px;
 	font-size: 15px;
-	color: #666666;
+	color: #333333;
 	border-bottom: 0px solid #dbdbdb;
 }
 
@@ -995,6 +995,7 @@ a:hover .ready_lingonas_questions {
 	width: 600px;
 	margin: auto;
 	margin-top: 20px;
+	margin-bottom: 120px;
 	background-color: #ffffff;
 	border: 0px solid red;
 	-webkit-box-shadow: 0px 0px 0px 1px rgba(150, 150, 150, 0.25);
