@@ -2,7 +2,7 @@
 <!-- FACEBOOK APP -->
 <html xmlns:fb="http://ogp.me/ns/fb#">
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# learn-language: http://ogp.me/ns/fb/chocolate-by-post#">
-  <title>School</title>
+  <title>Lingonas - Online School School</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "https://js.stripe.com/v2/", "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -100,11 +100,20 @@ $(window).resize(function(){
 			    <ul class="clearfix">  
 			        <% if !signed_in? %>
 
-						<%= link_to new_contact_path do %>
+						<%= link_to "https://twitter.com/share?url=https%3A%2F%2Flingonas.com", :target => "_blank" do %>
 						      <li class="header_icon"><%= image_tag "tw_grey.png", width: 23 %></li>
 						<% end %>
 
-						<%= link_to new_contact_path do %>
+						<%= fb_share('178872632300191', 'https://www.lingonas.com/', { 
+                            :name => "Lingonas - Online Language School",
+                            :method => "feed",
+                            :description => "Lingonas use e-learning platform to teach students languages from all over the world. Real teachers. Private and Groups classes. Free try. Join us!",
+                            :link => "https://www.lingonas.com/",
+                            :picture => "http://res.cloudinary.com/dhgsrpwf7/image/upload/v1416349549/laptop_jnbxkq.png",
+                            :caption => "Lingonas. Re-think language learning"
+                            }) %>
+
+        				<%= link_to $facebook_url do %>
 						      <li class="header_icon"><%= image_tag "f_grey.png", width: 23 %></li>
 						<% end %>
 

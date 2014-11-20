@@ -257,7 +257,7 @@ nav a#pull {
 }
 
 .footer_content {
-	width: 1000px;
+	max-width: 1000px;
 	margin: 0 auto;
 	height: 40px;
 	line-height: 40px;
