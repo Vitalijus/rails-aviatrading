@@ -12,7 +12,7 @@ class Teacher < ActiveRecord::Base
 
   has_many :courses, dependent: :destroy
 
-  validates :name, :surname, :cv, :language_proficiency_proof, presence: true
+  validates :name, :surname, presence: true
 
   def to_param
 	 "#{id} #{name} #{surname}".parameterize
