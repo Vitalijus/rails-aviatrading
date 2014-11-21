@@ -7,5 +7,5 @@ class Student < ActiveRecord::Base
   has_many :orders
   has_many :courses
 
-  validates :terms_conditions , acceptance: { accept: 'accepted' }
+  #validates :terms_conditions , acceptance: { accept: 'accepted', message: "acceptance has failed. Upload page and try again" }
 end

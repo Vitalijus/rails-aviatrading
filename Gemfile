@@ -9,6 +9,7 @@ gem 'pg'
 gem 'stripe'
 gem 'carrierwave' #The CarrierWave GEM should be loaded before the Cloudinary GEM
 gem 'cloudinary'
+gem "fog"
 gem 'thin'
 gem 'devise'
 gem 'jquery-turbolinks'

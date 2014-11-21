@@ -1,5 +1,23 @@
 <div id="course_post_wrapper">
 
+  <% if current_teacher.status.blank? %>
+    <div id="course_post_requirements">
+      <ul>
+        <li><%= image_tag "flag.png", width: 20 %></li>
+        <li>Thank you very much for your application and interest in Lingonas! Based on your application we will decide, whether you qualify to offered position. This account is not activated yet and you cannot create new courses. You will get an email from us with status of your account within 48h. </li>
+      </ul>
+    </div>
+  <% end %>
+
+  <% if current_teacher.paypal_email.blank? && !current_teacher.status.blank?%>
+    <div id="course_post_requirements">
+      <ul>
+        <li><%= image_tag "flag.png", width: 20 %></li>
+        <li>Please update you paypal email address. This email address is required to transfer money from Lingonas paypal account to your paypal account. If you don't have paypal account yet, register and update Lingonas account with paypal email address.</li>
+      </ul>
+    </div>
+  <% end %>
+
   <div id="find_course_wrapper">
 
       <%= search_form_for @q do |f| %>

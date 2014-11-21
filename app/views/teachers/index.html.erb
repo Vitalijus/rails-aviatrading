@@ -1,0 +1,55 @@
+<% if current_teacher.id == 5 %>
+	<div id="index_teacher_wrapper">
+		<% @teachers.each do |teacher| %>
+			<div class="index_teacher">
+				<ul>
+					<li><%= link_to teacher.email, teacher %></li>
+					<li><%= teacher.name %></li>
+					<li><%= teacher.surname %></li>
+					<li><%= teacher.id %></li>
+					<li>
+						<% if teacher.public_link.blank? %>
+							No public link
+						<% else %>
+							<%= teacher.public_link %>
+						<% end %>
+					</li>
+					<li><%= link_to "CV", teacher.cv.url, target: "_blank" %></li>
+					<li><%= link_to "Proof1", teacher.language_proficiency_proof.url, target: "_blank" %></li>
+
+					<li>
+						<% if teacher.language_proficiency_proof2.blank? %>
+							No
+						<% else %>
+						<%= link_to "Proof2", teacher.language_proficiency_proof2.url, target: "_blank" %>
+						<% end %>
+					</li>
+
+					<li><% if teacher.language_proficiency_proof3.blank? %>
+							No
+						<% else %>
+						<%= link_to "Proof3", teacher.language_proficiency_proof3.url, target: "_blank" %>
+						<% end %>
+					</li>
+
+					<li>
+						<% if teacher.status.blank? %>
+							Pending 
+							<%= link_to "Activate", activate_teachers_path(id: teacher) %>
+						<% else %>
+							<%= teacher.status %>
+							<%= link_to "Deactivate", deactivate_teachers_path(id: teacher) %>
+							<%= link_to "Activate", activate_teachers_path(id: teacher) %>
+							<%= link_to "Reject", reject_teachers_path(id: teacher) %>
+						<% end %>
+					</li>
+				</ul>
+			</div>
+		<% end %>
+	</div>
+<% else %>
+	<div id="index_blank_page">
+		Page is blank
+	</div>
+<% end %>
+

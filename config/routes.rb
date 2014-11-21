@@ -1,14 +1,18 @@
 School::Application.routes.draw do
 
   root 'courses#home'
-  #get 'contacts#new'
   
   devise_for :students
   devise_for :teachers
 
   resources :contacts, only: [:create, :new]
   resources :students, only: [:show]
-  resources :teachers, only: [:show]
+  resources :teachers, only: [:index, :show] do
+    get 'activate', :on => :collection
+    get 'deactivate', :on => :collection
+    get 'reject', :on => :collection
+  end
+
   resources :orders, only: [:index]
   
   resources :courses, except: [:show] do

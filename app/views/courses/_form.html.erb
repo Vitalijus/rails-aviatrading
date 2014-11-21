@@ -1,4 +1,9 @@
+<% if current_teacher.status.blank? %>
+  <div class="new_course_not_active">
+    Account is not activated yet
+  </div>
 
+<% else %>
 
   <div class="new_course_form">
 
@@ -152,3 +157,4 @@
   
   </div>
 
+<% end %>
