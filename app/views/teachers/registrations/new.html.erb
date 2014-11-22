@@ -20,21 +20,24 @@
           <div><%= f.label :surname %><br />
           <%= f.text_field :surname, :class => "teacher_login_field" %></div>
 
-          <div><%= f.label :cv, "CV (pdf, docx)" %><br />
-          <%= f.file_field :cv, :class => "teacher_sign_up_file_upload" %></div>
+          <label class="myLabel">
+              <%= f.file_field :cv %>
+              <span>Upload CV (pdf, docx)</span>
+          </label>
 
-          <div><%= f.label :language_proficiency_proof, "(1) Language proficiency proof (certificate, diploma etc.)" %><br />
-          <%= f.file_field :language_proficiency_proof, :class => "teacher_sign_up_file_upload" %></div>
+          <label class="myLabel">
+              <%= f.file_field :language_proficiency_proof %>
+              <span>(1) Language proficiency proof (certificate, diploma etc.)</span>
+          </label>
 
-          <div><%= f.label :language_proficiency_proof2, "(2) Language proficiency proof (certificate, diploma etc.)" %><br />
-          <%= f.file_field :language_proficiency_proof2, :class => "teacher_sign_up_file_upload" %></div>
-
-          <div><%= f.label :language_proficiency_proof3, "(3) Language proficiency proof (certificate, diploma etc.)" %><br />
-          <%= f.file_field :language_proficiency_proof3, :class => "teacher_sign_up_file_upload" %></div>
+          <label class="myLabel">
+              <%= f.file_field :language_proficiency_proof2 %>
+              <span>(2) Language proficiency proof (certificate, diploma etc.)</span>
+          </label>
 
           <label class="myLabel">
               <%= f.file_field :language_proficiency_proof3 %>
-              <span>My Label</span>
+              <span>(3) Language proficiency proof (certificate, diploma etc.)</span>
           </label>
 
           <div><%= f.label :public_link, "Or you can add link to files to proof language proficiency" %><br />

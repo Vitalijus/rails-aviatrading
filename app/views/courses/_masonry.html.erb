@@ -65,7 +65,11 @@
     </div>
 
     <div id="course_post_header_avatar">
-      <%= image_tag course.teacher.avatar_url(:avatar) %>
+      <% if !course.teacher.avatar.blank? %>
+        <%= image_tag course.teacher.avatar_url(:avatar) %>
+      <% else %>
+        <%= image_tag "default_avatar.jpg", width: 120 %>
+      <% end %>
     </div>
 
     <div id="course_post_header_small">

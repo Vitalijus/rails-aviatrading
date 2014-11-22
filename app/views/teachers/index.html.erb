@@ -1,4 +1,4 @@
-<% if current_teacher.id == 5 %>
+<% if current_teacher.id == 2 %>
 	<div id="index_teacher_wrapper">
 		<% @teachers.each do |teacher| %>
 			<div class="index_teacher">
@@ -36,11 +36,12 @@
 						<% if teacher.status.blank? %>
 							Pending 
 							<%= link_to "Activate", activate_teachers_path(id: teacher) %>
+							<%= link_to "Reject", reject_teachers_path(id: teacher) %>
 						<% else %>
 							<%= teacher.status %>
-							<%= link_to "Deactivate", deactivate_teachers_path(id: teacher) %>
 							<%= link_to "Activate", activate_teachers_path(id: teacher) %>
 							<%= link_to "Reject", reject_teachers_path(id: teacher) %>
+							<%= link_to "Deactivate", deactivate_teachers_path(id: teacher) %>
 						<% end %>
 					</li>
 				</ul>

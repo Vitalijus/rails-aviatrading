@@ -1,4 +1,4 @@
-<% if current_teacher.status.blank? %>
+<% if current_teacher.status.blank? || current_teacher.status == "rejected" || current_teacher.status == "deactivated"%>
   <div class="new_course_not_active">
     Account is not activated yet
   </div>

@@ -1,2 +1,98 @@
-status confirmation from Lingonas:<br/>
-<%= @teacher.status %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <title>Lingoda: free lesson request</title>
+        <style>
+            @import url(http://fonts.googleapis.com/css?family=Open+Sans);
+        </style>
+  </head>
+    <body>
+
+<div class="wrapper", style= "width: 640px; background-color: #F5F5F5; padding: 50px;">
+
+	<div class="header", style= "width: 640px; background-color: #316A7E; ">
+  <%= image_tag attachments['bg.jpg'].url, width: 640 %>
+  </div>
+
+	<div class="content", style="width: 558px; margin: 0 auto; border-left: 1px solid #dbdbdb; border-right: 1px solid #dbdbdb; border-bottom: 1px solid #dbdbdb; padding: 0px 40px 40px 40px; color: #666C74; font-size: 12px; background-color: #ffffff; font-family: 'Open Sans', helvetica, arial;">
+	
+    <div style="font-family: 'Open Sans', helvetica, arial; font-size: 25px; padding: 20px 0 20px 0; text-align: center;">
+		<% if @teacher.status == "activated" %>
+			You account has been activated
+		<% elsif @teacher.status == "rejected" %>
+			You application has been rejected
+		<% else %>
+			You account has been deactivated
+		<% end %>
+    </div>
+
+    <div style="font-size: 14px; padding: 0px 0 20px 0;">
+    	<% if @teacher.status == "activated" %>
+			Dear <b><%= @teacher.name %> <%= @teacher.surname %></b>,<br/><br/>
+
+			We have received many applications upon our offering. After having checked your application in all details to this point in time we found out that your qualification does meet the requirements we pursue. Therefore, we are happy to inform you that your account has been activated and now you can post you courses.<br/><br/>
+
+			Before you start, we would like to describe what Lingonas is about. In a nutshell Lingonas is online language school. We use eLearning platform to teach students from all over the world, therefore this opens huge opportunities for self-initiative teachers.<br/><br/>
+
+			We are not traditional language school. Most of our teachers and students geographically are in different countries or continents. Another aspect is that you can set price for your course and choose teaching methodologies or techniques you prefer.<br/><br/>
+
+			Another important aspect we emphasize in Lingonas is quality. It's in your interest to cultivate high quality of your courses and spread the word among prospective students.<br/><br/>
+
+			<b>What I do next?</b> For you to successfully create course you need to have Adobe Connect link, which will be send to your student and at agreed day and time student will connect to the class.<br/><br/>
+
+			<b>How to get Abobe Connect link?</b> Follow <%= link_to "this link", "https://www.adobe.com/cfusion/adobeconnect/index.cfm?event=trial",:target => "_blank" %> and submit the form. Shortly after you will receive an email, where you can find "Account URL and Password". Open "Account URL" link and submit "Password". In new window find "Meeting" tab and "New Meeting". Save new meeting and use URL link (similar to https://meet14125725.adobeconnect.com/r6wj3pzcqzg/). That's the link you will use to send your students. <br/><br/>
+
+			<b>Want to know more about how to use Abobe Connnect?</b> Join online daily trainigs by following <%= link_to "this link", "http://www.adobe.com/cfusion/event/index.cfm?event=detail&id=655249",:target => "_blank" %>.<br/><br/>
+
+			<b>What Lingonas do for you?</b> First of all, there is nothing Lingonas cannot help you with. Second, at Lingonas we create platform, where you can publish your courses, collect fees and use your professional skills. Third, we employ marketing strategies to attract prospective students to your courses. That does not mean that you cannot advertise your courses yourself. In fact, it's highly advisable and in your interest to spread the word about you courses all over the internet by yourself.<br/><br/>
+
+			<b>What about compensation?</b> Compensation will be transfered to your paypal account (create if you don't have yet). Why Paypal? Because Paypal allows to avoid international and national transaction fees compared to traditional banks.<br/><br/>
+
+			<b>What about other fees?</b> Lingonas has Royalty fee, which is specified in terms & conditions. By using Lingonas you agree to our terms & conditions.<br/><br/>
+
+			To find more take a look at terms & conditions!<br/><br/>
+
+
+			We are looking forward to hearing from you,<br/><br/>
+
+			Best Regards,<br/>
+			Lingonas Team<br/>
+			https://www.lingonas.com/​​​<br/>
+
+		<% elsif @teacher.status == "rejected" %>
+			Dear <b><%= @teacher.name %> <%= @teacher.surname %></b>,<br/><br/>
+			Thank you very much for your application and interest in Lingonas!<br/><br/>
+
+			We have received many applications upon our job offering. After having checked your application in all details to this point in time we found out that your qualification does not perfectly meet the requirements we pursue. Therefore, we unfortunately have to inform you that we have rejected your application.<br/><br/>
+
+			Please do not view this as a judgment of your person, but rather as a functional decision. We are wishing you all the best for the future!<br/><br/>
+
+ 			Kind regards<br/>
+ 			Lingonas Team
+		<% else %>
+			Dear <b><%= @teacher.name %> <%= @teacher.surname %></b>,<br/><br/>
+			You account has been deactivated. If you think this is a mistake, please, contact support@lingonas.com<br/><br/>
+
+			Kind regards<br/>
+ 			Lingonas Team
+		<% end %>
+    </div>
+
+	</div>
+
+    <div class="footer", style="width: 600px; padding: 20px; margin: auto; background-color: #79878E; text-align: center; font-size: 13px; color: #ffffff;">
+      <b>Questions? support@lingonas.com</b><br/>
+      Lingonas, Romanstr. 60, Munich, D - 80639, Germany
+    </div>
+
+</div>
+  </body>
+</html>
+
+
+
+
+
+
+
