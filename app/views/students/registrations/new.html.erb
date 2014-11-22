@@ -27,12 +27,20 @@
 			<% end %>
 		</div>
 	</div>
+
+	<div id="link_to_teacher_sign_up_wrapper">
+		<%= link_to new_teacher_registration_path do %>
+			<div id="link_to_teacher_sign_up">
+				Teacher's Sign Up
+			</div>
+		<% end %>
+	</div>
 	
 	<div id="student_login_links">
 		<%= render "students/shared/links" %>
 
 		<%= link_to new_teacher_session_path do %>
-		   Teacher's Log In Form
+		   Teacher's Sign In Form
 		<% end %>
 	</div>
 

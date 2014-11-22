@@ -6,13 +6,13 @@
         <%= devise_error_messages! %>
 
         <div><%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, :class => "student_login_field" %></div>
+        <%= f.email_field :email, autofocus: true, :class => "teacher_login_field" %></div>
 
         <div><%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
-          <%= f.password_field :password, autocomplete: "off", :class => "student_login_field" %></div>
+          <%= f.password_field :password, autocomplete: "off", :class => "teacher_login_field" %></div>
 
         <div><%= f.label :password_confirmation %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "off", :class => "student_login_field" %></div>
+          <%= f.password_field :password_confirmation, autocomplete: "off", :class => "teacher_login_field" %></div>
 
           <div><%= f.label :name %><br />
           <%= f.text_field :name, :class => "teacher_login_field" %></div>
@@ -20,17 +20,22 @@
           <div><%= f.label :surname %><br />
           <%= f.text_field :surname, :class => "teacher_login_field" %></div>
 
-          <div><%= f.label :cv, "CV" %><br />
-          <%= f.file_field :cv, :class => "teacher_login_field" %></div>
+          <div><%= f.label :cv, "CV (pdf, docx)" %><br />
+          <%= f.file_field :cv, :class => "teacher_sign_up_file_upload" %></div>
 
-          <div><%= f.label :language_proficiency_proof, "(1) Language proficiency proof (certificate, diploma etc.)*" %><br />
-          <%= f.file_field :language_proficiency_proof, :class => "teacher_login_field" %></div>
+          <div><%= f.label :language_proficiency_proof, "(1) Language proficiency proof (certificate, diploma etc.)" %><br />
+          <%= f.file_field :language_proficiency_proof, :class => "teacher_sign_up_file_upload" %></div>
 
           <div><%= f.label :language_proficiency_proof2, "(2) Language proficiency proof (certificate, diploma etc.)" %><br />
-          <%= f.file_field :language_proficiency_proof2, :class => "teacher_login_field" %></div>
+          <%= f.file_field :language_proficiency_proof2, :class => "teacher_sign_up_file_upload" %></div>
 
           <div><%= f.label :language_proficiency_proof3, "(3) Language proficiency proof (certificate, diploma etc.)" %><br />
-          <%= f.file_field :language_proficiency_proof3, :class => "teacher_login_field" %></div>
+          <%= f.file_field :language_proficiency_proof3, :class => "teacher_sign_up_file_upload" %></div>
+
+          <label class="myLabel">
+              <%= f.file_field :language_proficiency_proof3 %>
+              <span>My Label</span>
+          </label>
 
           <div><%= f.label :public_link, "Or you can add link to files to proof language proficiency" %><br />
           <%= f.text_field :public_link, :class => "teacher_login_field" %></div>
@@ -43,3 +48,4 @@
   <div id="teacher_login_links">
     <%= render "teachers/shared/links" %>
   </div>
+

@@ -1,5 +1,5 @@
 <div id="student_login">
-	  <div id="student_login_header">Teacher's Log In Form</div>
+	  <div id="student_login_header">Teacher's Sign In Form</div>
 	  	<div id="student_login_form">
 
 			<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -18,6 +18,12 @@
 		</div>
 	</div>
 	
-	<div id="student_login_links">
-		<%= render "teachers/shared/links" %>
+	<div id="teacher_authentication_links">
+		<span><%= render "teachers/shared/links" %></span>
+
+		<span>
+			<%= link_to new_teacher_registration_path do %>
+			   Teacher's Sign Up Form
+			<% end %>
+		</span>
 	</div>

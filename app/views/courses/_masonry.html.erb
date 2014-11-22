@@ -1,6 +1,6 @@
 <div id="course_post_wrapper">
 
-  <% if current_teacher.status.blank? %>
+  <% if teacher_signed_in? && current_teacher.status.blank? %>
     <div id="course_post_requirements">
       <ul>
         <li><%= image_tag "flag.png", width: 20 %></li>
@@ -9,11 +9,11 @@
     </div>
   <% end %>
 
-  <% if current_teacher.paypal_email.blank? && !current_teacher.status.blank?%>
+  <% if teacher_signed_in? && current_teacher.paypal_email.blank? && !current_teacher.status.blank?%>
     <div id="course_post_requirements">
       <ul>
         <li><%= image_tag "flag.png", width: 20 %></li>
-        <li>Please update you paypal email address. This email address is required to transfer money from Lingonas paypal account to your paypal account. If you don't have paypal account yet, register and update Lingonas account with paypal email address.</li>
+        <li>Please update you paypal email address (in Settings). This email address is required to transfer money from Lingonas paypal account to your paypal account. If you don't have paypal account yet, register and update Lingonas account with paypal email address.</li>
       </ul>
     </div>
   <% end %>

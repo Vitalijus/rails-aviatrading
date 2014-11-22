@@ -1,7 +1,39 @@
+#link_to_teacher_sign_up_wrapper {
+  width: 400px;
+  margin:0 auto;
+  border: 1px solid #DFE0E4;
+  margin-top: 20px;
+  padding: 20px 0 20px 0;
+  background-color: #fff;
+}
+
+#link_to_teacher_sign_up {
+  width: 360px;
+  margin:0 auto;
+  height: 50px;
+  line-height: 50px;
+  background: #26ae5a;
+  font-size: 18px;
+  font-family:'Open Sans',sans-serif;
+  color: #fff;
+  text-align: center;
+  border: 0px solid red;
+  -webkit-transition: background-color 150ms linear;
+  -moz-transition: background-color 150ms linear;
+  -o-transition: background-color 150ms linear;
+  -ms-transition: background-color 150ms linear;
+  transition: background-color 150ms linear;
+}
+
+a:hover #link_to_teacher_sign_up {
+  background-color: #229c51;
+}
+
 #student_login{
   width:400px;
-  margin:0 auto;
+  margin: 0 auto;
   margin-top: 20px;
+  border: 1px solid #DFE0E4;
 }
 
 #student_login_header {

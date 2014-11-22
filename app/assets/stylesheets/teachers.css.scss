@@ -279,12 +279,23 @@
   border: 0px solid red;
 }
 
+#teacher_login_form label {
+  font-size: 14px;
+  font-family: 'Lato', sans-serif;
+}
+
+.teacher_sign_up_file_upload {
+	border: 0px solid red;
+	margin: 3px 0 15px 0;
+}
+
 .teacher_login_field {
   width:100%;
   background:#fff;
-  margin-bottom:15px;
+  margin-bottom: 15px;
+  margin-top: 3px;
   border:1px solid #ccc;
-  padding:4%;
+  padding: 12px 10px 12px 10px;
   font-family:'Open Sans',sans-serif;
   font-size:14px;
   color:#555;
@@ -329,5 +340,63 @@
 }
 
 #teacher_login_links a:hover {
+	text-decoration: underline;
+}
+
+
+
+label.myLabel input[type="file"] {
+    position: fixed;
+    top: -1000px;
+}
+
+/***** Example custom styling *****/
+.myLabel {
+    border: 2px solid #AAA;
+    border-radius: 4px;
+    padding: 2px 5px;
+    margin: 2px;
+    background: #DDD;
+    display: inline-block;
+}
+.myLabel:hover {
+    background: #CCC;
+}
+.myLabel:active {
+    background: #CCF;
+}
+.myLabel :invalid + span {
+    color: #A44;
+}
+.myLabel :valid + span {
+    color: #4A4;
+}
+
+/* TEACHER SIGN IN FORM */
+
+#teacher_authentication_links {
+	width: 400px;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 10px;
+	overflow: hidden;
+	border: 0px solid red;
+}
+
+#teacher_authentication_links span {
+	float: left;
+	width: 50%;
+	border: 0px solid red;
+}
+
+#teacher_authentication_links a {
+	color: #3399CC;
+	font-size: 14px;
+	font-family: 'Lato', sans-serif;
+	padding: 0 7px 0 7px;
+
+}
+
+#teacher_authentication_links a:hover {
 	text-decoration: underline;
 }
