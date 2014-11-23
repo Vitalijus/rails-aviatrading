@@ -1,50 +1,91 @@
 <% if current_teacher.id == 2 %>
 	<div id="index_teacher_wrapper">
+
 		<% @teachers.each do |teacher| %>
 			<div class="index_teacher">
-				<ul>
-					<li><%= link_to teacher.email, teacher %></li>
-					<li><%= teacher.name %></li>
-					<li><%= teacher.surname %></li>
-					<li><%= teacher.id %></li>
-					<li>
-						<% if teacher.public_link.blank? %>
-							No public link
-						<% else %>
-							<%= teacher.public_link %>
-						<% end %>
-					</li>
-					<li><%= link_to "CV", teacher.cv.url, target: "_blank" %></li>
-					<li><%= link_to "Proof1", teacher.language_proficiency_proof.url, target: "_blank" %></li>
+				<% if teacher.status.blank? %>
+					<div class="pending_status"></div>
+				<% elsif teacher.status == "rejected" %>
+					<div class="rejected_status"></div>
+				<% elsif teacher.status == "activated" %>
+					<div class="activated_status"></div>
+				<% else %>
+					<div class="deactivated_status"></div>
+				<% end %>
+				<table>
+					<tr> 
+				        <th>Name</th>
+				        <th>Email</th>
+				        <th>CV</th>
+				        <th>Proof(1)</th>
+				        <th>Proof(2)</th>
+				        <th>Proof(3)</th>
+				        <th>Public link</th>
+				        <th>Status</th>
+				        <th>Activate</th>
+				        <th>Reject</th>
+				        <th>Deactivate</th>
+			      	</tr>
 
-					<li>
-						<% if teacher.language_proficiency_proof2.blank? %>
+			      <tr>
+			        <td><%= teacher.name %> <%= teacher.surname %></td>
+			        <td><%= link_to teacher.email, teacher %></td>
+			        <td><%= link_to "CV", teacher.cv.url, target: "_blank" %></td>
+			        
+			        <td>
+			        	<% if teacher.language_proficiency_proof.blank? %>
+							No
+						<% else %>
+						<%= link_to "Proof", teacher.language_proficiency_proof.url, target: "_blank" %>
+						<% end %>
+					</td>
+
+			        <td>
+			        	<% if teacher.language_proficiency_proof2.blank? %>
 							No
 						<% else %>
 						<%= link_to "Proof2", teacher.language_proficiency_proof2.url, target: "_blank" %>
 						<% end %>
-					</li>
+					</td>
 
-					<li><% if teacher.language_proficiency_proof3.blank? %>
+			        <td>
+			        	<% if teacher.language_proficiency_proof2.blank? %>
 							No
 						<% else %>
-						<%= link_to "Proof3", teacher.language_proficiency_proof3.url, target: "_blank" %>
+						<%= link_to "Proof2", teacher.language_proficiency_proof2.url, target: "_blank" %>
 						<% end %>
-					</li>
+					</td>
+			        
+			        <td>
+			        	<% if teacher.public_link.blank? %>
+							No link
+						<% else %>
+							<%= teacher.public_link %>
+						<% end %>
+					</td>
 
-					<li>
-						<% if teacher.status.blank? %>
-							Pending 
-							<%= link_to "Activate", activate_teachers_path(id: teacher) %>
-							<%= link_to "Reject", reject_teachers_path(id: teacher) %>
+			        <td>
+			        	<% if teacher.status.blank? %>
+							Pending
 						<% else %>
 							<%= teacher.status %>
-							<%= link_to "Activate", activate_teachers_path(id: teacher) %>
-							<%= link_to "Reject", reject_teachers_path(id: teacher) %>
-							<%= link_to "Deactivate", deactivate_teachers_path(id: teacher) %>
 						<% end %>
-					</li>
-				</ul>
+					</td>
+
+					<td>
+						<%= link_to "Activate", activate_teachers_path(id: teacher) %>
+					</td>
+
+					<td>
+						<%= link_to "Reject", reject_teachers_path(id: teacher) %>
+					</td>
+
+					<td>
+			        	<%= link_to "Deactivate", deactivate_teachers_path(id: teacher) %>
+					</td>
+			      </tr>
+				</table>
+
 			</div>
 		<% end %>
 	</div>

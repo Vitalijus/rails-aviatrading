@@ -1,4 +1,5 @@
 class TeachersController < ApplicationController
+	 before_action :authenticate_teacher!, only: [:index]
 
 	def activate 
 		@teacher = Teacher.find(params[:id])
