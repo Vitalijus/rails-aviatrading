@@ -49,16 +49,22 @@
 
 			<b>What about compensation?</b> Compensation will be transfered to your paypal account (create if you don't have yet). Why Paypal? Because Paypal allows to avoid international and national transaction fees compared to traditional banks.<br/><br/>
 
-			<b>What about other fees?</b> Lingonas has Royalty fee, which is specified in terms & conditions. By using Lingonas you agree to our terms & conditions.<br/><br/>
+			<b>What about other fees?</b> Lingonas is free of any charges except transaction gateway fee, which is 2.9% + 30¢ per successful charge.<br/><br/>
 
-			To find more take a look at terms & conditions!<br/><br/>
+			<b>Important!!!</b> To find more take a closer look at terms & conditions!<br/><br/>
 
+			<%= link_to "http://res.cloudinary.com/dhgsrpwf7/image/upload/v1416754259/terms_and_conditions__Lingonas_zds7nx.pdf" do %>
+				<div class="terms_and_conditions", style= "width: 200px; height: 60px; line-height: 60px; margin: 0 auto; background-color: #FCE6E3; border: 1px solid #F2C5C2; color: #BA2E4B; text-align: center; text-decoration: none; font-size: 13px;">
+					Terms & Conditions
+				</div><br/><br/>
+			<% end %>
 
 			We are looking forward to hearing from you,<br/><br/>
 
 			Best Regards,<br/>
 			Lingonas Team<br/>
 			https://www.lingonas.com/​​​<br/>
+			support@lingonas.com<br/>
 
 		<% elsif @teacher.status == "rejected" %>
 			Dear <b><%= @teacher.name %> <%= @teacher.surname %></b>,<br/><br/>
