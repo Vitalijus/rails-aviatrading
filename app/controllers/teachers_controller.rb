@@ -24,6 +24,10 @@ class TeachersController < ApplicationController
 
 	def index
 		@teachers = Teacher.order("created_at DESC")
+		@activated_teacher = Teacher.where(status: 'activated').count
+		@rejected_teacher = Teacher.where(status: 'rejected').count
+		@deactivated_teacher = Teacher.where(status: 'deactivated').count
+		@pending_teacher = Teacher.where(status: nil).count
 	end
 
 	def show

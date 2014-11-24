@@ -1,5 +1,27 @@
-<% if current_teacher.id == 2 %>
+<% if current_teacher.id == 5 %>
 	<div id="index_teacher_wrapper">
+
+	<div id="index_teacher_status_count">
+		<ul>
+			<li class="pending">Pending</li> 
+			<li><%= @pending_teacher %></li>
+		</ul>
+
+		<ul>
+			<li class="activated">Activated</li> 
+			<li><%= @activated_teacher %></li>
+		</ul>
+
+		<ul>
+			<li class="rejected">Rejected</li> 
+			<li><%= @rejected_teacher %></li>
+		</ul>
+
+		<ul>
+			<li class="deactivated">Deactivated</li> 
+			<li><%= @deactivated_teacher %></li>
+		</ul>
+	</div>
 
 		<% @teachers.each do |teacher| %>
 			<div class="index_teacher">
@@ -21,7 +43,7 @@
 				        <th>Proof(2)</th>
 				        <th>Proof(3)</th>
 				        <th>Public link</th>
-				        <th>Status</th>
+				        <th>Created at</th>
 				        <th>Activate</th>
 				        <th>Reject</th>
 				        <th>Deactivate</th>
@@ -49,10 +71,10 @@
 					</td>
 
 			        <td>
-			        	<% if teacher.language_proficiency_proof2.blank? %>
+			        	<% if teacher.language_proficiency_proof3.blank? %>
 							No
 						<% else %>
-						<%= link_to "Proof2", teacher.language_proficiency_proof2.url, target: "_blank" %>
+						<%= link_to "Proof3", teacher.language_proficiency_proof3.url, target: "_blank" %>
 						<% end %>
 					</td>
 			        
@@ -65,11 +87,7 @@
 					</td>
 
 			        <td>
-			        	<% if teacher.status.blank? %>
-							Pending
-						<% else %>
-							<%= teacher.status %>
-						<% end %>
+			        	<%= teacher.created_at.strftime("%d %b. %Y") %>
 					</td>
 
 					<td>

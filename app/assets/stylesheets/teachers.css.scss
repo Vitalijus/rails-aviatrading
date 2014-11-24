@@ -9,6 +9,43 @@
 	border: 0px solid red;
 }
 
+#index_teacher_status_count {
+	width: 100%;
+	background-color: #F6F7F8;
+	margin-bottom: 20px;
+	overflow: hidden;
+	border: 1px solid #DFE0E4;
+}
+
+#index_teacher_status_count ul {
+	width: 239px;
+	float: left;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: 'Roboto', sans-serif;
+	color: #444444;
+}
+
+#index_teacher_status_count li {
+	padding: 10px 20px 10px 20px;
+}
+
+#index_teacher_status_count .pending {
+	border-top: 5px solid #999999;
+}
+
+#index_teacher_status_count .rejected {
+	border-top: 5px solid #BA2E4B;
+}
+
+#index_teacher_status_count .activated {
+	border-top: 5px solid #4F9351;
+}
+
+#index_teacher_status_count .deactivated {
+	border-top: 5px solid #29ACC0;
+}
+
 .index_teacher {
 	border: 1px solid #DFE0E4;
 	height: 100%;
