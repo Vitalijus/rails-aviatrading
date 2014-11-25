@@ -1,6 +1,6 @@
 <div id="course_post_wrapper">
 
-  <% if teacher_signed_in? && current_teacher.status.blank? || current_teacher.status == "rejected" %>
+  <% if teacher_signed_in? && current_teacher.status.blank? || teacher_signed_in? && current_teacher.status == "rejected" %>
     <div id="course_post_requirements">
       <ul>
         <li><%= image_tag "flag.png", width: 20 %></li>
