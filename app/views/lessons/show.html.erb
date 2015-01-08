@@ -15,5 +15,10 @@
   <%= @lesson.title %>
 </p>
 
-<%= link_to 'Edit', edit_course_lesson_path(@course, @lesson) %> |
+<p>
+  <strong>Lesson time:</strong>
+  <%= @lesson.lesson_time %>
+</p>
+
+<%= link_to 'Edit', edit_lesson_path(@lesson) %> |
 

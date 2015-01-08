@@ -2,12 +2,14 @@
 <!-- FACEBOOK APP -->
 <html xmlns:fb="http://ogp.me/ns/fb#">
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# learn-language: http://ogp.me/ns/fb/chocolate-by-post#">
-  <title>Lingonas - Online Language School</title>
+  <title>Aircraft Market</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "https://js.stripe.com/v2/", "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
   <%= tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY %>
-
+  <!-- Cloudinary config params in view -->
+  <%= cloudinary_js_config %>
+  <!-- ---------------------- --> 
 
   <!-- GOOGLE ANALYTICS -->
   <script>
@@ -25,7 +27,8 @@
   	<%= favicon_link_tag 'favicon.ico' %>
 
   <!-- GOOGLE FONTS -->
-  	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300|Alegreya+Sans+SC|Lato|Roboto|PT+Sans+Narrow' rel='stylesheet' type='text/css'>
+  	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600|Alegreya+Sans+SC|Lato|Roboto|PT+Sans+Narrow' rel='stylesheet' type='text/css'>
+  	<link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
 
   <!-- HTML5 VIDEO PLAYER -->
   	<link href="//vjs.zencdn.net/4.10.0/video-js.css" rel="stylesheet">
@@ -36,19 +39,6 @@
 
 </head>
 <body>
-
-<!-- FACEBOOK -->
-<div id="fb-root"></div>
-	<script>(function(d, s, id) {
-	  var js, fjs = d.getElementsByTagName(s)[0];
-	  if (d.getElementById(id)) return;
-	  js = d.createElement(s); js.id = id;
-	  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&appId=178872632300191&version=v2.0";
-	  fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));
-	</script>
-
-
 <!-- NOTICE MESSAGE -->
 <script>
 	$(function () {
@@ -62,6 +52,7 @@
 	});
 </script>
 
+<!-- HEADER MENU WHEN SMALL SCREEN -->
 <script>
 $(function() {  
     var pull        = $('#pull');  
@@ -84,97 +75,83 @@ $(window).resize(function(){
 
 <header>
 	<div id="header_wrapper">
-
-			<nav class="clearfix">  
+			<div class="header_navigation">  
 
 				<%= link_to root_url, data: { no_turbolink: true } do %>
 					<div class="webpage_logo">
-						<%= image_tag "logo 75x75.png", width: 35 %>
+						<%= image_tag "propeller.png", width: 60 %>
 					</div>
 
 					<div class="webpage_title">
-						
+						AEROPOLY
 					</div>
 				<% end %>
 
-			    <ul class="clearfix">  
-			        <% if !signed_in? %>
-
-						<%= link_to "https://twitter.com/share?url=https%3A%2F%2Flingonas.com", :target => "_blank" do %>
-						      <li class="header_icon"><%= image_tag "tw_grey.png", width: 23 %></li>
-						<% end %>
-
-						<%= fb_share('178872632300191', 'https://www.lingonas.com/', { 
-                            :name => "Lingonas - Online Language School",
-                            :method => "feed",
-                            :description => "Lingonas use e-learning platform to teach students languages from all over the world. Real teachers. Private and Groups classes. Free try. Join us!",
-                            :link => "https://www.lingonas.com/",
-                            :picture => "http://res.cloudinary.com/dhgsrpwf7/image/upload/v1416349549/laptop_jnbxkq.png",
-                            :caption => "Lingonas. Re-think language learning"
-                            }) %>
-
-        				<%= link_to $facebook_url do %>
-						      <li class="header_icon"><%= image_tag "f_grey.png", width: 23 %></li>
-						<% end %>
-
-						<%= link_to new_contact_path do %>
-						      <li class="header_icon"><%= image_tag "email2.png", width: 26 %></li>
-						<% end %>
-
-						<%= link_to new_student_registration_path do %>
-						      <li class="header_icon"><%= image_tag "locked.png", width: 19 %></li>
-						<% end %>
+			    <ul>  
+		        	<%= link_to new_advert_path do %>
+						<li><span class="free_advert_wrapper">FREE ADVERTISE</span></li>
 					<% end %>
 
-					<% if teacher_signed_in? %>
 
-						<%= link_to courses_path, data: { no_turbolink: true } do %>
-							<li>COURSES</li>
-						<% end %>
-
-						<%= link_to new_course_path do %>
-							<li>NEW COURSE</li>
-						<% end %>
-
-						<%= link_to teacher_path(current_teacher), data: { no_turbolink: true } do %>
-							<li>MY COURSES</li>
-						<% end %>
-					
-						<%= link_to edit_teacher_registration_path, data: { no_turbolink: true } do %>
-							<li>SETTINGS</li>
-						<% end %>
-
-						<%= link_to destroy_teacher_session_path, :method => :delete do %>
-			  				<li>SIGN OUT</li>
-			  			<% end %>
-					<% end %>
+					<%= link_to new_contact_path do %>
 						
+						<li class="header_contact_icon"><%= image_tag "message.png", width: 25, :class => "svg contact_icon" %></li>
+					<% end %>	
 
-					<% if student_signed_in? %>
-
-						<%= link_to courses_path, data: { no_turbolink: true } do %>
-							<li>COURSES</li>
-						<% end %>
-
-				  		<%= link_to student_path(current_student), data: { no_turbolink: true } do %>
-				  			<li>HISTORY</li>
-				  		<% end %>
-
-				  		<%= link_to edit_student_registration_path, data: { no_turbolink: true } do %>
-							<li>SETTINGS</li>
-						<% end %>
-
-				  		<%= link_to destroy_student_session_path, :method => :delete do %>
-					  		<li>SIGN OUT</li>
-					  	<% end %>
-					<% end %>
-	   
-			    </ul>  
-			    <a href="#" id="pull"><%= image_tag "list.png" %></a>  
-			</nav> 
-
+					<li>
+						<div class="search_bar_open_button">
+							<%= image_tag "search.png" %>
+						</div>
+					</li>
+			    </ul>    
+			</div> 
 	</div>
 </header>
+
+<div class="slide_menu">
+
+	<div class="slide_menu_header">
+		Find your aircraft
+	</div>
+
+	<div class="slide_menu_search_wrapper">
+
+		<div class="search_bar_close_button">
+			<%= image_tag "search_hide.png", width: 40 %>
+		</div>
+
+		<%= search_form_for @q do |f| %>
+		    <ul>
+		      <li><%= f.text_field :make_cont, :placeholder => "Manufacturer" %></li>
+
+		      <li><%= f.text_field :model_cont, :placeholder => "Model" %></li>
+
+		      <li>
+		      	<div class="dropdown_list">
+		      		<%= f.select :aircraft_type_cont, ['Cessna', "Airbus"], :prompt => 'Aircraft type' %>
+		      	</div>
+		      </li>
+
+		      <li>
+		      	<div class="dropdown_list">
+		      		<%= f.select :aircraft_usage_cont, ['Cessna', "Airbus"], :prompt => 'Aircraft usage' %>
+		      	</div>
+		     </li>
+
+		      <li>
+		      	<div class="dropdown_list">
+		      		<%= f.select :country_cont, ['Cessna', "Airbus"], :prompt => 'Country' %>
+		      	</div>
+		     </li>
+		      
+		      <li><%= f.submit :class => "search_button" %></li>
+		    </ul>
+		<% end %>
+	</div>
+</div>
+
+<div class="screen_shadow">
+</div>
 
 <%= yield %>
 
@@ -186,8 +163,29 @@ $(window).resize(function(){
 
 <!-- ---------------------------------------->
 
- <!-- JQUERY -->   
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!-- SIDEBAR SEARCH SLIDER --> 
+    <script src="/assets/sidebar_search_slider.js"></script>
 
-</body>
+    <!-- NEW ADVERT SLIDER --> 
+    <script src="/assets/new_advert_slider.js"></script>
+
+    <!-- SVG COLOR CHANGER --> 
+    <script src="/assets/sidebar_search_slider.js"></script>
+
+   <!-- MASONRY --> 
+   <script src="/assets/masonry/masonry.pkgd.min.js"></script>
+
+   <script>
+   		$(document).ready(function(){
+   			var $container = $('#masonry-container');
+   				// initialize
+   			$container.masonry({
+   				// options
+				  itemSelector: '.box',
+				  isFitWidth: true
+   			});
+   		});
+	</script>
+
+	</body>
 </html>

@@ -17,6 +17,7 @@ gem 'masonry-rails'
 gem 'ransack'
 gem 'will_paginate', '~> 3.0'
 gem 'sidekiq'
+gem "jquery-fileupload-rails"
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

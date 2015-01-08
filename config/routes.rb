@@ -1,10 +1,12 @@
 School::Application.routes.draw do
+  root 'adverts#index'
 
-  root 'courses#home'
+  resources :adverts
   
   devise_for :students
   devise_for :teachers
 
+  resources :lessons
   resources :contacts, only: [:create, :new]
   resources :students, only: [:show]
   resources :teachers, only: [:index, :show] do
@@ -17,7 +19,6 @@ School::Application.routes.draw do
   
   resources :courses, except: [:show] do
     resources :orders, only: [:create, :new]
-    resources :lessons
     resources :trials, only: [:create, :new]
   end
 

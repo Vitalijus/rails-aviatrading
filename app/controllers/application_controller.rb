@@ -2,8 +2,13 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
+  before_filter :set_search
 
   before_action :configure_permitted_parameters, if: :devise_controller?
+
+  def set_search
+    @q = Advert.search(params[:q])
+  end
 
   protected
 
@@ -15,4 +20,5 @@ class ApplicationController < ActionController::Base
                                                 :language_proficiency_proof, :language_proficiency_proof2,
                                                 :language_proficiency_proof3, :public_link]
   end
+
 end

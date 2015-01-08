@@ -1,0 +1,300 @@
+<div class="advert_show_wrapper">
+  <div class="advert_show_image">
+    <%= image_tag @advert.advert_image_url(:advert_image_big) %>
+    
+    <div class="advert_show_image_detail">
+      <ul>
+        <li class="advert_show_image_price"><%= @advert.currency %> <%= number_to_currency(@advert.price, precision: 0, unit: "") %></li>
+        <li>Vitalijus Desukas</li>
+        <li>+4925135895</li>
+        <li>vitalij.desuk@gmail.com</li>
+      </ul> 
+    </div>
+  </div>
+
+    <!--<div class="advert_show_header_logo">
+      <span class="logo_vertical_align_helper"></span><%= image_tag "mesinger.png" %>
+    </div>-->
+
+    <div class="advert_show_header">
+      <div class="advert_show_header_title_wrapper">
+        <div class="advert_show_header_title">
+          <%= @advert.year %> <%= @advert.make %> <%= @advert.model %>
+
+          <div class="advert_show_header_location">
+            <%= @advert.country %>, <%= @advert.city %>
+          </div>
+        </div>
+
+        <div class="advert_show_header_media">
+          <ul>
+            <li><%= image_tag "play.png", width: 14 %></li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="advert_show_header_details">
+        <ul>
+          <li><%= aircraft_type_helper(@advert.aircraft_type) %></li>
+          <li><%= @advert.aircraft_type %></li>
+        </ul>
+
+        <ul>
+          <li><%= image_tag "airship.png" %></li>
+          <li><%= @advert.aircraft_usage %></li>
+        </ul> 
+
+        <ul>
+          <li><%= image_tag "icons.png", width: 50 %></li>
+          <li><%= @advert.aircraft_hours %> aircraft hours</li>
+        </ul>
+
+        <ul>
+          <li><%= image_tag "icons.png", width: 50 %></li>
+          <li><%= @advert.landings %> landings</li>
+        </ul>
+
+        <ul>
+          <li><%= image_tag "icons.png", width: 50 %></li>
+          <li><%= @advert.number_of_passengers %> passengers</li>
+        </ul>
+      </div>
+    </div>
+
+  <div class="advert_show_header_separator">
+
+  </div>
+
+  <div class="advert_specs_wrapper">
+    <div class="advert_specs">
+      <div class="advert_specs_title_column">
+        <ul>
+          <li>Aircraft information</li>
+        </ul>
+      </div>
+
+      <div class="advert_specs_content_column1">
+        <ul>
+          <li>Serial number: <b><%= @advert.serial_number %></b></li>
+          <li>Registration number: <b><%= @advert.registration_number %></b></li>
+          <li>Nearest airport: <b><%= @advert.nearest_airport %> <%= @advert.airport_code %></b></li>
+          <li>here is some content</li>
+          <li>here is some content</li>
+        </ul>
+      </div>
+
+      <div class="advert_specs_content_column2">
+        <ul>
+          <li>here is some content2</li>
+          <li>here is some content2</li>
+          <li>here is some content2</li>
+          <li>here is some content2</li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="advert_specs">
+      <div class="advert_specs_title_column">
+        <ul>
+          <li>Engine / Propeller:</li>
+        </ul>
+      </div>
+
+      <div class="advert_specs_content_column1">
+        <ul>
+          <li>here is some content</li>
+          <li>here is some content</li>
+          <li>here is some content</li>
+          <li>here is some content</li>
+        </ul>
+      </div>
+
+      <div class="advert_specs_content_column2">
+        <ul>
+          <li>here is some content2</li>
+          <li>here is some content2</li>
+          <li>here is some content2</li>
+          <li>here is some content2</li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="advert_specs">
+      <div class="advert_specs_title_column">
+        <ul>
+          <li>Avionics:</li>
+        </ul>
+      </div>
+
+      <div class="advert_specs_content_column1">
+        <ul>
+          <li>here is some content</li>
+          <li>here is some content</li>
+          <li>here is some content</li>
+          <li>here is some content</li>
+        </ul>
+      </div>
+
+      <div class="advert_specs_content_column2">
+        <ul>
+          <li>here is some content2</li>
+          <li>here is some content2</li>
+          <li>here is some content2</li>
+          <li>here is some content2</li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="advert_specs">
+      <div class="advert_specs_title_column">
+        <ul>
+          <li>Interior:</li>
+        </ul>
+      </div>
+
+      <div class="advert_specs_content_column1">
+        <ul>
+          <li>here is some content</li>
+          <li>here is some content</li>
+          <li>here is some content</li>
+          <li>here is some content</li>
+        </ul>
+      </div>
+
+      <div class="advert_specs_content_column2">
+        <ul>
+          <li>here is some content2</li>
+          <li>here is some content2</li>
+          <li>here is some content2</li>
+          <li>here is some content2</li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="advert_specs">
+      <div class="advert_specs_title_column">
+        <ul>
+          <li>Exterior:</li>
+        </ul>
+      </div>
+
+      <div class="advert_specs_content_column1">
+        <ul>
+          <li>here is some content</li>
+          <li>here is some content</li>
+          <li>here is some content</li>
+          <li>here is some content</li>
+        </ul>
+      </div>
+
+      <div class="advert_specs_content_column2">
+        <ul>
+          <li>here is some content2</li>
+          <li>here is some content2</li>
+          <li>here is some content2</li>
+          <li>here is some content2</li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="advert_specs">
+      <div class="advert_specs_title_column">
+        <ul>
+          <li>Additional information:</li>
+        </ul>
+      </div>
+
+      <div class="advert_specs_content_column1">
+        <ul>
+          <li>here is some content</li>
+          <li>here is some content</li>
+          <li>here is some content</li>
+          <li>here is some content</li>
+        </ul>
+      </div>
+
+      <div class="advert_specs_content_column2">
+        <ul>
+          <li>here is some content2</li>
+          <li>here is some content2</li>
+          <li>here is some content2</li>
+          <li>here is some content2</li>
+        </ul>
+      </div>
+    </div>
+ 
+  </div>
+  <div class="advert_show_footer">
+    footer here
+  </div>
+</div>
+
+<p>
+  <strong>Title:</strong>
+  <%= @advert.title %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @advert.name %>
+</p>
+
+<p>
+  <strong>Surname:</strong>
+  <%= @advert.surname %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @advert.email %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @advert.year %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @advert.price %>
+</p>
+
+<p>
+  <strong>Currency:</strong>
+  <%= @advert.currency %>
+</p>
+
+<p>
+  <strong>Make:</strong>
+  <%= @advert.make %>
+</p>
+
+<p>
+  <strong>Model:</strong>
+  <%= @advert.model %>
+</p>
+
+<p>
+  <strong>Aircraft type:</strong>
+  <%= @advert.aircraft_type %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @advert.country %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @advert.city %>
+</p>
+
+<%= link_to 'Edit', edit_advert_path(@advert) %> |
+<%= link_to 'Back', adverts_path %>

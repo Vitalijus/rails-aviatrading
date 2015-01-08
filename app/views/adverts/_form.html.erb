@@ -1,0 +1,384 @@
+<!--<div class="sticky_nav">
+  <div id="sticky_nav_header">
+    <ul>
+
+      <a href="#aircraft_information">
+        <li>Aircraft information</li>
+      </a>
+
+      <a href="#engine_propeller">
+        <li>Engine/propeller</li>
+      </a>
+
+      <a href="#price_seller">
+        <li>Price/seller info</li>
+      </a>
+
+      <a href="#images_video_pdf">
+        <li>Images/video/PDF</li>
+      </a>
+
+      <a href="#other">
+        <li>Other</li>
+      </a>
+
+    </ul>
+  </div>
+</div>-->
+
+
+<%= form_for(@advert) do |f| %>
+  <% if @advert.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@advert.errors.count, "error") %> prohibited this advert from being saved:</h2>
+
+      <ul>
+        <% @advert.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  
+
+<div class="new_advert_form_wrapper">
+
+  <div class="new_advert_header">
+    Advertise your aircraft for free
+  </div>
+
+  <div class="new_advert_nav">
+    <ul class="tabs_links">
+      <li class="active"><a href="#tab1">Required fields*</a></li>
+      <li><a href="#tab2">Aircraft information</a></li>
+      <li><a href="#tab3">Engine / Propeller</a></li>
+      <li><a href="#tab4">Maintenance & inspection</a></li>
+      <li><a href="#tab5">Details</a></li>
+      <li><a href="#tab6">Advertiser details</a></li>
+      <li><a href="#tab7">Images / PDF</a><div class="triangle_nav">
+      <%= image_tag "triangle_white.png", width: 35 %>
+    </div></li>
+    </ul>
+  </div>
+
+
+<!-- Required fields -->
+<div class="new_advert_wrapper">
+
+  <div id="tab1" class="new_form_wrapper active">
+    <ul>
+        <li class="form_label">Manufacturer/Model:</li>
+        <li><%= f.text_field :make %><span class="advert_form_label_plus">Manufacturer<span class="required_fields"> *</span></span></li>
+        <li><%= f.text_field :model %><span class="advert_form_label_plus">Model<span class="required_fields"> *</span></span></li>
+    </ul>
+
+    <ul>
+      <span class="new_form_dropdown_list">
+        <li class="form_label">Aircraft Configuration:</li>
+        <li><%= f.select :aircraft_type, ["Airships/Blimps", "Gliders/Sailplanes", "Helicopters", "Jet", "Light Sport", "Piston", "TurboProps", "Ultralight", "Hot air balloon", "Other"], :prompt => ''  %><span class="advert_form_label_plus">Aircraft type<span class="required_fields"> *</span></span></li>
+      </span>
+      <span class="new_form_dropdown_list">
+        <li><%= f.select :aircraft_usage, ["Aerobatic", "Aerial survey", "Agriculture", "Amphibian/Float", "Antique/Classic", "Business/VIP", "Experimental", "Homebuilt", "EMS/SAR/Fire/Police", "Cargo/Freighter", "Passenger", "Warbird/Military", "Other"], :prompt => ''  %><span class="advert_form_label_plus">Aicraft usage<span class="required_fields"> *</span></span></li>
+      </span>
+    </ul>
+
+    <ul>
+      <span class="new_form_dropdown_list">
+        <li class="form_label">Aircraft Location:</li>
+        <li><%= f.select :country, ["Afghanistan", "Aland Islands", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia, Plurinational State of", "Bosnia and Herzegovina", "Botswana", "Bouvet Island", "Brazil", "British Indian Ocean Territory", "Brunei Darussalam", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Cocos (Keeling) Islands", "Colombia", "Comoros", "Congo", "Congo, the Democratic Republic of the", "Cook Islands", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Cyprus","Czech Republic","Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Falkland Islands (Malvinas)", "Faroe Islands", "Fiji", "Finland", "France", "French Guiana", "French Polynesia", "French Southern Territories", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard Island and McDonald Islands", "Holy See (Vatican City State)", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran, Islamic Republic of", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Japan", "Jersey", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Korea, Democratic People's Republic of", "Korea, Republic of", "Kuwait", "Kyrgyzstan", "Lao People's Democratic Republic", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libyan Arab Jamahiriya", "Liechtenstein", "Lithuania", "Luxembourg", "Macao", "Macedonia, the former Yugoslav Republic of", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mexico", "Micronesia, Federated States of", "Moldova, Republic of", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "Netherlands Antilles", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "Northern Mariana Islands", "Norway", "Oman", "Pakistan", "Palau", "Palestinian Territory, Occupied", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Pitcairn", "Poland", "Portugal", "Puerto Rico", "Qatar", "Reunion  Réunion", "Romania", "Russian Federation", "Rwanda", "Saint Barthélemy", "Saint Helena", "Saint Kitts and Nevis", "Saint Lucia", "Saint Martin (French part)", "Saint Pierre and Miquelon", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia and the South Sandwich Islands", "Spain", "Sri Lanka", "Sudan", "Suriname", "Svalbard and Jan Mayen", "Swaziland", "Sweden", "Switzerland", "Syrian Arab Republic", "Taiwan, Province of China", "Tajikistan", "Tanzania, United Republic of", "Thailand", "Timor-Leste", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "United States Minor Outlying, Islands", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela, Bolivarian Republic of", "Viet Nam", "Virgin Islands, British", "Virgin Islands, U.S.", "Wallis and Futuna", "Western Sahara", "Yemen", "Zambia","Zimbabwe"], :prompt => ''  %><span class="advert_form_label_plus">Country<span class="required_fields"> *</span></span></li>
+      </span>
+        <li><%= f.text_field :city, :placeholder => "" %><span class="advert_form_label_plus">City</span></li>
+    </ul>
+
+    <ul>
+        <li class="form_label"></li>
+        <li><%= f.text_field :nearest_airport %><span class="advert_form_label_plus">Airport name</span></li>
+        <li><%= f.text_field :airport_code %><span class="advert_form_label_plus">Airport code</span></li>
+    </ul>
+
+    <ul>
+        <li class="form_label">Aircraft Details</li>
+        <li><%= f.text_field :serial_number %><span class="advert_form_label_plus">Aircraft serial number</span></li>
+        <li><%= f.text_field :registration_number %><span class="advert_form_label_plus">Aircraft registration number</span></li>
+    </ul>
+
+    <ul>
+        <li class="form_label"></li>
+        <li class="advert_aircraft_hours_field"><%= f.text_field :aircraft_hours %><span class="advert_form_label_plus">Aircraft hours</span></li>
+        <li class="advert_landings_field"><%= f.text_field :landings %><span class="advert_form_label_plus">Number of landings</span></li>
+        <li class="advert_number_of_passengers_field"><%= f.text_field :number_of_passengers %><span class="advert_form_label_plus">Number of passengers</span></li>
+    </ul>
+
+    <ul>
+        <li class="form_label"></li>
+        <!--<span class="new_form_dropdown_list">
+          <li><%= f.select :aircraft_usage, ["New", "Used"], :prompt => ''  %><span class="advert_form_label_plus">Aicraft status</span></li>
+        </span>-->
+        <span class="new_form_dropdown_list">
+          <li><%= f.select :year, ["2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", '1994',], :prompt => '' %><span class="advert_form_label_plus">Year built</span></li>
+        </span>
+    </ul>
+
+    <ul>
+        <li class="form_label"></li>
+        <li><%= f.date_select :last_inspection, {:order => [:day, :month, :year], start_year: Date.today.year, end_year: Date.today.year+1} %><span class="advert_form_label_plus">Last inspection</span></li>
+    </ul>
+  </div>
+<!-- ------------------ -->
+
+
+<!-- Aircraft information -->
+
+  <div id="tab2" class="new_form_wrapper">
+    about
+  </div>
+
+<!-- ------------- -->
+
+
+<!-- Engine / Propeller -->
+
+  <div id="tab3" class="new_form_wrapper">
+    <ul>
+      <li class="form_label">Engine:</li>
+      <li><%= f.number_field :number_of_engines, :placeholder => "" %><span class="advert_form_label_plus">Number of engines</span></li>
+      <span class="new_form_dropdown_list">
+        <li><%= f.select :engine_type, ['Prop', "Turbo"], :prompt => '' %><span class="advert_form_label_plus">Engine type</span></li>
+      </span>
+    </ul>
+
+    <ul>
+      <li class="form_label"></li>
+      <li><%= f.text_field :engine_make, :placeholder => "" %><span class="advert_form_label_plus">Make</span></li>
+      <li><%= f.text_field :engine_model, :placeholder => "" %><span class="advert_form_label_plus">Model</span></li>
+    </ul>
+
+    <ul>
+      <li class="form_label"></li>
+      <li><%= f.number_field :engine_hours, :placeholder => "" %><span class="advert_form_label_plus">Engine hours</span></li>
+      <li><%= f.number_field :tbo, :placeholder => "" %><span class="advert_form_label_plus">Time Between Overhaul (TBO)</span></li>
+    </ul>
+
+    <ul>
+      <li class="form_label"></li>
+      <li><%= f.text_field :engine_power, :placeholder => "" %><span class="advert_form_label_plus">Engine power</span></li>
+    </ul>
+
+    <ul>
+      <li class="form_label">Propeller:</li>
+      <li><%= f.number_field :number_of_propellers, :placeholder => "" %><span class="advert_form_label_plus">Number of propellers</span></li>
+      <li><%= f.number_field :propeller_hours, :placeholder => "" %><span class="advert_form_label_plus">Propeller hours</span></li>
+    </ul>
+
+    <ul>
+      <li class="form_label"></li>
+      <li><%= f.number_field :propeller_make, :placeholder => "" %><span class="advert_form_label_plus">Propeller make</span></li>
+      <li><%= f.number_field :propeller_model, :placeholder => "" %><span class="advert_form_label_plus">Propeller model</span></li>
+    </ul>
+
+    <ul>
+      <li class="form_label"></li>
+      <li><%= f.text_area :engine_notes, :placeholder => "", :class => "engine_notes_text_field"%><span class="advert_form_label_plus">Extra information</span></li>
+    </ul>
+  </div>
+
+<!-- ------------- -->
+
+<!-- Maintenance -->
+
+  <div id="tab4" class="new_form_wrapper">
+    <ul>
+      <li class="form_text_field_label">Avionics:</li>
+      <li><%= f.text_area :engine_notes, :placeholder => "", :class => "engine_notes_text_field"%><span class="advert_form_label_plus">Extra information</span></li>
+    </ul>
+  </div>
+<!-- ---------------- -->
+
+<!-- About aircraft --> 
+
+  <div id="tab5" class="new_form_wrapper">
+    <ul>
+      <li class="form_text_field_label">Avionics:</li>
+      <li><%= f.text_area :engine_notes, :placeholder => "", :class => "avionics_text_field"%><span class="advert_form_label_plus">Extra information</span></li>
+    </ul>
+
+    <ul>
+      <li class="form_text_field_label">Interior:</li>
+      <li><%= f.text_area :engine_notes, :placeholder => "", :class => "engine_notes_text_field"%><span class="advert_form_label_plus">Extra information</span></li>
+    </ul>
+
+    <ul>
+      <li class="form_text_field_label">Exterior:</li>
+      <li><%= f.text_area :engine_notes, :placeholder => "", :class => "engine_notes_text_field"%><span class="advert_form_label_plus">Extra information</span></li>
+    </ul>
+
+    <ul>
+      <li class="form_text_field_label">Additional information:</li>
+      <li><%= f.text_area :engine_notes, :placeholder => "", :class => "engine_notes_text_field"%><span class="advert_form_label_plus">Extra information</span></li>
+    </ul>
+  </div>
+
+<!-- ---------- -->
+
+<!-- Seller / price info -->
+
+  <div id="tab6" class="new_form_wrapper">
+    <ul>
+      <li class="form_label">Contact person:</li>
+      <li><%= f.text_field :name %><span class="advert_form_label_plus">Name</span></li>
+      <li><%= f.text_field :surname %><span class="advert_form_label_plus">Surname</span></li>
+    </ul>
+
+    <ul>
+      <li class="form_label"></li>
+      <li class="advert_email_field"><%= f.text_field :email %><span class="advert_form_label_plus">Email</span></li>
+      <li class="advert_phone_field"><%= f.text_field :phone %><span class="advert_form_label_plus">Phone</span></li>
+    </ul>
+
+    <ul>
+      <li class="form_label">Asking Price:</li>
+      <li><%= f.number_field :price %><span class="advert_form_label_plus">Aircraft price</span></li>
+      <span class="new_form_dropdown_list">
+        <li><%= f.select :currency, ['USD', "EUR"], :prompt => '' %><span class="advert_form_label_plus">Currency</span></li>
+      </span>
+    </ul>
+
+  <div class="new_advert_checkboxes">
+    <ul>
+      <li class="new_advert_checkboxes_label"></li>
+      <li>Price on request</li>
+      <li class="eu_vat_paid">
+        <div class="new_advert_checkbox">
+          <%= f.check_box :price_on_request, {:id => "price_on_request"}, "mon", "" %>
+            <label for="price_on_request"></label>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="new_advert_checkboxes">
+    <ul>
+      <li class="new_advert_checkboxes_label"></li>
+      <li>EU VAT paid</li>
+      <li class="eu_vat_paid">
+        <div class="new_advert_checkbox">
+          <%= f.check_box :eu_vat, {:id => "eu_vat"}, "mon", "" %>
+            <label for="eu_vat"></label>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- ------------- -->
+
+<!-- Images / PDF -->
+
+<div id="tab7" class="new_form_wrapper">
+  <div class="field">
+    <%= f.label :advert_image, "Advert Image" %><br>
+    <%= f.cl_image_upload(:advert_image, :return_delete_token => true, :html => { :multiple => true, :class => "advert_image_uploader"}) %> 
+  </div>
+  <div class="status"></div>
+  <div id="progress">
+    <div class="bar" style="width: 0%;"></div>
+</div>
+  <div class="preview"></div>
+  <div class="image_public_id"></div>
+</div>
+
+</div>
+</div>
+<div class="actions">
+    <%= f.submit "Advertise" %>
+  </div>
+<% end %>
+
+<script>
+  $(document).ready(function() {
+    // Cloudinary jQuery integration library uses jQuery File Upload widget
+    // (see http://blueimp.github.io/jQuery-File-Upload/).
+    // Any file input field with cloudinary-fileupload class is automatically
+    // wrapped using the File Upload widget and configured for Cloudinary uploads.
+    // You can further customize the configuration using .fileupload method
+    // as we do below.
+    $(".cloudinary-fileupload")
+      .fileupload({ 
+        // Uncomment the following lines to enable client side image resizing and valiation.
+        // Make sure cloudinary/processing is included the js file
+        //disableImageResize: false,
+        //imageMaxWidth: 800,
+        //imageMaxHeight: 600,
+        //acceptFileTypes: /(\.|\/)(gif|jpe?g|png|bmp|ico)$/i,
+        //maxFileSize: 20000000, // 20MB
+        dropZone: "#direct_upload",
+        start: function (e) {
+          $(".status").text("Starting upload...");
+        },
+        progressall: function (e, data) {
+        var progress = parseInt(data.loaded / data.total * 100, 10);
+        $('#progress .bar').css(
+            'width',
+            progress + '%'
+        );
+    },
+        fail: function (e, data) {
+          $(".status").text("Upload failed");
+        },
+        add: function (e, data) {
+            data.context = $('<button/>').text('Upload')
+                .appendTo(document.body)
+                .click(function () {
+                    data.context = $('<p/>').text('Uploading...').replaceAll($(this));
+                    data.submit();
+                });
+        },
+        done: function (e, data) {
+            data.context.text('Upload finished.');
+        }
+      })
+      .off("cloudinarydone").on("cloudinarydone", function (e, data) {
+        $("#photo_bytes").val(data.result.bytes);
+        $(".status").text("");
+        var preview = $(".preview").html('');
+        $.cloudinary.image(data.result.public_id, {
+          format: data.result.format, width: 250, height: 250, crop: "fit"
+        }).appendTo(preview);
+
+        $('<a/>').
+          addClass('delete_by_token').
+          attr({href: '#'}).
+          data({delete_token: data.result.delete_token}).
+          html('&times;').
+          appendTo(preview).
+          click(function(e) {
+            e.preventDefault();
+            $.cloudinary.delete_by_token($(this).data('delete_token')).done(function(){
+              $('.preview').html('');
+              $('#info').html('');
+              $("#photo_bytes").val('');
+              $('input[name="photo[image]"]').remove();
+            }).fail(function() {
+              $('.status').text("Cannot delete image");
+          });
+        });
+        view_upload_details(data.result);
+      });
+    });
+    
+    function view_upload_details(upload) {
+      // Build an html table out of the upload object
+      var rows = [];
+      $.each(upload, function(k,v){
+        rows.push(
+          $("<tr>")
+            .append($("<td>").text(k))
+            .append($("<td>").text(JSON.stringify(v))));
+      });
+      $("#info").html(
+        $("<div class=\"upload_details\">")
+          .append("<h2>Upload metadata:</h2>")
+          .append($("<table>").append(rows)));
+    }
+</script>

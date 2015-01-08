@@ -1,0 +1,677 @@
+// Place all the styles related to the adverts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/* MASONRY */
+
+#masonry-container {
+  padding: 10px;
+  margin-bottom: 20px;
+  clear: both;
+  border: 0px solid blue;
+}
+
+.centered { margin: 0 auto; }
+
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+/* ------------------------------*/
+
+/* MASONRY BOX */
+
+.box {
+	border: 1px solid #DFE0E4;
+	background-color: #fff;
+	margin: 10px;
+	width: 402px;
+}
+
+.box_image {
+	position: relative;
+	height: 250px;
+}
+
+.box_price {
+	position: absolute;
+	top: 20px;
+	right: 0;
+	color: #fff;
+	background-color:rgba(255,0,0,0.5);
+	padding: 5px;
+}
+
+.box_make {
+	padding: 20px 20px 0px 20px;
+	font-family: 'Lato', sans-serif;
+	text-transform: uppercase;
+	font-size: 12px;
+	color: #444444;
+	border: 0px solid red;
+
+	-webkit-transition: color 150ms linear;
+  	-moz-transition: color 150ms linear;
+  	-o-transition: color 150ms linear;
+  	-ms-transition: color 150ms linear;
+  	transition: color 150ms linear;
+}
+
+.box_model {
+	font-family: 'Lato', sans-serif;
+	font-size: 25px;
+	color: #444444;
+	border: 0px solid red;
+
+	-webkit-transition: color 150ms linear;
+  	-moz-transition: color 150ms linear;
+  	-o-transition: color 150ms linear;
+  	-ms-transition: color 150ms linear;
+  	transition: color 150ms linear;
+}
+
+a:hover .box_make, a:hover .box_model {
+	color: #175263;
+}
+
+.box_attr table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 10px 0px ;
+  padding: 0 10px 15px 10px;
+  text-align: center;
+  border: 0px solid #DFE0E4;
+}
+
+.box_attr th {
+  padding-bottom: 5px;
+  color: #278998;
+  vertical-align: bottom;
+  font-family: "Lato", helvetica, arial;
+  font-size: 14px;
+  text-align: left;
+  border-bottom: 2px solid #278998;
+}
+
+.box_attr td {
+  padding-top: 3px;
+  vertical-align: top;
+  font-size: 14px;
+  font-family: "Open Sans", helvetica, arial;
+  border: 0px solid #DFE0E4;
+}
+
+.box_footer_wrapper {
+	border: 0px solid red;
+	overflow: hidden;
+	position: relative;
+}
+
+.box_footer {
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	padding-left: 20px;
+	font-family: "Open Sans", helvetica, arial;
+	font-size: 12px;
+	color: #777777;
+	border: 0px solid red;
+}
+
+/*----------------------------*/
+
+/* NEW FORM ADVERT NAV*/
+
+.new_advert_header {
+	width: 960px;
+	margin: 0 auto;
+	margin-top: 80px;
+	padding: 30px 0 30px 0;
+	font-family: 'PT Sans', sans-serif;
+	font-size: 30px;
+	border-left: 1px solid #DFE0E4;
+	border-right: 1px solid #DFE0E4;
+	border-top: 1px solid #DFE0E4;
+	background-color: #F6F7F8;
+}
+
+.new_advert_form_wrapper {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+	border: 0px solid red;
+}
+
+.new_advert_nav {
+	width: 100%;
+	border: 0px solid green;
+}
+
+.new_advert_nav ul {
+	width: 960px;
+	margin: 0 auto;
+	display: table;
+	background-color: #fff;
+	border-top: 0px solid #DFE0E4;
+	border-left: 1px solid #DFE0E4;
+	border-right: 1px solid #DFE0E4;
+	position: relative;
+}
+
+.new_advert_nav li {
+	height: 60px;
+	line-height: 60px;
+	display: table-cell;
+	text-align: center;
+	font-size: 12px;
+	font-family: "Open Sans", helvetica, arial;
+	text-transform: uppercase;
+	border-right: 0px solid #DFE0E4;
+}
+
+.new_advert_nav li a {
+	color: #000;
+}
+
+.new_advert_nav li a:hover {
+	color: #F04F54;
+}
+
+li.active a, li.active a:hover {
+    color: #F04F54;
+}
+
+.triangle_nav {
+	position: absolute;
+	margin-right: auto;
+	margin-left: auto;
+	right: 0;
+	left: 0;
+	bottom: -40px;
+}
+
+/* new form advert wrapper */
+
+.new_form_wrapper {
+	width: 960px;
+	margin: 0 auto;
+	padding-top: 30px;
+	background-color: #F6F7F8;
+	border-left: 1px solid #DFE0E4;
+	border-right: 1px solid #DFE0E4;
+	border-bottom: 1px solid #DFE0E4;
+}
+
+.new_form_wrapper ul {
+	padding-top: 15px;
+	padding-bottom: 5px;
+	border-bottom: 0px solid #DFE0E4;
+}
+
+.new_form_wrapper li {
+	width: 235px;
+	text-align: right;
+	display: inline-block;
+	margin-left: 10px;
+	border: 0px solid red;
+}
+
+.new_form_wrapper {
+    display:none;
+}
+ 
+.new_form_wrapper.active {
+    display:block;
+}
+
+.advert_form_label_plus {
+	float: left;
+	margin-top: 3px;
+	font-family: 'PT Sans Narrow', sans-serif;
+	font-size: 14px;
+	border: 0px solid red;
+}
+
+.new_form_wrapper .form_label {
+	width: 180px;
+	font-family: 'PT Sans Narrow', sans-serif;
+	font-size: 15px;
+	color: #555555;
+	font-weight: bold;
+	vertical-align: middle;
+	border: 0px solid green;
+}
+
+.required_fields {
+	color: #F37A7C;
+	font-size: 16px;
+}
+/*------------------------*/
+
+/* fields length */
+
+.new_form_wrapper .advert_aircraft_hours_field {
+	width: 115px;
+	border: 0px solid red;
+}
+
+.new_form_wrapper .advert_landings_field {
+	width: 115px;
+	border: 0px solid red;
+}
+
+.new_form_wrapper .advert_number_of_passengers_field {
+	width: 115px;
+	border: 0px solid red;
+}
+
+.new_form_wrapper .advert_email_field {
+	width: 300px;
+	border: 0px solid red;
+}
+
+.new_form_wrapper .advert_phone_field {
+	width: 170px;
+	border: 0px solid red;
+}
+
+.engine_notes_text_field {
+	width: 484px;
+	padding: 10px;
+	height: 100px;
+	color: #000000;
+	font-size: 15px;
+	font-family: 'PT Sans Narrow', sans-serif;
+	border: 1px solid #cecfc0;
+}
+
+.avionics_text_field {
+	width: 484px;
+	padding: 10px;
+	height: 100px;
+	color: #000000;
+	font-size: 15px;
+	font-family: 'PT Sans Narrow', sans-serif;
+	border: 1px solid #cecfc0;
+}
+
+/*------------------------*/
+
+/* new advert checkboxes */
+
+.new_advert_checkboxes ul {
+	width: 360px;
+	font-size: 14px;
+	font-family: 'PT Sans Narrow', sans-serif;
+	overflow: hidden;
+	border: 0px solid green;
+}
+
+.new_advert_checkboxes li {
+	margin-top: 10px;
+	float: left;
+	border: 0px solid red;
+}
+
+.new_advert_checkboxes .new_advert_checkboxes_label {
+	width: 210px;
+	text-align: right;
+	margin-right: 15px;
+	border: 0px solid red;
+}
+
+.new_advert_checkboxes .eu_vat_paid {
+	border: 0px solid green;
+	float: right;
+	padding-left: 30px;
+}
+
+.new_advert_checkbox {
+  width: 20px;
+  border: 0px solid red;
+  position: relative;
+}
+
+.new_advert_checkbox label {
+  cursor: pointer;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  left: 0;
+  background: #eee;
+  border: 1px solid #ddd;
+}
+
+
+/**
+ * Display the tick inside the checkbox
+ */
+.new_advert_checkbox label:after {
+  opacity: 0.2;
+  content: '';
+  position: absolute;
+  width: 7px;
+  height: 3px;
+  background: transparent;
+  top: 5px;
+  left: 5px;
+  border: 3px solid #333;
+  border-top: none;
+  border-right: none;
+
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+/**
+ * Create the hover event of the tick
+ */
+.new_advert_checkbox label:hover::after {
+  opacity: 0.5;
+}
+
+/**
+ * Create the checkbox state for the tick
+ */
+.new_advert_checkbox input[type=checkbox]:checked + label:after {
+  opacity: 1;
+}
+
+/*-------------------------*/
+
+.new_form_wrapper .form_text_field_label {
+	width: 180px;
+	font-family: 'PT Sans Narrow', sans-serif;
+	font-size: 15px;
+	color: #555555;
+	font-weight: bold;
+	vertical-align: top;
+	border: 0px solid green;
+}
+
+.new_form_wrapper input {
+	width: 100%;
+	font-size: 12px;
+	padding: 7px;
+    color: #000000;
+	font-size: 15px;
+	font-family: 'PT Sans Narrow', sans-serif;
+	border: 1px solid #cecfc0;
+}
+
+/* New course select dropdown list style */
+
+:root .new_form_dropdown_list option,
+:root .new_form_dropdown_list:after,
+:root .new_form_dropdown_list::after,
+:root .new_form_dropdown_list select
+{
+    color: #777;
+}
+ 
+:root .new_form_dropdown_list select,
+:root .new_form_dropdown_list:after,
+:root .new_form_dropdown_list::after
+{
+    display: block;
+    background: #29ACC0;
+}
+ 
+:root .new_form_dropdown_list select,
+:root .new_form_dropdown_list option
+{
+    padding: 7px;
+}
+ 
+:root .new_form_dropdown_list
+{
+    position: relative;
+    display: inline-block;
+    border: 0;
+}
+ 
+:root .new_form_dropdown_list::after
+{
+    content: "\25bc";
+    position: absolute;
+    color: #fff;
+    top: 0px;
+    right: 0;
+    display: block;
+    width: 32px;
+    font-size: 12px;
+    line-height: 36px;
+    text-align: center;
+     
+    -webkit-pointer-events: none;
+    -moz-pointer-events: none;
+    pointer-events: none;
+}
+ 
+:root .new_form_dropdown_list select
+{
+   width: 235px;
+   height: 36px;
+   margin-left: 0px;
+   vertical-align: middle;
+   border: 1px solid #cecfc0;
+   background-color: #fff;
+   font: normal 15px/15px'PT Sans Narrow', sans-serif;
+   outline: 0 none;
+}
+ 
+:root .new_form_dropdown_list option
+{
+    background: #fff;
+    color: #111;
+}
+
+/*----------------------------*/
+
+/* ADVERT SHOW */
+
+.advert_show_wrapper {
+	max-width: 960px;
+	margin: 80px auto;
+	background-color: #fff;
+	border: 1px solid #DFE0E4;
+}
+
+/* image */
+.advert_show_image {
+	border: 0px solid red;
+	height: 300px;
+	position: relative;
+}
+
+.advert_show_image img {
+	width: 100%;
+	border: 0px solid blue;
+}
+
+.advert_show_image_detail {
+	position: absolute;
+	width: 230px;
+	bottom: -113px;
+	left: 30px;
+}
+
+.advert_show_image_detail ul {
+	border: 0px solid red;
+	color: #565A5C;
+	font-size: 12px;
+}
+
+.advert_show_image_detail li {
+	border-left: 1px solid #DFE0E4;
+	border-right: 1px solid #DFE0E4;
+	border-bottom: 1px solid #DFE0E4;
+	height: 38px;
+	line-height: 38px;
+	text-align: center;
+	padding: 0 20px 0 20px;
+	font-family: 'Roboto', sans-serif;
+	background-color: #F6F7F8;
+}
+
+.advert_show_image_detail .advert_show_image_price {
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	text-align: center;
+	height: 38px;
+	line-height: 38px;
+	color: #fff;
+	background-color:rgba(255,0,0,0.6);
+	border: 0px solid red;
+}
+/*------------------*/
+
+/* header */
+
+.bar {
+    height: 18px;
+    background: green;
+}
+
+.advert_show_header {
+	width: 100%;
+	overflow: hidden;
+	border: 0px solid red;
+}
+
+.advert_show_header_title_wrapper {
+	width: 670px;
+	float: right;
+	border: 0px solid red;
+}
+
+.advert_show_header_media {
+	width: 20%;
+	float: right;
+	border: 0px solid green;
+}
+
+.advert_show_header_media li {
+	margin-top: 20px;
+	margin-left: 10px;
+	height: 25px;
+	display: inline-block;
+	width: 28px;
+	text-align: center;
+	margin-right:  -4px;
+	border: 1px solid #ECECEC;
+}
+
+.advert_show_header_title {
+	width: 80%;
+	float: left;
+	color: #565A5C;
+	font-family: 'PT Sans', sans-serif;
+	font-weight: bold;
+	font-size: 25px;
+	padding: 17px 0px 0 0px;
+	border: 0px solid green;
+}
+
+.advert_show_header_location {
+	color: #82888A;
+	font-family: 'PT Sans', sans-serif;
+	font-weight: bold;
+	font-size: 12px;
+	border: 0px solid green;
+}
+
+.advert_show_header_details {
+	width: 670px;
+	float: right;
+	color: #82888A;
+	font-family: 'PT Sans', sans-serif;
+	font-weight: bold;
+	font-size: 12px;
+	padding: 20px 20px 20px 0px;
+	display: table;
+	border: 0px solid green;
+}
+
+.advert_show_header_details ul {
+	border: 0px solid green;
+	margin-right: -4px;
+	display: table-cell;
+}
+
+.advert_show_header_details li {
+	text-align: center;
+}
+
+.advert_show_header_separator {
+	height: 15px;
+	background-color: #F04F54;
+}
+
+/*----------------------*/
+
+/* advert specs*/
+
+.advert_specs_wrapper {
+	width: 100%;
+	padding: 0 30px 0 30px;
+	border: 0px solid red;
+}
+
+.advert_specs {
+    overflow: hidden;
+    padding: 30px 0 30px 0;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.advert_specs .advert_specs_title_column {
+	width: 25%;
+	border: 0px solid blue;
+	font-family: 'PT Sans', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+    float: left;
+}
+
+.advert_specs .advert_specs_content_column1 {
+	width: 37.5%;
+	font-family: 'PT Sans', sans-serif;
+	font-size: 14px;
+	border: 0px solid green;
+	background-color: #fff;
+	float: left;
+}
+
+.advert_specs .advert_specs_content_column1 li {
+	margin-bottom: 5px;
+}
+
+.advert_specs .advert_specs_content_column2 {
+	border: 0px solid green;
+	width: 37.5%;
+	font-family: 'PT Sans', sans-serif;
+	font-size: 14px;
+	background-color: #fff;
+	float: left;
+}
+
+.advert_specs .advert_specs_content_column2 li {
+	margin-bottom: 5px;
+}
+
+/*------------------------*/
+
+/* footer */
+
+.advert_show_footer {
+	width: 100%;
+	height: 70px;
+}
+/*-------------------------*/

@@ -4,6 +4,9 @@ class CoursesController < ApplicationController
 
 
   def home
+    time_range = Time.now..(Time.now + 30.day)
+    @q = Course.where("courses.course_start" => time_range).order("created_at DESC").paginate(:page => params[:page], :per_page => 10).search(params[:q])
+    @courses = @q.result(distinct: true)
     if teacher_signed_in?
       redirect_to courses_path
     elsif student_signed_in?

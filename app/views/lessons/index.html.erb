@@ -1,3 +1,5 @@
+<%= DateTime.now.utc..DateTime.now.utc.end_of_day %><br/>
+
 <h1>Listing lessons</h1>
 
 <table>
@@ -6,6 +8,7 @@
       <th>Description</th>
       <th>Course</th>
       <th>Title</th>
+      <th>Lesson time</th>
       <th></th>
       <th></th>
       <th></th>
@@ -18,9 +21,10 @@
         <td><%= lesson.description %></td>
         <td><%= lesson.course_id %></td>
         <td><%= lesson.title %></td>
-        <td><%= link_to 'Show', [@course, lesson] %></td>
-        <td><%= link_to 'Edit', edit_course_lesson_path(@course, lesson) %></td>
-        <td><%= link_to 'Destroy', [@course, lesson], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= lesson.lesson_time %></td>
+        <td><%= link_to 'Show', lesson %></td>
+        <td><%= link_to 'Edit', edit_lesson_path(lesson) %></td>
+        <td><%= link_to 'Destroy', lesson, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

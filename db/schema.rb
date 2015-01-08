@@ -11,7 +11,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141121202642) do
+ActiveRecord::Schema.define(version: 20141214174918) do
+
+  create_table "adverts", force: true do |t|
+    t.string   "title"
+    t.string   "name"
+    t.string   "surname"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "advert_image"
+    t.string   "make"
+    t.string   "model"
+    t.string   "aircraft_type"
+    t.integer  "year"
+    t.string   "currency"
+    t.integer  "price"
+    t.string   "country"
+    t.string   "city"
+    t.string   "engine_type"
+    t.integer  "number_of_engines"
+    t.string   "engine_make"
+    t.string   "engine_model"
+    t.integer  "engine_hours"
+    t.text     "engine_notes"
+    t.integer  "tbo"
+    t.string   "engine_power"
+    t.integer  "number_of_propellers"
+    t.string   "propeller_make"
+    t.string   "propeller_model"
+    t.integer  "propeller_hours"
+    t.string   "serial_number"
+    t.string   "registration_number"
+    t.integer  "aircraft_hours"
+    t.integer  "landings"
+    t.string   "nearest_airport"
+    t.string   "aircraft_status"
+    t.datetime "last_inspection"
+    t.boolean  "eu_vat"
+    t.boolean  "price_on_request"
+    t.string   "airport_code"
+    t.string   "number_of_passengers"
+    t.string   "aircraft_usage"
+    t.string   "phone"
+  end
 
   create_table "contacts", force: true do |t|
     t.datetime "created_at"
@@ -55,6 +98,7 @@ ActiveRecord::Schema.define(version: 20141121202642) do
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "lesson_time"
   end
 
   create_table "orders", force: true do |t|

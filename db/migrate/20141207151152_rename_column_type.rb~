@@ -1,0 +1,4 @@
+class RenameColumnType < ActiveRecord::Migration
+  def change
+  end
+end

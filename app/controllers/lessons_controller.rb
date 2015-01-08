@@ -1,11 +1,11 @@
 class LessonsController < ApplicationController
-  before_filter :load_course
+  #before_filter :load_course
   before_action :set_lesson, only: [:show, :edit, :update, :destroy]
 
   # GET /lessons
   # GET /lessons.json
   def index
-    @lessons = @course.lessons.all
+    @lessons = Lesson.where("lessons.lesson_time" => DateTime.now.utc..DateTime.now.utc.end_of_day).order("lesson_time ASC")
   end
 
   # GET /lessons/1
@@ -15,7 +15,7 @@ class LessonsController < ApplicationController
 
   # GET /lessons/new
   def new
-    @lesson = @course.lessons.new
+    @lesson = Lesson.new
   end
 
   # GET /lessons/1/edit
@@ -25,13 +25,11 @@ class LessonsController < ApplicationController
   # POST /lessons
   # POST /lessons.json
   def create
-    @lesson = @course.lessons.new(lesson_params)
-
-    @course.lessons << @lesson
+    @lesson = Lesson.new(lesson_params)
 
     respond_to do |format|
       if @lesson.save
-        format.html { redirect_to [@course, @lesson], notice: 'Lesson was successfully created.' }
+        format.html { redirect_to @lesson, notice: 'Lesson was successfully created.' }
         format.json { render action: 'show', status: :created, location: @lesson }
       else
         format.html { render action: 'new' }
@@ -45,7 +43,7 @@ class LessonsController < ApplicationController
   def update
     respond_to do |format|
       if @lesson.update(lesson_params)
-        format.html { redirect_to [@course, @lesson], notice: 'Lesson was successfully updated.' }
+        format.html { redirect_to @lesson, notice: 'Lesson was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -70,12 +68,12 @@ class LessonsController < ApplicationController
       @lesson = Lesson.find(params[:id])
     end
 
-    def load_course
-      @course = Course.find(params[:course_id])
-    end
+    #def load_course
+    #  @course = Course.find(params[:course_id])
+    #end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lesson_params
-      params.require(:lesson).permit(:description, :course_id, :title)
+      params.require(:lesson).permit(:description, :course_id, :title, :lesson_time)
     end
 end
