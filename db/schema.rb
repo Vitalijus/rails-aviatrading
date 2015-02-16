@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141214174918) do
+ActiveRecord::Schema.define(version: 20150216162457) do
 
   create_table "adverts", force: true do |t|
     t.string   "title"
@@ -54,6 +54,8 @@ ActiveRecord::Schema.define(version: 20141214174918) do
     t.string   "number_of_passengers"
     t.string   "aircraft_usage"
     t.string   "phone"
+    t.integer  "user_id"
+    t.string   "document"
   end
 
   create_table "contacts", force: true do |t|
@@ -62,43 +64,6 @@ ActiveRecord::Schema.define(version: 20141214174918) do
     t.text     "message"
     t.string   "name"
     t.string   "email"
-  end
-
-  create_table "courses", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "teacher_id"
-    t.text     "description"
-    t.integer  "price"
-    t.string   "level"
-    t.string   "language"
-    t.string   "time_start"
-    t.string   "course_type"
-    t.date     "course_start"
-    t.date     "course_end"
-    t.date     "registration_until"
-    t.string   "course_pdf"
-    t.string   "lesson_per_week"
-    t.string   "time_zone"
-    t.integer  "student_id"
-    t.string   "time_end"
-    t.string   "adobe_connect"
-    t.string   "mon"
-    t.string   "tue"
-    t.string   "wed"
-    t.string   "thu"
-    t.string   "fri"
-    t.string   "sat"
-    t.string   "sun"
-  end
-
-  create_table "lessons", force: true do |t|
-    t.text     "description"
-    t.integer  "course_id"
-    t.string   "title"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.datetime "lesson_time"
   end
 
   create_table "orders", force: true do |t|
@@ -128,14 +93,7 @@ ActiveRecord::Schema.define(version: 20141214174918) do
     t.string   "sun"
   end
 
-  create_table "sessions", force: true do |t|
-    t.string   "title"
-    t.string   "teacher_name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "students", force: true do |t|
+  create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -148,54 +106,19 @@ ActiveRecord::Schema.define(version: 20141214174918) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "terms_conditions"
-  end
-
-  add_index "students", ["email"], name: "index_students_on_email", unique: true, using: :btree
-  add_index "students", ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true, using: :btree
-
-  create_table "teachers", force: true do |t|
-    t.string   "email",                       default: "", null: false
-    t.string   "encrypted_password",          default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",               default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.inet     "current_sign_in_ip"
-    t.inet     "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "name"
-    t.string   "surname"
     t.string   "avatar"
-    t.string   "native_language"
-    t.string   "iteach"
-    t.string   "ispeak"
-    t.integer  "age"
-    t.string   "location"
-    t.string   "time_zone"
-    t.text     "about_me"
-    t.string   "language_proficiency_proof"
-    t.string   "language_proficiency_proof2"
-    t.string   "language_proficiency_proof3"
-    t.string   "cv"
-    t.string   "status"
-    t.string   "public_link"
-    t.string   "paypal_email"
+    t.text     "about"
+    t.string   "organisation"
+    t.string   "street"
+    t.string   "city"
+    t.string   "country"
+    t.integer  "telephone"
+    t.string   "state"
+    t.string   "postal_code"
+    t.string   "cover_image"
   end
 
-  add_index "teachers", ["email"], name: "index_teachers_on_email", unique: true, using: :btree
-  add_index "teachers", ["reset_password_token"], name: "index_teachers_on_reset_password_token", unique: true, using: :btree
-
-  create_table "trials", force: true do |t|
-    t.string   "email"
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "course_id"
-    t.text     "notice"
-  end
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

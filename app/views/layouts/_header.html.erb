@@ -1,0 +1,53 @@
+<header>
+	<div id="header_wrapper">
+			<div class="header_navigation">  
+
+				<%= link_to root_url, data: { no_turbolink: true } do %>
+					<div class="webpage_logo">
+						<span class="icon-propeller_500x500"></span>
+					</div>
+
+					<div class="webpage_title">
+						AEROPOLY
+					</div>
+				<% end %>
+				
+			    <ul>  
+		        	<%= link_to new_advert_path, data: { no_turbolink: true } do %>
+						<li><span class="free_advert_wrapper">FREE ADVERTISE</span></li>
+					<% end %>
+
+					<%= link_to new_contact_path, data: { no_turbolink: true } do %>
+						<li class="header_contact_icon"><%= image_tag "message.png", width: 25, :class => "svg contact_icon" %></li>
+					<% end %>	
+
+					<li>
+						<div class="search_bar_open_button">
+							<%= image_tag "search.png" %>
+						</div>
+					</li>
+
+					<% if user_signed_in? %>
+					  <li>
+					  	<%= link_to "Logout", destroy_user_session_path, method: :delete %>
+					  </li>
+
+					  <li>
+					  	<%= link_to 'My adverts', user_path(current_user) %>
+					  </li>
+					<% end %>
+
+					<% if !user_signed_in? %>
+					  <li class="auth_form_sign_up">
+					  	<a>Sign up</a>
+					  </li>
+
+					  <li class="auth_form_login">
+					  	<a>Login</a>
+					  </li>
+					  
+					<% end %>
+			    </ul>    
+			</div> 
+	</div>
+</header>

@@ -1,26 +1,12 @@
 School::Application.routes.draw do
-  root 'adverts#index'
+  
+  root 'adverts#home'
+  
+  devise_for :users
 
   resources :adverts
-  
-  devise_for :students
-  devise_for :teachers
-
-  resources :lessons
+  resources :users, only: [:show, :edit]  
   resources :contacts, only: [:create, :new]
-  resources :students, only: [:show]
-  resources :teachers, only: [:index, :show] do
-    get 'activate', :on => :collection
-    get 'deactivate', :on => :collection
-    get 'reject', :on => :collection
-  end
-
-  resources :orders, only: [:index]
-  
-  resources :courses, except: [:show] do
-    resources :orders, only: [:create, :new]
-    resources :trials, only: [:create, :new]
-  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.

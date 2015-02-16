@@ -6,5 +6,5 @@ CarrierWave.configure do |config|
     :region                 => 'us-west-2' 
   }
 
-  config.fog_directory  = 'lingonas'
+  config.fog_directory  = 'aeropoly'
 end

@@ -1,0 +1,164 @@
+<div class="sign_up show_when_link">
+
+	<div class="auth_header">
+		Sign up
+
+		<div class="close_form">
+			<%= image_tag "close_auth.png" %>
+		</div>
+	</div>
+
+	<div class="auth_form_wrapper">
+	  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+	    <%= devise_error_messages! %>
+
+	    <div class="auth_form">
+	    	<%= f.label :email, "Email:", :class => "auth_label" %><br />
+	    	<%= f.email_field :email, :class => "auth_field" %>
+	    </div>
+
+	    <div class="auth_form">
+	    	<%= f.label :password, "Password:", :class => "auth_label" %><br />
+	    	<%= f.password_field :password, :class => "auth_field" %>
+	    </div>
+
+	    <div class="auth_form">
+	    	<%= f.label :password_confirmation, "Password confirmation:", :class => "auth_label" %><br />
+	    	<%= f.password_field :password_confirmation, :class => "auth_field" %>
+	    </div>
+	</div>
+
+    	<%= f.submit "Sign up", :class => "auth_submit_button" %>
+
+  <% end %>
+
+  <div class="auth_links">
+  	Already signed up? <span>Login</span>
+  </div>
+</div>
+
+<!-- ------------------------------ -->
+
+<div class="login show_when_link">
+	<div class="auth_header">
+		Login
+
+		<div class="close_form">
+			<%= image_tag "close_auth.png" %>
+		</div>
+	</div>
+
+	<div class="auth_form_wrapper">
+  		<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+    		<%= devise_error_messages! %>
+
+	    <div class="auth_form">
+	    	<%= f.label :email, "Email", :class => "auth_label" %><br />
+	    	<%= f.email_field :email, :class => "auth_field" %>
+	    </div>
+
+	    <div class="auth_form">
+	    	<%= f.label :password, "Password", :class => "auth_label" %><br />
+	    	<%= f.password_field :password, :class => "auth_field" %></div>
+		</div>
+
+    	<%= f.submit "Login", :class => "auth_submit_button" %>
+  <% end %>
+
+  <div class="auth_links">
+  	<ul>
+  		<li><span>Sign up</span></li>
+  		<li class="forgot_password_link">Forgot password?</li>
+  	</ul>
+  </div>
+</div>
+
+<!-- ----------------- -->
+
+<div class="reset_password">
+
+	<div class="auth_header">
+		Password reset
+
+		<div class="close_form">
+			<%= image_tag "close_auth.png" %>
+		</div>
+	</div>
+
+	<div class="auth_form_wrapper">
+		<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  			<%= devise_error_messages! %>
+
+		<div class="auth_form">
+		    <%= f.label :email, :class => "auth_label" %><br />
+		    <%= f.email_field :email, autofocus: true, :class => "auth_field" %>
+		</div>
+	</div>
+
+		<%= f.submit "Reset password", :class => "auth_submit_button" %>
+		
+	<% end %>
+
+  <div class="auth_links">
+  	<ul>
+  		<li class="open_login_box">Login</li>
+  		<li class="open_sign_up_box">Sign up</li>
+  	</ul>
+  </div>
+</div>
+
+<!-- --------------------------------- -->
+
+<script>
+  $(document).ready(function() {
+  	var $auth_form_sing_up = $('.auth_form_sign_up');
+  	var $auth_form_login = $('.auth_form_login');
+  	var $auth_shadow = $('.authentication_shadow');
+  	var $sign_up = $('.sign_up');
+  	var $login = $('.login');
+  	var $reset_password = $('.reset_password');
+  	var $close_form = $('.close_form');
+  	var duration = 100
+
+  	//make auth form visible
+  	$($auth_form_sing_up).click(function() {
+  	  $($sign_up).add($auth_shadow).fadeIn(duration);
+  	});
+
+  	$($auth_form_login).click(function() {
+  	  $($login).add($auth_shadow).fadeIn(duration);
+  	});
+
+  	//make invisible by clicking on shadow
+  	$($auth_shadow).click(function() {
+		$(this).add($sign_up).add($login).add($reset_password).fadeOut(duration);
+	});
+
+  	//make invisible by clicking on close button
+	$($close_form).click(function() {
+		$($auth_shadow).add($sign_up).add($login).add($reset_password).fadeOut(duration);
+	});
+
+	//Auth form login and sign up links
+	$('.auth_links span').click(function() {
+		$('.show_when_link').toggle();
+	});
+
+	//Forgot password?
+	$(".forgot_password_link").click(function() {
+		$($login).hide();
+		$($reset_password).show();
+	});
+
+	$('.open_login_box').click(function() {
+		$($reset_password).hide();
+		$($login).show();
+  	});
+
+  	$('.open_sign_up_box').click(function() {
+		$($reset_password).hide();
+		$($sign_up).show();
+  	});
+});
+
+</script>

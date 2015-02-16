@@ -4,17 +4,19 @@
     
     <div class="advert_show_image_detail">
       <ul>
-        <li class="advert_show_image_price"><%= @advert.currency %> <%= number_to_currency(@advert.price, precision: 0, unit: "") %></li>
-        <li>Vitalijus Desukas</li>
+        <li class="advert_show_image_price">
+          <%= @advert.currency %> <%= number_to_currency(@advert.price, precision: 0, unit: "") %>
+        </li>
+        <li>
+          <%= link_to user_path(@advert.user.id) do %> 
+            <%= @advert.name %> <%= @advert.surname %>
+          <% end %>
+        </li>
         <li>+4925135895</li>
-        <li>vitalij.desuk@gmail.com</li>
+        <li><%= @advert.email %></li>
       </ul> 
     </div>
   </div>
-
-    <!--<div class="advert_show_header_logo">
-      <span class="logo_vertical_align_helper"></span><%= image_tag "mesinger.png" %>
-    </div>-->
 
     <div class="advert_show_header">
       <div class="advert_show_header_title_wrapper">
@@ -26,45 +28,45 @@
           </div>
         </div>
 
-        <div class="advert_show_header_media">
+        <!--<div class="advert_show_header_media">
           <ul>
-            <li><%= image_tag "play.png", width: 14 %></li>
-            <li>2</li>
-            <li>3</li>
+            <%= link_to @advert.document_url, :target => "_blank" do %>
+              <li><%= image_tag "document.png", width: 25 %></li>
+            <% end %>
           </ul>
-        </div>
+        </div>-->
       </div>
 
       <div class="advert_show_header_details">
         <ul>
-          <li><%= aircraft_type_helper(@advert.aircraft_type) %></li>
+          <li><%= aircraft_type_helper(@advert.aircraft_type, 50) %></li>
           <li><%= @advert.aircraft_type %></li>
         </ul>
 
         <ul>
-          <li><%= image_tag "airship.png" %></li>
+          <li><%= aircraft_usage_helper(@advert.aircraft_usage, 50) %></li>
           <li><%= @advert.aircraft_usage %></li>
         </ul> 
 
         <ul>
-          <li><%= image_tag "icons.png", width: 50 %></li>
+          <li><span class="icon-JetAircrafttype-50px"></span></li>
           <li><%= @advert.aircraft_hours %> aircraft hours</li>
         </ul>
 
         <ul>
-          <li><%= image_tag "icons.png", width: 50 %></li>
+          <li><span class="icon-JetAircrafttype-50px2"></span></li>
           <li><%= @advert.landings %> landings</li>
         </ul>
 
         <ul>
-          <li><%= image_tag "icons.png", width: 50 %></li>
+          <li><span class="icon-JetAircrafttype-200px3"></span></li>
           <li><%= @advert.number_of_passengers %> passengers</li>
         </ul>
       </div>
     </div>
 
   <div class="advert_show_header_separator">
-
+    <!-- separator -->
   </div>
 
   <div class="advert_specs_wrapper">
@@ -76,22 +78,31 @@
       </div>
 
       <div class="advert_specs_content_column1">
-        <ul>
-          <li>Serial number: <b><%= @advert.serial_number %></b></li>
-          <li>Registration number: <b><%= @advert.registration_number %></b></li>
-          <li>Nearest airport: <b><%= @advert.nearest_airport %> <%= @advert.airport_code %></b></li>
-          <li>here is some content</li>
-          <li>here is some content</li>
-        </ul>
+        <table>
+          <tr>
+            <td><b>Serial number:</b></td>
+            <td><%= @advert.serial_number %></td>
+          </tr>
+
+          <tr>
+            <td><b>Registration number:</b></td>
+            <td><%= @advert.registration_number %></td>
+          </tr>
+        </table>
       </div>
 
       <div class="advert_specs_content_column2">
-        <ul>
-          <li>here is some content2</li>
-          <li>here is some content2</li>
-          <li>here is some content2</li>
-          <li>here is some content2</li>
-        </ul>
+        <table>
+          <tr>
+            <td><b>Airport name:</b></td>
+            <td><%= @advert.nearest_airport %> <%= @advert.airport_code %></td>
+          </tr>
+
+          <tr>
+            <td><b>Last inspection:</b></td>
+            <td><%= @advert.last_inspection %></td>
+          </tr>
+        </table>
       </div>
     </div>
 
@@ -99,26 +110,75 @@
     <div class="advert_specs">
       <div class="advert_specs_title_column">
         <ul>
-          <li>Engine / Propeller:</li>
+          <li>Engine / Propeller</li>
         </ul>
       </div>
 
       <div class="advert_specs_content_column1">
-        <ul>
-          <li>here is some content</li>
-          <li>here is some content</li>
-          <li>here is some content</li>
-          <li>here is some content</li>
-        </ul>
+        <table>
+          <tr>
+            <td><b>Engine manufacturer:</b></td>
+            <td><%= @advert.engine_make %></td>
+          </tr>
+
+          <tr>
+            <td><b>Engine model:</b></td>
+            <td><%= @advert.engine_model %></td>
+          </tr>
+
+          <tr>
+            <td><b>Engine number:</b></td>
+            <td><%= @advert.number_of_engines %></td>
+          </tr>
+
+          <tr>
+            <td><b>Engine type:</b></td>
+            <td><%= @advert.engine_type %></td>
+          </tr>
+
+          <tr>
+            <td><b>Engine hours:</b></td>
+            <td><%= @advert.engine_hours %></td>
+          </tr>
+
+          <tr>
+            <td><b>Engine TBO:</b></td>
+            <td><%= @advert.tbo %></td>
+          </tr>
+
+          <tr>
+            <td><b>Engine power:</b></td>
+            <td><%= @advert.engine_power %></td>
+          </tr>
+        </table>
       </div>
 
       <div class="advert_specs_content_column2">
-        <ul>
-          <li>here is some content2</li>
-          <li>here is some content2</li>
-          <li>here is some content2</li>
-          <li>here is some content2</li>
-        </ul>
+        <table>
+          <tr>
+            <td><b>Propeller manufacturer:</b></td>
+            <td><%= @advert.propeller_make %></td>
+          </tr>
+
+          <tr>
+            <td><b>Propeller model:</b></td>
+            <td><%= @advert.propeller_model %></td>
+          </tr>
+
+          <tr>
+            <td><b>Number of propellers:</b></td>
+            <td><%= @advert.number_of_propellers %></td>
+          </tr>
+
+          <tr>
+            <td><b>Propeller hours:</b></td>
+            <td><%= @advert.propeller_hours %></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="advert_text_info engine">
+        <%= @advert.engine_notes %>
       </div>
     </div>
 
@@ -126,26 +186,12 @@
     <div class="advert_specs">
       <div class="advert_specs_title_column">
         <ul>
-          <li>Avionics:</li>
+          <li>Avionics</li>
         </ul>
       </div>
 
-      <div class="advert_specs_content_column1">
-        <ul>
-          <li>here is some content</li>
-          <li>here is some content</li>
-          <li>here is some content</li>
-          <li>here is some content</li>
-        </ul>
-      </div>
-
-      <div class="advert_specs_content_column2">
-        <ul>
-          <li>here is some content2</li>
-          <li>here is some content2</li>
-          <li>here is some content2</li>
-          <li>here is some content2</li>
-        </ul>
+      <div class="advert_text_info">
+        <%= @advert.engine_notes %>
       </div>
     </div>
 
@@ -157,22 +203,8 @@
         </ul>
       </div>
 
-      <div class="advert_specs_content_column1">
-        <ul>
-          <li>here is some content</li>
-          <li>here is some content</li>
-          <li>here is some content</li>
-          <li>here is some content</li>
-        </ul>
-      </div>
-
-      <div class="advert_specs_content_column2">
-        <ul>
-          <li>here is some content2</li>
-          <li>here is some content2</li>
-          <li>here is some content2</li>
-          <li>here is some content2</li>
-        </ul>
+      <div class="advert_text_info">
+        <%= @advert.engine_notes %>
       </div>
     </div>
 
@@ -184,22 +216,8 @@
         </ul>
       </div>
 
-      <div class="advert_specs_content_column1">
-        <ul>
-          <li>here is some content</li>
-          <li>here is some content</li>
-          <li>here is some content</li>
-          <li>here is some content</li>
-        </ul>
-      </div>
-
-      <div class="advert_specs_content_column2">
-        <ul>
-          <li>here is some content2</li>
-          <li>here is some content2</li>
-          <li>here is some content2</li>
-          <li>here is some content2</li>
-        </ul>
+      <div class="advert_text_info">
+        <%= @advert.engine_notes %>
       </div>
     </div>
 
@@ -211,90 +229,13 @@
         </ul>
       </div>
 
-      <div class="advert_specs_content_column1">
-        <ul>
-          <li>here is some content</li>
-          <li>here is some content</li>
-          <li>here is some content</li>
-          <li>here is some content</li>
-        </ul>
-      </div>
-
-      <div class="advert_specs_content_column2">
-        <ul>
-          <li>here is some content2</li>
-          <li>here is some content2</li>
-          <li>here is some content2</li>
-          <li>here is some content2</li>
-        </ul>
+      <div class="advert_text_info">
+        <%= @advert.engine_notes %>
       </div>
     </div>
  
   </div>
   <div class="advert_show_footer">
-    footer here
+   <%= @advert.user.organisation %>   
   </div>
 </div>
-
-<p>
-  <strong>Title:</strong>
-  <%= @advert.title %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @advert.name %>
-</p>
-
-<p>
-  <strong>Surname:</strong>
-  <%= @advert.surname %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @advert.email %>
-</p>
-
-<p>
-  <strong>Year:</strong>
-  <%= @advert.year %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @advert.price %>
-</p>
-
-<p>
-  <strong>Currency:</strong>
-  <%= @advert.currency %>
-</p>
-
-<p>
-  <strong>Make:</strong>
-  <%= @advert.make %>
-</p>
-
-<p>
-  <strong>Model:</strong>
-  <%= @advert.model %>
-</p>
-
-<p>
-  <strong>Aircraft type:</strong>
-  <%= @advert.aircraft_type %>
-</p>
-
-<p>
-  <strong>Country:</strong>
-  <%= @advert.country %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @advert.city %>
-</p>
-
-<%= link_to 'Edit', edit_advert_path(@advert) %> |
-<%= link_to 'Back', adverts_path %>

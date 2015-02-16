@@ -1,25 +1,13 @@
-<div id="bg_image_wrapper">
-  <div class="content">
-      <div class="content_title">
-          Aircraft market 
-          <div class="content_title_small">
-              the land of the free 
-          </div>
-      </div>
-  </div>
-
-  <span id="bg_image" role="img" aria-label="Bicycle.">
-    <span id="bg_image_inner">
-    </span>
-  </span>
-</div>
 
 <div id="masonry-container" class="centered clearfix">
+  <div class="preview_header">
+    Adverts
+  </div>
 
 <% @adverts.each do |advert| %>
-  <div class="box">
 
-    <%= link_to advert_path(advert) do %>
+  <div class="box">
+    <%= link_to advert_path(advert), data: { no_turbolink: true } do %>
       <div class="box_image">
 
         <% if advert.advert_image.blank? %>
@@ -43,37 +31,23 @@
       </div>
     <% end %>
 
-      <!--<div class="box_attr">
-        <table>
-          <tr> 
-            <th>Type</th>
-            <th>Year</th>
-            <th>Airframe</th>
-            <th>Engine</th>
-            <th>Location</th>
-          </tr>
-          <tr>
-            <td><%= advert.aircraft_type %></td>
-            <td><%= advert.year %></td>
-            <td>1598h</td>
-            <td>2547h</td>
-            <td><%= advert.country %>, <%= advert.city %></td>
-          </tr>
-        </table> 
-      </div>-->
-
       <div class="box_footer_wrapper">
         <div class="box_footer">
           <%= advert.country %>, <%= advert.city %>
         </div>
-
       </div>
-    
+
+      <!--<div class="box_icons">
+        <ul>
+          <li><%= image_tag "video.png", width: 25 %></li>
+          <li><%= image_tag "video.png", width: 25 %></li>
+        </ul>
+      </div>-->
   </div>
 <% end %>
-
 </div>
 
 <div id="digg_pagination" data-no-turbolink>
   <%= will_paginate @adverts, :page_links => false %>
 </div>
+

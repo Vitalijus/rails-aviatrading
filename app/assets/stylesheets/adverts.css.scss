@@ -6,10 +6,13 @@
 /* MASONRY */
 
 #masonry-container {
-  padding: 10px;
+  max-width: 1250px;
+  padding: 35px 10px 10px 10px;
   margin-bottom: 20px;
+  margin-top: 80px;
   clear: both;
-  border: 0px solid blue;
+  background-color: #fff;
+  border: 1px solid #DFE0E4;
 }
 
 .centered { margin: 0 auto; }
@@ -18,37 +21,52 @@
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
 
+.preview_header {
+	padding: 13px 10px 5px 10px;
+	font-family: 'Lato', sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+	background-color: #fff;
+	position: absolute;
+	top: 0;
+	border: 0px solid red;
+}
+
 /* ------------------------------*/
 
 /* MASONRY BOX */
 
 .box {
-	border: 1px solid #DFE0E4;
+	border: 0px solid #DFE0E4;
 	background-color: #fff;
-	margin: 10px;
-	width: 402px;
+	margin: 10px 5px 10px 5px;
+	width: 195px;
+	position: relative;
+	display: none;
 }
 
 .box_image {
 	position: relative;
-	height: 250px;
+	height: 110px;
 }
 
 .box_price {
 	position: absolute;
 	top: 20px;
 	right: 0;
+	font-size: 12px;
+	font-family: 'Roboto', sans-serif;
 	color: #fff;
 	background-color:rgba(255,0,0,0.5);
 	padding: 5px;
 }
 
 .box_make {
-	padding: 20px 20px 0px 20px;
-	font-family: 'Lato', sans-serif;
+	padding: 10px 0px 0px 0px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 10px;
+	color: #336f8c;
 	text-transform: uppercase;
-	font-size: 12px;
-	color: #444444;
 	border: 0px solid red;
 
 	-webkit-transition: color 150ms linear;
@@ -60,8 +78,8 @@
 
 .box_model {
 	font-family: 'Lato', sans-serif;
-	font-size: 25px;
-	color: #444444;
+	font-size: 16px;
+	text-transform: capitalize;
 	border: 0px solid red;
 
 	-webkit-transition: color 150ms linear;
@@ -72,50 +90,35 @@
 }
 
 a:hover .box_make, a:hover .box_model {
-	color: #175263;
+	color: #224a5d;
 }
 
-.box_attr table {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 10px 0px ;
-  padding: 0 10px 15px 10px;
-  text-align: center;
-  border: 0px solid #DFE0E4;
-}
-
-.box_attr th {
-  padding-bottom: 5px;
-  color: #278998;
-  vertical-align: bottom;
-  font-family: "Lato", helvetica, arial;
-  font-size: 14px;
-  text-align: left;
-  border-bottom: 2px solid #278998;
-}
-
-.box_attr td {
-  padding-top: 3px;
-  vertical-align: top;
-  font-size: 14px;
-  font-family: "Open Sans", helvetica, arial;
-  border: 0px solid #DFE0E4;
-}
-
-.box_footer_wrapper {
+.box_attr {
+	font-family: 'PT Sans', sans-serif;
+	font-size: 11px;
+	color: #777777;
+	padding: 0px 10px 0 0px;
 	border: 0px solid red;
-	overflow: hidden;
-	position: relative;
 }
 
 .box_footer {
-	width: 100%;
-	height: 40px;
-	line-height: 40px;
-	padding-left: 20px;
+	height: 35px;
+	line-height: 32px;
+	margin: 0;
 	font-family: "Open Sans", helvetica, arial;
-	font-size: 12px;
+	font-size: 11px;
 	color: #777777;
+	border-bottom: 1px solid #ececec;
+}
+
+.box_icons {
+	position: absolute;
+	top: 420px;
+	right: 15px;
+}
+
+.box_icons li {
+	display: inline-block;
 	border: 0px solid red;
 }
 
@@ -123,23 +126,33 @@ a:hover .box_make, a:hover .box_model {
 
 /* NEW FORM ADVERT NAV*/
 
-.new_advert_header {
-	width: 960px;
-	margin: 0 auto;
-	margin-top: 80px;
-	padding: 30px 0 30px 0;
+.new_advert_header_wrapper {
+	width: 100%;
+	height: 200px;
+	margin-bottom: 20px;
 	font-family: 'PT Sans', sans-serif;
-	font-size: 30px;
-	border-left: 1px solid #DFE0E4;
-	border-right: 1px solid #DFE0E4;
-	border-top: 1px solid #DFE0E4;
-	background-color: #F6F7F8;
+	font-size: 35px;
+	text-align: center;
+	color: #565A5C;
+	background-color: #fff;
+	border-bottom: 1px solid #DFE0E4;
+}
+
+.new_advert_header {
+	border: 0px solid red;
+	padding-top: 40px;
+}
+
+.new_advert_header_small {
+	font-size: 20px;
+	padding-top: 10px;
+	font-family: 'Lato', sans-serif;
+	border: 0px solid red;
 }
 
 .new_advert_form_wrapper {
 	width: 100%;
 	height: 100%;
-	margin: 0 auto;
 	overflow: hidden;
 	border: 0px solid red;
 }
@@ -152,20 +165,22 @@ a:hover .box_make, a:hover .box_model {
 .new_advert_nav ul {
 	width: 960px;
 	margin: 0 auto;
-	display: table;
-	background-color: #fff;
-	border-top: 0px solid #DFE0E4;
+	background-color: #F6F7F8;
+	border-top: 1px solid #DFE0E4;
 	border-left: 1px solid #DFE0E4;
 	border-right: 1px solid #DFE0E4;
 	position: relative;
 }
 
 .new_advert_nav li {
+	width: 33%;
 	height: 60px;
 	line-height: 60px;
-	display: table-cell;
+	display: inline-block;
+	padding: 0 20px 0 20px;
 	text-align: center;
-	font-size: 12px;
+	font-size: 15px;
+	font-weight: bold;
 	font-family: "Open Sans", helvetica, arial;
 	text-transform: uppercase;
 	border-right: 0px solid #DFE0E4;
@@ -183,39 +198,24 @@ li.active a, li.active a:hover {
     color: #F04F54;
 }
 
-.triangle_nav {
-	position: absolute;
-	margin-right: auto;
-	margin-left: auto;
-	right: 0;
-	left: 0;
-	bottom: -40px;
-}
+/*-------------------*/
 
-/* new form advert wrapper */
+/* advert new form */
 
 .new_form_wrapper {
 	width: 960px;
 	margin: 0 auto;
-	padding-top: 30px;
-	background-color: #F6F7F8;
-	border-left: 1px solid #DFE0E4;
-	border-right: 1px solid #DFE0E4;
-	border-bottom: 1px solid #DFE0E4;
+	margin-bottom: 20px;
+	border: 0px solid red;
 }
 
 .new_form_wrapper ul {
-	padding-top: 15px;
-	padding-bottom: 5px;
-	border-bottom: 0px solid #DFE0E4;
+	padding: 20px 0 20px 0 ;
+	border-bottom: 1px solid #F2F2F4;
 }
 
 .new_form_wrapper li {
-	width: 235px;
-	text-align: right;
 	display: inline-block;
-	margin-left: 10px;
-	border: 0px solid red;
 }
 
 .new_form_wrapper {
@@ -226,28 +226,162 @@ li.active a, li.active a:hover {
     display:block;
 }
 
-.advert_form_label_plus {
-	float: left;
-	margin-top: 3px;
-	font-family: 'PT Sans Narrow', sans-serif;
-	font-size: 14px;
-	border: 0px solid red;
+/* helpers */
+.new_form_separator_helper {
+	height: 20px;
 }
 
-.new_form_wrapper .form_label {
-	width: 180px;
-	font-family: 'PT Sans Narrow', sans-serif;
-	font-size: 15px;
-	color: #555555;
+.new_form_border_helper {
+	background-color: #fff;
+	padding: 0 20px 20px 20px;
+	border: 1px solid #DFE0E4;
+}
+/*--------*/
+
+.new_form_wrapper_header {
+	font-family: 'PT Sans', sans-serif;
+	font-size: 18px;
+	padding: 20px 0 15px 0;
+	text-transform: uppercase;
 	font-weight: bold;
+	background-color: #fff;
+	border-bottom: 1px solid #f2f2f4;
+}
+
+.form_label {
+	width: 30%;
+	font-family: 'PT Sans', sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: left;
+	float: left;
+	padding-right: 20px;
 	vertical-align: middle;
 	border: 0px solid green;
+}
+
+.new_form_wrapper .form_label_small {
+	font-family: "Open Sans", helvetica, arial;
+	font-size: 12px;
+	font-weight: normal;
+	border: 0px solid red;
 }
 
 .required_fields {
 	color: #F37A7C;
 	font-size: 16px;
 }
+
+.new_form_make_model,
+.new_form_aircraft_details,
+.new_form_type_usage,
+.new_form_aircraft_location,
+.new_form_propeller,
+.new_form_contact_person {
+	width: 70%;
+	border: 0px solid red;
+}
+
+.new_form_manufacturer,
+.new_form_model,
+.new_form_nearest_airport,
+.new_form_airport_code,
+.new_form_serial_number,
+.new_form_registration_number,
+.new_form_aircraft_hours,
+.new_form_landings,
+.new_form_passengers,
+.new_form_city,
+.new_form_engines_number,
+.new_form_engines_make,
+.new_form_engines_model,
+.new_form_engine_hours,
+.new_form_tbo,
+.new_form_engine_power,
+.new_form_number_of_propellers,
+.new_form_propeller_hours,
+.new_form_propeller_make,
+.new_form_propeller_model,
+.new_form_engine_notes,
+.new_form_name,
+.new_form_surname,
+.new_form_email,
+.new_form_phone,
+.new_form_price {
+	display: inline-block;
+	padding: 8px;
+	margin-right: -4px;
+	font-family: "Open Sans", helvetica, arial;
+	font-size: 12px;
+	border: 1px solid #DFE0E4;
+}
+
+.new_form_engine_notes {
+	width: 644px;
+	height: 125px;
+}
+
+.new_form_manufacturer,
+.new_form_model,
+.new_form_nearest_airport,
+.new_form_airport_code,
+.new_form_serial_number,
+.new_form_registration_number,
+.new_form_city,
+.new_form_engines_number,
+.new_form_engines_make,
+.new_form_engines_model,
+.new_form_number_of_propellers,
+.new_form_propeller_hours,
+.new_form_propeller_make,
+.new_form_propeller_model,
+.new_form_name,
+.new_form_surname,
+.new_form_email,
+.new_form_phone,
+.new_form_price  {
+	width: 49.4%;
+}
+
+.new_form_aircraft_hours,
+.new_form_landings,
+.new_form_passengers {
+	width: 24%;
+}
+
+.new_form_engine_hours,
+.new_form_tbo,
+.new_form_engine_power {
+	width: 32.4%;
+}
+
+.new_form_manufacturer,
+.new_form_nearest_airport,
+.new_form_serial_number,
+.new_form_aircraft_hours,
+.new_form_landings,
+.new_form_engines_number,
+.new_form_engines_make,
+.new_form_engine_hours,
+.new_form_tbo,
+.new_form_number_of_propellers,
+.new_form_propeller_make,
+.new_form_name,
+.new_form_email {
+	margin-right: 6px;
+}
+
+.new_form_serial_number,
+.new_form_registration_number,
+.new_form_city,
+.new_form_engines_number,
+.new_form_engines_make,
+.new_form_number_of_propellers,
+.new_form_name,
+.new_form_surname {
+	margin-bottom: 10px;
+}
+
 /*------------------------*/
 
 /* fields length */
@@ -275,16 +409,6 @@ li.active a, li.active a:hover {
 .new_form_wrapper .advert_phone_field {
 	width: 170px;
 	border: 0px solid red;
-}
-
-.engine_notes_text_field {
-	width: 484px;
-	padding: 10px;
-	height: 100px;
-	color: #000000;
-	font-size: 15px;
-	font-family: 'PT Sans Narrow', sans-serif;
-	border: 1px solid #cecfc0;
 }
 
 .avionics_text_field {
@@ -385,26 +509,6 @@ li.active a, li.active a:hover {
 
 /*-------------------------*/
 
-.new_form_wrapper .form_text_field_label {
-	width: 180px;
-	font-family: 'PT Sans Narrow', sans-serif;
-	font-size: 15px;
-	color: #555555;
-	font-weight: bold;
-	vertical-align: top;
-	border: 0px solid green;
-}
-
-.new_form_wrapper input {
-	width: 100%;
-	font-size: 12px;
-	padding: 7px;
-    color: #000000;
-	font-size: 15px;
-	font-family: 'PT Sans Narrow', sans-serif;
-	border: 1px solid #cecfc0;
-}
-
 /* New course select dropdown list style */
 
 :root .new_form_dropdown_list option,
@@ -433,6 +537,7 @@ li.active a, li.active a:hover {
 {
     position: relative;
     display: inline-block;
+    margin-right: 6px;
     border: 0;
 }
  
@@ -456,15 +561,27 @@ li.active a, li.active a:hover {
  
 :root .new_form_dropdown_list select
 {
-   width: 235px;
+   width: 317px;
    height: 36px;
+   color: #999;
    margin-left: 0px;
    vertical-align: middle;
-   border: 1px solid #cecfc0;
+   border: 1px solid #DFE0E4;
    background-color: #fff;
-   font: normal 15px/15px'PT Sans Narrow', sans-serif;
+   font: normal 13px/13px 'PT Sans', sans-serif;
    outline: 0 none;
 }
+
+/* custom width for drop down menu in new form */
+:root .new_form_built_year select {
+	width: 153px;
+}
+
+:root .new_form_aircraft_usage,
+:root .new_form_engine_type {
+	margin-right: -4px;
+}
+/*----------------------*/
  
 :root .new_form_dropdown_list option
 {
@@ -477,7 +594,7 @@ li.active a, li.active a:hover {
 /* ADVERT SHOW */
 
 .advert_show_wrapper {
-	max-width: 960px;
+	width: 960px;
 	margin: 80px auto;
 	background-color: #fff;
 	border: 1px solid #DFE0E4;
@@ -534,11 +651,6 @@ li.active a, li.active a:hover {
 
 /* header */
 
-.bar {
-    height: 18px;
-    background: green;
-}
-
 .advert_show_header {
 	width: 100%;
 	overflow: hidden;
@@ -551,7 +663,7 @@ li.active a, li.active a:hover {
 	border: 0px solid red;
 }
 
-.advert_show_header_media {
+/*.advert_show_header_media {
 	width: 20%;
 	float: right;
 	border: 0px solid green;
@@ -559,14 +671,13 @@ li.active a, li.active a:hover {
 
 .advert_show_header_media li {
 	margin-top: 20px;
-	margin-left: 10px;
 	height: 25px;
 	display: inline-block;
 	width: 28px;
 	text-align: center;
-	margin-right:  -4px;
-	border: 1px solid #ECECEC;
-}
+	margin-right:  8px;
+	border: 0px solid #ECECEC;
+}*/
 
 .advert_show_header_title {
 	width: 80%;
@@ -620,50 +731,63 @@ li.active a, li.active a:hover {
 
 .advert_specs_wrapper {
 	width: 100%;
-	padding: 0 30px 0 30px;
+	padding: 0 20px 0 20px;
 	border: 0px solid red;
 }
 
 .advert_specs {
     overflow: hidden;
-    padding: 30px 0 30px 0;
+    padding: 20px 0 15px 0;
     border-bottom: 1px solid #dbdbdb;
 }
 
 .advert_specs .advert_specs_title_column {
 	width: 25%;
-	border: 0px solid blue;
 	font-family: 'PT Sans', sans-serif;
     font-weight: bold;
-    cursor: pointer;
-    font-size: 14px;
+    color: #666;
+    font-size: 13px;
     float: left;
+    border: 0px solid blue;
+}
+
+.icon-JetAircrafttype-200px:before,
+.icon-JetAircrafttype-200px2:before,
+.icon-JetAircrafttype-200px3:before,
+.icon-JetAircrafttype-50px:before,
+.icon-JetAircrafttype-50px2:before {
+	font-size: 50px;
+    content: "\e600";
 }
 
 .advert_specs .advert_specs_content_column1 {
 	width: 37.5%;
 	font-family: 'PT Sans', sans-serif;
-	font-size: 14px;
-	border: 0px solid green;
+	font-size: 13px;
 	background-color: #fff;
 	float: left;
-}
-
-.advert_specs .advert_specs_content_column1 li {
-	margin-bottom: 5px;
+	border: 0px solid green;
 }
 
 .advert_specs .advert_specs_content_column2 {
-	border: 0px solid green;
 	width: 37.5%;
 	font-family: 'PT Sans', sans-serif;
-	font-size: 14px;
+	font-size: 13px;
 	background-color: #fff;
 	float: left;
+	border: 0px solid green;
 }
 
-.advert_specs .advert_specs_content_column2 li {
-	margin-bottom: 5px;
+.advert_text_info {
+	width: 685px;
+	float: right;
+	font-family: 'PT Sans', sans-serif;
+	font-size: 13px;
+	border: 0px solid red;
+}
+
+.engine {
+	padding-top: 15px;
 }
 
 /*------------------------*/
@@ -673,5 +797,152 @@ li.active a, li.active a:hover {
 .advert_show_footer {
 	width: 100%;
 	height: 70px;
+	line-height: 70px;
+	font-size: 14px;
+	text-align: center;
+	font-family: 'PT Sans', sans-serif;
+	padding: 0 30px 0 30px;
+	border-top: 0px solid #DFE0E4;
 }
 /*-------------------------*/
+
+/* BG IMAGE */
+
+#bg_image_wrapper {
+	position: relative;
+	border: 0px solid red;
+}
+
+#bg_image {
+	background-image: url("../assets/dog_plane.jpg");
+	display: inline-block;
+	width: 100%;
+	font-size: 0;
+	line-height: 0;
+	vertical-align: middle;
+	background-size: 100%;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+}
+
+#bg_image_inner {
+    display: block;
+    height: 0;
+    padding-top: 37.8%;
+}
+
+#bg_image_wrapper .content {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	color: #ffffff;
+	text-transform: uppercase;
+	font-family: 'PT Sans Narrow', sans-serif;
+	letter-spacing: 5px;
+	font-size: 60px;
+	font-weight: bold;
+	border: 0px solid blue;
+}
+
+.content_title {
+	margin: 70px 0 70px 0;
+	border: 0px solid red;
+}
+
+.content_title_small {
+	font-size: 20px;
+	font-family: "Open Sans", helvetica, arial;
+	font-weight: none;
+	letter-spacing: 0;
+	border: 0px solid red;
+}
+
+#view_courses_wrapper {
+	width: 220px;
+	margin: 0 auto;
+	overflow: hidden;
+	border: 0px solid red;
+}
+
+#view_courses_button { 
+	width: 220px;
+	height: 60px;
+	margin: 0 auto;
+	line-height: 56px;
+	letter-spacing: 3px;
+	font-size: 16px;
+	text-align: center;
+	color: #ffffff;
+	border: 2px solid #ffffff;
+	font-family: 'Lato', sans-serif;
+	background-color: rgba(0,0,0,0);
+    f-webkit-transition: background-color 150ms linear;
+  	-moz-transition: background-color 150ms linear;
+  	-o-transition: background-color 150ms linear;
+  	-ms-transition: background-color 150ms linear;
+  	transition: background-color 150ms linear;
+}
+
+#view_courses_button:hover {
+	background-color: rgba(0,0,0,0.5);
+}
+
+#display_login_wrapper {
+	border: 0px solid red;
+	width: 490px;
+	overflow: hidden;
+	margin: auto;
+	letter-spacing: 3px;
+	margin-top: 70px;
+}
+
+#display_login_button_tutor {
+	width: 220px;
+	height: 60px;
+	line-height: 60px;
+	font-size: 14px;
+	float: left;
+	text-align: center;
+	background-color: #26ae5a;
+    font-family: 'Lato', sans-serif;
+    border: 0px solid #ffffff;
+}
+
+a #display_login_button_tutor {
+	color: #ffffff;
+	-webkit-transition: background-color 150ms linear;
+  	-moz-transition: background-color 150ms linear;
+  	-o-transition: background-color 150ms linear;
+  	-ms-transition: background-color 150ms linear;
+  	transition: background-color 150ms linear;
+}
+
+a:hover #display_login_button_tutor {
+	background-color: #229c51;
+}
+
+#display_login_button_student {
+	width: 220px;
+	height: 60px;
+	line-height: 60px;
+	font-size: 14px;
+	float: right;
+	text-align: center;
+	background-color: #26ae5a;
+    font-family: 'Lato', sans-serif;
+    border: 0px solid red;
+}
+
+a #display_login_button_student {
+	color: #ffffff;
+	-webkit-transition: background-color 150ms linear;
+  	-moz-transition: background-color 150ms linear;
+  	-o-transition: background-color 150ms linear;
+  	-ms-transition: background-color 150ms linear;
+  	transition: background-color 150ms linear;
+}
+
+a:hover #display_login_button_student {
+	background-color: #229c51;
+}
+/* --------------------------*/

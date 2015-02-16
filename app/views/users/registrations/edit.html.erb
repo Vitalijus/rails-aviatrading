@@ -1,0 +1,159 @@
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+
+<div class="user_profile_wrapper">
+  <div class="user_profile_form_header">
+    PROFILE SETTINGS 
+  </div>
+
+  <div class="user_profile_form_wrapper">
+    <ul>
+      <li class="user_profile_form_label">
+        Organisation name<br/>
+        <span class="user_profile_label_small">Spaces and special characters are fine.</span>
+      </li>
+      <li class="user_profile_form"><%= f.text_field :organisation %></li>
+    </ul>
+
+    <ul>
+      <li class="user_profile_form_label">
+        Office address
+      </li>
+      <li class="user_profile_office_address">
+        <%= f.text_field :country, :class => 'user_form_country', :placeholder => "Country" %>
+        <%= f.text_field :state, :class => 'user_form_state', :placeholder => "State"  %> 
+        <%= f.text_field :street, :class => 'user_form_street', :placeholder => "Street" %>
+        <%= f.text_field :postal_code, :class => 'user_form_postal_code', :placeholder => "Postal code" %>
+        <%= f.text_field :city, :class => 'user_form_city', :placeholder => "City"  %>
+      </li>
+    </ul>
+
+    <ul>
+      <li class="user_profile_form_label">
+        Account email / phone
+      </li>
+      <li class="user_profile_contact">
+        <%= f.email_field :email, autofocus: false, :class => "user_form_email" %>
+        <%= f.text_field :telephone, :class => "user_form_phone", :placeholder => "Phone" %>
+      </li>
+    </ul>
+
+    <ul>
+      <li class="user_profile_form_label">
+        About<br/>
+        <span class="user_profile_label_small">Up to 1,000 characters.</span>
+      </li>
+      <li class="user_profile_form"><%= f.text_area :about, :class => "user_profile_about" %></li>
+    </ul>
+
+    <ul>
+      <li class="user_profile_form_label">
+        <%= f.label :avatar, "Profile image" %><br/>
+        <span class="user_profile_label_small">JPEG, JPG, GIF or PNG, 10MB max.</span>
+        <div class="status_avatar"></div>
+      </li>
+
+      <label class="myLabel">
+        <li>
+          <%= f.cl_image_upload(:avatar, :return_delete_token => true, :html => {:class => "avatar_upload"}) %>
+        </li>
+        <span>Add Photo</span>
+      </label>
+      
+      <li>
+        <div class="preview_avatar">
+          <%= image_tag @user.avatar_url(:avatar) %> 
+        </div>
+      </li>
+    </ul>
+
+    <ul>
+      <li class="user_profile_form_label">
+        Cover image<br/>
+        <span class="user_profile_label_small">The cover image for the top of your profile page.
+Must be at least 1600px wide and 270px tall.</span>
+        <div class="status_cover"></div>
+      </li>
+
+      <label class="myLabel">
+        <li>
+          <%= f.cl_image_upload(:cover_image, :return_delete_token => true, :html => {:class => "cover_upload"}) %>
+        </li>
+        <span>Add Photo</span>
+      </label>
+
+      <li>
+        <div class="preview_cover">
+          <%= image_tag @user.cover_image_url(:cover_small) %> 
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- ---------------- -->
+
+
+<div class="user_profile_change_password_wrapper">
+  <div class="user_profile_form_header">
+    CHANGE PASSWORD 
+  </div>
+
+  <div class="user_profile_form_wrapper">
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% end %>
+
+    <ul>
+      <li class="user_profile_form_label">
+        <%= f.label :password, "New password" %><br/>
+        <span class="user_profile_label_small">Leave blank if you don't want to change it.</span>
+      </li>
+      <li class="user_profile_form"><%= f.password_field :password, autocomplete: "off" %></li>
+    </ul>
+
+    <ul>
+      <li class="user_profile_form_label">
+        <%= f.label :password_confirmation, "New password confirmation" %><br/>
+        <span class="user_profile_label_small"></span>
+      </li>
+      <li class="user_profile_form"><%= f.password_field :password_confirmation, autocomplete: "off" %></li>
+    </ul>
+  </div>
+</div>
+
+
+<!-------------- -->
+
+
+<div class="user_profile_save_changes_wrapper">
+  <div class="user_profile_form_header">
+    SAVE ACCOUNT CHANGES 
+  </div>
+
+  <div class="user_profile_form_wrapper">
+    <ul>
+      <li class="user_profile_form_label">
+        <%= f.label :current_password %><br/>
+        <span class="user_profile_label_small">We need your current password to save your changes.</span>
+      </li>
+      <li class = "user_profile_form">
+        <%= f.password_field :current_password, autocomplete: "off" %>
+      </li>
+    </ul>
+
+    <div class="button_wrapper">
+      <%= f.submit "Save account changes", :class => "user_form_update_button"  %>
+    </div>
+
+  </div>
+</div>
+<% end %>
+
+<div class="delete_user_account_button_wrapper">
+  <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, :class => "delete_user_account_button" %>
+</div>
+
+
+

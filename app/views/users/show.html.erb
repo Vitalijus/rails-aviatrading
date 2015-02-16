@@ -1,0 +1,87 @@
+<div class="show_page_wrapper">
+	<div class="show_user_page_header">
+		<div class="show_user_page_avatar">
+			<%= image_tag @user.avatar_url(:avatar) %>
+		</div>
+
+		<div class="show_user_page_name">
+			Vitalijus Desukas
+		</div>
+
+		<div class="show_user_page_edit">
+			<% if user_signed_in? %>
+				<%= link_to 'Edit profile', edit_user_registration_path %> | 
+				<%= link_to 'Update cover image', edit_user_registration_path %>
+			<% end %>
+		</div>
+	</div>
+
+	<div class="show_page_content">
+		<div class="show_user_sidebar">
+			<% if !@user.about.blank? %>
+				<% if !@user.organisation.blank? %>
+					<div class="show_user_sidebar_header">
+						<%= @user.organisation %>
+					</div>
+				<% else %>
+					<div class="show_user_sidebar_header">
+						Information
+					</div>
+				<% end %>
+
+				<div class="show_user_sidebar_about">
+					<%= @user.about %> 
+				</div>
+			<% else %>
+				<%= link_to edit_user_registration_path do %>
+					<div class="show_user_sidebar_about_button">
+						<%= image_tag "edit.png", width: 20 %> Add info to your profile 
+					</div>
+				<% end %>
+			<% end %>
+		</div>
+
+		<div class="show_user_adverts_wrapper">
+
+			<div class="show_user_adverts_header">
+				<%= pluralize(@user.adverts.count, "Advert") %>
+			</div>
+
+			<% @user.adverts.each do |advert| %>
+				<div class="show_user_adverts">
+					<%= link_to advert do %>
+					<div class="show_user_adverts_image">
+						<% if advert.advert_image.blank? %>
+				          default pic
+				        <% else %>
+				          <%= image_tag advert.advert_image_url(:advert_image_user) %>
+				        <% end %>
+				    </div>
+
+					<div class="show_user_adverts_content">
+						<div class="show_user_adverts_make">
+							<%= advert.make %>
+
+							<div class="show_user_adverts_model">
+								<%= advert.model %>
+							</div>
+						</div>
+					<% end %>
+
+					    <div class="show_user_adverts_footer">
+							<%= advert.country %>, <%= advert.city %>
+
+							<% if user_signed_in? %>
+								<%= link_to 'Edit', edit_advert_path(advert) %>
+							<% end %>
+
+							<% if user_signed_in? %>
+								<%= link_to 'Delete', advert, method: :delete, :remote => true, :class => "delete_advert" %>
+							<% end %>
+						</div>
+					</div>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>

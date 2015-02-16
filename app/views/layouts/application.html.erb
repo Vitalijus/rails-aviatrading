@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<!-- FACEBOOK APP -->
-<html xmlns:fb="http://ogp.me/ns/fb#">
-<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# learn-language: http://ogp.me/ns/fb/chocolate-by-post#">
+<html>
+<head>
   <title>Aircraft Market</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "https://js.stripe.com/v2/", "application", "data-turbolinks-track" => true %>
@@ -27,12 +26,7 @@
   	<%= favicon_link_tag 'favicon.ico' %>
 
   <!-- GOOGLE FONTS -->
-  	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600|Alegreya+Sans+SC|Lato|Roboto|PT+Sans+Narrow' rel='stylesheet' type='text/css'>
-  	<link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
-
-  <!-- HTML5 VIDEO PLAYER -->
-  	<link href="//vjs.zencdn.net/4.10.0/video-js.css" rel="stylesheet">
-	<script src="//vjs.zencdn.net/4.10.0/video.js"></script>
+  	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600|Alegreya+Sans+SC|Lato|Roboto|PT+Sans+Narrow|PT+Sans' rel='stylesheet' type='text/css'>
 
 	<!-- required for page to scale properly inside any screen size, particularly in the mobile viewport. -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> 
@@ -52,112 +46,18 @@
 	});
 </script>
 
-<!-- HEADER MENU WHEN SMALL SCREEN -->
-<script>
-$(function() {  
-    var pull        = $('#pull');  
-        menu        = $('nav ul');  
-        menuHeight  = menu.height();  
-  
-    $(pull).on('click', function(e) {  
-        e.preventDefault();  
-        menu.slideToggle();  
-    });  
-}); 
+<div class="authentication_shadow"></div>
+<%= render "layouts/auth_form" %>
 
-$(window).resize(function(){  
-    var w = $(window).width();  
-    if(w > 320 && menu.is(':hidden')) {  
-        menu.removeAttr('style');  
-    }  
-});   
-</script>
+<%= render "layouts/header" %>
 
-<header>
-	<div id="header_wrapper">
-			<div class="header_navigation">  
-
-				<%= link_to root_url, data: { no_turbolink: true } do %>
-					<div class="webpage_logo">
-						<%= image_tag "propeller.png", width: 60 %>
-					</div>
-
-					<div class="webpage_title">
-						AEROPOLY
-					</div>
-				<% end %>
-
-			    <ul>  
-		        	<%= link_to new_advert_path do %>
-						<li><span class="free_advert_wrapper">FREE ADVERTISE</span></li>
-					<% end %>
-
-
-					<%= link_to new_contact_path do %>
-						
-						<li class="header_contact_icon"><%= image_tag "message.png", width: 25, :class => "svg contact_icon" %></li>
-					<% end %>	
-
-					<li>
-						<div class="search_bar_open_button">
-							<%= image_tag "search.png" %>
-						</div>
-					</li>
-			    </ul>    
-			</div> 
-	</div>
-</header>
-
-<div class="slide_menu">
-
-	<div class="slide_menu_header">
-		Find your aircraft
-	</div>
-
-	<div class="slide_menu_search_wrapper">
-
-		<div class="search_bar_close_button">
-			<%= image_tag "search_hide.png", width: 40 %>
-		</div>
-
-		<%= search_form_for @q do |f| %>
-		    <ul>
-		      <li><%= f.text_field :make_cont, :placeholder => "Manufacturer" %></li>
-
-		      <li><%= f.text_field :model_cont, :placeholder => "Model" %></li>
-
-		      <li>
-		      	<div class="dropdown_list">
-		      		<%= f.select :aircraft_type_cont, ['Cessna', "Airbus"], :prompt => 'Aircraft type' %>
-		      	</div>
-		      </li>
-
-		      <li>
-		      	<div class="dropdown_list">
-		      		<%= f.select :aircraft_usage_cont, ['Cessna', "Airbus"], :prompt => 'Aircraft usage' %>
-		      	</div>
-		     </li>
-
-		      <li>
-		      	<div class="dropdown_list">
-		      		<%= f.select :country_cont, ['Cessna', "Airbus"], :prompt => 'Country' %>
-		      	</div>
-		     </li>
-		      
-		      <li><%= f.submit :class => "search_button" %></li>
-		    </ul>
-		<% end %>
-	</div>
-</div>
-
-<div class="screen_shadow">
-</div>
+<%= render "layouts/sidebar_search" %>
 
 <%= yield %>
 
 	<div class="footer">
 		<div class="footer_content">
-			© 2014 LINGONAS - HANDCRAFTED IN MUNICH
+			© 2015 AEROPOLY
 		</div>
     </div>
 
@@ -170,14 +70,21 @@ $(window).resize(function(){
     <script src="/assets/new_advert_slider.js"></script>
 
     <!-- SVG COLOR CHANGER --> 
-    <script src="/assets/sidebar_search_slider.js"></script>
+    <script src="/assets/sidebar_search.js"></script>
+
+    <!-- AUTHENTICATION FORM IN HEADER  
+    <script src="/assets/authentication_form.js"></script>-->
 
    <!-- MASONRY --> 
    <script src="/assets/masonry/masonry.pkgd.min.js"></script>
 
-   <script>
+    <script>
    		$(document).ready(function(){
    			var $container = $('#masonry-container');
+   			var $box = $('.box');
+   			var $digg_pagination = $('#digg_pagination');
+   			var $footer = $('.footer');
+   			$box.add($digg_pagination).add($footer).css('display', 'visible').fadeIn(200);
    				// initialize
    			$container.masonry({
    				// options

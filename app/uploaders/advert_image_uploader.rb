@@ -6,11 +6,15 @@ class AdvertImageUploader < CarrierWave::Uploader::Base
   process :tags => ['advert_image']
 
   version :advert_image do
-     process :resize_to_fill => [400, 250]
+     process :resize_to_fill => [195, 110]
   end
 
   version :advert_image_big do
      process :resize_to_fill => [960, 300]
+  end
+
+  version :advert_image_user do
+     process :resize_to_fill => [200, 125]
   end
 
   def extension_white_list

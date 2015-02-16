@@ -1,5 +1,12 @@
 class AdvertsController < ApplicationController
   before_action :set_advert, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show, :new, :create, :home]
+
+
+  def home
+    @helicopters = Advert.where("aircraft_type = 'Helicopter'").limit(4)
+    @jets = Advert.where("aircraft_type = 'Jet'").limit(5)
+  end
 
   # GET /adverts
   # GET /adverts.json
@@ -35,6 +42,8 @@ class AdvertsController < ApplicationController
   def create
     @advert = Advert.new(advert_params)
 
+    current_user.adverts << @advert
+
     respond_to do |format|
       if @advert.save
         format.html { redirect_to @advert, notice: 'Advert was successfully created.' }
@@ -67,6 +76,7 @@ class AdvertsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to adverts_url }
       format.json { head :no_content }
+      format.js   { render layout: false}
     end
   end
 
@@ -86,6 +96,7 @@ class AdvertsController < ApplicationController
                                      :propeller_hours, :serial_number, :registration_number,
                                      :aircraft_hours, :landings, :nearest_airport, :aircraft_status,
                                      :last_inspection, :eu_vat, :price_on_request, :airport_code,
-                                     :number_of_passengers, :aircraft_usage, :phone)
+                                     :number_of_passengers, :aircraft_usage, :phone, :user_id, 
+                                     :document)
     end
 end

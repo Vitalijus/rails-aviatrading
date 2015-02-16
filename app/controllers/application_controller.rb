@@ -13,12 +13,12 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:account_update) << [:name, :surname, :avatar, :native_language, :iteach, 
-    													:ispeak, :age, :location, :time_zone, :about_me, :status,
-                              :paypal_email]
-    devise_parameter_sanitizer.for(:sign_up) << [:name, :surname, :terms_conditions, :cv,
-                                                :language_proficiency_proof, :language_proficiency_proof2,
-                                                :language_proficiency_proof3, :public_link]
+    devise_parameter_sanitizer.for(:account_update) << [:avatar, :about, :organisation, :street, :country,
+                                                        :city, :state, :telephone, :postal_code, 
+                                                        :cover_image]
+    #devise_parameter_sanitizer.for(:sign_up) << [:name, :surname, :terms_conditions, :cv,
+    #                                            :language_proficiency_proof, :language_proficiency_proof2,
+    #                                            :language_proficiency_proof3, :public_link]
   end
 
 end

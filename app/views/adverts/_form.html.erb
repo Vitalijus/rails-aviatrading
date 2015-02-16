@@ -44,255 +44,269 @@
 
 <div class="new_advert_form_wrapper">
 
-  <div class="new_advert_header">
-    Advertise your aircraft for free
+  <div class="new_advert_header_wrapper">
+    <div class="new_advert_header">
+      Advertise Your Aircraft For Free
+        <div class="new_advert_header_small">
+          Aeropoly is the best platform to sell your aircraft.
+        </div>
+    </div>
   </div>
 
   <div class="new_advert_nav">
     <ul class="tabs_links">
-      <li class="active"><a href="#tab1">Required fields*</a></li>
-      <li><a href="#tab2">Aircraft information</a></li>
-      <li><a href="#tab3">Engine / Propeller</a></li>
-      <li><a href="#tab4">Maintenance & inspection</a></li>
-      <li><a href="#tab5">Details</a></li>
-      <li><a href="#tab6">Advertiser details</a></li>
-      <li><a href="#tab7">Images / PDF</a><div class="triangle_nav">
-      <%= image_tag "triangle_white.png", width: 35 %>
-    </div></li>
+      <li class="active"><a href="#tab1">Aircraft information</a></li>
+      <li><a href="#tab2">Advertisement details</a></li>
+      <li><a href="#tab3">Images / PDF</a></li>
     </ul>
   </div>
 
 
-<!-- Required fields -->
 <div class="new_advert_wrapper">
-
   <div id="tab1" class="new_form_wrapper active">
+    <div class="new_form_border_helper">
+
+    <div class="new_form_wrapper_header">
+      General information
+    </div>
+
     <ul>
-        <li class="form_label">Manufacturer/Model:</li>
-        <li><%= f.text_field :make %><span class="advert_form_label_plus">Manufacturer<span class="required_fields"> *</span></span></li>
-        <li><%= f.text_field :model %><span class="advert_form_label_plus">Model<span class="required_fields"> *</span></span></li>
+        <li class="form_label">
+          Manufacturer<span class="required_fields">*</span> / Model<span class="required_fields">*</span><br/>
+          <span class="form_label_small">Spaces and special characters are fine.</span>
+        </li>
+
+        <li class="new_form_make_model">
+          <%= f.text_field :make, :class => "new_form_manufacturer", :placeholder => "Manufacturer" %>
+          <%= f.text_field :model, :class => "new_form_model", :placeholder => "Model" %>
+        </li>
     </ul>
 
     <ul>
-      <span class="new_form_dropdown_list">
-        <li class="form_label">Aircraft Configuration:</li>
-        <li><%= f.select :aircraft_type, ["Airships/Blimps", "Gliders/Sailplanes", "Helicopters", "Jet", "Light Sport", "Piston", "TurboProps", "Ultralight", "Hot air balloon", "Other"], :prompt => ''  %><span class="advert_form_label_plus">Aircraft type<span class="required_fields"> *</span></span></li>
-      </span>
-      <span class="new_form_dropdown_list">
-        <li><%= f.select :aircraft_usage, ["Aerobatic", "Aerial survey", "Agriculture", "Amphibian/Float", "Antique/Classic", "Business/VIP", "Experimental", "Homebuilt", "EMS/SAR/Fire/Police", "Cargo/Freighter", "Passenger", "Warbird/Military", "Other"], :prompt => ''  %><span class="advert_form_label_plus">Aicraft usage<span class="required_fields"> *</span></span></li>
-      </span>
-    </ul>
+      <li class="form_label">
+        Aircraft type<span class="required_fields">*</span> / usage<span class="required_fields">*</span><br/>
+        <span class="form_label_small">Spaces</span>
+      </li>
 
-    <ul>
-      <span class="new_form_dropdown_list">
-        <li class="form_label">Aircraft Location:</li>
-        <li><%= f.select :country, ["Afghanistan", "Aland Islands", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia, Plurinational State of", "Bosnia and Herzegovina", "Botswana", "Bouvet Island", "Brazil", "British Indian Ocean Territory", "Brunei Darussalam", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Cocos (Keeling) Islands", "Colombia", "Comoros", "Congo", "Congo, the Democratic Republic of the", "Cook Islands", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Cyprus","Czech Republic","Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Falkland Islands (Malvinas)", "Faroe Islands", "Fiji", "Finland", "France", "French Guiana", "French Polynesia", "French Southern Territories", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard Island and McDonald Islands", "Holy See (Vatican City State)", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran, Islamic Republic of", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Japan", "Jersey", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Korea, Democratic People's Republic of", "Korea, Republic of", "Kuwait", "Kyrgyzstan", "Lao People's Democratic Republic", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libyan Arab Jamahiriya", "Liechtenstein", "Lithuania", "Luxembourg", "Macao", "Macedonia, the former Yugoslav Republic of", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mexico", "Micronesia, Federated States of", "Moldova, Republic of", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "Netherlands Antilles", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "Northern Mariana Islands", "Norway", "Oman", "Pakistan", "Palau", "Palestinian Territory, Occupied", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Pitcairn", "Poland", "Portugal", "Puerto Rico", "Qatar", "Reunion  Réunion", "Romania", "Russian Federation", "Rwanda", "Saint Barthélemy", "Saint Helena", "Saint Kitts and Nevis", "Saint Lucia", "Saint Martin (French part)", "Saint Pierre and Miquelon", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia and the South Sandwich Islands", "Spain", "Sri Lanka", "Sudan", "Suriname", "Svalbard and Jan Mayen", "Swaziland", "Sweden", "Switzerland", "Syrian Arab Republic", "Taiwan, Province of China", "Tajikistan", "Tanzania, United Republic of", "Thailand", "Timor-Leste", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "United States Minor Outlying, Islands", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela, Bolivarian Republic of", "Viet Nam", "Virgin Islands, British", "Virgin Islands, U.S.", "Wallis and Futuna", "Western Sahara", "Yemen", "Zambia","Zimbabwe"], :prompt => ''  %><span class="advert_form_label_plus">Country<span class="required_fields"> *</span></span></li>
-      </span>
-        <li><%= f.text_field :city, :placeholder => "" %><span class="advert_form_label_plus">City</span></li>
-    </ul>
-
-    <ul>
-        <li class="form_label"></li>
-        <li><%= f.text_field :nearest_airport %><span class="advert_form_label_plus">Airport name</span></li>
-        <li><%= f.text_field :airport_code %><span class="advert_form_label_plus">Airport code</span></li>
-    </ul>
-
-    <ul>
-        <li class="form_label">Aircraft Details</li>
-        <li><%= f.text_field :serial_number %><span class="advert_form_label_plus">Aircraft serial number</span></li>
-        <li><%= f.text_field :registration_number %><span class="advert_form_label_plus">Aircraft registration number</span></li>
-    </ul>
-
-    <ul>
-        <li class="form_label"></li>
-        <li class="advert_aircraft_hours_field"><%= f.text_field :aircraft_hours %><span class="advert_form_label_plus">Aircraft hours</span></li>
-        <li class="advert_landings_field"><%= f.text_field :landings %><span class="advert_form_label_plus">Number of landings</span></li>
-        <li class="advert_number_of_passengers_field"><%= f.text_field :number_of_passengers %><span class="advert_form_label_plus">Number of passengers</span></li>
-    </ul>
-
-    <ul>
-        <li class="form_label"></li>
-        <!--<span class="new_form_dropdown_list">
-          <li><%= f.select :aircraft_usage, ["New", "Used"], :prompt => ''  %><span class="advert_form_label_plus">Aicraft status</span></li>
-        </span>-->
+      <li class="new_form_type_usage">
         <span class="new_form_dropdown_list">
-          <li><%= f.select :year, ["2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", '1994',], :prompt => '' %><span class="advert_form_label_plus">Year built</span></li>
+          <%= f.select :aircraft_type, ["Airship / Blimp", "Glider / Sailplane", "Jet", "Helicopter", "Light sport", "Single piston prop", "Multi piston prop", "TurboProp", "Ultralight", "Hot air balloon", "Other"], :prompt => 'Aircraft type'  %>
         </span>
+
+        <span class="new_form_dropdown_list usage new_form_aircraft_usage">
+          <%= f.select :aircraft_usage, ["Aerobatic", "Aerial survey", "Agriculture", "Amphibian/Float", "Antique/Classic", "Business/VIP", "Homebuilt", "EMS/SAR/Fire/Police", "Cargo/Freighter", "Passenger", "Warbird/Military", "Other"], :prompt => 'Aircraft usage'  %>
+        </span>
+      </li>
     </ul>
 
     <ul>
-        <li class="form_label"></li>
-        <li><%= f.date_select :last_inspection, {:order => [:day, :month, :year], start_year: Date.today.year, end_year: Date.today.year+1} %><span class="advert_form_label_plus">Last inspection</span></li>
+      <li class="form_label">Aircraft location</li>
+      <li class="new_form_aircraft_location">
+        <span class="new_form_dropdown_list">
+          <%= f.select :country, ["Afghanistan", "Aland Islands", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia, Plurinational State of", "Bosnia and Herzegovina", "Botswana", "Bouvet Island", "Brazil", "British Indian Ocean Territory", "Brunei Darussalam", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Cocos (Keeling) Islands", "Colombia", "Comoros", "Congo", "Congo, the Democratic Republic of the", "Cook Islands", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Cyprus","Czech Republic","Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Falkland Islands (Malvinas)", "Faroe Islands", "Fiji", "Finland", "France", "French Guiana", "French Polynesia", "French Southern Territories", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard Island and McDonald Islands", "Holy See (Vatican City State)", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran, Islamic Republic of", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Japan", "Jersey", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Korea, Democratic People's Republic of", "Korea, Republic of", "Kuwait", "Kyrgyzstan", "Lao People's Democratic Republic", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libyan Arab Jamahiriya", "Liechtenstein", "Lithuania", "Luxembourg", "Macao", "Macedonia, the former Yugoslav Republic of", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mexico", "Micronesia, Federated States of", "Moldova, Republic of", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "Netherlands Antilles", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "Northern Mariana Islands", "Norway", "Oman", "Pakistan", "Palau", "Palestinian Territory, Occupied", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Pitcairn", "Poland", "Portugal", "Puerto Rico", "Qatar", "Reunion  Réunion", "Romania", "Russian Federation", "Rwanda", "Saint Barthélemy", "Saint Helena", "Saint Kitts and Nevis", "Saint Lucia", "Saint Martin (French part)", "Saint Pierre and Miquelon", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia and the South Sandwich Islands", "Spain", "Sri Lanka", "Sudan", "Suriname", "Svalbard and Jan Mayen", "Swaziland", "Sweden", "Switzerland", "Syrian Arab Republic", "Taiwan, Province of China", "Tajikistan", "Tanzania, United Republic of", "Thailand", "Timor-Leste", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "United States Minor Outlying, Islands", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela, Bolivarian Republic of", "Viet Nam", "Virgin Islands, British", "Virgin Islands, U.S.", "Wallis and Futuna", "Western Sahara", "Yemen", "Zambia","Zimbabwe"], :prompt => 'Country'  %>
+        </span>
+          <%= f.text_field :city, :class => "new_form_city", :placeholder => "City" %>
+          <%= f.text_field :nearest_airport, :class => "new_form_nearest_airport", :placeholder => "Airport name" %>
+          <%= f.text_field :airport_code, :class => "new_form_airport_code", :placeholder => "Airport code" %>
+      </li>
+    </ul>
+
+    <ul>
+        <li class="form_label">Aircraft details</li>
+        <li class="new_form_aircraft_details">
+          <%= f.text_field :serial_number, :class => "new_form_serial_number", :placeholder => "Serial number" %>
+          <%= f.text_field :registration_number, :class => "new_form_registration_number", :placeholder => "Registration number" %>
+          <span class="new_form_dropdown_list new_form_built_year">
+            <%= f.select :year, ["2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", '1994',], :prompt => 'Built year' %>
+          </span>
+          <%= f.text_field :aircraft_hours, :class => "new_form_aircraft_hours", :placeholder => "Aircraft hours" %>
+          <%= f.text_field :landings, :class => "new_form_landings", :placeholder => "Landings" %>
+          <%= f.text_field :number_of_passengers, :class => "new_form_passengers", :placeholder => "Passengers" %>
+        </li>
+    </ul>
+
+    <ul>
+        <li class="form_label">Last inspection</li>
+        <li><%= f.date_select :last_inspection, {:order => [:day, :month, :year], start_year: Date.today.year, end_year: Date.today.year+1} %>
+        </li>
     </ul>
   </div>
 <!-- ------------------ -->
 
+<div class="new_form_separator_helper">
+  <!-- separator of the categories helper -->
+</div>
 
-<!-- Aircraft information -->
-
-  <div id="tab2" class="new_form_wrapper">
-    about
+<div class="new_form_border_helper">
+  <div class="new_form_wrapper_header">
+    ENGINE / PROPELLER
   </div>
 
-<!-- ------------- -->
-
-
-<!-- Engine / Propeller -->
-
-  <div id="tab3" class="new_form_wrapper">
     <ul>
-      <li class="form_label">Engine:</li>
-      <li><%= f.number_field :number_of_engines, :placeholder => "" %><span class="advert_form_label_plus">Number of engines</span></li>
-      <span class="new_form_dropdown_list">
-        <li><%= f.select :engine_type, ['Prop', "Turbo"], :prompt => '' %><span class="advert_form_label_plus">Engine type</span></li>
-      </span>
+      <li class="form_label">Engine</li>
+      <li class="new_form_aircraft_details">
+        <%= f.number_field :number_of_engines, :class => "new_form_engines_number", :placeholder => "Engines number" %>
+
+        <span class="new_form_dropdown_list new_form_engine_type">
+          <%= f.select :engine_type, ['Prop', "Turbo"], :prompt => 'Engine type' %>
+        </span>
+
+        <%= f.text_field :engine_make, :class => "new_form_engines_make", :placeholder => "Manufacturer" %>
+        <%= f.text_field :engine_model, :class => "new_form_engines_model", :placeholder => "Model" %>
+        <%= f.number_field :engine_hours, :class => "new_form_engine_hours", :placeholder => "Engine hours" %>
+        <%= f.number_field :tbo, :class => "new_form_tbo", :placeholder => "Time between overhaul (TBO)" %>
+        <%= f.text_field :engine_power, :class => "new_form_engine_power", :placeholder => "Engine power" %>
+      </li>
     </ul>
 
     <ul>
-      <li class="form_label"></li>
-      <li><%= f.text_field :engine_make, :placeholder => "" %><span class="advert_form_label_plus">Make</span></li>
-      <li><%= f.text_field :engine_model, :placeholder => "" %><span class="advert_form_label_plus">Model</span></li>
+      <li class="form_label">Propeller</li>
+      <li class="new_form_propeller">
+        <%= f.number_field :number_of_propellers, :class => "new_form_number_of_propellers", :placeholder => "Number of propellers" %>
+        <%= f.number_field :propeller_hours, :class => "new_form_propeller_hours", :placeholder => "Propeller hours" %>
+        <%= f.text_field :propeller_make, :class => "new_form_propeller_make", :placeholder => "Propeller manufacturer" %>
+        <%= f.text_field :propeller_model, :class => "new_form_propeller_model", :placeholder => "Propeller model" %>
+      </li>
     </ul>
 
     <ul>
-      <li class="form_label"></li>
-      <li><%= f.number_field :engine_hours, :placeholder => "" %><span class="advert_form_label_plus">Engine hours</span></li>
-      <li><%= f.number_field :tbo, :placeholder => "" %><span class="advert_form_label_plus">Time Between Overhaul (TBO)</span></li>
-    </ul>
-
-    <ul>
-      <li class="form_label"></li>
-      <li><%= f.text_field :engine_power, :placeholder => "" %><span class="advert_form_label_plus">Engine power</span></li>
-    </ul>
-
-    <ul>
-      <li class="form_label">Propeller:</li>
-      <li><%= f.number_field :number_of_propellers, :placeholder => "" %><span class="advert_form_label_plus">Number of propellers</span></li>
-      <li><%= f.number_field :propeller_hours, :placeholder => "" %><span class="advert_form_label_plus">Propeller hours</span></li>
-    </ul>
-
-    <ul>
-      <li class="form_label"></li>
-      <li><%= f.number_field :propeller_make, :placeholder => "" %><span class="advert_form_label_plus">Propeller make</span></li>
-      <li><%= f.number_field :propeller_model, :placeholder => "" %><span class="advert_form_label_plus">Propeller model</span></li>
-    </ul>
-
-    <ul>
-      <li class="form_label"></li>
-      <li><%= f.text_area :engine_notes, :placeholder => "", :class => "engine_notes_text_field"%><span class="advert_form_label_plus">Extra information</span></li>
+      <li class="form_label">Extra information</li>
+      <li>
+        <%= f.text_area :engine_notes, :class => "new_form_engine_notes"%>
+      </li>
     </ul>
   </div>
+<!-- ----------- -->
 
-<!-- ------------- -->
+<div class="new_form_separator_helper">
+  <!-- separator of the categories helper -->
+</div>
 
-<!-- Maintenance -->
+<div class="new_form_border_helper">
+  <div class="new_form_wrapper_header">
+    Advertisement details
+  </div>
 
-  <div id="tab4" class="new_form_wrapper">
     <ul>
-      <li class="form_text_field_label">Avionics:</li>
-      <li><%= f.text_area :engine_notes, :placeholder => "", :class => "engine_notes_text_field"%><span class="advert_form_label_plus">Extra information</span></li>
+        <li class="form_label">
+          Avionics<br/>
+          <span class="form_label_small">Spaces and special characters are fine.</span>
+        </li>
+
+        <li class="new_form_make_model">
+          <%= f.text_area :engine_notes, :class => "new_form_engine_notes"%>
+        </li>
+    </ul>
+
+    <ul>
+        <li class="form_label">
+          Interior<br/>
+          <span class="form_label_small">Spaces and special characters are fine.</span>
+        </li>
+
+        <li class="new_form_make_model">
+          <%= f.text_area :engine_notes, :class => "new_form_engine_notes"%>
+        </li>
+    </ul>
+
+    <ul>
+        <li class="form_label">
+          Exterior<br/>
+          <span class="form_label_small">Spaces and special characters are fine.</span>
+        </li>
+
+        <li class="new_form_make_model">
+          <%= f.text_area :engine_notes, :class => "new_form_engine_notes"%>
+        </li>
+    </ul>
+
+    <ul>
+        <li class="form_label">
+          Additional information<br/>
+          <span class="form_label_small">Spaces and special characters are fine.</span>
+        </li>
+
+        <li class="new_form_make_model">
+          <%= f.text_area :engine_notes, :class => "new_form_engine_notes"%>
+        </li>
     </ul>
   </div>
+</div>
+
 <!-- ---------------- -->
 
-<!-- About aircraft --> 
+<!-- Advertisement details -->
 
-  <div id="tab5" class="new_form_wrapper">
-    <ul>
-      <li class="form_text_field_label">Avionics:</li>
-      <li><%= f.text_area :engine_notes, :placeholder => "", :class => "avionics_text_field"%><span class="advert_form_label_plus">Extra information</span></li>
-    </ul>
+  <div id="tab2" class="new_form_wrapper">
+    <div class="new_form_border_helper">
+      <ul>
+        <li class="form_label">Contact person</li>
+        <li class="new_form_contact_person">
+          <%= f.text_field :name, :placeholder => "Name", :class => "new_form_name" %>
+          <%= f.text_field :surname, :placeholder => "Surname", :class => "new_form_surname" %>
+          <%= f.text_field :email, :placeholder => "Email", :class => "new_form_email" %>
+          <%= f.text_field :phone, :placeholder => "Phone", :class => "new_form_phone" %>
+        </li>
+      </ul>
 
-    <ul>
-      <li class="form_text_field_label">Interior:</li>
-      <li><%= f.text_area :engine_notes, :placeholder => "", :class => "engine_notes_text_field"%><span class="advert_form_label_plus">Extra information</span></li>
-    </ul>
+      <ul>
+        <li class="form_label">Asking Price</li>
+        <li>
+          <%= f.number_field :price, :placeholder => "Price",  :class => "new_form_price" %>
+        <span class="new_form_dropdown_list">
+          <%= f.select :currency, ['USD', "EUR"], :prompt => 'Currency' %>
+        </span>
 
-    <ul>
-      <li class="form_text_field_label">Exterior:</li>
-      <li><%= f.text_area :engine_notes, :placeholder => "", :class => "engine_notes_text_field"%><span class="advert_form_label_plus">Extra information</span></li>
-    </ul>
+        <li class="new_advert_checkboxes_label"></li>
+        <li>Price on request</li>
+        <li class="eu_vat_paid">
+          <div class="new_advert_checkbox">
+            <%= f.check_box :price_on_request, {:id => "price_on_request"}, "mon", "" %>
+              <label for="price_on_request"></label>
+          </div>
+        </li>
 
-    <ul>
-      <li class="form_text_field_label">Additional information:</li>
-      <li><%= f.text_area :engine_notes, :placeholder => "", :class => "engine_notes_text_field"%><span class="advert_form_label_plus">Extra information</span></li>
-    </ul>
-  </div>
+        <li class="new_advert_checkboxes_label"></li>
+        <li>EU VAT paid</li>
+        <li class="eu_vat_paid">
+          <div class="new_advert_checkbox">
+            <%= f.check_box :eu_vat, {:id => "eu_vat"}, "mon", "" %>
+              <label for="eu_vat"></label>
+          </div>
+        </li>
+      </ul>
+    </div>
 
-<!-- ---------- -->
-
-<!-- Seller / price info -->
-
-  <div id="tab6" class="new_form_wrapper">
-    <ul>
-      <li class="form_label">Contact person:</li>
-      <li><%= f.text_field :name %><span class="advert_form_label_plus">Name</span></li>
-      <li><%= f.text_field :surname %><span class="advert_form_label_plus">Surname</span></li>
-    </ul>
-
-    <ul>
-      <li class="form_label"></li>
-      <li class="advert_email_field"><%= f.text_field :email %><span class="advert_form_label_plus">Email</span></li>
-      <li class="advert_phone_field"><%= f.text_field :phone %><span class="advert_form_label_plus">Phone</span></li>
-    </ul>
-
-    <ul>
-      <li class="form_label">Asking Price:</li>
-      <li><%= f.number_field :price %><span class="advert_form_label_plus">Aircraft price</span></li>
-      <span class="new_form_dropdown_list">
-        <li><%= f.select :currency, ['USD', "EUR"], :prompt => '' %><span class="advert_form_label_plus">Currency</span></li>
-      </span>
-    </ul>
-
-  <div class="new_advert_checkboxes">
-    <ul>
-      <li class="new_advert_checkboxes_label"></li>
-      <li>Price on request</li>
-      <li class="eu_vat_paid">
-        <div class="new_advert_checkbox">
-          <%= f.check_box :price_on_request, {:id => "price_on_request"}, "mon", "" %>
-            <label for="price_on_request"></label>
-        </div>
-      </li>
-    </ul>
-  </div>
-
-  <div class="new_advert_checkboxes">
-    <ul>
-      <li class="new_advert_checkboxes_label"></li>
-      <li>EU VAT paid</li>
-      <li class="eu_vat_paid">
-        <div class="new_advert_checkbox">
-          <%= f.check_box :eu_vat, {:id => "eu_vat"}, "mon", "" %>
-            <label for="eu_vat"></label>
-        </div>
-      </li>
-    </ul>
-  </div>
 </div>
 
 <!-- ------------- -->
 
 <!-- Images / PDF -->
 
-<div id="tab7" class="new_form_wrapper">
-  <div class="field">
-    <%= f.label :advert_image, "Advert Image" %><br>
-    <%= f.cl_image_upload(:advert_image, :return_delete_token => true, :html => { :multiple => true, :class => "advert_image_uploader"}) %> 
+<div id="tab3" class="new_form_wrapper">
+  <div class="new_form_border_helper">
+    <div class="field">
+      <%= f.label :advert_image, "Advert Image" %><br>
+      <%= f.cl_image_upload(:advert_image, :return_delete_token => true, :html => { :multiple => true, :class => "advert_image_uploader"}) %> 
+    </div>
+  -------------------
+    <div class="field">
+      <%= f.label :document, "PDF" %><br>
+      <%= f.file_field :document %> 
+    </div>
+    <div class="status"></div>
+    <div class="preview"></div>
+    <div class="image_public_id"></div>
   </div>
-  <div class="status"></div>
-  <div id="progress">
-    <div class="bar" style="width: 0%;"></div>
-</div>
-  <div class="preview"></div>
-  <div class="image_public_id"></div>
+
+  <div class="actions">
+    <%= f.submit "Advertise" %>
+  </div>
 </div>
 
 </div>
 </div>
-<div class="actions">
-    <%= f.submit "Advertise" %>
-  </div>
+
 <% end %>
 
 <script>
@@ -316,13 +330,9 @@
         start: function (e) {
           $(".status").text("Starting upload...");
         },
-        progressall: function (e, data) {
-        var progress = parseInt(data.loaded / data.total * 100, 10);
-        $('#progress .bar').css(
-            'width',
-            progress + '%'
-        );
-    },
+        progress: function (e, data) {
+          $(".status").text("Uploading... " + Math.round((data.loaded * 100.0) / data.total) + "%");
+        },
         fail: function (e, data) {
           $(".status").text("Upload failed");
         },

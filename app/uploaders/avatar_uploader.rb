@@ -3,7 +3,7 @@
 class AvatarUploader < CarrierWave::Uploader::Base
   include Cloudinary::CarrierWave
 
-  process :tags => ['teacher_avatar']
+  process :tags => ['user_avatar']
 
   version :avatar do
      process :resize_to_fill => [120, 120]

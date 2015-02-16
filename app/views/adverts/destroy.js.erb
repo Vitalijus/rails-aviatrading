@@ -1,0 +1,26 @@
+$('.show_user_adverts').bind('ajax:success', function() {  
+        //$(this).fadeOut(100);
+        $(this).text('ADVERT DELETED').css({'background-color': '#EFEFEF',
+        									'color': '#999999',
+        									'font-size': '12px',
+        									'text-align': 'center',
+        									'line-height': '102px',
+        									'border': '1px solid #DFE0E4'
+        								});
+});
+
+//$(".show_user_adverts").click(function(event){ 
+//    $.ajax({
+//        type: "POST",
+//        url: "/adverts/" + advert_id,
+//        dataType: "json",
+//        data: {"_method":"delete"},
+//        complete: function(){
+//            $( ".show_user_adverts" ).dialog( "close" );
+//            alert("Deleted successfully");
+//        }
+//    });
+//    event.preventDefault();
+//});
+
+//http://stackoverflow.com/questions/14924091/rails-ajax-jquery-delete-submits-a-post-request-after

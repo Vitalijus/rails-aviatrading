@@ -1,0 +1,274 @@
+<%= render "landing_image" %>
+<div class="home_wrapper">
+	<div class="home_container">
+	  <div class="home_box_header">
+	  	<ul>
+	  		<li><%= image_tag "aircraft_type/jet.png", width: 25 %></li>
+	  		<li>Jets</li>
+	  	</ul>
+	  </div>
+
+<div class="box_home">
+	<ul>
+		<% @helicopters.each do |helicopter| %>
+	
+  			<li>
+  			
+			    <%= link_to advert_path(helicopter), data: { no_turbolink: true } do %>
+			      <div class="box_image">
+
+			        <% if helicopter.advert_image.blank? %>
+			          default pic
+			        <% else %>
+			          <%= image_tag helicopter.advert_image_url(:advert_image) %>
+			        <% end %>
+
+			        <div class="box_price">
+			          <%= number_to_currency(helicopter.price, precision: 0, unit: "") %> <%= helicopter.currency %>
+			        </div>
+			      </div>
+
+			 
+		      	<div class="box_make">
+		        	<%= helicopter.make %>
+
+		        	<div class="box_model">
+		            	<%= helicopter.model %>
+		        	</div>
+		      	</div>
+			    <% end %>
+
+		      	<div class="box_footer_wrapper">
+		        	<div class="box_footer none">
+		          		<%= helicopter.country %>, <%= helicopter.city %>
+		        	</div>
+		      	</div>
+			</li>
+		<% end %>
+ 	</ul>
+</div>
+
+<div class="box_separator_helper">
+
+</div>
+
+  <div class="home_box_header">
+    <ul>
+  		<li><%= image_tag "aircraft_type/piston.png", width: 25 %></li>
+  		<li>Single piston</li>
+  	</ul>
+  </div>
+
+<div class="box_home">
+	<ul>
+		<% @helicopters.each do |helicopter| %>
+	
+  			<li>
+  			
+			    <%= link_to advert_path(helicopter), data: { no_turbolink: true } do %>
+			      <div class="box_image">
+
+			        <% if helicopter.advert_image.blank? %>
+			          default pic
+			        <% else %>
+			          <%= image_tag helicopter.advert_image_url(:advert_image) %>
+			        <% end %>
+
+			        <div class="box_price">
+			          <%= number_to_currency(helicopter.price, precision: 0, unit: "") %> <%= helicopter.currency %>
+			        </div>
+			      </div>
+
+			 
+		      	<div class="box_make">
+		        	<%= helicopter.make %>
+
+		        	<div class="box_model">
+		            	<%= helicopter.model %>
+		        	</div>
+		      	</div>
+			    <% end %>
+
+		      	<div class="box_footer_wrapper">
+		        	<div class="box_footer none">
+		          		<%= helicopter.country %>, <%= helicopter.city %>
+		        	</div>
+		      	</div>
+			</li>
+		<% end %>
+ 	</ul>
+</div>
+
+<div class="box_separator_helper">
+
+</div>
+
+  <div class="home_box_header">
+    <ul>
+  		<li><%= image_tag "aircraft_type/multi_piston.png", width: 25 %></li>
+  		<li>Multi piston</li>
+  	</ul>
+  </div>
+
+<div class="box_home">
+	<ul>
+		<% @helicopters.each do |helicopter| %>
+	
+  			<li>
+  			
+			    <%= link_to advert_path(helicopter), data: { no_turbolink: true } do %>
+			      <div class="box_image">
+
+			        <% if helicopter.advert_image.blank? %>
+			          default pic
+			        <% else %>
+			          <%= image_tag helicopter.advert_image_url(:advert_image) %>
+			        <% end %>
+
+			        <div class="box_price">
+			          <%= number_to_currency(helicopter.price, precision: 0, unit: "") %> <%= helicopter.currency %>
+			        </div>
+			      </div>
+
+			 
+		      	<div class="box_make">
+		        	<%= helicopter.make %>
+
+		        	<div class="box_model">
+		            	<%= helicopter.model %>
+		        	</div>
+		      	</div>
+			    <% end %>
+
+		      	<div class="box_footer_wrapper">
+		        	<div class="box_footer none">
+		          		<%= helicopter.country %>, <%= helicopter.city %>
+		        	</div>
+		      	</div>
+			</li>
+		<% end %>
+ 	</ul>
+</div>
+
+
+<div class="box_separator_helper">
+
+</div>
+
+  <div class="home_box_header">
+    <ul>
+  		<li><%= image_tag "aircraft_type/turbo_prop.png", width: 25 %></li>
+  		<li>TurboProp</li>
+  	</ul>
+  </div>
+
+<div class="box_home">
+	<ul>
+		<% @helicopters.each do |helicopter| %>
+	
+  			<li>
+  			
+			    <%= link_to advert_path(helicopter), data: { no_turbolink: true } do %>
+			      <div class="box_image">
+
+			        <% if helicopter.advert_image.blank? %>
+			          default pic
+			        <% else %>
+			          <%= image_tag helicopter.advert_image_url(:advert_image) %>
+			        <% end %>
+
+			        <div class="box_price">
+			          <%= number_to_currency(helicopter.price, precision: 0, unit: "") %> <%= helicopter.currency %>
+			        </div>
+			      </div>
+
+			 
+		      	<div class="box_make">
+		        	<%= helicopter.make %>
+
+		        	<div class="box_model">
+		            	<%= helicopter.model %>
+		        	</div>
+		      	</div>
+			    <% end %>
+
+		      	<div class="box_footer_wrapper">
+		        	<div class="box_footer none">
+		          		<%= helicopter.country %>, <%= helicopter.city %>
+		        	</div>
+		      	</div>
+			</li>
+		<% end %>
+ 	</ul>
+</div>
+
+
+<div class="box_separator_helper">
+
+</div>
+
+  <div class="home_box_header">
+    <ul>
+  		<li><%= image_tag "aircraft_type/helicopter.png", width: 25 %></li>
+  		<li>Helicopters</li>
+  	</ul> 
+  </div>
+
+<div class="box_home">
+	<ul>
+		<% @helicopters.each do |helicopter| %>
+	
+  			<li>
+  			
+			    <%= link_to advert_path(helicopter), data: { no_turbolink: true } do %>
+			      <div class="box_image">
+
+			        <% if helicopter.advert_image.blank? %>
+			          default pic
+			        <% else %>
+			          <%= image_tag helicopter.advert_image_url(:advert_image) %>
+			        <% end %>
+
+			        <div class="box_price">
+			          <%= number_to_currency(helicopter.price, precision: 0, unit: "") %> <%= helicopter.currency %>
+			        </div>
+			      </div>
+
+			 
+		      	<div class="box_make">
+		        	<%= helicopter.make %>
+
+		        	<div class="box_model">
+		            	<%= helicopter.model %>
+		        	</div>
+		      	</div>
+			    <% end %>
+
+		      	<div class="box_footer_wrapper">
+		        	<div class="box_footer none">
+		          		<%= helicopter.country %>, <%= helicopter.city %>
+		        	</div>
+		      	</div>
+			</li>
+		<% end %>
+ 	</ul>
+</div>
+</div>
+
+<div class="home_sidebar">
+
+</div>
+
+<div class="home_sidebar">
+
+</div>
+
+<div class="home_sidebar">
+
+</div>
+
+<div class="home_sidebar">
+
+</div>
+	
+</div>
