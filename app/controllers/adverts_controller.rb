@@ -4,8 +4,12 @@ class AdvertsController < ApplicationController
 
 
   def home
+    @jets = Advert.where("aircraft_type = 'Jet'").limit(4)
+    @single_pistons = Advert.where("aircraft_type = 'Single piston'").limit(4)
+    @multi_pistons = Advert.where("aircraft_type = 'Multi piston'").limit(4)
+    @turbo_props = Advert.where("aircraft_type = 'TurboProp'").limit(4)
     @helicopters = Advert.where("aircraft_type = 'Helicopter'").limit(4)
-    @jets = Advert.where("aircraft_type = 'Jet'").limit(5)
+    @latest_adverts = Advert.order("created_at DESC").limit(3)
   end
 
   # GET /adverts

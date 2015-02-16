@@ -17,6 +17,10 @@ class AdvertImageUploader < CarrierWave::Uploader::Base
      process :resize_to_fill => [200, 125]
   end
 
+  version :latest_adverts do
+     process :resize_to_fill => [100, 55]
+  end
+
   def extension_white_list
     %w(jpg jpeg gif png)
   end

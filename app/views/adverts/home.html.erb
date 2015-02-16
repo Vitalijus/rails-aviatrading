@@ -10,37 +10,37 @@
 
 <div class="box_home">
 	<ul>
-		<% @helicopters.each do |helicopter| %>
+		<% @jets.each do |jet| %>
 	
   			<li>
   			
-			    <%= link_to advert_path(helicopter), data: { no_turbolink: true } do %>
+			    <%= link_to advert_path(jet), data: { no_turbolink: true } do %>
 			      <div class="box_image">
 
-			        <% if helicopter.advert_image.blank? %>
+			        <% if jet.advert_image.blank? %>
 			          default pic
 			        <% else %>
-			          <%= image_tag helicopter.advert_image_url(:advert_image) %>
+			          <%= image_tag jet.advert_image_url(:advert_image) %>
 			        <% end %>
 
 			        <div class="box_price">
-			          <%= number_to_currency(helicopter.price, precision: 0, unit: "") %> <%= helicopter.currency %>
+			          <%= number_to_currency(jet.price, precision: 0, unit: "") %> <%= jet.currency %>
 			        </div>
 			      </div>
 
 			 
 		      	<div class="box_make">
-		        	<%= helicopter.make %>
+		        	<%= jet.make %>
 
 		        	<div class="box_model">
-		            	<%= helicopter.model %>
+		            	<%= jet.model %>
 		        	</div>
 		      	</div>
 			    <% end %>
 
 		      	<div class="box_footer_wrapper">
 		        	<div class="box_footer none">
-		          		<%= helicopter.country %>, <%= helicopter.city %>
+		          		<%= jet.country %>, <%= jet.city %>
 		        	</div>
 		      	</div>
 			</li>
@@ -61,37 +61,37 @@
 
 <div class="box_home">
 	<ul>
-		<% @helicopters.each do |helicopter| %>
+		<% @single_pistons.each do |single_piston| %>
 	
   			<li>
   			
-			    <%= link_to advert_path(helicopter), data: { no_turbolink: true } do %>
+			    <%= link_to advert_path(single_piston), data: { no_turbolink: true } do %>
 			      <div class="box_image">
 
-			        <% if helicopter.advert_image.blank? %>
+			        <% if single_piston.advert_image.blank? %>
 			          default pic
 			        <% else %>
-			          <%= image_tag helicopter.advert_image_url(:advert_image) %>
+			          <%= image_tag single_piston.advert_image_url(:advert_image) %>
 			        <% end %>
 
 			        <div class="box_price">
-			          <%= number_to_currency(helicopter.price, precision: 0, unit: "") %> <%= helicopter.currency %>
+			          <%= number_to_currency(single_piston.price, precision: 0, unit: "") %> <%= single_piston.currency %>
 			        </div>
 			      </div>
 
 			 
 		      	<div class="box_make">
-		        	<%= helicopter.make %>
+		        	<%= single_piston.make %>
 
 		        	<div class="box_model">
-		            	<%= helicopter.model %>
+		            	<%= single_piston.model %>
 		        	</div>
 		      	</div>
 			    <% end %>
 
 		      	<div class="box_footer_wrapper">
 		        	<div class="box_footer none">
-		          		<%= helicopter.country %>, <%= helicopter.city %>
+		          		<%= single_piston.country %>, <%= single_piston.city %>
 		        	</div>
 		      	</div>
 			</li>
@@ -112,37 +112,37 @@
 
 <div class="box_home">
 	<ul>
-		<% @helicopters.each do |helicopter| %>
+		<% @multi_pistons.each do |multi_piston| %>
 	
   			<li>
   			
-			    <%= link_to advert_path(helicopter), data: { no_turbolink: true } do %>
+			    <%= link_to advert_path(multi_piston), data: { no_turbolink: true } do %>
 			      <div class="box_image">
 
-			        <% if helicopter.advert_image.blank? %>
+			        <% if multi_piston.advert_image.blank? %>
 			          default pic
 			        <% else %>
-			          <%= image_tag helicopter.advert_image_url(:advert_image) %>
+			          <%= image_tag multi_piston.advert_image_url(:advert_image) %>
 			        <% end %>
 
 			        <div class="box_price">
-			          <%= number_to_currency(helicopter.price, precision: 0, unit: "") %> <%= helicopter.currency %>
+			          <%= number_to_currency(multi_piston.price, precision: 0, unit: "") %> <%= multi_piston.currency %>
 			        </div>
 			      </div>
 
 			 
 		      	<div class="box_make">
-		        	<%= helicopter.make %>
+		        	<%= multi_piston.make %>
 
 		        	<div class="box_model">
-		            	<%= helicopter.model %>
+		            	<%= multi_piston.model %>
 		        	</div>
 		      	</div>
 			    <% end %>
 
 		      	<div class="box_footer_wrapper">
 		        	<div class="box_footer none">
-		          		<%= helicopter.country %>, <%= helicopter.city %>
+		          		<%= multi_piston.country %>, <%= multi_piston.city %>
 		        	</div>
 		      	</div>
 			</li>
@@ -164,37 +164,37 @@
 
 <div class="box_home">
 	<ul>
-		<% @helicopters.each do |helicopter| %>
+		<% @turbo_props.each do |turbo_prop| %>
 	
   			<li>
   			
-			    <%= link_to advert_path(helicopter), data: { no_turbolink: true } do %>
+			    <%= link_to advert_path(turbo_prop), data: { no_turbolink: true } do %>
 			      <div class="box_image">
 
-			        <% if helicopter.advert_image.blank? %>
+			        <% if turbo_prop.advert_image.blank? %>
 			          default pic
 			        <% else %>
-			          <%= image_tag helicopter.advert_image_url(:advert_image) %>
+			          <%= image_tag turbo_prop.advert_image_url(:advert_image) %>
 			        <% end %>
 
 			        <div class="box_price">
-			          <%= number_to_currency(helicopter.price, precision: 0, unit: "") %> <%= helicopter.currency %>
+			          <%= number_to_currency(turbo_prop.price, precision: 0, unit: "") %> <%= turbo_prop.currency %>
 			        </div>
 			      </div>
 
 			 
 		      	<div class="box_make">
-		        	<%= helicopter.make %>
+		        	<%= turbo_prop.make %>
 
 		        	<div class="box_model">
-		            	<%= helicopter.model %>
+		            	<%= turbo_prop.model %>
 		        	</div>
 		      	</div>
 			    <% end %>
 
 		      	<div class="box_footer_wrapper">
 		        	<div class="box_footer none">
-		          		<%= helicopter.country %>, <%= helicopter.city %>
+		          		<%= turbo_prop.country %>, <%= turbo_prop.city %>
 		        	</div>
 		      	</div>
 			</li>
@@ -256,11 +256,48 @@
 </div>
 
 <div class="home_sidebar">
+	<div class="home_sidebar_header">
+		Latest adverts
+	</div>
 
+	<div class="home_sidebar_content">
+		<ul>
+			<% @latest_adverts.each do |latest_advert| %>
+				<li>
+					<%= link_to advert_path(latest_advert), data: { no_turbolink: true } do %> 
+						<div class="home_sidebar_img">
+							<%= image_tag latest_advert.advert_image_url(:latest_adverts) %>
+
+							<div class="home_sidebar_price">
+								<%= number_to_currency(latest_advert.price, precision: 0, unit: "") %> <%= latest_advert.currency %>
+							</div>
+						</div>
+
+					
+						<div class="home_sidebar_title">
+							<div class="home_sidebar_make">
+								<%= latest_advert.make %>
+
+								<div class="home_sidebar_model">
+									<%= latest_advert.model %>
+								</div>
+							</div>
+
+							<div class="home_sidebar_location">
+								<%= latest_advert.country %><br/><%= latest_advert.city %>
+							</div>
+						</div>
+					<% end %>
+				</li>
+			<% end %>
+		</ul>
+	</div>
 </div>
 
 <div class="home_sidebar">
-
+	<div class="home_sidebar_header">
+		Adverts
+	</div>
 </div>
 
 <div class="home_sidebar">
