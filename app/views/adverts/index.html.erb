@@ -13,7 +13,9 @@
         <% if advert.advert_image.blank? %>
           default pic
         <% else %>
-          <%= image_tag advert.advert_image_url(:advert_image) %>
+          <% advert.photos.each do |photo| %>
+            <%= image_tag photo.advert_image_url(:advert_image) %>
+          <% end %>
         <% end %>
 
         <div class="box_price">

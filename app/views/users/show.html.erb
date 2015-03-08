@@ -54,7 +54,9 @@
 						<% if advert.advert_image.blank? %>
 				          default pic
 				        <% else %>
-				          <%= image_tag advert.advert_image_url(:advert_image_user) %>
+					        <% advert.photos.each do |photo| %>
+					          <%= image_tag photo.image_url(:advert_image_user) %>
+					        <% end %>
 				        <% end %>
 				    </div>
 

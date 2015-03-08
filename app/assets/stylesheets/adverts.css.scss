@@ -2,6 +2,236 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/* SUBSCRIPTION PLAN */
+
+.plan_banner {
+	width: 960px;
+	height: 430px;
+	margin: 80px auto;
+	padding-top: 50px;
+	text-align: center;
+	background-color: #fff;
+	font-size: 45px;
+	font-family: "Open Sans", helvetica, arial;
+	border-bottom: 1px solid #DFE0E4;
+}
+
+.plan_small_banner_text {
+	font-size: 20px;
+}
+
+.plan_wrapper {
+	width: 820px;
+	margin: -283px auto;
+	margin-bottom: 40px;
+	border: 0px solid red;
+}
+
+.plan_basic {
+	width: 370px;
+	margin-right: 20px;
+	display: inline-block;
+	border: 1px solid #e8e9ec;
+}
+
+.plan_premium {
+	width: 370px;
+	float: right;
+	display: inline-block;
+	border: 1px solid #e8e9ec;
+}
+
+.plan_basic_header,
+.plan_premium_header {
+	background-color: #EDF2F6;
+	position: relative;
+	border-bottom: 0px solid #e8e9ec;
+}
+
+.plan_basic_header h3,
+.plan_premium_header h3 {
+	position: absolute;
+	top: -25px;
+	right: 85px;
+	text-align: center;
+	width: 200px;
+	height: 50px;
+	line-height: 48px;
+	color: #fff;
+	font-family: "Open Sans", helvetica, arial;
+	font-size: 16px;
+	text-transform: uppercase;
+	background-color: #7ab0d6;
+	border: 1px solid #e8e9ec;
+}
+
+/*.plan_free_month {
+	position: absolute;
+	top: -25px;
+	right: 100px;
+	text-align: center;
+	width: 200px;
+	height: 50px;
+	line-height: 50px;
+	color: #fff;
+	font-family: 'PT Sans', sans-serif;
+	background-color: #F16164;
+	border: 1px solid #DFE0E4;
+}*/
+
+.plan_for_whom {
+	font-size: 17px;
+	font-family: "Open Sans", helvetica, arial;
+	font-weight: bold;
+	text-align: center;
+	padding-top: 50px;
+	margin-bottom: -5px;
+	color: #599CCC;
+	border: 0px solid red;
+}
+
+.plan_price {
+	padding-left: 40px;
+	text-align: center;
+	color: #599CCC;
+	font-family: 'PT Sans', sans-serif;
+	position: relative;
+}
+
+.plan_currency {
+	font-size: 28px;
+	vertical-align: 17px;
+	border: 0px solid red;
+}
+
+.plan_amount {
+	font-size: 55px;
+}
+
+.plan_month {
+	font-size: 18px;
+}
+
+.plan_old_price {
+	position: absolute;
+	top: 14px;
+	right: 63px;
+	font-size: 18px;
+	text-decoration: line-through;
+}
+
+.plan_advantages ul {
+	padding: 15px 20px 25px 20px;
+	text-align: center;
+}
+
+.plan_advantages li {
+	text-align: center;
+	display: inline-block;
+	font-family: 'PT Sans', sans-serif;
+	text-transform: uppercase;
+	font-size: 12px;
+	color: #8e8e8e;
+	border: 0px solid red;
+}
+
+a .plan_subscribe_link {
+	height: 50px;
+	background-color: #F16164;
+	line-height: 50px;
+	text-align: center;
+	font-weight: bold;
+	color: #fff;
+	font-family: 'PT Sans', sans-serif;
+	border: 0px solid red;
+
+	-webkit-transition: background-color 150ms linear;
+  	-moz-transition: background-color 150ms linear;
+  	-o-transition: background-color 150ms linear;
+  	-ms-transition: background-color 150ms linear;
+  	transition: background-color 150ms linear;
+}
+
+a:hover .plan_subscribe_link {
+	background-color: #F05053;
+}
+
+.plan_benefits ul {
+	padding-top: 10px;
+	background-color: #fff;
+	font-family: "Open Sans", helvetica, arial;
+}
+
+.plan_benefits li {
+	text-align: center;
+	font-size: 13px;
+	color: #666;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding: 20px 0 20px 0;
+	border-bottom: 1px solid #e8e9ec;
+}
+
+.plan_benefits li:last-child { 
+	border-bottom:0px; 
+}
+
+/*-----------------*/
+
+/* triangle */
+
+.tri-down {
+
+    /* Styling block element, not required */
+    position: relative;
+    margin-bottom: 0em;
+    border-bottom: 1px solid #e8e9ec;
+    background: #EDF2F6;
+  }
+
+  /* Required for Down Triangle */
+  .tri-down:before, .tri-down:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent;
+    border-bottom: 0;
+  }
+
+  /* Stroke */
+  .tri-down:before {
+    bottom: -16px;
+    left: 170px;
+
+    /* If 1px darken stroke slightly */
+    border-top-color: #e8e9ec;
+    border-width: 16px;
+  }
+
+  /* Fill */
+  .tri-down:after {
+    bottom: -15px;
+    left: 171px;
+    border-top-color: #EDF2F6;
+    border-width: 15px;
+  }
+
+/*---------------------*/
+
+/* social proof */
+
+.plan_social_proof {
+	width: 960px;
+	margin: 0 auto;
+	margin-bottom: 80px;
+	background-color: #fff;
+	height: 200px;
+	border: 1px solid #DFE0E4;
+}
+
+/*---------------------*/
 
 /* MASONRY */
 
@@ -805,144 +1035,3 @@ li.active a, li.active a:hover {
 	border-top: 0px solid #DFE0E4;
 }
 /*-------------------------*/
-
-/* BG IMAGE */
-
-#bg_image_wrapper {
-	position: relative;
-	border: 0px solid red;
-}
-
-#bg_image {
-	background-image: url("../assets/dog_plane.jpg");
-	display: inline-block;
-	width: 100%;
-	font-size: 0;
-	line-height: 0;
-	vertical-align: middle;
-	background-size: 100%;
-	background-position: 50% 50%;
-	background-repeat: no-repeat;
-}
-
-#bg_image_inner {
-    display: block;
-    height: 0;
-    padding-top: 37.8%;
-}
-
-#bg_image_wrapper .content {
-	position: absolute;
-	width: 100%;
-	text-align: center;
-	color: #ffffff;
-	text-transform: uppercase;
-	font-family: 'PT Sans Narrow', sans-serif;
-	letter-spacing: 5px;
-	font-size: 60px;
-	font-weight: bold;
-	border: 0px solid blue;
-}
-
-.content_title {
-	margin: 70px 0 70px 0;
-	border: 0px solid red;
-}
-
-.content_title_small {
-	font-size: 20px;
-	font-family: "Open Sans", helvetica, arial;
-	font-weight: none;
-	letter-spacing: 0;
-	border: 0px solid red;
-}
-
-#view_courses_wrapper {
-	width: 220px;
-	margin: 0 auto;
-	overflow: hidden;
-	border: 0px solid red;
-}
-
-#view_courses_button { 
-	width: 220px;
-	height: 60px;
-	margin: 0 auto;
-	line-height: 56px;
-	letter-spacing: 3px;
-	font-size: 16px;
-	text-align: center;
-	color: #ffffff;
-	border: 2px solid #ffffff;
-	font-family: 'Lato', sans-serif;
-	background-color: rgba(0,0,0,0);
-    f-webkit-transition: background-color 150ms linear;
-  	-moz-transition: background-color 150ms linear;
-  	-o-transition: background-color 150ms linear;
-  	-ms-transition: background-color 150ms linear;
-  	transition: background-color 150ms linear;
-}
-
-#view_courses_button:hover {
-	background-color: rgba(0,0,0,0.5);
-}
-
-#display_login_wrapper {
-	border: 0px solid red;
-	width: 490px;
-	overflow: hidden;
-	margin: auto;
-	letter-spacing: 3px;
-	margin-top: 70px;
-}
-
-#display_login_button_tutor {
-	width: 220px;
-	height: 60px;
-	line-height: 60px;
-	font-size: 14px;
-	float: left;
-	text-align: center;
-	background-color: #26ae5a;
-    font-family: 'Lato', sans-serif;
-    border: 0px solid #ffffff;
-}
-
-a #display_login_button_tutor {
-	color: #ffffff;
-	-webkit-transition: background-color 150ms linear;
-  	-moz-transition: background-color 150ms linear;
-  	-o-transition: background-color 150ms linear;
-  	-ms-transition: background-color 150ms linear;
-  	transition: background-color 150ms linear;
-}
-
-a:hover #display_login_button_tutor {
-	background-color: #229c51;
-}
-
-#display_login_button_student {
-	width: 220px;
-	height: 60px;
-	line-height: 60px;
-	font-size: 14px;
-	float: right;
-	text-align: center;
-	background-color: #26ae5a;
-    font-family: 'Lato', sans-serif;
-    border: 0px solid red;
-}
-
-a #display_login_button_student {
-	color: #ffffff;
-	-webkit-transition: background-color 150ms linear;
-  	-moz-transition: background-color 150ms linear;
-  	-o-transition: background-color 150ms linear;
-  	-ms-transition: background-color 150ms linear;
-  	transition: background-color 150ms linear;
-}
-
-a:hover #display_login_button_student {
-	background-color: #229c51;
-}
-/* --------------------------*/

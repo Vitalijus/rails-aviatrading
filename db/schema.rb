@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150216162457) do
+ActiveRecord::Schema.define(version: 20150220220042) do
 
   create_table "adverts", force: true do |t|
     t.string   "title"
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20150216162457) do
     t.string   "phone"
     t.integer  "user_id"
     t.string   "document"
+    t.integer  "advert_duration",      default: 0
   end
 
   create_table "contacts", force: true do |t|
@@ -66,31 +67,19 @@ ActiveRecord::Schema.define(version: 20150216162457) do
     t.string   "email"
   end
 
-  create_table "orders", force: true do |t|
-    t.string   "name_on_card"
-    t.string   "stripe_customer_token"
-    t.integer  "course_id"
+  create_table "photos", force: true do |t|
+    t.string   "advert_id"
+    t.string   "public_token"
+    t.string   "image"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "student_id"
-    t.string   "currency"
-    t.string   "email"
-    t.integer  "amount"
-    t.string   "level"
-    t.string   "language"
-    t.string   "time_start"
-    t.string   "time_end"
-    t.string   "course_type"
-    t.string   "course_start"
-    t.string   "course_end"
-    t.string   "time_zone"
-    t.string   "mon"
-    t.string   "tue"
-    t.string   "wed"
-    t.string   "thu"
-    t.string   "fri"
-    t.string   "sat"
-    t.string   "sun"
+  end
+
+  create_table "plans", force: true do |t|
+    t.string   "name"
+    t.decimal  "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
@@ -116,6 +105,10 @@ ActiveRecord::Schema.define(version: 20150216162457) do
     t.string   "state"
     t.string   "postal_code"
     t.string   "cover_image"
+    t.integer  "plan_id"
+    t.string   "stripe_customer_token"
+    t.string   "name_on_card"
+    t.string   "coupon"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

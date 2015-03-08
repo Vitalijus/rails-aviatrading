@@ -1,0 +1,86 @@
+<div class="plan_banner">
+  <b>Sell your aircraft</b> where the buyers are
+  <div class="plan_small_banner_text">More buyers than anywhere else</div>
+</div>
+
+ <div class="plan_wrapper">
+    <div class="plan_basic">
+    	<div class="plan_basic_header">
+		    <h3>Basic</h3>
+          <div class="plan_for_whom">
+            Best for private use
+          </div>
+
+          <div class="plan_price">
+            <span class="plan_currency">$</span><span class="plan_amount">0.00</span><span class="plan_month"> /month</span>
+          </div>
+
+          <div class="plan_advantages">
+            <ul>
+              <li>you can <b>upgrade to premium</b> anytime</li>
+            </ul>
+          </div>
+
+          <div class="tri-down"><!--trianle--></div>
+	    </div>
+
+        <div class="plan_benefits">
+          <ul>
+            <li>Saves your money</li>
+            <li>Changes can be made on the fly</li>
+            <li>Reaching a global audience</li>
+            <li>Seller's guide</li>
+            <li>Seller's guide</li>
+            <li>Seller's guide</li>
+          </ul>
+        </div>
+
+        <%= link_to sign_up_path(plan: @free_plan.id) do %>
+          <div class="plan_subscribe_link">
+            Takeoff!
+          </div>
+        <% end %>
+    </div>
+
+    <div class="plan_premium">
+    	<div class="plan_premium_header">
+	      <h3>Premium</h3>
+          <div class="plan_for_whom">
+            Designed for business
+          </div>
+
+          <div class="plan_price">
+            <span class="plan_currency">$</span><span class="plan_amount">99.99</span><span class="plan_month"> /month</span><span class="plan_old_price">149.99</span>
+          </div>
+
+          <div class="plan_advantages">
+            <ul>
+              <li>you can <b>downgrade to basic</b> anytime</li>
+            </ul>
+          </div>
+
+          <div class="tri-down"><!--trianle--></div>
+	    </div>
+
+      <div class="plan_benefits">
+        <ul>
+          <li>Unlimited number of adverts</li>
+          <li>Unlimited number of images</li>
+          <li>70% higher potential buyer reach</li>
+          <li>Increased visibility for your adverts</li>
+          <li>Branded content</li>
+          <li>Branded content</li>
+        </ul>
+      </div>
+
+      <%= link_to sign_up_path(plan: @premium_plan.id) do %>
+        <div class="plan_subscribe_link">
+          We pay first month!
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="plan_social_proof">
+
+  </div>

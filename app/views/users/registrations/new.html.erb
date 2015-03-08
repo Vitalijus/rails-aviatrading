@@ -1,29 +1,226 @@
-<h2>Sign up</h2>
+<div class="registration_form_wrapper">
+  <% if params[:plan] == "2" %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+  <div class="registration_form_block">
+  
+    <div class="registration_form_header">
+      <div class="registration_form_logo">
+        <span class="icon-propeller_500x500"></span>
+      </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+      Sign up for Premium Plan
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @validatable %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+      <div class="registration_form_tagline">
+        you can <b><%= link_to "downgrade to basic", sign_up_path(plan: 1) %></b> plan anytime
+      </div>
+    </div>
+    
+        <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { id: 'user_plan'}) do |f| %><!-- id: 'user_plan' refers to registrations.js.coffee -->
+        <div class="sign_up_form_wrapper">
+          <%#= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+          <%= hidden_field_tag 'plan', params[:plan] %>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+          <div class="auth_form">
+            <%= f.label :email, :class => "auth_label" %>
+            <%= f.email_field :email, :class => "auth_field" %>
+          </div>
 
-<%= render "users/shared/links" %>
+          <div class="auth_form">
+            <%= f.label :password, :class => "auth_label" %>
+            <%= f.password_field :password, :class => "auth_field" %>
+          </div>
+
+          <div class="auth_form">
+            <%= f.label :password_confirmation, :class => "auth_label" %>
+            <%= f.password_field :password_confirmation, :class => "auth_field" %>
+          </div>
+        </div>
+
+        <div class="payment_form_wrapper">
+          <div class="registration_form_header">
+
+            Credit Card Info
+
+            <div class="registration_form_tagline">
+              <b>7-day</b> money back guarantee<br/><br/>
+            </div>
+          </div>
+
+          <%= f.hidden_field :stripe_card_token %>
+
+            <div class="auth_form">
+              <%= f.label :name_on_card, :class => "auth_label" %>
+              <%= f.text_field :name_on_card, :class => "auth_field" %>
+            </div>
+
+            <% if @user.stripe_card_token.present? %>
+              Credit card info has been provided.
+            <% else %>
+
+              <div class="auth_form">
+                <%= label_tag :card_number, "Credit Card Number", :class => "auth_label" %>
+                <%= text_field_tag :card_number, nil, name: nil, :class => "auth_field" %>
+              </div>
+
+              <div class="auth_form_cvv">
+                <%= label_tag :card_code, "CVV code (3 digits)", :class => "auth_label_cvv" %>
+                <%= text_field_tag :card_code, nil, name: nil, :class => "auth_field_cvv" %>
+              </div>
+
+              <div class="auth_form_card_dates">
+                <%= label_tag :card_month, "Card Expiration", :class => "auth_label_card_dates" %>
+                <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month", :class => "auth_field_card_month"} %>
+                <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year", :class => "auth_field_card_year"} %>
+              </div>
+            <% end %>
+
+            <div id="stripe_error">
+              <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
+            </div>
+          </div>
+
+            <%= f.submit "Sign up", :class => "registration_submit_button"  %>
+        <% end %>
+
+        <div class="registration_form_links">
+          Already signed up? <%= link_to "Login", sign_in_path %>
+        </div>
+      </div>
+
+      <div class="plan_details_block">
+        <div class="plan_details_header">
+          Designed for business
+        </div>
+
+        <div class="plan_details_price">
+          <span class="plan_details_currency">$</span><span class="plan_details_amount">49.99</span><span class="plan_details_month">/ month</span><span class="plan_details_old_price">$79.99</span>
+        </div>
+        
+        <!--<div class="plan_details_free_month">
+          We pay first month!
+        </div>-->
+
+        <div class="plan_details_title">
+          What's included
+        </div>
+
+        <div class="plan_details_benefits">
+          <ul>
+            <li>
+              Unlimited number of adverts
+              <span class="plan_details_explain">You will never exceed your limits. Post as many adverts as you want.</span>
+            </li>
+            <li>
+              Unlimited number of images
+              <span class="plan_details_explain">Upload as many images as you need. We use best image management solutions.</span>
+            </li>
+            <li>
+              70% higher buyer reach
+              <span class="plan_details_explain">Use smart advertisement with our algorithms.</span>
+            </li>
+            <li>
+              Increased visibility
+              <span class="plan_details_explain">Paid adverts have distinguishable elements against unpaid adverts.</span>
+            </li>
+            <li>
+              <%=link_to "Branded content", adverts_path %>
+              <span class="plan_details_explain">We help our brand partners to develop and deliver great content to reach their audiences.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="plan_details_recommendation">
+          <div class="plan_details_comment_box">
+          "Didn't expect to sell my plane that fast. I'm overwhelmed by the results. Advertisement process was simple, with clear insctructions every step of the way..."
+          </div>
+          <div class="comment_box_tri_down"><!--trianle--></div>
+
+          <div class="plan_details_commenter">
+            <ul>
+              <li><%= image_tag "commenter_face.jpg", width: 45 %></li>
+              <li>Patrick Wood</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  
+    <% elsif params[:plan] == "1" %>
+    <div class="registration_form_block">
+      <div class="registration_form_header">
+        <div class="registration_form_logo">
+          <span class="icon-propeller_500x500"></span>
+        </div>
+
+        Sign up for Basic Plan
+
+        <div class="registration_form_tagline">
+          <b><%= link_to "Sign up to premium", sign_up_path(plan: 2) %></b> plan to sell your aircraft faster 
+
+        </div>
+      </div>
+
+     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), html: { id: "free_user"}) do |f| %>
+
+        <%= hidden_field_tag 'plan', params[:plan] %>
+
+      <div class="sign_up_form_wrapper">
+        <div class="auth_form">
+          <%= f.label :email, :class => "auth_label" %>
+          <%= f.email_field :email, :class => "auth_field" %>
+        </div>
+
+        <div class="auth_form">
+          <%= f.label :password, :class => "auth_label" %>
+          <%= f.password_field :password, :class => "auth_field" %>
+        </div>
+
+        <div class="auth_form">
+          <%= f.label :password_confirmation, :class => "auth_label" %>
+          <%= f.password_field :password_confirmation, :class => "auth_field" %>
+        </div>
+      </div>
+
+          <%= f.submit "Sign up", :class => "registration_submit_button" %>
+      <% end %>
+
+      <div class="registration_form_links">
+        Already signed up? <%= link_to "Login", sign_in_path %>
+      </div>
+    </div>
+
+    <div class="plan_details_block_basic">
+      <div class="plan_details_header">
+        
+      </div>
+
+      <div class="plan_details_benefits">
+          <ul>
+            <li>
+              Saves your money
+              <span class="plan_details_explain">Basic plan is FREE.</span>
+            </li>
+            <li>
+              Reaching global audience
+              <span class="plan_details_explain">Manage you content without limits.</span>
+            </li>
+            <li>
+              Changes can be made on the fly
+              <span class="plan_details_explain">Manage you content without limits.</span>
+            </li>
+            <li>
+              Increased visibility
+              <span class="plan_details_explain">Paid adverts have distinguishable elements against unpaid adverts.</span>
+            </li>
+            <li>
+              <%=link_to "Branded content", adverts_path %>
+              <span class="plan_details_explain">We help our brand partners to develop and deliver great content to reach their audiences.</span>
+            </li>
+          </ul>
+        </div>
+    </div>
+</div>
+
+    <% else %>
+      <h2 style="text-align: center">The address page is invalid<h2>
+    <% end %>

@@ -286,15 +286,81 @@
 <div id="tab3" class="new_form_wrapper">
   <div class="new_form_border_helper">
     <div class="field">
-      <%= f.label :advert_image, "Advert Image" %><br>
-      <%= f.cl_image_upload(:advert_image, :return_delete_token => true, :html => { :multiple => true, :class => "advert_image_uploader"}) %> 
+      <%= f.fields_for :photos do |builder| %>
+       
+        <%= builder.label :image, "Advert Image" %><br>
+        <%= builder.cl_image_upload(:image, :return_delete_token => true, :html => { :multiple => true }) %>
+        
+        <%= hidden_field_tag :public_token, "", id: "public_token" %>
+
+      <% end %>
     </div>
-  -------------------
+  -------------------<br/>
+
+   <div class="uploaded_image">
+      <ul>
+      
+      </ul>
+   </div>
+  -------------------------<br/>
+
+<script>
+  $(document).ready(function(){
+    var public_token = new Array();
+
+    $('.cloudinary-fileupload').bind('cloudinarydone', function(e, data) {
+      var preview = $(".uploaded_image ul").append('<li>');
+        $.cloudinary.image(data.result.public_id, {
+          format: data.result.format, width: 250, height: 175, crop: "fit"
+        }).appendTo(preview);
+
+        var data_id = data.result.public_id;
+        public_token.push(data_id);
+        $("#public_token").val(public_token);
+
+
+
+        $('<a/>').addClass('delete_by_token').attr({href: '#'}).data({delete_token: data.result.delete_token}).html('&times;').appendTo(preview).click(function(e) {e.preventDefault();
+
+            $.cloudinary.delete_by_token($(this).data('delete_token')).done(function(){
+              $('.preview').html('').text("herejnjnj");
+              $('#info').html('');
+              $("#photo_bytes").val('');
+              $(this).text('jsfvjsd');
+              $('<li>').remove();
+            }).fail(function() {
+              $('.status').text("Cannot delete image");
+          });
+        });
+        view_upload_details(data.result);
+    });   
+
+    // Update the progress bar.
+    $('.cloudinary-fileupload').bind('fileuploadprogress', function(e, data) {
+      var progress = "Uploading... " + Math.round((data.loaded * 100.0) / data.total) + "%";
+      var preview = $(".uploaded_image ul").append('<li>');
+      //progress.appendTo(preview);
+      //$(".uploaded_image ul").append('<li>').
+      $('.status').text(progress).appendTo(preview);
+      //var percent = Math.round((data.loaded * 100.0) / data.total);
+      //$('.progress_bar .completed').css('width', percent + '%');
+      //if (percent == 100) {
+      //  $('.upload_section').removeClass('uploading').addClass('processing');
+      //}
+    });
+
+  });
+</script>
+
     <div class="field">
       <%= f.label :document, "PDF" %><br>
       <%= f.file_field :document %> 
     </div>
-    <div class="status"></div>
+    <div id="public_id"></div>
+    <div class="status">
+        <ul>
+        </ul>
+    </div>
     <div class="preview"></div>
     <div class="image_public_id"></div>
   </div>
@@ -309,86 +375,4 @@
 
 <% end %>
 
-<script>
-  $(document).ready(function() {
-    // Cloudinary jQuery integration library uses jQuery File Upload widget
-    // (see http://blueimp.github.io/jQuery-File-Upload/).
-    // Any file input field with cloudinary-fileupload class is automatically
-    // wrapped using the File Upload widget and configured for Cloudinary uploads.
-    // You can further customize the configuration using .fileupload method
-    // as we do below.
-    $(".cloudinary-fileupload")
-      .fileupload({ 
-        // Uncomment the following lines to enable client side image resizing and valiation.
-        // Make sure cloudinary/processing is included the js file
-        //disableImageResize: false,
-        //imageMaxWidth: 800,
-        //imageMaxHeight: 600,
-        //acceptFileTypes: /(\.|\/)(gif|jpe?g|png|bmp|ico)$/i,
-        //maxFileSize: 20000000, // 20MB
-        dropZone: "#direct_upload",
-        start: function (e) {
-          $(".status").text("Starting upload...");
-        },
-        progress: function (e, data) {
-          $(".status").text("Uploading... " + Math.round((data.loaded * 100.0) / data.total) + "%");
-        },
-        fail: function (e, data) {
-          $(".status").text("Upload failed");
-        },
-        add: function (e, data) {
-            data.context = $('<button/>').text('Upload')
-                .appendTo(document.body)
-                .click(function () {
-                    data.context = $('<p/>').text('Uploading...').replaceAll($(this));
-                    data.submit();
-                });
-        },
-        done: function (e, data) {
-            data.context.text('Upload finished.');
-        }
-      })
-      .off("cloudinarydone").on("cloudinarydone", function (e, data) {
-        $("#photo_bytes").val(data.result.bytes);
-        $(".status").text("");
-        var preview = $(".preview").html('');
-        $.cloudinary.image(data.result.public_id, {
-          format: data.result.format, width: 250, height: 250, crop: "fit"
-        }).appendTo(preview);
 
-        $('<a/>').
-          addClass('delete_by_token').
-          attr({href: '#'}).
-          data({delete_token: data.result.delete_token}).
-          html('&times;').
-          appendTo(preview).
-          click(function(e) {
-            e.preventDefault();
-            $.cloudinary.delete_by_token($(this).data('delete_token')).done(function(){
-              $('.preview').html('');
-              $('#info').html('');
-              $("#photo_bytes").val('');
-              $('input[name="photo[image]"]').remove();
-            }).fail(function() {
-              $('.status').text("Cannot delete image");
-          });
-        });
-        view_upload_details(data.result);
-      });
-    });
-    
-    function view_upload_details(upload) {
-      // Build an html table out of the upload object
-      var rows = [];
-      $.each(upload, function(k,v){
-        rows.push(
-          $("<tr>")
-            .append($("<td>").text(k))
-            .append($("<td>").text(JSON.stringify(v))));
-      });
-      $("#info").html(
-        $("<div class=\"upload_details\">")
-          .append("<h2>Upload metadata:</h2>")
-          .append($("<table>").append(rows)));
-    }
-</script>

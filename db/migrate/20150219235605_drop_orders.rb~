@@ -1,0 +1,4 @@
+class DropOrders < ActiveRecord::Migration
+  def change
+  end
+end

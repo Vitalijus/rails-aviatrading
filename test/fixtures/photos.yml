@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  advert_id: MyString
+  public_token: MyString
+  image: MyString
+
+two:
+  advert_id: MyString
+  public_token: MyString
+  image: MyString

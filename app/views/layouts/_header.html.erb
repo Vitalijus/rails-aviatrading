@@ -14,17 +14,29 @@
 				
 			    <ul>  
 		        	<%= link_to new_advert_path, data: { no_turbolink: true } do %>
-						<li><span class="free_advert_wrapper">FREE ADVERTISE</span></li>
+						<li><span class="free_advert_wrapper">NEW ADVERT</span></li>
+					<% end %>
+
+					<%= link_to adverts_path do %>
+						<li>All Adverts</li>
+					<% end %>
+
+					<%= link_to plan_path do %>
+						<li>Pricing</li>
 					<% end %>
 
 					<%= link_to new_contact_path, data: { no_turbolink: true } do %>
-						<li class="header_contact_icon"><%= image_tag "message.png", width: 25, :class => "svg contact_icon" %></li>
+						<li>Contact</li>
 					<% end %>	
 
-					<li>
-						<div class="search_bar_open_button">
-							<%= image_tag "search.png" %>
-						</div>
+					<% if !user_signed_in? %>
+						<%= link_to sign_in_path do %>
+							<li>Login</li>
+						<% end %>
+					<% end %>
+
+					<li class="search_image">
+						<%= image_tag "search.png" %>
 					</li>
 
 					<% if user_signed_in? %>
@@ -35,17 +47,6 @@
 					  <li>
 					  	<%= link_to 'My adverts', user_path(current_user) %>
 					  </li>
-					<% end %>
-
-					<% if !user_signed_in? %>
-					  <li class="auth_form_sign_up">
-					  	<a>Sign up</a>
-					  </li>
-
-					  <li class="auth_form_login">
-					  	<a>Login</a>
-					  </li>
-					  
 					<% end %>
 			    </ul>    
 			</div> 

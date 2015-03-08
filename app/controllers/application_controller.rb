@@ -15,10 +15,9 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:account_update) << [:avatar, :about, :organisation, :street, :country,
                                                         :city, :state, :telephone, :postal_code, 
-                                                        :cover_image]
-    #devise_parameter_sanitizer.for(:sign_up) << [:name, :surname, :terms_conditions, :cv,
-    #                                            :language_proficiency_proof, :language_proficiency_proof2,
-    #                                            :language_proficiency_proof3, :public_link]
+                                                        :cover_image, :plan_id, :stripe_customer_token,
+                                                        :stripe_card_token, :coupon]
+    devise_parameter_sanitizer.for(:sign_up) << [:name_on_card, :stripe_card_token, :coupon]
   end
 
 end

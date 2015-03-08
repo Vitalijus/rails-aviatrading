@@ -1,4 +1,48 @@
-<%= render "landing_image" %>
+<div class="search_container_wrapper">
+	<div class="search_container_benchmark">
+		<ul>
+			<li><%= image_tag "aircraft_type/jet.png", width: 30 %></li>
+			<li><%= image_tag "aircraft_type/piston.png", width: 30 %></li>
+			<li><%= image_tag "aircraft_type/multi_piston.png", width: 30 %></li>
+			<li><%= image_tag "aircraft_type/turbo_prop.png", width: 30 %></li>
+			<li><%= image_tag "aircraft_type/helicopter.png", width: 30 %></li>
+			<li><%= image_tag "aircraft_type/light_sport.png", width: 30 %></li>
+			<li><%= image_tag "aircraft_type/ultralight.png", width: 30 %></li>
+			<li><%= image_tag "aircraft_type/glider.png", width: 30 %></li>
+			<li><%= image_tag "aircraft_type/airship.png", width: 30 %></li>
+			<li><%= image_tag "aircraft_type/hot_air_balloon.png", width: 30 %></li>
+		</ul>
+	</div>
+
+		<%= search_form_for @q do |f| %>
+		    <ul>
+		      <li><%= f.text_field :make_cont, :placeholder => "Manufacturer" %></li>
+
+		      <li><%= f.text_field :model_cont, :placeholder => "Model" %></li>
+
+		      <li>
+		      	<div class="dropdown_list">
+		      		<%= f.select :aircraft_type_cont, ['Cessna', "Airbus"], :prompt => 'Aircraft type' %>
+		      	</div>
+		      </li>
+
+		      <li>
+		      	<div class="dropdown_list">
+		      		<%= f.select :aircraft_usage_cont, ['Cessna', "Airbus"], :prompt => 'Aircraft usage' %>
+		      	</div>
+		     </li>
+
+		      <li>
+		      	<div class="dropdown_list">
+		      		<%= f.select :country_cont, ['Cessna', "Airbus"], :prompt => 'Country' %>
+		      	</div>
+		     </li>
+		      
+		      <li><%= f.submit :class => "search_button" %></li>
+		    </ul>
+		<% end %>
+	</div>
+
 <div class="home_wrapper">
 	<div class="home_container">
 	  <div class="home_box_header">
@@ -17,10 +61,12 @@
 			    <%= link_to advert_path(jet), data: { no_turbolink: true } do %>
 			      <div class="box_image">
 
-			        <% if jet.advert_image.blank? %>
-			          default pic
-			        <% else %>
-			          <%= image_tag jet.advert_image_url(:advert_image) %>
+			      	<% jet.photos.each do |photo| %>
+			        	<% if photo.image.blank? %>
+			          		default pic
+			        	<% else %>
+			          		<%= image_tag photo.image_url(:advert_image) %>
+			          	<% end %>
 			        <% end %>
 
 			        <div class="box_price">
@@ -67,11 +113,13 @@
   			
 			    <%= link_to advert_path(single_piston), data: { no_turbolink: true } do %>
 			      <div class="box_image">
-
+			      	
 			        <% if single_piston.advert_image.blank? %>
 			          default pic
 			        <% else %>
-			          <%= image_tag single_piston.advert_image_url(:advert_image) %>
+			        	<% single_piston.photos.each do |photo| %>
+			          		<%= image_tag photo.image_url(:advert_image) %>
+			          	<% end %>
 			        <% end %>
 
 			        <div class="box_price">
@@ -122,7 +170,9 @@
 			        <% if multi_piston.advert_image.blank? %>
 			          default pic
 			        <% else %>
-			          <%= image_tag multi_piston.advert_image_url(:advert_image) %>
+			        	<% multi_piston.photos.each do |photo| %>
+			          		<%= image_tag photo.image_url(:advert_image) %>
+			          	<% end %>
 			        <% end %>
 
 			        <div class="box_price">
@@ -174,7 +224,9 @@
 			        <% if turbo_prop.advert_image.blank? %>
 			          default pic
 			        <% else %>
-			          <%= image_tag turbo_prop.advert_image_url(:advert_image) %>
+			        	<% turbo_prop.photos.each do |photo| %>
+			          		<%= image_tag photo.image_url(:advert_image) %>
+			          	<% end %>
 			        <% end %>
 
 			        <div class="box_price">
@@ -226,7 +278,9 @@
 			        <% if helicopter.advert_image.blank? %>
 			          default pic
 			        <% else %>
-			          <%= image_tag helicopter.advert_image_url(:advert_image) %>
+			        	<% helicopter.photos.each do |photo| %>
+			          		<%= image_tag photo.image_url(:advert_image) %>
+			          	<% end %>
 			        <% end %>
 
 			        <div class="box_price">
@@ -257,6 +311,12 @@
 
 <div class="home_sidebar">
 	<div class="home_sidebar_header">
+		Adverts
+	</div>
+</div>
+
+<div class="home_sidebar">
+	<div class="home_sidebar_header">
 		Latest adverts
 	</div>
 
@@ -266,7 +326,9 @@
 				<li>
 					<%= link_to advert_path(latest_advert), data: { no_turbolink: true } do %> 
 						<div class="home_sidebar_img">
-							<%= image_tag latest_advert.advert_image_url(:latest_adverts) %>
+							<% latest_advert.photos.each do |photo| %>
+								<%= image_tag photo.image_url(:latest_adverts) %>
+							<% end %>
 
 							<div class="home_sidebar_price">
 								<%= number_to_currency(latest_advert.price, precision: 0, unit: "") %> <%= latest_advert.currency %>
@@ -291,12 +353,6 @@
 				</li>
 			<% end %>
 		</ul>
-	</div>
-</div>
-
-<div class="home_sidebar">
-	<div class="home_sidebar_header">
-		Adverts
 	</div>
 </div>
 

@@ -1,12 +1,23 @@
 School::Application.routes.draw do
-  
-  root 'adverts#home'
-  
-  devise_for :users
+
+  get '/plan', to: 'adverts#plan', as: 'plan'
+
+  devise_for :users, controllers: { registrations: 'users/registrations' }
+  devise_scope :user do
+    get '/sign_up', to: 'users/registrations#new', as: :sign_up
+    get '/sign_in', to: 'devise/sessions#new', as: :sign_in
+    get '/:id/edit', to: 'users/registrations#edit', as: :edit
+    put 'users/update_plan', :to => 'users/registrations#update_plan'
+    put 'users/cancel_plan', :to => 'users/registrations#cancel_plan'
+  end
+  resources :users, only: [:edit, :show]
 
   resources :adverts
-  resources :users, only: [:show, :edit]  
   resources :contacts, only: [:create, :new]
+  
+  
+  root 'adverts#home'
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

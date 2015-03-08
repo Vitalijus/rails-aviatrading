@@ -1,7 +1,12 @@
 class AdvertsController < ApplicationController
   before_action :set_advert, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show, :new, :create, :home]
+  before_action :set_plan
+  before_action :authenticate_user!, except: [:index, :show, :new, :create, :home, :plan]
 
+  def plan
+    @free_plan
+    @premium_plan
+  end
 
   def home
     @jets = Advert.where("aircraft_type = 'Jet'").limit(4)
@@ -35,6 +40,7 @@ class AdvertsController < ApplicationController
   # GET /adverts/new
   def new
     @advert = Advert.new
+    @advert.photos.build
   end
 
   # GET /adverts/1/edit
@@ -45,11 +51,19 @@ class AdvertsController < ApplicationController
   # POST /adverts.json
   def create
     @advert = Advert.new(advert_params)
-
     current_user.adverts << @advert
+    #@photos = [] 
+    #params[:public_token].split(",").each do |pub_id|
+    #  @photos << Photo.new(:public_token => pub_id) 
+    #end 
+    
+    #@advert.photos =  @photos
 
     respond_to do |format|
       if @advert.save
+        if params[:public_token]
+            params[:public_token].split(",").each { |url| @advert.photos.create(public_token: url) }
+        end
         format.html { redirect_to @advert, notice: 'Advert was successfully created.' }
         format.json { render action: 'show', status: :created, location: @advert }
       else
@@ -90,6 +104,17 @@ class AdvertsController < ApplicationController
       @advert = Advert.find(params[:id])
     end
 
+     def set_plan
+        plans = Plan.all
+        plans.each do |plan|
+          if plan.id == 1
+            @free_plan = plan
+          else
+            @premium_plan = plan
+          end
+        end
+      end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def advert_params
       params.require(:advert).permit(:title, :name, :surname, :email, :advert_image,
@@ -101,6 +126,7 @@ class AdvertsController < ApplicationController
                                      :aircraft_hours, :landings, :nearest_airport, :aircraft_status,
                                      :last_inspection, :eu_vat, :price_on_request, :airport_code,
                                      :number_of_passengers, :aircraft_usage, :phone, :user_id, 
-                                     :document)
+                                     :document, :advert_duration, photos_attributes: [:id, :image,
+                                     :advert_id, :public_token])
     end
 end

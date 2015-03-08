@@ -1,26 +1,42 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<div class="login_form_wrapper">
+  <div class="registration_form_header">
+    <div class="registration_form_logo">
+      <span class="icon-propeller_500x500"></span>
     </div>
-  <% end -%>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
+    Log in to Aeropoly
   </div>
-<% end %>
 
-<%= render "users/shared/links" %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+      <div class="sign_up_form_wrapper">
+        <div class="auth_form">
+          <%= f.label :email, :class => "auth_label" %>
+          <%= f.email_field :email, autofocus: true, :class => "auth_field" %>
+        </div>
+
+        <div class="auth_form">
+          <%= f.label :password, :class => "auth_label" %>
+          <%= f.password_field :password, autocomplete: "off", :class => "auth_field" %>
+        </div>
+
+        <% if devise_mapping.rememberable? -%>
+
+          <div class="new_advert_checkbox">
+            <%= f.check_box :remember_me, {:id => "remember_me"} %>
+            <label for="remember_me"></label>
+            <span class="login_remember_me">Remember me</span>
+          </div>
+        <% end -%>
+      </div>
+
+        <%= f.submit "Log in", :class => "registration_submit_button" %>
+
+    <% end %>
+    
+      <div class="registration_form_links">
+        <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+          <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+        <% end -%>
+      </div>
+</div>
