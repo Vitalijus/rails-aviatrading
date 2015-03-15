@@ -2,29 +2,32 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 /* SUBSCRIPTION PLAN */
 
 .plan_banner {
-	width: 960px;
-	height: 430px;
-	margin: 80px auto;
+	width: 100%;
+	height: 300px;
+	margin: auto;
 	padding-top: 50px;
 	text-align: center;
-	background-color: #fff;
-	font-size: 45px;
-	font-family: "Open Sans", helvetica, arial;
+	background: url('bg_texture.png');
+	font-size: 40px;
+	color: #fff;
+	font-family: 'PT Sans', sans-serif;
 	border-bottom: 1px solid #DFE0E4;
 }
 
 .plan_small_banner_text {
-	font-size: 20px;
+	font-size: 25px;
 }
 
 .plan_wrapper {
-	width: 820px;
-	margin: -283px auto;
-	margin-bottom: 40px;
-	border: 0px solid red;
+	width: 850px;
+	margin: auto;
+	margin-top: 40px;
+	margin-bottom: 20px;
+	border: 0px solid #DFE0E4;
 }
 
 .plan_basic {
@@ -43,9 +46,13 @@
 
 .plan_basic_header,
 .plan_premium_header {
-	background-color: #EDF2F6;
 	position: relative;
-	border-bottom: 0px solid #e8e9ec;
+	background-color: #5BB69A;
+	border: 0px solid red;
+}
+
+.plan_premium_header {
+	background-color: #D55C4B;
 }
 
 .plan_basic_header h3,
@@ -61,8 +68,11 @@
 	font-family: "Open Sans", helvetica, arial;
 	font-size: 16px;
 	text-transform: uppercase;
-	background-color: #7ab0d6;
-	border: 1px solid #e8e9ec;
+	background-color: #4D9B83;
+}
+
+.plan_premium_header h3 {
+	background-color: #B14739;
 }
 
 /*.plan_free_month {
@@ -84,18 +94,22 @@
 	font-family: "Open Sans", helvetica, arial;
 	font-weight: bold;
 	text-align: center;
-	padding-top: 50px;
-	margin-bottom: -5px;
-	color: #599CCC;
+	padding: 40px 0 20px 0;
+	color: #fff;
 	border: 0px solid red;
 }
 
 .plan_price {
 	padding-left: 40px;
 	text-align: center;
-	color: #599CCC;
+	color: #fff;
 	font-family: 'PT Sans', sans-serif;
 	position: relative;
+	background-color: #4D9B83;
+}
+
+.plan_price.premium {
+	background-color: #B14739;
 }
 
 .plan_currency {
@@ -131,13 +145,13 @@
 	font-family: 'PT Sans', sans-serif;
 	text-transform: uppercase;
 	font-size: 12px;
-	color: #8e8e8e;
+	color: #fff;
 	border: 0px solid red;
 }
 
 a .plan_subscribe_link {
 	height: 50px;
-	background-color: #F16164;
+	background-color: #5BB69A;
 	line-height: 50px;
 	text-align: center;
 	font-weight: bold;
@@ -152,8 +166,16 @@ a .plan_subscribe_link {
   	transition: background-color 150ms linear;
 }
 
+a .plan_subscribe_link.premium {
+	background-color: #D55C4B;
+}
+
 a:hover .plan_subscribe_link {
-	background-color: #F05053;
+	background-color: #4D9B83;
+}
+
+a:hover .plan_subscribe_link.premium {
+	background-color: #B14739;
 }
 
 .plan_benefits ul {
@@ -181,13 +203,16 @@ a:hover .plan_subscribe_link {
 /* triangle */
 
 .tri-down {
-
     /* Styling block element, not required */
     position: relative;
     margin-bottom: 0em;
-    border-bottom: 1px solid #e8e9ec;
-    background: #EDF2F6;
+    border-bottom: 0px solid #e8e9ec;
+    background: #5BB69A;
   }
+
+.tri-down.premium {
+	background: #D55C4B;
+}
 
   /* Required for Down Triangle */
   .tri-down:before, .tri-down:after {
@@ -214,9 +239,13 @@ a:hover .plan_subscribe_link {
   .tri-down:after {
     bottom: -15px;
     left: 171px;
-    border-top-color: #EDF2F6;
+    border-top-color: #5BB69A;
     border-width: 15px;
   }
+
+  .tri-down.premium:after {
+	border-top-color: #D55C4B;
+}
 
 /*---------------------*/
 
@@ -358,24 +387,25 @@ a:hover .box_make, a:hover .box_model {
 
 .new_advert_header_wrapper {
 	width: 100%;
-	height: 200px;
+	height: 300px;
 	margin-bottom: 20px;
-	font-family: 'PT Sans', sans-serif;
-	font-size: 35px;
-	text-align: center;
-	color: #565A5C;
-	background-color: #fff;
+	background: url('bg_texture.png');
 	border-bottom: 1px solid #DFE0E4;
 }
 
 .new_advert_header {
-	border: 0px solid red;
+	font-weight: bold;
+	color: #fff;
+	font-size: 35px;
+	text-align: center;
+	font-family: 'PT Sans', sans-serif;
 	padding-top: 40px;
 }
 
 .new_advert_header_small {
-	font-size: 20px;
+	font-size: 25px;
 	padding-top: 10px;
+	font-weight: normal;
 	font-family: 'Lato', sans-serif;
 	border: 0px solid red;
 }
@@ -394,7 +424,8 @@ a:hover .box_make, a:hover .box_model {
 
 .new_advert_nav ul {
 	width: 960px;
-	margin: 0 auto;
+	margin: auto;
+	margin-top: 20px;
 	background-color: #F6F7F8;
 	border-top: 1px solid #DFE0E4;
 	border-left: 1px solid #DFE0E4;

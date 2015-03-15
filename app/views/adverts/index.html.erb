@@ -10,12 +10,8 @@
     <%= link_to advert_path(advert), data: { no_turbolink: true } do %>
       <div class="box_image">
 
-        <% if advert.advert_image.blank? %>
-          default pic
-        <% else %>
-          <% advert.photos.each do |photo| %>
-            <%= image_tag photo.advert_image_url(:advert_image) %>
-          <% end %>
+        <% advert.photos.each do |photo| %>
+          <%= image_tag photo.image_url(:advert_image) %>
         <% end %>
 
         <div class="box_price">

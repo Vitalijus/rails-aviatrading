@@ -1,30 +1,65 @@
+<div class="home_banner_wrapper">
+	<div class="home_banner_phrase">
+		Aircraft Market
+	</div>
+
+</div>
+
 <div class="search_container_wrapper">
+
+	<div class="outline_border_helper">
 	<div class="search_container_benchmark">
 		<ul>
-			<li><%= image_tag "aircraft_type/jet.png", width: 30 %></li>
-			<li><%= image_tag "aircraft_type/piston.png", width: 30 %></li>
-			<li><%= image_tag "aircraft_type/multi_piston.png", width: 30 %></li>
-			<li><%= image_tag "aircraft_type/turbo_prop.png", width: 30 %></li>
-			<li><%= image_tag "aircraft_type/helicopter.png", width: 30 %></li>
-			<li><%= image_tag "aircraft_type/light_sport.png", width: 30 %></li>
-			<li><%= image_tag "aircraft_type/ultralight.png", width: 30 %></li>
-			<li><%= image_tag "aircraft_type/glider.png", width: 30 %></li>
-			<li><%= image_tag "aircraft_type/airship.png", width: 30 %></li>
-			<li><%= image_tag "aircraft_type/hot_air_balloon.png", width: 30 %></li>
+			<li>
+				<%= image_tag "aircraft_type/jet.png", width: 40 %>
+				<span class="search_plane_title">Jet</span>
+			</li>
+			<li>
+				<%= image_tag "aircraft_type/piston.png", width: 40 %>
+				<span class="search_plane_title">Piston</span>
+			</li>
+			<li>
+				<%= image_tag "aircraft_type/multi_piston.png", width: 40 %>
+				<span class="search_plane_title">Multi-piston</span>
+			</li>
+			<li>
+				<%= image_tag "aircraft_type/turbo_prop.png", width: 40 %>
+				<span class="search_plane_title">TurboProp</span>
+			</li>
+			<li>
+				<%= image_tag "aircraft_type/helicopter.png", width: 40 %>
+				<span class="search_plane_title">Helicopter</span>
+			</li>
+			<li>
+				<%= image_tag "aircraft_type/light_sport.png", width: 40 %>
+				<span class="search_plane_title">Light sport</span>
+			</li>
+			<li>
+				<%= image_tag "aircraft_type/ultralight.png", width: 40 %>
+				<span class="search_plane_title">Ultralight</span>
+			</li>
+			<li>
+				<%= image_tag "aircraft_type/glider.png", width: 40 %>
+				<span class="search_plane_title">Glider</span>
+			</li>
+			<li>
+				<%= image_tag "aircraft_type/airship.png", width: 40 %>
+				<span class="search_plane_title">Airship</span>
+			</li>
+			<li>
+				<%= image_tag "aircraft_type/hot_air_balloon.png", width: 40 %>
+				<span class="search_plane_title">Balloon</span>
+			</li>
 		</ul>
 	</div>
+
+	<div class="search_container">
 
 		<%= search_form_for @q do |f| %>
 		    <ul>
 		      <li><%= f.text_field :make_cont, :placeholder => "Manufacturer" %></li>
 
 		      <li><%= f.text_field :model_cont, :placeholder => "Model" %></li>
-
-		      <li>
-		      	<div class="dropdown_list">
-		      		<%= f.select :aircraft_type_cont, ['Cessna', "Airbus"], :prompt => 'Aircraft type' %>
-		      	</div>
-		      </li>
 
 		      <li>
 		      	<div class="dropdown_list">
@@ -37,11 +72,14 @@
 		      		<%= f.select :country_cont, ['Cessna', "Airbus"], :prompt => 'Country' %>
 		      	</div>
 		     </li>
-		      
-		      <li><%= f.submit :class => "search_button" %></li>
+
+		     	<%= f.submit :class => "search_container_button" %>
 		    </ul>
+		    
 		<% end %>
 	</div>
+	</div>
+</div>
 
 <div class="home_wrapper">
 	<div class="home_container">
@@ -57,16 +95,11 @@
 		<% @jets.each do |jet| %>
 	
   			<li>
-  			
 			    <%= link_to advert_path(jet), data: { no_turbolink: true } do %>
 			      <div class="box_image">
 
 			      	<% jet.photos.each do |photo| %>
-			        	<% if photo.image.blank? %>
-			          		default pic
-			        	<% else %>
-			          		<%= image_tag photo.image_url(:advert_image) %>
-			          	<% end %>
+			          	<%= image_tag photo.image_url(:advert_image) %>
 			        <% end %>
 
 			        <div class="box_price">

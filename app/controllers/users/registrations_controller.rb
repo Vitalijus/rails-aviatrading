@@ -1,5 +1,5 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-	before_filter :setup, only: [:edit]
+	before_filter :setup, only: [:edit, :subscription]
   
   #def new
   #	super
@@ -14,7 +14,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     if (params[:user][:stripe_card_token] != nil) && (params[:plan] == "2")
       @user.update_attributes(plan_id: params[:plan], email: params[:email], stripe_card_token: params[:user][:stripe_card_token])
       @user.save_with_payment
-      redirect_to edit_user_registration_path, notice: "Updated to premium!"
+      redirect_to subscription_path, notice: "Updated to premium!"
     else
       flash[:error] = "Unable to update plan."
       redirect_to :back
@@ -27,11 +27,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
     if @user.cancel_user_plan(params[:customer])
       @user.update_attributes(stripe_customer_token: nil, plan_id: 1)
       flash[:notice] = "Canceled subscription."
-      redirect_to edit_user_registration_path
+      redirect_to subscription_path
     else
       flash[:error] = "There was an error canceling your subscription. Please notify us."
       render :edit
     end
+  end
+
+  def subscription
+   @user = current_user
   end
 
 

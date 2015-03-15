@@ -92,7 +92,7 @@ h3 {
 	height: 60px;
 	position: absolute;
 	top: 3px;
-	left: 10px;
+	left: 40px;
 }
 
 a .webpage_title {
@@ -103,7 +103,7 @@ a .webpage_title {
   letter-spacing: 3px;
 	height: 60px;
 	line-height: 60px;
-	margin-left: 60px;
+	margin-left: 90px;
 	color: #F05053;
 	font-size: 25px;
 }
@@ -121,9 +121,7 @@ a .webpage_title {
 
 .header_navigation {  
     height: 60px;  
-    width: 100%;    
-    font-size: 14px;
-    font-family: 'PT Sans', sans-serif;
+    width: 100%; 
     position: relative;  
     border: 0px solid red;  
 }  
@@ -131,19 +129,24 @@ a .webpage_title {
 .header_navigation ul {   
     float: right;    
     height: 60px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-family: 'PT Sans', sans-serif;
+    font-weight: bold;
+    padding-right: 40px;
     border: 0px solid red; 
 }  
 
 .header_navigation li {  
     display: inline;  
     float: right;  
-    padding: 0px 10px 0 10px;
+    padding: 0px 20px 0 20px;
     border: 0px solid red;
 }
 
-.header_navigation .search_image {
+/*.header_navigation .search_image {
   padding: 0px 0px 0 10px;
-}
+}*/
 
 
 /*.clearfix:before,  

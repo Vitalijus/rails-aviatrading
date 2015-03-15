@@ -20,16 +20,10 @@ class AdvertsController < ApplicationController
   # GET /adverts
   # GET /adverts.json
   def index
-    @q = Advert.order("created_at ASC")
-               .paginate(:page => params[:page], :per_page => 12)
+    @q = Advert.paginate(:page => params[:page], :per_page => 12)
                .search(params[:q])
 
     @adverts = @q.result(distinct: true)
-
-    respond_to do |format|
-      format.html
-      format.js
-    end
   end
 
   # GET /adverts/1

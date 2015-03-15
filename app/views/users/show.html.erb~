@@ -1,25 +1,27 @@
 <div class="show_page_wrapper">
-   	<% if user_signed_in? %>
-    	<div class="show_page_panel">
-			<ul>
-			  <li><%= link_to 'Update Cover image', edit_user_registration_path %></li>
-			  <li><%= link_to 'Change Icon', edit_user_registration_path %></li>
-			  <li><%= link_to 'Subscription Plan', subscription_path %></li>	
-			</ul>
-   		</div> 
-  	<% end %>
-
+   <% if user_signed_in? %>
+    <div class="show_page_panel">
+	<ul>
+	  <li><%= link_to 'Update cover image', edit_user_registration_path %></li>
+	  <li><%= link_to 'Change Icon', edit_user_registration_path %></li>
+	  <li><%= link_to 'Subscription Plan', edit_user_registration_path %></li>	
+	</ul>
+   </div> 
+  <% end %>
 	<div class="show_user_page_header">
 		<div class="show_user_page_avatar">
 			<%= image_tag @user.avatar_url(:avatar) %>
 		</div>
-	</div>
 
-	<div class="show_user_details">
-		Vitalijus Desukas
+		<div class="show_user_page_name">
+			Vitalijus Desukas
+		</div>
 
-		<div class="show_user_settings">
-			<%= link_to 'Edit Profile', edit_user_registration_path %>
+		<div class="show_user_page_edit">
+			<% if user_signed_in? %>
+				<%= link_to 'Edit profile', edit_user_registration_path %> | 
+				<%= link_to 'Update cover image', edit_user_registration_path %>
+			<% end %>
 		</div>
 	</div>
 

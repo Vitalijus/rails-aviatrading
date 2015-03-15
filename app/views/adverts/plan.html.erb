@@ -6,7 +6,7 @@
  <div class="plan_wrapper">
     <div class="plan_basic">
     	<div class="plan_basic_header">
-		    <h3>Basic</h3>
+		    <h3>Free</h3>
           <div class="plan_for_whom">
             Best for private use
           </div>
@@ -49,7 +49,7 @@
             Designed for business
           </div>
 
-          <div class="plan_price">
+          <div class="plan_price premium">
             <span class="plan_currency">$</span><span class="plan_amount">99.99</span><span class="plan_month"> /month</span><span class="plan_old_price">149.99</span>
           </div>
 
@@ -59,7 +59,7 @@
             </ul>
           </div>
 
-          <div class="tri-down"><!--trianle--></div>
+          <div class="tri-down premium"><!--trianle--></div>
 	    </div>
 
       <div class="plan_benefits">
@@ -74,7 +74,7 @@
       </div>
 
       <%= link_to sign_up_path(plan: @premium_plan.id) do %>
-        <div class="plan_subscribe_link">
+        <div class="plan_subscribe_link premium">
           We pay first month!
         </div>
       <% end %>
@@ -82,5 +82,6 @@
   </div>
 
   <div class="plan_social_proof">
-
+  TESTIMONIALS<br>
+  FAQ
   </div>

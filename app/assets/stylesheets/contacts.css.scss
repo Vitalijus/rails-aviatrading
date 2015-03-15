@@ -1,68 +1,77 @@
 #contact_wrapper {
-	border: 0px solid red;
-	width: 700px;
+	width: 600px;
 	margin: 0 auto;
-	margin-top: 20px;
-	-webkit-box-shadow: 0px 0px 0px 1px rgba(150, 150, 150, 0.25);
-  	-moz-box-shadow:    0px 0px 0px 1px rgba(150, 150, 150, 0.25);
-  	box-shadow:         0px 0px 0px 1px rgba(150, 150, 150, 0.25);
+	margin-top: 80px;
+	margin-bottom: 80px;
+	padding: 30px 40px 40px 40px;
+	background-color: #fff;
+	border: 1px solid #DFE0E4;
 }
 
 #contact_header {
-	width: 100%;
-	background-color: #F6F7F8;
-	text-align: center;
-	color: #555555;
-	font-size: 35px;
-	padding: 20px;
-	font-family: "Open Sans", helvetica, arial;
-	border-bottom: 1px solid #eaeaeb;
+  font-family: "Open Sans", helvetica, arial;
+  font-size: 25px;
+  color: #F05053;
+  background-color: #fff;
+  text-align: center;
+}
+
+.contact_form_logo {
+	border: 0px solid red;
 }
 
 #contact_header_small {
+	padding-top: 5px;
 	text-align: center;
-	font-size: 25px;
-	border: 0px solid red;
+	font-family: 'PT Sans', sans-serif;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 12px;
+	color: #8e8e8e;
 }
 
 #contact_form {
 	width: 100%;
 	background-color: #ffffff;
-	border: 0px solid red;
-	padding: 20px;
+	margin-top: 20px;
 }
 
 .new_contact label {
-	color: #555555;
-	font-family: 'Lato', sans-serif;
-	font-size: 12px;
-	border: 0px solid #cecfc0;
+  width: 100%;
+  font-family: "Open Sans", helvetica, arial;
+  font-weight: bold;
+  font-size: 13px;
+  color: #666;
 }
 
 .new_contact_field {
-	width: 100%;
-	padding: 15px;
-	margin-bottom: 10px;
-	margin-top: 2px;
-	color: #555555;
-	border: 1px solid #cecfc0;
+  width: 100%;
+  margin-top: 3px;
+  margin-bottom: 15px;
+  padding: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  background-color: #fefafa;
+  border: 1px solid #fdeded;
 }
 
 .contact_message_field {
 	width: 100%;
 	height: 100px;
-	border: 1px solid #cecfc0;
-	margin-bottom: 20px
+	font-family: 'Roboto', sans-serif;
+  	font-size: 13px;
+  	background-color: #fefafa;
+  	border: 1px solid #fdeded;
+	margin-bottom: 15px
 }
 
 .new_contact_create_button  {
 	border: none;
 	text-align: center;
 	width: 100%;
-	padding: 15px;
+	height: 45px;
 	margin-top: 5px;
 	font-size: 16px;
-	font-weight: bold;
 	color: #ffffff;
 	font-family: "Open Sans", helvetica, arial;
 	background-color: #26AE5A;

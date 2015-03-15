@@ -1,7 +1,10 @@
 <div id="contact_wrapper">
 	
 	<div id="contact_header">
-		CONTACT LINGONAS
+    <div class="contact_form_logo">
+      <span class="icon-propeller_500x500"></span>
+    </div>
+		Contact Aerohub
 
 		<div id="contact_header_small">
 			We are looking forward to hearing from you
@@ -24,17 +27,17 @@
 
 
   <div class="new_contact">
-    <%= f.label :name %><br>
+    <%= f.label :name %>
     <%= f.text_field :name, :class => "new_contact_field" %> 
   </div>
 
   <div class="new_contact">
-    <%= f.label :email %><br>
+    <%= f.label :email %>
     <%= f.text_field :email, :class => "new_contact_field" %> 
   </div>
 
   <div class="new_contact">
-    <%= f.label :message %><br>
+    <%= f.label :message %>
     <%= f.text_area :message, :class => "contact_message_field" %> 
   </div>
 
