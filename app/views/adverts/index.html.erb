@@ -1,50 +1,56 @@
-
-<div id="masonry-container" class="centered clearfix">
-  <div class="preview_header">
-    Adverts
+<div id="advert_search_container">
+  <div id="advert_search_header">
+    search
   </div>
-
-<% @adverts.each do |advert| %>
-
-  <div class="box">
-    <%= link_to advert_path(advert), data: { no_turbolink: true } do %>
-      <div class="box_image">
-
-        <% advert.photos.each do |photo| %>
-          <%= image_tag photo.image_url(:advert_image) %>
-        <% end %>
-
-        <div class="box_price">
-          <%= number_to_currency(advert.price, precision: 0, unit: "") %> <%= advert.currency %>
-        </div>
-      </div>
-
- 
-      <div class="box_make">
-        <%= advert.make %>
-
-        <div class="box_model">
-            <%= advert.model %>
-        </div>
-      </div>
-    <% end %>
-
-      <div class="box_footer_wrapper">
-        <div class="box_footer">
-          <%= advert.country %>, <%= advert.city %>
-        </div>
-      </div>
-
-      <!--<div class="box_icons">
-        <ul>
-          <li><%= image_tag "video.png", width: 25 %></li>
-          <li><%= image_tag "video.png", width: 25 %></li>
-        </ul>
-      </div>-->
-  </div>
-<% end %>
 </div>
 
+<div id="advert_container">
+  <div id="masonry-container" class="centered clearfix">
+    <div class="preview_header">
+      Adverts
+    </div>
+
+  <% @adverts.each do |advert| %>
+
+    <div class="box">
+      <%= link_to advert_path(advert), data: { no_turbolink: true } do %>
+        <div class="box_image">
+
+          <% advert.photos.each do |photo| %>
+            <%= image_tag photo.image_url(:advert_image) %>
+          <% end %>
+
+          <div class="box_price">
+            <%= number_to_currency(advert.price, precision: 0, unit: "") %> <%= advert.currency %>
+          </div>
+        </div>
+
+   
+        <div class="box_make">
+          <%= advert.make %>
+
+          <div class="box_model">
+              <%= advert.model %>
+          </div>
+        </div>
+      <% end %>
+
+        <div class="box_footer_wrapper">
+          <div class="box_footer">
+            <%= advert.country %>, <%= advert.city %>
+          </div>
+        </div>
+
+        <!--<div class="box_icons">
+          <ul>
+            <li><%= image_tag "video.png", width: 25 %></li>
+            <li><%= image_tag "video.png", width: 25 %></li>
+          </ul>
+        </div>-->
+    </div>
+  <% end %>
+  </div>
+</div>
 <div id="digg_pagination" data-no-turbolink>
   <%= will_paginate @adverts, :page_links => false %>
 </div>

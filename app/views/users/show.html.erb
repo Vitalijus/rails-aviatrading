@@ -1,10 +1,10 @@
 <div class="show_page_wrapper">
-   	<% if user_signed_in? %>
+	<% if user_signed_in? && current_user == @user %>
     	<div class="show_page_panel">
 			<ul>
-			  <li><%= link_to 'Update Cover image', edit_user_registration_path %></li>
-			  <li><%= link_to 'Change Icon', edit_user_registration_path %></li>
-			  <li><%= link_to 'Subscription Plan', subscription_path %></li>	
+			  <li><%= link_to 'My Adverts', user_path(current_user) %></li>
+			  <li><%= link_to 'Settings', edit_user_registration_path %></li>
+			  <li><%= link_to 'Subscription', subscription_path %></li>	
 			</ul>
    		</div> 
   	<% end %>
@@ -19,7 +19,10 @@
 		Vitalijus Desukas
 
 		<div class="show_user_settings">
-			<%= link_to 'Edit Profile', edit_user_registration_path %>
+			<ul>
+				<li><%= link_to 'Update Cover image', edit_user_registration_path %></li>
+				<li><%= link_to 'Change Icon', edit_user_registration_path %></li>
+			</ul>
 		</div>
 	</div>
 
@@ -58,13 +61,9 @@
 				<div class="show_user_adverts">
 					<%= link_to advert do %>
 					<div class="show_user_adverts_image">
-						<% if advert.advert_image.blank? %>
-				          default pic
-				        <% else %>
-					        <% advert.photos.each do |photo| %>
-					          <%= image_tag photo.image_url(:advert_image_user) %>
-					        <% end %>
-				        <% end %>
+			        	<% advert.photos.each do |photo| %>
+			          		<%= image_tag photo.image_url(:advert_image_user) %>
+			       		<% end %>
 				    </div>
 
 					<div class="show_user_adverts_content">

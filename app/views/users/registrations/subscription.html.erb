@@ -1,15 +1,33 @@
 <div class="subscription_wrapper">
-  <div class="panel-heading">
-    <div class="panel-title">
-      <h1>Edit <%= resource_name.to_s.humanize %></h1>
+  <% if user_signed_in? && current_user == @user %>
+    <div class="show_page_panel">
+    <ul>
+      <li><%= link_to 'My Adverts', user_path(current_user) %></li>
+      <li><%= link_to 'Settings', edit_user_registration_path %></li>
+      <li><%= link_to 'Subscription', subscription_path %></li> 
+    </ul>
+    </div> 
+  <% end %>
+
+
+  <div class="subscription_content">
+    <div class="subscription_header">
+      <div class="subscription_form_logo">
+        <span class="icon-propeller_500x500"></span>
+      </div>
+
+      <% if resource.plan.name == "Free" %>
+        Upgrade to Premium
+      <% else %>
+        Cancel Subscription
+      <% end %>
     </div>
-    Current plan: <%= resource.plan.name %>
-  </div>
-  <div class="panel-body">
+
+  <div class="subscription_payment">
 
   <% if resource.plan.name == "Free" %>
 
-  <h2>Upgrade to Premium</h2>
+  
   <%= form_for(resource, :as => resource_name, :url => users_update_plan_path, :html => { id: 'update_plan', :method => :put }) do |f| %><!-- id: 'update_plan' refers to update_plan.js.coffee -->
 
     <%= hidden_field_tag 'plan', @premium_plan.id %>
@@ -40,7 +58,7 @@
 
   <% else %>
 
-  <h2>Cancel Subscription</h2>
+  
     <%= form_for(resource, :as => resource_name, :url => users_cancel_plan_path, :html => { id: 'cancel_plan', :method => :put }) do |f| %>
 
     <%= hidden_field_tag 'customer', resource.stripe_customer_token %>
@@ -51,5 +69,10 @@
 
   <% end %>
 
+    </div>
+  </div>
+
+  <div class="subscription_details">
+  ddd
   </div>
 </div>

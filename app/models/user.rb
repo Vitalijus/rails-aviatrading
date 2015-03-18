@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   has_one :order, dependent: :destroy
   belongs_to :plan
 
-  validates_presence_of :plan_id
+  #validates_presence_of :plan_id
 
   attr_accessor :stripe_card_token
 
@@ -63,7 +63,12 @@ class User < ActiveRecord::Base
       false
   end
 
-  #def to_param
-	# "#{id} #{name} #{surname}".parameterize
-  #end
+  def email_check
+    a = self.email
+    a.split("@").first
+  end
+
+  def to_param
+	 "#{id} #{email_check}".parameterize
+  end
 end

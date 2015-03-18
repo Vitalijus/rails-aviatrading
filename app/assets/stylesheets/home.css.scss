@@ -99,17 +99,27 @@
 .home_banner_wrapper {
 	width: 100%;
 	height: 300px;
-	background: url('bg_texture.png');
+	background: url('bg.jpg');
+	/*background-color: #314359;
+	background: url('bg_blue.jpg');*/
 	border-bottom: 1px solid #DFE0E4;
 }
 
 .home_banner_phrase {
 	padding: 30px 0 0 0;
 	font-weight: bold;
-	font-size: 40px;
+	font-size: 50px;
 	color: #fff;
-	font-family: 'PT Sans', sans-serif;
+	font-family: 'Lato', sans-serif;
 	text-align: center;
+	border: 0px solid red;
+}
+
+.banner_phrase_small {
+	padding-top: 10px;
+	font-family: 'PT Sans', sans-serif;
+	font-size: 25px;
+	font-weight: normal;
 	border: 0px solid red;
 }
 

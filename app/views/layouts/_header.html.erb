@@ -1,16 +1,17 @@
 <header>
 	<div id="header_wrapper">
+
+		<%= link_to root_url, data: { no_turbolink: true } do %>
+			<div class="webpage_title">
+				<div class="webpage_logo">
+					<span class="icon-propeller_500x500"></span>
+				</div>
+
+				AEROHUB
+			</div>
+		<% end %>
+
 			<div class="header_navigation">  
-
-				<%= link_to root_url, data: { no_turbolink: true } do %>
-					<div class="webpage_logo">
-						<span class="icon-propeller_500x500"></span>
-					</div>
-
-					<div class="webpage_title">
-						AEROHUB
-					</div>
-				<% end %>
 				
 			    <ul>  
 		        	<%= link_to new_advert_path, data: { no_turbolink: true } do %>
@@ -21,8 +22,10 @@
 						<li>All Adverts</li>
 					<% end %>
 
-					<%= link_to plan_path do %>
-						<li>Pricing</li>
+					<% if !user_signed_in? %>
+						<%= link_to plan_path do %>
+							<li>Pricing</li>
+						<% end %>
 					<% end %>
 
 					<%= link_to new_contact_path, data: { no_turbolink: true } do %>

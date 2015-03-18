@@ -1,5 +1,6 @@
 class Users::RegistrationsController < Devise::RegistrationsController
 	before_filter :setup, only: [:edit, :subscription]
+  before_action :authenticate_user!, only: [:subscription]
   
   #def new
   #	super

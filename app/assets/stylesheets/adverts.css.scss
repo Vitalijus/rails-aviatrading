@@ -11,7 +11,7 @@
 	margin: auto;
 	padding-top: 50px;
 	text-align: center;
-	background: url('bg_texture.png');
+	background: url('bg.jpg');
 	font-size: 40px;
 	color: #fff;
 	font-family: 'PT Sans', sans-serif;
@@ -262,14 +262,42 @@ a:hover .plan_subscribe_link.premium {
 
 /*---------------------*/
 
+/* ADVERT SEARCH */
+
+#advert_search_container {
+	width: 220px;
+	height: 100%;
+	position: fixed;
+	top: 59px;
+	left: 0;
+	background-color: #2D3A40;
+	border-right: 1px solid #DFE0E4;
+}
+
+#advert_search_header {
+	height: 60px;
+	background-color: #38484f;
+	color: #fff;
+	border-top: 0px solid #DFE0E4;
+}
+
+/*---------------*/
+
 /* MASONRY */
 
+#advert_container {
+	max-width: 1500px;
+	padding: 0 20px 0 20px;
+	margin-left: 220px;
+	overflow: hidden;
+	border: 0px solid red;
+}
+
 #masonry-container {
-  max-width: 1250px;
   padding: 35px 10px 10px 10px;
-  margin-bottom: 20px;
-  margin-top: 80px;
   clear: both;
+  margin-top: 20px;
+  margin-bottom: 20px;
   background-color: #fff;
   border: 1px solid #DFE0E4;
 }
@@ -296,12 +324,12 @@ a:hover .plan_subscribe_link.premium {
 /* MASONRY BOX */
 
 .box {
-	border: 0px solid #DFE0E4;
 	background-color: #fff;
 	margin: 10px 5px 10px 5px;
 	width: 195px;
 	position: relative;
 	display: none;
+	border: 1px solid red;
 }
 
 .box_image {
@@ -389,7 +417,7 @@ a:hover .box_make, a:hover .box_model {
 	width: 100%;
 	height: 300px;
 	margin-bottom: 20px;
-	background: url('bg_texture.png');
+	background: url('bg.jpg');
 	border-bottom: 1px solid #DFE0E4;
 }
 
