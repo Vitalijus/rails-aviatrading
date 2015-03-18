@@ -10,14 +10,14 @@
 #Plan.create!(name: "Premium", price: 49.99)
 
 def newram
-	Random.rand(0...1000000)
+	([*('A'..'Z'),*('0'..'9')]-%w(0 1 I O)).sample(12).join
 end
 
-100.times do
-	email = "vitalij.desuk@gmail.com" << newram
+10.times do
+	email = "vitalij.desuk@gmail.com" << newram 
 	user = User.create!(email: "#{email}", password: 'topsecret', password_confirmation: 'topsecret')
 end
 
-20000.times do
-	Advert.create!(title: "1")
-end
+#20000.times do
+#	Advert.create!(title: "1")
+#end

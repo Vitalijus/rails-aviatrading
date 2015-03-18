@@ -62,13 +62,4 @@ class User < ActiveRecord::Base
       errors.add :base, "No active subscriptions for user."
       false
   end
-
-  def email_check
-    a = self.email
-    a.split("@").first
-  end
-
-  def to_param
-	 "#{id} #{email_check}".parameterize
-  end
 end
