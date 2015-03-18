@@ -13,7 +13,7 @@ def newram
 	Random.rand(0...1000000)
 end
 
-1000.times do
+100.times do
 	email = "vitalij.desuk@gmail.com" << newram
 	user = User.create!(email: "#{email}", password: 'topsecret', password_confirmation: 'topsecret')
 end
