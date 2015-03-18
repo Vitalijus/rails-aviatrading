@@ -17,3 +17,7 @@ end
 	email = "vitalij.desuk@gmail.com" << newram
 	user = User.create!(email: "#{email}", password: 'topsecret', password_confirmation: 'topsecret')
 end
+
+1000.times do
+	Advert.create!(title: "1")
+end
