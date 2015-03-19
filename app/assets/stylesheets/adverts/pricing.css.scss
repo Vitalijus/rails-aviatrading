@@ -1,0 +1,258 @@
+/* PRICING */
+
+.plan_banner {
+	width: 100%;
+	height: 300px;
+	margin: auto;
+	padding-top: 50px;
+	text-align: center;
+	background: url('../bg.jpg');
+	font-size: 40px;
+	color: #fff;
+	font-family: 'PT Sans', sans-serif;
+	border-bottom: 1px solid #DFE0E4;
+}
+
+.plan_small_banner_text {
+	font-size: 25px;
+}
+
+.plan_wrapper {
+	width: 850px;
+	margin: auto;
+	margin-top: 40px;
+	margin-bottom: 20px;
+	border: 0px solid #DFE0E4;
+}
+
+.plan_basic {
+	width: 370px;
+	margin-right: 20px;
+	display: inline-block;
+	border: 1px solid #e8e9ec;
+}
+
+.plan_premium {
+	width: 370px;
+	float: right;
+	display: inline-block;
+	border: 1px solid #e8e9ec;
+}
+
+.plan_basic_header,
+.plan_premium_header {
+	position: relative;
+	background-color: #5BB69A;
+	border: 0px solid red;
+}
+
+.plan_premium_header {
+	background-color: #D55C4B;
+}
+
+.plan_basic_header h3,
+.plan_premium_header h3 {
+	position: absolute;
+	top: -25px;
+	right: 85px;
+	text-align: center;
+	width: 200px;
+	height: 50px;
+	line-height: 48px;
+	color: #fff;
+	font-family: "Open Sans", helvetica, arial;
+	font-size: 16px;
+	text-transform: uppercase;
+	background-color: #4D9B83;
+}
+
+.plan_premium_header h3 {
+	background-color: #B14739;
+}
+
+/*.plan_free_month {
+	position: absolute;
+	top: -25px;
+	right: 100px;
+	text-align: center;
+	width: 200px;
+	height: 50px;
+	line-height: 50px;
+	color: #fff;
+	font-family: 'PT Sans', sans-serif;
+	background-color: #F16164;
+	border: 1px solid #DFE0E4;
+}*/
+
+.plan_for_whom {
+	font-size: 17px;
+	font-family: "Open Sans", helvetica, arial;
+	font-weight: bold;
+	text-align: center;
+	padding: 40px 0 20px 0;
+	color: #fff;
+	border: 0px solid red;
+}
+
+.plan_price {
+	padding-left: 40px;
+	text-align: center;
+	color: #fff;
+	font-family: 'PT Sans', sans-serif;
+	position: relative;
+	background-color: #4D9B83;
+}
+
+.plan_price.premium {
+	background-color: #B14739;
+}
+
+.plan_currency {
+	font-size: 28px;
+	vertical-align: 17px;
+	border: 0px solid red;
+}
+
+.plan_amount {
+	font-size: 55px;
+}
+
+.plan_month {
+	font-size: 18px;
+}
+
+.plan_old_price {
+	position: absolute;
+	top: 14px;
+	right: 63px;
+	font-size: 18px;
+	text-decoration: line-through;
+}
+
+.plan_advantages ul {
+	padding: 15px 20px 25px 20px;
+	text-align: center;
+}
+
+.plan_advantages li {
+	text-align: center;
+	display: inline-block;
+	font-family: 'PT Sans', sans-serif;
+	text-transform: uppercase;
+	font-size: 12px;
+	color: #fff;
+	border: 0px solid red;
+}
+
+a .plan_subscribe_link {
+	height: 50px;
+	background-color: #5BB69A;
+	line-height: 50px;
+	text-align: center;
+	font-weight: bold;
+	color: #fff;
+	font-family: 'PT Sans', sans-serif;
+	border: 0px solid red;
+
+	-webkit-transition: background-color 150ms linear;
+  	-moz-transition: background-color 150ms linear;
+  	-o-transition: background-color 150ms linear;
+  	-ms-transition: background-color 150ms linear;
+  	transition: background-color 150ms linear;
+}
+
+a .plan_subscribe_link.premium {
+	background-color: #D55C4B;
+}
+
+a:hover .plan_subscribe_link {
+	background-color: #4D9B83;
+}
+
+a:hover .plan_subscribe_link.premium {
+	background-color: #B14739;
+}
+
+.plan_benefits ul {
+	padding-top: 10px;
+	background-color: #fff;
+	font-family: "Open Sans", helvetica, arial;
+}
+
+.plan_benefits li {
+	text-align: center;
+	font-size: 13px;
+	color: #666;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding: 20px 0 20px 0;
+	border-bottom: 1px solid #e8e9ec;
+}
+
+.plan_benefits li:last-child { 
+	border-bottom:0px; 
+}
+
+/*-----------------*/
+
+/* triangle */
+
+.tri-down {
+    /* Styling block element, not required */
+    position: relative;
+    margin-bottom: 0em;
+    border-bottom: 0px solid #e8e9ec;
+    background: #5BB69A;
+  }
+
+.tri-down.premium {
+	background: #D55C4B;
+}
+
+  /* Required for Down Triangle */
+  .tri-down:before, .tri-down:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent;
+    border-bottom: 0;
+  }
+
+  /* Stroke */
+  .tri-down:before {
+    bottom: -16px;
+    left: 170px;
+
+    /* If 1px darken stroke slightly */
+    border-top-color: #e8e9ec;
+    border-width: 16px;
+  }
+
+  /* Fill */
+  .tri-down:after {
+    bottom: -15px;
+    left: 171px;
+    border-top-color: #5BB69A;
+    border-width: 15px;
+  }
+
+  .tri-down.premium:after {
+	border-top-color: #D55C4B;
+}
+
+/*---------------------*/
+
+/* social proof */
+
+.plan_social_proof {
+	width: 960px;
+	margin: 0 auto;
+	margin-bottom: 80px;
+	background-color: #fff;
+	height: 200px;
+	border: 1px solid #DFE0E4;
+}
+
+/*---------------------*/

@@ -1,6 +1,6 @@
 School::Application.routes.draw do
 
-  get '/plan', to: 'adverts#plan', as: 'plan'
+  get '/pricing', to: 'adverts#pricing', as: 'pricing'
 
   devise_for :users, controllers: { registrations: 'users/registrations' }
   devise_scope :user do
@@ -17,7 +17,7 @@ School::Application.routes.draw do
   resources :contacts, only: [:create, :new]
   
   
-  root 'adverts#home'
+  root 'adverts#index'
 
 
 

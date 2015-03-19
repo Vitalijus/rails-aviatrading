@@ -1,0 +1,468 @@
+/* NEW FORM ADVERT NAV*/
+
+.new_advert_header_wrapper {
+	width: 100%;
+	height: 300px;
+	margin-bottom: 20px;
+	background: url('../bg.jpg');
+	border-bottom: 1px solid #DFE0E4;
+}
+
+.new_advert_header {
+	font-weight: bold;
+	color: #fff;
+	font-size: 35px;
+	text-align: center;
+	font-family: 'PT Sans', sans-serif;
+	padding-top: 40px;
+}
+
+.new_advert_header_small {
+	font-size: 25px;
+	padding-top: 10px;
+	font-weight: normal;
+	font-family: 'Lato', sans-serif;
+	border: 0px solid red;
+}
+
+.new_advert_form_wrapper {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	border: 0px solid red;
+}
+
+.new_advert_nav {
+	width: 100%;
+	border: 0px solid green;
+}
+
+.new_advert_nav ul {
+	width: 960px;
+	margin: auto;
+	margin-top: 20px;
+	background-color: #F6F7F8;
+	border-top: 1px solid #DFE0E4;
+	border-left: 1px solid #DFE0E4;
+	border-right: 1px solid #DFE0E4;
+	position: relative;
+}
+
+.new_advert_nav li {
+	width: 33%;
+	height: 60px;
+	line-height: 60px;
+	display: inline-block;
+	padding: 0 20px 0 20px;
+	text-align: center;
+	font-size: 15px;
+	font-weight: bold;
+	font-family: "Open Sans", helvetica, arial;
+	text-transform: uppercase;
+	border-right: 0px solid #DFE0E4;
+}
+
+.new_advert_nav li a {
+	color: #000;
+}
+
+.new_advert_nav li a:hover {
+	color: #F04F54;
+}
+
+li.active a, li.active a:hover {
+    color: #F04F54;
+}
+
+/*-------------------*/
+
+/* advert new form */
+
+.new_form_wrapper {
+	width: 960px;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	border: 0px solid red;
+}
+
+.new_form_wrapper ul {
+	padding: 20px 0 20px 0 ;
+	border-bottom: 1px solid #F2F2F4;
+}
+
+.new_form_wrapper li {
+	display: inline-block;
+}
+
+.new_form_wrapper {
+    display:none;
+}
+ 
+.new_form_wrapper.active {
+    display:block;
+}
+
+/* helpers */
+.new_form_separator_helper {
+	height: 20px;
+}
+
+.new_form_border_helper {
+	background-color: #fff;
+	padding: 0 20px 20px 20px;
+	border: 1px solid #DFE0E4;
+}
+/*--------*/
+
+.new_form_wrapper_header {
+	font-family: 'PT Sans', sans-serif;
+	font-size: 18px;
+	padding: 20px 0 15px 0;
+	text-transform: uppercase;
+	font-weight: bold;
+	background-color: #fff;
+	border-bottom: 1px solid #f2f2f4;
+}
+
+.form_label {
+	width: 30%;
+	font-family: 'PT Sans', sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: left;
+	float: left;
+	padding-right: 20px;
+	vertical-align: middle;
+	border: 0px solid green;
+}
+
+.new_form_wrapper .form_label_small {
+	font-family: "Open Sans", helvetica, arial;
+	font-size: 12px;
+	font-weight: normal;
+	border: 0px solid red;
+}
+
+.required_fields {
+	color: #F37A7C;
+	font-size: 16px;
+}
+
+.new_form_make_model,
+.new_form_aircraft_details,
+.new_form_type_usage,
+.new_form_aircraft_location,
+.new_form_propeller,
+.new_form_contact_person {
+	width: 70%;
+	border: 0px solid red;
+}
+
+.new_form_manufacturer,
+.new_form_model,
+.new_form_nearest_airport,
+.new_form_airport_code,
+.new_form_serial_number,
+.new_form_registration_number,
+.new_form_aircraft_hours,
+.new_form_landings,
+.new_form_passengers,
+.new_form_city,
+.new_form_engines_number,
+.new_form_engines_make,
+.new_form_engines_model,
+.new_form_engine_hours,
+.new_form_tbo,
+.new_form_engine_power,
+.new_form_number_of_propellers,
+.new_form_propeller_hours,
+.new_form_propeller_make,
+.new_form_propeller_model,
+.new_form_engine_notes,
+.new_form_name,
+.new_form_surname,
+.new_form_email,
+.new_form_phone,
+.new_form_price {
+	display: inline-block;
+	padding: 8px;
+	margin-right: -4px;
+	font-family: "Open Sans", helvetica, arial;
+	font-size: 12px;
+	border: 1px solid #DFE0E4;
+}
+
+.new_form_engine_notes {
+	width: 644px;
+	height: 125px;
+}
+
+.new_form_manufacturer,
+.new_form_model,
+.new_form_nearest_airport,
+.new_form_airport_code,
+.new_form_serial_number,
+.new_form_registration_number,
+.new_form_city,
+.new_form_engines_number,
+.new_form_engines_make,
+.new_form_engines_model,
+.new_form_number_of_propellers,
+.new_form_propeller_hours,
+.new_form_propeller_make,
+.new_form_propeller_model,
+.new_form_name,
+.new_form_surname,
+.new_form_email,
+.new_form_phone,
+.new_form_price  {
+	width: 49.4%;
+}
+
+.new_form_aircraft_hours,
+.new_form_landings,
+.new_form_passengers {
+	width: 24%;
+}
+
+.new_form_engine_hours,
+.new_form_tbo,
+.new_form_engine_power {
+	width: 32.4%;
+}
+
+.new_form_manufacturer,
+.new_form_nearest_airport,
+.new_form_serial_number,
+.new_form_aircraft_hours,
+.new_form_landings,
+.new_form_engines_number,
+.new_form_engines_make,
+.new_form_engine_hours,
+.new_form_tbo,
+.new_form_number_of_propellers,
+.new_form_propeller_make,
+.new_form_name,
+.new_form_email {
+	margin-right: 6px;
+}
+
+.new_form_serial_number,
+.new_form_registration_number,
+.new_form_city,
+.new_form_engines_number,
+.new_form_engines_make,
+.new_form_number_of_propellers,
+.new_form_name,
+.new_form_surname {
+	margin-bottom: 10px;
+}
+
+/*------------------------*/
+
+/* fields length */
+
+.new_form_wrapper .advert_aircraft_hours_field {
+	width: 115px;
+	border: 0px solid red;
+}
+
+.new_form_wrapper .advert_landings_field {
+	width: 115px;
+	border: 0px solid red;
+}
+
+.new_form_wrapper .advert_number_of_passengers_field {
+	width: 115px;
+	border: 0px solid red;
+}
+
+.new_form_wrapper .advert_email_field {
+	width: 300px;
+	border: 0px solid red;
+}
+
+.new_form_wrapper .advert_phone_field {
+	width: 170px;
+	border: 0px solid red;
+}
+
+.avionics_text_field {
+	width: 484px;
+	padding: 10px;
+	height: 100px;
+	color: #000000;
+	font-size: 15px;
+	font-family: 'PT Sans Narrow', sans-serif;
+	border: 1px solid #cecfc0;
+}
+
+/*------------------------*/
+
+/* new advert checkboxes */
+
+.new_advert_checkboxes ul {
+	width: 360px;
+	font-size: 14px;
+	font-family: 'PT Sans Narrow', sans-serif;
+	overflow: hidden;
+	border: 0px solid green;
+}
+
+.new_advert_checkboxes li {
+	margin-top: 10px;
+	float: left;
+	border: 0px solid red;
+}
+
+.new_advert_checkboxes .new_advert_checkboxes_label {
+	width: 210px;
+	text-align: right;
+	margin-right: 15px;
+	border: 0px solid red;
+}
+
+.new_advert_checkboxes .eu_vat_paid {
+	border: 0px solid green;
+	float: right;
+	padding-left: 30px;
+}
+
+.new_advert_checkbox {
+  width: 20px;
+  border: 0px solid red;
+  position: relative;
+}
+
+.new_advert_checkbox label {
+  cursor: pointer;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  left: 0;
+  background: #eee;
+  border: 1px solid #ddd;
+}
+
+
+/**
+ * Display the tick inside the checkbox
+ */
+.new_advert_checkbox label:after {
+  opacity: 0.2;
+  content: '';
+  position: absolute;
+  width: 7px;
+  height: 3px;
+  background: transparent;
+  top: 5px;
+  left: 5px;
+  border: 3px solid #333;
+  border-top: none;
+  border-right: none;
+
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+/**
+ * Create the hover event of the tick
+ */
+.new_advert_checkbox label:hover::after {
+  opacity: 0.5;
+}
+
+/**
+ * Create the checkbox state for the tick
+ */
+.new_advert_checkbox input[type=checkbox]:checked + label:after {
+  opacity: 1;
+}
+
+/*-------------------------*/
+
+/* New course select dropdown list style */
+
+:root .new_form_dropdown_list option,
+:root .new_form_dropdown_list:after,
+:root .new_form_dropdown_list::after,
+:root .new_form_dropdown_list select
+{
+    color: #777;
+}
+ 
+:root .new_form_dropdown_list select,
+:root .new_form_dropdown_list:after,
+:root .new_form_dropdown_list::after
+{
+    display: block;
+    background: #29ACC0;
+}
+ 
+:root .new_form_dropdown_list select,
+:root .new_form_dropdown_list option
+{
+    padding: 7px;
+}
+ 
+:root .new_form_dropdown_list
+{
+    position: relative;
+    display: inline-block;
+    margin-right: 6px;
+    border: 0;
+}
+ 
+:root .new_form_dropdown_list::after
+{
+    content: "\25bc";
+    position: absolute;
+    color: #fff;
+    top: 0px;
+    right: 0;
+    display: block;
+    width: 32px;
+    font-size: 12px;
+    line-height: 36px;
+    text-align: center;
+     
+    -webkit-pointer-events: none;
+    -moz-pointer-events: none;
+    pointer-events: none;
+}
+ 
+:root .new_form_dropdown_list select
+{
+   width: 317px;
+   height: 36px;
+   color: #999;
+   margin-left: 0px;
+   vertical-align: middle;
+   border: 1px solid #DFE0E4;
+   background-color: #fff;
+   font: normal 13px/13px 'PT Sans', sans-serif;
+   outline: 0 none;
+}
+
+/* custom width for drop down menu in new form */
+:root .new_form_built_year select {
+	width: 153px;
+}
+
+:root .new_form_aircraft_usage,
+:root .new_form_engine_type {
+	margin-right: -4px;
+}
+/*----------------------*/
+ 
+:root .new_form_dropdown_list option
+{
+    background: #fff;
+    color: #111;
+}
+
+/*----------------------------*/

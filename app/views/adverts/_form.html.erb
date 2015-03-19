@@ -44,14 +44,16 @@
 
 <div class="new_advert_form_wrapper">
 
-  <div class="new_advert_header_wrapper">
-    <div class="new_advert_header">
-      Advertise your aircraft for Free
-        <div class="new_advert_header_small">
-          Aeropoly is the best platform to sell your aircraft.
-        </div>
+  <% if !user_signed_in? %>
+    <div class="new_advert_header_wrapper">
+      <div class="new_advert_header">
+        Advertise your aircraft for Free
+          <div class="new_advert_header_small">
+            Aeropoly is the best platform to sell your aircraft.
+          </div>
+      </div>
     </div>
-  </div>
+  <% end %>
 
   <div class="new_advert_nav">
     <ul class="tabs_links">

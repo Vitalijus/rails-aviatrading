@@ -1,0 +1,179 @@
+/* SIEBAR SEARCH */
+
+.slide_menu {
+  width: 250px;
+  height: 100%;
+  background-color: #fff;
+  z-index: 102;
+  margin-top: -60px;
+  position: fixed;
+  right: -290px;
+  border-left: 1px solid #DFE0E4;
+}
+
+.slide_menu_header {
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #666;
+  padding: 0 20px 0 20px;
+  font-family: 'PT Sans', sans-serif;
+  border: 0px solid red;
+}
+
+.slide_menu_search_wrapper {
+  width: 100%;
+  padding: 0 20px 20px 20px;
+  border: 0px solid red;
+  position: relative;
+}
+
+.slide_menu_search_wrapper li {
+  width: 100%;
+  margin-bottom: 10px;
+  border: 0px solid red;
+}
+
+.search_bar_open_button {
+  width: 60px;
+  height: 60px;
+  background-color: #333333;
+  cursor: pointer;
+}
+
+.search_bar_close_button {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  position: absolute;
+  top: 0px;
+  left: -40px;
+  background-color: #fff;
+  border-left: 1px solid #DFE0E4;
+  border-top: 1px solid #DFE0E4;
+  border-bottom: 1px solid #DFE0E4;
+}
+
+.search_bar_close_button img {
+	position: absolute;
+	top: 7px;
+	right: 7px;
+}
+
+.screen_shadow {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 101;
+  margin-top: -60px;
+  background-color: #000;
+  opacity: 0.7;
+  display: none;
+}
+
+.slide_menu_search_wrapper input {
+  width: 100%;
+  padding: 8px;
+  color: #666;
+  background-color: #fff;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 13px;
+  border: 1px solid #cecfc0;
+}
+
+.slide_menu_search_wrapper .search_button {
+  width: 100%;
+  height: 40px;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  background-color: #f16164;
+  border: none;
+  cursor: pointer;
+  
+  -webkit-transition: background-color 150ms linear;
+  -moz-transition: background-color 150ms linear;
+  -o-transition: background-color 150ms linear;
+  -ms-transition: background-color 150ms linear;
+  transition: background-color 150ms linear;
+}
+
+.slide_menu_search_wrapper .search_button:hover {
+  background-color: #F05053;
+}
+/*---------------------------*/
+
+/* Select dropdown list style in SEARCH */
+
+:root .dropdown_list option,
+:root .dropdown_list:after,
+:root .dropdown_list::after,
+:root .dropdown_list select
+{
+    color: #fff;
+}
+ 
+:root .dropdown_list select,
+:root .dropdown_list:after,
+:root .dropdown_list::after
+{
+    display: block;
+    background: #29ACC0;
+}
+ 
+:root .dropdown_list select,
+:root .dropdown_list option
+{
+    padding: 8px;
+}
+ 
+:root .dropdown_list
+{
+    position: relative;
+    display: inline-block;
+    border: 0;
+}
+ 
+:root .dropdown_list::after
+{
+    content: "\25bc";
+    position: absolute;
+    color: #fff;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 32px;
+    font-size: 12px;
+    line-height: 37px;
+    text-align: center;
+     
+    -webkit-pointer-events: none;
+    -moz-pointer-events: none;
+    pointer-events: none;
+}
+ 
+:root .dropdown_list select
+{
+   width: 209px;
+   height: 37px;
+   vertical-align: middle;
+   border: 1px solid #cecfc0;
+   background-color: #fff;
+   font: normal 13px/13px 'PT Sans', sans-serif;
+   outline: 0 none;
+   color: #999;
+}
+ 
+:root .dropdown_list option
+{
+    background: #fff;
+    color: #111;
+    border: none;
+}
+
+/*----------------------*/

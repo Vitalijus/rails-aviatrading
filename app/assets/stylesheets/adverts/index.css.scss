@@ -1,0 +1,136 @@
+// Place all the styles related to the adverts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* MASONRY */
+
+#advert_container {
+	max-width: 1500px;
+	margin-left: 220px;
+	overflow: hidden;
+	border: 0px solid red;
+}
+
+#masonry-container {
+  padding: 35px 10px 40px 10px;
+  clear: both;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  position: relative;
+  border: 1px solid #DFE0E4;
+}
+
+.centered { margin: 0 auto; }
+
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+.preview_header {
+	padding: 13px 10px 5px 10px;
+	font-family: 'Lato', sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+	background-color: #fff;
+	position: absolute;
+	top: 0;
+	border: 0px solid red;
+}
+
+/* ------------------------------*/
+
+/* MASONRY BOX */
+
+.box {
+	background-color: #fff;
+	margin: 10px 5px 10px 5px;
+	width: 195px;
+	position: relative;
+	display: none;
+	border: 0px solid red;
+}
+
+.box_image {
+	position: relative;
+	background-color: #dbdde2;
+	height: 110px;
+}
+
+.box_price {
+	position: absolute;
+	top: 20px;
+	right: 0;
+	font-size: 12px;
+	font-family: 'Roboto', sans-serif;
+	color: #fff;
+	background-color:rgba(255,0,0,0.5);
+	padding: 5px;
+}
+
+.box_make {
+	padding: 10px 0px 0px 0px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 10px;
+	color: #336f8c;
+	text-transform: uppercase;
+	border: 0px solid red;
+
+	-webkit-transition: color 150ms linear;
+  	-moz-transition: color 150ms linear;
+  	-o-transition: color 150ms linear;
+  	-ms-transition: color 150ms linear;
+  	transition: color 150ms linear;
+}
+
+.box_model {
+	font-family: 'Lato', sans-serif;
+	font-size: 16px;
+	text-transform: capitalize;
+	border: 0px solid red;
+
+	-webkit-transition: color 150ms linear;
+  	-moz-transition: color 150ms linear;
+  	-o-transition: color 150ms linear;
+  	-ms-transition: color 150ms linear;
+  	transition: color 150ms linear;
+}
+
+a:hover .box_make, a:hover .box_model {
+	color: #224a5d;
+}
+
+.box_attr {
+	font-family: 'PT Sans', sans-serif;
+	font-size: 11px;
+	color: #777777;
+	padding: 0px 10px 0 0px;
+	border: 0px solid red;
+}
+
+.box_footer {
+	height: 35px;
+	line-height: 32px;
+	margin: 0;
+	font-family: "Open Sans", helvetica, arial;
+	font-size: 11px;
+	color: #777777;
+	border-bottom: 1px solid #ececec;
+}
+
+.box_icons {
+	position: absolute;
+	top: 420px;
+	right: 15px;
+}
+
+.box_icons li {
+	display: inline-block;
+	border: 0px solid red;
+}
+
+/*----------------------------*/
+
+
+
+

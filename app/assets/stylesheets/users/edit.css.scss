@@ -1,0 +1,252 @@
+/* USER PROFILE */
+
+.settings_container {
+	width: 960px;
+	margin: auto;
+	margin-top: 80px;
+	border: 1px solid #DFE0E4;
+}
+
+.user_profile_wrapper,
+.user_profile_change_password_wrapper,
+.user_profile_save_changes_wrapper {
+	padding: 0 20px 0 20px;
+	background-color: #fff;
+	
+}
+
+.user_profile_change_password_wrapper {
+	margin-top: 20px;
+}
+
+.user_profile_save_changes_wrapper {
+	margin-top: 20px;
+}
+
+.delete_user_account_button_wrapper {
+	margin-top: 40px;
+	margin-bottom: 80px;
+	text-align: center;
+	border: 0px solid red;
+}
+
+.delete_user_account_button {
+	font-family: 'PT Sans', sans-serif;
+	background-color: transparent;
+	cursor: pointer;
+	color: #999999;
+	border: 0px solid red;
+
+	-webkit-transition: color 150ms linear;
+  	-moz-transition: color 150ms linear;
+  	-o-transition: color 150ms linear;
+  	-ms-transition: color 150ms linear;
+  	transition: color 150ms linear;
+}
+
+.delete_user_account_button:hover {
+	color: #F05053;
+}
+
+.user_profile_form_header {
+	font-family: 'PT Sans', sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	padding: 20px 0px 15px 0;
+	border-bottom: 0px solid #f2f2f4;
+}
+
+.user_profile_form_wrapper ul {
+	border-bottom: 1px solid #f2f2f4;
+}
+
+.user_profile_form_wrapper li {
+	display: inline-block;
+	margin: 20px -4px 20px 0;
+	vertical-align: top;
+	border: 0px solid red;
+}
+
+.user_profile_form_label {
+	width: 30%;
+	font-family: 'PT Sans', sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.user_profile_label_small {
+	font-family: "Open Sans", helvetica, arial;
+	font-size: 12px;
+	font-weight: normal;
+	border: 0px solid red;
+}
+
+.user_profile_form {
+	width: 70%;
+	border: 0px solid red;
+}
+
+.user_profile_form input {
+	width: 100%;
+	padding: 8px;
+	font-family: "Open Sans", helvetica, arial;
+	font-size: 12px;
+	border: 1px solid #DFE0E4;
+}
+
+.user_profile_office_address {
+	width: 70%;
+	border: 10px solid #DFE0E4;
+}
+
+.user_form_street, 
+.user_form_postal_code, 
+.user_form_city,
+.user_form_state,
+.user_form_country {
+	font-family: "Open Sans", helvetica, arial;
+	font-size: 12px;
+	padding: 8px;
+	margin-right: -4px;
+	margin-bottom: 10px;
+	border: 1px solid #DFE0E4;
+}
+
+.user_form_postal_code {
+	width: 17.3%;
+}
+
+.user_form_street {
+	width: 49.2%;
+}
+ 
+.user_form_city {
+	width: 30.3%;
+}
+
+.user_form_state,
+.user_form_country  {
+	width: 49.2%;
+}
+
+.user_form_postal_code, 
+.user_form_city,
+.user_form_state {
+	margin-left: 10px;
+}
+
+.user_form_postal_code, 
+.user_form_city,
+.user_form_street {
+	margin-bottom: 0;
+}
+
+.user_profile_contact {
+	width: 70%;
+}
+
+.user_form_email, .user_form_phone {
+	width: 49.3%;
+	font-family: "Open Sans", helvetica, arial;
+	font-size: 12px;
+	padding: 8px;
+	margin-right: -4px;
+	border: 1px solid #DFE0E4;
+}
+
+.user_form_phone {
+	margin-left: 10px;
+}
+
+.user_profile_form .user_profile_about {
+	width: 100%;
+	height: 150px;
+	padding: 10px;
+	font-family: "Open Sans", helvetica, arial;
+	font-size: 12px;
+	border: 1px solid #DFE0E4;
+}
+
+.button_wrapper {
+	width: 100%;
+	text-align: right;
+	border: 0px solid red;
+}
+
+.user_form_update_button {
+	width: 200px;
+	height: 45px;
+	margin: 20px 0 20px 0;
+	color: #fff;
+	font-family: "Open Sans", helvetica, arial;
+	font-weight: bold;
+  	font-size: 16px;
+  	cursor: pointer;
+	background-color: #26ae5a;
+	border: 0;
+
+	-webkit-transition: background-color 150ms linear;
+  	-moz-transition: background-color 150ms linear;
+  	-o-transition: background-color 150ms linear;
+  	-ms-transition: background-color 150ms linear;
+  	transition: background-color 150ms linear;
+}
+
+.user_form_update_button:hover {
+	background-color: #229c51;
+}
+
+/* -------------- */
+
+/* IMAGE UPLOAD BUTTON */
+
+label.myLabel input[type="file"] {
+    position: fixed;
+    top: -1000px;
+}
+
+/***** Example custom styling *****/
+.myLabel {
+	width: 160px;
+	height: 40px;
+	line-height: 40px;
+	margin-top: 20px;
+    border: none;
+    font-size: 14px;
+    background: #f16164;
+    display: inline-block;
+}
+.myLabel:hover {
+    background: #F05053;
+}
+.myLabel:active {
+    background: #F05053;
+}
+.myLabel :invalid + span {
+    color: #fff;
+}
+.myLabel :valid + span {
+    color: #fff;
+}
+
+.preview_avatar  {
+	width: 120px;
+	height: 120px;
+	margin-left: 190px;
+	border: 1px solid #ececec;
+}
+
+.preview_cover {
+	width: 460px;
+	height: 120px;
+	margin-left: 15px;
+	border: 1px solid #ececec;
+}
+
+.status_avatar,
+.status_cover {
+	color: #F05053;
+	font-weight: normal;
+}
+
+/*----------------------*/

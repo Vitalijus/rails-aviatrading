@@ -1,0 +1,37 @@
+/* SUBSCRIPTION PLAN */
+
+.subscription_wrapper {
+	width: 960px;
+	margin: auto;
+	margin-top: 80px;
+	overflow: hidden;
+	background-color: #f7f7f7;
+	border: 1px solid #DFE0E4;
+}
+
+.subscription_content {
+	width: 600px;
+	float:left;
+	background-color: #fff;
+	padding: 30px 40px 40px 40px;
+	border-right: 1px solid #DFE0E4;
+}
+
+.subscription_header {
+  font-family: "Open Sans", helvetica, arial;
+  font-size: 25px;
+  color: #F05053;
+  text-align: center;
+}
+
+.subscription_payment {
+	border: 0px solid red;
+}
+
+.subscription_details {
+	width: 200px;
+	float:left;
+	border: 1px solid red;
+}
+
+/*---------------------*/

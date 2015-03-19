@@ -1,9 +1,9 @@
 class AdvertsController < ApplicationController
   before_action :set_advert, only: [:show, :edit, :update, :destroy]
   before_action :set_plan
-  before_action :authenticate_user!, except: [:index, :show, :new, :create, :home, :plan]
+  before_action :authenticate_user!, except: [:index, :show, :new, :create, :home, :pricing]
 
-  def plan
+  def pricing
     @free_plan
     @premium_plan
   end
@@ -20,7 +20,7 @@ class AdvertsController < ApplicationController
   # GET /adverts
   # GET /adverts.json
   def index
-    @q = Advert.paginate(:page => params[:page], :per_page => 20)
+    @q = Advert.paginate(:page => params[:page], :per_page => 11)
                .search(params[:q])
 
     @adverts = @q.result(distinct: true)
