@@ -1,14 +1,52 @@
 <div id="advert_search_container">
   <div id="advert_search_header">
-    search
+
   </div>
+    
+    <div id="search_form">
+      <%= search_form_for @q do |f| %>
+        <ul>
+          <li>
+            <span class="search_label">Manufacturer</span>
+            <%= f.text_field :make_cont, :class => "search_field" %>
+          </li>
+
+          <li>
+            <span class="search_label">Model</span>
+            <%= f.text_field :model_cont, :class => "search_field" %>
+          </li>
+
+          <li>
+            <span class="search_label">Aircraft type</span>
+            <div class="dropdown_list">
+              <%= f.select :aircraft_type_cont, ['Cessna', "Airbus"], :prompt => '' %>
+            </div>
+          </li>
+
+          <li>
+            <span class="search_label">Aircraft usage</span>
+            <div class="dropdown_list">
+              <%= f.select :aircraft_usage_cont, ['Cessna', "Airbus"], :prompt => '' %>
+            </div>
+          </li>
+
+          <li>
+            <span class="search_label">Country</span>
+            <div class="dropdown_list">
+              <%= f.select :country_cont, ['Cessna', "Airbus"], :prompt => '' %>
+            </div>
+          </li>
+        </ul>
+
+        <div id="search_button_wrapper">
+          <%= f.submit :class => "search_button" %>
+        </div>
+      <% end %>
+    </div>
 </div>
 
 <div id="advert_container">
   <div id="masonry-container" class="centered clearfix">
-    <div class="preview_header">
-      Adverts
-    </div>
 
   <% @adverts.each do |advert| %>
 
@@ -49,10 +87,10 @@
         </div>-->
     </div>
   <% end %>
-
+  </div>
+  
     <div class="digg_pagination" data-no-turbolink>
       <%= will_paginate @adverts, :page_links => false %>
     </div>
-  </div>
 </div>
 

@@ -6,19 +6,17 @@
 
 #advert_container {
 	max-width: 1500px;
-	margin-left: 220px;
+	margin-left: 240px;
 	overflow: hidden;
 	border: 0px solid red;
 }
 
 #masonry-container {
-  padding: 35px 10px 40px 10px;
   clear: both;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  background-color: #fff;
+  margin-top: 10px;
+  margin-bottom: 10px;
   position: relative;
-  border: 1px solid #DFE0E4;
+  border: 0px solid red;
 }
 
 .centered { margin: 0 auto; }
@@ -27,41 +25,30 @@
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
 
-.preview_header {
-	padding: 13px 10px 5px 10px;
-	font-family: 'Lato', sans-serif;
-	font-size: 15px;
-	font-weight: bold;
-	background-color: #fff;
-	position: absolute;
-	top: 0;
-	border: 0px solid red;
-}
-
 /* ------------------------------*/
 
 /* MASONRY BOX */
 
 .box {
 	background-color: #fff;
-	margin: 10px 5px 10px 5px;
-	width: 195px;
-	position: relative;
+	margin: 10px;
+	width: 252px;
 	display: none;
-	border: 0px solid red;
+	background-color: #fff;
+	border: 1px solid #DFE0E4;
 }
 
 .box_image {
 	position: relative;
 	background-color: #dbdde2;
-	height: 110px;
+	height: 135px;
 }
 
 .box_price {
 	position: absolute;
 	top: 20px;
 	right: 0;
-	font-size: 12px;
+	font-size: 13px;
 	font-family: 'Roboto', sans-serif;
 	color: #fff;
 	background-color:rgba(255,0,0,0.5);
@@ -69,7 +56,7 @@
 }
 
 .box_make {
-	padding: 10px 0px 0px 0px;
+	padding: 10px 10px 0 10px;
 	font-family: 'Roboto', sans-serif;
 	font-size: 10px;
 	color: #336f8c;
@@ -104,14 +91,14 @@ a:hover .box_make, a:hover .box_model {
 	font-family: 'PT Sans', sans-serif;
 	font-size: 11px;
 	color: #777777;
-	padding: 0px 10px 0 0px;
+	padding: 0px 10px 0 10px;
 	border: 0px solid red;
 }
 
 .box_footer {
 	height: 35px;
 	line-height: 32px;
-	margin: 0;
+	padding: 0 10px 0 10px;
 	font-family: "Open Sans", helvetica, arial;
 	font-size: 11px;
 	color: #777777;

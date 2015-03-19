@@ -7,7 +7,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   process :tags => ['advert_image']
 
   version :advert_image do
-     process :resize_to_fill => [195, 110]
+     process :resize_to_fill => [250, 135]
   end
 
   version :advert_image_big do

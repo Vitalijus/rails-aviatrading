@@ -1,20 +1,144 @@
 /* ADVERT SEARCH */
 
 #advert_search_container {
-	width: 220px;
+	width: 240px;
 	height: 100%;
 	position: fixed;
 	top: 59px;
 	left: 0;
-	background-color: #2D3A40;
-	border-right: 1px solid #DFE0E4;
+	z-index: 101;
+	overflow-y: auto;
+	background-color: #1F2729;
+	border-right: 0px solid #DFE0E4;
 }
 
 #advert_search_header {
 	height: 60px;
-	background-color: #38484f;
+	background-color: #2e373b;
 	color: #fff;
 	border-top: 0px solid #DFE0E4;
 }
 
+.search_label {
+	width: 100%;
+	display: block;
+	margin-bottom: 5px;
+	font-size: 11px;
+	color: #70787B;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-family: 'PT Sans', sans-serif;
+	border: 0px solid red;
+}
+
+#search_form li {
+	width: 100%;
+	padding: 15px 15px 0 15px;
+	border: 0px solid red;
+}
+
+.search_field {
+	width: 100%;
+	height: 35px;
+	padding: 0 8px 0 8px;
+	color: #70787B;
+	font-family: 'PT Sans', sans-serif;
+	font-size: 14px;
+	background-color: #232A2D;
+	border: 1px solid #3c4347;
+}
+
+#search_button_wrapper {
+	padding: 15px 15px 0 15px;
+}
+
+.search_button {
+	width: 100%;
+	height: 35px;
+	color: #70787B;
+	text-transform: uppercase;
+	background-color: #232A2D;
+	border: 1px solid #3c4347;
+	cursor: pointer;
+
+	-webkit-transition: background-color 150ms linear;
+  	-moz-transition: background-color 150ms linear;
+  	-o-transition: background-color 150ms linear;
+  	-ms-transition: background-color 150ms linear;
+  	transition: background-color 150ms linear;
+}
+
+.search_button:hover {
+	background-color: #1f2528; 
+}
 /*---------------*/
+
+/* Select dropdown list style in SEARCH */
+
+:root .dropdown_list option,
+:root .dropdown_list:after,
+:root .dropdown_list::after,
+:root .dropdown_list select
+{
+    color: #fff;
+}
+ 
+:root .dropdown_list select,
+:root .dropdown_list:after,
+:root .dropdown_list::after
+{
+    display: block;
+    background: #3c4347;
+}
+ 
+:root .dropdown_list select,
+:root .dropdown_list option
+{
+    padding: 8px;
+}
+ 
+:root .dropdown_list
+{
+    position: relative;
+    display: inline-block;
+    border: 0;
+}
+ 
+:root .dropdown_list::after
+{
+    content: "\25bc";
+    position: absolute;
+    color: #232A2D;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 32px;
+    font-size: 12px;
+    line-height: 35px;
+    text-align: center;
+     
+    -webkit-pointer-events: none;
+    -moz-pointer-events: none;
+    pointer-events: none;
+}
+ 
+:root .dropdown_list select
+{
+   width: 210px;
+   height: 35px;
+   vertical-align: middle;
+   border: 1px solid #3c4347;
+   background-color: #232A2D;
+   font: normal 13px/13px 'PT Sans', sans-serif;
+   outline: 0 none;
+   color: #999;
+}
+ 
+:root .dropdown_list option
+{
+    background: #fff;
+    color: #111;
+    border: none;
+}
+
+/*----------------------*/

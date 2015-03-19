@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   has_one :order, dependent: :destroy
   belongs_to :plan
 
-  #validates_presence_of :plan_id
+  validates_presence_of :plan_id
 
   attr_accessor :stripe_card_token
 

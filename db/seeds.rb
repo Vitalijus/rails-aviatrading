@@ -9,14 +9,14 @@
 #Plan.create!(name: "Free", price: 0)
 #Plan.create!(name: "Premium", price: 49.99)
 
-def newram
-	([*('A'..'Z'),*('0'..'9')]-%w(0 1 I O)).sample(12).join
-end
+#def newram
+#	([*('A'..'Z'),*('0'..'9')]-%w(0 1 I O)).sample(8).join
+#end
 
-75000.times do
-	email = "vitalij.desuk@gmail.com" << newram 
-	user = User.create!(email: "#{email}", password: 'topsecret', password_confirmation: 'topsecret')
-end
+#75000.times do
+#	email = "vitalij.desuk@gmail.com" << newram 
+#	user = User.create!(email: "#{email}", password: 'topsecret', password_confirmation: 'topsecret')
+#end
 
 #20000.times do
 #	Advert.create!(title: "1")
