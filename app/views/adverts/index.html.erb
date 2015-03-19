@@ -46,6 +46,7 @@
 </div>
 
 <div id="advert_container">
+  <%= render 'index_header' %>
   <div id="masonry-container" class="centered clearfix">
 
   <% @adverts.each do |advert| %>
@@ -62,8 +63,9 @@
             <%= number_to_currency(advert.price, precision: 0, unit: "") %> <%= advert.currency %>
           </div>
         </div>
+      <% end %>
 
-   
+      <%= link_to advert_path(advert), data: { no_turbolink: true } do %>
         <div class="box_make">
           <%= advert.make %>
 

@@ -59,7 +59,7 @@
 	padding: 10px 10px 0 10px;
 	font-family: 'Roboto', sans-serif;
 	font-size: 10px;
-	color: #336f8c;
+	color: #224a5d;
 	text-transform: uppercase;
 	border: 0px solid red;
 
@@ -71,9 +71,9 @@
 }
 
 .box_model {
-	font-family: 'Lato', sans-serif;
+	font-family: 'PT Sans', sans-serif;
 	font-size: 16px;
-	text-transform: capitalize;
+	text-transform: uppercase;
 	border: 0px solid red;
 
 	-webkit-transition: color 150ms linear;
@@ -84,7 +84,7 @@
 }
 
 a:hover .box_make, a:hover .box_model {
-	color: #224a5d;
+	color: #336f8c;
 }
 
 .box_attr {

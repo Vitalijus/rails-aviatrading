@@ -1,0 +1,57 @@
+<header>
+	<div id="header_wrapper">
+
+		<%= link_to root_url, data: { no_turbolink: true } do %>
+			<div class="webpage_title">
+				<div class="webpage_logo">
+					<span class="icon-propeller_500x500"></span>
+				</div>
+
+				AEROHUB
+			</div>
+		<% end %>
+
+			<div class="header_index_navigation">  
+				
+			    <ul>  
+		        	<%= link_to new_advert_path, data: { no_turbolink: true } do %>
+						<li><span class="free_advert_wrapper">NEW ADVERT</span></li>
+					<% end %>
+
+					<%= link_to adverts_path do %>
+						<li>All Adverts</li>
+					<% end %>
+
+					<% if !user_signed_in? %>
+						<%= link_to pricing_path do %>
+							<li>Pricing</li>
+						<% end %>
+					<% end %>
+
+					<%= link_to new_contact_path, data: { no_turbolink: true } do %>
+						<li>Contact</li>
+					<% end %>	
+
+					<% if !user_signed_in? %>
+						<%= link_to sign_in_path do %>
+							<li>Login</li>
+						<% end %>
+					<% end %>
+
+					<!--<li class="search_image">
+						<%= image_tag "search.png" %>
+					</li>-->
+
+					<% if user_signed_in? %>
+					  <li>
+					  	<%= link_to "Logout", destroy_user_session_path, method: :delete %>
+					  </li>
+
+					  <li>
+					  	<%= link_to 'My adverts', user_path(current_user) %>
+					  </li>
+					<% end %>
+			    </ul>    
+			</div> 
+	</div>
+</header>

@@ -2,6 +2,7 @@ class AdvertsController < ApplicationController
   before_action :set_advert, only: [:show, :edit, :update, :destroy]
   before_action :set_plan
   before_action :authenticate_user!, except: [:index, :show, :new, :create, :home, :pricing]
+  before_filter :disable_header, only: [:index]
 
   def pricing
     @free_plan
@@ -93,6 +94,10 @@ class AdvertsController < ApplicationController
   end
 
   private
+    def disable_header
+      @header = true
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_advert
       @advert = Advert.find(params[:id])

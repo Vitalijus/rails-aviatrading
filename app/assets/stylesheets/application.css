@@ -118,13 +118,19 @@ a .webpage_title {
 
 /* HEADER NAVIGATION */
 
-.header_navigation {  
+.header_navigation,
+.header_index_navigation {  
     height: 60px;  
     width: 100%;  
-    border: 0px solid yellow;  
+    border: 0px solid red;  
 }  
 
-.header_navigation ul {   
+.header_index_navigation {
+  margin-left: -240px;
+}
+
+.header_navigation ul,
+.header_index_navigation ul {   
     float: right;    
     height: 60px;
     font-size: 12px;
@@ -135,7 +141,8 @@ a .webpage_title {
     border: 0px solid red; 
 }  
 
-.header_navigation li {  
+.header_navigation li,
+.header_index_navigation li {  
     display: inline;  
     float: right;  
     padding: 0px 20px 0 20px;
@@ -161,7 +168,8 @@ a .webpage_title {
     *zoom: 1;  
 } */
 
-.header_navigation a {  
+.header_navigation a,
+.header_index_navigation a {  
     color: #777777;  
     display: inline-block; 
     margin-right: -4px;   
@@ -174,7 +182,8 @@ a .webpage_title {
   	transition: color 150ms linear;
 }  
 
-.header_navigation a:hover {  
+.header_navigation a:hover,
+.header_index_navigation a:hover {  
     color: #208797;  
 
 } 

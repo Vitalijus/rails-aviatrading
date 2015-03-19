@@ -46,7 +46,7 @@
 	});
 </script>
 
-<%= render "layouts/header" %>
+<%= render "layouts/header" unless @header %>
 <%= render "layouts/sidebar_search" %>
 
 <%= yield %>
