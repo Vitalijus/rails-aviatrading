@@ -1,7 +1,16 @@
 <div id="advert_search_container">
-  <div id="advert_search_header">
-    Welcome
-  </div>
+  <%= link_to root_url, data: { no_turbolink: true } do %>
+    <div id="advert_search_header">
+      <div class="website_search_logo">
+        <span class="icon-propeller_search"></span>
+      </div>
+
+      <div class="webpage_search_title">
+        AEROOHUB
+      </div>
+    </div>
+  <% end %>
+  
     
     <div id="search_form">
       <%= search_form_for @q do |f| %>
@@ -65,28 +74,29 @@
         </div>
       <% end %>
 
-      <%= link_to advert_path(advert), data: { no_turbolink: true } do %>
-        <div class="box_make">
-          <%= advert.make %>
-
-          <div class="box_model">
-              <%= advert.model %>
-          </div>
+      <div class="box_content_wrapper">
+        <div class="box_user_avatar">
+          <%= link_to user_path(advert.user) do %>
+            <%= image_tag advert.user.avatar_url(:avatar_small) %>
+          <% end %>
         </div>
-      <% end %>
+
+        <%= link_to advert_path(advert), data: { no_turbolink: true } do %>
+          <div class="box_make">
+            <%= advert.make %>
+
+            <div class="box_model">
+                <%= advert.model %>
+            </div>
+          </div>
+        <% end %>
+      </div>
 
         <div class="box_footer_wrapper">
           <div class="box_footer">
             <%= advert.country %>, <%= advert.city %>
           </div>
         </div>
-
-        <!--<div class="box_icons">
-          <ul>
-            <li><%= image_tag "video.png", width: 25 %></li>
-            <li><%= image_tag "video.png", width: 25 %></li>
-          </ul>
-        </div>-->
     </div>
   <% end %>
   </div>

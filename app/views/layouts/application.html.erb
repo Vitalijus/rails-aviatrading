@@ -51,11 +51,7 @@
 
 <%= yield %>
 
-	<div class="footer">
-		<div class="footer_content">
-			© 2015 AEROPOLY
-		</div>
-    </div>
+<%= render "layouts/footer" unless @footer %>
 
 <!-- ---------------------------------------->
 
@@ -86,6 +82,5 @@
    			});
    		});
 	</script>
-
 	</body>
 </html>

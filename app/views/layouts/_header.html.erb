@@ -8,23 +8,23 @@
 
 		<%= link_to root_url, data: { no_turbolink: true } do %>
 			<div class="webpage_title">
-				AEROHUB
+				AEROOHUB
 			</div>
 		<% end %>
 
 			<div class="header_nav_left">  
 			    <ul>  
 		        	<%= link_to new_advert_path, data: { no_turbolink: true } do %>
-						<li><span class="free_advert_wrapper">NEW ADVERT</span></li>
+						<li><span class="free_advert_wrapper">SELL AIRCRAFT</span></li>
 					<% end %>
 
 					<%= link_to adverts_path do %>
-						<li>All Adverts</li>
+						<li>All Aircrafts</li>
 					<% end %>
 
 					<% if user_signed_in? %>
 						<%= link_to user_path(current_user) do %>
-							<li>My adverts</li>
+							<li>My Aircraft</li>
 					  	<% end %>
 					<% end %>
 			    </ul>    

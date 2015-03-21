@@ -17,12 +17,35 @@
 	line-height: 60px;
 	color: #70787B;
 	text-align: center;
-	font-size: 30px;
+	font-size: 25px;
+	letter-spacing: 3px;
 	text-transform: uppercase;
 	font-family: 'PT Sans', sans-serif;
 	background-color: #2e373b;
+	position: relative;
 	/*background-image: url(image-path('bg.jpg'));*/
-	border-top: 0px solid #DFE0E4;
+	border: 0px solid red;
+}
+
+.website_search_logo {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  margin-top: 2px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -26px;
+  padding-top: 2px;
+  padding-left: 3px;
+  background-color: #2E373B;
+  border: 0px solid blue;
+}
+
+.icon-propeller_search:before {
+	font-size: 38px;
+    color: #70787B;
+    content: "\e601";
 }
 
 .search_label {

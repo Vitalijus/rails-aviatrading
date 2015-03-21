@@ -3,6 +3,7 @@ class AdvertsController < ApplicationController
   before_action :set_plan
   before_action :authenticate_user!, except: [:index, :show, :new, :create, :home, :pricing]
   before_filter :disable_header, only: [:index]
+  before_filter :disable_footer, only: [:index]
 
   def pricing
     @free_plan
@@ -96,6 +97,10 @@ class AdvertsController < ApplicationController
   private
     def disable_header
       @header = true
+    end
+
+    def disable_footer
+      @footer = true
     end
 
     # Use callbacks to share common setup or constraints between actions.

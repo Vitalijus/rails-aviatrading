@@ -3,7 +3,9 @@
 .digg_pagination {
 	width: 100%;
   margin: auto;
-  border-top: 0px solid #DFE0E4;
+  position: absolute;
+  bottom: -60px;
+  border-top: 1px solid #DFE0E4;
   /* self-clearing method: */ 
 }
 
