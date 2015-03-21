@@ -1,18 +1,18 @@
 <header>
 	<div id="header_wrapper">
+		<%= link_to root_url, data: { no_turbolink: true } do %>
+			<div class="website_logo">
+				<span class="icon-propeller"></span>
+			</div>
+		<% end %>
 
 		<%= link_to root_url, data: { no_turbolink: true } do %>
 			<div class="webpage_title">
-				<div class="webpage_logo">
-					<span class="icon-propeller_500x500"></span>
-				</div>
-
 				AEROHUB
 			</div>
 		<% end %>
 
-			<div class="header_navigation">  
-				
+			<div class="header_nav_left">  
 			    <ul>  
 		        	<%= link_to new_advert_path, data: { no_turbolink: true } do %>
 						<li><span class="free_advert_wrapper">NEW ADVERT</span></li>
@@ -22,6 +22,16 @@
 						<li>All Adverts</li>
 					<% end %>
 
+					<% if user_signed_in? %>
+						<%= link_to user_path(current_user) do %>
+							<li>My adverts</li>
+					  	<% end %>
+					<% end %>
+			    </ul>    
+			</div> 
+
+			<div class="header_nav_right">
+				<ul>
 					<% if !user_signed_in? %>
 						<%= link_to pricing_path do %>
 							<li>Pricing</li>
@@ -38,20 +48,12 @@
 						<% end %>
 					<% end %>
 
-					<!--<li class="search_image">
-						<%= image_tag "search.png" %>
-					</li>-->
-
 					<% if user_signed_in? %>
 					  <li>
 					  	<%= link_to "Logout", destroy_user_session_path, method: :delete %>
 					  </li>
-
-					  <li>
-					  	<%= link_to 'My adverts', user_path(current_user) %>
-					  </li>
 					<% end %>
-			    </ul>    
-			</div> 
+				</ul>
+			</div>
 	</div>
 </header>
