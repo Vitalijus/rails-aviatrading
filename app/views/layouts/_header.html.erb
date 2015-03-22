@@ -10,11 +10,11 @@
 			<div class="webpage_title">
 				AEROOHUB
 			</div>
-		<% end %>
+		<% end %> 
 
-			<div class="header_nav_left">  
-			    <ul>  
-		        	<%= link_to new_advert_path, data: { no_turbolink: true } do %>
+			<div class="header_nav_right">
+				<ul>
+					<%= link_to new_advert_path, data: { no_turbolink: true } do %>
 						<li><span class="free_advert_wrapper">SELL AIRCRAFT</span></li>
 					<% end %>
 
@@ -27,11 +27,7 @@
 							<li>My Aircraft</li>
 					  	<% end %>
 					<% end %>
-			    </ul>    
-			</div> 
 
-			<div class="header_nav_right">
-				<ul>
 					<% if !user_signed_in? %>
 						<%= link_to pricing_path do %>
 							<li>Pricing</li>

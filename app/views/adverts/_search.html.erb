@@ -1,0 +1,115 @@
+<div id="advert_search_wrapper">
+	<%= search_form_for @q do |f| %>
+      	<div id="advert_search_container">
+		  	<%= link_to root_url, data: { no_turbolink: true } do %>
+			    <div id="advert_search_header">
+			      <div class="website_search_logo">
+			        <span class="icon-propeller_search"></span>
+			      </div>
+
+			      <div class="webpage_search_title">
+			        AEROOHUB
+			      </div>
+			    </div>
+		  	<% end %>
+
+		    <div id="search_form">
+		        <div id="search_form_general">
+			        <ul>
+			          <li>
+			            <span class="search_label">Manufacturer <%= image_tag "arrow_down.png" %></span>
+			            <%= f.text_field :make_cont, :class => "search_field" %>
+			          </li>
+
+			          <li>
+			            <span class="search_label">Model</span>
+			            <%= f.text_field :model_cont, :class => "search_field" %>
+			          </li>
+
+			          <li>
+			            <span class="search_label">Country</span>
+			            <div class="dropdown_list">
+			              <%= f.select :country_cont, ['Cessna', "Airbus"], :prompt => '' %>
+			            </div>
+			          </li>
+
+			          <li>
+			            <span class="search_label">Aircraft type</span>
+			            <div class="dropdown_list">
+			              <%= f.select :aircraft_type_cont, ['Cessna', "Airbus"], :prompt => '' %>
+			            </div>
+			          </li>
+
+			          <li>
+			            <span class="search_label">Aircraft usage</span>
+			            <div class="dropdown_list">
+			              <%= f.select :aircraft_usage_cont, ['Cessna', "Airbus"], :prompt => '' %>
+			            </div>
+			          </li>
+			        </ul>
+			        <div class="search_show_more"><a>SHOW MORE</a></div>
+			        <div class="search_show_less"><a>SHOW LESS</a></div>
+			    </div>
+
+			    <div id="search_form_price">
+			    	<ul>
+			          	<li>
+			            	<span class="search_label">Price <%= image_tag "arrow_down.png" %></span>
+			            	<%= f.text_field :price_cont, :class => "search_field" %>
+			          	</li>
+
+			          	<li>
+			            	<span class="search_label">Price</span>
+			            	<%= f.text_field :price_cont, :class => "search_field" %>
+			          	</li>
+
+			          	<li>
+			            	<span class="search_label">Price</span>
+			            	<%= f.text_field :price_cont, :class => "search_field" %>
+			          	</li>
+			        </ul>
+			        <div class="search_show_more_price"><a>SHOW MORE</a></div>
+			        <div class="search_show_less_price"><a>SHOW LESS</a></div>
+			    </div>
+
+			    <div id="search_form_engine">
+			    	<ul>
+			          	<li>
+			            	<span class="search_label">Engine type <%= image_tag "arrow_down.png" %></span>
+			            	<div class="dropdown_list">
+			            		<%= f.select :engine_type_cont, ['Cessna', "Airbus"], :prompt => '' %>
+			            	</div>
+			          	</li>
+
+			          	<li>
+			            	<span class="search_label">Model</span>
+			            	<%= f.text_field :price_cont, :class => "search_field" %>
+			          	</li>
+			        </ul>
+			        <div class="search_show_more_price"><a>SHOW MORE</a></div>
+			        <div class="search_show_less_price"><a>SHOW LESS</a></div>
+			    </div>
+			</div>
+		</div>
+        
+        <div id="search_button_wrapper">
+          <%= f.submit :class => "search_button" %>
+        </div>
+    <% end %>
+</div>
+
+<script>
+	$(document).ready(function() {
+		$(".search_show_more").click(function() {
+			$('#search_form_general ul li').slice(-2).show(50);
+			$('.search_show_more').hide();
+			$('.search_show_less').show();
+		});
+
+		$(".search_show_less").click(function() {
+			$('#search_form_general ul li').slice(-2).hide(50);
+			$('.search_show_more').show();
+			$('.search_show_less').hide();
+		});
+	});
+</script>

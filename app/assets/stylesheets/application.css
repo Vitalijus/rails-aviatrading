@@ -71,12 +71,23 @@ h3 {
 
 /* HEADER */
 
-#header_wrapper {
+header {
   width: 100%;
-  height: 60px;
-  position: relative;
   background-color: #ffffff;
   border-bottom: 1px solid #DFE0E4;
+}
+
+#header_wrapper,
+#header_dashboard_wrapper {
+  width: 960px;
+  margin: auto;
+  height: 60px;
+  position: relative;
+  border: 0px solid red;
+}
+
+#header_dashboard_wrapper {
+  width: 100%;
 }
 
 /* logo */
@@ -92,9 +103,8 @@ a .webpage_title {
   font-size: 25px;
   position: absolute;
   top: 0;
-  left: 50%;
+  left: 0;
   z-index: 102;
-  margin-left: -86px;
   border: 0px solid black;
 }
 
@@ -104,8 +114,8 @@ a .webpage_title {
   text-align: center;
   padding-top: 1px;
 	position: absolute;
-	left: 50%;
-  margin-left: -25px;
+	left: 0;
+  margin-left: 60px;
   bottom: 10px;
   z-index: 103;
   background-color: #fff;
@@ -126,7 +136,6 @@ a .webpage_title {
 
 /* HEADER NAVIGATION */
 
-.header_nav_left,
 .header_nav_right, 
 .dashboard_nav_right,
 .dashboard_nav_left { 
@@ -137,8 +146,9 @@ a .webpage_title {
 }  
 
 .header_nav_right {
-  width: 50%;
+  width: auto;
   float: right;
+  border: 0px solid red;
 }
 
 .dashboard_nav_right {
@@ -153,7 +163,6 @@ a .webpage_title {
   border: 0px solid red;
 }
 
-.header_nav_left ul,
 .header_nav_right ul,
 .dashboard_nav_right ul,
 .dashboard_nav_left ul {   
@@ -161,12 +170,16 @@ a .webpage_title {
     height: 60px;
     font-size: 12px;
     text-transform: uppercase;
-    text-align: center;
     font-family: 'PT Sans', sans-serif;
     font-weight: bold;
     padding-right: 20px;
     border: 0px solid red; 
 }  
+
+.header_nav_right ul {
+  text-align: right;
+  padding-right: 0px;
+}
 
 .dashboard_nav_right ul {
   text-align: right;
@@ -175,10 +188,8 @@ a .webpage_title {
 .dashboard_nav_left ul {
   text-align: left;
   padding-right: 0;
-  padding-left: 40px;
 }
 
-.header_nav_left li,
 .header_nav_right li,
 .dashboard_nav_right li,
 .dashboard_nav_left li {  
@@ -206,7 +217,6 @@ a .webpage_title {
     *zoom: 1;  
 } */
 
-.header_nav_left a,
 .header_nav_right a,
 .dashboard_nav_right a,
 .dashboard_nav_left a {  
@@ -222,7 +232,6 @@ a .webpage_title {
   	transition: color 150ms linear;
 }  
 
-.header_nav_left a:hover,
 .header_nav_right a:hover,
 .dashboard_nav_right a:hover,
 .dashboard_nav_left a:hover {  
