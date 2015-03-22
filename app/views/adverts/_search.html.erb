@@ -17,7 +17,7 @@
 		        <div id="search_form_general">
 			        <ul>
 			          <li>
-			            <span class="search_label">Manufacturer <%= image_tag "arrow_down.png" %></span>
+			            <span class="search_label">Manufacturer</span>
 			            <%= f.text_field :make_cont, :class => "search_field" %>
 			          </li>
 
@@ -47,14 +47,14 @@
 			            </div>
 			          </li>
 			        </ul>
-			        <div class="search_show_more"><a>SHOW MORE</a></div>
-			        <div class="search_show_less"><a>SHOW LESS</a></div>
+			        <div class="search_show_more"><a>SHOW MORE <%= image_tag "arrow_down.png" %></a></div>
+			        <div class="search_show_less"><a>SHOW LESS <%= image_tag "arrow_up.png" %></a></div>
 			    </div>
 
 			    <div id="search_form_price">
 			    	<ul>
 			          	<li>
-			            	<span class="search_label">Price <%= image_tag "arrow_down.png" %></span>
+			            	<span class="search_label">Price</span>
 			            	<%= f.text_field :price_cont, :class => "search_field" %>
 			          	</li>
 
@@ -68,14 +68,14 @@
 			            	<%= f.text_field :price_cont, :class => "search_field" %>
 			          	</li>
 			        </ul>
-			        <div class="search_show_more_price"><a>SHOW MORE</a></div>
-			        <div class="search_show_less_price"><a>SHOW LESS</a></div>
+			        <div class="search_show_more_price"><a>SHOW MORE <%= image_tag "arrow_down.png" %></a></div>
+			        <div class="search_show_less_price"><a>SHOW LESS <%= image_tag "arrow_up.png" %></a></div>
 			    </div>
 
 			    <div id="search_form_engine">
 			    	<ul>
 			          	<li>
-			            	<span class="search_label">Engine type <%= image_tag "arrow_down.png" %></span>
+			            	<span class="search_label">Engine type</span>
 			            	<div class="dropdown_list">
 			            		<%= f.select :engine_type_cont, ['Cessna', "Airbus"], :prompt => '' %>
 			            	</div>
@@ -86,8 +86,8 @@
 			            	<%= f.text_field :price_cont, :class => "search_field" %>
 			          	</li>
 			        </ul>
-			        <div class="search_show_more_price"><a>SHOW MORE</a></div>
-			        <div class="search_show_less_price"><a>SHOW LESS</a></div>
+			        <div class="search_show_more_price"><a>SHOW MORE <%= image_tag "arrow_down.png" %></a></div>
+			        <div class="search_show_less_price"><a>SHOW LESS <%= image_tag "arrow_up.png" %></a></div>
 			    </div>
 			</div>
 		</div>

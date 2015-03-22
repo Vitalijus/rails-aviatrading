@@ -78,13 +78,24 @@
 .search_show_less,
 .search_show_more_price,
 .search_show_less_price {
-	padding: 10px 15px 5px 15px;
+	margin: 10px 15px 5px 15px;
 	text-transform: uppercase;
 	font-family: 'Lato', sans-serif;
 	font-size: 9px;
 	font-weight: bold;
 	color: #15C6B6;
+	position: relative;
 	border: 0px solid red;
+}
+
+.search_show_more img,
+.search_show_less img,
+.search_show_more_price img,
+.search_show_less_price img {
+	position: absolute;
+	top: -2px;
+	right: 10px;
+	width: 12px;
 }
 
 .search_show_more a,
@@ -122,15 +133,7 @@
 	text-transform: uppercase;
 	font-weight: bold;
 	font-family: 'PT Sans', sans-serif;
-	position: relative;
 	border: 0px solid red;
-}
-
-.search_label img {
-	position: absolute;
-	top: 1px;
-	right: 10px;
-	width: 12px;
 }
 
 .search_field {
