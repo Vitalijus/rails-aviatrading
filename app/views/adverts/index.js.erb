@@ -1,0 +1,12 @@
+$("#adverts").html("<%= escape_javascript(render("masonry")) %>");
+
+var $container = $('#masonry-container');
+	// initialize
+$container.masonry({
+	// options 
+  	itemSelector: '.box',
+		isFitWidth: true	 
+});
+	// reload of the items
+$container.masonry('reloadItems');
+	

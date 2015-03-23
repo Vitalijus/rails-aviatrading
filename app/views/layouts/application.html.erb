@@ -67,13 +67,15 @@
    <!-- MASONRY --> 
    <script src="/assets/masonry/masonry.pkgd.min.js"></script>
 
+<!--
+  var $box = $('.box');
+  var $digg_pagination = $('#digg_pagination');
+  var $footer = $('.footer');
+  $box.add($digg_pagination).add($footer).css('display', 'visible').fadeIn(200);
+-->
     <script>
    		$(document).ready(function(){
    			var $container = $('#masonry-container');
-   			var $box = $('.box');
-   			var $digg_pagination = $('#digg_pagination');
-   			var $footer = $('.footer');
-   			$box.add($digg_pagination).add($footer).css('display', 'visible').fadeIn(200);
    				// initialize
    			$container.masonry({
    				// options 

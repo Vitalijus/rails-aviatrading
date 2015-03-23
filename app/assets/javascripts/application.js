@@ -17,3 +17,16 @@
 //= require masonry/jquery.masonry
 //= require cloudinary
 //= require_tree .
+
+
+$(function() {
+	$(document).on("click",".digg_pagination a", function() {
+		$.getScript(this.href);
+		return false;
+	});
+
+	$("#adverts_search input").keyup(function() {
+		$.get($("#adverts_search").attr("action"), $("#adverts_search").serialize(), null, "script");
+		return false;
+	});
+});

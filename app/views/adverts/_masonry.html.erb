@@ -1,0 +1,51 @@
+<div id="advert_container">
+  <%= render 'index_header' %>
+  <div id="masonry-container" class="centered clearfix">
+
+  <% @adverts.each do |advert| %>
+
+    <div class="box">
+      <%= link_to advert_path(advert), data: { no_turbolink: true } do %>
+        <div class="box_image">
+
+          <% advert.photos.each do |photo| %>
+            <%= image_tag photo.image_url(:advert_image) %>
+          <% end %>
+
+          <div class="box_price">
+            <%= number_to_currency(advert.price, precision: 0, unit: "") %> <%= advert.currency %>
+          </div>
+        </div>
+      <% end %>
+
+      <div class="box_content_wrapper">
+        <div class="box_user_avatar">
+          <%= link_to user_path(advert.user) do %>
+            <%= image_tag advert.user.avatar_url(:avatar_small) %>
+          <% end %>
+        </div>
+
+        <%= link_to advert_path(advert), data: { no_turbolink: true } do %>
+          <div class="box_make">
+            <%= advert.make %>
+
+            <div class="box_model">
+                <%= advert.model %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+        <div class="box_footer_wrapper">
+          <div class="box_footer">
+            <%= advert.country %>, <%= advert.city %>
+          </div>
+        </div>
+    </div>
+  <% end %>
+  </div>
+  
+    <div class="digg_pagination" data-no-turbolink>
+      <%= will_paginate @adverts, :page_links => false %>
+    </div>
+</div>

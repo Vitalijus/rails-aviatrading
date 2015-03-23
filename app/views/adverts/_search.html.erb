@@ -1,5 +1,5 @@
 <div id="advert_search_wrapper">
-	<%= search_form_for @q do |f| %>
+	<%= search_form_for @q, :id => "adverts_search" do |f| %>
       	<div id="advert_search_container">
 		  	<%= link_to root_url, data: { no_turbolink: true } do %>
 			    <div id="advert_search_header">
@@ -113,3 +113,4 @@
 		});
 	});
 </script>
+
