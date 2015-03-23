@@ -19,6 +19,8 @@
 //= require_tree .
 
 
+// SNIPPET FOR LIVE SEARCH AND AJAX PAGINATION
+
 $(function() {
 	$(document).on("click",".digg_pagination a", function() {
 		$.getScript(this.href);
@@ -30,3 +32,60 @@ $(function() {
 		return false;
 	});
 });
+
+//---------------------------------------------
+
+// SNIPPET IS USED FOR SWITCHING BETWEEN TABS WHEN CREATING NEW ADVERT
+
+$(document).ready(function() {
+	$('.new_advert_form_wrapper .tabs_links a').on('click', function(e) {
+		var currentAttrValue = $(this).attr('href');
+
+		// Show/Hide Tabs
+        $('.new_advert_form_wrapper ' + currentAttrValue).show().siblings().hide();
+
+        // Change/remove current tab to active
+        $(this).parent('li').addClass('active').siblings().removeClass('active');
+
+        e.preventDefault();
+	});
+});
+
+//--------------------------------------------------------
+
+// SNIPPET IS USER TO SHOW OR HIDE
+// SEARCH FIELDS
+
+$(document).ready(function() {
+	$(".search_show_more").click(function() {
+		$('#search_form_general ul li').slice(-2).show(50);
+		$('.search_show_more').hide();
+		$('.search_show_less').show();
+	});
+
+	$(".search_show_less").click(function() {
+		$('#search_form_general ul li').slice(-2).hide(50);
+		$('.search_show_more').show();
+		$('.search_show_less').hide();
+	});
+
+	$(".search_show_more_price").click(function() {
+		$('#search_form_price ul li').slice(-4).show(50);
+		$('.search_show_more_price').hide();
+		$('.search_show_less_price').show();
+	});
+
+	$(".search_show_less_price").click(function() {
+		$('#search_form_price ul li').slice(-4).hide(50);
+		$('.search_show_more_price').show();
+		$('.search_show_less_price').hide();
+	});
+});
+
+//---------------------------------------------------
+
+// 
+
+
+//---------------------------------------------------
+

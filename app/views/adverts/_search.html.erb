@@ -17,33 +17,29 @@
 		        <div id="search_form_general">
 			        <ul>
 			          <li>
-			            <span class="search_label">Manufacturer</span>
-			            <%= f.text_field :make_cont, :class => "search_field" %>
+			            <span class="search_label">Aircraft Search</span>
+			            <%= f.text_field :make_cont, :class => "search_field", :placeholder => "Manufacturer" %>
 			          </li>
 
 			          <li>
-			            <span class="search_label">Model</span>
-			            <%= f.text_field :model_cont, :class => "search_field" %>
+			            <%= f.text_field :model_cont, :class => "search_field", :placeholder => "Model" %>
 			          </li>
 
 			          <li>
-			            <span class="search_label">Country</span>
 			            <div class="dropdown_list">
-			              <%= f.select :country_cont, ['Cessna', "Airbus"], :prompt => '' %>
+			              <%= f.select :country_cont, ['American Samoa', "Lithuania"], :prompt => 'Country' %>
 			            </div>
 			          </li>
 
 			          <li>
-			            <span class="search_label">Aircraft type</span>
 			            <div class="dropdown_list">
-			              <%= f.select :aircraft_type_cont, ['Cessna', "Airbus"], :prompt => '' %>
+			              <%= f.select :aircraft_type_cont, ['Cessna', "Airbus"], :prompt => 'Aircraft type' %>
 			            </div>
 			          </li>
 
 			          <li>
-			            <span class="search_label">Aircraft usage</span>
 			            <div class="dropdown_list">
-			              <%= f.select :aircraft_usage_cont, ['Cessna', "Airbus"], :prompt => '' %>
+			              <%= f.select :aircraft_usage_cont, ['Cessna', "Airbus"], :prompt => 'Aircraft usage' %>
 			            </div>
 			          </li>
 			        </ul>
@@ -54,25 +50,42 @@
 			    <div id="search_form_price">
 			    	<ul>
 			          	<li>
-			            	<span class="search_label">Price</span>
-			            	<%= f.text_field :price_cont, :class => "search_field" %>
+			            	<span class="search_label">Price between</span>
+			            	<%= f.text_field :price_gteq, :class => "search_field", :placeholder => "Price" %>
 			          	</li>
 
 			          	<li>
-			            	<span class="search_label">Price</span>
-			            	<%= f.text_field :price_cont, :class => "search_field" %>
+			            	<%= f.text_field :price_lteq, :class => "search_field" %>
 			          	</li>
 
 			          	<li>
-			            	<span class="search_label">Price</span>
-			            	<%= f.text_field :price_cont, :class => "search_field" %>
+				            <div class="dropdown_list">
+				              <%= f.select :currency_cont, ['USD', "EUR"], :prompt => 'Currency' %>
+				            </div>
+				        </li>
+
+				        <li>
+				            <div class="dropdown_list">
+				              <%= f.select :year_eq, ['1900', "2016"], :prompt => 'Year' %>
+				            </div>
+				        </li>
+
+			          	<li>
+			            	<span class="search_label">Engine</span>
+			            	<div class="dropdown_list">
+			            		<%= f.select :engine_type_cont, ['Cessna', "Airbus"], :prompt => 'Engine type' %>
+			            	</div>
+			          	</li>
+
+			          	<li>
+			            	<%= f.text_field :engine_model_cont, :class => "search_field", :placeholder => "Engine model" %>
 			          	</li>
 			        </ul>
 			        <div class="search_show_more_price"><a>SHOW MORE <%= image_tag "arrow_down.png" %></a></div>
 			        <div class="search_show_less_price"><a>SHOW LESS <%= image_tag "arrow_up.png" %></a></div>
 			    </div>
 
-			    <div id="search_form_engine">
+			    <!--<div id="search_form_engine">
 			    	<ul>
 			          	<li>
 			            	<span class="search_label">Engine type</span>
@@ -83,34 +96,18 @@
 
 			          	<li>
 			            	<span class="search_label">Model</span>
-			            	<%= f.text_field :price_cont, :class => "search_field" %>
+			            	<%= f.text_field :engine_model_cont, :class => "search_field" %>
 			          	</li>
 			        </ul>
 			        <div class="search_show_more_price"><a>SHOW MORE <%= image_tag "arrow_down.png" %></a></div>
 			        <div class="search_show_less_price"><a>SHOW LESS <%= image_tag "arrow_up.png" %></a></div>
-			    </div>
+			    </div>-->
 			</div>
 		</div>
         
-        <div id="search_button_wrapper">
+        <!--<div id="search_button_wrapper">
           <%= f.submit :class => "search_button" %>
-        </div>
+        </div>-->
     <% end %>
 </div>
-
-<script>
-	$(document).ready(function() {
-		$(".search_show_more").click(function() {
-			$('#search_form_general ul li').slice(-2).show(50);
-			$('.search_show_more').hide();
-			$('.search_show_less').show();
-		});
-
-		$(".search_show_less").click(function() {
-			$('#search_form_general ul li').slice(-2).hide(50);
-			$('.search_show_more').show();
-			$('.search_show_less').hide();
-		});
-	});
-</script>
 
