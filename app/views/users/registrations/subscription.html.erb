@@ -9,11 +9,19 @@
     </div> 
   <% end %>
 
+  <div id="flash">
+    <% if flash[:notice] %>
+      <h3><%= flash[:notice] %></h3>
+    <% end %>
+    <% if flash[:error] %>
+      <h3><%= flash[:error] %></h3>
+    <% end %> 
+  </div>
 
   <div class="subscription_content">
     <div class="subscription_header">
       <div class="subscription_form_logo">
-        <span class="icon-propeller_500x500"></span>
+        <span class="icon-propeller-big"></span>
       </div>
 
       <% if resource.plan.name == "Free" %>
@@ -29,10 +37,26 @@
 
   
   <%= form_for(resource, :as => resource_name, :url => users_update_plan_path, :html => { id: 'update_plan', :method => :put }) do |f| %><!-- id: 'update_plan' refers to update_plan.js.coffee -->
+    <%= devise_error_messages! %>
+    <% if @user.errors.any? %>  
+      <div id="errorExplanation">  
+        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>  
+        <ul>  
+        <% @user.errors.full_messages.each do |msg| %>  
+          <li><%= msg %></li>  
+        <% end %>  
+        </ul>  
+      </div>  
+    <% end %> 
 
     <%= hidden_field_tag 'plan', @premium_plan.id %>
     <%= hidden_field_tag 'email', resource.email %>
     <%= f.hidden_field :stripe_card_token, id: 'new_token' %><!-- id: 'new_token' refers to update_plan.js.coffee -->
+
+    <div class="auth_form">
+      <%= f.label :coupon, "Discount number", :class => "auth_label" %>
+      <%= f.text_field :coupon, :class => "auth_field" %>
+    </div>
     
     <div class="form-group">
       <%= label_tag :card_number, "Credit Card Number" %>
@@ -73,6 +97,6 @@
   </div>
 
   <div class="subscription_details">
-  ddd
+    Plan Details
   </div>
 </div>

@@ -1,14 +1,13 @@
 <div class="login_form_wrapper">
   <div class="registration_form_header">
     <div class="registration_form_logo">
-      <span class="icon-propeller_500x500"></span>
+      <span class="icon-propeller-big"></span>
     </div>
 
     Log in to Aerohub
   </div>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
       <div class="sign_up_form_wrapper">
         <div class="auth_form">
           <%= f.label :email, :class => "auth_label" %>

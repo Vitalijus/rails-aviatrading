@@ -52,7 +52,6 @@
 		</div>
 
 		<div class="show_user_adverts_wrapper">
-
 			<div class="show_user_adverts_header">
 				<%= pluralize(@user.adverts.count, "Advert") %>
 			</div>
@@ -79,11 +78,9 @@
 					    <div class="show_user_adverts_footer">
 							<%= advert.country %>, <%= advert.city %>
 
-							<% if user_signed_in? %>
+							<% if user_signed_in? && current_user == @user %>
 								<%= link_to 'Edit', edit_advert_path(advert) %>
-							<% end %>
 
-							<% if user_signed_in? %>
 								<%= link_to 'Delete', advert, method: :delete, :remote => true, :class => "delete_advert" %>
 							<% end %>
 						</div>

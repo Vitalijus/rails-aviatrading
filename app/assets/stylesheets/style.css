@@ -27,6 +27,10 @@
 	content: "\e600";
 }
 
+.icon-propeller-big:before {
+	content: "\e600";
+}
+
 .icon-propeller_search:before {
 	content: "\e601";
 }

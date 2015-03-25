@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   belongs_to :plan
 
   validates_presence_of :plan_id
+  validate :validate_for_coupon
 
   attr_accessor :stripe_card_token
 
@@ -21,14 +22,30 @@ class User < ActiveRecord::Base
   #  customer.save
   #end
 
+  def validate_for_coupon
+    unless coupon.blank? or coupon == '38710141505'
+      errors[:base] << "Your discount number is incorrect" 
+    end 
+  end
+
   def save_with_payment
     if valid?
-      customer = Stripe::Customer.create(description: "Subscription plan: #{name_on_card}",
-                                         email: email,
-                                         plan: plan_id, 
-                                         card: stripe_card_token)
-      self.stripe_customer_token = customer.id
-      save!
+      unless coupon.blank? or coupon != "38710141505"
+        customer = Stripe::Customer.create(description: "#{name_on_card}",
+                                           email: email,
+                                           plan: plan_id,
+                                           coupon: coupon,
+                                           card: stripe_card_token)
+        self.stripe_customer_token = customer.id
+        save!
+      else
+        customer = Stripe::Customer.create(description: "#{name_on_card}",
+                                           email: email,
+                                           plan: plan_id,
+                                           card: stripe_card_token)
+        self.stripe_customer_token = customer.id
+        save!
+      end
     end
 
   rescue Stripe::InvalidRequestError => e

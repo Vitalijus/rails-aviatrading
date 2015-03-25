@@ -112,11 +112,10 @@ a .webpage_title {
 	width: 40px;
 	height: 40px;
   text-align: center;
-  padding-top: 1px;
 	position: absolute;
 	left: 0;
-  margin-left: 60px;
-  bottom: 10px;
+  margin-left: 61px;
+  bottom: 12px;
   z-index: 103;
   background-color: #fff;
 
@@ -127,6 +126,12 @@ a .webpage_title {
 
 .icon-propeller:before {
     font-size: 38px;
+    color: #F05053;
+    content: "\e605";
+}
+
+.icon-propeller-big:before {
+    font-size: 50px;
     color: #F05053;
     content: "\e605";
 }
