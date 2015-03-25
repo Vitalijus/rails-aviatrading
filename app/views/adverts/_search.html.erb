@@ -25,9 +25,9 @@
 			            <%= f.text_field :model_cont, :class => "search_field", :placeholder => "Model" %>
 			          </li>
 
-			          <li>
-			            <div class="dropdown_list">
-			              <%= f.select :country_cont, ['American Samoa', "Lithuania"], :prompt => 'Country' %>
+			          <li class="new_country">
+			          	<div class="dropdown_list">
+			              <%= f.select :country_cont, ['American Samoa', "Burkina Faso"], :prompt => 'Country', :class => 'country_list' %>
 			            </div>
 			          </li>
 

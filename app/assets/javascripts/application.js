@@ -27,10 +27,11 @@ $(function() {
 		return false;
 	});
 
-	$("#adverts_search input").keyup(function() {
+	$("#adverts_search input, select").on('change keyup', function() {
 		$.get($("#adverts_search").attr("action"), $("#adverts_search").serialize(), null, "script");
 		return false;
 	});
+
 });
 
 //---------------------------------------------
