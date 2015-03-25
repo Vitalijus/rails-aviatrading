@@ -91,11 +91,11 @@
 
       <li class="new_form_type_usage">
         <span class="new_form_dropdown_list">
-          <%= f.select :aircraft_type, ["Airship / Blimp", "Glider / Sailplane", "Jet", "Helicopter", "Light sport", "Single piston", "Multi piston", "TurboProp", "Ultralight", "Hot air balloon", "Other"], :prompt => 'Aircraft type'  %>
+          <%= f.select :aircraft_type, ["Airship / Blimp", "Glider / Sailplane", "Jet", "Helicopter", "Light sport", "Single piston", "Multi piston", "TurboProp", "Ultralight", "Hot air balloon"], :prompt => 'Aircraft type'  %>
         </span>
 
         <span class="new_form_dropdown_list usage new_form_aircraft_usage">
-          <%= f.select :aircraft_usage, ["Aerobatic", "Aerial survey", "Agriculture", "Amphibian/Float", "Antique/Classic", "Business/VIP", "Homebuilt", "EMS/SAR/Fire/Police", "Cargo/Freighter", "Passenger", "Warbird/Military", "Other"], :prompt => 'Aircraft usage'  %>
+          <%= f.select :aircraft_usage, ["Aerobatic", "Aerial survey", "Agriculture", "Amphibian/Float", "Antique/Classic", "Business/VIP", "Homebuilt", "EMS/SAR/Fire/Police", "Cargo/Freighter", "Passenger", "Warbird/Military"], :prompt => 'Aircraft usage'  %>
         </span>
       </li>
     </ul>
@@ -118,7 +118,7 @@
           <%= f.text_field :serial_number, :class => "new_form_serial_number", :placeholder => "Serial number" %>
           <%= f.text_field :registration_number, :class => "new_form_registration_number", :placeholder => "Registration number" %>
           <span class="new_form_dropdown_list new_form_built_year">
-            <%= f.select :year, ["2016", "2015", "2014", "2013", "2012", "2011", "2010", "2009", "2008", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", '1994',], :prompt => 'Built year' %>
+            <%= f.date_select :year, {:order => [:year], start_year: Date.today.year+1, end_year: Date.today.year-100, :prompt => { :year => 'Built year' }} %>
           </span>
           <%= f.text_field :aircraft_hours, :class => "new_form_aircraft_hours", :placeholder => "Aircraft hours" %>
           <%= f.text_field :landings, :class => "new_form_landings", :placeholder => "Landings" %>
@@ -128,7 +128,7 @@
 
     <ul>
         <li class="form_label">Last inspection</li>
-        <li><%= f.date_select :last_inspection, {:order => [:day, :month, :year], start_year: Date.today.year, end_year: Date.today.year+1} %>
+        <li><%= f.date_select :last_inspection, {:order => [:day, :month, :year], start_year: Date.today.year, end_year: Date.today.year-100} %>
         </li>
     </ul>
   </div>
