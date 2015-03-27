@@ -22,7 +22,7 @@ class AdvertsController < ApplicationController
   # GET /adverts
   # GET /adverts.json
   def index
-    @q = Advert.paginate(:page => params[:page], :per_page => 16)
+    @q = Advert.paginate(:page => params[:page], :per_page => 12)
                .search(params[:q])
 
     @adverts = @q.result(distinct: true)

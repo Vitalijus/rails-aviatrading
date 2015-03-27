@@ -1,40 +1,41 @@
 /* PAGINATION */
 
-.digg_pagination {
-	width: 100%;
+.pagination {
+  width: 100%;
   margin: auto;
-  position: absolute;
-  bottom: -60px;
-  border-top: 1px solid #DFE0E4;
   /* self-clearing method: */ 
 }
 
-.digg_pagination a, .digg_pagination span, .digg_pagination em {
+.pagination a, .pagination span, .pagination em {
 	padding: 0.2em 0.5em;
 	display: block;
 	float: left;
 	margin-right: 0px; 
+	border-top: 1px solid #DFE0E4;
+	border-bottom: 1px solid #DFE0E4;
 }
 
-.digg_pagination .disabled {
+.pagination .disabled {
 	font-family: "Open Sans", helvetica, arial;
 	text-align: center;
 	width: 50%;
   color: #999999;
   padding: 10px;
   background-color: white;
-  border-left: 0px solid #dbdbdb; 
+  border-top: 1px solid #DFE0E4;
+  border-bottom: 1px solid #DFE0E4; 
 }
 
-.digg_pagination .current {
+.pagination .current {
   font-style: normal;
   font-weight: bold;
   background: #2e6ab1;
   color: white;
-  border: 0px solid #2e6ab1; 
+  border-top: 1px solid #DFE0E4;
+  border-bottom: 1px solid #DFE0E4; 
 }
 
-.digg_pagination a {
+.pagination a {
 	text-align: center;
 	width: 50%;
 	font-family: "Open Sans", helvetica, arial;
@@ -42,7 +43,9 @@
     color: #555555;
     padding: 10px;
     background-color: #fff;
-    border: 0px solid #DFE0E4;
+    border-top: 1px solid #DFE0E4;
+	border-bottom: 1px solid #DFE0E4;
+	
     -webkit-transition: color 150ms linear;
   	-moz-transition: color 150ms linear;
   	-o-transition: color 150ms linear;
@@ -50,11 +53,11 @@
   	transition: color 150ms linear;
 }
 
-.digg_pagination a:hover, .digg_pagination a:focus {
+.pagination a:hover, .pagination a:focus {
       color: #105cb6;
 }
 
-.digg_pagination .page_info {
+.pagination .page_info {
     background: #2e6ab1;
     color: white;
     padding: 0.4em 0.6em;
@@ -63,13 +66,13 @@
     text-align: center; 
 }
 
-.digg_pagination .page_info b {
+.pagination .page_info b {
       color: #000033;
       background: #6aa6ed;
       padding: 0.1em 0.25em; 
 }
 
-.digg_pagination:after {
+.pagination:after {
     content: ".";
     display: block;
     height: 0;
@@ -77,11 +80,11 @@
     visibility: hidden; 
 }
 
-* html .digg_pagination {
+* html .pagination {
     height: 1%; 
 }
 
-*:first-child + html .digg_pagination {
+*:first-child + html .pagination {
     overflow: hidden; }
 
     /*-----------------------------------------*/

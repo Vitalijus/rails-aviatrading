@@ -5,9 +5,7 @@
 /* MASONRY */
 
 #advert_container {
-	max-width: 1500px;
-	margin-left: 240px;
-	position: relative;
+	overflow: hidden;
 	border: 0px solid red;
 }
 
@@ -33,7 +31,7 @@
 	background-color: #fff;
 	margin: 10px;
 	width: 252px;
-	display: none;
+	/*display: none;*/
 	background-color: #fff;
 	border: 1px solid #DFE0E4;
 }

@@ -25,15 +25,13 @@
 html {
     position: relative;
     min-height: 100%;
-
 }
 
  body {
   background-color: #E9EAED;
   font-family: 'Ubuntu', sans-serif;
   color: #444444;   
-  margin: 0px 0 40px 0; /* bottom = footer height */
-  /*height: 100%;*/
+  margin: 0px 0 0px 0; /* bottom = footer height */
 }
 
 * {
@@ -61,11 +59,7 @@ li {
   padding: 0;
 }
 
-h1 {
-  margin: 0;
-}
-
-h3 {
+h1, h3  {
   margin: 0;
 }
 

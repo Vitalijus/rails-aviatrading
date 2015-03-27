@@ -45,16 +45,15 @@
     </div>
   <% end %>
   </div>
-  
-    <div class="digg_pagination" data-no-turbolink>
-      <%= will_paginate @adverts, :page_links => false %>
-    </div>
+
+  <div class="pagination" data-no-turbolink>
+    <%= will_paginate @adverts, :page_links => false %>
+  </div>
 </div>
 
 <script>
   $(document).ready(function(){
     var $box = $('.box');
-    var $digg_pagination = $('#digg_pagination');
-    $box.add($digg_pagination).css('display', 'visible').fadeIn(200);
+    $box.css('display', 'visible').fadeIn(200);
   });
 </script>

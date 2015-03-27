@@ -22,7 +22,7 @@
 // SNIPPET FOR LIVE SEARCH AND AJAX PAGINATION
 
 $(function() {
-	$(document).on("click",".digg_pagination a", function() {
+	$(document).on("click",".pagination a", function() {
 		$.getScript(this.href);
 		return false;
 	});
