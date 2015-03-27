@@ -3,6 +3,7 @@
 .pagination {
   width: 100%;
   margin: auto;
+  display: none;
   /* self-clearing method: */ 
 }
 
@@ -45,7 +46,7 @@
     background-color: #fff;
     border-top: 1px solid #DFE0E4;
 	border-bottom: 1px solid #DFE0E4;
-	
+
     -webkit-transition: color 150ms linear;
   	-moz-transition: color 150ms linear;
   	-o-transition: color 150ms linear;
