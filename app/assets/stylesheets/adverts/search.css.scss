@@ -1,20 +1,38 @@
 /* ADVERT SEARCH */
-#advert_search_wrapper {
+#advert_search_wrapper {/*keeper to split screen*/
 	width: 240px;
 	float: left;
-	border: 1px solid blue;
+	height: 100vh;
+	border: 1px solid transparent;
 }
 
 #advert_search_container {
 	width: 240px;
-	height: 100%;
+	height: 100vh;
 	position: fixed;
-	top: 0px;
+	top: 0;
 	left: 0;
 	z-index: 101;
-	overflow-y: auto;
 	background-color: #1F2729;
 	border: 0px solid red;
+}
+
+#advert_search_footer {
+	width: 100%;
+	height: 44px;
+	line-height: 44px;
+	text-align: center;
+	background-color: #2E373B;
+	color: #70787B;
+	text-transform: uppercase;
+	font-family: 'PT Sans', sans-serif;
+	position: absolute;
+	bottom: 0;
+	border: 0px solid red;
+}
+
+#advert_search_container:hover {
+	overflow-y: auto;
 }
 
 #advert_search_header {

@@ -1,7 +1,7 @@
 class AdvertsController < ApplicationController
   before_action :set_advert, only: [:show, :edit, :update, :destroy]
   before_action :set_plan
-  before_action :authenticate_user!, except: [:index, :show, :new, :create, :home, :pricing]
+  before_action :authenticate_user!, except: [:index, :show, :create, :home, :pricing]
   before_filter :disable_header, only: [:index]
   before_filter :disable_footer, only: [:index]
 

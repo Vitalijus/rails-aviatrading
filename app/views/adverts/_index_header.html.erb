@@ -8,13 +8,25 @@
 
 		<div class="dashboard_nav_right">
 			<ul>
-				<%= link_to new_advert_path, data: { no_turbolink: true } do %>
-					<li><span class="free_advert_wrapper">SELL AIRCRAFT</span></li>
+				<% if !user_signed_in? %>
+					<%= link_to pricing_path, data: { no_turbolink: true } do %>
+						<li><span class="free_advert_wrapper">SELL AIRCRAFT</span></li>
+					<% end %>
+				<% end %>
+
+				<% if user_signed_in? %>
+					<%= link_to new_advert_path do %>
+						<li><span class="free_advert_wrapper">New Advert</span></li>
+					<% end %>
 				<% end %>
 
 				<%= link_to adverts_path do %>
 					<li>All Aircrafts</li>
 				<% end %>
+
+				<%= link_to new_contact_path, data: { no_turbolink: true } do %>
+					<li>Contact</li>
+				<% end %>	
 
 				<% if user_signed_in? %>
 					<%= link_to user_path(current_user) do %>
@@ -23,24 +35,14 @@
 				<% end %>
 
 				<% if !user_signed_in? %>
-					<%= link_to pricing_path do %>
-						<li>Pricing</li>
-					<% end %>
-				<% end %>
-
-				<%= link_to new_contact_path, data: { no_turbolink: true } do %>
-					<li>Contact</li>
-				<% end %>	
-
-				<% if !user_signed_in? %>
 					<%= link_to sign_in_path do %>
-						<li>Login</li>
+						<li>Sign in</li>
 					<% end %>
 				<% end %>
 
 				<% if user_signed_in? %>
 				  <li>
-				  	<%= link_to "Logout", destroy_user_session_path, method: :delete %>
+				  	<%= link_to "Sign out", destroy_user_session_path, method: :delete %>
 				  </li>
 				<% end %>
 			</ul>
