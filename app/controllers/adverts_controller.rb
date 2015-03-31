@@ -1,5 +1,5 @@
 class AdvertsController < ApplicationController
-  before_action :set_advert, only: [:show, :edit, :update, :destroy]
+  before_action :set_advert, only: [:show, :edit, :update, :show_advert, :destroy]
   before_action :set_plan
   before_action :authenticate_user!, except: [:index, :show, :create, :home, :pricing]
   before_filter :disable_header, only: [:index]
@@ -8,6 +8,28 @@ class AdvertsController < ApplicationController
   def pricing
     @free_plan
     @premium_plan
+  end
+
+  def show_advert
+      if @advert.show_advert == true
+        if @advert.update_attributes(show_advert: false)
+          respond_to do |format|
+            format.html { redirect_to :back, notice: "Advert is hidden now" }
+            format.json { head :no_content }
+            format.js   { render layout: false}
+          end
+        end
+      elsif @advert.show_advert == false
+        if @advert.update_attributes(show_advert: true)
+          respond_to do |format|
+            format.html { redirect_to :back, notice: "Advert is shown now" }
+            format.json { head :no_content }
+            format.js   { render layout: false}
+          end
+        end
+      else
+         redirect_to :back, notice: "Sorry something went wrong" 
+      end
   end
 
   def home
@@ -22,7 +44,7 @@ class AdvertsController < ApplicationController
   # GET /adverts
   # GET /adverts.json
   def index
-    @q = Advert.paginate(:page => params[:page], :per_page => 12)
+    @q = Advert.where(show_advert: true).paginate(:page => params[:page], :per_page => 12)
                .search(params[:q])
 
     @adverts = @q.result(distinct: true)
@@ -130,7 +152,7 @@ class AdvertsController < ApplicationController
                                      :aircraft_hours, :landings, :nearest_airport, :aircraft_status,
                                      :last_inspection, :eu_vat, :price_on_request, :airport_code,
                                      :number_of_passengers, :aircraft_usage, :phone, :user_id, 
-                                     :document, :advert_duration, photos_attributes: [:id, :image,
+                                     :document, :advert_duration, :show_advert, photos_attributes: [:id, :image,
                                      :advert_id, :public_token])
     end
 end

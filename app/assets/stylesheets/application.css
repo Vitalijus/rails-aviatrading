@@ -63,6 +63,153 @@ h1, h3  {
   margin: 0;
 }
 
+/* HEADER DASHBOARD */
+
+#header_dashboard_wrapper {
+  width: 100%;
+  margin: auto;
+  height: 60px;
+  position: relative;
+}
+
+.dashboard_nav_left {  
+  height: 60px;
+  width: auto;
+  float: left;
+}
+
+.dashboard_nav_left ul {
+  line-height: 60px;
+  color: #666;
+  text-align: left;
+  font-style: italic;
+  letter-spacing: 1px;
+  font-family: 'PT Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Lato', sans-serif;
+  padding-right: 0;
+}
+
+.dashboard_nav_left li {  
+    display: inline;  
+    padding: 0px 20px 0 20px;
+}
+
+.dashboard_nav_right {  
+    height: 60px;   
+    width: auto;
+    float: right;  
+    border: 0px solid blue;
+} 
+
+.dashboard_nav_right ul {   
+    width: 100%;    
+    height: 60px;
+    font-size: 12px;
+    font-family: 'PT Sans', sans-serif;
+    font-weight: bold;
+    text-align: right;
+    border: 0px solid red; 
+}
+
+.dashboard_nav_right li {
+    display: inline-block;
+    height: 60px;
+    line-height: 60px;
+    margin-left: -4px;
+    padding: 0px 20px 0 20px;
+    border: 0px solid yellow;
+}
+
+.dashboard_nav_right .my_aircrafts_link { 
+  position: relative;
+  margin-left: 40px;
+  padding-right: 20px;
+  text-transform: normal;
+  border: 0px solid red;
+}
+
+.dashboard_nav_right .my_aircrafts_link img {
+  position: absolute;
+  top: -7px;
+  left: -40px;
+}
+
+.icon-login:before,
+.icon-logout:before {
+    font-size: 16px;
+    color: #fff;
+    content: "\e602";
+}
+
+.dashboard_nav_right .dashboard_sign_in_out {
+  width: 60px;
+  background-color: #F05053;
+  border-left: 0px solid #DFE0E4;
+
+  -webkit-transition: background-color 150ms linear;
+  -moz-transition: background-color 150ms linear;
+  -o-transition: background-color 150ms linear;
+  -ms-transition: background-color 150ms linear;
+  transition: background-color 150ms linear;
+}
+
+.dashboard_nav_right .dashboard_sign_in_out:hover {
+  background-color: #d8484a;
+}
+
+.icon-mail:before {
+    font-size: 16px;
+    color: #888;
+    content: "\e602";
+
+    -webkit-transition: color 150ms linear;
+    -moz-transition: color 150ms linear;
+    -o-transition: color 150ms linear;
+    -ms-transition: color 150ms linear;
+    transition: color 150ms linear;
+}
+
+.dashboard_nav_right a:hover .icon-mail:before {
+  color: #208797;;
+}
+
+.dashboard_nav_right a {  
+    color: #777777;  
+    -webkit-transition: color 150ms linear;
+    -moz-transition: color 150ms linear;
+    -o-transition: color 150ms linear;
+    -ms-transition: color 150ms linear;
+    transition: color 150ms linear;
+}  
+
+.dashboard_nav_right a:hover {  
+    color: #208797;  
+} 
+
+.free_advert_wrapper {
+  border: 1px solid #F04F54;
+  padding: 5px 8px 5px 8px;
+  text-transform: uppercase;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 2px;
+  color: #F04F54;
+  background-color: #fff;
+  -webkit-transition: background-color 150ms linear;
+  -moz-transition: background-color 150ms linear;
+  -o-transition: background-color 150ms linear;
+  -ms-transition: background-color 150ms linear;
+  transition: background-color 150ms linear;
+}
+
+a:hover .free_advert_wrapper {
+  background-color: #F04F54;
+  color: #fff;
+}
+
+/*------------------*/
+
 /* HEADER */
 
 header {
@@ -71,17 +218,12 @@ header {
   border-bottom: 1px solid #DFE0E4;
 }
 
-#header_wrapper,
-#header_dashboard_wrapper {
+#header_wrapper {
   width: 960px;
   margin: auto;
   height: 60px;
   position: relative;
   border: 0px solid red;
-}
-
-#header_dashboard_wrapper {
-  width: 100%;
 }
 
 /* logo */
@@ -135,12 +277,9 @@ a .webpage_title {
 
 /* HEADER NAVIGATION */
 
-.header_nav_right, 
-.dashboard_nav_right,
-.dashboard_nav_left {  
+.header_nav_right{  
     height: 60px;   
-    float: left;
-    border: 0px solid blue;  
+    float: left;  
 }  
 
 .header_nav_right {
@@ -149,20 +288,7 @@ a .webpage_title {
   border: 0px solid red;
 }
 
-.dashboard_nav_right {
-  width: auto;
-  float: right;
-  border: 0px solid red;
-}
-
-.dashboard_nav_left {
-  width: auto;
-  float: left;
-  border: 0px solid red;
-}
-
-.header_nav_right ul,
-.dashboard_nav_right ul {   
+.header_nav_right ul {   
     width: 100%;    
     height: 60px;
     font-size: 12px;
@@ -178,25 +304,7 @@ a .webpage_title {
   padding-right: 0px;
 }
 
-.dashboard_nav_right ul {
-  text-align: right;
-}
-
-.dashboard_nav_left ul {
-  line-height: 60px;
-  color: #666;
-  text-align: left;
-  font-style: italic;
-  letter-spacing: 1px;
-  font-family: 'PT Sans', sans-serif;
-  font-family: 'Roboto', sans-serif;
-  font-family: 'Lato', sans-serif;
-  padding-right: 0;
-}
-
-.header_nav_right li,
-.dashboard_nav_right li,
-.dashboard_nav_left li {  
+.header_nav_right li {  
     display: inline;  
     padding: 0px 20px 0 20px;
     border: 0px solid red;
@@ -221,8 +329,7 @@ a .webpage_title {
     *zoom: 1;  
 } */
 
-.header_nav_right a,
-.dashboard_nav_right a{  
+.header_nav_right a {  
     color: #777777;  
     display: inline-block; 
     margin-right: -4px;   
@@ -235,35 +342,13 @@ a .webpage_title {
   	transition: color 150ms linear;
 }  
 
-.header_nav_right a:hover,
 .dashboard_nav_right a:hover {  
     color: #208797;  
-
 } 
 
 /*.header_navigation a#pull {  
     display: none;  
 }*/
-
-.free_advert_wrapper {
-  border: 1px solid #F04F54;
-  padding: 5px 8px 5px 8px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 2px;
-  color: #F04F54;
-  background-color: #fff;
-  -webkit-transition: background-color 150ms linear;
-  -moz-transition: background-color 150ms linear;
-  -o-transition: background-color 150ms linear;
-  -ms-transition: background-color 150ms linear;
-  transition: background-color 150ms linear;
-}
-
-a:hover .free_advert_wrapper {
-  background-color: #F04F54;
-  color: #fff;
-}
 
 /*@media only screen and (max-width : 770px) {  
 

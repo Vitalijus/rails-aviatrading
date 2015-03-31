@@ -1,12 +1,19 @@
-$('.show_user_adverts').bind('ajax:success', function() {  
-        //$(this).fadeOut(100);
-        $(this).text('ADVERT DELETED').css({'background-color': '#EFEFEF',
-        									'color': '#999999',
-        									'font-size': '12px',
-        									'text-align': 'center',
-        									'line-height': '102px',
-        									'border': '1px solid #DFE0E4'
-        								});
+// DELETE THE ADVERTS
+$('.show_user_adverts').on('ajax:success', function() {
+    $(this).text('ADVERT DELETED').css({'background-color': '#EFEFEF',
+    									'color': '#999999',
+    									'font-size': '12px',
+    									'text-align': 'center',
+    									'line-height': '102px',
+    									'border': '1px solid #DFE0E4'
+    									});
+});
+
+//----------------------------------
+
+//SHOW OR HIDE ADVERT
+$('.show_hide_advert').on('ajax:success', function() {
+	$('.link_to_hide_advert').html('test');
 });
 
 //$(".show_user_adverts").click(function(event){ 

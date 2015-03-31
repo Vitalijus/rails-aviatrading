@@ -1,6 +1,7 @@
 School::Application.routes.draw do
 
   get '/pricing', to: 'adverts#pricing', as: 'pricing'
+  get 'adverts/:id/show_advert', to: 'adverts#show_advert', as: 'show_advert'
 
   devise_for :users, controllers: { registrations: 'users/registrations' }
   devise_scope :user do

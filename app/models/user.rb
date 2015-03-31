@@ -8,10 +8,12 @@ class User < ActiveRecord::Base
   mount_uploader :cover_image, CoverUploader
 
   has_many :adverts, dependent: :destroy
-  has_one :order, dependent: :destroy
   belongs_to :plan
 
-  validates_presence_of :plan_id
+  accepts_nested_attributes_for :adverts, allow_destroy: true
+  #, :reject_if => lambda { |a| a[:show_advert].blank? }
+
+  #validates_presence_of :plan_id
   validate :validate_for_coupon
 
   attr_accessor :stripe_card_token
@@ -70,7 +72,6 @@ class User < ActiveRecord::Base
 
   end
 
-
   def cancel_user_plan(customer_id)
       customer = Stripe::Customer.retrieve("#{customer_id}")
       customer.cancel_subscription
@@ -79,4 +80,5 @@ class User < ActiveRecord::Base
       errors.add :base, "No active subscriptions for user."
       false
   end
+  
 end

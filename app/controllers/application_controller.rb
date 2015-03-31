@@ -16,8 +16,10 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:account_update) << [:avatar, :about, :organisation, :street, :country,
                                                         :city, :state, :telephone, :postal_code, 
                                                         :cover_image, :plan_id, :stripe_customer_token,
-                                                        :stripe_card_token, :coupon]
-    devise_parameter_sanitizer.for(:sign_up) << [:name_on_card, :stripe_card_token, :coupon]
+                                                        :stripe_card_token, :coupon, 
+                                                        adverts_attributes: [:id, :user_id, :show_advert]]
+    devise_parameter_sanitizer.for(:sign_up) << [:name_on_card, :stripe_card_token, :coupon,
+                                                adverts_attributes: [:id, :user_id, :show_advert]]
   end
 
 end

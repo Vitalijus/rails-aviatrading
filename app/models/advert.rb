@@ -8,17 +8,12 @@ class Advert < ActiveRecord::Base
 
 	default_scope {order('created_at DESC')}
 
-	validate :validate_for_plan
+	#validate :validate_for_plan
 
 	def validate_for_plan
 		if user.plan_id == 1 && user.adverts.count >= 1
 			errors[:base] << "Please upgrade to Premium plan to be able to post more adverts" 
 		end	
 	end
-
-	#def limit_if_free
-	#	@adverts = Advert.all
-	#	@adverts.last	
-	#end
 	
 end

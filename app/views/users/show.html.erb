@@ -8,6 +8,7 @@
 			</ul>
    		</div> 
   	<% end %>
+  	<%= notice %>
 
 	<div class="show_user_page_header">
 		<div class="show_user_page_avatar">
@@ -82,6 +83,16 @@
 								<%= link_to 'Edit', edit_advert_path(advert) %>
 
 								<%= link_to 'Delete', advert, method: :delete, :remote => true, :class => "delete_advert" %>
+
+								<% if advert.show_advert %>
+									<%= link_to show_advert_path(advert), :remote => true, :class => "show_hide_advert" do %> 
+										<div class="link_to_hide_advert">Hide advert</div>
+									<% end %>
+								<% else %>
+									<%= link_to show_advert_path(advert), :remote => true, :class => "show_hide_advert" do %> 
+										Show advert
+									<% end %>
+								<% end %>
 							<% end %>
 						</div>
 					</div>
@@ -90,3 +101,11 @@
 		</div>
 	</div>
 </div>
+
+<%= @user.inspect %><br><br>
+<%= @user.adverts.first.id %>
+
+<br><br><br><br>
+<br>
+<%= @advert_id = Advert.where(user_id: @user).first %><br><br><br><br><br>
+<%= @user.adverts.each{|advert| advert.id} %><br><br><br><br><br>

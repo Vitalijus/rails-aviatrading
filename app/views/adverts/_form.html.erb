@@ -106,7 +106,7 @@
           <%= f.text_field :serial_number, :class => "new_form_serial_number", :placeholder => "Serial number" %>
           <%= f.text_field :registration_number, :class => "new_form_registration_number", :placeholder => "Registration number" %>
           <span class="new_form_dropdown_list new_form_built_year">
-            <%= f.date_select :year, {:order => [:year], start_year: Date.today.year+1, end_year: Date.today.year-100, :prompt => { :year => 'Built year' }} %>
+            <%= f.select :year, options_for_select((Date.today.year-100..Date.today.year+1).step(1).reverse_each), :prompt => 'Built year' %>
           </span>
           <%= f.text_field :aircraft_hours, :class => "new_form_aircraft_hours", :placeholder => "Aircraft hours" %>
           <%= f.text_field :landings, :class => "new_form_landings", :placeholder => "Landings" %>

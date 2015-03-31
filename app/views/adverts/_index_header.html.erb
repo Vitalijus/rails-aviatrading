@@ -20,30 +20,36 @@
 					<% end %>
 				<% end %>
 
-				<%= link_to adverts_path do %>
+				<!--<%= link_to adverts_path do %>
 					<li>All Aircrafts</li>
-				<% end %>
+				<% end %>	
 
 				<%= link_to new_contact_path, data: { no_turbolink: true } do %>
-					<li>Contact</li>
-				<% end %>	
+					<li><span class="icon-mail"></span></li>
+				<% end %>-->
 
 				<% if user_signed_in? %>
 					<%= link_to user_path(current_user) do %>
-						<li>My Aircraft</li>
+						<li>
+							<span class="my_aircrafts_link"><%= image_tag current_user.avatar_url(:avatar_small) %>My aircrafts</span>
+						</li>
 				  	<% end %>
 				<% end %>
 
 				<% if !user_signed_in? %>
 					<%= link_to sign_in_path do %>
-						<li>Sign in</li>
+						<li class="dashboard_sign_in_out">
+							<span class="icon-login"></span>
+						</li>
 					<% end %>
 				<% end %>
 
 				<% if user_signed_in? %>
-				  <li>
-				  	<%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-				  </li>
+					<%= link_to destroy_user_session_path, method: :delete  do %>
+					  	<li class="dashboard_sign_in_out">
+					  		<span class="icon-logout"></span>
+					  	</li>
+					<% end %>
 				<% end %>
 			</ul>
 		</div>
