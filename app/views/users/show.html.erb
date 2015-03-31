@@ -101,11 +101,3 @@
 		</div>
 	</div>
 </div>
-
-<%= @user.inspect %><br><br>
-<%= @user.adverts.first.id %>
-
-<br><br><br><br>
-<br>
-<%= @advert_id = Advert.where(user_id: @user).first %><br><br><br><br><br>
-<%= @user.adverts.each{|advert| advert.id} %><br><br><br><br><br>
