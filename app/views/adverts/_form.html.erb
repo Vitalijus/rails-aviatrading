@@ -26,6 +26,8 @@
   </div>
 </div>-->
 
+<% if current_user.id == @advert.user_id or current_user %>
+
 <%= form_for(@advert) do |f| %>
   <% if @advert.errors.any? %>
     <div id="error_explanation">
@@ -39,7 +41,6 @@
     </div>
   <% end %>
 
-  
 
 <div class="new_advert_form_wrapper">
   <div class="new_advert_nav">
@@ -364,4 +365,8 @@
 
 <% end %>
 
-
+<% else %>
+<script type="text/javascript">
+    window.location.href="/adverts"  // put your correct path in a string here
+  </script>
+<% end %>

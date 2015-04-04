@@ -1,9 +1,6 @@
 <div id="advert_search_wrapper">
 	<%= search_form_for @q, :id => "adverts_search" do |f| %>
         <div id="advert_search_container">
-        	<div id="advert_search_footer">
-        		Footer
-        	</div>
         <%= link_to root_url, data: { no_turbolink: true } do %>
           <div id="advert_search_header">
             <div class="website_search_logo">
@@ -28,10 +25,44 @@
                   <%= f.text_field :model_cont, :class => "search_field", :placeholder => "Model" %>
                 </li>
 
-                <li class="new_country">
+                <li>
+		          <div class="search_checkbox">
+		          <span class='country'>United States</span>
+		            <%= check_box_tag 'q[country_eq_any][]', 'United States', false, {:id => "search_united_states"} %>
+		            <label for="search_united_states"></label>
+		          </div>
+		        </li>
+
+                <li>
+		          <div class="search_checkbox">
+		          <span class='country'>Canada</span>
+		            <%= check_box_tag 'q[country_eq_any][]', 'Canada', false, {:id => "search_canada"} %>
+		            <label for="search_canada"></label>
+		          </div>
+		        </li>
+
+                <li>
                   <div class="dropdown_list">
-                    <%= f.select :country_cont, ["Afghanistan", "Aland Islands", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia, Plurinational State of", "Bosnia and Herzegovina", "Botswana", "Bouvet Island", "Brazil", "British Indian Ocean Territory", "Brunei Darussalam", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Cocos (Keeling) Islands", "Colombia", "Comoros", "Congo", "Congo, the Democratic Republic of the", "Cook Islands", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Cyprus","Czech Republic","Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Falkland Islands (Malvinas)", "Faroe Islands", "Fiji", "Finland", "France", "French Guiana", "French Polynesia", "French Southern Territories", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard Island and McDonald Islands", "Holy See (Vatican City State)", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran, Islamic Republic of", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Japan", "Jersey", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Korea, Democratic People's Republic of", "Korea, Republic of", "Kuwait", "Kyrgyzstan", "Lao People's Democratic Republic", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libyan Arab Jamahiriya", "Liechtenstein", "Lithuania", "Luxembourg", "Macao", "Macedonia, the former Yugoslav Republic of", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mexico", "Micronesia, Federated States of", "Moldova, Republic of", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "Netherlands Antilles", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "Northern Mariana Islands", "Norway", "Oman", "Pakistan", "Palau", "Palestinian Territory, Occupied", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Pitcairn", "Poland", "Portugal", "Puerto Rico", "Qatar", "Reunion  Réunion", "Romania", "Russian Federation", "Rwanda", "Saint Barthélemy", "Saint Helena", "Saint Kitts and Nevis", "Saint Lucia", "Saint Martin (French part)", "Saint Pierre and Miquelon", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia and the South Sandwich Islands", "Spain", "Sri Lanka", "Sudan", "Suriname", "Svalbard and Jan Mayen", "Swaziland", "Sweden", "Switzerland", "Syrian Arab Republic", "Taiwan, Province of China", "Tajikistan", "Tanzania, United Republic of", "Thailand", "Timor-Leste", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "United States Minor Outlying, Islands", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela, Bolivarian Republic of", "Viet Nam", "Virgin Islands, British", "Virgin Islands, U.S.", "Wallis and Futuna", "Western Sahara", "Yemen", "Zambia","Zimbabwe"], :prompt => 'Country', :class => 'country_list' %>
+                    <%= f.select :country_cont, ["Afghanistan", "Aland Islands", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia, Plurinational State of", "Bosnia and Herzegovina", "Botswana", "Bouvet Island", "Brazil", "British Indian Ocean Territory", "Brunei Darussalam", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Cocos (Keeling) Islands", "Colombia", "Comoros", "Congo", "Congo, the Democratic Republic of the", "Cook Islands", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Cyprus","Czech Republic","Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Falkland Islands (Malvinas)", "Faroe Islands", "Fiji", "Finland", "France", "French Guiana", "French Polynesia", "French Southern Territories", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard Island and McDonald Islands", "Holy See (Vatican City State)", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran, Islamic Republic of", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Japan", "Jersey", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Korea, Democratic People's Republic of", "Korea, Republic of", "Kuwait", "Kyrgyzstan", "Lao People's Democratic Republic", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libyan Arab Jamahiriya", "Liechtenstein", "Lithuania", "Luxembourg", "Macao", "Macedonia, the former Yugoslav Republic of", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mexico", "Micronesia, Federated States of", "Moldova, Republic of", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "Netherlands Antilles", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "Northern Mariana Islands", "Norway", "Oman", "Pakistan", "Palau", "Palestinian Territory, Occupied", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Pitcairn", "Poland", "Portugal", "Puerto Rico", "Qatar", "Reunion  Réunion", "Romania", "Russian Federation", "Rwanda", "Saint Barthélemy", "Saint Helena", "Saint Kitts and Nevis", "Saint Lucia", "Saint Martin (French part)", "Saint Pierre and Miquelon", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia and the South Sandwich Islands", "Spain", "Sri Lanka", "Sudan", "Suriname", "Svalbard and Jan Mayen", "Swaziland", "Sweden", "Switzerland", "Syrian Arab Republic", "Taiwan, Province of China", "Tajikistan", "Tanzania, United Republic of", "Thailand", "Timor-Leste", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "United States Minor Outlying, Islands", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela, Bolivarian Republic of", "Viet Nam", "Virgin Islands, British", "Virgin Islands, U.S.", "Wallis and Futuna", "Western Sahara", "Yemen", "Zambia","Zimbabwe"], :prompt => 'Other country' %>
                   </div>
+                </li>
+              </ul>
+              <div class="search_show_more"><a>SHOW MORE <%= image_tag "arrow_down.png" %></a></div>
+              <div class="search_show_less"><a>SHOW LESS <%= image_tag "arrow_up.png" %></a></div>
+          </div>
+
+          <div id="search_form_price">
+            <ul>
+	            <li>
+	              	<span class="search_label">Price</span>
+	            	<%= f.text_field :price_lteq, :class => "search_field", :placeholder => "Price less than" %>
+	            </li>
+	            
+                <li>
+                	<span class="search_label">Built Year</span>
+                    <div class="dropdown_list">
+                      <%= f.select :year_eq, options_for_select((Date.today.year-100..Date.today.year+1).step(1).reverse_each), :prompt => 'Year' %>
+                    </div>
                 </li>
 
                 <li>
@@ -46,67 +77,36 @@
                   </div>
                 </li>
               </ul>
-              <div class="search_show_more"><a>SHOW MORE <%= image_tag "arrow_down.png" %></a></div>
-              <div class="search_show_less"><a>SHOW LESS <%= image_tag "arrow_up.png" %></a></div>
-          </div>
-
-          <div id="search_form_price">
-            <ul>
-                  <li>
-                    <span class="search_label">Price between</span>
-                    <%= f.text_field :price_gteq, :class => "search_field", :placeholder => "Price" %>
-                  </li>
-
-                  <li>
-                    <%= f.text_field :price_lteq, :class => "search_field" %>
-                  </li>
-
-                  <li>
-                    <div class="dropdown_list">
-                      <%= f.select :currency_cont, ['USD', "EUR"], :prompt => 'Currency' %>
-                    </div>
-                </li>
-
-                <li>
-                    <div class="dropdown_list">
-                      <%= f.select :year_eq, options_for_select((Date.today.year-100..Date.today.year+1).step(1).reverse_each), :prompt => 'Year' %>
-                    </div>
-                </li>
-
-                  <li>
-                    <span class="search_label">Engine</span>
-                    <div class="dropdown_list">
-                      <%= f.select :engine_type_cont, ['Cessna', "Airbus"], :prompt => 'Engine type' %>
-                    </div>
-                  </li>
-
-                  <li>
-                    <%= f.text_field :engine_model_cont, :class => "search_field", :placeholder => "Engine model" %>
-                  </li>
-              </ul>
               <div class="search_show_more_price"><a>SHOW MORE <%= image_tag "arrow_down.png" %></a></div>
               <div class="search_show_less_price"><a>SHOW LESS <%= image_tag "arrow_up.png" %></a></div>
           </div>
 
-          <!--<div id="search_form_engine">
+          <div id="search_form_engine">
             <ul>
                   <li>
                     <span class="search_label">Engine type</span>
                     <div class="dropdown_list">
-                      <%= f.select :engine_type_cont, ['Cessna', "Airbus"], :prompt => '' %>
+                      <%= f.select :engine_type_cont, ['In-line engine', "V-type engine", "Horizontally opposed engine", "Radial engine", "Turboprop", "Turboshaft", "Turbojet", "Turbofan"], :prompt => 'Engine' %>
                     </div>
                   </li>
 
                   <li>
-                    <span class="search_label">Model</span>
-                    <%= f.text_field :engine_model_cont, :class => "search_field" %>
+                    <%= f.text_field :engine_model_cont, :class => "search_field", :placeholder => "Model" %>
                   </li>
               </ul>
-              <div class="search_show_more_price"><a>SHOW MORE <%= image_tag "arrow_down.png" %></a></div>
-              <div class="search_show_less_price"><a>SHOW LESS <%= image_tag "arrow_up.png" %></a></div>
-          </div>-->
+              <div class="search_show_more_engine"><a>SHOW MORE <%= image_tag "arrow_down.png" %></a></div>
+              <div class="search_show_less_engine"><a>SHOW LESS <%= image_tag "arrow_up.png" %></a></div>
+          </div>
       </div>
+
+      	<div class="push"></div>
+      	
     </div>
+    	<!--<div id="advert_search_footer">
+			Footer
+		</div>-->
+
+    
         
         <!--<div id="search_button_wrapper">
           <%= f.submit :class => "search_button" %>

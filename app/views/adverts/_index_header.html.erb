@@ -1,8 +1,10 @@
 <header>
 	<div id="header_dashboard_wrapper">
 		<div class="dashboard_nav_left">  
-		    <ul>  
-	        	<li>Buy & Sell Aircraft Market</li>
+		    <ul>
+		    	<%= link_to adverts_path do %>
+	        		<li><span class="icon-square_left"></span>About</li>
+	        	<% end %>
 		    </ul>    
 		</div> 
 
@@ -16,7 +18,7 @@
 
 				<% if user_signed_in? %>
 					<%= link_to new_advert_path do %>
-						<li><span class="free_advert_wrapper">New Advert</span></li>
+						<li><span class="free_advert_wrapper">New aircraft</span></li>
 					<% end %>
 				<% end %>
 

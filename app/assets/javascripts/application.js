@@ -59,27 +59,39 @@ $(document).ready(function() {
 
 $(document).ready(function() {
 	$(".search_show_more").click(function() {
-		$('#search_form_general ul li').slice(-2).show(50);
+		$('#search_form_general ul li').slice(-1).show(50);
 		$('.search_show_more').hide();
 		$('.search_show_less').show();
 	});
 
 	$(".search_show_less").click(function() {
-		$('#search_form_general ul li').slice(-2).hide(50);
+		$('#search_form_general ul li').slice(-1).hide(50);
 		$('.search_show_more').show();
 		$('.search_show_less').hide();
 	});
 
 	$(".search_show_more_price").click(function() {
-		$('#search_form_price ul li').slice(-4).show(50);
+		$('#search_form_price ul li').slice(-2).show(50);
 		$('.search_show_more_price').hide();
 		$('.search_show_less_price').show();
 	});
 
 	$(".search_show_less_price").click(function() {
-		$('#search_form_price ul li').slice(-4).hide(50);
+		$('#search_form_price ul li').slice(-2).hide(50);
 		$('.search_show_more_price').show();
 		$('.search_show_less_price').hide();
+	});
+
+	$(".search_show_more_engine").click(function() {
+		$('#search_form_engine ul li').slice(-1).show(50);
+		$('.search_show_more_engine').hide();
+		$('.search_show_less_engine').show();
+	});
+
+	$(".search_show_less_engine").click(function() {
+		$('#search_form_engine ul li').slice(-1).hide(50);
+		$('.search_show_more_engine').show();
+		$('.search_show_less_engine').hide();
 	});
 });
 
