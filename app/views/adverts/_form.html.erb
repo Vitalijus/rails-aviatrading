@@ -287,12 +287,14 @@
       </ul>
    </div>
 
+<% if current_page?(edit_advert_path(@advert)) %>
   <% @advert.photos.each do |image| %>
     <div class='delete_images'>
       <%= image_tag image.image_url(:advert_image) %>
-      <%= link_to "Remove image", image, :method => :delete, :remote => true, :class => "delete_image" %><br/>
+      <%= link_to "Remove image", photo_path(image), :method => :delete, :remote => true, :class => "delete_image" %><br/>
     </div>
   <% end %>
+<% end %>
 
 <script>
   $(document).ready(function(){
