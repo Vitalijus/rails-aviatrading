@@ -3,7 +3,7 @@ class Advert < ActiveRecord::Base
 
 	belongs_to :user
 	has_many :photos, :dependent => :destroy
-	accepts_nested_attributes_for :photos, :reject_if => lambda { |a| a[:image].blank? }, allow_destroy: true
+	#accepts_nested_attributes_for :photos, :reject_if => lambda { |a| a[:image].blank? }, allow_destroy: true
 
 
 	default_scope {order('created_at DESC')}

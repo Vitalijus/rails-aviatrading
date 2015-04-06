@@ -1,8 +1,7 @@
 <div class="advert_show_wrapper">
   <div class="advert_show_image">
     <% @advert.photos.each do |photo| %>
-      <%= image_tag photo.image_url(:advert_image_big) %><br/>
-      <!--<%= cl_image_tag(photo.public_token)%>-->
+      <%= image_tag photo.image_url(:advert_image_big) %>
     <% end %>
     
     <div class="advert_show_image_detail">

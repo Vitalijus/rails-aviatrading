@@ -28,7 +28,7 @@
 
 <% if current_user.id == @advert.user_id or current_user %>
 
-<%= form_for(@advert) do |f| %>
+<%= form_for(@advert, :html => { multipart: true }) do |f| %>
   <% if @advert.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@advert.errors.count, "error") %> prohibited this advert from being saved:</h2>
@@ -276,15 +276,9 @@
 <div id="tab3" class="new_form_wrapper">
   <div class="new_form_border_helper">
     <div class="field">
-      <%= f.fields_for :photos do |builder| %>
-       
-        <%= builder.label :image, "Advert Image" %><br>
-        <%= builder.cl_image_upload(:image, :return_delete_token => true, :html => { :multiple => true }) %>
-        
-        <%= hidden_field_tag :public_token, "", id: "public_token" %>
-
-      <% end %>
+      <%= cl_image_upload_tag("images[]", :return_delete_token => true, :html => { :multiple => true }) %>
     </div>
+
   -------------------<br/>
 
    <div class="uploaded_image">
@@ -292,23 +286,22 @@
       
       </ul>
    </div>
-  -------------------------<br/>
+
+  <% @advert.photos.each do |image| %>
+    <div class='delete_images'>
+      <%= image_tag image.image_url(:advert_image) %>
+      <%= link_to "Remove image", image, :method => :delete, :remote => true, :class => "delete_image" %><br/>
+    </div>
+  <% end %>
 
 <script>
   $(document).ready(function(){
-    var public_token = new Array();
 
     $('.cloudinary-fileupload').bind('cloudinarydone', function(e, data) {
       var preview = $(".uploaded_image ul").append('<li>');
         $.cloudinary.image(data.result.public_id, {
           format: data.result.format, width: 250, height: 175, crop: "fit"
         }).appendTo(preview);
-
-        var data_id = data.result.public_id;
-        public_token.push(data_id);
-        $("#public_token").val(public_token);
-
-
 
         $('<a/>').addClass('delete_by_token').attr({href: '#'}).data({delete_token: data.result.delete_token}).html('&times;').appendTo(preview).click(function(e) {e.preventDefault();
 
@@ -342,10 +335,6 @@
   });
 </script>
 
-    <div class="field">
-      <%= f.label :document, "PDF" %><br>
-      <%= f.file_field :document %> 
-    </div>
     <div id="public_id"></div>
     <div class="status">
         <ul>

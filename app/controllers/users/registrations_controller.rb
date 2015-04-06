@@ -25,11 +25,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def cancel_plan
     @user = current_user
-    @user.adverts.each do |advert|
-      @advert_id = advert.id
+    Advert.all.each do |advert|
+      @advert = advert.id
     end
     if @user.cancel_user_plan(params[:customer])
-      @user.update_attributes(stripe_customer_token: nil, plan_id: 1, coupon: nil, adverts_attributes: [{id: @user.adverts.first.id, show_advert: false}])
+      @user.update_attributes(stripe_customer_token: nil, plan_id: 1, coupon: nil, adverts_attributes: [{id: @advert, show_advert: false}])
       flash[:notice] = "Canceled subscription."
       redirect_to subscription_path
     else

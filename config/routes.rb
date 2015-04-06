@@ -12,9 +12,10 @@ School::Application.routes.draw do
     put 'users/update_plan', :to => 'users/registrations#update_plan'
     put 'users/cancel_plan', :to => 'users/registrations#cancel_plan'
   end
-  resources :users, only: [:edit, :show]
+  resources :users, only: [:show]
 
   resources :adverts
+  resources :photos, only: [:destroy]
   resources :contacts, only: [:create, :new]
   
   

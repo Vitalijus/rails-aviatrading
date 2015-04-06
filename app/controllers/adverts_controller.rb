@@ -70,18 +70,13 @@ class AdvertsController < ApplicationController
   def create
     @advert = Advert.new(advert_params)
     current_user.adverts << @advert
-    #@photos = [] 
-    #params[:public_token].split(",").each do |pub_id|
-    #  @photos << Photo.new(:public_token => pub_id) 
-    #end 
-    
-    #@advert.photos =  @photos
 
     respond_to do |format|
       if @advert.save
-        if params[:public_token]
-            params[:public_token].split(",").each { |url| @advert.photos.create(public_token: url) }
+        params[:images].each do |image|
+          @advert.photos.create(image: image)
         end
+
         format.html { redirect_to @advert, notice: 'Advert was successfully created.' }
         format.json { render action: 'show', status: :created, location: @advert }
       else
@@ -96,6 +91,11 @@ class AdvertsController < ApplicationController
   def update
     respond_to do |format|
       if @advert.update(advert_params)
+        if params[:images]
+          params[:images].each do |image|
+            @advert.photos.create(image: image)
+          end
+        end
         format.html { redirect_to @advert, notice: 'Advert was successfully updated.' }
         format.json { head :no_content }
       else

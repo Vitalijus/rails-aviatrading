@@ -8,16 +8,20 @@
     <div class="box">
       <%= link_to advert_path(advert), data: { no_turbolink: true } do %>
         <div class="box_image">
-
-          <% advert.photos.each do |photo| %>
-            <%= image_tag photo.image_url(:advert_image) %>
-          <% end %>
-
+        <% if advert.photos.first %>
+          <%= image_tag(advert.photos.first.image_url(:advert_image)) %>
+        
           <div class="box_price">
             <%= number_to_currency(advert.price, precision: 0, unit: "") %> <%= advert.currency %>
           </div>
+
+          <% else %>
+           N/A
+          <% end %>
         </div>
       <% end %>
+
+
 
       <div class="box_content_wrapper">
         <div class="box_user_avatar">
