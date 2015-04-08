@@ -1,0 +1,41 @@
+  <div id="tab2" class="new_form_wrapper">
+    <div class="new_form_border_helper">
+      <div class="new_form_wrapper_header">
+        ENGINE / PROPELLER
+      </div>
+
+        <ul>
+          <li class="form_label">Engine</li>
+          <li class="new_form_aircraft_details">
+            <%= f.number_field :number_of_engines, :class => "new_form_engines_number", :placeholder => "Engines number" %>
+
+            <span class="new_form_dropdown_list new_form_engine_type">
+              <%= f.select :engine_type, ['Prop', "Turbo"], :prompt => 'Engine type' %>
+            </span>
+
+            <%= f.text_field :engine_make, :class => "new_form_engines_make", :placeholder => "Manufacturer" %>
+            <%= f.text_field :engine_model, :class => "new_form_engines_model", :placeholder => "Model" %>
+            <%= f.number_field :engine_hours, :class => "new_form_engine_hours", :placeholder => "Engine hours" %>
+            <%= f.number_field :tbo, :class => "new_form_tbo", :placeholder => "Time between overhaul (TBO)" %>
+            <%= f.text_field :engine_power, :class => "new_form_engine_power", :placeholder => "Engine power" %>
+          </li>
+        </ul>
+
+        <ul>
+          <li class="form_label">Propeller</li>
+          <li class="new_form_propeller">
+            <%= f.number_field :number_of_propellers, :class => "new_form_number_of_propellers", :placeholder => "Number of propellers" %>
+            <%= f.number_field :propeller_hours, :class => "new_form_propeller_hours", :placeholder => "Propeller hours" %>
+            <%= f.text_field :propeller_make, :class => "new_form_propeller_make", :placeholder => "Propeller manufacturer" %>
+            <%= f.text_field :propeller_model, :class => "new_form_propeller_model", :placeholder => "Propeller model" %>
+          </li>
+        </ul>
+
+        <ul>
+          <li class="form_label">Extra information</li>
+          <li>
+            <%= f.text_area :engine_notes, :class => "new_form_engine_notes"%>
+          </li>
+        </ul>
+      </div>
+  </div>

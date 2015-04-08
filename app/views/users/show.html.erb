@@ -102,7 +102,7 @@
 	</div>
 </div>
 <br><br><br>
-<%= @user.adverts %>
+<%= @user.adverts.first %>
 <br><br><br>
 <% Advert.all.each do |advert| %>
 	<%= advert.id %> <%= advert.show_advert %> |

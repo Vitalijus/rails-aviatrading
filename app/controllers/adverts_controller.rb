@@ -73,8 +73,10 @@ class AdvertsController < ApplicationController
 
     respond_to do |format|
       if @advert.save
-        params[:images].each do |image|
-          @advert.photos.create(image: image)
+        if params[:images]
+          params[:images].each do |image|
+            @advert.photos.create(image: image)
+          end
         end
 
         format.html { redirect_to @advert, notice: 'Advert was successfully created.' }

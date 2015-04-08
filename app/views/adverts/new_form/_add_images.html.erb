@@ -1,0 +1,128 @@
+<div id="tab4" class="new_form_wrapper">
+  <div class="new_form_border_helper">
+
+    <div id="progress_bar">
+      <div id="upload_image_button_in_progress">
+        <label class="upload_image">
+          <%= cl_image_upload_tag("images[]", :return_delete_token => true, :html => { :multiple => true }) %>
+          <span><%= image_tag "cloud_upload.png", width: 20 %> Add Images</span>
+        </label>
+      </div>
+      
+      <div class="bar_wrapper">
+        <div class="full_bar">
+          <div class="bar"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="upload_image_wrapper">
+      <div id="upload_image">
+        <span id="upload_image_icon"><%= image_tag "108.png",width: 45 %></span>
+        <span id="big_text">Add an image or two!</span>
+        <span id="small_text">Or three, or more! Buyers love images that highlight features of your aircraft.</span>
+      </div>
+
+      <div id="upload_image_button">
+        <label class="upload_image">
+          <%= cl_image_upload_tag("images[]", :return_delete_token => true, :html => { :multiple => true }) %>
+          <span><%= image_tag "cloud_upload.png", width: 20 %> Add Images</span>
+        </label>
+      </div>
+    </div>
+
+   <div class="uploaded_image">
+      <ul>     
+        <% if current_page?(edit_advert_path(@advert)) %>
+          <% @advert.photos.each do |image| %>
+                <li>
+                  <%= image_tag image.image_url(:advert_image) %>
+                  <%= link_to photo_path(image), :method => :delete, :remote => true, :class => "delete_image" do %>
+                    <%= image_tag "delete_image.png" %>
+                  <% end %>
+                </li>
+          <% end %>
+        <% end %>
+      </ul>
+   </div>
+</div>
+
+   
+    <div class="status"></div>
+
+
+    <div class="preview"></div>
+
+  <script>
+  $(document).ready(function() { $(".cloudinary-fileupload").fileupload({ 
+        // Uncomment the following lines to enable client side image resizing and valiation.
+        // Make sure cloudinary/processing is included the js file
+        //disableImageResize: false,
+        //imageMaxWidth: 800,
+        //imageMaxHeight: 600,
+        //acceptFileTypes: /(\.|\/)(gif|jpe?g|png|bmp|ico)$/i,
+        //maxFileSize: 20000000, // 20MB
+        //dropZone: "#direct_upload",
+        progressall: function (e, data) {
+          $('#upload_image_wrapper').hide();
+          $('#progress_bar').show();
+          var progress = Math.round((data.loaded * 100.0) / data.total);
+            $('#progress_bar .bar').css('width', progress + '%');
+              //if (progress == 100) {
+                //$('#progress_bar').removeClass('bar').addClass('processing');}
+        },
+        fail: function (e, data) {
+          $(".status").text("Upload failed");
+        }
+      })
+      .off("cloudinarydone").on("cloudinarydone", function (e, data) {
+            var preview = $('<li></li>').prependTo('.uploaded_image ul');
+            $.cloudinary.image(data.result.public_id, {
+              format: data.result.format, width: 250, height: 135, crop: "fill"
+            }).appendTo(preview);
+
+        /*$("#photo_bytes").val(data.result.bytes);
+        $(".status").text("");
+        var preview = $(".uploaded_image ul").append('<li>' + "text" + '</li>');
+        $.cloudinary.image(data.result.public_id, {
+          format: data.result.format, width: 250, height: 135, crop: "fill"
+        }).appendTo(preview);*/
+
+        $('<a/>').
+          addClass('delete_by_token').
+          attr({href: '#'}).
+          data({delete_token: data.result.delete_token}).
+          addClass('delete_image img').html('<%= escape_javascript(image_tag "delete_image.png") %>').
+          appendTo(preview).
+          click(function(e) {
+            e.preventDefault();
+            $.cloudinary.delete_by_token($(this).data('delete_token')).done(function(){
+              $('.preview').html('');
+              $('#info').html('');
+              $("#photo_bytes").val('');
+              $('input[name="photo[image]"]').remove();
+            }).fail(function() {
+              $('.status').text("Cannot delete image");
+          });
+        });
+        view_upload_details(data.result);
+      });
+    });
+    
+    function view_upload_details(upload) {
+      // Build an html table out of the upload object
+      var rows = [];
+      $.each(upload, function(k,v){
+        rows.push(
+          $("<tr>")
+            .append($("<td>").text(k))
+            .append($("<td>").text(JSON.stringify(v))));
+      });
+      $("#info").html(
+        $("<div class=\"upload_details\">")
+          .append("<h2>Upload metadata:</h2>")
+          .append($("<table>").append(rows)));
+    }
+</script>
+
+  

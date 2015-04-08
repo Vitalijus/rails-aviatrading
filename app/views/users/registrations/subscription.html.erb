@@ -82,10 +82,19 @@
 
   <% else %>
 
+  <% @array = Array.new %>
+  <% @user.adverts.each do |advert| %>
+    <% @array.push advert.id %>
+  <% end %><br/>
+
+  <% @array.each do |id| %>
+    <%= id %>
+  <% end %>
   
     <%= form_for(resource, :as => resource_name, :url => users_cancel_plan_path, :html => { id: 'cancel_plan', :method => :put }) do |f| %>
 
     <%= hidden_field_tag 'customer', resource.stripe_customer_token %>
+    <%= hidden_field_tag 'advert_id', @array %>
 
     <%= f.submit "Cancel Subscription", class: "btn btn-danger" %>
 
