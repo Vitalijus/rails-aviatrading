@@ -68,7 +68,7 @@
         <li>
           <%= f.cl_image_upload(:avatar, :return_delete_token => true, :html => {:class => "avatar_upload"}) %>
         </li>
-        <span>Add Photo</span>
+        <span><%= image_tag "cloud_upload.png", width: 20 %> Add Photo</span>
       </label>
       
       <li>
@@ -90,7 +90,7 @@ Must be at least 1600px wide and 270px tall.</span>
         <li>
           <%= f.cl_image_upload(:cover_image, :return_delete_token => true, :html => {:class => "cover_upload"}) %>
         </li>
-        <span>Add Photo</span>
+        <span><%= image_tag "cloud_upload.png", width: 20 %> Add Photo</span>
       </label>
 
       <li>

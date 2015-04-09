@@ -35,7 +35,7 @@
       <ul>     
         <% if current_page?(edit_advert_path(@advert)) %>
           <% @advert.photos.each do |image| %>
-                <li>
+                <li class="delete">
                   <%= image_tag image.image_url(:advert_image) %>
                   <%= link_to photo_path(image), :method => :delete, :remote => true, :class => "delete_image" do %>
                     <%= image_tag "delete_image.png" %>
@@ -47,11 +47,27 @@
    </div>
 </div>
 
-   
+  <script>
+    $('li.delete').click(function() {
+      $(this).hide(150);
+    });
+  </script>
+
     <div class="status"></div>
 
 
     <div class="preview"></div>
+
+    <script>
+  var fileUploadErrors = {
+    maxFileSize: 'File is too big',
+    minFileSize: 'File is too small',
+    acceptFileTypes: 'Filetype not allowed',
+    maxNumberOfFiles: 'Max number of files exceeded',
+    uploadedBytes: 'Uploaded bytes exceed file size',
+    emptyResult: 'Empty file upload result'
+  };
+</script>
 
   <script>
   $(document).ready(function() { $(".cloudinary-fileupload").fileupload({ 
@@ -61,7 +77,7 @@
         //imageMaxWidth: 800,
         //imageMaxHeight: 600,
         //acceptFileTypes: /(\.|\/)(gif|jpe?g|png|bmp|ico)$/i,
-        //maxFileSize: 20000000, // 20MB
+        maxFileSize: 20000, // 20MB
         //dropZone: "#direct_upload",
         progressall: function (e, data) {
           $('#upload_image_wrapper').hide();
@@ -97,7 +113,10 @@
           click(function(e) {
             e.preventDefault();
             $.cloudinary.delete_by_token($(this).data('delete_token')).done(function(){
-              $('.preview').html('');
+              $('.preview').html('text');
+              $('li.delete').click(function() {
+                $(this).hide(150);
+              });
               $('#info').html('');
               $("#photo_bytes").val('');
               $('input[name="photo[image]"]').remove();
@@ -108,21 +127,6 @@
         view_upload_details(data.result);
       });
     });
-    
-    function view_upload_details(upload) {
-      // Build an html table out of the upload object
-      var rows = [];
-      $.each(upload, function(k,v){
-        rows.push(
-          $("<tr>")
-            .append($("<td>").text(k))
-            .append($("<td>").text(JSON.stringify(v))));
-      });
-      $("#info").html(
-        $("<div class=\"upload_details\">")
-          .append("<h2>Upload metadata:</h2>")
-          .append($("<table>").append(rows)));
-    }
 </script>
 
   
