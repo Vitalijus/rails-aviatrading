@@ -43,15 +43,33 @@
 	height: 135px;
 }
 
+.icon-paper_plane:before {
+	font-size: 50px;
+	color: #C5C6CB;
+    content: "\e601";
+}
+
+.icon-paper_plane {
+	position: absolute;
+	top: 42px;
+	left: 50%;
+	margin-left: -37px;
+}
+
 .box_price {
+	min-width: 50px;
+	min-height: 25px;
+	line-height: 25px;
+	padding: 0 5px 0 5px;
+	text-align: center;
 	position: absolute;
 	top: 20px;
 	right: 0;
+	z-index: 100;
 	font-size: 13px;
 	font-family: 'Roboto', sans-serif;
 	color: #fff;
 	background-color:rgba(255,0,0,0.5);
-	padding: 5px;
 }
 
 .box_content_wrapper {
@@ -102,7 +120,7 @@ a:hover .box_make, a:hover .box_model {
 	color: #336f8c;
 }
 
-.box_attr {
+/*.box_attr {
 	font-family: 'PT Sans', sans-serif;
 	font-size: 11px;
 	color: #777777;
@@ -129,7 +147,7 @@ a:hover .box_make, a:hover .box_model {
 .box_icons li {
 	display: inline-block;
 	border: 0px solid red;
-}
+}*/
 
 /*----------------------------*/
 

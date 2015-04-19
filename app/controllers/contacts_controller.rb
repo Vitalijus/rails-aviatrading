@@ -8,10 +8,11 @@ class ContactsController < ApplicationController
 		@contact = Contact.new(contact_params)
 
 		if @contact.save
-			redirect_to courses_path, notice: "Message has been sent successfully."
-			ContactWorker.perform_async(@contact.id)
+			redirect_to new_contact_path, notice: "Message has been sent successfully."
+			ContactMailer.contact_message(@contact).deliver
+			#ContactWorker.perform_async(@contact.id)
 		else
-			render action: "new"
+			render action: "new", notice: "Sorry, something went wrong. Reach us at info@aviatrading.com"
 		end
 	end
 

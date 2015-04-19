@@ -1,75 +1,80 @@
 /* PRICING */
 
-.plan_banner {
-	width: 100%;
-	height: 300px;
-	margin: auto;
-	padding-top: 50px;
-	text-align: center;
+.pricing_wrapper {
+	width: 1000px;
+	margin: 0 auto;
+	margin-top: 20px;
+	margin-bottom: 60px;
 	background-color: #fff;
-	/*background-image: url(image-path('bg.jpg'));*/
-	font-size: 40px;
-	color: #999;
+	overflow: hidden;
+	border: 1px solid #DFE0E4;
+
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+.plan_banner {
+	height: 350px;
+	padding-top: 110px;
+	position: relative;
+	text-align: center;
+	background-color: #314359;
+	background-image: url(image-path('mix.gif'));
+	font-size: 50px;
+	color: #fff;
 	font-family: 'PT Sans', sans-serif;
-	border-bottom: 0px solid #DFE0E4;
 }
 
 .plan_small_banner_text {
 	font-size: 25px;
 }
 
-.plan_wrapper {
-	width: 960px;
-	margin: auto;
-	margin-top: 50px;
-	margin-bottom: 35px;
-	border: 0px solid #DFE0E4;
+.plan_text {
+	height: 180px;
+	padding: 50px 0 0 0;
+	text-align: center;
+	font-family: "Open Sans", helvetica, arial;
+	font-size: 40px;
 }
 
-.plan_basic {
-	width: 460px;
-	margin-right: 20px;
-	display: inline-block;
-	border: 1px solid #e8e9ec;
+.plan_text_small {
+	width: 400px;
+	margin: 0 auto;
+	font-size: 13px;
+}
+
+.plan_wrapper {
+	overflow: hidden;
+	padding: 0 40px 0 40px;
 }
 
 .plan_premium {
-	width: 460px;
+	width: 440px;
+	padding-top: 20px;
+	float: left;
+	overflow: hidden;
+	background-color: #fdfdfd;
+	border: 1px solid #DFE0E4;
+}
+
+.plan_basic {
+	width: 440px;
+	padding-top: 20px;
 	float: right;
-	display: inline-block;
-	border: 1px solid #e8e9ec;
+	overflow: hidden;
+	background-color: #fdfdfd;
+	border: 1px solid #DFE0E4;
 }
 
-.plan_basic_header,
-.plan_premium_header {
-	position: relative;
-	background-color: #5BB69A;
-	border: 0px solid red;
-}
-
-.plan_premium_header {
-	background-color: #D55C4B;
-}
-
-.plan_basic_header h3,
-.plan_premium_header h3 {
-	position: absolute;
-	top: -25px;
-	right: 50%;
-	margin-right: -125px;
+.plan_title {
 	text-align: center;
-	width: 250px;
-	height: 50px;
-	line-height: 48px;
-	color: #fff;
+	width: 100%;
+	height: 60px;
+	line-height: 60px;
+	color: #666;
 	font-family: "Open Sans", helvetica, arial;
-	font-size: 16px;
-	text-transform: uppercase;
-	background-color: #4D9B83;
-}
-
-.plan_premium_header h3 {
-	background-color: #B14739;
+	font-size: 30px;
 }
 
 /*.plan_free_month {
@@ -89,30 +94,23 @@
 .plan_for_whom {
 	font-size: 17px;
 	font-family: "Open Sans", helvetica, arial;
-	font-weight: bold;
 	text-align: center;
-	padding: 40px 0 20px 0;
-	color: #fff;
-	border: 0px solid red;
+	margin-top: -5px;
+	color: #666;
 }
 
 .plan_price {
 	padding-left: 40px;
+	margin: 20px 0 0 0;
 	text-align: center;
-	color: #fff;
-	font-family: 'PT Sans', sans-serif;
+	color: #3f5672;
+	font-family: "Open Sans", helvetica, arial;
 	position: relative;
-	background-color: #4D9B83;
-}
-
-.plan_price.premium {
-	background-color: #B14739;
 }
 
 .plan_currency {
 	font-size: 28px;
 	vertical-align: 17px;
-	border: 0px solid red;
 }
 
 .plan_amount {
@@ -126,14 +124,15 @@
 .plan_old_price {
 	position: absolute;
 	top: 14px;
-	right: 107px;
+	right: 93px;
 	font-size: 18px;
 	text-decoration: line-through;
 }
 
-.plan_advantages ul {
-	padding: 15px 20px 25px 20px;
+/*.plan_advantages ul {
+	padding: 0px 20px 20px 20px;
 	text-align: center;
+
 }
 
 .plan_advantages li {
@@ -142,19 +141,25 @@
 	font-family: 'PT Sans', sans-serif;
 	text-transform: uppercase;
 	font-size: 12px;
-	color: #fff;
-	border: 0px solid red;
-}
+	color: #666;
+}*/
 
-a .plan_subscribe_link {
-	height: 60px;
-	background-color: #5BB69A;
-	line-height: 60px;
+.plan_subscribe_link {
+	width: 150px;
+	height: 45px;
+	margin: 30px auto;
+	line-height: 45px;
+	font-size: 14px;
+	background-color: #F16164;
 	text-align: center;
-	font-weight: bold;
+	font-weight: 600;
+	font-family: "Open Sans", helvetica, arial;
 	color: #fff;
-	font-family: 'PT Sans', sans-serif;
-	border: 0px solid red;
+	border-bottom: 2px solid #B14739;
+
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
 
 	-webkit-transition: background-color 150ms linear;
   	-moz-transition: background-color 150ms linear;
@@ -163,32 +168,29 @@ a .plan_subscribe_link {
   	transition: background-color 150ms linear;
 }
 
-a .plan_subscribe_link.premium {
-	background-color: #D55C4B;
+.plan_subscribe_link a {
+	color: #fff;
 }
 
-a:hover .plan_subscribe_link {
-	background-color: #4D9B83;
+.plan_subscribe_link:hover {
+	background-color: #F05053;
 }
 
-a:hover .plan_subscribe_link.premium {
-	background-color: #B14739;
-}
 
 .plan_benefits ul {
-	padding-top: 10px;
 	background-color: #fff;
 	font-family: "Open Sans", helvetica, arial;
+	background-color: #F6F7F8;
+	padding: 5px 0 20px 0;
+	border-top: 1px solid #DFE0E4;
 }
 
 .plan_benefits li {
-	text-align: center;
 	font-size: 13px;
-	color: #666;
+	color: #777;
 	font-weight: bold;
-	text-transform: uppercase;
-	padding: 20px 0 20px 0;
-	border-bottom: 1px solid #e8e9ec;
+	text-align: center;
+	padding: 20px 20px 0px 20px;
 }
 
 .plan_benefits li:last-child { 
@@ -248,37 +250,63 @@ a:hover .plan_subscribe_link.premium {
 
 /*---------------------*/
 
-/* TESTIMONIALS*/
+/* TESTIMONIALS AND FAQ*/
 
-.plan_testimonials_header {
-	width: 960px;
-	margin: 0 auto;
-	margin-bottom: 80px;
+#plan_box ul {
+	width: 100%;
+	overflow: hidden;
+	padding: 0 30px 20px 30px;
+}
+
+#plan_box li {
+	width: 292px;
+	height: 300px;
+	float: left;
+	margin: 0 10px 20px 10px;
 	background-color: #fff;
-	height: 125px;
-	background-color: #637A91;
 	border: 1px solid #DFE0E4;
 }
 
-.plan_testimonials_title {
-	width: 100%;
-	padding: 20px 0 0px 0;
-	text-align: center;
-	text-transform: uppercase;
-	font-family: 'PT Sans', sans-serif;
-	color: #fff;
-	font-size: 25px;
-	border: 0px solid red;
+/*#plan_box.question ul {
+	padding-bottom:  0;
 }
 
-.plan_testimonials_intro {
-	width: 500px;
-	margin: 0 auto;
-	text-align: center;
-	font-family: 'PT Sans', sans-serif;
-	color: #fff;
-	font-size: 18px;
-	border: 0px solid red;
+#plan_box.question li {
+	margin-bottom: 0;
+}*/
+
+.plan_question {
+	width: 100%;
+	height: 130px;
+	display: table;
+	padding: 0 20px 0 20px;
+	background-color: #F6F7F8;
+	font-family: "Open Sans", helvetica, arial;
+	font-size: 25px;
+	border-bottom: 1px solid #DFE0E4;
 }
+
+.plan_question span {
+	display: table-cell;
+  	vertical-align: middle;
+  	border: 0px solid red;
+}
+
+.plan_answer {
+	padding: 20px;
+	font-family: "Open Sans", helvetica, arial;
+	font-size: 14px;
+}
+
+/*.plan_question img {
+	-webkit-border-radius: 75px;
+	-moz-border-radius: 75px;
+	border-radius: 75px;
+}
+
+.commenter_location {
+	font-size: 12px;
+}*/
+
 
 /*---------------------*/

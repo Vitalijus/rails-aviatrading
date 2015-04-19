@@ -11,17 +11,22 @@
         <% if advert.photos.first %>
           <%= image_tag(advert.photos.first.image_url(:advert_image)) %>
         
-          <div class="box_price">
-            <%= number_to_currency(advert.price, precision: 0, unit: "") %> <%= advert.currency %>
-          </div>
+          <% unless advert.price.nil? %>
+            <div class="box_price">
+                <%= number_to_currency(advert.price, precision: 0, unit: "") %> <%= advert.currency %>
+            </div>
+          <% end %>
 
           <% else %>
-           N/A
+            <% unless advert.price.nil? %>
+              <div class="box_price">
+                <%= number_to_currency(advert.price, precision: 0, unit: "") %> <%= advert.currency %>
+              </div>
+            <% end %>
+            <span class="icon-paper_plane"></span>
           <% end %>
         </div>
       <% end %>
-
-
 
       <div class="box_content_wrapper">
         <div class="box_user_avatar">
@@ -41,11 +46,11 @@
         <% end %>
       </div>
 
-        <div class="box_footer_wrapper">
+        <!--<div class="box_footer_wrapper">
           <div class="box_footer">
             <%= advert.country %>, <%= advert.city %>
           </div>
-        </div>
+        </div>-->
     </div>
   <% end %>
   </div>

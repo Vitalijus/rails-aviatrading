@@ -1,92 +1,181 @@
-<div class="plan_banner">
-  <b>Sell your aircraft</b> where the buyers are
-  <div class="plan_small_banner_text">More buyers than anywhere else</div>
-</div>
+<div class="pricing_wrapper">
+  <div class="plan_banner">
+    <b>Sell your aircraft</b>
+    <div class="plan_small_banner_text">where the buyers are</div>
+  </div>
 
- <div class="plan_wrapper">
-    <div class="plan_basic">
-    	<div class="plan_basic_header">
-		    <h3>Free</h3>
-          <div class="plan_for_whom">
-            Best for private use
-          </div>
+  <div class="plan_text">
+    Choose a Plan 
 
-          <div class="plan_price">
-            <span class="plan_currency">$</span><span class="plan_amount">0.00</span><span class="plan_month"> /month</span>
-          </div>
-
-          <div class="plan_advantages">
-            <ul>
-              <li>you can <b>upgrade to premium</b> anytime</li>
-            </ul>
-          </div>
-
-          <div class="tri-down"><!--trianle--></div>
-	    </div>
-
-        <div class="plan_benefits">
-          <ul>
-            <li>Saves your money</li>
-            <li>Changes can be made on the fly</li>
-            <li>Reaching global audience</li>
-            <li>Seller's guide</li>
-            <li>Seller's guide</li>
-            <li>Seller's guide</li>
-          </ul>
-        </div>
-
-        <%= link_to sign_up_path(plan: @free_plan.id) do %>
-          <div class="plan_subscribe_link">
-            Takeoff!
-          </div>
-        <% end %>
+    <div class="plan_text_small">
+      AviaTrading is a powerful and effective way to quickly introduce your aircraft into the market and sell it fast.
     </div>
+  </div>
 
-    <div class="plan_premium">
-    	<div class="plan_premium_header">
-	      <h3>Premium</h3>
+   <div class="plan_wrapper">
+      <div class="plan_premium">
+        <div class="plan_premium_header">
+          <div class="plan_title">Premium</div>
+
           <div class="plan_for_whom">
             Designed for business
           </div>
 
-          <div class="plan_price premium">
-            <span class="plan_currency">$</span><span class="plan_amount">99.99</span><span class="plan_month"> /month</span><span class="plan_old_price">149.99</span>
-          </div>
+            <div class="plan_price premium">
+              <span class="plan_currency">$</span><span class="plan_amount">99.99</span><span class="plan_month"> /month</span><span class="plan_old_price">149.99</span>
+            </div>
 
-          <div class="plan_advantages">
-            <ul>
-              <li>you can <b>downgrade to basic</b> anytime</li>
-            </ul>
-          </div>
+            <!--<div class="plan_advantages">
+              <ul>
+                <li>you can <b>downgrade to basic</b> anytime</li>
+              </ul>
+            </div>-->
 
-          <div class="tri-down premium"><!--trianle--></div>
-	    </div>
+            <!--<div class="tri-down premium"><!--trianle</div>-->
+        </div>
 
-      <div class="plan_benefits">
-        <ul>
-          <li>Unlimited number of adverts</li>
-          <li>Unlimited number of images</li>
-          <li>70% higher potential buyer reach</li>
-          <li>Increased visibility for your adverts</li>
-          <li>Reaching global audience</li>
-          <li>Branded content</li>
-        </ul>
+          <%= link_to sign_up_path(plan: @premium_plan.id) do %>
+            <div class="plan_subscribe_link">
+              Takeoff
+            </div>
+        <% end %>
+
+        <div class="plan_benefits">
+          <ul>
+            <li>Unlimited number of adverts</li>
+            <li>Unlimited number of images</li>
+            <li>70% higher potential buyer reach</li>
+            <li>Increased visibility for your adverts</li>
+            <li>Reaching global audience</li>
+            <li>Branded content</li>
+          </ul>
+        </div>
       </div>
 
-      <%= link_to sign_up_path(plan: @premium_plan.id) do %>
-        <div class="plan_subscribe_link premium">
-          We pay first month!
-        </div>
-      <% end %>
-    </div>
-  </div>
 
-  <div class="plan_testimonials_header">
-    <div class="plan_testimonials_title">
+      <div class="plan_basic">
+      	<div class="plan_basic_header">
+  		    <div class="plan_title">Basic</div>
+            <div class="plan_for_whom">
+              Best for private use
+            </div>
+
+            <div class="plan_price">
+              <span class="plan_currency">$</span><span class="plan_amount">0.00</span><span class="plan_month"> /month</span>
+            </div>
+
+            <!--<div class="plan_advantages">
+              <ul>
+                <li>you can <b>upgrade to premium</b> anytime</li>
+              </ul>
+            </div>-->
+
+            <!--<div class="tri-down"><!--trianle</div>-->
+  	    </div>
+
+        <%= link_to sign_up_path(plan: @free_plan.id) do %>
+          <div class="plan_subscribe_link">
+            Takeoff
+          </div>
+        <% end %>
+
+          <div class="plan_benefits">
+            <ul>
+              <li>Saves your money</li>
+              <li>Changes can be made on the fly</li>
+              <li>Reaching global audience</li>
+              <li>Seller's guide</li>
+              <li>Seller's guide</li>
+              <li>Seller's guide</li>
+            </ul>
+          </div>
+      </div>
+    </div>
+
+    <div class="plan_text">
+      Top questions about pricing 
+
+      <div class="plan_text_small">
+        Find, buy or sell any type of aviation, such as Jet, TurboProp, Helicopter, Single Piston, Multi Piston and more.
+      </div>
+    </div>
+
+    <div id="plan_box" class="question">
+      <ul>
+        <li>
+          <div class="plan_question">
+            <span>Difference between basic and premium plan?</span>
+          </div>
+
+          <div class="plan_answer">
+            Watching the Treehouse videos, I was having little “Ahaaa, that makes sense!” moments, the videos are broken down into just the right amount to be able to absorb, without getting too frustrated.
+          </div>
+        </li>
+
+        <li>
+          <div class="plan_question">
+            <span>What if I want upgrade or downgrade a plan?</span>
+          </div>
+
+          <div class="plan_answer">
+            Subscriptions can be changed by switching the plan.
+          </div>
+        </li>
+
+        <li>
+          <div class="plan_question">
+            <span>How payment is made?</span>
+          </div>
+
+          <div class="plan_answer">
+            Watching the Treehouse videos, I was having little “Ahaaa, that makes sense!” moments, the videos are broken down into just the right amount to be able to absorb, without getting too frustrated.
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!--<div class="plan_text">
       Success is in the air
+
+      <div class="plan_text_small">
+        Let your advertisement be seen by thousands of people a day. Don't wait another day.
+      </div>
     </div>
 
-    <div class="plan_testimonials_intro">
-      Hundreds of buyers use AviaTrading for Groups to fuel their successful training programs and keep their workforce sharp.
-    </div>
-  </div>
+    <div id="plan_box">
+      <ul>
+        <li>
+          <div class="plan_question">
+            <span><%= image_tag "commenter_face.jpg", width: 60 %></span>
+            <span>John Powell<span class="commenter_location">New York, United States</span></span>
+          </div>
+
+          <div class="plan_answer">
+            Watching the Treehouse videos, I was having little “Ahaaa, that makes sense!” moments, the videos are broken down into just the right amount to be able to absorb, without getting too frustrated.
+          </div>
+        </li>
+
+        <li>
+          <div class="plan_question">
+            <span><%= image_tag "commenter_face.jpg", width: 60 %></span>
+            <span>Paul Wilson<span class="commenter_location">Toronto, Canada</span></span>
+          </div>
+
+          <div class="plan_answer">
+            Watching the Treehouse videos, I was having little “Ahaaa, that makes sense!” moments, the videos are broken down into just the right amount to be able to absorb, without getting too frustrated.
+          </div>
+        </li>
+        
+        <li>
+          <div class="plan_question">
+            <span><%= image_tag "commenter_face.jpg", width: 60 %></span>
+            <span>Daniel Wood<span class="commenter_location">San Francisco, United States</span></span>
+          </div>
+
+          <div class="plan_answer">
+            Watching the Treehouse videos, I was having little “Ahaaa, that makes sense!” moments, the videos are broken down into just the right amount to be able to absorb, without getting too frustrated.
+          </div>
+        </li>
+      </ul>
+    </div>-->
+</div>

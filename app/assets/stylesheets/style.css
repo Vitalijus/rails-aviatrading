@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'icomoon';
-	src:url('fonts/icomoon.eot?ze6jth');
-	src:url('fonts/icomoon.eot?#iefixze6jth') format('embedded-opentype'),
-		url('fonts/icomoon.woff?ze6jth') format('woff'),
-		url('fonts/icomoon.ttf?ze6jth') format('truetype'),
-		url('fonts/icomoon.svg?ze6jth#icomoon') format('svg');
+	src:url('fonts/icomoon.eot?hnoiw0');
+	src:url('fonts/icomoon.eot?#iefixhnoiw0') format('embedded-opentype'),
+		url('fonts/icomoon.woff?hnoiw0') format('woff'),
+		url('fonts/icomoon.ttf?hnoiw0') format('truetype'),
+		url('fonts/icomoon.svg?hnoiw0#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -23,27 +23,30 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.icon-paper_pane:before {
+	content: "\e601";
+}
+
 .icon-square_left:before {
 	content: "\e604";
 }
 
 .icon-login:before {
-	content: "\e601";
+	content: "\e602";
 }
 
 .icon-logout:before {
-	content: "\e602";
+	content: "\e603";
 }
 
 .icon-propeller:before {
 	content: "\e600";
 }
 
-.icon-propeller-big:before {
+.icon-propeller_big:before {
 	content: "\e600";
 }
 
 .icon-propeller_search:before {
-	content: "\e603";
+	content: "\e605";
 }
-
