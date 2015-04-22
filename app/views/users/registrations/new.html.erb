@@ -1,167 +1,26 @@
 <div class="registration_form_wrapper">
-  <% if params[:plan] == "2" %>
-
   <div class="registration_form_block">
-  
-    <div class="registration_form_header">
-      <div class="registration_form_logo">
-        <span class="icon-propeller-big"></span>
-      </div>
-
-      Sign up for Premium Plan
-
-      <div class="registration_form_tagline">
-        you can <b><%= link_to "downgrade to basic", sign_up_path(plan: 1) %></b> plan anytime
-      </div>
-    </div>
-    
-        <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { id: 'user_plan'}) do |f| %><!-- id: 'user_plan' refers to registrations.js.coffee -->
-        <div class="sign_up_form_wrapper">
-          <%= devise_error_messages! %>
-
-          <%= hidden_field_tag 'plan', params[:plan] %>
-
-          <div class="auth_form">
-            <%= f.label :email, :class => "auth_label" %>
-            <%= f.email_field :email, :class => "auth_field" %>
-          </div>
-
-          <div class="auth_form">
-            <%= f.label :password, :class => "auth_label" %>
-            <%= f.password_field :password, :class => "auth_field" %>
-          </div>
-
-          <div class="auth_form">
-            <%= f.label :password_confirmation, :class => "auth_label" %>
-            <%= f.password_field :password_confirmation, :class => "auth_field" %>
-          </div>
-
-          <div class="auth_form">
-            <%= f.label :coupon, "Discount number", :class => "auth_label" %>
-            <%= f.text_field :coupon, :class => "auth_field" %>
-          </div>
-        </div>
-
-        <div class="payment_form_wrapper">
-          <div class="registration_form_header">
-
-            Credit Card Info
-
-            <div class="registration_form_tagline">
-              <b>7-day</b> money back guarantee<br/><br/>
-            </div>
-          </div>
-
-          <%= f.hidden_field :stripe_card_token %>
-
-            <div class="auth_form">
-              <%= f.label :name_on_card, :class => "auth_label" %>
-              <%= f.text_field :name_on_card, :class => "auth_field" %>
-            </div>
-
-            <% if @user.stripe_card_token.present? %>
-              Credit card info has been provided.
-            <% else %>
-
-              <div class="auth_form">
-                <%= label_tag :card_number, "Credit Card Number", :class => "auth_label" %>
-                <%= text_field_tag :card_number, nil, name: nil, :class => "auth_field" %>
-              </div>
-
-              <div class="auth_form_cvv">
-                <%= label_tag :card_code, "CVV code (3 digits)", :class => "auth_label_cvv" %>
-                <%= text_field_tag :card_code, nil, name: nil, :class => "auth_field_cvv" %>
-              </div>
-
-              <div class="auth_form_card_dates">
-                <%= label_tag :card_month, "Card Expiration", :class => "auth_label_card_dates" %>
-                <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month", :class => "auth_field_card_month"} %>
-                <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year", :class => "auth_field_card_year"} %>
-              </div>
-            <% end %>
-
-            <div id="stripe_error">
-              <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
-            </div>
-          </div>
-
-            <%= f.submit "Sign up", :class => "registration_submit_button"  %>
-        <% end %>
-
-        <div class="registration_form_links">
-          Already signed up? <%= link_to "Sign in", sign_in_path %>
-        </div>
-      </div>
-
-      <div class="plan_details_block">
-        <div class="plan_details_header">
-          Designed for business
-        </div>
-
-        <div class="plan_details_price">
-          <span class="plan_details_currency">$</span><span class="plan_details_amount">49.99</span><span class="plan_details_month">/ month</span><span class="plan_details_old_price">$79.99</span>
-        </div>
-        
-        <!--<div class="plan_details_free_month">
-          We pay first month!
-        </div>-->
-
-        <div class="plan_details_benefits">
-          <ul>
-            <li>
-              Unlimited number of adverts
-              <span class="plan_details_explain">You will never exceed your limits. Post as many adverts as you want.</span>
-            </li>
-            <li>
-              Unlimited number of images
-              <span class="plan_details_explain">Upload as many images as you need. We use best image management solutions.</span>
-            </li>
-            <li>
-              70% higher buyer reach
-              <span class="plan_details_explain">Use smart advertisement with our algorithms.</span>
-            </li>
-            <li>
-              Increased visibility
-              <span class="plan_details_explain">Paid adverts have distinguishable elements against unpaid adverts.</span>
-            </li>
-            <li>
-              <%=link_to "Branded content", adverts_path %>
-              <span class="plan_details_explain">We help our brand partners to develop and deliver great content to reach their audiences.</span>
-            </li>
-          </ul>
-        </div>
-
-        <div class="plan_details_recommendation">
-          <div class="plan_details_comment_box">
-          "Didn't expect to sell my airplane that fast. I'm overwhelmed by the results. Advertisement process was simple, with clear insctructions every step of the way..."
-          </div>
-          <div class="comment_box_tri_down"><!--trianle--></div>
-
-          <div class="plan_details_commenter">
-            <ul>
-              <li><%= image_tag "commenter_face.jpg", width: 45 %></li>
-              <li>Patrick Wood</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-  
-    <% elsif params[:plan] == "1" %>
-    <div class="registration_form_block">
       <div class="registration_form_header">
         <div class="registration_form_logo">
           <span class="icon-propeller-big"></span>
         </div>
 
-        Sign up for Basic Plan
+        <% if params[:plan] == "1" %>
+        	Subscribe for Basic Plan
+        <% elsif params[:plan] == "2" %>
+        	Subscribe for Premium Plan
+        <% end %>
 
         <div class="registration_form_tagline">
-          <b><%= link_to "Sign up to premium", sign_up_path(plan: 2) %></b> plan to sell your aircraft faster 
-
+        	<% if params[:plan] == "1" %>
+          		<b><%= link_to "Subscribe for premium plan", sign_up_path(plan: 2) %></b> to sell aircraft faster 
+          	<% elsif params[:plan] == "2" %>
+          		you can <b><%= link_to "downgrade to basic", sign_up_path(plan: 1) %></b> plan anytime
+          	<% end %>
         </div>
       </div>
 
-     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), html: { id: "free_user"}) do |f| %>
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 
       <%= devise_error_messages! %>
 
@@ -184,7 +43,7 @@
         </div>
       </div>
 
-          <%= f.submit "Sign up", :class => "registration_submit_button" %>
+          <%= f.submit "Continue", :class => "registration_submit_button" %>
       <% end %>
 
       <div class="registration_form_links">
@@ -223,7 +82,3 @@
         </div>
     </div>
 </div>
-
-    <% else %>
-      <h2 style="text-align: center">The address page is invalid<h2>
-    <% end %>

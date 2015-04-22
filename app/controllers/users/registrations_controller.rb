@@ -11,14 +11,58 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
   end
 
-  def update_plan
+  def subscribe_customer
     @user = current_user
-    if (params[:user][:stripe_card_token] != nil) && (params[:plan] == "2")
-      @user.update_attributes(plan_id: params[:plan], coupon: params[:user][:coupon], email: params[:email], stripe_card_token: params[:user][:stripe_card_token])
-      @user.save_with_payment
-      redirect_to subscription_path, notice: "Updated to premium!"
+      if (params[:user][:stripe_card_token] != nil) && (@user.plan_id == 0)
+        if  @user.subscribe_existing_customer(params[:customer], 
+                                              params[:user][:stripe_card_token],
+                                              params[:plan])
+          @user.update_attributes(paid: true,
+                                  plan_id: params[:plan])
+        else
+          redirect_to :back
+          flash[:notice] = "Sub."
+        end
+        redirect_to subscription_path, notice: "Subscribed to a plan"
+      else
+        redirect_to :back
+        flash[:notice] = "Not sub."
+      end
+  end
+
+  def setup_billing
+    @user = current_user
+    if (params[:user][:stripe_card_token] != nil) && (@user.plan_id == 1 or @user.plan_id == 2)
+      if  @user.setup_user_billing(params[:customer], 
+                                  params[:user][:stripe_card_token], 
+                                  params[:user][:coupon])
+        @user.update_attributes(paid: true, 
+                                coupon: params[:user][:coupon])
+      else
+        redirect_to :back
+        flash[:error] = "Unable to setup billing. Please notify us info@aviatrading.com"
+      end
+      redirect_to subscription_path, notice: "Thank you! You have been successfully subscribed to a plan"
     else
-      flash[:error] = "Unable to update plan."
+      flash[:error] = "Unable to setup billing. Please notify us info@aviatrading.com"
+      redirect_to :back
+    end
+  end
+
+  def change_plan
+    @user = current_user
+    if (params[:plan] == "1")
+      if @user.change_user_plan(params[:customer], params[:subscription])
+        @user.update_attributes(plan_id: 2)
+      end
+      redirect_to subscription_path, notice: "Upgraded to premium!"
+    elsif (params[:plan] == "2")
+      if @user.change_user_plan(params[:customer], params[:subscription])
+        @user.update_attributes(plan_id: 1)
+      end
+      redirect_to subscription_path, notice: "Downgraded to basic!"
+    else
+      flash[:error] = "Unable to change a plan. Please notify us at info@aviatrading.com"
       redirect_to :back
     end
   end
@@ -26,13 +70,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def cancel_plan
     @user = current_user
     if @user.cancel_user_plan(params[:customer])
-      params[:advert_id].split(",").each do |id|
-        @user.update_attributes(stripe_customer_token: nil, plan_id: 1, coupon: nil, adverts_attributes: [{id: id, show_advert: false}])
-      end
+        @user.update_attributes(stripe_subscription_token: nil, 
+                                name_on_card: nil, 
+                                plan_id: 0, 
+                                coupon: nil,
+                                paid: false)
       flash[:notice] = "Canceled subscription."
       redirect_to subscription_path
     else
-      flash[:error] = "There was an error canceling your subscription. Please notify us."
+      flash[:error] = "There was an error canceling your subscription. Please notify us at info@aviatrading.com"
       redirect_to :back
     end
   end
@@ -45,9 +91,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
     build_resource(sign_up_params)
       if params[:plan] 
         resource.plan_id = params[:plan]
-        if resource.plan_id == 2
+        if resource.plan_id == 2 or resource.plan_id == 1
          
-          resource.save_with_payment
+          resource.create_customer
           yield resource if block_given?
           if resource.persisted?
             if resource.active_for_authentication?
@@ -109,7 +155,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def setup
     plans = Plan.all
     plans.each do |plan|
-      unless plan.id == 1
+      if plan.id == 1
+        @basic_plan = plan
+      elsif plan.id == 2
         @premium_plan = plan
       end
     end

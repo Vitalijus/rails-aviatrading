@@ -6,7 +6,7 @@ class AdvertsController < ApplicationController
   before_filter :disable_footer, only: [:index]
 
   def pricing
-    @free_plan
+    @basic_plan
     @premium_plan
   end
 
@@ -136,7 +136,7 @@ class AdvertsController < ApplicationController
         plans = Plan.all
         plans.each do |plan|
           if plan.id == 1
-            @free_plan = plan
+            @basic_plan = plan
           else
             @premium_plan = plan
           end

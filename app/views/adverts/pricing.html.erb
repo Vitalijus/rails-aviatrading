@@ -1,4 +1,8 @@
 <div class="pricing_wrapper">
+  <% if flash[:notice] %>
+    <h3><%= flash[:notice] %></h3>
+  <% end %>
+  
   <div class="plan_banner">
     <b>Sell your aircraft</b>
     <div class="plan_small_banner_text">where the buyers are</div>
@@ -73,7 +77,7 @@
             <!--<div class="tri-down"><!--trianle</div>-->
   	    </div>
 
-        <%= link_to sign_up_path(plan: @free_plan.id) do %>
+        <%= link_to sign_up_path(plan: @basic_plan.id) do %>
           <div class="plan_subscribe_link">
             Takeoff
           </div>

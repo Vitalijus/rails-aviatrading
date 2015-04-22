@@ -181,7 +181,8 @@ a .webpage_title {
     color: #208797;  
 } 
 
-.new_advert_button {
+.new_advert_button,
+.my_aircrafts_button {
   border: 1px solid #F04F54;
   padding: 5px 8px 5px 8px;
   text-transform: uppercase;
@@ -190,6 +191,7 @@ a .webpage_title {
   border-radius: 2px;
   color: #F04F54;
   background-color: #fff;
+
   -webkit-transition: background-color 150ms linear;
   -moz-transition: background-color 150ms linear;
   -o-transition: background-color 150ms linear;
@@ -197,7 +199,8 @@ a .webpage_title {
   transition: background-color 150ms linear;
 }
 
-a:hover .new_advert_button {
+a:hover .new_advert_button,
+a:hover .my_aircrafts_button {
   background-color: #F04F54;
   color: #fff;
 }

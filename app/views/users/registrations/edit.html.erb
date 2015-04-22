@@ -2,15 +2,7 @@
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
-  <% if user_signed_in? && current_user == @user %>
-    <div class="show_page_panel">
-    <ul>
-      <li><%= link_to 'My Adverts', user_path(current_user) %></li>
-      <li><%= link_to 'Settings', edit_user_registration_path %></li>
-      <li><%= link_to 'Subscription', subscription_path %></li> 
-    </ul>
-    </div> 
-  <% end %>
+ <%= render 'user_navigation_panel' %>
 
 <div class="user_profile_wrapper">  
   <div class="user_profile_form_header">

@@ -32,6 +32,16 @@
 						</li>
 					<% end %>
 
+					<% if user_signed_in? %>
+						<li>
+							<%= link_to user_path(current_user) do %>
+								<span class="my_aircrafts_button">
+									My Aircrafts 
+								</span>
+							<% end %>
+						</li>
+					<% end %>	
+
 					<li>
 						<%= link_to adverts_path do %>
 							All Aircrafts
@@ -43,14 +53,6 @@
 							Contact
 						<% end %>
 					</li>
-
-					<% if user_signed_in? %>
-						<li>
-							<%= link_to user_path(current_user) do %>
-								My Aircraft
-							<% end %>
-						</li>
-					<% end %>	
 
 					<% if !user_signed_in? %>
 						<li>
