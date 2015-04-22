@@ -4,7 +4,7 @@ class StripeController < ApplicationController
 	#Stripe.api_key = "sk_test_He4ftSNQyyejgTg5CJ6O4ef4"
 
 	def webhook
-		StripeLogger.info "Received event with ID: #{params[:id]} Type: #{params[:type]}"
+		#StripeLogger.info "Received event with ID: #{params[:id]} Type: #{params[:type]}"
 
 		 # Retrieving the event from the Stripe API guarantees its authenticity  
     	event = Stripe::Event.retrieve(params[:id])
@@ -15,7 +15,7 @@ class StripeController < ApplicationController
 
       		UserMailer.new_customer_subscription(user).deliver
     	else
-      		StripeLogger.info "Webhook received params.inspect. Did not handle this event."  
+      		#StripeLogger.info "Webhook received params.inspect. Did not handle this event."  
     	end  
 
     	render text: "success"
