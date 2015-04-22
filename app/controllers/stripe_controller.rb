@@ -20,20 +20,4 @@ class StripeController < ApplicationController
 
     	render text: "success"
 	end
-
-	post '/stripe_webhooks' do
-		data = JSON.parse request.body.read, :symbolize_names => true
-		p data
-
-		puts "Received event with ID: #{data[:id]} Type: #{data[:type]}"
-
-		# Retrieving the event from the Stripe API guarantees its authenticity
-		event = Stripe::Event.retrieve(data[:id])
-
-		# This will send receipts on succesful invoices
-		# You could also send emails on all charge.succeeded events
-		if event.type == 'invoice.payment_succeeded'
-			email_invoice_receipt(event.data.object)
-		end
-	end
 end
