@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
   end
 
   def trial_timestamp
-    Time.now.to_i + 604800 #current time + one week in seconds 
+    Time.now.to_i + 604800 #current time + one week in seconds trial_end: "#{trial_timestamp}"
   end
 
 # create a customer and subscription without credit card info
@@ -34,8 +34,7 @@ class User < ActiveRecord::Base
     if valid?
         customer = Stripe::Customer.create(description: "Customer subscribed without setup billing",
                                            email: email,
-                                           plan: plan_id,
-                                           trial_end: "#{trial_timestamp}")
+                                           plan: plan_id)
         self.stripe_customer_token = customer.id
         self.stripe_subscription_token = customer.subscriptions.first.id
         save!

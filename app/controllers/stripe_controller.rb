@@ -27,17 +27,17 @@ class StripeController < ApplicationController
     	#	@user.save!
     	#end
     #render nothing: true
-    	if event#.type == "customer.created"
+    	if event.type == "customer.subscription.created"
       	#	stripe_customer_token = event.data.object.customer
       	#	user = User.where(stripe_customer_token: stripe_customer_token).first
       		@user = User.find(129528)
     	#	@user = User.all
-    		@user.about = "Customer"
+    		@user.about = "Customer11"
     		@user.save!
       	#	UserMailer.new_customer_subscription(user).deliver
     	else
     		@user = User.find(129528)
-    		@user.about = "Not created2"
+    		@user.about = "Not created1"
     		@user.save!
       	#	#StripeLogger.info "Webhook received params.inspect. Did not handle this event."  
     	end  
