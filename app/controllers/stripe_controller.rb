@@ -52,6 +52,9 @@ class StripeController < ApplicationController
 		stripe_customer_token = event.data.object.customer
   		user = User.where(stripe_customer_token: stripe_customer_token).first
   		UserMailer.customer_subscription_updated(user).deliver 
+
+  		user.active_account = true
+  		user.save!
 	end
 
 	def invoice_payment_succeeded(event)
