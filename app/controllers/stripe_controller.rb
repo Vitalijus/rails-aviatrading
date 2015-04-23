@@ -9,7 +9,7 @@ class StripeController < ApplicationController
 		#data_json = JSON.parse request.body.read
 
 		#Retrieving the event from the Stripe API guarantees its authenticity  
-    	#event = Stripe::Event.retrieve(params[:id])
+    	event = Stripe::Event.retrieve(params[:id])
     	#p data_json['data']['object']['customer']
     	#if data_json[:type] == "customer.subscription.created"
     		#stripe_customer_token = data_json['data']['object']['customer']
@@ -27,22 +27,20 @@ class StripeController < ApplicationController
     	#	@user.save!
     	#end
     #render nothing: true
-    	#if event.type == "customer.subscription.created"
+    	if event.type == "customer.subscription.created"
       	#	stripe_customer_token = event.data.object.customer
       	#	user = User.where(stripe_customer_token: stripe_customer_token).first
-      	#	@user = User.last
+      		@user = User.last
     	#	@user = User.all
-    	#	@user.about = "Customer11"
-    	#	@user.save!
+    		@user.about = "Customer111"
+    		@user.save!
       	#	UserMailer.new_customer_subscription(user).deliver
-    	#else
-    	#	@user = User.last
-    	#	@user.about = "Not created1"
-    	#	@user.save!
-      	#	#StripeLogger.info "Webhook received params.inspect. Did not handle this event."  
-    	#end  
+    	else
+    		@user = User.last
+    		@user.about = "Not created155"
+    		@user.save!
+      		#StripeLogger.info "Webhook received params.inspect. Did not handle this event."  
+    	end  
     	render nothing: true
-    	#render text: "success"
-    	#head 200
 	end
 end
