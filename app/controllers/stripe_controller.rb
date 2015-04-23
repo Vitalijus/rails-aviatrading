@@ -15,14 +15,14 @@ class StripeController < ApplicationController
     		#stripe_customer_token = data_json['data']['object']['customer']
     		#@user = User.where(stripe_customer_token: stripe_customer_token).first
     		#@user = User.find_by_stripe_customer_token(data['data']['object']['customer'])
-    		@user User.all
+    		@user = User.all
     		@user.about = "Works"
     		@user.save!
     	else
     		#stripe_customer_token = data_json['data']['object']['customer']
     		#@user = User.where(stripe_customer_token: stripe_customer_token).first
     		#@user = User.find_by_stripe_customer_token(data['data']['object']['customer'])
-    		@user User.all
+    		@user = User.all
     		@user.about = "Doesn't"
     		@user.save!
     	end
