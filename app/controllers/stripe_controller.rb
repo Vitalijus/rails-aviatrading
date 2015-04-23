@@ -42,6 +42,29 @@ class StripeController < ApplicationController
       		UserMailer.new_customer_subscription(user).deliver
       		#StripeLogger.info "Webhook received params.inspect. Did not handle this event."  
     	end  
+
+    	if event.type == "customer.subscription.created"
+      		stripe_customer_token = event.data.object.customer
+      		user = User.where(stripe_customer_token: stripe_customer_token).first
+      	#	@user = User.last
+    	#	@user = User.all
+    	#	@user.about = "Customer111"
+    	#	@user.save!
+      		UserMailer.new_customer_subscription(user).deliver
+      		#StripeLogger.info "Webhook received params.inspect. Did not handle this event."  
+    	end  
+
+    	if event.type == "invoice.created"
+      		stripe_customer_token = event.data.object.customer
+      		user = User.where(stripe_customer_token: stripe_customer_token).first
+      	#	@user = User.last
+    	#	@user = User.all
+    	#	@user.about = "Customer111"
+    	#	@user.save!
+      		UserMailer.new_customer_subscription(user).deliver
+      		#StripeLogger.info "Webhook received params.inspect. Did not handle this event."  
+    	end  
+ 
     	render nothing: true
 	end
 end
