@@ -5,7 +5,8 @@ class StripeController < ApplicationController
 	#skip_before_filter :verify_authenticity_token
 
 	def webhook
-		render status: 200
+		head 200
+		#render status: 200
 		#StripeLogger.info "Received event with ID: #{params[:id]} Type: #{params[:type]}"
 		#data_json = JSON.parse request.body.read
 
