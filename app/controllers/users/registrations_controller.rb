@@ -38,11 +38,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
                                   params[:user][:coupon])
         @user.update_attributes(paid: true, 
                                 coupon: params[:user][:coupon])
+
+        redirect_to subscription_path, notice: "Thank you! You have been successfully subscribed to a plan"
       else
         redirect_to :back
         flash[:error] = "Unable to setup billing. Please notify us info@aviatrading.com"
       end
-      redirect_to subscription_path, notice: "Thank you! You have been successfully subscribed to a plan"
     else
       flash[:error] = "Unable to setup billing. Please notify us info@aviatrading.com"
       redirect_to :back

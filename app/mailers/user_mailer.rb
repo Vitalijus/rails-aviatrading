@@ -4,6 +4,6 @@ class UserMailer < ActionMailer::Base
   def new_customer_subscription(user)
     @user = user
 
-    mail(to: "vitalij.desuk@gmail.com", subject: 'You have been subscribed')
+    mail(to: "info@aviatrading.com", subject: 'You have been subscribed')
   end
 end

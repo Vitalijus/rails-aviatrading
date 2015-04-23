@@ -1,13 +1,7 @@
 class StripeController < ApplicationController
 	protect_from_forgery except: :webhook
-	#require 'json'
-	#Stripe.api_key = "sk_test_He4ftSNQyyejgTg5CJ6O4ef4"
-	#skip_before_filter :verify_authenticity_token
 
 	def webhook
-		#StripeLogger.info "Received event with ID: #{params[:id]} Type: #{params[:type]}"
-		#data_json = JSON.parse request.body.read
-
 		#Retrieving the event from the Stripe API guarantees its authenticity  
     	event = Stripe::Event.retrieve(params[:id])
     	#p data_json['data']['object']['customer']
@@ -27,22 +21,16 @@ class StripeController < ApplicationController
     	#	@user.save!
     	#end
     #render nothing: true
-    	if event.type == "customer.card.created"
-      	#	stripe_customer_token = event.data.object.customer
-      	#	user = User.where(stripe_customer_token: stripe_customer_token).first
-      		@user = User.last
+    	if event.type == "customer.created"
+      		stripe_customer_token = event.data.object.customer
+      		user = User.where(stripe_customer_token: stripe_customer_token).first
+      	#	@user = User.last
     	#	@user = User.all
-    		@user.about = "Customer111"
-    		@user.save!
-      	#	UserMailer.new_customer_subscription(user).deliver
-      		head 200
-    	else
-    		@user = User.last
-    		@user.about = "Not created155"
-    		@user.save!
+    	#	@user.about = "Customer111"
+    	#	@user.save!
+      		UserMailer.new_customer_subscription(user).deliver
       		#StripeLogger.info "Webhook received params.inspect. Did not handle this event."  
-      		head 200
     	end  
-    	head 200
+    	render nothing: true
 	end
 end
