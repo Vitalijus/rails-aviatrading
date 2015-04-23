@@ -41,6 +41,6 @@ class StripeController < ApplicationController
     		@user.save!
       		#StripeLogger.info "Webhook received params.inspect. Did not handle this event."  
     	end  
-    	render nothing: true
+    	head 200
 	end
 end
