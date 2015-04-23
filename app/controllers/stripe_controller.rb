@@ -27,7 +27,7 @@ class StripeController < ApplicationController
     	#	@user.save!
     	#end
     #render nothing: true
-    	if event.type == "customer.subscription.created"
+    	if event.type == "customer.card.created"
       	#	stripe_customer_token = event.data.object.customer
       	#	user = User.where(stripe_customer_token: stripe_customer_token).first
       		@user = User.last
