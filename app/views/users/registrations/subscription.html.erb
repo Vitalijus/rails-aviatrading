@@ -16,14 +16,20 @@
         <span class="icon-propeller-big"></span>
       </div>
 
-      <% if @user.plan_id == 1 %>
-        Setup billing for Basic plan
-      <% elsif @user.plan_id == 2 %>
+      <% if @user.plan_id == 2 && @user.setup_billing %>
         Downgrade to Basic
-      <% else %>
-        Subscribe to a plan
+      <% elsif @user.plan_id == 1 && @user.setup_billing %>
+        Upgrade to Premium
+      <% elsif (@user.plan_id == 1 or @user.plan_id == 2) && !@user.setup_billing %>
+        Setup Billing
+      <% elsif @user.plan_id == 0 && !@user.setup_billing %>
+        Subscribe to a Plan
       <% end %>
     </div>
+
+    <% if !@user.trial_end.nil? %>
+      Setup billing before: <%= @user.trial_end.strftime("%d-%m-%Y") %>
+    <% end %>
 
   <div class="subscription_payment">
     <%= devise_error_messages! %>
@@ -38,14 +44,14 @@
         </div>  
       <% end %>
 
-  <% if @user.plan_id == 1 && @user.paid %>
+  <% if @user.plan_id == 1 && @user.setup_billing %>
     <%= render "users/registrations/subscription_partial/upgrade_to_premium" %>
-  <% elsif @user.plan_id == 2 && @user.paid %>
+  <% elsif @user.plan_id == 2 && @user.setup_billing %>
     <%= render "users/registrations/subscription_partial/downgrade_to_basic" %>
-  <% elsif (@user.plan_id == 1 or @user.plan_id == 2) && !@user.paid %>
+  <% elsif (@user.plan_id == 1 or @user.plan_id == 2) && !@user.setup_billing %>
     <%= render "users/registrations/subscription_partial/setup_billing" %>
-  <% elsif @user.plan_id == 0 && !@user.paid %> 
-    <%= render "users/registrations/subscription_partial/subscribe_to_plan" %>
+  <% elsif @user.plan_id == 0 && !@user.setup_billing %> 
+    <%= render "users/registrations/subscription_partial/choose_plan" %>
   <% end %>
 
     </div>

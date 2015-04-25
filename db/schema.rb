@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150423193900) do
+ActiveRecord::Schema.define(version: 20150425140550) do
 
   create_table "adverts", force: true do |t|
     t.string   "title"
@@ -108,12 +108,11 @@ ActiveRecord::Schema.define(version: 20150423193900) do
     t.string   "cover_image"
     t.integer  "plan_id"
     t.string   "stripe_customer_token"
-    t.string   "name_on_card"
     t.string   "coupon"
     t.string   "stripe_subscription_token"
-    t.datetime "trial_ends"
-    t.boolean  "paid"
-    t.boolean  "active_account",            default: false
+    t.datetime "trial_end"
+    t.boolean  "active_account",            default: true
+    t.boolean  "setup_billing",             default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

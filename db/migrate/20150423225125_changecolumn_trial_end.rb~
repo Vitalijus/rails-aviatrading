@@ -1,0 +1,5 @@
+class ChangecolumnTrialEnd < ActiveRecord::Migration
+  def change
+	change_column :users, :trial_end, :datetime
+  end
+end

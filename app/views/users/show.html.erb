@@ -49,7 +49,7 @@
 				<%= pluralize(@user.adverts.count, "Advert") %>
 			</div>
 
-			<% @user.adverts.each do |advert| %>
+			<% @user.adverts.reverse_each do |advert| %>
 				<div class="show_user_adverts">
 					<%= link_to advert do %>
 					<div class="show_user_adverts_image">

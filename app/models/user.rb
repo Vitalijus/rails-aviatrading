@@ -10,18 +10,15 @@ class User < ActiveRecord::Base
   has_many :adverts, dependent: :destroy
   belongs_to :plan
 
-  accepts_nested_attributes_for :adverts, allow_destroy: true
-  #, :reject_if => lambda { |a| a[:show_advert].blank? }
-
   validates_presence_of :plan_id
   #validates_presence_of :coupon
-  #validate :validate_for_coupon
+  validate :validate_for_coupon
 
   attr_accessor :stripe_card_token
 
   def validate_for_coupon
-    unless coupon.blank? or coupon == '38710141505'
-      errors[:base] << "Your discount number is incorrect" 
+    if !coupon.blank? && coupon != "38710141505"
+      errors[:base] << "Coupon number is incorrect" 
     end 
   end
 
@@ -30,15 +27,31 @@ class User < ActiveRecord::Base
   end
 
 # create a customer and subscription without credit card info
-  def create_customer
+  def create_customer(coupon_id)
     if valid?
+      if coupon_id == "38710141505"
+        customer = Stripe::Customer.create(description: "Customer subscribed without setup billing",
+                                           email: email,
+                                           plan: plan_id,
+                                           trial_end: "#{trial_timestamp}",
+                                           coupon: coupon_id)
+
+        self.trial_end = Time.at(trial_timestamp).to_datetime
+        self.stripe_customer_token = customer.id
+        self.stripe_subscription_token = customer.subscriptions.first.id
+        self.coupon = coupon_id
+        save!
+      else
         customer = Stripe::Customer.create(description: "Customer subscribed without setup billing",
                                            email: email,
                                            plan: plan_id,
                                            trial_end: "#{trial_timestamp}")
+
+        self.trial_end = Time.at(trial_timestamp).to_datetime
         self.stripe_customer_token = customer.id
         self.stripe_subscription_token = customer.subscriptions.first.id
         save!
+      end
     end
 
     rescue Stripe::InvalidRequestError => e
@@ -48,20 +61,12 @@ class User < ActiveRecord::Base
   end
 
 # retrieve a customer and create source for credit card info
-  def setup_user_billing(customer_id, stripe_card_token, coupon_id)
+  def setup_user_billing(customer_id, stripe_card_token)
     if valid?
-      unless coupon.blank? or coupon != "38710141505"
-        customer = Stripe::Customer.retrieve("#{customer_id}")
-        customer.sources.create(source: stripe_card_token)
-        customer.description = "Customer subscribed with setup billing and coupon"
-        customer.coupon = "#{coupon_id}"
-        customer.save
-      else
         customer = Stripe::Customer.retrieve("#{customer_id}")
         customer.sources.create(source: stripe_card_token)
         customer.description = "Customer subscribed with setup billing"
         customer.save
-      end
     end
 
   rescue Stripe::InvalidRequestError => e
@@ -146,6 +151,7 @@ class User < ActiveRecord::Base
       customer = Stripe::Customer.retrieve("#{customer_id}")
       customer.cancel_subscription
       customer.description = "Canceled subscription"
+      customer.sources.retrieve("#{customer.default_card}").delete()
       customer.save
 
     rescue Stripe::InvalidRequestError => e

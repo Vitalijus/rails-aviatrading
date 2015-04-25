@@ -1,0 +1,4 @@
+class RemovePaidNameOnCard < ActiveRecord::Migration
+  def change
+  end
+end

@@ -7,16 +7,10 @@ class UserMailer < ActionMailer::Base
     mail(to: "info@aviatrading.com", subject: "You have been subscribed #{@user.email}")
   end
 
-  def customer_subscription_updated(user)
+  def charge_succeeded(user)
     @user = user
 
-    mail(to: "info@aviatrading.com", subject: "You have updated your subscription #{@user.email}")
-  end
-
-  def invoice_payment_succeeded(user)
-    @user = user
-
-    mail(to: "info@aviatrading.com", subject: "Invoice payment succeeded #{@user.email}")
+    mail(to: "info@aviatrading.com", subject: "Charge succeeded #{@user.email}")
   end
 
   def invoice_payment_failed(user)

@@ -31,7 +31,11 @@
       <div class="box_content_wrapper">
         <div class="box_user_avatar">
           <%= link_to user_path(advert.user) do %>
-            <%= image_tag advert.user.avatar_url(:avatar_small) %>
+            <% if advert.user.avatar.nil? %>
+              <%= image_tag advert.user.avatar_url(:avatar_small) %>
+            <% else %>
+              <%= image_tag "avatar.png" %>
+            <% end %>
           <% end %>
         </div>
 

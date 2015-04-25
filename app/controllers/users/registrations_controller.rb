@@ -1,5 +1,6 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-	before_filter :setup, only: [:edit, :subscription]
+	before_filter :setup_plan, only: [:edit, :subscription]
+  before_filter :setup_user, only: [:subscribe_customer, :setup_billing, :change_plan, :cancel_plan ]
   before_action :authenticate_user!, only: [:subscription]
 
   def new
@@ -12,12 +13,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def subscribe_customer
-    @user = current_user
       if (params[:user][:stripe_card_token] != nil) && (@user.plan_id == 0)
         if  @user.subscribe_existing_customer(params[:customer], 
                                               params[:user][:stripe_card_token],
                                               params[:plan])
-          @user.update_attributes(paid: true,
+          @user.update_attributes(active_account: true,
                                   plan_id: params[:plan])
         else
           redirect_to :back
@@ -31,13 +31,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def setup_billing
-    @user = current_user
     if (params[:user][:stripe_card_token] != nil) && (@user.plan_id == 1 or @user.plan_id == 2)
       if  @user.setup_user_billing(params[:customer], 
-                                  params[:user][:stripe_card_token], 
-                                  params[:user][:coupon])
-        @user.update_attributes(paid: true, 
-                                coupon: params[:user][:coupon])
+                                  params[:user][:stripe_card_token])
+        @user.update_attributes(active_account: true,
+                                setup_billing: true)
 
         redirect_to subscription_path, notice: "Thank you! You have been successfully subscribed to a plan"
       else
@@ -51,7 +49,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def change_plan
-    @user = current_user
     if (params[:plan] == "1")
       if @user.change_user_plan(params[:customer], params[:subscription])
         @user.update_attributes(plan_id: 2)
@@ -69,13 +66,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def cancel_plan
-    @user = current_user
     if @user.cancel_user_plan(params[:customer])
         @user.update_attributes(stripe_subscription_token: nil, 
-                                name_on_card: nil, 
                                 plan_id: 0, 
                                 coupon: nil,
-                                paid: false)
+                                active_account: false,
+                                setup_billing: false,
+                                trial_end: nil)
       flash[:notice] = "Canceled subscription."
       redirect_to subscription_path
     else
@@ -90,11 +87,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def create
     build_resource(sign_up_params)
+
       if params[:plan] 
         resource.plan_id = params[:plan]
         if resource.plan_id == 2 or resource.plan_id == 1
          
-          resource.create_customer
+          resource.create_customer(params[:user][:coupon])
+
           yield resource if block_given?
           if resource.persisted?
             if resource.active_for_authentication?
@@ -153,7 +152,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #  end
   #end
 
-  def setup
+  def setup_user
+    @user = current_user
+  end
+
+  def setup_plan
     plans = Plan.all
     plans.each do |plan|
       if plan.id == 1

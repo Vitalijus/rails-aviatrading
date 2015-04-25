@@ -41,6 +41,11 @@
           <%= f.label :password_confirmation, :class => "auth_label" %>
           <%= f.password_field :password_confirmation, :class => "auth_field" %>
         </div>
+
+        <div class="form-group">
+          <%= f.label :coupon, "Discount number", :class => "auth_label" %>
+          <%= f.text_field :coupon, :class => "auth_field" %>
+        </div>
       </div>
 
           <%= f.submit "Continue", :class => "registration_submit_button" %>

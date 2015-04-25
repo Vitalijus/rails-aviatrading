@@ -1,9 +1,10 @@
 class AdvertsController < ApplicationController
   before_action :set_advert, only: [:show, :edit, :update, :show_advert, :destroy]
   before_action :set_plan
-  before_action :authenticate_user!, except: [:index, :show, :create, :home, :pricing]
+  before_action :authenticate_user!, except: [:index, :show, :pricing]
   before_filter :disable_header, only: [:index]
   before_filter :disable_footer, only: [:index]
+  require 'will_paginate/array'
 
   def pricing
     @basic_plan
@@ -32,22 +33,16 @@ class AdvertsController < ApplicationController
       end
   end
 
-  def home
-    @jets = Advert.where("aircraft_type = 'Jet'").limit(4)
-    @single_pistons = Advert.where("aircraft_type = 'Single piston'").limit(4)
-    @multi_pistons = Advert.where("aircraft_type = 'Multi piston'").limit(4)
-    @turbo_props = Advert.where("aircraft_type = 'TurboProp'").limit(4)
-    @helicopters = Advert.where("aircraft_type = 'Helicopter'").limit(4)
-    @latest_adverts = Advert.order("created_at DESC").limit(3)
-  end
-
   # GET /adverts
   # GET /adverts.json
   def index
-    @q = Advert.where(show_advert: true).paginate(:page => params[:page], :per_page => 12)
-               .search(params[:q])
-
-    @adverts = @q.result(distinct: true)
+    ransack = Advert.search(params[:q]).result(distinct: true)
+    @adverts = ransack.find(:all, 
+                            joins: :user, 
+                            conditions: { users: { active_account: true }, 
+                            adverts: {show_advert: true} },
+                            order: {created_at: :desc})
+                            .paginate(:page => params[:page], :per_page => 12)
   end
 
   # GET /adverts/1
