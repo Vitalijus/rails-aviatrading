@@ -18,6 +18,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
                                               params[:user][:stripe_card_token],
                                               params[:plan])
           @user.update_attributes(active_account: true,
+                                  setup_billing: true,
                                   plan_id: params[:plan])
         else
           redirect_to :back

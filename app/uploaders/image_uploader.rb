@@ -11,7 +11,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   version :advert_image_big do
-     process :resize_to_fill => [960, 300]
+     process :resize_to_fill => [960, 350]
   end
 
   version :advert_image_user do

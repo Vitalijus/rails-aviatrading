@@ -10,7 +10,7 @@ class StripeController < ApplicationController
     	end 
 
     	if stripe_event.type == "charge.succeeded" 
-      		invoice_payment_succeeded(stripe_event)
+      		charge_succeeded(stripe_event)
     	end
 
     	if stripe_event.type == "invoice.payment_failed"
