@@ -1,6 +1,37 @@
+<!--<a href="#advert-image" class="open-images-link">Show inline popup2</a>-->
+
+<div id="advert-image" class="mfp-hide">
+  <% @advert.photos.each do |photo| %>
+    <div class="slide">
+      <%= image_tag photo.image_url(:advert_image_big) %>
+    </div>
+  <% end %>
+</div>
+
+<script type="text/javascript">
+  $('.open-images-link').click(function() {
+  
+    var items = [];
+      $( $(this).attr('href') ).find('.slide').each(function() {
+        items.push( {
+          src: $(this) 
+        } );
+      });
+  
+    $.magnificPopup.open({
+      items:items,
+      fixedContentPos: true,
+      gallery: { enabled: true,
+                 navigateByImgClick: true,
+                 tCounter: '<span class="mfp-counter">%curr% of %total%</span>' }
+    });
+  });
+</script>
+
+
 <div class="advert_show_wrapper">
   <div class="advert_show_image">
-    <% @advert.photos.each do |photo| %>
+    <% @advert.photos.first(1).each do |photo| %>
       <%= image_tag photo.image_url(:advert_image_big) %>
     <% end %>
     

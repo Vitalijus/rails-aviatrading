@@ -1,0 +1,74 @@
+<!--<div class="sticky_nav">
+  <div id="sticky_nav_header">
+    <ul>
+
+      <a href="#aircraft_information">
+        <li>Aircraft information</li>
+      </a>
+
+      <a href="#engine_propeller">
+        <li>Engine/propeller</li>
+      </a>
+
+      <a href="#price_seller">
+        <li>Price/seller info</li>
+      </a>
+
+      <a href="#images_video_pdf">
+        <li>Images/video/PDF</li>
+      </a>
+
+      <a href="#other">
+        <li>Other</li>
+      </a>
+
+    </ul>
+  </div>
+</div>-->
+
+<% if current_user.id == @advert.user_id or current_user %>
+
+<%= form_for(@advert, :html => { multipart: true }) do |f| %>
+  <% if @advert.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@advert.errors.count, "error") %> prohibited this advert from being saved:</h2>
+
+      <ul>
+        <% @advert.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<div class="new_advert_form_wrapper">
+  <div class="new_advert_nav">
+    <ul class="tabs_links">
+      <li class="active"><a href="#tab1">General details</a></li>
+      <li><a href="#tab2">Engine / Propeller</a></li>
+      <li><a href="#tab3">Additional info</a></li>
+      <li><a href="#tab4">Add Images</a></li>
+    </ul>
+  </div>
+
+
+  <div class="new_advert_wrapper">
+    <%= render "adverts/new_form/general_details",  f: f %>
+    <%= render "adverts/new_form/engine_propeller",  f: f %>
+    <%= render "adverts/new_form/additional_info",  f: f %>
+    <%= render "adverts/new_form/add_images",  f: f %>
+
+  </div>
+</div>
+
+  <div id="new_advert_submit_wrapper">
+      <%= f.submit "Advertise", :class => "new_advert_submit_button" %>
+  </div>
+<% end %>
+
+<% else %>
+  <script type="text/javascript">
+    window.location.href="/adverts"  // put your correct path in a string here
+  </script>
+<% end %>

@@ -1,0 +1,75 @@
+<div id="advert_container">
+  <%= render 'adverts/partials/index_header' %>
+  <%= render 'adverts/partials/landing_banner' %>
+  <%= notice %>
+  <div id="masonry-container" class="centered clearfix">
+
+  <% @adverts.each do |advert| %>
+
+    <div class="box">
+      <%= link_to advert_path(advert), data: { no_turbolink: true } do %>
+        <div class="box_image">
+        <% if advert.photos.first %>
+          <%= image_tag(advert.photos.first.image_url(:advert_image)) %>
+        
+          <% unless advert.price.nil? %>
+            <div class="box_price">
+                <%= number_to_currency(advert.price, precision: 0, unit: "") %> <%= advert.currency %>
+            </div>
+          <% end %>
+
+          <% else %>
+            <% unless advert.price.nil? %>
+              <div class="box_price">
+                <%= number_to_currency(advert.price, precision: 0, unit: "") %> <%= advert.currency %>
+              </div>
+            <% end %>
+            <span class="icon-paper_plane"></span>
+          <% end %>
+        </div>
+      <% end %>
+
+      <div class="box_content_wrapper">
+        <div class="box_user_avatar">
+          <%= link_to user_path(advert.user) do %>
+            <% if advert.user.avatar.nil? %>
+              <%= image_tag advert.user.avatar_url(:avatar_small) %>
+            <% else %>
+              <%= image_tag "avatar.png" %>
+            <% end %>
+          <% end %>
+        </div>
+
+        <%= link_to advert_path(advert), data: { no_turbolink: true } do %>
+          <div class="box_make">
+            <%= advert.make %>
+
+            <div class="box_model">
+                <%= advert.model %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+        <!--<div class="box_footer_wrapper">
+          <div class="box_footer">
+            <%= advert.country %>, <%= advert.city %>
+          </div>
+        </div>-->
+    </div>
+  <% end %>
+  </div>
+
+  <div class="pagination" data-no-turbolink>
+    <%= will_paginate @adverts, :page_links => false %>
+  </div>
+</div>
+
+
+<script>
+  $(document).ready(function(){
+    var $box = $('.box');
+    var $pagination = $('.pagination');
+    $box.add($pagination).css('display', 'visible').fadeIn(200);
+  });
+</script>

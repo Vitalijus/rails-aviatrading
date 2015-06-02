@@ -2,6 +2,7 @@
 
 .pricing_wrapper {
 	width: 960px;
+	max-width: 90%;
 	margin: 0 auto;
 	margin-top: 20px;
 	margin-bottom: 60px;
@@ -31,17 +32,23 @@
 }
 
 .plan_text {
-	height: 180px;
-	padding: 50px 0 0 0;
+	height: 200px;
+	padding-top: 50px;
+	color: #666;
 	text-align: center;
 	font-family: "Open Sans", helvetica, arial;
+	font-family: 'PT Sans', sans-serif;
+	font-weight: bold;
 	font-size: 40px;
+	border: 0px solid red;
 }
 
 .plan_text_small {
 	width: 400px;
+	color: #999;
 	margin: 0 auto;
 	font-size: 13px;
+	border: 0px solid red;
 }
 
 .plan_wrapper {

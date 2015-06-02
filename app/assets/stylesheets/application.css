@@ -33,7 +33,7 @@ html {
   font-family: 'Ubuntu', sans-serif;
   color: #444444;  
   height: 100%;
-  margin: 0px 0 40px 0; /* bottom = footer height */
+  margin: 0px 0 0px 0; /* bottom = footer height */
   border: 0px solid green;
 }
 

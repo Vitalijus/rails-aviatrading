@@ -1,0 +1,65 @@
+<header>
+	<div id="header_wrapper_dash">
+		<div class="header_nav_right dash">
+				<ul>
+					<% if !user_signed_in? %>
+						<li>
+							<%= link_to pricing_path, data: { no_turbolink: true } do %>
+								<span class="new_advert_button">
+									SELL AIRCRAFT
+								</span>
+							<% end %>
+						</li>
+					<% end %>
+
+					<% if user_signed_in? %>
+						<li>
+							<%= link_to new_advert_path do %>
+								<span class="new_advert_button">
+									New Advert
+								</span>
+							<% end %>
+						</li>
+					<% end %>
+
+					<% if user_signed_in? %>
+						<li>
+							<%= link_to user_path(current_user) do %>
+								<span class="my_aircrafts_button">
+									My Aircrafts
+								</span>
+							<% end %>
+						</li>
+					<% end %>
+
+					<li>
+						<%= link_to adverts_path do %>
+							All Aircrafts
+						<% end %>
+					</li>
+					
+					<li>
+						<%= link_to new_contact_path, data: { no_turbolink: true } do %>
+							Contact
+						<% end %>
+					</li>	
+
+					<% if !user_signed_in? %>
+						<li>
+							<%= link_to sign_in_path do %>
+								Sign in
+							<% end %>
+						</li>
+					<% end %>
+
+					<% if user_signed_in? %>
+					  <li>
+					  	<%= link_to destroy_user_session_path, method: :delete do %>
+					  		Sign out
+					  	<% end %>
+					  </li>
+					<% end %>
+				</ul>
+			</div>
+	</div>
+</header>

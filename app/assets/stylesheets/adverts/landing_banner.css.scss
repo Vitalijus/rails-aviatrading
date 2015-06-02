@@ -1,0 +1,171 @@
+.landing_image_wrapper {
+	position: relative;
+	border: 0px solid red;
+}
+
+.landing_image_wrapper #landing_image {
+    width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    font: 0/0 serif;
+    text-shadow: none;
+    color: transparent;
+    background-size: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.landing_image_wrapper #landing_image .inner {
+    padding-top: 23%; /* height/width of image */
+    display: block;
+    height: 0;
+}
+
+.landing_image_wrapper #landing_image { 
+	/*background-image: url(image-path('bg.jpg')); */
+	background-color: #fff;
+}
+
+/*#landing_image {
+	background-image: url(image-path('mix.gif'));
+	display: inline-block;
+	width: 100%;
+	font-size: 0;
+	line-height: 0;
+	vertical-align: middle;
+	background-size: 100%;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+}
+
+#landing_image_inner {
+    display: block;
+    height: 0;
+    padding-top: 25%;
+}
+
+/*#landing_image_wrapper .content {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	color: #ffffff;
+	text-transform: uppercase;
+	font-family: 'PT Sans Narrow', sans-serif;
+	letter-spacing: 5px;
+	font-size: 60px;
+	font-weight: bold;
+	border: 0px solid blue;
+}
+
+.content_title {
+	margin: 70px 0 70px 0;
+	border: 0px solid red;
+}
+
+.content_title_small {
+	font-size: 20px;
+	font-family: "Open Sans", helvetica, arial;
+	font-weight: none;
+	letter-spacing: 0;
+	border: 0px solid red;
+}
+
+.new_user_registr {
+	width: 260px;
+	height: 300px;
+	position: absolute;
+	top: 20px;
+	right: 120px;
+	background-color: #fff;
+	border: 1px solid #DFE0E4;
+}
+
+/*#view_courses_wrapper {
+	width: 220px;
+	margin: 0 auto;
+	overflow: hidden;
+	border: 0px solid red;
+}
+
+#view_courses_button { 
+	width: 220px;
+	height: 60px;
+	margin: 0 auto;
+	line-height: 56px;
+	letter-spacing: 3px;
+	font-size: 16px;
+	text-align: center;
+	color: #ffffff;
+	border: 2px solid #ffffff;
+	font-family: 'Lato', sans-serif;
+	background-color: rgba(0,0,0,0);
+    f-webkit-transition: background-color 150ms linear;
+  	-moz-transition: background-color 150ms linear;
+  	-o-transition: background-color 150ms linear;
+  	-ms-transition: background-color 150ms linear;
+  	transition: background-color 150ms linear;
+}
+
+#view_courses_button:hover {
+	background-color: rgba(0,0,0,0.5);
+}
+
+#display_login_wrapper {
+	border: 0px solid red;
+	width: 490px;
+	overflow: hidden;
+	margin: auto;
+	letter-spacing: 3px;
+	margin-top: 70px;
+}
+
+#display_login_button_tutor {
+	width: 220px;
+	height: 60px;
+	line-height: 60px;
+	font-size: 14px;
+	float: left;
+	text-align: center;
+	background-color: #26ae5a;
+    font-family: 'Lato', sans-serif;
+    border: 0px solid #ffffff;
+}
+
+a #display_login_button_tutor {
+	color: #ffffff;
+	-webkit-transition: background-color 150ms linear;
+  	-moz-transition: background-color 150ms linear;
+  	-o-transition: background-color 150ms linear;
+  	-ms-transition: background-color 150ms linear;
+  	transition: background-color 150ms linear;
+}
+
+a:hover #display_login_button_tutor {
+	background-color: #229c51;
+}
+
+#display_login_button_student {
+	width: 220px;
+	height: 60px;
+	line-height: 60px;
+	font-size: 14px;
+	float: right;
+	text-align: center;
+	background-color: #26ae5a;
+    font-family: 'Lato', sans-serif;
+    border: 0px solid red;
+}
+
+a #display_login_button_student {
+	color: #ffffff;
+	-webkit-transition: background-color 150ms linear;
+  	-moz-transition: background-color 150ms linear;
+  	-o-transition: background-color 150ms linear;
+  	-ms-transition: background-color 150ms linear;
+  	transition: background-color 150ms linear;
+}
+
+a:hover #display_login_button_student {
+	background-color: #229c51;
+}*/
+/* --------------------------*/

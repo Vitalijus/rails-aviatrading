@@ -2,11 +2,16 @@
 
 .login_form_wrapper {
 	width: 480px;
+	max-width: 90%;
 	margin: 20px auto;
-	padding: 20px 40px 20px 40px;
+	padding: 20px 60px 20px 60px;
 	background-color: #fff;
 	overflow: hidden;
 	border: 1px solid #DFE0E4;
+
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
 }
 
 .login_remember_me {
@@ -18,6 +23,7 @@
   	font-size: 13px;
   	font-weight: bold;
   	color: #999;
+  	margin-bottom: 15px;
 	border: 0px solid red;
 }
 

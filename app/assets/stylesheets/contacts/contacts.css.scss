@@ -1,11 +1,16 @@
 #contact_wrapper {
-	width: 600px;
+	width: 480px;
+	max-width: 90%;
 	margin: 0 auto;
 	margin-top: 20px;
 	margin-bottom: 80px;
-	padding: 30px 40px 40px 40px;
+	padding: 30px 60px 40px 60px;
 	background-color: #fff;
 	border: 1px solid #DFE0E4;
+
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
 }
 
 #contact_header {
@@ -38,10 +43,9 @@
 
 .new_contact label {
   width: 100%;
-  font-family: "Open Sans", helvetica, arial;
   font-weight: bold;
-  font-size: 13px;
-  color: #666;
+  font-size: 12px;
+  color: #999;
 }
 
 .new_contact_field {
@@ -53,6 +57,10 @@
   font-size: 13px;
   background-color: #fefafa;
   border: 1px solid #fdeded;
+
+  -webkit-box-shadow: inset 0px 0px 2px 0px rgba(250,229,229,0.5);
+  -moz-box-shadow: inset 0px 0px 2px 0px rgba(250,229,229,0.5);
+  box-shadow: inset 0px 0px 2px 0px rgba(250,229,229,0.5);
 }
 
 .contact_message_field {
@@ -62,7 +70,11 @@
   	font-size: 13px;
   	background-color: #fefafa;
   	border: 1px solid #fdeded;
-	margin-bottom: 15px
+	margin-bottom: 15px;
+
+	-webkit-box-shadow: inset 0px 0px 2px 0px rgba(250,229,229,0.5);
+  	-moz-box-shadow: inset 0px 0px 2px 0px rgba(250,229,229,0.5);
+  	box-shadow: inset 0px 0px 2px 0px rgba(250,229,229,0.5);
 }
 
 .new_contact_create_button  {

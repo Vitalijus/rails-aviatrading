@@ -4,7 +4,7 @@
     <div class="contact_form_logo">
       <span class="icon-propeller-big"></span>
     </div>
-		Contact Aerohub
+		Contact AviaTrading
 
 		<div id="contact_header_small">
 			We are looking forward to hearing from you
@@ -27,22 +27,22 @@
 
 
   <div class="new_contact">
-    <%= f.label :name %>
+    <%= f.label :name, "Name*" %>
     <%= f.text_field :name, :class => "new_contact_field" %> 
   </div>
 
   <div class="new_contact">
-    <%= f.label :email %>
+    <%= f.label :email, "Email*" %>
     <%= f.text_field :email, :class => "new_contact_field" %> 
   </div>
 
   <div class="new_contact">
-    <%= f.label :message %>
+    <%= f.label :message, "Message*" %>
     <%= f.text_area :message, :class => "contact_message_field" %> 
   </div>
 
   <div class="action">
-    <%= f.submit "Submit", :class => "new_contact_create_button" %>
+    <%= f.submit "Send", :class => "new_contact_create_button" %>
   </div>
 <% end %>
 
