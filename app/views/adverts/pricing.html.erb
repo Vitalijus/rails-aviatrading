@@ -17,6 +17,40 @@
   </div>
 
    <div class="plan_wrapper">
+      <div class="plan_basic">
+      	<div class="plan_basic_header">
+  		    <div class="plan_title">Basic</div>
+            <div class="plan_for_whom">
+              Best for personal use
+            </div>
+
+            <div class="plan_price">
+              <span class="plan_currency">$</span><span class="plan_amount">30.00</span><span class="plan_month"> /month</span>
+            </div>
+
+            <!--<div class="plan_advantages">
+              <ul>
+                <li>you can <b>upgrade to premium</b> anytime</li>
+              </ul>
+            </div>-->
+
+            <!--<div class="tri-down"><!--trianle</div>-->
+  	    </div>
+
+        <%= link_to sign_up_path(plan: @basic_plan.id) do %>
+          <div class="plan_subscribe_link">
+            Takeoff
+          </div>
+        <% end %>
+
+          <div class="plan_benefits">
+            <ul>
+              <li>Limited to 1 advert</li>
+            </ul>
+          </div>
+      </div>
+
+
       <div class="plan_premium">
         <div class="plan_premium_header">
           <div class="plan_title">Premium</div>
@@ -26,7 +60,7 @@
           </div>
 
             <div class="plan_price premium">
-              <span class="plan_currency">$</span><span class="plan_amount">99.99</span><span class="plan_month"> /month</span><span class="plan_old_price">149.99</span>
+              <span class="plan_currency">$</span><span class="plan_amount">100.00</span><span class="plan_month"> /month</span><span class="plan_old_price">150.00</span>
             </div>
 
             <!--<div class="plan_advantages">
@@ -47,98 +81,12 @@
         <div class="plan_benefits">
           <ul>
             <li>Unlimited number of adverts</li>
-            <li>Unlimited number of images</li>
-            <li>70% higher potential buyer reach</li>
-            <li>Increased visibility for your adverts</li>
-            <li>Reaching global audience</li>
-            <li>Branded content</li>
           </ul>
         </div>
-      </div>
-
-
-      <div class="plan_basic">
-      	<div class="plan_basic_header">
-  		    <div class="plan_title">Basic</div>
-            <div class="plan_for_whom">
-              Best for private use
-            </div>
-
-            <div class="plan_price">
-              <span class="plan_currency">$</span><span class="plan_amount">0.00</span><span class="plan_month"> /month</span>
-            </div>
-
-            <!--<div class="plan_advantages">
-              <ul>
-                <li>you can <b>upgrade to premium</b> anytime</li>
-              </ul>
-            </div>-->
-
-            <!--<div class="tri-down"><!--trianle</div>-->
-  	    </div>
-
-        <%= link_to sign_up_path(plan: @basic_plan.id) do %>
-          <div class="plan_subscribe_link">
-            Takeoff
-          </div>
-        <% end %>
-
-          <div class="plan_benefits">
-            <ul>
-              <li>Saves your money</li>
-              <li>Changes can be made on the fly</li>
-              <li>Reaching global audience</li>
-              <li>Seller's guide</li>
-              <li>Seller's guide</li>
-              <li>Seller's guide</li>
-            </ul>
-          </div>
       </div>
     </div>
 
     <div class="plan_text">
-      Top questions about pricing 
-
-      <div class="plan_text_small">
-        Find, buy or sell any type of aviation, such as Jet, TurboProp, Helicopter, Single Piston, Multi Piston and more.
-      </div>
-    </div>
-
-    <div id="plan_box" class="question">
-      <ul>
-        <li>
-          <div class="plan_question">
-            <span>Difference between basic and premium plan?</span>
-          </div>
-
-          <div class="plan_answer">
-            Watching the Treehouse videos, I was having little “Ahaaa, that makes sense!” moments, the videos are broken down into just the right amount to be able to absorb, without getting too frustrated.
-          </div>
-        </li>
-
-        <li>
-          <div class="plan_question">
-            <span>What if I want upgrade or downgrade a plan?</span>
-          </div>
-
-          <div class="plan_answer">
-            Subscriptions can be changed by switching the plan.
-          </div>
-        </li>
-
-        <li>
-          <div class="plan_question">
-            <span>How payment is made?</span>
-          </div>
-
-          <div class="plan_answer">
-            Watching the Treehouse videos, I was having little “Ahaaa, that makes sense!” moments, the videos are broken down into just the right amount to be able to absorb, without getting too frustrated.
-          </div>
-        </li>
-      </ul>
-    </div>
-
-    <!--<div class="plan_text">
       Success is in the air
 
       <div class="plan_text_small">
@@ -146,7 +94,55 @@
       </div>
     </div>
 
-    <div id="plan_box">
+    <ul class="q_and_a columns_2">
+      <li>
+        <span class="question">Difference between basic and premium plan?</span>
+        <span class="answer">Here is answer to a question</span>
+      </li>
+
+      <li>
+        What if I want upgrade or downgrade a plan?
+      </li>
+
+      <li>
+        How payment is made? ow payment is made?
+      </li>
+
+      <li>
+        How payment is made? ow payment is made?
+      </li>
+    </ul>
+
+    <div class="plan_text">
+      Questions and Answers
+
+      <div class="plan_text_small">
+        Find, buy or sell any type of aviation, such as Jet, TurboProp, Helicopter, Single Piston, Multi Piston and more.
+      </div>
+    </div>
+
+    <ul class="q_and_a columns_2">
+      <li>
+        <span class="question">Difference between basic and premium plan?</span>
+        <span class="answer">Here is answer to a question</span>
+      </li>
+
+      <li>
+        What if I want upgrade or downgrade a plan?
+      </li>
+
+      <li>
+        How payment is made? ow payment is made?
+      </li>
+
+      <li>
+        How payment is made? ow payment is made?
+      </li>
+    </ul>
+
+    
+
+    <!--<div id="plan_box">
       <ul>
         <li>
           <div class="plan_question">
