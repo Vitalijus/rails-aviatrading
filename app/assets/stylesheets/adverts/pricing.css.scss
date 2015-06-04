@@ -37,6 +37,7 @@
 	text-align: center;
 	font-family: 'Open Sans Condensed', sans-serif;
 	font-weight: 900;
+	text-transform: capitalize;
 	font-size: 45px;
 }
 
@@ -45,6 +46,7 @@
 	color: #3F5672;
 	text-align: center;
 	font-weight: normal;
+	text-transform: none;
 	font-family: 'Open Sans Condensed', sans-serif;
 	padding: 15px 10px 0 10px;
 	margin: 0 auto;
@@ -201,7 +203,7 @@ ul.micro_benefits li {
 	background-color: #F16164;
 	text-align: center;
 	font-weight: 600;
-	font-family: "Open Sans", helvetica, arial;
+	font-family: 'PT Serif', serif;
 	color: #fff;
 	border-bottom: 2px solid #B14739;
 
@@ -252,7 +254,7 @@ ul.micro_benefits li {
 	text-transform: uppercase;
 	font-size: 12px;
 	color: #8e8e8e;
-	border-bottom: 1px solid #EDEFF0;
+	border-bottom: 1px solid #DFE0E4;
 }
 
 .billing_markup {
@@ -317,7 +319,7 @@ ul.micro_benefits li {
 ul.q_and_a  {
 	font-size: 0px;
 	margin-left: -2.5%; /* should match li left margin */
-	padding: 0 4% 15px 4%;
+	padding: 0 4% 20px 4%;
 	border: 0px solid red;
 }
 
@@ -342,37 +344,173 @@ ul.q_and_a li {
 
  ul.q_and_a li .question {
  	display: block;
- 	font-weight: bold;
  	color: #3F5672;
+ 	font-size: 26px;
  	border: 0px solid red;
  }
 
  ul.q_and_a li .answer {
  	display: block;
+ 	font-size: 20px;
+ 	color: #777;
  	border: 0px solid red;
  }
 
- .testimonials {
- 	max-width: 700px;
- 	margin: 0 auto;
+ .message_to_us {
+ 	margin: 0 4% 40px 4%;
  	text-align: center;
- 	margin-bottom: 40px;
+ 	padding-bottom: 40px;
+ 	font-family: 'PT Sans', sans-serif;
+ 	font-size: 12px;
+ 	color: #8e8e8e;
+ 	text-transform: uppercase;
+ 	border-bottom: 1px solid #DFE0E4;
+ }
+
+.message_to_us a {
+	font-weight: bold;
+	color: #F05053;
+}
+
+.message_to_us a:hover {
+	text-decoration: underline;
+}
+
+
+ .testimonials_wrapper {
+ 	margin: 0 4% 0 4%;
+ }
+
+ .testimonials {
+ 	max-width: 750px;
+ 	margin: 0 auto;
+ 	text-align: justify;
+ 	line-height: 40px;
  	font-family: 'Open Sans Condensed', sans-serif;
-	color: #999;
+	color: #777;
 	font-style: italic;
-	font-size: 25px;
+	font-size: 22px;
 	border: 0px solid red;
  }
 
+ .testimonials_seller {
+ 	max-width: 750px;
+ 	font-family: 'Open Sans Condensed', sans-serif;
+ 	font-size: 22px;
+ 	margin: 0 auto;
+ 	margin-top: 10px;
+ 	color: #444;
+ 	padding-left: 20px;
+ 	margin-bottom: 40px;
+ }
+
+ .rating_stars {
+ 	margin-left: 3px;
+ 	vertical-align: -3px;
+ }
+
+.quote_img_start {
+ 	margin-right: 4px;
+ 	vertical-align: 8px;
+ }
+
+ .quote_img_finish {
+ 	margin-left: 4px;
+ 	vertical-align: -8px;
+ }
+
+.repeated_plans_title {
+	max-width: 700px;
+	color: #3F5672;
+	text-align: center;
+	font-weight: normal;
+	text-transform: none;
+	font-family: 'Open Sans Condensed', sans-serif;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	padding: 0 10px 0 10px;
+	font-size: 35px;
+	border: 0px solid red;
+}
+
+ul.repeated_plans {
+	margin-left: -2.5%; /* should match li left margin */
+	padding: 0 4% 5px 4%;
+	border: 0px solid red;
+
+}
+
+ul.repeated_plans li {
+	width: 47.2%;
+	display: inline-block;
+	margin: 0 0 2.5% 2.5%;
+	vertical-align: top;
+	border: 0px solid red;
+	
+}
+
+.repeated_plans_button {
+	width: 100%;
+	height: 60px;
+	padding-top: 8px;
+	/*line-height: 45px;*/
+	font-size: 18px;
+	background-color: #F16164;
+	text-align: center;
+	font-family: 'PT Serif', serif;
+	color: #fff;
+	border-bottom: 2px solid #B14739;
+
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+
+	-webkit-transition: background-color 150ms linear;
+  	-moz-transition: background-color 150ms linear;
+  	-o-transition: background-color 150ms linear;
+  	-ms-transition: background-color 150ms linear;
+  	transition: background-color 150ms linear;
+}
+
+.repeated_plans_button a {
+	color: #fff;
+}
+
+.repeated_plans_button:hover {
+	background-color: #F05053;
+}
+
+.repeated_plan_small {
+	display: block;
+	margin-top: -3px;
+	font-size: 14px;
+	border: 0px solid green;
+}
+
+.unsub_anytime,
+.secure_cards {
+	color: #777;
+	text-align: center;
+	font-size: 18px;
+	font-family: 'Open Sans Condensed', sans-serif;
+	margin: 0 4% 10px 4%;
+}
+
+.secure_cards {
+	margin: 0 4% 40px 4%;
+}
+
  @media (max-width: 768px) {
 
-	ul.q_and_a {
+	ul.q_and_a,
+	ul.repeated_plans {
 		margin-left: 0;
 	}
 
-	ul.q_and_a li {
+	ul.q_and_a li,
+	ul.repeated_plans li {
 		width: 100% !important; /* over-ride all li styles */
-		margin: 10px 0 10px 0;
+		margin: 10px 0 20px 0;
 	}
 }
 

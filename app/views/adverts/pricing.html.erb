@@ -82,10 +82,10 @@
             <!--<div class="tri-down premium"><!--trianle</div>-->
         </div>
 
-          <%= link_to sign_up_path(plan: @premium_plan.id) do %>
-            <div class="plan_subscribe_link">
-              Takeoff
-            </div>
+        <%= link_to sign_up_path(plan: @premium_plan.id) do %>
+          <div class="plan_subscribe_link">
+            Takeoff
+          </div>
         <% end %>
 
         <div class="plan_benefits">
@@ -101,26 +101,52 @@
     </div>
 
     <div class="plan_text">
-      Success is in the air
+      Success is in the Air
 
       <div class="plan_text_small">
         What some of our happy <b>sellers are saying</b>:
       </div>
     </div>
 
-    <div class="testimonials">
-      I was very curious how GoodUI Datastories would be. After receiving the first issue I can say that it’s a great piece of professional work. I was feeling like sitting right next to Jakub and Vlad while they prepared and ran the tests. It’s a great thing to have everything provided in such detail. Imagine as if you actually ran these tests but it took you just a reading moment and not 3 months. Great isn’t it? ”
+    <div class="testimonials_wrapper">
+      <div class="testimonials">
+        <%= image_tag "quote.png", width: 16, :class => "quote_img_start" %> I was very curious how GoodUI Datastories would be. After receiving the first issue I can say that it’s a great piece of professional work. I was feeling like sitting right next to Jakub and Vlad while they prepared and ran the tests. It’s a great thing to have everything provided in such detail. Imagine as if you actually ran these tests but it took you just a reading moment and not 3 months. Great isn’t it? ”
+      </div>
+
+      <div class="testimonials_seller">
+        - <b>John Hutter</b>, Project Manager <%= image_tag "stars.png", width: 100, :class => "rating_stars" %>
+      </div>
+
+      <div class="testimonials">
+        <%= image_tag "quote.png", width: 16, :class => "quote_img_start" %> I was very curious how GoodUI Datastories would be. After receiving the first issue I can say that it’s a great piece of professional work. I was feeling like sitting right next to Jakub and Vlad while they prepared and ran the tests. Great isn’t it? ”
+      </div>
+
+      <div class="testimonials_seller">
+        - <b>Bill Wells</b>, Marketer <%= image_tag "stars.png", width: 100, :class => "rating_stars" %>
+      </div>
+
+      <div class="testimonials">
+        <%= image_tag "quote.png", width: 16, :class => "quote_img_start" %> I was very curious how GoodUI Datastories would be. After receiving the first issue I can say that it’s a great piece of professional work. I was feeling like sitting right next to Jakub and Vlad while they prepared and ran the tests. It’s a great thing to have everything provided in such detail. ”
+      </div>
+
+      <div class="testimonials_seller">
+        - <b>Tom Carter</b>, Director <%= image_tag "stars.png", width: 100, :class => "rating_stars" %>
+      </div>
     </div>
 
-    <div class="testimonials">
-      I was very curious how GoodUI Datastories would be. After receiving the first issue I can say that it’s a great piece of professional work. I was feeling like sitting right next to Jakub and Vlad while they prepared and ran the tests. It’s a great thing to have everything provided in such detail. Imagine as if you actually ran these tests but it took you just a reading moment and not 3 months. Great isn’t it? ”
+    <div class="message_to_us">
+      <%= link_to new_contact_path do %>
+        Say few words
+      <% end %>
+      about us.
     </div>
+
 
     <div class="plan_text">
-      Questions and Answers
+      Questions & Answers
 
       <div class="plan_text_small">
-        Find, buy or sell any type of aviation, such as Jet, TurboProp, Helicopter, Single Piston, Multi Piston and more.
+        Ask any question and we will answer them for you right here, <b>with the most popular first</b>:
       </div>
     </div>
 
@@ -131,18 +157,73 @@
       </li>
 
       <li>
-        What if I want upgrade or downgrade a plan?
+        <span class="question">What if I want upgrade or downgrade a plan?</span>
+        <span class="answer">I was feeling like sitting right next to Jakub and Vlad while they prepared and ran the tests. It’s a great thing to have everything provided in such detail</span>
       </li>
 
       <li>
-        How payment is made? ow payment is made?
+        <span class="question">How payment is made? ow payment is made?</span>
+        <span class="answer">I was feeling like sitting right next to Jakub and Vlad while they prepared and ran the tests. I was feeling like sitting right next to Jakub and Vlad while they prepared and ran the tests. I was feeling like sitting right next to Jakub and Vlad while they prepared and ran the tests.</span>
       </li>
 
       <li>
-        How payment is made? ow payment is made?
+        <span class="question">How payment is made? ow payment is made?</span>
+        <span class="answer">I was feeling like sitting right next to Jakub and Vlad while they prepared and ran the tests. It’s a great thing to have everything provided in such detail I was feeling like sitting right next to Jakub and Vlad while they prepared and ran the tests. It’s a great thing to have everything provided in such detail</span>
+      </li>
+
+      <li>
+        <span class="question">How payment is made? ow payment is made?</span>
+        <span class="answer">I was feeling like sitting right next to Jakub and Vlad while they prepared and ran the tests. It’s a great thing to have everything provided in such detail I was feeling like sitting right next to Jakub and Vlad while they prepared and ran the tests. It’s a great thing to have everything provided in such detail</span>
+      </li>
+
+      <li>
+        <span class="question">How payment is made? ow payment is made?</span>
+        <span class="answer">I was feeling like sitting right next to Jakub and Vlad while they prepared and ran the tests. It’s a great thing to have everything provided in such detail I was feeling like sitting right next to Jakub and Vlad while they prepared and ran the tests. It’s a great thing to have everything provided in such detail</span>
       </li>
     </ul>
 
+    <div class="message_to_us">
+      Got another question?
+      <%= link_to new_contact_path do %>
+        Ask us anything.
+      <% end %>
+    </div>
+
+    <div class="repeated_plans_title">
+      Choose a plan that suit you and subscribe with all benefits
+    </div>
+
+    <ul class="repeated_plans">
+      <li>
+        <%= link_to sign_up_path(plan: @basic_plan.id) do %>
+          <div class="repeated_plans_button">
+            Subscribe for <b>Basic Plan</b>
+            <span class="repeated_plan_small">
+              max. one ad only $50.00 / month
+            </span>
+          </div>
+        <% end %>
+      </li>
+
+      <li>
+        <%= link_to sign_up_path(plan: @premium_plan.id) do %>
+          <div class="repeated_plans_button">
+            Subscribe for <b>Premium Plan</b>
+            <span class="repeated_plan_small">
+              unlimited number of ads only $150.00 / month
+            </span>
+          </div>
+        <% end %>
+      </li>
+    </ul>
+
+    <div class="unsub_anytime">
+      Boost your chances to sell an aircraft right now. Unsubscribe anytime.
+    </div>
+
+    <div class="secure_cards">
+      <%= image_tag "secure.png" %>
+    </div>
     
 
     <!--<div id="plan_box">
