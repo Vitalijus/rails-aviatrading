@@ -1,50 +1,52 @@
 <div id="contact_wrapper">
-	<%= notice %>
-	<div id="contact_header">
-    <div class="contact_form_logo">
-      <span class="icon-propeller-big"></span>
-    </div>
-		Contact AviaTrading
-
-		<div id="contact_header_small">
-			We are looking forward to hearing from you
-		</div>
-
-	</div>
-
-	<div id="contact_form">
-
-	<%= form_for(@contact) do |f| %>
-      <% if @contact.errors.any? %>
-        <div id="error_explanation">
-          <ul>
-            <% @contact.errors.full_messages.each do |msg| %>
-              <li><%= msg %></li>
-            <% end %>
-        </ul>
+  <div id="contact">
+  	<%= notice %>
+  	<div id="contact_header">
+      <div class="contact_form_logo">
+        <span class="icon-propeller-big"></span>
       </div>
-    <% end %>
+  		Contact AviaTrading
+
+  		<div id="contact_header_small">
+  			We are looking forward to hearing from you
+  		</div>
+
+  	</div>
+
+  	<div id="contact_form">
+
+  	<%= form_for(@contact) do |f| %>
+        <% if @contact.errors.any? %>
+          <div id="error_explanation">
+            <ul>
+              <% @contact.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+          </ul>
+        </div>
+      <% end %>
 
 
-  <div class="new_contact">
-    <%= f.label :name, "Name*" %>
-    <%= f.text_field :name, :class => "new_contact_field" %> 
+    <div class="new_contact">
+      <%= f.label :name, "Name*" %>
+      <%= f.text_field :name, :class => "new_contact_field" %> 
+    </div>
+
+    <div class="new_contact">
+      <%= f.label :email, "Email*" %>
+      <%= f.text_field :email, :class => "new_contact_field" %> 
+    </div>
+
+    <div class="new_contact">
+      <%= f.label :message, "Your Message*" %>
+      <%= f.text_area :message, :class => "contact_message_field" %> 
+    </div>
+
+    <div class="action">
+      <%= f.submit "Send Message", :class => "new_contact_create_button" %>
+    </div>
+  <% end %>
+
   </div>
-
-  <div class="new_contact">
-    <%= f.label :email, "Email*" %>
-    <%= f.text_field :email, :class => "new_contact_field" %> 
   </div>
-
-  <div class="new_contact">
-    <%= f.label :message, "Your Message*" %>
-    <%= f.text_area :message, :class => "contact_message_field" %> 
-  </div>
-
-  <div class="action">
-    <%= f.submit "Send Message", :class => "new_contact_create_button" %>
-  </div>
-<% end %>
-
-</div>
 </div>

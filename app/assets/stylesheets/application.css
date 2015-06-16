@@ -71,6 +71,7 @@ h1, h3  {
 header {
   width: 100%;
   background-color: #ffffff;
+  padding: 0 20px 0 20px;
   border-bottom: 1px solid #DFE0E4;
 }
 
@@ -146,38 +147,38 @@ header {
 
 /* HEADER NAVIGATION */ 
 
-.header_nav_right {
-  width: auto;
-  float: right;
-  height: 60px;
+@media screen and (min-width: 768px) {
+    .header_nav {
+        float: right;
+        height: 60px;
+    }
 }
 
-.header_nav_right ul {   
+.header_nav ul {   
     width: 100%;    
-    height: 60px;
+    height: 100%;
     font-size: 12px;
     text-transform: uppercase;
     font-family: 'PT Sans', sans-serif;
     font-weight: bold;
-    display: table;
 }  
 
-.header_nav_right li {  
-    height: 60px;
-    display: table-cell; 
-    vertical-align: middle; 
+.header_nav li {  
+    height: 100%;
+    display: inline-block; 
+    line-height: 60px;
     padding: 0px 15px 0 15px;
 }
 
-.header_nav_right li:last-child {
+.header_nav li:last-child {
   padding-right: 0;
 }
 
-.header_nav_right.dash li:last-child {
+.header_nav.dash li:last-child {
   padding-right: 30px;
 }
 
-.header_nav_right a {  
+.header_nav a {  
     color: #777777; 
 
     -webkit-transition: color 150ms linear;
@@ -187,8 +188,8 @@ header {
     transition: color 150ms linear;
 }  
 
-.header_nav_right a:hover {  
-    color: #208797;  
+.header_nav a:hover {  
+    color: #F05053;  
 } 
 
 .new_advert_button,
@@ -217,15 +218,70 @@ a:hover .my_aircrafts_button {
 
 /*--------------------*/
 
+/*----- Toggle Button -----*/
+.toggle-nav {
+    display:none;
+}
 
-/* media */
 
-@media (max-width: 1000px) {
+/* Media Queries */
 
-  #header_wrapper,
-  #header_wrapper_dash {
-    padding: 0 20px 0 20px;
-  }
+@media screen and (max-width: 768px) {
+    .header_nav {
+        position:relative;
+        float: right;
+        z-index: 99999;
+        display:inline-block;
+    }
+ 
+    .header_nav ul.active {
+        display:none;
+    }
+ 
+    .header_nav ul {
+        width: 250px;
+        position: absolute;
+        top: 120%;
+        right: -10px;
+    }
+ 
+    .header_nav ul:after {
+        width:0px;
+        height:0px;
+        position:absolute;
+        top: 1px;
+        right: 12px;
+        content:'';
+        transform:translate(0%, -100%);
+        border-left:10px solid transparent;
+        border-right:10px solid transparent;
+        border-bottom:10px solid #fff;
+    }
+ 
+    .header_nav li {
+        float:none;
+        display:block;
+        text-align: center;
+        background-color: #fff;
+        border-bottom: 1px solid #DFE0E4;
+        border-right: 1px solid #DFE0E4;
+        border-left: 1px solid #DFE0E4;
+    }
+
+    .header_nav li:first-child {
+      border-top: 1px solid #DFE0E4;
+    }
+ 
+    .header_nav a {
+        display:block;
+    }
+ 
+    .toggle-nav {
+        height: 60px;
+        line-height: 60px;
+        font-size: 28px;
+        transition:color linear 0.15s;
+    }
 }
 
 /*-----------------*/

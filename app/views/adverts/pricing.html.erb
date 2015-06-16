@@ -1,20 +1,21 @@
 <div class="pricing_wrapper">
-  <% if flash[:notice] %>
-    <h3><%= flash[:notice] %></h3>
-  <% end %>
-  
-  <div class="plan_banner">
-    <b>Sell your aircraft</b>
-    <div class="plan_small_banner_text">where the buyers are</div>
-  </div>
-
-  <div class="plan_text">
-    Choose a Plan 
-
-    <div class="plan_text_small">
-      We know to sell an aircraft <b>is not easy</b>. Let us quickly introduce your aircraft <b>into the market</b>.  Use one of two plans in order to gain benefits:
+  <div class="pricing">
+    <% if flash[:notice] %>
+      <h3><%= flash[:notice] %></h3>
+    <% end %>
+    
+    <div class="plan_banner">
+      <b>Sell your aircraft</b>
+      <div class="plan_small_banner_text">where the buyers are</div>
     </div>
-  </div>
+
+    <div class="plan_text">
+      Choose a Plan 
+
+      <div class="plan_text_small">
+        We know to sell an aircraft <b>is not easy</b>. Let us quickly introduce your aircraft <b>into the market</b>.  Use one of two plans in order to gain benefits:
+      </div>
+    </div>
 
   <ul class="micro_benefits">
     <li>24/7 support</li>
@@ -48,7 +49,7 @@
             <!--<div class="tri-down"><!--trianle</div>-->
   	    </div>
 
-        <%= link_to sign_up_path(plan: @basic_plan.id) do %>
+        <%= link_to sign_up_path(plan: @basic_plan.id), data: { no_turbolink: true } do %>
           <div class="plan_subscribe_link">
             Takeoff
           </div>
@@ -82,7 +83,7 @@
             <!--<div class="tri-down premium"><!--trianle</div>-->
         </div>
 
-        <%= link_to sign_up_path(plan: @premium_plan.id) do %>
+        <%= link_to sign_up_path(plan: @premium_plan.id), data: { no_turbolink: true } do %>
           <div class="plan_subscribe_link">
             Takeoff
           </div>
@@ -134,7 +135,7 @@
     </div>
 
     <div class="message_to_us">
-      <%= link_to new_contact_path do %>
+      <%= link_to new_contact_path, data: { no_turbolink: true } do %>
         Say few words
       <% end %>
       about us.
@@ -185,7 +186,7 @@
 
     <div class="message_to_us">
       Got another question?
-      <%= link_to new_contact_path do %>
+      <%= link_to new_contact_path, data: { no_turbolink: true } do %>
         Ask us anything.
       <% end %>
     </div>
@@ -196,7 +197,7 @@
 
     <ul class="repeated_plans">
       <li>
-        <%= link_to sign_up_path(plan: @basic_plan.id) do %>
+        <%= link_to sign_up_path(plan: @basic_plan.id), data: { no_turbolink: true } do %>
           <div class="repeated_plans_button">
             Subscribe for <b>Basic Plan</b>
             <span class="repeated_plan_small">
@@ -207,7 +208,7 @@
       </li>
 
       <li>
-        <%= link_to sign_up_path(plan: @premium_plan.id) do %>
+        <%= link_to sign_up_path(plan: @premium_plan.id), data: { no_turbolink: true } do %>
           <div class="repeated_plans_button">
             Subscribe for <b>Premium Plan</b>
             <span class="repeated_plan_small">
@@ -263,4 +264,5 @@
         </li>
       </ul>
     </div>-->
+  </div>
 </div>

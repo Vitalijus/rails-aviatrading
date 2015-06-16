@@ -46,7 +46,7 @@
 
             <li class="seller_contact">
               <span class="seller_name">
-                <%= link_to user_path(@advert.user.id) do %> 
+                <%= link_to user_path(@advert.user.id), data: { no_turbolink: true } do %> 
                   <%= @advert.name %>
                 <% end %>
               </span>
@@ -57,7 +57,7 @@
             </li>
 
             <li class="email_seller">
-              <%= link_to new_advert_email_seller_path(@advert) do %>
+              <%= link_to new_advert_email_seller_path(@advert), data: { no_turbolink: true } do %>
                 <span class="email_button">
                    Email Seller
                 </span>

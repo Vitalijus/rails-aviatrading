@@ -1,7 +1,7 @@
 <header>
 	<div id="header_wrapper_dash">
-		<div class="header_nav_right dash">
-				<ul>
+		<nav class="header_nav dash">
+				<ul class="active">
 					<% if !user_signed_in? %>
 						<li>
 							<%= link_to pricing_path, data: { no_turbolink: true } do %>
@@ -14,7 +14,7 @@
 
 					<% if user_signed_in? %>
 						<li>
-							<%= link_to new_advert_path do %>
+							<%= link_to new_advert_path, data: { no_turbolink: true } do %>
 								<span class="new_advert_button">
 									New Advert
 								</span>
@@ -24,7 +24,7 @@
 
 					<% if user_signed_in? %>
 						<li>
-							<%= link_to user_path(current_user) do %>
+							<%= link_to user_path(current_user), data: { no_turbolink: true } do %>
 								<span class="my_aircrafts_button">
 									My Aircrafts
 								</span>
@@ -33,7 +33,7 @@
 					<% end %>
 
 					<li>
-						<%= link_to adverts_path do %>
+						<%= link_to adverts_path, data: { no_turbolink: true } do %>
 							All Aircrafts
 						<% end %>
 					</li>
@@ -46,7 +46,7 @@
 
 					<% if !user_signed_in? %>
 						<li>
-							<%= link_to sign_in_path do %>
+							<%= link_to sign_in_path, data: { no_turbolink: true } do %>
 								Sign in
 							<% end %>
 						</li>
@@ -60,6 +60,18 @@
 					  </li>
 					<% end %>
 				</ul>
-			</div>
+				<a class="toggle-nav" href="#">&#9776;</a>
+			</nav>
 	</div>
 </header>
+
+<script>
+jQuery(document).ready(function() {
+    jQuery('.toggle-nav').click(function(e) {
+        jQuery(this).toggleClass('active');
+        jQuery('.header_nav ul').toggleClass('active');
+ 
+        e.preventDefault();
+    });
+});
+</script>
