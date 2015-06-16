@@ -1,102 +1,174 @@
   <div id="tab1" class="new_form_wrapper active">
     <div class="new_form_border_helper">
 
-    <ul>
-      <li class="form_label">Contact person</li>
-      <li class="new_form_contact_person">
-        <%= f.text_field :name, :placeholder => "Name", :class => "new_form_name" %>
-        <%= f.text_field :surname, :placeholder => "Surname", :class => "new_form_surname" %>
-        <%= f.text_field :email, :placeholder => "Email", :class => "new_form_email" %>
-        <%= f.text_field :phone, :placeholder => "Phone", :class => "new_form_phone" %>
+    <ul class="form">
+      <li class="form_label">
+        Advertiser info
+        <span class="form_label_small">
+          *Required fields.
+        </span>
+      </li>  
+
+      <li class="form_field one_column">
+        <%= f.text_field :name, :placeholder => "Name Surname*", :class => "new_field" %>
+      </li>  
+
+      <li class="form_field">
+        <%= f.text_field :phone, :placeholder => "Phone number", :class => "new_field" %>
+      </li>
+
+      <li class="form_field">
+        <%= f.text_field :email, :placeholder => "Email address*", :class => "new_field" %>
       </li>
     </ul>
 
-    <ul>
-      <li class="form_label">Asking Price</li>
-      <li>
-        <%= f.number_field :price, :placeholder => "Price",  :class => "new_form_price" %>
-      <span class="new_form_dropdown_list">
-        <%= f.select :currency, ['USD', "EUR"], :prompt => 'Currency' %>
-      </span>
+    <ul class="form">
+      <li class="form_label height_helper">
+        Aircraft details<!--<span class="required_fields">*</span>-->
+        <span class="form_label_small">*Required fields.</span>
+        <span class="form_label_small">If you don't wish to specify a price please select "Price on request".</span>
+      </li>
 
-      <li class="new_advert_checkboxes_label"></li>
-      <li>Price on request</li>
+      <li class="form_field">
+        <%= f.text_field :model, :class => "new_field", :placeholder => "Model*" %>
+      </li>
+
+      <li class="form_field">
+        <%= f.text_field :make, :class => "new_field", :placeholder => "Manufacturer*" %>
+      </li>
+
+      <li class="form_field select_field">
+        <%= f.select :aircraft_usage, ["Aerobatic", "Aerial survey", "Agriculture", "Amphibian/Float", "Antique/Classic", "Business/VIP", "Homebuilt", "EMS/SAR/Fire/Police", "Cargo/Freighter", "Passenger", "Warbird/Military"], :prompt => 'Aircraft usage*'  %>
+      </li>
+      
+      <li class="form_field select_field">
+        <%= f.select :aircraft_type, ["Airship / Blimp", "Glider / Sailplane", "Jet", "Helicopter", "Light sport", "Single piston", "Multi piston", "TurboProp", "Ultralight", "Hot air balloon"], :prompt => 'Aircraft type*'  %>
+      </li>
+
+      <li class="form_field four_columns">
+        <%= f.text_field :serial_number, :class => "new_field", :placeholder => "Serial number" %>
+      </li>
+      
+      <li class="form_field four_columns">
+        <%= f.text_field :registration_number, :class => "new_field", :placeholder => "Registration number" %>
+      </li>
+
+      <li class="form_field select_field four_columns">
+        <%= f.select :currency, ['USD', "EUR", "GBP"] %>
+      </li>
+
+      <li class="form_field four_columns">
+        <%= f.number_field :price, :placeholder => "Price*", :class => "new_field" %>
+      </li>
+
+      <li class="form_field four_columns">
+        <%= f.text_field :aircraft_hours, :class => "new_field", :placeholder => "Airframe time (TTAF)" %>
+      </li>
+
+      <li class="form_field four_columns">
+        <%= f.text_field :landings, :class => "new_field", :placeholder => "Nr. of landings" %>
+      </li>
+
+      <li class="form_field four_columns">
+        <%= f.text_field :number_of_passengers, :class => "new_field", :placeholder => "Nr. of passengers" %>
+      </li>
+
+      <li class="form_field select_field four_columns">
+        <%= f.select :year, options_for_select((Date.today.year-100..Date.today.year+1).step(1).reverse_each), :prompt => 'Built year*' %>
+      </li>
+
+      <!--<li class="new_advert_checkboxes_label">Price on request</li>
       <li class="eu_vat_paid">
         <div class="new_advert_checkbox">
           <%= f.check_box :price_on_request, {:id => "price_on_request"}, "mon", "" %>
             <label for="price_on_request"></label>
         </div>
-      </li>
-
-      <li class="new_advert_checkboxes_label"></li>
-      <li>EU VAT paid</li>
-      <li class="eu_vat_paid">
-        <div class="new_advert_checkbox">
-          <%= f.check_box :eu_vat, {:id => "eu_vat"}, "mon", "" %>
-            <label for="eu_vat"></label>
-        </div>
-      </li>
+      </li>-->
     </ul>
 
-    <ul>
-        <li class="form_label">
-          Manufacturer<span class="required_fields">*</span> / Model<span class="required_fields">*</span><br/>
-          <span class="form_label_small">Spaces and special characters are fine.</span>
-        </li>
+    <!--<ul class="form">
+      <li class="form_label">
+        Aircraft Price<span class="required_fields">*</span><span class="form_label_small"> If you don't wish to specify a price please select "Price on request".</span>
+      </li>
 
-        <li class="new_form_make_model">
-          <%= f.text_field :make, :class => "new_form_manufacturer", :placeholder => "Manufacturer" %>
-          <%= f.text_field :model, :class => "new_form_model", :placeholder => "Model" %>
-        </li>
-    </ul>
+      <li class="form_field select_field">
+        <%= f.select :currency, ['USD', "EUR", "GBP"] %>
+      </li>
 
-    <ul>
+      <li class="form_field">
+        <%= f.number_field :price, :placeholder => "Price", :class => "new_field" %>
+      </li>
+    </ul>-->
+
+    <!--<ul class="form">
       <li class="form_label">
         Aircraft type<span class="required_fields">*</span> / usage<span class="required_fields">*</span><br/>
-        <span class="form_label_small">Spaces</span>
+        <span class="form_label_small">*Required fields.</span>
       </li>
 
-      <li class="new_form_type_usage">
-        <span class="new_form_dropdown_list">
-          <%= f.select :aircraft_type, ["Airship / Blimp", "Glider / Sailplane", "Jet", "Helicopter", "Light sport", "Single piston", "Multi piston", "TurboProp", "Ultralight", "Hot air balloon"], :prompt => 'Aircraft type'  %>
-        </span>
-
-        <span class="new_form_dropdown_list usage new_form_aircraft_usage">
-          <%= f.select :aircraft_usage, ["Aerobatic", "Aerial survey", "Agriculture", "Amphibian/Float", "Antique/Classic", "Business/VIP", "Homebuilt", "EMS/SAR/Fire/Police", "Cargo/Freighter", "Passenger", "Warbird/Military"], :prompt => 'Aircraft usage'  %>
-        </span>
+      <li class="form_field select_field">
+        <%= f.select :aircraft_usage, ["Aerobatic", "Aerial survey", "Agriculture", "Amphibian/Float", "Antique/Classic", "Business/VIP", "Homebuilt", "EMS/SAR/Fire/Police", "Cargo/Freighter", "Passenger", "Warbird/Military"], :prompt => 'Aircraft usage'  %>
       </li>
+
+      <li class="form_field select_field">
+        <%= f.select :aircraft_type, ["Airship / Blimp", "Glider / Sailplane", "Jet", "Helicopter", "Light sport", "Single piston", "Multi piston", "TurboProp", "Ultralight", "Hot air balloon"], :prompt => 'Aircraft type'  %>
+      </li>
+    </ul>-->
+
+    <ul class="form">
+      <li class="form_label">
+        Aircraft location
+        <span class="form_label_small">*Required fields.</span>
+      </li>
+
+      <li class="form_field">
+        <%= f.text_field :city, :class => "new_field", :placeholder => "City*" %>
+      </li>
+
+      <li class="form_field select_field">
+        <%= f.select :country, ["Afghanistan", "Aland Islands", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia, Plurinational State of", "Bosnia and Herzegovina", "Botswana", "Bouvet Island", "Brazil", "British Indian Ocean Territory", "Brunei Darussalam", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Cocos (Keeling) Islands", "Colombia", "Comoros", "Congo", "Congo, the Democratic Republic of the", "Cook Islands", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Cyprus","Czech Republic","Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Falkland Islands (Malvinas)", "Faroe Islands", "Fiji", "Finland", "France", "French Guiana", "French Polynesia", "French Southern Territories", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard Island and McDonald Islands", "Holy See (Vatican City State)", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran, Islamic Republic of", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Japan", "Jersey", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Korea, Democratic People's Republic of", "Korea, Republic of", "Kuwait", "Kyrgyzstan", "Lao People's Democratic Republic", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libyan Arab Jamahiriya", "Liechtenstein", "Lithuania", "Luxembourg", "Macao", "Macedonia, the former Yugoslav Republic of", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mexico", "Micronesia, Federated States of", "Moldova, Republic of", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "Netherlands Antilles", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "Northern Mariana Islands", "Norway", "Oman", "Pakistan", "Palau", "Palestinian Territory, Occupied", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Pitcairn", "Poland", "Portugal", "Puerto Rico", "Qatar", "Reunion  Réunion", "Romania", "Russian Federation", "Rwanda", "Saint Barthélemy", "Saint Helena", "Saint Kitts and Nevis", "Saint Lucia", "Saint Martin (French part)", "Saint Pierre and Miquelon", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia and the South Sandwich Islands", "Spain", "Sri Lanka", "Sudan", "Suriname", "Svalbard and Jan Mayen", "Swaziland", "Sweden", "Switzerland", "Syrian Arab Republic", "Taiwan, Province of China", "Tajikistan", "Tanzania, United Republic of", "Thailand", "Timor-Leste", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "United States Minor Outlying, Islands", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela, Bolivarian Republic of", "Viet Nam", "Virgin Islands, British", "Virgin Islands, U.S.", "Wallis and Futuna", "Western Sahara", "Yemen", "Zambia","Zimbabwe"], :prompt => 'Country*'  %>
+      </li>
+      <li class="form_field"><%= f.text_field :airport_code, :class => "new_field", :placeholder => "Airport code" %></li>
+      <li class="form_field"><%= f.text_field :nearest_airport, :class => "new_field", :placeholder => "Airport name" %></li>
     </ul>
 
-    <ul>
-      <li class="form_label">Aircraft location</li>
-      <li class="new_form_aircraft_location">
-        <span class="new_form_dropdown_list">
-          <%= f.select :country, ["Afghanistan", "Aland Islands", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia, Plurinational State of", "Bosnia and Herzegovina", "Botswana", "Bouvet Island", "Brazil", "British Indian Ocean Territory", "Brunei Darussalam", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Cocos (Keeling) Islands", "Colombia", "Comoros", "Congo", "Congo, the Democratic Republic of the", "Cook Islands", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Cyprus","Czech Republic","Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Falkland Islands (Malvinas)", "Faroe Islands", "Fiji", "Finland", "France", "French Guiana", "French Polynesia", "French Southern Territories", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard Island and McDonald Islands", "Holy See (Vatican City State)", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran, Islamic Republic of", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Japan", "Jersey", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Korea, Democratic People's Republic of", "Korea, Republic of", "Kuwait", "Kyrgyzstan", "Lao People's Democratic Republic", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libyan Arab Jamahiriya", "Liechtenstein", "Lithuania", "Luxembourg", "Macao", "Macedonia, the former Yugoslav Republic of", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mexico", "Micronesia, Federated States of", "Moldova, Republic of", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "Netherlands Antilles", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "Northern Mariana Islands", "Norway", "Oman", "Pakistan", "Palau", "Palestinian Territory, Occupied", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Pitcairn", "Poland", "Portugal", "Puerto Rico", "Qatar", "Reunion  Réunion", "Romania", "Russian Federation", "Rwanda", "Saint Barthélemy", "Saint Helena", "Saint Kitts and Nevis", "Saint Lucia", "Saint Martin (French part)", "Saint Pierre and Miquelon", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia and the South Sandwich Islands", "Spain", "Sri Lanka", "Sudan", "Suriname", "Svalbard and Jan Mayen", "Swaziland", "Sweden", "Switzerland", "Syrian Arab Republic", "Taiwan, Province of China", "Tajikistan", "Tanzania, United Republic of", "Thailand", "Timor-Leste", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "United States Minor Outlying, Islands", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela, Bolivarian Republic of", "Viet Nam", "Virgin Islands, British", "Virgin Islands, U.S.", "Wallis and Futuna", "Western Sahara", "Yemen", "Zambia","Zimbabwe"], :prompt => 'Country'  %>
-        </span>
-          <%= f.text_field :city, :class => "new_form_city", :placeholder => "City" %>
-          <%= f.text_field :nearest_airport, :class => "new_form_nearest_airport", :placeholder => "Airport name" %>
-          <%= f.text_field :airport_code, :class => "new_form_airport_code", :placeholder => "Airport code" %>
+    <!--<ul class="form">
+      <li class="form_label">
+        Aircraft details
       </li>
-    </ul>
 
-    <ul>
-        <li class="form_label">Aircraft details</li>
-        <li class="new_form_aircraft_details">
-          <%= f.text_field :serial_number, :class => "new_form_serial_number", :placeholder => "Serial number" %>
-          <%= f.text_field :registration_number, :class => "new_form_registration_number", :placeholder => "Registration number" %>
-          <span class="new_form_dropdown_list new_form_built_year">
-            <%= f.select :year, options_for_select((Date.today.year-100..Date.today.year+1).step(1).reverse_each), :prompt => 'Built year' %>
-          </span>
-          <%= f.text_field :aircraft_hours, :class => "new_form_aircraft_hours", :placeholder => "Aircraft hours" %>
-          <%= f.text_field :landings, :class => "new_form_landings", :placeholder => "Landings" %>
-          <%= f.text_field :number_of_passengers, :class => "new_form_passengers", :placeholder => "Passengers" %>
+      <li class="form_field four_columns">
+        <%= f.text_field :aircraft_hours, :class => "new_field", :placeholder => "Aircraft hours" %>
+      </li>
+
+      <li class="form_field four_columns">
+        <%= f.text_field :landings, :class => "new_field", :placeholder => "Nr. of landings" %>
+      </li>
+
+      <li class="form_field four_columns">
+        <%= f.text_field :number_of_passengers, :class => "new_field", :placeholder => "Nr. of passengers" %>
+      </li>
+
+      <li class="form_field select_field four_columns">
+        <%= f.select :year, options_for_select((Date.today.year-100..Date.today.year+1).step(1).reverse_each), :prompt => 'Built year' %>
+      </li>
+
+      <li class="form_field">
+        <%= f.text_field :serial_number, :class => "new_field", :placeholder => "Serial number" %>
+      </li>
+
+      <li class="form_field">
+        <%= f.text_field :registration_number, :class => "new_field", :placeholder => "Registration number" %>
+      </li>
+    </ul>-->
+
+    <!--<ul class="form">
+        <li class="form_label">
+          Last inspection
         </li>
-    </ul>
-
-    <ul>
-        <li class="form_label">Last inspection</li>
-        <li><%= f.date_select :last_inspection, {:order => [:day, :month, :year], start_year: Date.today.year, end_year: Date.today.year-100} %>
+        <li class="form field">
+          <%= f.date_select :last_inspection, {:order => [:day, :month, :year], start_year: Date.today.year, end_year: Date.today.year-100} %>
         </li>
-    </ul>
+    </ul>-->
   </div>
 </div>

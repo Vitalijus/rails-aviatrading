@@ -1,7 +1,7 @@
 <div id="advert_container">
   <%= render 'adverts/partials/index_header' %>
   <%= render 'adverts/partials/landing_banner' %>
-  <%= notice %>
+  <div id="notice"><%= notice %></div>
   <div id="masonry-container" class="centered clearfix">
 
   <% @adverts.each do |advert| %>

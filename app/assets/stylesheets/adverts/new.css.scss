@@ -1,41 +1,40 @@
 /* NEW FORM ADVERT NAV*/
 
 .new_advert_form_wrapper {
-	width: 100%;
+	margin: 20px 20px 60px 20px;
 	height: 100%;
 	overflow: hidden;
-	border: 0px solid red;
 }
 
+/* JS navigation */
+
 .new_advert_nav {
-	width: 100%;
-	border: 0px solid green;
+	max-width: 960px;
+	margin: 0 auto;
 }
 
 .new_advert_nav ul {
-	width: 960px;
-	margin: auto;
-	margin-top: 20px;
+	width: 100%;
+	height: 65px;
 	background-color: #F6F7F8;
 	border-top: 1px solid #DFE0E4;
 	border-left: 1px solid #DFE0E4;
 	border-right: 1px solid #DFE0E4;
+	display: table;
 	position: relative;
 }
 
 .new_advert_nav li {
-	width: 25%;
-	height: 60px;
-	line-height: 60px;
-	display: inline-block;
-	margin-left: -4px;
+	width: 20%;
+	height: 100%;
+	display: table-cell;
+	vertical-align: middle;
 	padding: 0 20px 0 20px;
 	text-align: center;
-	font-size: 15px;
+	font-size: 14px;
 	font-weight: bold;
 	font-family: "Open Sans", helvetica, arial;
 	text-transform: uppercase;
-	border: 0px solid #DFE0E4;
 }
 
 .new_advert_nav li a {
@@ -50,253 +49,18 @@ li.active a, li.active a:hover {
     color: #F04F54;
 }
 
-/*-------------------*/
-
-/* advert new form */
-
-.new_form_wrapper {
-	width: 960px;
-	margin: 0 auto;
-	border: 0px solid red;
-}
-
-.new_form_wrapper ul {
-	padding: 20px 0 20px 0 ;
-	border-bottom: 1px solid #F2F2F4;
-}
-
-.new_form_wrapper li {
-	display: inline-block;
-}
-
-.new_form_wrapper {
-    display:none;
-}
- 
-.new_form_wrapper.active {
-    display:block;
-}
-
-/* helpers */
-.new_form_separator_helper {
-	height: 20px;
-}
-
-.new_form_border_helper {
-	background-color: #fff;
-	padding: 0 20px 0px 20px;
-	border-left: 1px solid #DFE0E4;
-	border-right: 1px solid #DFE0E4;
-	border-top: 1px solid #DFE0E4;
-}
-/*--------*/
-
-.new_form_wrapper_header {
-	font-family: 'PT Sans', sans-serif;
-	font-size: 18px;
-	padding: 20px 0 15px 0;
-	text-transform: uppercase;
-	font-weight: bold;
-	background-color: #fff;
-	border-bottom: 1px solid #f2f2f4;
-}
-
-.form_label {
-	width: 30%;
-	font-family: 'PT Sans', sans-serif;
-	font-size: 14px;
-	font-weight: bold;
-	text-align: left;
-	float: left;
-	padding-right: 20px;
-	vertical-align: middle;
-	border: 0px solid green;
-}
-
-.new_form_wrapper .form_label_small {
-	font-family: "Open Sans", helvetica, arial;
-	font-size: 12px;
-	font-weight: normal;
-	border: 0px solid red;
-}
-
-.required_fields {
-	color: #F37A7C;
-	font-size: 16px;
-}
-
-.new_form_make_model,
-.new_form_aircraft_details,
-.new_form_type_usage,
-.new_form_aircraft_location,
-.new_form_propeller,
-.new_form_contact_person {
-	width: 70%;
-	border: 0px solid red;
-}
-
-.new_form_manufacturer,
-.new_form_model,
-.new_form_nearest_airport,
-.new_form_airport_code,
-.new_form_serial_number,
-.new_form_registration_number,
-.new_form_aircraft_hours,
-.new_form_landings,
-.new_form_passengers,
-.new_form_city,
-.new_form_engines_number,
-.new_form_engines_make,
-.new_form_engines_model,
-.new_form_engine_hours,
-.new_form_tbo,
-.new_form_engine_power,
-.new_form_number_of_propellers,
-.new_form_propeller_hours,
-.new_form_propeller_make,
-.new_form_propeller_model,
-.new_form_engine_notes,
-.new_form_name,
-.new_form_surname,
-.new_form_email,
-.new_form_phone,
-.new_form_price {
-	display: inline-block;
-	padding: 8px;
-	margin-right: -4px;
-	font-family: "Open Sans", helvetica, arial;
-	font-size: 12px;
-	border: 1px solid #DFE0E4;
-}
-
-.new_form_engine_notes {
-	width: 644px;
-	height: 125px;
-}
-
-.new_form_manufacturer,
-.new_form_model,
-.new_form_nearest_airport,
-.new_form_airport_code,
-.new_form_serial_number,
-.new_form_registration_number,
-.new_form_city,
-.new_form_engines_number,
-.new_form_engines_make,
-.new_form_engines_model,
-.new_form_number_of_propellers,
-.new_form_propeller_hours,
-.new_form_propeller_make,
-.new_form_propeller_model,
-.new_form_name,
-.new_form_surname,
-.new_form_email,
-.new_form_phone,
-.new_form_price  {
-	width: 49.4%;
-}
-
-.new_form_aircraft_hours,
-.new_form_landings,
-.new_form_passengers {
-	width: 24%;
-}
-
-.new_form_engine_hours,
-.new_form_tbo,
-.new_form_engine_power {
-	width: 32.4%;
-}
-
-.new_form_manufacturer,
-.new_form_nearest_airport,
-.new_form_serial_number,
-.new_form_aircraft_hours,
-.new_form_landings,
-.new_form_engines_number,
-.new_form_engines_make,
-.new_form_engine_hours,
-.new_form_tbo,
-.new_form_number_of_propellers,
-.new_form_propeller_make,
-.new_form_name,
-.new_form_email {
-	margin-right: 6px;
-}
-
-.new_form_serial_number,
-.new_form_registration_number,
-.new_form_city,
-.new_form_engines_number,
-.new_form_engines_make,
-.new_form_number_of_propellers,
-.new_form_name,
-.new_form_surname {
-	margin-bottom: 10px;
-}
-
-/*------------------------*/
-
-/* fields length */
-
-.new_form_wrapper .advert_aircraft_hours_field {
-	width: 115px;
-	border: 0px solid red;
-}
-
-.new_form_wrapper .advert_landings_field {
-	width: 115px;
-	border: 0px solid red;
-}
-
-.new_form_wrapper .advert_number_of_passengers_field {
-	width: 115px;
-	border: 0px solid red;
-}
-
-.new_form_wrapper .advert_email_field {
-	width: 300px;
-	border: 0px solid red;
-}
-
-.new_form_wrapper .advert_phone_field {
-	width: 170px;
-	border: 0px solid red;
-}
-
-.avionics_text_field {
-	width: 484px;
-	padding: 10px;
-	height: 100px;
-	color: #000000;
-	font-size: 15px;
-	font-family: 'PT Sans Narrow', sans-serif;
-	border: 1px solid #cecfc0;
-}
-
-#new_advert_submit_wrapper {
-	width: 960px;
-	margin: 0 auto;
-	overflow: hidden;
-	margin-bottom: 20px;
-	background-color: #fff;
-	border-bottom: 1px solid #DFE0E4;
-	border-left: 1px solid #DFE0E4;
-	border-right: 1px solid #DFE0E4;
-}
-
 .new_advert_submit_button {
-	width: 160px;
+	width: 100%;
 	height: 40px;
+	padding-left: 20px;
 	color: #fff;
-	margin: 20px;
-	float: right;
 	cursor: pointer;
 	background-color: #26AE5A;
 	font-family: 'PT Sans', sans-serif;
 	font-weight: bold;
 	font-size: 14px;
 	border: none;
+	border-bottom: 2px solid #1e8c48;
 
 	-webkit-transition: background-color 150ms linear;
   	-moz-transition: background-color 150ms linear;
@@ -313,7 +77,142 @@ li.active a, li.active a:hover {
 	background-color: #229c51;
 }
 
-/*------------------------*/
+.sub_button {
+	position: relative;
+}
+
+.submit_button_icon {
+	position: absolute;
+	top: 10px;
+	left: 22px;
+}
+
+/*-------------------*/
+
+/* NEW ADVERT FORM */
+
+.new_form_wrapper {
+	max-width: 960px;
+	margin: 0 auto;
+	background-color: #fff;
+	padding: 0 20px 20px 20px;
+	border-left: 1px solid #DFE0E4;
+	border-right: 1px solid #DFE0E4;
+	border-top: 1px solid #DFE0E4;
+}
+
+.new_form_wrapper li {
+	display: inline-block;
+}
+
+.new_form_wrapper {
+    display:none;
+}
+ 
+.new_form_wrapper.active {
+    display:block;
+}
+
+ul.form {
+	overflow: hidden;
+	margin-top: 20px;
+	border-bottom: 1px solid #F2F2F4;
+}
+
+li.form_field {
+	width: 37.8%;
+	margin: 0 0 2% 2%;
+	float: right;
+}
+
+li.one_column {
+	width: 77.6%;
+}
+
+li.four_columns {
+	width: 17.9%;
+}
+
+.new_field,
+.new_field_text {
+	width: 100%;
+  	padding: 15px;
+  	font-family: 'Roboto', sans-serif;
+  	font-size: 13px;
+  	color: #777;
+  	background-color: #fff;
+  	border: 1px solid #DFE0E4;
+  	/*background-color: #fefafa;
+  	border:  1px solid #fdeded;*/
+
+  	/*-webkit-box-shadow: inset 0px 0px 2px 0px rgba(250,229,229,0.5);
+  	-moz-box-shadow: inset 0px 0px 2px 0px rgba(250,229,229,0.5);
+  	box-shadow: inset 0px 0px 2px 0px rgba(250,229,229,0.5);*/
+}
+
+.new_field_text {
+	height: 125px;
+}
+
+.select_field select {
+	width: 100%;
+    padding: 14px;
+  	font-family: 'Roboto', sans-serif;
+  	font-size: 13px;
+  	color: #777;
+  	background-color: #fff;
+  	border: 1px solid #DFE0E4;
+    cursor:pointer;
+}
+
+ul.form li.form_label {
+	width: 20%;
+	height: 100%;
+	font-family: 'PT Sans', sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: left;
+	float: left;
+	padding: 0 0 15px 0;
+	vertical-align: middle;
+	border: 0px solid red;
+}
+
+.new_form_wrapper .form_label_small {
+	font-family: "Open Sans", helvetica, arial;
+	font-size: 12px;
+	display: block;
+	font-weight: normal;
+}
+
+.required_fields {
+	color: #F37A7C;
+	font-size: 16px;
+}
+
+ul.form li.form_label.height_helper {
+	height: 220px;
+}
+
+/* media */
+
+@media (max-width: 768px) {
+
+	ul.form li {
+		width: 100% !important; /* over-ride all li styles */
+		margin: 0px 0 15px 0;
+	}
+
+	.form_label {
+		padding: 0;
+	}
+
+	ul.form li.form_label.height_helper {
+		height: auto;
+	}
+}
+
+/*-----------------*/
 
 /* new advert checkboxes */
 
@@ -322,10 +221,10 @@ li.active a, li.active a:hover {
 	font-size: 14px;
 	font-family: 'PT Sans Narrow', sans-serif;
 	overflow: hidden;
-	border: 0px solid green;
+	border: 1px solid green;
 }
 
-.new_advert_checkboxes li {
+li.eu_vat_paid {
 	margin-top: 10px;
 	float: left;
 	border: 0px solid red;
@@ -335,7 +234,7 @@ li.active a, li.active a:hover {
 	width: 210px;
 	text-align: right;
 	margin-right: 15px;
-	border: 0px solid red;
+	border: 1px solid red;
 }
 
 .new_advert_checkboxes .eu_vat_paid {
@@ -346,7 +245,7 @@ li.active a, li.active a:hover {
 
 .new_advert_checkbox {
   width: 20px;
-  border: 0px solid red;
+  border: 1px solid red;
   position: relative;
 }
 
@@ -537,10 +436,9 @@ li.active a, li.active a:hover {
 .bar_wrapper {
 	position: relative;
 	overflow: hidden;
-	width: 697px;
+	max-width: 697px;
 	height: 100%;
 	padding: 0 20px 0 0px;
-	border: 0px solid red;
 }
 
 .full_bar {
@@ -575,19 +473,24 @@ li.active a, li.active a:hover {
 }
 
 .uploaded_image ul {
-	text-align: center;
-	margin-top: 10px;
+	width: 102%;
+	margin-left: -2%; /* should match li left margin */
+	margin-top: 20px;
 	border: 0px solid green;
 }
 
 .uploaded_image li {
 	position: relative;
-	width: 252px;
-	height: 137px;
+	width: 23%;
+	height: 122px;
+	background-color: #dbdbdb;
 	display: inline-block;
-	margin: 0 10px 20px 6px;
-	background-color: #fff;
+	margin: 0 0 2% 2%;
 	border: 1px solid #e8e9ec;
+
+	/*-moz-box-shadow: 0 0 3px #999;
+	-webkit-box-shadow: 0 0 3px #999;
+	box-shadow: 0 0 2px #999;*/
 }
 
 .delete_image {
@@ -671,3 +574,14 @@ label.upload_image input[type="file"] {
 }
 
 /*----------------------*/
+
+/* media */
+
+@media (max-width: 768px) {
+
+	.uploaded_image li {
+		width: 48%;
+	}
+}
+
+/*---------------------*/

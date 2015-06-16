@@ -1,0 +1,63 @@
+ <div class="email_seller_wrapper">
+ 	 <div class="email_seller_box">
+ 	 	<div class="seller_details">
+	 	 	<div class="email_seller_logo">
+		      <span class="icon-propeller-big"></span>
+		    </div>
+ 	 		Email <%= @email_seller.advert.name %>
+ 	 	</div>
+ 	 		
+ 	 	<div class="seller_details_small">
+ 	 		For sale <%= @email_seller.advert.make %> <%= @email_seller.advert.model %>
+ 	 	</div>
+
+ 	 	<div class="seller_form">
+			<%= form_for([@email_seller.advert, @email_seller]) do |f| %>
+			  <% if @email_seller.errors.any? %>
+			    <div id="error_explanation">
+			      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+			      <ul>
+			      <% @email_seller.errors.full_messages.each do |msg| %>
+			        <li><%= msg %></li>
+			      <% end %>
+			      </ul>
+			    </div>
+			  <% end %>
+
+			  <div class="seller_field">
+			    <%= f.label :email, "Email*" %>
+			    <%= f.email_field :email, :class => "new_contact_field" %>
+			  </div>
+
+			  <div class="seller_field">
+			    <%= f.label :name, "Name*" %>
+			    <%= f.text_field :name, :class => "new_contact_field" %> 
+			  </div>
+
+			  <div class="seller_field">
+			    <%= f.label :phone, "Phone number" %>
+			    <%= f.text_field :phone, :class => "new_contact_field" %>
+			  </div>
+
+			  <div class="seller_field">
+			    <%= f.label :company %>
+			    <%= f.text_field :company, :class => "new_contact_field" %>
+			  </div>
+
+			  <!--<div class="seller_field">
+			    <%= f.label :country %>
+			    <%= f.text_field :country, :class => "new_contact_field" %>
+			  </div>-->
+
+			  <div class="seller_field">
+			    <%= f.label :message, "Your Message*" %>
+			    <%= f.text_area :message, :class => "contact_message_field" %>
+			  </div>
+			  <div class="actions">
+			    <%= f.submit "Send Message", :class => "new_contact_create_button" %>
+			  </div>
+			<% end %>
+		</div>
+	</div>
+</div>

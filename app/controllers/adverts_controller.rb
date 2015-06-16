@@ -48,6 +48,7 @@ class AdvertsController < ApplicationController
   # GET /adverts/1
   # GET /adverts/1.json
   def show
+    @adverts = Advert.all
   end
 
   # GET /adverts/new
@@ -140,16 +141,17 @@ class AdvertsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def advert_params
-      params.require(:advert).permit(:title, :name, :surname, :email, :advert_image,
+      params.require(:advert).permit(:title, :name, :email, :advert_image,
                                      :year, :price, :currency, :make, :model, :aircraft_type,
                                      :country, :city, :engine_type, :number_of_engines, :engine_make,
                                      :engine_model, :engine_hours, :engine_notes, :tbo, :engine_power,
                                      :number_of_propellers, :propeller_make, :propeller_model, 
                                      :propeller_hours, :serial_number, :registration_number,
                                      :aircraft_hours, :landings, :nearest_airport, :aircraft_status,
-                                     :last_inspection, :eu_vat, :price_on_request, :airport_code,
-                                     :number_of_passengers, :aircraft_usage, :phone, :user_id, 
-                                     :document, :advert_duration, :show_advert, photos_attributes: [:id, :image,
+                                     :last_inspection, :price_on_request, :airport_code,
+                                     :number_of_passengers, :aircraft_usage, :phone, :user_id,
+                                     :show_advert, :avionics, :interior, :exterior, :add_info,
+                                     :engine_power_unit, photos_attributes: [:id, :image, 
                                      :advert_id, :public_token])
     end
 end

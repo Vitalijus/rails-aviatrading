@@ -17,7 +17,9 @@ School::Application.routes.draw do
   end
   resources :users, only: [:show]
 
-  resources :adverts
+  resources :adverts do
+    resources :email_sellers, only: [:create, :new]
+  end
   resources :photos, only: [:destroy]
   resources :contacts, only: [:create, :new]
   

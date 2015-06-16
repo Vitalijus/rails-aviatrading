@@ -1,6 +1,6 @@
 /* ADVERT SHOW */
 
-.slide { 
+/*.slide { 
     padding: 10px;
     background: #FFF;
     margin: 0 auto;
@@ -9,12 +9,17 @@
 
 .slide img {
 	margin: auto;
+}*/
+
+.advert_wrapper {
+	margin: 20px;
+	border: 0px solid red;
 }
 
-.advert_show_wrapper {
-	width: 960px;
-	margin: 20px auto;
-	margin-bottom: 20px;
+.advert {
+	max-width: 960px;
+	margin: 0 auto;
+	margin-bottom: 60px;
 	background-color: #fff;
 	overflow: hidden;
 	border: 1px solid #DFE0E4;
@@ -24,156 +29,226 @@
 	border-radius: 4px;
 }
 
-/* image */
-.advert_show_image {
-	border: 0px solid red;
-	height: 350px;
-	position: relative;
+/* DISPLAY AN IMAGE */
+
+.advert_image {
+	max-width: 100%;
+	max-height: 350px;
 }
 
-.advert_show_image img {
+.advert_image img {
+	max-width: 100%;
+	height: auto;
+	width: auto\9; /* ie8 */
+}
+
+/*------------------*/
+
+/* EMAIL SELLER */
+
+ul.adv_display li.seller {
+	width: 30%;
+	height: 100%;
+	vertical-align: top;
+	margin-right: -4px;
+	margin-top: -39px;
+	display: inline-block;
+	padding: 0 10px 0 30px;
+	border: 0px solid yellow;
+}
+
+ul.seller_display {
 	width: 100%;
-	height: 350px;
-	border: 0px solid blue;
-}
-
-.advert_show_image_detail {
-	position: absolute;
-	width: 230px;
-	bottom: -113px;
-	left: 30px;
-}
-
-.advert_show_image_detail ul {
-	border: 0px solid red;
 	color: #565A5C;
 	font-size: 12px;
 }
 
-.advert_show_image_detail li {
-	border-left: 1px solid #DFE0E4;
-	border-right: 1px solid #DFE0E4;
-	border-bottom: 1px solid #DFE0E4;
-	height: 38px;
-	line-height: 38px;
+ul.seller_display li {
+	border-left: 1px solid #dfe3e3;
+	border-right: 1px solid #dfe3e3;
+	border-bottom: 1px solid #dfe3e3;
 	text-align: center;
-	padding: 0 20px 0 20px;
-	font-family: 'Roboto', sans-serif;
-	background-color: #F6F7F8;
+	background-color: #fff;
 }
 
-.advert_show_image_detail .advert_show_image_price {
+ul.seller_display li:nth-child(0n+2) {
+    border-bottom: none;
+}
+
+ul.seller_display li.aircraft_price {
+	width: 100%;
 	font-family: 'Roboto', sans-serif;
-	font-size: 16px;
-	text-align: center;
-	height: 38px;
-	line-height: 38px;
+	font-size: 15px;
+	text-align: left;
+	padding: 10px 20px 10px 20px;
 	color: #fff;
 	background-color:rgba(255,0,0,0.6);
 	border: 0px solid red;
 }
-/*------------------*/
 
-/* header */
+ul.seller_display li.seller_contact {
+	padding: 20px 20px 0 20px;
+}
 
-.advert_show_header {
+.seller_name a {
+	font-size: 15px;
+	font-family: 'PT Sans', sans-serif;
+	color: #336f8c;
+	margin-bottom: 7px;
+
+	-webkit-transition: color 150ms linear;
+  	-moz-transition: color 150ms linear;
+  	-o-transition: color 150ms linear;
+  	-ms-transition: color 150ms linear;
+  	transition: color 150ms linear;
+}
+
+.seller_name a:hover {
+	color: #5b8ba3;
+}
+
+.seller_phone {
+	margin-top: 7px;
+	display: block;
+	font-size: 14px;
+	color: #444;
+	font-family: 'Roboto', sans-serif;
+}
+
+ul.seller_display li.email_seller {
+	padding: 20px;
+}
+
+ul.seller_display li.email_seller .email_button {
+	font-size: 14px;
+	font-family: 'PT Sans', sans-serif;
+	font-weight: bold;
+	color: #fff;
+	display: block;
+	padding: 10px 20px 10px 20px;
+	background-color: #F04F54;
+	cursor: pointer;
+	border-bottom: 2px solid #d8474b;
+
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+
+	-webkit-transition: background-color 150ms linear;
+  	-moz-transition: background-color 150ms linear;
+  	-o-transition: background-color 150ms linear;
+  	-ms-transition: background-color 150ms linear;
+  	transition: background-color 150ms linear;
+}
+
+ul.seller_display li.email_seller .email_button:hover {
+	background-color: #F16164;
+}
+
+/* --------------------*/
+
+/* DISPLAY */
+
+ul.adv_display {
 	width: 100%;
-	overflow: hidden;
-	border: 0px solid red;
+	background-color: #F6F7F8;
+	border-bottom: 1px solid #DFE0E4;
 }
 
-.advert_show_header_title_wrapper {
-	width: 670px;
-	float: right;
-	border: 0px solid red;
-}
-
-/*.advert_show_header_media {
-	width: 20%;
-	float: right;
-	border: 0px solid green;
-}
-
-.advert_show_header_media li {
-	margin-top: 20px;
-	height: 25px;
+ul.adv_display li.aircraft {
+	width: 70%;
+	height: 100%;
+	vertical-align: top;
+	margin-right: -4px;
 	display: inline-block;
-	width: 28px;
-	text-align: center;
-	margin-right:  8px;
-	border: 0px solid #ECECEC;
-}*/
+}
 
-.advert_show_header_title {
-	width: 80%;
-	float: left;
+.aircraft_title {
 	color: #565A5C;
 	font-family: 'PT Sans', sans-serif;
 	font-weight: bold;
 	font-size: 25px;
-	padding: 17px 0px 0 0px;
-	border: 0px solid green;
+	padding: 17px 20px 0 20px;
 }
 
-.advert_show_header_location {
+.aircraft_location {
+	color: #82888A;
+	font-family: 'PT Sans', sans-serif;
+	font-weight: bold;
+	padding: 0 20px 0 20px;
+	font-size: 12px;
+}
+
+ul.aircraft_details {
 	color: #82888A;
 	font-family: 'PT Sans', sans-serif;
 	font-weight: bold;
 	font-size: 12px;
-	border: 0px solid green;
+	padding: 20px 0 20px 20px;
+	border: 0px solid red;
 }
 
-.advert_show_header_details {
-	width: 670px;
-	float: right;
-	color: #82888A;
-	font-family: 'PT Sans', sans-serif;
-	font-weight: bold;
-	font-size: 12px;
-	padding: 20px 20px 20px 0px;
-	display: table;
-	border: 0px solid green;
-}
-
-.advert_show_header_details ul {
-	border: 0px solid green;
+ul.aircraft_details li {
+	width: 20%;
+	display: inline-block;
 	margin-right: -4px;
-	display: table-cell;
-}
-
-.advert_show_header_details li {
 	text-align: center;
 }
 
-.advert_show_header_separator {
+.icon_title {
+	display: block;
+}
+
+.advert_separator_helper {
 	height: 15px;
 	background-color: #F04F54;
 }
 
 /*----------------------*/
 
-/* advert specs*/
+/* MAIN INFO*/
 
-.advert_specs_wrapper {
+.advert_main_info_wrapper {
 	width: 100%;
-	padding: 0 20px 0 20px;
+	background-color: #fff;
+	padding: 10px 30px 10px 30px;
 	border: 0px solid red;
 }
 
-.advert_specs {
-    overflow: hidden;
-    padding: 20px 0 15px 0;
-    border-bottom: 1px solid #dbdbdb;
+ul.advert_main_info {
+	padding: 20px 0 20px 0;
+	border-top: 1px solid #edefef;
 }
 
-.advert_specs .advert_specs_title_column {
-	width: 25%;
+ul.advert_main_info.engine_note {
+	padding-top: 0;
+	border: none;
+}
+
+ul.advert_main_info li {
+	width: 40%;
+	display: inline-block;
+	vertical-align: top;
+	margin-right: -4px;
+	font-family: 'PT Sans', sans-serif;
+	font-size: 13px;
+}
+
+ul.advert_main_info:first-child {
+    border-top: none;
+}
+
+ul.advert_main_info li.info_label {
+	width: 20%;
 	font-family: 'PT Sans', sans-serif;
     font-weight: bold;
-    color: #666;
     font-size: 13px;
-    float: left;
-    border: 0px solid blue;
+    text-transform: uppercase;
+	border: 0px solid green;
+}
+
+ul.advert_main_info li.description {
+	width: 80%;
 }
 
 .icon-JetAircrafttype-200px:before,
@@ -185,48 +260,108 @@
     content: "\e600";
 }
 
-.advert_specs .advert_specs_content_column1 {
-	width: 37.5%;
-	font-family: 'PT Sans', sans-serif;
-	font-size: 13px;
-	background-color: #fff;
-	float: left;
-	border: 0px solid green;
+/*------------------------*/
+
+/* ORGANISATION */
+
+.organization_wrapper {
+	width: 100%;
+	background-color: #F6F7F8;
+	padding-bottom: 30px;
+	border-top: 1px solid #DFE0E4;
 }
 
-.advert_specs .advert_specs_content_column2 {
-	width: 37.5%;
+.organization_block {
+	font-weight: bold;
+	font-size: 18px;
 	font-family: 'PT Sans', sans-serif;
-	font-size: 13px;
-	background-color: #fff;
-	float: left;
-	border: 0px solid green;
+	padding: 30px 30px 20px 30px;
 }
 
-.advert_text_info {
-	width: 685px;
-	float: right;
-	font-family: 'PT Sans', sans-serif;
-	font-size: 13px;
+ul.organisation {
+	padding: 0 30px 0 30px;
 	border: 0px solid red;
 }
 
-.engine {
-	padding-top: 15px;
-}
-
-/*------------------------*/
-
-/* footer */
-
-.advert_show_footer {
-	width: 100%;
-	height: 70px;
-	line-height: 70px;
+ul.organisation li {
+	width: 40%;
 	font-size: 14px;
-	text-align: center;
+	display: inline-block;
+	padding-left: 20px;
+	margin-right: -4px;
+	vertical-align: top;
 	font-family: 'PT Sans', sans-serif;
-	padding: 0 30px 0 30px;
-	border-top: 0px solid #DFE0E4;
+	border: 0px solid red;
 }
+
+ul.organisation li.organisation_contact {
+	width: 30%;
+}
+
+ul.organisation li.organisation_logo {
+	max-width: 30%;
+	max-height: 300px;
+	padding: 0;
+}
+
+.advert_image {
+	max-width: 100%;
+	max-height: 350px;
+}
+
+.advert_image img {
+	max-width: 100%;
+	height: auto;
+	width: auto\9; /* ie8 */
+}
+
+ul.organisation li.organisation_logo img {
+	max-width: 100%;
+	height: auto;
+	width: auto\9; /* ie8 */
+}
+
 /*-------------------------*/
+
+/* SIMILAR LISTING */
+
+.similar_ads {
+	border: 0px solid red;
+	padding-bottom: 30px;
+}
+
+/* --------------------*/
+
+/* MEDIA */
+
+@media (max-width: 768px) {
+
+	ul.adv_display li,
+	ul.advert_main_info li {
+		width: 100% !important; /* over-ride all li styles */
+	}
+
+	ul.adv_display li.seller, {
+		padding: 0 20px 0 20px;
+	}
+
+	ul.advert_main_info li.description {
+		margin-bottom: 0px;
+	}
+
+	ul.organisation li.organisation_contact,
+	ul.organisation li.organisation_about {
+		width: 100% !important; /* over-ride all li styles */
+		padding-left: 0px;
+		margin-bottom: 20px;
+	}
+
+	ul.organisation li.organisation_logo {
+		width: 100% !important; /* over-ride all li styles */
+		max-width: 100%;
+		max-height: 300px;
+		margin-bottom: 20px;
+	}
+}
+
+/*---------------------*/

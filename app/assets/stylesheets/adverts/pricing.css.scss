@@ -80,16 +80,21 @@ ul.micro_benefits li {
 	border-radius: 4px;
 }
 
-.plan_wrapper {
-	overflow: hidden;
-	margin: 0 40px 0 40px;
-	
+ul.plan_wrapper {
+	margin-left: -2.5%; /* should match li left margin */
+	padding: 0 4% 20px 4%;
+}
+
+ul.plan_wrapper li {
+	width: 47.2%;
+	margin: 0 0 2.5% 2.5%;
+	display: inline-block;
+	vertical-align: top;
 }
 
 .plan_premium {
-	width: 420px;
+	width: 100%;
 	padding-top: 20px;
-	float: right;
 	overflow: hidden;
 	background-color: #fdfdfd;
 	border-bottom: 2px solid #41B4D6;
@@ -100,9 +105,8 @@ ul.micro_benefits li {
 }
 
 .plan_basic {
-	width: 420px;
+	width: 100%;
 	padding-top: 20px;
-	float: left;
 	overflow: hidden;
 	background-color: #fdfdfd;
 	border-bottom: 2px solid #5ECF7F;
@@ -150,7 +154,6 @@ ul.micro_benefits li {
 	text-align: center;
 	color: #3f5672;
 	font-family: "Open Sans", helvetica, arial;
-	position: relative;
 }
 
 .plan_currency {
@@ -160,23 +163,25 @@ ul.micro_benefits li {
 
 .plan_amount {
 	font-size: 55px;
-}
-
-.plan_month {
-	font-size: 18px;
+	position: relative;
 }
 
 .plan_old_price_basic,
 .plan_old_price_premium {
 	position: absolute;
 	top: 14px;
-	right: 68px;
+	right: -63px;
 	font-size: 18px;
 	text-decoration: line-through;
 }
 
 .plan_old_price_basic {
-	right: 87px;
+	right: -58px;
+}
+
+
+.plan_month {
+	font-size: 18px;
 }
 
 /*.plan_advantages ul {
@@ -226,30 +231,23 @@ ul.micro_benefits li {
 	background-color: #F05053;
 }
 
-
-.plan_benefits ul {
+.plan_benefits {
+	width: 100%;
+	height: 60px;
+	line-height: 60px;
 	background-color: #fff;
 	background-color: #F6F7F8;
-	padding: 5px 0 20px 0;
-}
-
-.plan_benefits li {
+	text-align: center;
 	font-size: 14px;
 	color: #3F5672;
 	text-transform: uppercase;
-	text-align: center;
 	font-family: 'PT Sans', sans-serif;
-	padding: 20px 20px 0px 20px;
-}
-
-.plan_benefits li:last-child { 
-	border-bottom:0px; 
 }
 
 .reassurance_text {
 	text-align: center;
 	margin: 0 4% 0 4%;
-	padding: 40px 0 40px 0;
+	padding: 20px 0 40px 0;
 	font-family: 'PT Sans', sans-serif;
 	text-transform: uppercase;
 	font-size: 12px;
@@ -327,7 +325,7 @@ ul.q_and_a li {
 	display: inline-block;
 	font-size: 22px;
 	margin: 0 0 2.5% 2.5%;
-	padding: 40px;
+	padding: 20px;
 	vertical-align: top;
 	font-family: 'Open Sans Condensed', sans-serif;
 	background-color: #F6F7F8;
@@ -503,12 +501,14 @@ ul.repeated_plans li {
  @media (max-width: 768px) {
 
 	ul.q_and_a,
-	ul.repeated_plans {
+	ul.repeated_plans,
+	ul.plan_wrapper {
 		margin-left: 0;
 	}
 
 	ul.q_and_a li,
-	ul.repeated_plans li {
+	ul.repeated_plans li,
+	ul.plan_wrapper li {
 		width: 100% !important; /* over-ride all li styles */
 		margin: 10px 0 20px 0;
 	}

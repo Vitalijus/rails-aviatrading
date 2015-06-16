@@ -1,5 +1,5 @@
 <!--<a href="#advert-image" class="open-images-link">Show inline popup2</a>-->
-
+  <%= notice %>
 <div id="advert-image" class="mfp-hide">
   <% @advert.photos.each do |photo| %>
     <div class="slide">
@@ -28,247 +28,269 @@
   });
 </script>
 
+<div class="advert_wrapper">
+  <div class="advert">
 
-<div class="advert_show_wrapper">
-  <div class="advert_show_image">
-    <% @advert.photos.first(1).each do |photo| %>
-      <%= image_tag photo.image_url(:advert_image_big) %>
-    <% end %>
-    
-    <div class="advert_show_image_detail">
-      <ul>
-        <li class="advert_show_image_price">
-          <%= @advert.currency %> <%= number_to_currency(@advert.price, precision: 0, unit: "") %>
-        </li>
-        <li>
-          <%= link_to user_path(@advert.user.id) do %> 
-            <%= @advert.name %> <%= @advert.surname %>
-          <% end %>
-        </li>
-        <li>+4925135895</li>
-        <li><%= @advert.email %></li>
-      </ul> 
+    <div class="advert_image">
+      <% @advert.photos.first(1).each do |photo| %>
+        <%= image_tag photo.image_url(:advert_image_big) %>
+      <% end %>
     </div>
-  </div>
 
-    <div class="advert_show_header">
-      <div class="advert_show_header_title_wrapper">
-        <div class="advert_show_header_title">
-          <%= @advert.year %> <%= @advert.make %> <%= @advert.model %>
+      <ul class="adv_display">
+        <li class="seller">
+          <ul class="seller_display">
+            <li class="aircraft_price">
+              <%= number_to_currency(@advert.price, precision: 0, unit: "") %> <%= @advert.currency %>
+            </li>
 
-          <div class="advert_show_header_location">
+            <li class="seller_contact">
+              <span class="seller_name">
+                <%= link_to user_path(@advert.user.id) do %> 
+                  <%= @advert.name %>
+                <% end %>
+              </span>
+
+              <span class="seller_phone">
+                <%= @advert.phone %>
+              </span>
+            </li>
+
+            <li class="email_seller">
+              <%= link_to new_advert_email_seller_path(@advert) do %>
+                <span class="email_button">
+                   Email Seller
+                </span>
+              <% end %>
+            </li>
+          </ul>
+        </li>
+
+        <li class="aircraft">
+          <div class="aircraft_title">
+            <%= @advert.year %> <%= @advert.make %> <%= @advert.model %>
+          </div>
+
+          <div class="aircraft_location">
             <%= @advert.country %>, <%= @advert.city %>
           </div>
-        </div>
 
-        <!--<div class="advert_show_header_media">
-          <ul>
-            <%= link_to @advert.document_url, :target => "_blank" do %>
-              <li><%= image_tag "document.png", width: 25 %></li>
-            <% end %>
+          <ul class="aircraft_details">
+            <li>
+              <%= aircraft_type_helper(@advert.aircraft_type, 50) %>
+              <span class="icon_title"><%= @advert.aircraft_type %></span>
+            </li>
+
+            <li>
+              <%= aircraft_usage_helper(@advert.aircraft_usage, 50) %>
+              <span class="icon_title"><%= @advert.aircraft_usage %></span>
+            </li>
+
+            <li>
+              <span class="icon-JetAircrafttype-50px"></span>
+              <span class="icon_title"><%= @advert.aircraft_hours %> aircraft hours</span>
+            </li>
+
+            <li>
+              <span class="icon-JetAircrafttype-50px2"></span>
+              <span class="icon_title"><%= @advert.landings %> landings</span>
+            </li>
+
+            <li>
+              <span class="icon-JetAircrafttype-200px3"></span>
+              <span class="icon_title"><%= @advert.number_of_passengers %> passengers</span>
+            </li>
           </ul>
-        </div>-->
-      </div>
+        </li>
+      </ul>
 
-      <div class="advert_show_header_details">
-        <ul>
-          <li><%= aircraft_type_helper(@advert.aircraft_type, 50) %></li>
-          <li><%= @advert.aircraft_type %></li>
-        </ul>
 
-        <ul>
-          <li><%= aircraft_usage_helper(@advert.aircraft_usage, 50) %></li>
-          <li><%= @advert.aircraft_usage %></li>
-        </ul> 
 
-        <ul>
-          <li><span class="icon-JetAircrafttype-50px"></span></li>
-          <li><%= @advert.aircraft_hours %> aircraft hours</li>
-        </ul>
+    <div class="advert_main_info_wrapper">
+      <ul class="advert_main_info">
+        <li class="info_label">
+          Aircraft information:
+        </li>
 
-        <ul>
-          <li><span class="icon-JetAircrafttype-50px2"></span></li>
-          <li><%= @advert.landings %> landings</li>
-        </ul>
+        <li>
+          <table>
+            <tr>
+              <td><b>Serial number:</b></td>
+              <td><%= @advert.serial_number %></td>
+            </tr>
 
-        <ul>
-          <li><span class="icon-JetAircrafttype-200px3"></span></li>
-          <li><%= @advert.number_of_passengers %> passengers</li>
-        </ul>
-      </div>
-    </div>
+            <tr>
+              <td><b>Registration number:</b></td>
+              <td><%= @advert.registration_number %></td>
+            </tr>
+          </table>
+        </li>
 
-  <div class="advert_show_header_separator">
-    <!-- separator -->
+        <li>
+          <table>
+            <% if @advert.nearest_airport.nil? %>
+              <tr>
+                <td><b>Airport name:</b></td>
+                <td><%= @advert.nearest_airport %> <%= @advert.airport_code %></td>
+              </tr>
+            <% end %>
+
+            <% if !@advert.last_inspection.nil? %>
+              <tr>
+                <td><b>Last inspection:</b></td>
+                <td><%= @advert.last_inspection %></td>
+              </tr>
+            <% end %>
+          </table>
+        </li>
+      </ul>
+
+      <ul class="advert_main_info">
+        <li class="info_label">
+          Engine / Propeller:
+        </li>
+
+        <li>
+          <table>
+            <tr>
+              <td><b>Engine manufacturer:</b></td>
+              <td><%= @advert.engine_make %></td>
+            </tr>
+
+            <tr>
+              <td><b>Engine model:</b></td>
+              <td><%= @advert.engine_model %></td>
+            </tr>
+
+            <tr>
+              <td><b>Engine number:</b></td>
+              <td><%= @advert.number_of_engines %></td>
+            </tr>
+
+            <tr>
+              <td><b>Engine type:</b></td>
+              <td><%= @advert.engine_type %></td>
+            </tr>
+
+            <tr>
+              <td><b>Engine hours:</b></td>
+              <td><%= @advert.engine_hours %></td>
+            </tr>
+
+            <tr>
+              <td><b>Engine TBO:</b></td>
+              <td><%= @advert.tbo %></td>
+            </tr>
+
+            <tr>
+              <td><b>Engine power:</b></td>
+              <td><%= @advert.engine_power %></td>
+            </tr>
+          </table>
+        </li>
+
+        <li>
+          <table>
+            <tr>
+              <td><b>Propeller manufacturer:</b></td>
+              <td><%= @advert.propeller_make %></td>
+            </tr>
+
+            <tr>
+              <td><b>Propeller model:</b></td>
+              <td><%= @advert.propeller_model %></td>
+            </tr>
+
+            <tr>
+              <td><b>Number of propellers:</b></td>
+              <td><%= @advert.number_of_propellers %></td>
+            </tr>
+
+            <tr>
+              <td><b>Propeller hours:</b></td>
+              <td><%= @advert.propeller_hours %></td>
+            </tr>
+          </table>
+        </li>
+      </ul>
+
+      <ul class="advert_main_info engine_note">
+        <li class="info_label">
+          <!--engine notes-->
+        </li>
+
+        <li class="description">
+          <%= @advert.engine_notes %>
+        </li>
+      </ul>
+
+      <ul class="advert_main_info">
+        <li class="info_label">
+          Avionics:
+        </li>
+
+        <li class="description">
+          <%= @advert.avionics %>
+        </li>
+      </ul>
+
+      <ul class="advert_main_info">
+        <li class="info_label">
+          Interior:
+        </li>
+
+        <li class="description">
+          <%= @advert.interior %>
+        </li>
+      </ul>
+
+      <ul class="advert_main_info">
+        <li class="info_label">
+          Exterior:
+        </li>
+
+        <li class="description">
+          <%= @advert.exterior %>
+        </li>
+      </ul>
+
+      <ul class="advert_main_info">
+        <li class="info_label">
+          Additional information:
+        </li>
+
+        <li class="description">
+          <%= @advert.add_info %>
+        </li>
+      </ul>
   </div>
 
-  <div class="advert_specs_wrapper">
-    <div class="advert_specs">
-      <div class="advert_specs_title_column">
-        <ul>
-          <li>Aircraft information</li>
-        </ul>
-      </div>
-
-      <div class="advert_specs_content_column1">
-        <table>
-          <tr>
-            <td><b>Serial number:</b></td>
-            <td><%= @advert.serial_number %></td>
-          </tr>
-
-          <tr>
-            <td><b>Registration number:</b></td>
-            <td><%= @advert.registration_number %></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="advert_specs_content_column2">
-        <table>
-          <tr>
-            <td><b>Airport name:</b></td>
-            <td><%= @advert.nearest_airport %> <%= @advert.airport_code %></td>
-          </tr>
-
-          <tr>
-            <td><b>Last inspection:</b></td>
-            <td><%= @advert.last_inspection %></td>
-          </tr>
-        </table>
-      </div>
+  <div class="organization_wrapper">
+    <div class="organization_block">
+      For sale by <%= @advert.user.organisation %>
     </div>
 
+    <ul class="organisation">
+        <li class="organisation_logo">
+          <%= image_tag @advert.user.avatar_url(:avatar_big) %>
+        </li>
 
-    <div class="advert_specs">
-      <div class="advert_specs_title_column">
-        <ul>
-          <li>Engine / Propeller</li>
-        </ul>
-      </div>
+        <li class="organisation_contact">
+          <b><%= @advert.user.organisation %><br>
+          <%= @advert.user.phone %><br>
+          <%= @advert.user.country %>, <%= @advert.user.state %>, <%= @advert.user.city %> -
+          <%= @advert.user.postal_code %></b>
+        </li>
 
-      <div class="advert_specs_content_column1">
-        <table>
-          <tr>
-            <td><b>Engine manufacturer:</b></td>
-            <td><%= @advert.engine_make %></td>
-          </tr>
-
-          <tr>
-            <td><b>Engine model:</b></td>
-            <td><%= @advert.engine_model %></td>
-          </tr>
-
-          <tr>
-            <td><b>Engine number:</b></td>
-            <td><%= @advert.number_of_engines %></td>
-          </tr>
-
-          <tr>
-            <td><b>Engine type:</b></td>
-            <td><%= @advert.engine_type %></td>
-          </tr>
-
-          <tr>
-            <td><b>Engine hours:</b></td>
-            <td><%= @advert.engine_hours %></td>
-          </tr>
-
-          <tr>
-            <td><b>Engine TBO:</b></td>
-            <td><%= @advert.tbo %></td>
-          </tr>
-
-          <tr>
-            <td><b>Engine power:</b></td>
-            <td><%= @advert.engine_power %></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="advert_specs_content_column2">
-        <table>
-          <tr>
-            <td><b>Propeller manufacturer:</b></td>
-            <td><%= @advert.propeller_make %></td>
-          </tr>
-
-          <tr>
-            <td><b>Propeller model:</b></td>
-            <td><%= @advert.propeller_model %></td>
-          </tr>
-
-          <tr>
-            <td><b>Number of propellers:</b></td>
-            <td><%= @advert.number_of_propellers %></td>
-          </tr>
-
-          <tr>
-            <td><b>Propeller hours:</b></td>
-            <td><%= @advert.propeller_hours %></td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="advert_text_info engine">
-        <%= @advert.engine_notes %>
-      </div>
-    </div>
-
-
-    <div class="advert_specs">
-      <div class="advert_specs_title_column">
-        <ul>
-          <li>Avionics</li>
-        </ul>
-      </div>
-
-      <div class="advert_text_info">
-        <%= @advert.engine_notes %>
-      </div>
-    </div>
-
-
-    <div class="advert_specs">
-      <div class="advert_specs_title_column">
-        <ul>
-          <li>Interior:</li>
-        </ul>
-      </div>
-
-      <div class="advert_text_info">
-        <%= @advert.engine_notes %>
-      </div>
-    </div>
-
-
-    <div class="advert_specs">
-      <div class="advert_specs_title_column">
-        <ul>
-          <li>Exterior:</li>
-        </ul>
-      </div>
-
-      <div class="advert_text_info">
-        <%= @advert.engine_notes %>
-      </div>
-    </div>
-
-
-    <div class="advert_specs">
-      <div class="advert_specs_title_column">
-        <ul>
-          <li>Additional information:</li>
-        </ul>
-      </div>
-
-      <div class="advert_text_info">
-        <%= @advert.engine_notes %>
-      </div>
-    </div>
- 
+        <li class="organisation_about">
+          <%= @advert.user.about %>
+        </li>
+      </ul>
   </div>
-  <div class="advert_show_footer">
-   <%= @advert.user.organisation %>   
-  </div>
+
+  <!--<div class="similar_ads">
+    <% @adverts.first(3).each do |advert| %>
+      <%= advert.make %>
+    <% end %>
+  </div>-->
 </div>

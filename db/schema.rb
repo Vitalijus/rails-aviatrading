@@ -11,12 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150425140550) do
+ActiveRecord::Schema.define(version: 20150613204258) do
 
   create_table "adverts", force: true do |t|
     t.string   "title"
     t.string   "name"
-    t.string   "surname"
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -48,16 +47,18 @@ ActiveRecord::Schema.define(version: 20150425140550) do
     t.string   "nearest_airport"
     t.string   "aircraft_status"
     t.datetime "last_inspection"
-    t.boolean  "eu_vat"
     t.boolean  "price_on_request"
     t.string   "airport_code"
     t.string   "number_of_passengers"
     t.string   "aircraft_usage"
     t.string   "phone"
     t.integer  "user_id"
-    t.string   "document"
-    t.integer  "advert_duration",      default: 0
     t.boolean  "show_advert",          default: true
+    t.text     "avionics"
+    t.text     "interior"
+    t.text     "exterior"
+    t.text     "add_info"
+    t.string   "engine_power_unit"
   end
 
   create_table "contacts", force: true do |t|
@@ -66,6 +67,18 @@ ActiveRecord::Schema.define(version: 20150425140550) do
     t.text     "message"
     t.string   "name"
     t.string   "email"
+  end
+
+  create_table "email_sellers", force: true do |t|
+    t.string   "email"
+    t.string   "name"
+    t.string   "phone"
+    t.string   "company"
+    t.string   "country"
+    t.text     "message"
+    t.integer  "advert_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "photos", force: true do |t|
@@ -102,7 +115,6 @@ ActiveRecord::Schema.define(version: 20150425140550) do
     t.string   "street"
     t.string   "city"
     t.string   "country"
-    t.integer  "telephone"
     t.string   "state"
     t.string   "postal_code"
     t.string   "cover_image"
@@ -113,6 +125,7 @@ ActiveRecord::Schema.define(version: 20150425140550) do
     t.datetime "trial_end"
     t.boolean  "active_account",            default: true
     t.boolean  "setup_billing",             default: false
+    t.string   "phone"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

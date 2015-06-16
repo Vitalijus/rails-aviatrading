@@ -1,8 +1,8 @@
 class Advert < ActiveRecord::Base
-	mount_uploader :document, DocumentUploader
 
 	belongs_to :user
 	has_many :photos, :dependent => :destroy
+	has_many :email_sellers
 
 	validate :validate_for_plan
 

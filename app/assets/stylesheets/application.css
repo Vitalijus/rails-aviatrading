@@ -76,7 +76,7 @@ header {
 
 #header_wrapper,
 #header_wrapper_dash {
-  width: 960px;
+  max-width: 960px;
   margin: auto;
   height: 60px;
   position: relative;
@@ -88,7 +88,7 @@ header {
 
 /* LOGO */
 
-a .webpage_title {
+/*a .webpage_title {
   width: 170px;
   text-align: center;
   font-family: 'PT Sans', sans-serif;
@@ -101,26 +101,19 @@ a .webpage_title {
   top: 0;
   left: 0;
   z-index: 102;
-  border: 0px solid black;
-}
+  border: 1px solid black;
+}*/
 
-.website_logo{
-	width: 40px;
-	height: 40px;
-  text-align: center;
+.website_logo {
 	position: absolute;
 	left: 0;
-  margin-left: 61px;
-  bottom: 12px;
-  z-index: 103;
-  background-color: #fff;
+  top: 7px;
+  border: 0px solid red;
 
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 100px;
+
 }
 
-.icon-propeller:before {
+/*.icon-propeller:before {
     font-size: 50px;
     color: #F05053;
     content: "\e605";
@@ -130,6 +123,23 @@ a .webpage_title {
     font-size: 50px;
     color: #F05053;
     content: "\e605";
+}*/
+
+.icon-logo:before {
+    font-size: 45px;
+    color: #F05053;
+    content: "\e602";
+
+    -webkit-transition: color 150ms linear;
+    -moz-transition: color 150ms linear;
+    -o-transition: color 150ms linear;
+    -ms-transition: color 150ms linear;
+    transition: color 150ms linear;
+}
+
+.website_logo:hover .icon-logo:before{
+    color: #ec2125;
+    content: "\e602";
 }
 
 /*-------------------------*/
@@ -204,6 +214,21 @@ a:hover .my_aircrafts_button {
   background-color: #F04F54;
   color: #fff;
 }
+
+/*--------------------*/
+
+
+/* media */
+
+@media (max-width: 1000px) {
+
+  #header_wrapper,
+  #header_wrapper_dash {
+    padding: 0 20px 0 20px;
+  }
+}
+
+/*-----------------*/
 
 
 /*.header_navigation .search_image {
@@ -301,6 +326,38 @@ a:hover .my_aircrafts_button {
 }
 
 /*-------------------------*/
+
+/* VALIDATION ERROR MESSAGE */
+
+#error_explanation li,
+#flash_error,
+#flash_notice,
+#flash_alert {
+  background-color: #FCE6E3;
+  color: #BA2513;
+  margin: 10px 0 10px 0;
+  font-size: 15px;
+  padding: 10px;
+  border: 1px solid #F2C5C2;
+
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+
+#notice {
+  width: 200px;
+  position: absolute;
+  top: 60px;
+  left:0;
+  right:0;
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;
+  border: 1px solid red;
+}
+
+/*--------------------*/
 
 
 /* STICKY NAVIGATION */

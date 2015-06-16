@@ -36,11 +36,12 @@
         <% if current_page?(edit_advert_path(@advert)) %>
           <% @advert.photos.each do |image| %>
                 <li class="delete">
-                  <%= image_tag image.image_url(:advert_image) %>
+                  <%= image_tag image.image_url(:upload_images) %>
                   <%= link_to photo_path(image), :method => :delete, :remote => true, :class => "delete_image" do %>
                     <%= image_tag "delete_image.png" %>
                   <% end %>
                 </li>
+
           <% end %>
         <% end %>
       </ul>
@@ -58,17 +59,6 @@
 
     <div class="preview"></div>
 
-    <script>
-  var fileUploadErrors = {
-    maxFileSize: 'File is too big',
-    minFileSize: 'File is too small',
-    acceptFileTypes: 'Filetype not allowed',
-    maxNumberOfFiles: 'Max number of files exceeded',
-    uploadedBytes: 'Uploaded bytes exceed file size',
-    emptyResult: 'Empty file upload result'
-  };
-</script>
-
   <script>
   $(document).ready(function() { $(".cloudinary-fileupload").fileupload({ 
         // Uncomment the following lines to enable client side image resizing and valiation.
@@ -77,7 +67,7 @@
         //imageMaxWidth: 800,
         //imageMaxHeight: 600,
         //acceptFileTypes: /(\.|\/)(gif|jpe?g|png|bmp|ico)$/i,
-        maxFileSize: 20000, // 20MB
+        //maxFileSize: 20000, // 20MB
         //dropZone: "#direct_upload",
         progressall: function (e, data) {
           $('#upload_image_wrapper').hide();
@@ -94,7 +84,7 @@
       .off("cloudinarydone").on("cloudinarydone", function (e, data) {
             var preview = $('<li></li>').prependTo('.uploaded_image ul');
             $.cloudinary.image(data.result.public_id, {
-              format: data.result.format, width: 250, height: 135, crop: "fill"
+              format: data.result.format, width: 214, height: 120, crop: "fill"
             }).appendTo(preview);
 
         /*$("#photo_bytes").val(data.result.bytes);
