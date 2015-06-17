@@ -1,16 +1,6 @@
 /* ADVERT SHOW */
 
-.slide { 
-	max-width: 960px;
-    max-height: 100%;
-    margin: 0 auto;
-}
 
-.slide img {
-	max-width: 100%;
-	height: auto;
-	width: auto\9; /* ie8 */
-}
 
 /*.slide {
 	max-width: 100%;
@@ -56,9 +46,22 @@
 .advert_image {
 	max-width: 100%;
 	max-height: 350px;
+	border: 0px solid red;
 }
 
 .advert_image img {
+	max-width: 100%;
+	height: auto;
+	width: auto\9; /* ie8 */
+}
+
+.lightbox { 
+	max-width: 960px;
+    max-height: 100%;
+    margin: 0 auto;
+}
+
+.lightbox img {
 	max-width: 100%;
 	height: auto;
 	width: auto\9; /* ie8 */
@@ -324,17 +327,6 @@ ul.organisation li.organisation_logo {
 	max-width: 30%;
 	max-height: 300px;
 	padding: 0;
-}
-
-.advert_image {
-	max-width: 100%;
-	max-height: 350px;
-}
-
-.advert_image img {
-	max-width: 100%;
-	height: auto;
-	width: auto\9; /* ie8 */
 }
 
 ul.organisation li.organisation_logo img {

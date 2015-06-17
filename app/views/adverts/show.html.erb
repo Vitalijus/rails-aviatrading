@@ -1,42 +1,25 @@
   <%= notice %>
 
-<a href="#advert-image" class="open-images-link">Show inline popup2</a>
 
-<div id="advert-image" class="mfp-hide">
-  <% @advert.photos.each do |photo| %>
-    <div class="slide">
-      <%= image_tag photo.image_url(:lightbox) %>
-    </div>
-  <% end %>
-</div>
-
-<script type="text/javascript">
-  $('.open-images-link').click(function() {
-  
-    var items = [];
-      $( $(this).attr('href') ).find('.slide').each(function() {
-        items.push( {
-          src: $(this) 
-        } );
-      });
-  
-    $.magnificPopup.open({
-      items:items,
-      fixedContentPos: true,
-      type: "inline",
-      gallery: { enabled: true }
-    });
-  });
-</script>
 
 <div class="advert_wrapper">
   <div class="advert">
+  
 
-    <div class="advert_image">
-      <% @advert.photos.first(1).each do |photo| %>
-        <%= image_tag photo.image_url(:advert_image_big) %>
+    <div id="advert-image" class="mfp-hide">
+      <% @advert.photos.each do |photo| %>
+        <div class="lightbox">
+          <%= image_tag photo.image_url(:lightbox) %>
+        </div>
       <% end %>
     </div>
+    <a href="#advert-image" class="open-images-link">
+      <div class="advert_image">
+        <% @advert.photos.first(1).each do |photo| %>
+          <%= image_tag photo.image_url(:advert_image_big) %>
+        <% end %>
+      </div>
+    </a>
 
       <ul class="adv_display">
         <li class="seller">

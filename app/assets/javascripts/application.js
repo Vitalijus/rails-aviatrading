@@ -109,3 +109,26 @@ jQuery(document).ready(function() {
 
 //---------------------------------------------------
 
+// POP UP LIGHTBOX TO SHOW ADVERT IMAGE
+
+$(document).ready(function() {
+  $('.open-images-link').click(function(e) {
+  
+    var items = [];
+      $( $(this).attr('href') ).find('.lightbox').each(function() {
+        items.push( {
+          src: $(this) 
+        } );
+      });
+  
+    $.magnificPopup.open({
+      items:items,
+      fixedContentPos: true,
+      type: "inline",
+      gallery: { enabled: true }
+    });
+    e.preventDefault();
+  });
+});
+
+//--------------------------------
