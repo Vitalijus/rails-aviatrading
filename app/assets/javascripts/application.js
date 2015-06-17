@@ -54,8 +54,7 @@ $(document).ready(function() {
 
 //--------------------------------------------------------
 
-// SNIPPET IS USER TO SHOW OR HIDE
-// SEARCH FIELDS
+// SNIPPET IS USER TO SHOW OR HIDE SEARCH FIELDS
 
 $(document).ready(function() {
 	$(".search_show_more").click(function() {
@@ -97,8 +96,16 @@ $(document).ready(function() {
 
 //---------------------------------------------------
 
-// 
+// RESPONSIVE NAVIGATION MENU IN HEADER
 
+jQuery(document).ready(function() {
+    jQuery('.toggle-nav').click(function(e) {
+        jQuery(this).toggleClass('active');
+        jQuery('.header_nav ul').toggleClass('active');
+ 
+        e.preventDefault();
+    });
+});
 
 //---------------------------------------------------
 

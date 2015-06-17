@@ -14,6 +14,10 @@ class ImageUploader < CarrierWave::Uploader::Base
      process :resize_to_fill => [960, 350]
   end
 
+  version :lightbox do
+     process :resize_to_fill => [1600, 900]
+  end
+
   version :advert_image_user do
      process :resize_to_fill => [200, 125]
   end

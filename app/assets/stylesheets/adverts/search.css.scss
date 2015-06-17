@@ -29,8 +29,8 @@
 }
 
 #advert_search_header {
-	height: 60px;
-	line-height: 60px;
+	height: 62px;
+	line-height: 62px;
 	color: #70787B;
 	text-align: center;
 	font-size: 20px;
@@ -40,25 +40,43 @@
 	font-family: 'PT Sans', sans-serif;
 	background-color: #2e373b;
 	position: relative;
-	/*background-image: url(image-path('bg.jpg'));*/
-	border-bottom: 1px solid #222;
+	border-bottom: 2px solid #222;
 }
 
 .website_search_logo {
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  top: 7px;
-  left: 20px;
-  background-color: #2E373B;
-  border: 0px solid blue;
+	  width: 100%;
+	  height: 60px;
+	  text-align: left;
+	  padding-left: 23px;
+	  padding-top: 7px;
+	  position: absolute;
+	  top: 0px;
+	  left: 0;
+	  border: 0px solid blue;
 }
 
-.icon-propeller_search:before {
+.icon-logo-search:before {
+    font-size: 45px;
+    color: #70787B;
+    content: "\e602";
+
+    -webkit-transition: color 150ms linear;
+    -moz-transition: color 150ms linear;
+    -o-transition: color 150ms linear;
+    -ms-transition: color 150ms linear;
+    transition: color 150ms linear;
+}
+
+.website_search_logo:hover .icon-logo-search:before{
+    color: #646b6e;
+    content: "\e602";
+}
+
+/*.icon-propeller_search:before {
 	font-size: 38px;
     color: #70787B;
     content: "\e601";
-}
+}*/
 
 #search_form_general {
 	border: 0px solid red;

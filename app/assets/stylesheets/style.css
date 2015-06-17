@@ -23,12 +23,18 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.icon-logo-search:before {
+	content: "\e602";
+}
+
 .icon-logo:before {
 	content: "\e602";
 }
+
 .icon-paper_pane:before {
 	content: "\e601";
 }
+
 .icon-propeller:before {
 	content: "\e600";
 }

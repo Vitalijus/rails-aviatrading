@@ -1,9 +1,11 @@
-<!--<a href="#advert-image" class="open-images-link">Show inline popup2</a>-->
   <%= notice %>
+
+<a href="#advert-image" class="open-images-link">Show inline popup2</a>
+
 <div id="advert-image" class="mfp-hide">
   <% @advert.photos.each do |photo| %>
     <div class="slide">
-      <%= image_tag photo.image_url(:advert_image_big) %>
+      <%= image_tag photo.image_url(:lightbox) %>
     </div>
   <% end %>
 </div>
@@ -21,9 +23,8 @@
     $.magnificPopup.open({
       items:items,
       fixedContentPos: true,
-      gallery: { enabled: true,
-                 navigateByImgClick: true,
-                 tCounter: '<span class="mfp-counter">%curr% of %total%</span>' }
+      type: "inline",
+      gallery: { enabled: true }
     });
   });
 </script>

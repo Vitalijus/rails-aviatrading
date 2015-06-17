@@ -1,15 +1,37 @@
 /* ADVERT SHOW */
 
-/*.slide { 
-    padding: 10px;
-    background: #FFF;
+.slide { 
+	max-width: 960px;
+    max-height: 100%;
     margin: 0 auto;
-    position: relative;
 }
 
 .slide img {
-	margin: auto;
-}*/
+	max-width: 100%;
+	height: auto;
+	width: auto\9; /* ie8 */
+}
+
+/*.slide {
+	max-width: 100%;
+	max-height: 350px;
+	position: relative;
+}
+
+.slide img {
+	max-width: 100%;
+	height: auto;
+	width: auto\9; /* ie8 */
+/*}*/
+
+.white-popup {
+  position: relative;
+  background: #FFF;
+  padding: 20px;
+  width: auto;
+  max-width: 500px;
+  margin: 20px auto;
+}
 
 .advert_wrapper {
 	margin: 20px;

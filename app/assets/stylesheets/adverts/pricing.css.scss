@@ -8,6 +8,7 @@
 	max-width: 960px;
 	margin: 0 auto;
 	margin-top: 20px;
+	padding-bottom: 30px;
 	margin-bottom: 60px;
 	background-color: #fff;
 	overflow: hidden;
@@ -28,32 +29,41 @@
 	font-size: 50px;
 	color: #fff;
 	font-family: 'PT Sans', sans-serif;
+	font-family: 'Open Sans Condensed', sans-serif;
+	text-transform: uppercase;
+	font-weight: bold;
 }
 
 .plan_small_banner_text {
 	font-size: 25px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: normal;
 }
 
 .plan_text {
-	margin: 40px 4% 40px 4%;
+	margin: 40px 4% 0 4%;
 	color: #3F5672;
 	text-align: center;
+	letter-spacing: 1px;
+	text-decoration: underline;
 	font-family: 'Open Sans Condensed', sans-serif;
-	font-weight: 900;
-	text-transform: capitalize;
+	text-transform: uppercase;
+	font-weight: bold;
 	font-size: 45px;
+	border: 0px solid red;
 }
 
 .plan_text_small {
-	max-width: 600px;
+	max-width: 650px;
 	color: #3F5672;
 	text-align: center;
-	font-weight: normal;
-	text-transform: none;
+	font-family: 'Open Sans', sans-serif;
 	font-family: 'Open Sans Condensed', sans-serif;
-	padding: 15px 10px 0 10px;
+	font-family: 'PT Sans', sans-serif;
+	padding: 20px 10px 0 10px;
 	margin: 0 auto;
-	font-size: 25px;
+	margin-bottom: 40px;
+	font-size: 20px;
 	border: 0px solid red;
 }
 
@@ -70,9 +80,9 @@ ul.micro_benefits li {
 	display: inline-block;
 	vertical-align: top;
 	margin: 0 0 2% 2%;
-	font-size: 18px;
+	font-size: 14px;
 	font-style: italic;
-	font-family: 'Open Sans Condensed', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	padding: 10px;
 	color: #3F5672;
 	background-color: #F6F7F8;
@@ -352,8 +362,10 @@ ul.q_and_a li {
 
  ul.q_and_a li .answer {
  	display: block;
- 	font-size: 20px;
+ 	line-height: 25px;
+ 	font-size: 16px;
  	color: #777;
+ 	font-family: 'Open Sans', sans-serif;
  	border: 0px solid red;
  }
 
@@ -386,11 +398,11 @@ ul.q_and_a li {
  	max-width: 750px;
  	margin: 0 auto;
  	text-align: justify;
- 	line-height: 40px;
- 	font-family: 'Open Sans Condensed', sans-serif;
+ 	line-height: 30px;
+ 	font-family: "Open Sans", helvetica, arial;
 	color: #777;
 	font-style: italic;
-	font-size: 22px;
+	font-size: 16px;
 	border: 0px solid red;
  }
 
@@ -498,7 +510,7 @@ ul.repeated_plans li {
 }
 
 .secure_cards {
-	margin: 0 4% 40px 4%;
+	margin: 5px 4% 0px 4%;
 }
 
  @media (max-width: 768px) {
