@@ -4,18 +4,17 @@
 
 /* MASONRY */
 
-#advert_container {
-	overflow: hidden;
-	height: 100%;
-	position: relative;
-	padding-bottom: 0px;
+#adverts {
+	width: 100%;
+	padding: 0 20px 0 20px;
+	border: 0px solid blue;
 }
 
 #masonry-container {
-  clear: both;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  width: 100%;
   position: relative;
+  margin-bottom: 60px;
+  padding-bottom: 80px;
   border: 0px solid red;
 }
 
@@ -31,9 +30,9 @@
 
 .box {
 	background-color: #fff;
-	margin: 10px;
 	width: 252px;
 	display: none;
+	margin-top: 20px;
 	background-color: #fff;
 	border: 1px solid #DFE0E4;
 }

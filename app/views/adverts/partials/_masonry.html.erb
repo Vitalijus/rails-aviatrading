@@ -1,11 +1,8 @@
-<div id="advert_container">
-  <%= render 'adverts/partials/index_header' %>
-  <%= render 'adverts/partials/landing_banner' %>
   <div id="notice"><%= notice %></div>
   <div id="masonry-container" class="centered clearfix">
-
+    <div class="grid-sizer"></div>
   <% @adverts.each do |advert| %>
-
+  
     <div class="box">
       <%= link_to advert_path(advert), data: { no_turbolink: true } do %>
         <div class="box_image">
@@ -58,12 +55,16 @@
         </div>-->
     </div>
   <% end %>
+    <div class="pagination" data-no-turbolink>
+      <%= will_paginate @adverts, :previous_label => 'Previous', :next_label => 'Next', :page_links => false %>
+
+      <div class="page_spr_hlp">
+      <!-- workaround to visualy separate pagination links -->
+      </div>
+    </div>
   </div>
 
-  <div class="pagination" data-no-turbolink>
-    <%= will_paginate @adverts, :page_links => false %>
-  </div>
-</div>
+  
 
 
 <script>

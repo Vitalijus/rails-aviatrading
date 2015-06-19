@@ -2,8 +2,6 @@ class AdvertsController < ApplicationController
   before_action :set_advert, only: [:show, :edit, :update, :show_advert, :destroy]
   before_action :set_plan
   before_action :authenticate_user!, except: [:index, :show, :pricing]
-  before_filter :disable_header, only: [:index]
-  before_filter :disable_footer, only: [:index]
   require 'will_paginate/array'
 
   def pricing
@@ -115,14 +113,6 @@ class AdvertsController < ApplicationController
   end
 
   private
-    def disable_header
-      @header = true
-    end
-
-    def disable_footer
-      @footer = true
-    end
-
     # Use callbacks to share common setup or constraints between actions.
     def set_advert
       @advert = Advert.find(params[:id])

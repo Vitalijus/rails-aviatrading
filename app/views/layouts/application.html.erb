@@ -42,6 +42,10 @@
 
     <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700' rel='stylesheet' type='text/css'>
+
+    <link href='http://fonts.googleapis.com/css?family=Istok+Web:400,700' rel='stylesheet' type='text/css'>
+
 	<!-- required for page to scale properly inside any screen size, particularly in the mobile viewport. -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> 
 
@@ -60,11 +64,11 @@
 	});
 </script>
 
-<%= render "layouts/header" unless @header %>
+<%= render "layouts/header" %>
 
 <%= yield %>
 
-<%= render "layouts/footer" unless @footer %>
+<%= render "layouts/footer" %>
 
    <!-- MASONRY --> 
    <script src="/assets/masonry/masonry.pkgd.min.js"></script>
@@ -76,7 +80,8 @@
    			$container.masonry({
    				// options 
 				  itemSelector: '.box',
-          isFitWidth: true	  
+          isFitWidth: true,
+          "gutter": 20
    			});
    		});
 	</script>

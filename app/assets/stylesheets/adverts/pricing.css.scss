@@ -28,50 +28,47 @@
 	background-image: url(image-path('mix.gif'));
 	font-size: 50px;
 	color: #fff;
-	font-family: 'PT Sans', sans-serif;
-	font-family: 'Open Sans Condensed', sans-serif;
-	text-transform: uppercase;
-	font-weight: bold;
+	font-family: 'Lora', serif;
 }
 
 .plan_small_banner_text {
 	font-size: 25px;
-	font-family: 'Open Sans', sans-serif;
-	font-weight: normal;
+}
+
+b.text_highlight {
+	color: #F16164;
 }
 
 .plan_text {
 	margin: 40px 4% 0 4%;
 	color: #3F5672;
+	color: #555;
 	text-align: center;
 	letter-spacing: 1px;
-	text-decoration: underline;
-	font-family: 'Open Sans Condensed', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	text-transform: uppercase;
-	font-weight: bold;
-	font-size: 45px;
+	font-size: 30px;
 	border: 0px solid red;
 }
 
 .plan_text_small {
-	max-width: 650px;
-	color: #3F5672;
+	max-width: 600px;
+	color: #555;
 	text-align: center;
 	font-family: 'Open Sans', sans-serif;
-	font-family: 'Open Sans Condensed', sans-serif;
-	font-family: 'PT Sans', sans-serif;
 	padding: 20px 10px 0 10px;
 	margin: 0 auto;
 	margin-bottom: 40px;
-	font-size: 20px;
+	font-size: 14px;
 	border: 0px solid red;
 }
 
 ul.micro_benefits {
-	max-width: 800px;
+	max-width: 960px;
 	margin: 0 auto;
 	margin-bottom: 40px;
 	text-align: center;
+	padding: 0 20px 0 20px;
 	border: 0px solid red;
 }
 
@@ -84,13 +81,13 @@ ul.micro_benefits li {
 	font-style: italic;
 	font-family: 'Open Sans', sans-serif;
 	padding: 10px;
-	color: #3F5672;
-	background-color: #F6F7F8;
+	color: #444;
+	background-color: #FDFDFD;
 	border: 1px solid #eef0f2;
 
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
+	-webkit-border-radius: 40px;
+	-moz-border-radius: 40px;
+	border-radius: 40px;
 }
 
 ul.plan_wrapper {
@@ -110,7 +107,7 @@ ul.plan_wrapper li {
 	padding-top: 20px;
 	overflow: hidden;
 	background-color: #fdfdfd;
-	border-bottom: 2px solid #41B4D6;
+	border-bottom: 0px solid #F16164;
 
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
@@ -122,7 +119,7 @@ ul.plan_wrapper li {
 	padding-top: 20px;
 	overflow: hidden;
 	background-color: #fdfdfd;
-	border-bottom: 2px solid #5ECF7F;
+	border-bottom: 0px solid #5ECF7F;
 
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
@@ -135,6 +132,7 @@ ul.plan_wrapper li {
 	height: 60px;
 	line-height: 60px;
 	color: #666;
+	text-transform: uppercase;
 	font-family: "Open Sans", helvetica, arial;
 	font-size: 30px;
 }
@@ -220,8 +218,8 @@ ul.plan_wrapper li {
 	font-size: 14px;
 	background-color: #F16164;
 	text-align: center;
-	font-weight: 600;
-	font-family: 'PT Serif', serif;
+	font-weight: 700;
+	font-family: 'Lora', serif;
 	color: #fff;
 	border-bottom: 2px solid #B14739;
 
@@ -336,11 +334,9 @@ ul.q_and_a  {
 
 ul.q_and_a li {
 	display: inline-block;
-	font-size: 22px;
 	margin: 0 0 2.5% 2.5%;
 	padding: 20px;
 	vertical-align: top;
-	font-family: 'Open Sans Condensed', sans-serif;
 	background-color: #F6F7F8;
 	border: 0px solid #e8e9ec;
 
@@ -356,7 +352,9 @@ ul.q_and_a li {
  ul.q_and_a li .question {
  	display: block;
  	color: #3F5672;
- 	font-size: 26px;
+ 	font-size: 18px;
+ 	font-family: 'Lora', serif;
+ 	font-weight: bold;
  	border: 0px solid red;
  }
 
@@ -383,9 +381,6 @@ ul.q_and_a li {
 .message_to_us a {
 	font-weight: bold;
 	color: #F05053;
-}
-
-.message_to_us a:hover {
 	text-decoration: underline;
 }
 
@@ -408,8 +403,8 @@ ul.q_and_a li {
 
  .testimonials_seller {
  	max-width: 750px;
- 	font-family: 'Open Sans Condensed', sans-serif;
- 	font-size: 22px;
+ 	font-family: 'Lora', serif;
+ 	font-size: 14px;
  	margin: 0 auto;
  	margin-top: 10px;
  	color: #444;
@@ -438,11 +433,11 @@ ul.q_and_a li {
 	text-align: center;
 	font-weight: normal;
 	text-transform: none;
-	font-family: 'Open Sans Condensed', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	margin: 0 auto;
 	margin-bottom: 20px;
 	padding: 0 10px 0 10px;
-	font-size: 35px;
+	font-size: 25px;
 	border: 0px solid red;
 }
 
@@ -465,12 +460,12 @@ ul.repeated_plans li {
 .repeated_plans_button {
 	width: 100%;
 	height: 60px;
-	padding-top: 8px;
+	padding-top: 10px;
 	/*line-height: 45px;*/
 	font-size: 18px;
 	background-color: #F16164;
 	text-align: center;
-	font-family: 'PT Serif', serif;
+	font-family: 'Lora', serif;
 	color: #fff;
 	border-bottom: 2px solid #B14739;
 
@@ -504,8 +499,9 @@ ul.repeated_plans li {
 .secure_cards {
 	color: #777;
 	text-align: center;
-	font-size: 18px;
-	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 12px;
+	font-family: 'PT Sans', sans-serif;
+	text-transform: uppercase;
 	margin: 0 4% 10px 4%;
 }
 
@@ -526,6 +522,15 @@ ul.repeated_plans li {
 	ul.plan_wrapper li {
 		width: 100% !important; /* over-ride all li styles */
 		margin: 10px 0 20px 0;
+	}
+
+	ul.micro_benefits li {
+		width: 100% !important; /* over-ride all li styles */
+		margin: 0 0 20px 0;
+	}
+
+	ul.micro_benefits {
+		margin-bottom: 0;
 	}
 }
 

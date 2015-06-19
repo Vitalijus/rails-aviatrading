@@ -1,32 +1,54 @@
 /* PAGINATION */
 
 .pagination {
-  max-width: 400px;
+  width: 100%;
   margin: 0 auto;
   margin-bottom: 20px;
-  background: white;
   cursor: default;
-  border: 1px solid #DFE0E4;
+  position: absolute;
+  bottom: -20px;
+  border: 0px solid blue;
+  
   /* self-clearing method: */ 
 }
 
 .pagination a, .pagination span, .pagination em {
   width: 50%;
   text-align: center;
-  padding: 12px 10px 12px 10px;
-  display: block;
-  float: left; 
-  font-size: 14px;
+  height: 60px;
+  line-height: 60px;
+  display: inline-block;
+  margin-right: -4px;
+  text-transform: uppercase;
+  font-size: 16px;
   font-family: "Open Sans", helvetica, arial;
+  background: white;
+  border: 1px solid #DFE0E4;
+}
+
+.pagination a:last-child {
+  margin-right: 0px;
+}
+
+.page_spr_hlp {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  margin-left: -11px;
+  width: 22px;
+  height: 60px;
+  background-color: #E9EAED;
+  border-left: 1px solid #DFE0E4;
+  border-right: 1px solid #DFE0E4;
 }
 
 .pagination .disabled {
-  color: #999999;
+  color: #b7b7b7;
 }
 
 .pagination a {
   text-decoration: none;
-  color: #555555;
+  color: #444;
 
   -webkit-transition: color 150ms linear;
   -moz-transition: color 150ms linear;
