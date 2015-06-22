@@ -1,15 +1,2 @@
-$("#adverts").html("<%= escape_javascript(render("/adverts/partials/masonry")) %>");
-
-// INITIALIZE MASONRY AGAIN TO RELOAD ITEMS
-// THIS IS NEEDED BECAUSE OF THE AJAX REQUEST
-var $container = $('#masonry-container');
-	// initialize
-$container.masonry({
-	// options 
-  	itemSelector: '.box',
-	isFitWidth: true,
-	"gutter": 20	 
-});
-	// reload of the items
-$container.masonry('reloadItems');
+$("#adverts").html("<%= escape_javascript(render("/adverts/partials/grid")) %>");
 	

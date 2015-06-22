@@ -40,7 +40,7 @@ class AdvertsController < ApplicationController
                             conditions: { users: { active_account: true }, 
                             adverts: {show_advert: true} },
                             order: {created_at: :desc})
-                            .paginate(:page => params[:page], :per_page => 12)
+                            .paginate(:page => params[:page], :per_page => 16)
   end
 
   # GET /adverts/1

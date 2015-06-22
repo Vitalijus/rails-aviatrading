@@ -3,12 +3,9 @@
 .pagination {
   width: 100%;
   margin: 0 auto;
-  margin-bottom: 20px;
+  padding: 5px 5px 0 5px;
+  position: relative;
   cursor: default;
-  position: absolute;
-  bottom: -20px;
-  border: 0px solid blue;
-  
   /* self-clearing method: */ 
 }
 
@@ -22,7 +19,7 @@
   text-transform: uppercase;
   font-size: 16px;
   font-family: "Open Sans", helvetica, arial;
-  background: white;
+  background: #F6F7F8;
   border: 1px solid #DFE0E4;
 }
 
@@ -32,7 +29,7 @@
 
 .page_spr_hlp {
   position: absolute;
-  top: -60px;
+  top: 10px;
   left: 50%;
   margin-left: -11px;
   width: 22px;

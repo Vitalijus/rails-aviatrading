@@ -2,61 +2,111 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/* MASONRY */
+/* GRID LAYOUT */
 
-#adverts {
-	width: 100%;
-	padding: 0 20px 0 20px;
-	border: 0px solid blue;
+.user_grid_wrapper {
+	margin:  10px;
 }
 
-#masonry-container {
-  width: 100%;
-  position: relative;
-  margin-bottom: 60px;
-  padding-bottom: 80px;
+.user_grid_container {
+	max-width: 1200px;
+	margin: auto;
+	margin-bottom: 60px;
+	overflow: hidden;
+	border: 0px solid blue;
+
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+/* Attribute selector */
+[class*='bit-'] {
+  float: left;
+  padding: 10px;
   border: 0px solid red;
 }
+ 
+/* Floats last ".bit-" to the right */
+[class*='bit-']:last-of-type {
+  padding-right: 10px;
+  float: left;
+  border: 0px solid green;
+}
+ 
+/* Clearfix */
+.frame:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
-.centered { margin: 0 auto; }
-
-.clearfix:before, .clearfix:after { content: ""; display: table; }
-.clearfix:after { clear: both; }
-.clearfix { zoom: 1; }
-
-/* ------------------------------*/
-
-/* MASONRY BOX */
-
-.box {
-	background-color: #fff;
-	width: 252px;
-	display: none;
-	margin-top: 20px;
-	background-color: #fff;
+.user_ad {
+	max-width: 100%;
+	max-height: 350px;
+	background-color: #DBDDE2;
+	position: relative;
 	border: 1px solid #DFE0E4;
 }
 
-.box_image {
-	position: relative;
-	background-color: #dbdde2;
-	height: 135px;
+.user_ad img {
+	max-width: 100%;
+	height: auto;
+	width: auto\9; /* ie8 */
 }
 
-.icon-paper_plane:before {
-	font-size: 50px;
-	color: #C5C6CB;
-    content: "\e601";
+.user_ad_footer {
+	width: 100%;
+	margin-top: -3px;
+	padding: 10px;
+	overflow: hidden;
+	background-color: #F6F7F8;
 }
 
-.icon-paper_plane {
-	position: absolute;
-	top: 42px;
-	left: 50%;
-	margin-left: -37px;
+.user_ad_avatar {
+	width: 30px;
+	height: 30px;
+	float: left;
+	border: 0px solid red;
 }
 
-.box_price {
+.user_ad_make {
+	float: left;
+	height: 30px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 10px;
+	margin-left: 10px;
+	color: #224a5d;
+	text-transform: uppercase;
+	border: 0px solid red;
+
+	-webkit-transition: color 150ms linear;
+  	-moz-transition: color 150ms linear;
+  	-o-transition: color 150ms linear;
+  	-ms-transition: color 150ms linear;
+  	transition: color 150ms linear;
+}
+
+.user_ad_model {
+	font-family: 'PT Sans', sans-serif;
+	font-size: 16px;
+	margin-top: -1px;
+	text-transform: uppercase;
+	border: 0px solid red;
+
+	-webkit-transition: color 150ms linear;
+  	-moz-transition: color 150ms linear;
+  	-o-transition: color 150ms linear;
+  	-ms-transition: color 150ms linear;
+  	transition: color 150ms linear;
+}
+
+a:hover .user_ad_make,
+a:hover .user_ad_model {
+	color: #336f8c;
+}
+
+.user_ad_price {
 	min-width: 50px;
 	min-height: 25px;
 	line-height: 25px;
@@ -72,85 +122,73 @@
 	background-color:rgba(255,0,0,0.5);
 }
 
-.box_content_wrapper {
-	padding: 10px 10px 7px 10px;
-	overflow: hidden;
-	background-color: #F6F7F8;
-	border-bottom: 1px solid #e5e6e9;
+/* Main Widths */
+.bit-1  {width: 100%;}
+.bit-2  {width: 50%;}
+.bit-3  {width: 33.33%;}
+.bit-4  {width: 25%;}
+.bit-5  {width: 20%;}
+.bit-6  {width: 16.6666666667%;}
+.bit-7  {width: 14.2857142857%;}
+.bit-8  {width: 12.5%;}
+.bit-9  {width: 11.1111111111%;}
+.bit-10 {width: 10%;}
+.bit-11 {width: 9.09090909091%;}
+.bit-12 {width: 8.33%;}
+
+/*base tablet to small desktop styles*/
+@media (min-width: 800px) and (max-width: 1100px) {
+  .bit-2,
+  .bit-7 {
+    width: 100%;
+  }
+ 
+  .bit-4,
+  .bit-8,
+  .bit-10,
+  .bit-12 {
+    width: 50%;
+  }
 }
 
-.box_user_avatar {
-	width: 30px;
-	height: 30px;
-	float: left;
-	border: 0px solid red;
+/*base tablet styles*/
+@media (max-width: 800px) {
+  .bit-4,
+  .bit-6,
+  .bit-8,
+  .bit-10,
+  .bit-12 {
+    width: 50%;
+  }
+ 
+  .bit-1,
+  .bit-2,
+  .bit-3,
+  .bit-5,
+  .bit-7,
+  .bit-9,
+  .bit-11 {
+    width: 100%;
+  }
 }
 
-.box_make {
-	width: 192px;
-	float: right;
-	font-family: 'Roboto', sans-serif;
-	font-size: 10px;
-	color: #224a5d;
-	text-transform: uppercase;
-	border: 0px solid red;
-
-	-webkit-transition: color 150ms linear;
-  	-moz-transition: color 150ms linear;
-  	-o-transition: color 150ms linear;
-  	-ms-transition: color 150ms linear;
-  	transition: color 150ms linear;
+  /*base mobile styles - everything 100%*/
+@media (max-width: 480px) {
+  .bit-1,
+  .bit-2,
+  .bit-3,
+  .bit-4,
+  .bit-5,
+  .bit-6,
+  .bit-7,
+  .bit-8,
+  .bit-9,
+  .bit-10,
+  .bit-11,
+  .bit-12 {
+    width: 100%;
+  }
 }
 
-.box_model {
-	font-family: 'PT Sans', sans-serif;
-	font-size: 16px;
-	margin-top: -1px;
-	text-transform: uppercase;
-	border: 0px solid red;
-
-	-webkit-transition: color 150ms linear;
-  	-moz-transition: color 150ms linear;
-  	-o-transition: color 150ms linear;
-  	-ms-transition: color 150ms linear;
-  	transition: color 150ms linear;
-}
-
-a:hover .box_make, a:hover .box_model {
-	color: #336f8c;
-}
-
-/*.box_attr {
-	font-family: 'PT Sans', sans-serif;
-	font-size: 11px;
-	color: #777777;
-	padding: 0px 10px 0 10px;
-	border: 0px solid red;
-}
-
-.box_footer {
-	height: 35px;
-	line-height: 32px;
-	padding: 0 10px 0 10px;
-	font-family: "Open Sans", helvetica, arial;
-	font-size: 11px;
-	color: #777777;
-	border-bottom: 1px solid #ececec;
-}
-
-.box_icons {
-	position: absolute;
-	top: 420px;
-	right: 15px;
-}
-
-.box_icons li {
-	display: inline-block;
-	border: 0px solid red;
-}*/
-
-/*----------------------------*/
-
-
-
+/*----------------------*/
 

@@ -1,9 +1,21 @@
+<div class="user_panel_cvr_img">
+	<div class="user_panel_logo">
+		<%= image_tag @user.avatar_url(:avatar) %>
+	</div>
+</div>
+
 <% if user_signed_in? && current_user == @user %>
-	<div class="show_page_panel">
-		<ul>
-		<li><%= link_to 'My Adverts', user_path(current_user) %></li>
-		<li><%= link_to 'Subscription', subscription_path %></li>
-		<li><%= link_to 'Settings', edit_user_registration_path %></li>
-		</ul>
-	</div> 
+	<ul class="usr_prfl_nav">
+		<%= link_to user_path(current_user) do %>
+			<li>My Adverts</li>
+		<% end %>
+
+		<%= link_to subscription_path do %>
+			<li>Subscription</li>
+		<% end %>
+
+		<%= link_to edit_user_registration_path do %>
+			<li class="last_child_helper">Settings</li>
+		<% end %>
+	</ul>
 <% end %>

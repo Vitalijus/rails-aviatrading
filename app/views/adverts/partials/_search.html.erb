@@ -12,7 +12,33 @@
             Country
 
             <ul class="down">
-              <li>USA</li>
+              <li><%= search_form_for @q, :id => "adverts_search" do |f| %>
+  <% Advert.select(:make).distinct.each do |advert| %>
+    <div class="search_checkbox">
+      <span class='country'><%= advert.make %></span>
+      <%= check_box_tag 'q[make_eq_any][]', advert.make, false, {:id => "search_united_states"} %>
+    </div>
+  <% end %>
+
+  <br><br>
+
+  <% Advert.select(:model).distinct.each do |advert| %>
+    <div class="search_checkbox">
+      <span class='country'><%= advert.model %></span>
+      <%= check_box_tag 'q[model_eq_any][]', advert.model, false, {:id => "search_united_states"} %>
+    </div>
+  <% end %>
+
+  <br><br>
+
+  <% Advert.select(:country).distinct.each do |advert| %>
+    <div class="search_checkbox">
+      <span class='country'><%= advert.country %> <%= advert.country.count("country") %></span>
+      <%= check_box_tag 'q[country_eq_any][]', advert.country, false, {:id => "search_united_states"} %>
+    </div>
+  <% end %>
+<% end %>
+</li>
             </ul>
           </li>
           
@@ -64,7 +90,6 @@ $(document).ready(function() {
 
 
   
-
 
 
 

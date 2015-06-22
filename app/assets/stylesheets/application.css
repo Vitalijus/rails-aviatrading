@@ -35,7 +35,12 @@ html {
   margin: 0px 0 0px 0; /* bottom = footer height */
 }
 
-* {
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+    /* Removes padding behaviour on widths */
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;

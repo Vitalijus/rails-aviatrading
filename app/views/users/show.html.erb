@@ -1,60 +1,70 @@
-<div class="show_page_wrapper">
-	<%= render 'users/registrations/user_navigation_panel' %>
+<%= render 'users/registrations/user_navigation_panel' %>
+
+<div class="user_grid_wrapper">
+	<div class="user_grid_container">
   	<%= notice %>
 
-	<div class="show_user_page_header">
-		<div class="show_user_page_avatar">
-			<%= image_tag @user.avatar_url(:avatar) %>
-		</div>
-	</div>
+		<div class="frame">
+			<% @user.adverts.reverse_each do |advert| %>
+			    <div class="bit-4">
+			    	<div class="user_ad">
+			    		<% if advert.photos.empty? or advert.photos.nil?%>
+			    			<%= link_to advert_path(advert), data: { no_turbolink: true } do %>
+					        	<%= image_tag "paper_plane.png" %>
+					        <% end %>
+				       	<% else %>
+				       		<%= link_to advert_path(advert), data: { no_turbolink: true } do %>
+					       		<% advert.photos.first(1).each do |photo| %>
+					          		<%= image_tag photo.image_url(:advert_image) %>
+					       		<% end %>
+					       	<% end %>
+				       	<% end %>
 
-	<div class="show_user_details">
-		Vitalijus Desukas
+				       	<% unless advert.price.nil? %>
+				            <div class="user_ad_price">
+				                <%= number_to_currency(advert.price, precision: 0, unit: "") %> <%= advert.currency %>
+				            </div>
+				        <% end %>
 
-		<div class="show_user_settings">
-			<ul>
-				<li><%= link_to 'Update Cover image', edit_user_registration_path %></li>
-				<li><%= link_to 'Change Icon', edit_user_registration_path %></li>
-			</ul>
-		</div>
-	</div>
+				       	<div class="user_ad_footer">
+			       			<div class="user_ad_avatar">
+					          	<%= link_to user_path(advert.user) do %>
+					            	<% if advert.user.avatar.blank? or advert.user.avatar.nil? %>
+					            	  	<%= image_tag "avatar.png" %>
+					            	<% else %>
+					              		<%= image_tag advert.user.avatar_url(:avatar_small) %>
+					            	<% end %>
+					          	<% end %>
+					        </div>
 
-	<div class="show_page_content">
-		<div class="show_user_sidebar">
-			<% if !@user.about.blank? %>
-				<% if !@user.organisation.blank? %>
-					<div class="show_user_sidebar_header">
-						<%= @user.organisation %>
-					</div>
-				<% else %>
-					<div class="show_user_sidebar_header">
-						Information
-					</div>
-				<% end %>
+					        <%= link_to advert_path(advert), data: { no_turbolink: true } do %>
+					          	<div class="user_ad_make">
+					            	<%= advert.make %>
 
-				<div class="show_user_sidebar_about">
-					<%= @user.about %> 
-				</div>
-			<% else %>
-				<%= link_to edit_user_registration_path do %>
-					<div class="show_user_sidebar_about_button">
-						<%= image_tag "edit.png", width: 20 %> Add info to your profile 
-					</div>
-				<% end %>
+					            	<div class="user_ad_model">
+					                	<%= advert.model %>
+					            	</div>
+					          	</div>
+					        <% end %>
+			       		</div>
+		       		</div>
+			    </div>
 			<% end %>
 		</div>
 
-		<div class="show_user_adverts_wrapper">
-			<div class="show_user_adverts_header">
-				<%= pluralize(@user.adverts.count, "Advert") %>
-			</div>
 
+
+
+
+
+
+		<div class="user_ads">
 			<% @user.adverts.reverse_each do |advert| %>
 				<div class="show_user_adverts">
 					<%= link_to advert do %>
 					<div class="show_user_adverts_image">
 			        	<% advert.photos.each do |photo| %>
-			          		<%= image_tag photo.image_url(:advert_image_user) %>
+			          		<%= image_tag photo.image_url(:advert_image) %>
 			       		<% end %>
 				    </div>
 
@@ -93,3 +103,4 @@
 		</div>
 	</div>
 </div>
+
