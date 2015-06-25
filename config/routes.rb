@@ -10,11 +10,13 @@ School::Application.routes.draw do
     get '/sign_in', to: 'devise/sessions#new', as: :sign_in
     get '/:id/edit', to: 'users/registrations#edit', as: :edit
     get '/subscription', to: 'users/registrations#subscription', as: 'subscription'
-    put 'users/change_plan', :to => 'users/registrations#change_plan'
-    put 'users/cancel_plan', :to => 'users/registrations#cancel_plan'
-    put 'users/setup_billing', :to => 'users/registrations#setup_billing'
-    put 'users/subscribe_customer', :to => 'users/registrations#subscribe_customer'
+    get '/resubscription', to: 'users/registrations#resubscription'
+    put 'users/change_plan', to: 'users/registrations#change_plan'
+    put 'users/cancel_plan', to: 'users/registrations#cancel_plan'
+    put 'users/setup_billing', to: 'users/registrations#setup_billing'
+    put 'users/subscribe_customer', to: 'users/registrations#subscribe_customer'
   end
+  
   resources :users, only: [:show]
 
   resources :adverts do

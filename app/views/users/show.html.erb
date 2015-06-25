@@ -3,6 +3,10 @@
 <div class="user_grid_wrapper">
 	<div class="user_grid_container">
   	<%= notice %>
+	  	<ul class="user_panel">
+	  		<li><%= @user.organisation %></li>
+	  		<li><%= pluralize(@user.adverts.count, "Advert") %></li>
+		</ul>
 
 		<div class="frame">
 			<% @user.adverts.reverse_each do |advert| %>
@@ -47,60 +51,42 @@
 					          	</div>
 					        <% end %>
 			       		</div>
+
+			       		<% if user_signed_in? && current_user == @user %>
+				       		<ul class="user_ad_dlt_edit">
+								<%= link_to edit_advert_path(advert) do %>
+									<li class="edit_icon">
+										<%= image_tag "pen_1.png", width: 14 %>
+										<span class="icon_tooltip">Edit</span>
+									</li>
+								<% end %>
+
+								<% if advert.show_advert %>
+									<%= link_to show_advert_path(advert) do %> 
+										<li class="hide_icon">
+											<%= image_tag "hide.png", width: 12 %>
+											<span class="icon_tooltip">Hide</span>
+										</li>
+									<% end %>
+								<% else %>
+									<%= link_to show_advert_path(advert) do %> 
+										<li class="show_icon">
+											<%= image_tag "show.png", width: 12 %>
+											<span class="icon_tooltip">Show</span>
+										</li>
+									<% end %>
+								<% end %>
+
+								<%= link_to advert, method: :delete, data: {confirm: "Are you sure?"} do %>
+					        		<li class="last_child_delete delete_icon">
+					        			<%= image_tag "delete.png", width: 10 %>
+					        			<span class="icon_tooltip">Delete</span>
+					        		</li>
+					        	<% end %>
+					        </ul>
+					    <% end %>
 		       		</div>
 			    </div>
 			<% end %>
 		</div>
-
-
-
-
-
-
-
-		<div class="user_ads">
-			<% @user.adverts.reverse_each do |advert| %>
-				<div class="show_user_adverts">
-					<%= link_to advert do %>
-					<div class="show_user_adverts_image">
-			        	<% advert.photos.each do |photo| %>
-			          		<%= image_tag photo.image_url(:advert_image) %>
-			       		<% end %>
-				    </div>
-
-					<div class="show_user_adverts_content">
-						<div class="show_user_adverts_make">
-							<%= advert.make %>
-
-							<div class="show_user_adverts_model">
-								<%= advert.model %>
-							</div>
-						</div>
-					<% end %>
-
-					    <div class="show_user_adverts_footer">
-							<%= advert.country %>, <%= advert.city %>
-
-							<% if user_signed_in? && current_user == @user %>
-								<%= link_to 'Edit', edit_advert_path(advert) %>
-
-								<%= link_to 'Delete', advert, method: :delete, :remote => true, :class => "delete_advert" %>
-
-								<% if advert.show_advert %>
-									<%= link_to show_advert_path(advert), :remote => true, :class => "show_hide_advert" do %> 
-										<div class="link_to_hide_advert">Hide advert</div>
-									<% end %>
-								<% else %>
-									<%= link_to show_advert_path(advert), :remote => true, :class => "show_hide_advert" do %> 
-										Show advert
-									<% end %>
-								<% end %>
-							<% end %>
-						</div>
-					</div>
-				</div>
-			<% end %>
-		</div>
-	</div>
-</div>
 

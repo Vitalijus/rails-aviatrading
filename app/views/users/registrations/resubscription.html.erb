@@ -1,0 +1,123 @@
+<%= render 'user_navigation_panel' %>
+
+<div class="subscription_wrapper">
+	<div class="subscription_container">
+    	<div class="subscription_header">
+      		<div class="subscription_form_logo">
+        		<span class="icon-propeller-big"></span>
+      		</div>
+
+			<% if params[:plan] == "1" %>
+				Subscribe for Basic Plan
+			<% elsif params[:plan] == "2" %>
+				Subscribe for Premium Plan
+			<% end %>
+		</div>
+
+      	<div class="registration_form_tagline">
+        	<% if params[:plan] == "1" %>
+          		<b><%= link_to "Subscribe for premium plan", resubscription_path(plan: 2) %></b> to sell aircraft faster 
+          	<% elsif params[:plan] == "2" %>
+          		you can <b><%= link_to "downgrade to basic", resubscription_path(plan: 1) %></b> plan anytime
+          	<% end %>
+        </div>
+
+	    <% if params[:plan] == "1" %>
+
+			<%= form_for(resource, :as => resource_name, :url => users_subscribe_customer_path, :html => { id: 'user_plan', :method => :put }) do |f| %><!-- id: 'user_plan' refers to registrations.js.coffee -->
+
+				<%= devise_error_messages! %>
+
+			    <% if @user.errors.any? %>  
+			        <div id="errorExplanation">  
+			          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>  
+			          <ul>  
+			          <% @user.errors.full_messages.each do |msg| %>  
+			            <li><%= msg %></li>  
+			          <% end %>  
+			          </ul>  
+			        </div>  
+			    <% end %>
+
+			    <%= hidden_field_tag 'customer', resource.stripe_customer_token %>
+			    <%= hidden_field_tag 'plan', params[:plan] %>
+			    <%= f.hidden_field :stripe_card_token %>
+			    
+			    <div class="setup_billing_form">
+			      <%= label_tag :card_number, "Credit Card Number*", :class => "setup_billing_label" %>
+			      <%= text_field_tag :card_number, nil, name: nil, :class => "auth_field" %>
+			    </div>
+
+			    <div class="setup_billing_form">
+			      <%= label_tag :card_code, "Security Code on Card (CVV)*", :class => "setup_billing_label" %>
+			      <%= text_field_tag :card_code, nil, name: nil, :class => "auth_field" %>
+			    </div>
+
+			    <div class="setup_billing_form">
+			      <%= label_tag :card_month, "Card Expiration*", :class => "setup_billing_label" %>
+			      <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month", :class => "exp_field" } %>
+			      <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year", :class => "exp_field" } %>
+			    </div>
+
+			    <div id="stripe_error">
+			      <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
+			    </div>
+
+			    <div class="form-group">
+			      <%= f.submit "Basic", :class => "setup_billing_button" %>
+			    </div>
+			<% end %>
+
+		<% elsif params[:plan] == "2" %>
+
+			<%= form_for(resource, :as => resource_name, :url => users_subscribe_customer_path, :html => { id: 'user_plan', :method => :put }) do |f| %><!-- id: 'user_plan' refers to registrations.js.coffee -->
+
+				<%= devise_error_messages! %>
+
+		      	<% if @user.errors.any? %>  
+		        	<div id="errorExplanation">  
+		          		<h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>  
+		          		<ul>  
+		          		<% @user.errors.full_messages.each do |msg| %>  
+		            		<li><%= msg %></li>  
+		          		<% end %>  
+		          		</ul>  
+		        	</div>  
+		      	<% end %>
+
+			    <%= hidden_field_tag 'customer', resource.stripe_customer_token %>
+			    <%= hidden_field_tag 'plan', params[:plan] %>
+			    <%= f.hidden_field :stripe_card_token %>
+    
+			    <div class="setup_billing_form">
+			      <%= label_tag :card_number, "Credit Card Number*", :class => "setup_billing_label" %>
+			      <%= text_field_tag :card_number, nil, name: nil, :class => "auth_field" %>
+			    </div>
+
+			    <div class="setup_billing_form">
+			      <%= label_tag :card_code, "Security Code on Card (CVV)*", :class => "setup_billing_label" %>
+			      <%= text_field_tag :card_code, nil, name: nil, :class => "auth_field" %>
+			    </div>
+
+			    <div class="setup_billing_form">
+			      <%= label_tag :card_month, "Card Expiration*", :class => "setup_billing_label" %>
+			      <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month", :class => "exp_field" } %>
+			      <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year", :class => "exp_field" } %>
+			    </div>
+
+			    <div id="stripe_error">
+			      <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
+			    </div>
+
+			    <div class="form-group">
+			      <%= f.submit "Premium", :class => "setup_billing_button" %>
+			    </div>
+			<% end %>
+		<% end %>
+
+		<div class="reassure_billing_setup">
+	      Switch plans or unsubscribe anytime.
+	      <%= image_tag "secure.png", width: 200 %>
+	    </div>
+	</div>
+</div>

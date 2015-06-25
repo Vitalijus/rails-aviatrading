@@ -1,11 +1,7 @@
   <%= notice %>
 
-
-
 <div class="advert_wrapper">
   <div class="advert">
-  
-
     <div id="advert-image" class="mfp-hide">
       <% @advert.photos.each do |photo| %>
         <div class="lightbox">
@@ -13,14 +9,19 @@
         </div>
       <% end %>
     </div>
-    <a href="#advert-image" class="open-images-link">
-      <div class="advert_image">
-        <% @advert.photos.first(1).each do |photo| %>
-          <%= image_tag photo.image_url(:advert_image_big) %>
-        <% end %>
-      </div>
-    </a>
 
+    <div class="advert_image">
+      <% if @advert.photos.blank? or @advert.photos.nil?%>
+        <%= image_tag "paper_plane_big.png" %>
+      <% else %>
+        <a href="#advert-image" class="open-images-link">
+          <% @advert.photos.first(1).each do |photo| %>
+            <%= image_tag photo.image_url(:advert_image_big) %>
+          <% end %>
+        </a>
+      <% end %>
+    </div>
+    
       <ul class="adv_display">
         <li class="seller">
           <ul class="seller_display">

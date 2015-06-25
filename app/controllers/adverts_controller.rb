@@ -37,7 +37,8 @@ class AdvertsController < ApplicationController
     ransack = Advert.search(params[:q]).result(distinct: true)
     @adverts = ransack.find(:all, 
                             joins: :user, 
-                            conditions: { users: { active_account: true }, 
+                            conditions: { 
+                            users: { active_account: true }, 
                             adverts: {show_advert: true} },
                             order: {created_at: :desc})
                             .paginate(:page => params[:page], :per_page => 16)
@@ -106,7 +107,7 @@ class AdvertsController < ApplicationController
   def destroy
     @advert.destroy
     respond_to do |format|
-      format.html { redirect_to adverts_url }
+      format.html { redirect_to :back }
       format.json { head :no_content }
       format.js   { render layout: false}
     end

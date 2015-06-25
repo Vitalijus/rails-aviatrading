@@ -1,7 +1,8 @@
 class Users::RegistrationsController < Devise::RegistrationsController
 	before_filter :setup_plan, only: [:edit, :subscription]
-  before_filter :setup_user, only: [:subscribe_customer, :setup_billing, :change_plan, :cancel_plan ]
-  before_action :authenticate_user!, only: [:subscription]
+  before_filter :setup_user, only: [:subscription, :resubscription, :subscribe_customer, 
+                                    :setup_billing, :change_plan, :cancel_plan ]
+  before_action :authenticate_user!, only: [:subscription, :resubscription]
 
   def new
     if (params[:plan] == '1' || params[:plan] == '2')
@@ -61,7 +62,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       end
       redirect_to subscription_path, notice: "Downgraded to basic!"
     else
-      flash[:error] = "Unable to change a plan. Please notify us at info@aviatrading.com"
+      flash[:error] = "Unable to change a plan. Please notify us: info@aviatrading.com"
       redirect_to :back
     end
   end
@@ -83,7 +84,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def subscription
-    @user = current_user
+    
+  end
+
+  def resubscription
+    unless (params[:plan] == "1" || params[:plan] == '2')
+      flash[:notice] = "Please select a plan to subscribe."
+      redirect_to subscription_path
+    end
   end
 
   def create

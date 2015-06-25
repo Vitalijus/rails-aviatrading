@@ -23,12 +23,14 @@ class StripeController < ApplicationController
 	def customer_subscription_created(event)
 		stripe_customer_token = event.data.object.customer
   		user = User.where(stripe_customer_token: stripe_customer_token).first
+
   		UserMailer.customer_subscription_created(user).deliver 
 	end
 
 	def charge_succeeded(event)
 		stripe_customer_token = event.data.object.customer
   		user = User.where(stripe_customer_token: stripe_customer_token).first
+      
   		UserMailer.charge_succeeded(user).deliver 
 	end
 

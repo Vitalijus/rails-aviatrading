@@ -1,9 +1,3 @@
-<div class="user_panel_cvr_img">
-	<div class="user_panel_logo">
-		<%= image_tag @user.avatar_url(:avatar) %>
-	</div>
-</div>
-
 <% if user_signed_in? && current_user == @user %>
 	<ul class="usr_prfl_nav">
 		<%= link_to user_path(current_user) do %>

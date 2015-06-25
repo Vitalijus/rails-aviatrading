@@ -1,6 +1,5 @@
 <%= form_for(resource, :as => resource_name, :url => users_setup_billing_path, :html => { id: 'user_plan', :method => :put }) do |f| %><!-- id: 'user_plan' refers to registrations.js.coffee -->
 
-
 <%= devise_error_messages! %>
       <% if @user.errors.any? %>  
         <div id="errorExplanation">  
@@ -16,25 +15,32 @@
     <%= hidden_field_tag 'customer', resource.stripe_customer_token %>
     <%= f.hidden_field :stripe_card_token %>
     
-    <div class="form-group">
-      <%= label_tag :card_number, "Credit Card Number" %>
-      <%= text_field_tag :card_number, nil, name: nil %>
+    <div class="setup_billing_form">
+      <%= label_tag :card_number, "Credit Card Number*", :class => "setup_billing_label" %>
+      <%= text_field_tag :card_number, nil, name: nil, :class => "auth_field" %>
     </div>
 
-    <div class="form-group">
-      <%= label_tag :card_code, "Security Code on Card (CVV)" %>
-      <%= text_field_tag :card_code, nil, name: nil %>
+    <div class="setup_billing_form">
+      <%= label_tag :card_code, "Security Code on Card (CVV)*", :class => "setup_billing_label" %>
+      <%= text_field_tag :card_code, nil, name: nil, :class => "auth_field" %>
     </div>
-    <div class="form-group">
-      <%= label_tag :card_month, "Card Expiration" %>
-      <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month"} %>
-      <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year",} %>
+
+    <div class="setup_billing_form">
+      <%= label_tag :card_month, "Card Expiration*", :class => "setup_billing_label" %>
+      <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month", :class => "exp_field"} %>
+      <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year", :class => "exp_field"} %>
     </div>
+
     <div id="stripe_error">
       <noscript>JavaScript is not enabled and is required for this form. First enable it in your web browser settings.</noscript>
     </div>
 
     <div class="form-group">
-      <%= f.submit "Setup billing" %>
+      <%= f.submit "Setup billing", :class => "setup_billing_button" %>
+    </div>
+
+    <div class="reassure_billing_setup">
+      Switch plans or unsubscribe anytime.
+      <%= image_tag "secure.png", width: 200 %>
     </div>
 <% end %>

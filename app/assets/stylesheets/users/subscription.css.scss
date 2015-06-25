@@ -1,20 +1,22 @@
 /* SUBSCRIPTION PLAN */
 
 .subscription_wrapper {
-	width: 960px;
-	margin: auto;
-	margin-top: 20px;
-	overflow: hidden;
-	background-color: #f7f7f7;
-	border: 1px solid #DFE0E4;
+	margin: 20px;
 }
 
-.subscription_content {
-	width: 600px;
-	float:left;
+/* SETUP BILLING */
+
+.subscription_container {
+	max-width: 480px;
+	margin: 0 auto;
+	margin-bottom: 60px;
 	background-color: #fff;
-	padding: 30px 40px 40px 40px;
-	border-right: 1px solid #DFE0E4;
+	padding: 40px;
+	border: 1px solid #DFE0E4;
+
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
 }
 
 .subscription_header {
@@ -22,18 +24,149 @@
   font-size: 25px;
   color: #F05053;
   text-align: center;
+  border: 0px solid red;
 }
 
-.subscription_payment {
-	border: 0px solid red;
-}
-
-.subscription_details {
-	width: 355px;
-	float:left;
-	padding-top: 20px;
+.subscription_trial_end {
+	padding: 10px;
 	text-align: center;
+	font-family: 'PT Sans', sans-serif;
+	text-transform: uppercase;
+	font-size: 12px;
+	color: #8e8e8e;
 	border: 0px solid red;
 }
 
+.trial_end_highlight {
+	color: #F05053;
+}
+
+.subscription_form_wrapper {
+	border: 0px solid red;
+}
+
+.setup_billing_form {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.setup_billing_label {
+  display: block;
+  padding-bottom: 2px;
+  font-weight: bold;
+  font-size: 12px;
+  color: #999;
+  border: 0px solid red;
+}
+
+.exp_field {
+  width: 48.5%;
+  display: inline-block;
+  margin-top: 3px;
+  padding: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  background-color: #fefafa;
+  border:  1px solid #fdeded;
+
+  -webkit-box-shadow: inset 0px 0px 2px 0px rgba(250,229,229,0.5);
+  -moz-box-shadow: inset 0px 0px 2px 0px rgba(250,229,229,0.5);
+  box-shadow: inset 0px 0px 2px 0px rgba(250,229,229,0.5);
+}
+
+.exp_field:last-child {
+	width: 48.5%;
+	float: right;
+}
+
+.setup_billing_button {
+  width: 100%;
+  height: 45px;
+  cursor: pointer;
+  background-color: #F16164;
+  color: #fff;
+  border: none;
+  font-family: "Open Sans", helvetica, arial;
+  font-size: 18px;
+  border-bottom: 2px solid #B14739;
+
+  -webkit-transition: background-color 150ms linear;
+  -moz-transition: background-color 150ms linear;
+  -o-transition: background-color 150ms linear;
+  -ms-transition: background-color 150ms linear;
+  transition: background-color 150ms linear;
+
+  webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+
+.setup_billing_button:hover {
+  background-color: #F05053;
+}
+
+.downgrade_sbscrp,
+.upgrade_sbscrp {
+  width: 100%;
+  height: 45px;
+  cursor: pointer;
+  background-color: #F16164;
+  color: #fff;
+  border: none;
+  font-family: "Open Sans", helvetica, arial;
+  font-size: 18px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  border-bottom: 2px solid #B14739;
+
+  -webkit-transition: background-color 150ms linear;
+  -moz-transition: background-color 150ms linear;
+  -o-transition: background-color 150ms linear;
+  -ms-transition: background-color 150ms linear;
+  transition: background-color 150ms linear;
+
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+
+.downgrade_sbscrp:hover,
+.upgrade_sbscrp:hover {
+  background-color: #F05053;
+}
+
+.cancel_sbscrp {
+	background-color: #fff;
+	cursor: pointer;
+	font-family: 'PT Sans', sans-serif;
+	font-size: 12px;
+	text-transform: uppercase;
+	color: #777;
+	border: none;
+}
+
+.cancel_sbscrp:hover {
+	color: #F05053;
+}
+
+
+ul.downgrade_plan_button li:last-child,
+ul.upgrade_plan_button li:last-child {
+	text-align: center;
+}
+
+
+.reassure_billing_setup {
+	width: 100%;
+	margin-top: 20px;
+	font-size: 12px;
+	text-align: center;
+	color: #777;
+	text-transform: uppercase;
+	font-family: 'PT Sans', sans-serif;
+}
+
+.reassure_billing_setup img {
+	max-width: 100%;
+}
 /*---------------------*/

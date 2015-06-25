@@ -1,15 +1,22 @@
-<%= form_for(resource, :as => resource_name, :url => users_change_plan_path, :html => { id: 'change_plan', :method => :put }) do |f| %> 
+<ul class="upgrade_plan_button">
+  <%= form_for(resource, :as => resource_name, :url => users_change_plan_path, :html => { id: 'change_plan', :method => :put }) do |f| %> 
 
   <%= hidden_field_tag 'plan', @basic_plan.id %>
   <%= hidden_field_tag 'customer', resource.stripe_customer_token %>
   <%= hidden_field_tag 'subscription', resource.stripe_subscription_token %>
 
-  <div class="form-group">
-    <%= f.submit "Upgrade to Premium" %>
-  </div>
+  
+  <li>
+    <%= f.submit "Upgrade to Premium (150$ / month)", :class => "downgrade_sbscrp" %>
+  </li>
   <% end %>
 
   <%= form_for(resource, :as => resource_name, :url => users_cancel_plan_path, :html => { id: 'cancel_plan', :method => :put }) do |f| %>
-    <%= hidden_field_tag 'customer', resource.stripe_customer_token %>
-    <%= f.submit "Cancel Subscription" %>
-<% end %>
+
+  <%= hidden_field_tag 'customer', resource.stripe_customer_token %>
+
+  <li>
+    <%= f.submit "Unsubscribe", :class => "cancel_sbscrp" %>
+  </li>
+  <% end %>
+</ul>

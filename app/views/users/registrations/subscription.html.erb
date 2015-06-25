@@ -1,3 +1,5 @@
+<%= render 'user_navigation_panel' %>
+
 <div class="subscription_wrapper">
   <div id="flash">
     <% if flash[:notice] %>
@@ -8,9 +10,8 @@
       <h3><%= flash[:error] %></h3>
     <% end %> 
   </div>
-  <%= render 'user_navigation_panel' %>
 
-  <div class="subscription_content">
+  <div class="subscription_container">
     <div class="subscription_header">
       <div class="subscription_form_logo">
         <span class="icon-propeller-big"></span>
@@ -28,10 +29,17 @@
     </div>
 
     <% if !@user.trial_end.nil? %>
-      Setup billing before: <%= @user.trial_end.strftime("%d-%m-%Y") %>
+      <div class="subscription_trial_end">
+        <% if (@user.plan_id == 1) && !@user.setup_billing %>
+          You have been subscribed to a <b>Basic plan</b><br>
+        <% elsif (@user.plan_id == 2) && !@user.setup_billing %>
+          You have been subscribed to a <b>Premium plan</b><br>
+        <% end %>
+        Setup billing before: <b class="trial_end_highlight"><%= @user.trial_end.strftime("%d-%m-%Y") %></b>
+      </div>
     <% end %>
 
-  <div class="subscription_payment">
+  <div class="subscription_form_wrapper">
     <%= devise_error_messages! %>
       <% if @user.errors.any? %>  
         <div id="errorExplanation">  
@@ -44,20 +52,15 @@
         </div>  
       <% end %>
 
-  <% if @user.plan_id == 1 && @user.setup_billing %>
-    <%= render "users/registrations/subscription_partial/upgrade_to_premium" %>
-  <% elsif @user.plan_id == 2 && @user.setup_billing %>
-    <%= render "users/registrations/subscription_partial/downgrade_to_basic" %>
-  <% elsif (@user.plan_id == 1 or @user.plan_id == 2) && !@user.setup_billing %>
-    <%= render "users/registrations/subscription_partial/setup_billing" %>
-  <% elsif @user.plan_id == 0 && !@user.setup_billing %> 
-    <%= render "users/registrations/subscription_partial/choose_plan" %>
-  <% end %>
-
+      <% if @user.plan_id == 1 && @user.setup_billing %>
+        <%= render "users/registrations/subscription_partial/upgrade_to_premium" %>
+      <% elsif @user.plan_id == 2 && @user.setup_billing %>
+        <%= render "users/registrations/subscription_partial/downgrade_to_basic" %>
+      <% elsif (@user.plan_id == 1 or @user.plan_id == 2) && !@user.setup_billing %>
+        <%= render "users/registrations/subscription_partial/setup_billing" %>
+      <% elsif @user.plan_id == 0 && !@user.setup_billing %> 
+        <%= render "users/registrations/subscription_partial/choose_plan" %>
+      <% end %>
     </div>
-  </div>
-
-  <div class="subscription_details">
-    Plan Details
   </div>
 </div>
