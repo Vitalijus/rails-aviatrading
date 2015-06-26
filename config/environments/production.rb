@@ -25,7 +25,7 @@ School::Application.configure do
     authentication: "plain",
     enable_starttls_auto: true,
     user_name: "info@aviatrading.com",
-    password: "38710141505"
+    password: "Pedagogika1"
   }
 
   # Specify what domain to use for mailer URLs

@@ -1,5 +1,5 @@
 source 'https://code.stripe.com'
-source 'https://rubygems.org'
+source 'https://rubygems.org' do
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
@@ -45,6 +45,8 @@ group :doc do
 end
 
 gem 'rails_12factor', group: :production
+
+end
 
 ruby '2.0.0'
 
