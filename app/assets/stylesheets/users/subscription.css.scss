@@ -196,3 +196,39 @@
 	max-width: 100%;
 }
 /*---------------------*/
+
+/* RESUBSCRIBE LINKS */
+
+ul.resubscribe li {
+	margin-bottom: 10px;
+	margin-top: 10px;
+  	padding: 7px 10px 7px 10px;
+  	text-align: center;
+  	background-color: #F16164;
+  	color: #fff;
+  	font-family: "Open Sans", helvetica, arial;
+  	font-family: 'Lora', serif;
+  	font-size: 16px;
+  	border-bottom: 2px solid #B14739;
+
+  	-webkit-transition: background-color 150ms linear;
+  	-moz-transition: background-color 150ms linear;
+  	-o-transition: background-color 150ms linear;
+  	-ms-transition: background-color 150ms linear;
+  	transition: background-color 150ms linear;
+
+  	-webkit-border-radius: 2px;
+  	-moz-border-radius: 2px;
+  	border-radius: 2px;
+}
+
+ul.resubscribe a:hover li {
+	background-color: #F05053;
+}
+
+.resubscribe_small {
+	display: block;
+	font-size: 13px;
+	border: 0px solid green;
+}
+

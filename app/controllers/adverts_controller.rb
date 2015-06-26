@@ -13,7 +13,7 @@ class AdvertsController < ApplicationController
       if @advert.show_advert == true
         @advert.update_attributes(show_advert: false)
           respond_to do |format|
-            format.html { redirect_to :back, notice: "Advert is hidden from the search." }
+            format.html { redirect_to :back, notice: "Advert is hidden from search." }
             format.json { head :no_content }
             format.js   { render layout: false}
           end

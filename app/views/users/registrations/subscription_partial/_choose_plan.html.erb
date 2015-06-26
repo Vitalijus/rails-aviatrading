@@ -1,2 +1,15 @@
-<%= link_to "Basic", resubscription_path(plan: @basic_plan) %>
-<%= link_to "Premium", resubscription_path(plan: @premium_plan) %>
+<ul class="resubscribe">
+  <%= link_to resubscription_path(plan: @basic_plan) do %>
+    <li>
+      Choose <b>Basic plan</b>
+      <span class="resubscribe_small">only 50$ / month max. one ad</span>
+    </li>
+  <% end %>
+
+  <%= link_to resubscription_path(plan: @premium_plan) do %>
+    <li>
+      Choose <b>Premium plan</b>
+      <span class="resubscribe_small">only 150$ / month unlimited number of ads</span>
+    </li>
+  <% end %>
+</ul>

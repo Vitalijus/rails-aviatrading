@@ -18,7 +18,7 @@
         	<% if params[:plan] == "1" %>
           		<b><%= link_to "Subscribe for premium plan", resubscription_path(plan: 2) %></b> to advertise several aircrafts
 
-          		<% if @user.plan_id == 0 &&  @user.adverts.size >= 1  %>
+          		<% if @user.plan_id == 0 && @user.adverts.size > 1 %>
 	          		<div class="subscription_note">
 						In your listing you have <%= @user.adverts.size %> adverts. To be able to subscribe for a Basic plan you have to leave only one advert you want to advertise.
 					</div>
