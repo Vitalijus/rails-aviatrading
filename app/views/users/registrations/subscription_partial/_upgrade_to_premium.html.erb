@@ -1,22 +1,26 @@
-<ul class="upgrade_plan_button">
-  <%= form_for(resource, :as => resource_name, :url => users_change_plan_path, :html => { id: 'change_plan', :method => :put }) do |f| %> 
+<%= form_for(resource, :as => resource_name, :url => users_change_plan_path, :html => { id: 'change_plan', :method => :put }) do |f| %> 
 
   <%= hidden_field_tag 'plan', @basic_plan.id %>
   <%= hidden_field_tag 'customer', resource.stripe_customer_token %>
   <%= hidden_field_tag 'subscription', resource.stripe_subscription_token %>
-
   
-  <li>
-    <%= f.submit "Upgrade to Premium (150$ / month)", :class => "downgrade_sbscrp" %>
-  </li>
-  <% end %>
+  <div class="subscription_note">
+    You will retain the same billing dates. The cost of the new plan for the rest of the days will be added to the next invoice.
+  </div>
 
-  <%= form_for(resource, :as => resource_name, :url => users_cancel_plan_path, :html => { id: 'cancel_plan', :method => :put }) do |f| %>
+  <%= f.submit "Upgrade to Premium", :class => "change_sbscrp_button" %>
+  
+  <div class="subscription_button_gif">
+    <%= image_tag "load.gif" %>
+  </div>
+<% end %>
+
+
+<%= form_for(resource, :as => resource_name, :url => users_cancel_plan_path, :html => { id: 'cancel_plan', :method => :put }) do |f| %>
 
   <%= hidden_field_tag 'customer', resource.stripe_customer_token %>
 
-  <li>
+  <div class="cancel_sbscrp_wrapper">
     <%= f.submit "Unsubscribe", :class => "cancel_sbscrp" %>
-  </li>
-  <% end %>
-</ul>
+  </div>
+<% end %>

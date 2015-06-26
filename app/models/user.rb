@@ -11,7 +11,6 @@ class User < ActiveRecord::Base
   belongs_to :plan
 
   validates_presence_of :plan_id
-  #validates_presence_of :coupon
   validate :validate_for_coupon
 
   attr_accessor :stripe_card_token
@@ -129,16 +128,16 @@ class User < ActiveRecord::Base
 
 # retrieve a customer and setup new subscription with billing.
   def subscribe_existing_customer(customer_id, stripe_card_token, plan_id)
-      if valid?
-        customer = Stripe::Customer.retrieve("#{customer_id}")
-        customer.sources.create(source: stripe_card_token)
-        customer.description = "Customer subscribed with setup billing"
-        customer.plan = "#{plan_id}"
-        customer.save
+    if valid?
+      customer = Stripe::Customer.retrieve("#{customer_id}")
+      customer.sources.create(source: stripe_card_token)
+      customer.description = "Customer subscribed with setup billing"
+      customer.plan = "#{plan_id}"
+      customer.save
 
-        self.stripe_subscription_token = customer.subscriptions.first.id
-        save!
-      end
+      self.stripe_subscription_token = customer.subscriptions.first.id
+      save!
+    end
 
       rescue Stripe::InvalidRequestError => e
         logger.error "Stripe error while creating customer: #{e.message}"

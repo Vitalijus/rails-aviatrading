@@ -1,16 +1,6 @@
 <%= render 'user_navigation_panel' %>
 
 <div class="subscription_wrapper">
-  <div id="flash">
-    <% if flash[:notice] %>
-      <h3><%= flash[:notice] %></h3>
-    <% end %>
-
-    <% if flash[:error] %>
-      <h3><%= flash[:error] %></h3>
-    <% end %> 
-  </div>
-
   <div class="subscription_container">
     <div class="subscription_header">
       <div class="subscription_form_logo">
@@ -19,39 +9,28 @@
 
       <% if @user.plan_id == 2 && @user.setup_billing %>
         Downgrade to Basic
+          <div class="subscription_title_small">
+            You have been subscribed to a <b>Premium plan</b>
+          </div>
       <% elsif @user.plan_id == 1 && @user.setup_billing %>
         Upgrade to Premium
+          <div class="subscription_title_small">
+            You have been subscribed to a <b>Basic plan</b>
+          </div>
       <% elsif (@user.plan_id == 1 or @user.plan_id == 2) && !@user.setup_billing %>
         Setup Billing
+          <div class="subscription_title_small">
+            Setup billing info before <span class="trial_end_highlight"><%= @user.trial_end.strftime("%b %d, %Y") %></span>
+          </div>
       <% elsif @user.plan_id == 0 && !@user.setup_billing %>
         Subscribe to a Plan
+          <div class="subscription_title_small">
+            Choose a plan that's right for you
+          </div>
       <% end %>
     </div>
 
-    <% if !@user.trial_end.nil? %>
-      <div class="subscription_trial_end">
-        <% if (@user.plan_id == 1) && !@user.setup_billing %>
-          You have been subscribed to a <b>Basic plan</b><br>
-        <% elsif (@user.plan_id == 2) && !@user.setup_billing %>
-          You have been subscribed to a <b>Premium plan</b><br>
-        <% end %>
-        Setup billing before: <b class="trial_end_highlight"><%= @user.trial_end.strftime("%d-%m-%Y") %></b>
-      </div>
-    <% end %>
-
-  <div class="subscription_form_wrapper">
-    <%= devise_error_messages! %>
-      <% if @user.errors.any? %>  
-        <div id="errorExplanation">  
-          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>  
-          <ul>  
-          <% @user.errors.full_messages.each do |msg| %>  
-            <li><%= msg %></li>  
-          <% end %>  
-          </ul>  
-        </div>  
-      <% end %>
-
+    <div class="subscription_form_wrapper">
       <% if @user.plan_id == 1 && @user.setup_billing %>
         <%= render "users/registrations/subscription_partial/upgrade_to_premium" %>
       <% elsif @user.plan_id == 2 && @user.setup_billing %>

@@ -1,0 +1,7 @@
+<% if flash[:error] %>
+	<span class='error_message'><%=h flash[:error] %></span>
+<% end %>
+
+<% if flash[:notice] %>
+	<span class='success_message'><%=h flash[:notice] %></span>
+<% end %>

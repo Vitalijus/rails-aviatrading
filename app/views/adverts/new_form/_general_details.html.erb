@@ -1,5 +1,14 @@
   <div id="tab1" class="new_form_wrapper active">
     <div class="new_form_border_helper">
+      <% if @advert.errors.any? %>
+        <div id="error_explanation">
+          <ul>
+            <% @advert.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
 
     <ul class="form">
       <li class="form_label">

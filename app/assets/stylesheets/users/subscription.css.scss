@@ -27,8 +27,8 @@
   border: 0px solid red;
 }
 
-.subscription_trial_end {
-	padding: 10px;
+.subscription_title_small {
+	padding: 5px 10px 10px 10px;
 	text-align: center;
 	font-family: 'PT Sans', sans-serif;
 	text-transform: uppercase;
@@ -37,8 +37,17 @@
 	border: 0px solid red;
 }
 
+.subscription_title_small a {
+	color: #777;
+}
+
+.subscription_title_small a:hover {
+	color: #589FC3;
+}
+
 .trial_end_highlight {
 	color: #F05053;
+	font-weight: bold;
 }
 
 .subscription_form_wrapper {
@@ -105,8 +114,29 @@
   background-color: #F05053;
 }
 
-.downgrade_sbscrp,
-.upgrade_sbscrp {
+.subscription_button_gif {
+	display: none;
+	text-align: center;
+}
+
+.subscription_note {
+	padding: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	background-color: #FEFAFA;
+	border: 1px solid #FDEDED;
+	font-family: 'PT Sans', sans-serif;
+	font-size: 14px;
+	color: #BA2513;
+	text-align: left;
+	text-transform: none;
+
+	-webkit-border-radius: 2px;
+  	-moz-border-radius: 2px;
+  	border-radius: 2px;
+}
+
+.change_sbscrp_button {
   width: 100%;
   height: 45px;
   cursor: pointer;
@@ -130,9 +160,12 @@
   border-radius: 2px;
 }
 
-.downgrade_sbscrp:hover,
-.upgrade_sbscrp:hover {
+.change_sbscrp_button:hover {
   background-color: #F05053;
+}
+
+.cancel_sbscrp_wrapper {
+	text-align: center;
 }
 
 .cancel_sbscrp {
@@ -148,13 +181,6 @@
 .cancel_sbscrp:hover {
 	color: #F05053;
 }
-
-
-ul.downgrade_plan_button li:last-child,
-ul.upgrade_plan_button li:last-child {
-	text-align: center;
-}
-
 
 .reassure_billing_setup {
 	width: 100%;

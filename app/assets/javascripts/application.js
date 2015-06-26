@@ -131,3 +131,30 @@ $(document).ready(function() {
 });
 
 //--------------------------------
+
+// FLASH MESSAGE ERROR OR SUCESS
+
+$(document).ready(function() {
+  var flash_message = $('.success_message');
+  
+  if (flash_message.length > 0) {
+    flash_message.fadeIn();
+    window.setTimeout(function() {
+      flash_message.fadeOut();
+    }, 3000);
+  }
+});
+
+//-----------------------------
+
+// CHANGE TO GIF ON SUBMITTING CHANGE PLAN FORM
+
+$(document).ready(function() { 
+	$('#change_plan').submit(function() {
+	  $('input[type=submit]').attr('disabled', true)
+	  $('.change_sbscrp_button').hide()
+	  $('.subscription_button_gif').show()
+	});
+});
+
+//-------------------------

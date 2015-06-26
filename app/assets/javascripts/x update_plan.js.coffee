@@ -4,10 +4,8 @@ jQuery ->
 
 user =
   setupForm: ->
-    $('#user_plan').submit ->
+    $('#update_plan').submit ->
       $('input[type=submit]').attr('disabled', true)
-      $('.setup_billing_button').hide()
-      $('.subscription_button_gif').show()
       if $('#card_number').length
         user.processCard()
         false
@@ -24,10 +22,8 @@ user =
   
   handleStripeResponse: (status, response) ->
     if status == 200
-      $('#user_stripe_card_token').val(response.id)
-      $('#user_plan')[0].submit()
+      $('#new_token').val(response.id)
+      $('#update_plan')[0].submit()
     else
       $('#stripe_error').text(response.error.message)
       $('input[type=submit]').attr('disabled', false)
-      $('.setup_billing_button').show()
-      $('.subscription_button_gif').hide()

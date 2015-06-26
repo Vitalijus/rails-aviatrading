@@ -13,10 +13,9 @@
 
  	 	<div class="seller_form">
 			<%= form_for([@email_seller.advert, @email_seller]) do |f| %>
+			  
 			  <% if @email_seller.errors.any? %>
 			    <div id="error_explanation">
-			      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
-
 			      <ul>
 			      <% @email_seller.errors.full_messages.each do |msg| %>
 			        <li><%= msg %></li>

@@ -2,7 +2,6 @@
 
 <div class="user_grid_wrapper">
 	<div class="user_grid_container">
-  	<%= notice %>
 	  	<ul class="user_panel">
 	  		<li><%= @user.organisation %></li>
 	  		<li><%= pluralize(@user.adverts.count, "Advert") %></li>
@@ -61,14 +60,14 @@
 									</li>
 								<% end %>
 
-								<% if advert.show_advert %>
+								<% if advert.show_advert == true %>
 									<%= link_to show_advert_path(advert) do %> 
 										<li class="hide_icon">
 											<%= image_tag "hide.png", width: 12 %>
 											<span class="icon_tooltip">Hide</span>
 										</li>
 									<% end %>
-								<% else %>
+								<% else advert.show_advert == false %>
 									<%= link_to show_advert_path(advert) do %> 
 										<li class="show_icon">
 											<%= image_tag "show.png", width: 12 %>

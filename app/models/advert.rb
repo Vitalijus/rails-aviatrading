@@ -4,19 +4,16 @@ class Advert < ActiveRecord::Base
 	has_many :photos, :dependent => :destroy
 	has_many :email_sellers
 
-	validate :validate_for_basic
-	#validate :validate_for_premium
+	#validates :name, :aircraft_type, :aircraft_usage, :year, :country, 
+	#		  :city, :price, presence: true
+	#validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, on: :create }, presence: true
 
-	def validate_for_basic
-		if user.plan_id == 1 && user.adverts.size >= 1
-			errors[:base] << "Please upgrade to Premium plan to be able to post more adverts" 
-		end	
-	end
+	#validate :validate_for_basic
 
-	def validate_for_premium
-		if user.plan_id == 3
-			errors[:base] << "Please upgrade to Pmium plan to be able to post more adverts" 
-		end	
-	end
+	#def validate_for_basic
+	#	if user.plan_id == 1 && user.adverts.size >= 1
+	#		errors[:base] << "Please upgrade to Premium plan to be able to post more adverts" 
+	#	end	
+	#end
 	
 end

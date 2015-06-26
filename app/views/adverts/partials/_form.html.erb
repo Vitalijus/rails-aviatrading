@@ -29,42 +29,33 @@
 <% if current_user.id == @advert.user_id or current_user %>
 
 <%= form_for(@advert, :html => { multipart: true }) do |f| %>
-  <% if @advert.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@advert.errors.count, "error") %> prohibited this advert from being saved:</h2>
-
-      <ul>
-        <% @advert.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
+  <div class="new_advert_form_wrapper">
+    <div class="new_advert_nav">
+      <ul class="tabs_links">
+        <li class="active"><a href="#tab1">General details</a></li>
+        <li><a href="#tab2">Engine / Propeller</a></li>
+        <li><a href="#tab3">Additional info</a></li>
+        <li><a href="#tab4">Add Images</a></li>
+        <li>
+          <% if (current_user.plan_id == 1 || current_user.plan_id == 0) && current_user.adverts.size >= 1 && current_page?(controller: 'adverts', action: 'new') %>
+            <%= link_to subscription_path do %>
+              Plans
+            <% end %>
+          <% else %>
+            <div class="sub_button">
+              <%= image_tag "cloud_ok.png", width: 20, :class => "submit_button_icon" %>
+              <%= f.submit "Advertise", :class => "new_advert_submit_button" %>
+            </div>
+          <% end %>
+        </li>
       </ul>
     </div>
-  <% end %>
-
-
-<div class="new_advert_form_wrapper">
-  <div class="new_advert_nav">
-    <ul class="tabs_links">
-      <li class="active"><a href="#tab1">General details</a></li>
-      <li><a href="#tab2">Engine / Propeller</a></li>
-      <li><a href="#tab3">Additional info</a></li>
-      <li><a href="#tab4">Add Images</a></li>
-      <li>
-        <div class="sub_button">
-          <%= image_tag "cloud_ok.png", width: 20, :class => "submit_button_icon" %>
-          <%= f.submit "Advertise", :class => "new_advert_submit_button" %>
-        </div>
-      </li>
-    </ul>
-  </div>
-
 
   <div class="new_advert_wrapper">
     <%= render "adverts/new_form/general_details",  f: f %>
     <%= render "adverts/new_form/engine_propeller",  f: f %>
     <%= render "adverts/new_form/additional_info",  f: f %>
     <%= render "adverts/new_form/add_images",  f: f %>
-
   </div>
 </div>
 

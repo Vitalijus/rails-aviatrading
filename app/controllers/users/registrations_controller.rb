@@ -21,14 +21,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
           @user.update_attributes(active_account: true,
                                   setup_billing: true,
                                   plan_id: params[:plan])
+          redirect_to subscription_path
+          flash[:notice] = "Thank you! You have been successfully subscribed to a plan"
         else
           redirect_to :back
-          flash[:notice] = "Sub."
+          flash[:notice] = "Subscription failed. Please try again or contact info@aviatrading.com"
         end
-        redirect_to subscription_path, notice: "Subscribed to a plan"
       else
         redirect_to :back
-        flash[:notice] = "Not sub."
+        flash[:notice] = "Something went wrong. Please try again or contact info@aviatrading.com"
       end
   end
 
@@ -42,10 +43,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
         redirect_to subscription_path, notice: "Thank you! You have been successfully subscribed to a plan"
       else
         redirect_to :back
-        flash[:error] = "Unable to setup billing. Please notify us info@aviatrading.com"
+        flash[:notice] = "Unable to setup billing. Please notify us info@aviatrading.com"
       end
     else
-      flash[:error] = "Unable to setup billing. Please notify us info@aviatrading.com"
+      flash[:notice] = "Unable to setup billing. Please notify us info@aviatrading.com"
       redirect_to :back
     end
   end
@@ -62,7 +63,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       end
       redirect_to subscription_path, notice: "Downgraded to basic!"
     else
-      flash[:error] = "Unable to change a plan. Please notify us: info@aviatrading.com"
+      flash[:notice] = "Unable to change a plan. Please notify us: info@aviatrading.com"
       redirect_to :back
     end
   end
@@ -78,7 +79,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       flash[:notice] = "Canceled subscription."
       redirect_to subscription_path
     else
-      flash[:error] = "There was an error canceling your subscription. Please notify us at info@aviatrading.com"
+      flash[:notice] = "There was an error canceling your subscription. Please notify us at info@aviatrading.com"
       redirect_to :back
     end
   end

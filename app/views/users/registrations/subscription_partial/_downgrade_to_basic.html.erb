@@ -1,21 +1,31 @@
-<ul class="downgrade_plan_button">
-	<%= form_for(resource, :as => resource_name, :url => users_change_plan_path, :html => { id: 'change_plan', :method => :put }) do |f| %> 
+<%= form_for(resource, :as => resource_name, :url => users_change_plan_path, :html => { id: 'change_plan', :method => :put }) do |f| %> 
 
   	<%= hidden_field_tag 'plan', @premium_plan.id %>
   	<%= hidden_field_tag 'customer', resource.stripe_customer_token %>
   	<%= hidden_field_tag 'subscription', resource.stripe_subscription_token %>
 
-    <li>
-    	<%= f.submit "Downgrade to Basic (50$ / month)", :class => "downgrade_sbscrp" %>
-    </li>
-    <% end %>
-
-	<%= form_for(resource, :as => resource_name, :url => users_cancel_plan_path, :html => { id: 'cancel_plan', :method => :put }) do |f| %>
-
-	  	<%= hidden_field_tag 'customer', resource.stripe_customer_token %>
-
-	<li>
-		<%= f.submit "Unsubscribe", :class => "cancel_sbscrp" %>
-	</li>
+	<% if @user.plan_id == 2 &&  @user.adverts.size <= 1  %>
+		<div class="subscription_note">
+			You will retain the same billing dates. The cost of the new plan for the rest of the days will be added to the next invoice.
+		</div>
+		<%= f.submit "Downgrade to Basic", :class => "change_sbscrp_button" %>
+		
+		<div class="subscription_button_gif">
+			<%= image_tag "load.gif" %>
+		</div>
+	<% else %>
+		<div class="subscription_note">
+			In your listing you have <%= @user.adverts.size %> adverts. To be able to downgrade to a Basic plan you have to leave only one advert you want to advertise.
+		</div>
 	<% end %>
-</ul>
+<% end %>
+
+	
+<%= form_for(resource, :as => resource_name, :url => users_cancel_plan_path, :html => { id: 'cancel_plan', :method => :put }) do |f| %>
+
+	<%= hidden_field_tag 'customer', resource.stripe_customer_token %>
+
+	<div class="cancel_sbscrp_wrapper">
+		<%= f.submit "Unsubscribe", :class => "cancel_sbscrp" %>
+	</div>
+<% end %>

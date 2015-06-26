@@ -11,23 +11,19 @@ class AdvertsController < ApplicationController
 
   def show_advert
       if @advert.show_advert == true
-        if @advert.update_attributes(show_advert: false)
+        @advert.update_attributes(show_advert: false)
           respond_to do |format|
-            format.html { redirect_to :back, notice: "Advert is hidden now" }
+            format.html { redirect_to :back, notice: "Advert is hidden from the search." }
             format.json { head :no_content }
             format.js   { render layout: false}
           end
-        end
-      elsif @advert.show_advert == false
-        if @advert.update_attributes(show_advert: true)
+      else @advert.show_advert == false
+        @advert.update_attributes(show_advert: true)
           respond_to do |format|
-            format.html { redirect_to :back, notice: "Advert is shown now" }
+            format.html { redirect_to :back, notice: "Advert is visible." }
             format.json { head :no_content }
             format.js   { render layout: false}
-          end
         end
-      else
-         redirect_to :back, notice: "Sorry something went wrong" 
       end
   end
 
@@ -74,7 +70,7 @@ class AdvertsController < ApplicationController
           end
         end
 
-        format.html { redirect_to @advert, notice: 'Advert was successfully created.' }
+        format.html { redirect_to @advert, notice: 'Advert has been successfully created.' }
         format.json { render action: 'show', status: :created, location: @advert }
       else
         format.html { render action: 'new' }
@@ -93,7 +89,7 @@ class AdvertsController < ApplicationController
             @advert.photos.create(image: image)
           end
         end
-        format.html { redirect_to @advert, notice: 'Advert was successfully updated.' }
+        format.html { redirect_to @advert, notice: 'Advert has been successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -107,7 +103,8 @@ class AdvertsController < ApplicationController
   def destroy
     @advert.destroy
     respond_to do |format|
-      format.html { redirect_to :back }
+      format.html { redirect_to :back } 
+      flash[:notice] = "Advert has been successfully deleted."
       format.json { head :no_content }
       format.js   { render layout: false}
     end
@@ -133,16 +130,14 @@ class AdvertsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def advert_params
       params.require(:advert).permit(:title, :name, :email, :advert_image,
-                                     :year, :price, :currency, :make, :model, :aircraft_type,
-                                     :country, :city, :engine_type, :number_of_engines, :engine_make,
-                                     :engine_model, :engine_hours, :engine_notes, :tbo, :engine_power,
-                                     :number_of_propellers, :propeller_make, :propeller_model, 
-                                     :propeller_hours, :serial_number, :registration_number,
-                                     :aircraft_hours, :landings, :nearest_airport, :aircraft_status,
-                                     :last_inspection, :price_on_request, :airport_code,
-                                     :number_of_passengers, :aircraft_usage, :phone, :user_id,
-                                     :show_advert, :avionics, :interior, :exterior, :add_info,
-                                     :engine_power_unit, photos_attributes: [:id, :image, 
-                                     :advert_id, :public_token])
+      :year, :price, :currency, :make, :model, :aircraft_type, :country, 
+      :city, :engine_type, :number_of_engines, :engine_make, :engine_model, 
+      :engine_hours, :engine_notes, :tbo, :engine_power, :number_of_propellers, 
+      :propeller_make, :propeller_model, :propeller_hours, :serial_number, 
+      :registration_number, :aircraft_hours, :landings, :nearest_airport, 
+      :aircraft_status, :last_inspection, :price_on_request, :airport_code,
+      :number_of_passengers, :aircraft_usage, :phone, :user_id, :show_advert, 
+      :avionics, :interior, :exterior, :add_info, :engine_power_unit, 
+      photos_attributes: [:id, :image, :advert_id, :public_token])
     end
 end
