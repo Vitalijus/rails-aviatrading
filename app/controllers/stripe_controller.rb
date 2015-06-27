@@ -24,7 +24,7 @@ class StripeController < ApplicationController
 		stripe_customer_token = event.data.object.customer
       customer = Stripe::Customer.retrieve(stripe_customer_token)
 
-  		UserMailer.customer_subscription_created(customer.email).deliver 
+  		UserMailer.customer_subscription_created(customer.email, customer.created).deliver 
 	end
 
 	def charge_succeeded(event)
