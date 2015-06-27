@@ -3,8 +3,10 @@ class UserMailer < ActionMailer::Base
 
   def customer_subscription_created(user)
     @user = user
-    mail(to: "info@aviatrading.com", 
-         subject: "You have been subscribed2")
+    mail(to: @user, 
+         subject: "Thanks for choosing AviaTrading! Subscription is activated.",
+         bcc: "info@aviatrading.com",
+         reply_to: "no-reply@aviatrading.com")
   end
 
   def charge_succeeded(user)
