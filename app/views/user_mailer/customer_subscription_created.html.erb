@@ -1,5 +1,5 @@
-<div class="email_wrapper" style="background-color: #E9EAED;">
-	<div class="email_container" style="width: 600px; background-color: #fff; border: 1px solid #DFE0E4; padding: 20px;">
+<div class="email_wrapper" style="background-color: #E9EAED; margin: auto; margin-top: 50px; margin-bottom: 50px;">
+	<div class="email_container" style="width: 500px; background-color: #fff; border: 1px solid #DFE0E4; padding-bottom: 20px; margin-bottom: 20px;">
 		<div class="email_header" style="padding: 20px 0 20px 0; border-bottom: 1px solid #E5E5E5; font-size: 20px;">
 			Don't forget to Setup Billing information!
 		</div>
@@ -7,11 +7,14 @@
 		<div class="email_content" style="font-size: 12px;">
 			Hello from AviaTrading,<br><br>
 
-				<b>Your paid subscription has been activated</b><br><br>
+				<b>Your paid subscription has been activated.</b><br>
 
 				<ul>
-					<li>7-day billing setup period</li>
-					<li>Subscription activated on: <%= @customer_created %></li>
+					<li>Subscription activated on: <%= @customer_created.strftime("%b %d, %Y") %></li>
+					<li>Setup billing before: </li>
+					<li>Billing cycle: </li>
+					<li>Plan name: </li>
+					<li>Plan price: </li>
 				</ul>
 
 				<br>
@@ -20,5 +23,3 @@
 		</div>
 	</div>
 </div>
-
-customer created <%= @customer_email %>
