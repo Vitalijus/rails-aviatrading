@@ -21,7 +21,7 @@ class EmailSellersController < ApplicationController
 	private
 	 # Never trust parameters from the scary internet, only allow the white list through.
     def email_seller_params
-      params.require(:email_seller).permit(:email, :name, :phone, :cpmpany, :country,
+      params.require(:email_seller).permit(:email, :name, :phone, :company, :country,
       									   :message )
     end
 end
