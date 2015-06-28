@@ -26,7 +26,7 @@ class StripeController < ApplicationController
       subscription = customer.subscriptions.first.id
 
   		UserMailer.customer_subscription_created(customer.email, customer.created, 
-                subscription).deliver 
+                subscription.plan).deliver 
 	end
 
 	def charge_succeeded(event)
