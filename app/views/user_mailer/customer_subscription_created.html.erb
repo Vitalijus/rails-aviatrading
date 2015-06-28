@@ -44,10 +44,10 @@
                                             <b>Your paid subscription has been activated.</b><br>
 
                                             <ul>
-                                                <li>Subscription activated on: <%= Time.at(@customer_created).to_datetime %></li>
-                                                <li>Setup billing before: </li>
-                                                <li>Billing cycle: </li>
-                                                <li>Plan name: </li>
+                                                <li style="padding-bottom: 3px;">Subscription activation date: <%= Time.at(@customer_created).to_datetime.strftime("%b %d, %Y") %></li>
+                                                <li style="padding-bottom: 3px;">Setup billing before: </li>
+                                                <li style="padding-bottom: 3px;">Billing cycle: </li>
+                                                <li style="padding-bottom: 3px;">Plan name: <%= @plan_name %></li>
                                                 <li>Plan price: </li>
                                             </ul>
 

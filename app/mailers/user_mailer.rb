@@ -1,9 +1,10 @@
 class UserMailer < ActionMailer::Base
   default from: "info@aviatrading.com"
 
-  def customer_subscription_created(customer_email, customer_created)
+  def customer_subscription_created(customer_email, customer_created, plan_name)
     @customer_email = customer_email
     @customer_created = customer_created
+    @plan_name = plan_name
     mail(to: @customer_email, 
          subject: "Thanks for choosing AviaTrading! Subscription is activated.",
          bcc: "info@aviatrading.com")
