@@ -24,7 +24,7 @@ class StripeController < ApplicationController
 		stripe_customer_token = event.data.object.customer
     stripe_subscription_token = event.data.object.subscription
       customer = Stripe::Customer.retrieve(stripe_customer_token)
-      subscription = Stripe::Customer.retrieve(stripe_subscription_token)
+      subscription = customer.subscriptions.first.id
 
   		UserMailer.customer_subscription_created(customer.email, customer.created, 
                 subscription.trial_end).deliver 
