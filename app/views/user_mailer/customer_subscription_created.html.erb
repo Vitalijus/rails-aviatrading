@@ -45,9 +45,9 @@
 
                                             <ul>
                                                 <li style="padding-bottom: 3px;">Subscription activation date: <%= Time.at(@customer_created).to_datetime.strftime("%b %d, %Y") %></li>
-                                                <li style="padding-bottom: 3px;">Setup billing before: </li>
+                                                <li style="padding-bottom: 3px;">Setup billing before: <%= @trial_end %> </li>
                                                 <li style="padding-bottom: 3px;">Billing cycle: </li>
-                                                <li style="padding-bottom: 3px;">Plan name: <%= @plan_name %></li>
+                                                <li style="padding-bottom: 3px;">Plan name:</li>
                                                 <li>Plan price: </li>
                                             </ul>
 
