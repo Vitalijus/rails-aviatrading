@@ -38,13 +38,13 @@
 
                                 <table border-collapse="collapse" cellpadding="0" cellspacing="20" width="100%" id="emailContent">
                                     <tr>
-                                        <td style="font-size: 12px;" align="left" valign="top">
+                                        <td style="font-size: 14px;" align="left" valign="top">
                                             Hello from AviaTrading,<br><br>
 
                                             <b>Your paid subscription has been activated.</b><br>
 
                                             <ul>
-                                                <li>Subscription activated on: <%= @customer_created %></li>
+                                                <li>Subscription activated on: <%= Time.at(@customer_created).to_datetime %></li>
                                                 <li>Setup billing before: </li>
                                                 <li>Billing cycle: </li>
                                                 <li>Plan name: </li>
@@ -54,18 +54,11 @@
                                             <br>
 
                                             Need extra help? Our support team has the answers you need to get up and running fast. <a href="https://aviatrading.com/contacts/new">Contact us</a>
+                                            <br><br><br>
+                                            Sincerely, <br><b>AviaTrading Team</b>
                                         </td>
                                     </tr>
                                 </table>
-
-                                <table border-collapse="collapse" cellpadding="0" cellspacing="20" width="100%" id="emailFooter">
-                                    <tr>
-                                        <td align="left" valign="top">
-                                            Footer
-                                        </td>
-                                    </tr>
-                                </table>
-
                             </td>
                         </tr>
                     </table>
