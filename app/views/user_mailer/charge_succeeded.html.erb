@@ -1,1 +1,70 @@
-Charge succeeded
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title></title>
+        <style>
+          @media (max-width: 768px) {
+            #emailContainer {
+              max-width: 480px !important;;
+            }
+          }
+
+          @media (max-width: 500px) {
+            #emailContainer {
+              max-width: 320px !important;;
+            }
+          }
+
+          /*---------------------*/
+        </style>
+    </head>
+    <body>
+        <table style="background-color: #E9EAED; padding: 50px 0 50px 0" cellpadding="20" cellspacing="0" height="100%" width="100%" id="bodyTable">
+            <tr>
+                <td align="center" valign="top">
+                    <table style="border: 1px solid #dfe0e4; background-color: #ffffff;" cellpadding="0" cellspacing="0" width="600" id="emailContainer">
+                        <tr>
+                            <td align="left" valign="top">
+                                
+                                <table style="border-bottom: 1px solid #E5E5E5; font-size: 20px;" border-collapse="collapse" cellpadding="0" cellspacing="20" width="100%" id="emailHeader">
+                                    <tr>
+                                        <td align="left" valign="top">
+                                             Your billing setup is complete
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <table border-collapse="collapse" cellpadding="0" cellspacing="20" width="100%" id="emailContent">
+                                    <tr>
+                                        <td style="font-size: 14px;" align="left" valign="top">
+
+                                            <b>Thanks for adding billing information to your AviaTrading account.</b>
+
+                                            <br><br>
+
+                                            Remember, your paid plan doesn't start until the end of 7-day billing setup period.
+                                            <br><br>
+
+                                            <ul>
+                                                <li style="padding-bottom: 3px;">
+                                                	End of the 7-day billing setup period: <%= Time.at(@trial_end).to_datetime.strftime("%b %d, %Y") %> 
+                                                </li>
+                                            </ul>
+
+                                            Need extra help? Our support team has the answers you need to get up and running fast. <a href="https://aviatrading.com/contacts/new">Contact us</a>
+                                            <br><br><br>
+                                            Sincerely, <br><b>AviaTrading Team</b>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
+
+
