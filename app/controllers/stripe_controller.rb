@@ -17,9 +17,11 @@ class StripeController < ApplicationController
       		invoice_payment_failed(stripe_event)
     	end 
 
-      if stripe_event.type == "customer.subscription.trial_will_end"
-          customer_subscription_trial_will_end(stripe_event)
-      end 
+      unless stripe_event.type == "charge.succeeded" 
+        if stripe_event.type == "customer.subscription.trial_will_end"
+            customer_subscription_trial_will_end(stripe_event)
+        end 
+      end
 
     	render nothing: true
 	end
@@ -36,9 +38,9 @@ class StripeController < ApplicationController
 
 	def charge_succeeded(event)
 		stripe_customer_token = event.data.object.customer
-  		user = User.where(stripe_customer_token: stripe_customer_token).first
+  		customer = Stripe::Customer.retrieve(stripe_customer_token)
       
-  		UserMailer.charge_succeeded(user).deliver 
+  		UserMailer.charge_succeeded(customer.email).deliver 
 	end
 
 	def invoice_payment_failed(event)
@@ -47,6 +49,8 @@ class StripeController < ApplicationController
       customer.cancel_subscription
       customer.description = "Canceled subscription due failed invoice payment"
       customer.save
+
+      UserMailer.invoice_payment_failed(customer.email).deliver
 
       user = User.where(stripe_customer_token: stripe_customer_token).first
   		user.active_account = false
@@ -57,7 +61,6 @@ class StripeController < ApplicationController
       user.trial_end = nil
   		user.save!
 
-      UserMailer.invoice_payment_failed(user).deliver
 	end
 
   def customer_subscription_trial_will_end(event)
