@@ -13,14 +13,21 @@ class UserMailer < ActionMailer::Base
   def charge_succeeded(customer_email)
     @customer_email = customer_email
     mail(to: @customer_email, 
-         subject: "Charge succeeded",
+         subject: "Thanks for setting up billing in AviaTrading",
          bcc: "info@aviatrading.com")
   end
 
   def invoice_payment_failed(customer_email)
     @customer_email = customer_email
     mail(to: @customer_email, 
-         subject: "Invoice payment failed",
+         subject: "Your AviaTrading subscription has been suspended",
+         bcc: "info@aviatrading.com")
+  end
+
+  def customer_subscription_trial_will_end(customer_email)
+    @customer_email = customer_email
+    mail(to: @customer_email, 
+         subject: "Don't forget to add billing information for AviaTrading",
          bcc: "info@aviatrading.com")
   end
 end
