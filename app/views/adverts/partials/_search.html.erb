@@ -1,76 +1,95 @@
+<%= search_form_for @q, :id => "adverts_search" do |f| %>
   <div id="search_nav_container">
       <ul class="search_nav">
           <li>
-            Manufacturer
-          </li>
-          
-          <li>
-            Model
-          </li>
+            <ul class="inner_search_nav">
+              <li class="search_label">
+                Make:
+              </li>
 
-          <li class="search_dropdown">
-            Country
+              <li class="search_field">
+                <%= f.text_field :make_cont, :class => "input_field" %>
+              </li>
 
-            <ul class="down">
-              <li><%= search_form_for @q, :id => "adverts_search" do |f| %>
-  <% Advert.select(:make).distinct.each do |advert| %>
-    <div class="search_checkbox">
-      <span class='country'><%= advert.make %></span>
-      <%= check_box_tag 'q[make_eq_any][]', advert.make, false, {:id => "search_united_states"} %>
-    </div>
-  <% end %>
+              <li class="search_label">
+                Model:
+              </li>
 
-  <br><br>
-
-  <% Advert.select(:model).distinct.each do |advert| %>
-    <div class="search_checkbox">
-      <span class='country'><%= advert.model %></span>
-      <%= check_box_tag 'q[model_eq_any][]', advert.model, false, {:id => "search_united_states"} %>
-    </div>
-  <% end %>
-
-  <br><br>
-
-  <% Advert.select(:country).distinct.each do |advert| %>
-    <div class="search_checkbox">
-      <span class='country'><%= advert.country %> <%= advert.country.count("country") %></span>
-      <%= check_box_tag 'q[country_eq_any][]', advert.country, false, {:id => "search_united_states"} %>
-    </div>
-  <% end %>
-<% end %>
-</li>
+              <li class="search_field">
+                <%= f.text_field :model_cont, :class => "input_field" %>
+              </li>
             </ul>
           </li>
           
           <li>
-            Aircraft type
+            <ul class="inner_search_nav">
+              <li class="search_label">
+                Country:
+              </li>
+
+              <li class="search_field">
+                    <%= f.select :country_cont, ["Afghanistan"], :prompt => 'Select country' %>
+              </li>
+
+              <li class="search_label">
+                Price:
+              </li>
+
+              <li class="search_field">
+                <%= f.text_field :price_lteq, :class => "input_field", :placeholder => "Price less than" %>
+              </li>
+            </ul>
           </li>
 
-          <li>Aircraft usage</li>
-          <li>Engine type</li>
-          <li>Engine model</li>
+          <li>
+            <ul class="inner_search_nav">
+              <li class="search_label">
+                Year:
+              </li>
+
+              <li class="search_field">
+                <%= f.select :year_eq, options_for_select((Date.today.year-100..Date.today.year+1).step(1).reverse_each), :prompt => 'Year' %>
+              </li>
+
+              <li class="search_label">
+                Aircraft type:
+              </li>
+
+              <li class="search_field">
+                <%= f.select :aircraft_type_cont, ["Airship / Blimp", "Glider / Sailplane", "Jet", "Helicopter", "Light sport", "Single piston", "Multi piston", "TurboProp", "Ultralight", "Hot air balloon"], :prompt => 'Aircraft type' %>
+              </li>
+            </ul>
+          </li>
+          
+          <li>
+            <ul class="inner_search_nav">
+              <li class="search_label">
+                Aircraft usage:
+              </li>
+
+              <li class="search_field">
+                <%= f.select :aircraft_usage_cont, ["Aerobatic", "Aerial survey", "Agriculture", "Amphibian/Float", "Antique/Classic", "Business/VIP", "Homebuilt", "EMS/SAR/Fire/Police", "Cargo/Freighter", "Passenger", "Warbird/Military"], :prompt => 'Aircraft usage' %>
+              </li>
+
+              <li class="search_label">
+                Engine:
+              </li>
+
+              <li class="search_field">
+                <%= f.select :engine_type_cont, ['In-line engine', "V-type engine", "Horizontally opposed engine", "Radial engine", "Turboprop", "Turboshaft", "Turbojet", "Turbofan", "Other"], :prompt => 'Engine' %>
+              </li>
+            </ul>
+          </li>
       </ul>
   </div>
-
-<div id="sub_menu">
-   
-</div>
-
-<script>
-$(document).ready(function() {
-  $('li.search_dropdown').click(function() {
-    $(this).find('ul.down').fadeIn();
-  });
-});
-</script>
-
-
+<% end %>
+  
   <!-- STICKY HEADER -->
   <script> 
   $(document).ready (function() {
 
     var nav = $("#search_nav_container");
-    var header = $(".landing_image_wrapper");
+    var header = $("header");
     var pos = nav.position();
 
     $(window).scroll(function() {
