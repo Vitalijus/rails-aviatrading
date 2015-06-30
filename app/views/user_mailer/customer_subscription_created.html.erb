@@ -47,7 +47,7 @@
                                                 <li style="padding-bottom: 3px;">Setup billing until: <%= Time.at(@trial_end).to_datetime.strftime("%b %d, %Y") %> </li>
                                                 <li style="padding-bottom: 3px;">Billing cycle: <%= @plan_interval %></li>
                                                 <li style="padding-bottom: 3px;">Plan name: <%= @plan_name %></li>
-                                                <li>Plan price: <%= number_to_currency(@plan_price, :unit => "$") %></li>
+                                                <li>Plan price: $<%= @plan_price %></li>
                                             </ul>
 
                                             <br>
