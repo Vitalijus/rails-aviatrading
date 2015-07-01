@@ -8,7 +8,7 @@
               </li>
 
               <li class="search_field">
-                <%= f.text_field :make_cont, :class => "input_field" %>
+                <%= f.text_field :make_cont, :class => "input_field", :placeholder => "Cessna" %>
               </li>
 
               <li class="search_label">
@@ -16,7 +16,7 @@
               </li>
 
               <li class="search_field">
-                <%= f.text_field :model_cont, :class => "input_field" %>
+                <%= f.text_field :model_cont, :class => "input_field", :placeholder => "Cessna 177" %>
               </li>
             </ul>
           </li>
@@ -27,8 +27,8 @@
                 Country:
               </li>
 
-              <li class="search_field">
-                    <%= f.select :country_cont, ["Afghanistan"], :prompt => 'Select country' %>
+              <li class="search_field search_select">
+                    <%= f.select :country_cont, ["Afghanistan", "Aland Islands", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia, Plurinational State of", "Bosnia and Herzegovina", "Botswana", "Bouvet Island", "Brazil", "British Indian Ocean Territory", "Brunei Darussalam", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Cocos (Keeling) Islands", "Colombia", "Comoros", "Congo", "Congo, the Democratic Republic of the", "Cook Islands", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Cyprus","Czech Republic","Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Falkland Islands (Malvinas)", "Faroe Islands", "Fiji", "Finland", "France", "French Guiana", "French Polynesia", "French Southern Territories", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard Island and McDonald Islands", "Holy See (Vatican City State)", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran, Islamic Republic of", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Japan", "Jersey", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Korea, Democratic People's Republic of", "Korea, Republic of", "Kuwait", "Kyrgyzstan", "Lao People's Democratic Republic", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libyan Arab Jamahiriya", "Liechtenstein", "Lithuania", "Luxembourg", "Macao", "Macedonia, the former Yugoslav Republic of", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mexico", "Micronesia, Federated States of", "Moldova, Republic of", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "Netherlands Antilles", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "Northern Mariana Islands", "Norway", "Oman", "Pakistan", "Palau", "Palestinian Territory, Occupied", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Pitcairn", "Poland", "Portugal", "Puerto Rico", "Qatar", "Reunion  Réunion", "Romania", "Russian Federation", "Rwanda", "Saint Barthélemy", "Saint Helena", "Saint Kitts and Nevis", "Saint Lucia", "Saint Martin (French part)", "Saint Pierre and Miquelon", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia and the South Sandwich Islands", "Spain", "Sri Lanka", "Sudan", "Suriname", "Svalbard and Jan Mayen", "Swaziland", "Sweden", "Switzerland", "Syrian Arab Republic", "Taiwan, Province of China", "Tajikistan", "Tanzania, United Republic of", "Thailand", "Timor-Leste", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "United States Minor Outlying, Islands", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela, Bolivarian Republic of", "Viet Nam", "Virgin Islands, British", "Virgin Islands, U.S.", "Wallis and Futuna", "Western Sahara", "Yemen", "Zambia","Zimbabwe"], :prompt => 'Select country' %>
               </li>
 
               <li class="search_label">
@@ -36,7 +36,7 @@
               </li>
 
               <li class="search_field">
-                <%= f.text_field :price_lteq, :class => "input_field", :placeholder => "Price less than" %>
+                <%= f.text_field :price_lteq, :class => "input_field", :placeholder => "Show price less than" %>
               </li>
             </ul>
           </li>
@@ -44,19 +44,19 @@
           <li>
             <ul class="inner_search_nav">
               <li class="search_label">
-                Year:
-              </li>
-
-              <li class="search_field">
-                <%= f.select :year_eq, options_for_select((Date.today.year-100..Date.today.year+1).step(1).reverse_each), :prompt => 'Year' %>
-              </li>
-
-              <li class="search_label">
                 Aircraft type:
               </li>
 
-              <li class="search_field">
-                <%= f.select :aircraft_type_cont, ["Airship / Blimp", "Glider / Sailplane", "Jet", "Helicopter", "Light sport", "Single piston", "Multi piston", "TurboProp", "Ultralight", "Hot air balloon"], :prompt => 'Aircraft type' %>
+              <li class="search_field search_select">
+                <%= f.select :aircraft_type_cont, ["Airship / Blimp", "Glider / Sailplane", "Jet", "Helicopter", "Light sport", "Single piston", "Multi piston", "TurboProp", "Ultralight", "Hot air balloon", "Other"], :prompt => 'Select type' %>
+              </li>
+
+              <li class="search_label">
+                Aircraft usage:
+              </li>
+
+              <li class="search_field search_select">
+                <%= f.select :aircraft_usage_cont, ["Aerobatic", "Aerial survey", "Agriculture", "Amphibian/Float", "Antique/Classic", "Business/VIP", "Homebuilt", "EMS/SAR/Fire/Police", "Cargo/Freighter", "Passenger", "Warbird/Military", "Other"], :prompt => 'Select usage' %>
               </li>
             </ul>
           </li>
@@ -64,19 +64,19 @@
           <li>
             <ul class="inner_search_nav">
               <li class="search_label">
-                Aircraft usage:
+                Year:
               </li>
 
-              <li class="search_field">
-                <%= f.select :aircraft_usage_cont, ["Aerobatic", "Aerial survey", "Agriculture", "Amphibian/Float", "Antique/Classic", "Business/VIP", "Homebuilt", "EMS/SAR/Fire/Police", "Cargo/Freighter", "Passenger", "Warbird/Military"], :prompt => 'Aircraft usage' %>
+              <li class="search_field search_select">
+                <%= f.select :year_eq, options_for_select((Date.today.year-100..Date.today.year+1).step(1).reverse_each), :prompt => 'Select year' %>
               </li>
 
               <li class="search_label">
                 Engine:
               </li>
 
-              <li class="search_field">
-                <%= f.select :engine_type_cont, ['In-line engine', "V-type engine", "Horizontally opposed engine", "Radial engine", "Turboprop", "Turboshaft", "Turbojet", "Turbofan", "Other"], :prompt => 'Engine' %>
+              <li class="search_field search_select">
+                <%= f.select :engine_type_cont, ['In-line engine', "V-type engine", "Horizontally opposed engine", "Radial engine", "Turboprop", "Turboshaft", "Turbojet", "Turbofan", "Other"], :prompt => 'Select engine' %>
               </li>
             </ul>
           </li>
@@ -84,28 +84,7 @@
   </div>
 <% end %>
   
-  <!-- STICKY HEADER -->
-  <script> 
-  $(document).ready (function() {
 
-    var nav = $("#search_nav_container");
-    var header = $("header");
-    var pos = nav.position();
-
-    $(window).scroll(function() {
-
-      var windowpos = $(window).scrollTop();
-
-        if (windowpos >= header.outerHeight()) {
-          nav.addClass("fixedTop");
-        }
-
-        else {
-          nav.removeClass("fixedTop");
-        }
-    });
-  });
-  </script> 
 
 
   

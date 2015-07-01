@@ -2,9 +2,9 @@ module AdvertsHelper
 
 	def aircraft_type_helper(value, size)
 		case value
-		when "Airship/Blimp"
+		when "Airship / Blimp"
 			image_tag "aircraft_type/airship.png", 		width: size
-		when "Glider/Sailplane"
+		when "Glider / Sailplane"
 			image_tag "aircraft_type/glider.png",		width: size
 		when "Helicopter"
 			image_tag "aircraft_type/helicopter.png",	width: size

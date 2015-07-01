@@ -21,10 +21,10 @@
 // SNIPPET FOR LIVE SEARCH AND AJAX PAGINATION
 
 $(function() {
-	$(document).on("click",".pagination a", function() {
-		$.getScript(this.href);
-		return false;
-	});
+	//$("#adverts").on("click",".pagination a", function() {
+	//	$.getScript(this.href);
+	//	return false;
+	//});
 
 	$("#adverts_search input, select").on('change keyup', function() {
 		$.get($("#adverts_search").attr("action"), $("#adverts_search").serialize(), null, "script");

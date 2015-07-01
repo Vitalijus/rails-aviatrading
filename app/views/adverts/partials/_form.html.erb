@@ -39,11 +39,12 @@
         <li>
           <% if (current_user.plan_id == 1 || current_user.plan_id == 0) && current_user.adverts.size >= 1 && current_page?(controller: 'adverts', action: 'new') %>
             <%= link_to subscription_path do %>
-              Plans
+            <div class="sub_button">
+              <%= f.submit "Show plans", :class => "new_advert_submit_button" %>
+            </div>
             <% end %>
           <% else %>
             <div class="sub_button">
-              <%= image_tag "cloud_ok.png", width: 20, :class => "submit_button_icon" %>
               <%= f.submit "Advertise", :class => "new_advert_submit_button" %>
             </div>
           <% end %>
