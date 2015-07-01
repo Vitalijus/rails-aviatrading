@@ -237,7 +237,12 @@ ul.aircraft_details li {
 	width: 100%;
 	background-color: #fff;
 	padding: 10px 30px 10px 30px;
-	border: 0px solid red;
+	overflow: hidden;
+}
+
+.table_wrapper {
+	width: 50%;
+	float: left;
 }
 
 ul.advert_main_info {
@@ -251,7 +256,7 @@ ul.advert_main_info.engine_note {
 }
 
 ul.advert_main_info li {
-	width: 40%;
+	width: 50%;
 	display: inline-block;
 	vertical-align: top;
 	margin-right: -4px;
@@ -264,7 +269,7 @@ ul.advert_main_info:first-child {
 }
 
 ul.advert_main_info li.info_label {
-	width: 20%;
+	width: 100%;
 	font-family: 'PT Sans', sans-serif;
     font-weight: bold;
     font-size: 13px;
@@ -275,25 +280,17 @@ ul.advert_main_info li.info_label {
 ul.advert_main_info li.description {
 	width: 80%;
 }
-
-.icon-JetAircrafttype-200px:before,
-.icon-JetAircrafttype-200px2:before,
-.icon-JetAircrafttype-200px3:before,
-.icon-JetAircrafttype-50px:before,
-.icon-JetAircrafttype-50px2:before {
-	font-size: 50px;
-    content: "\e600";
-}
-
 /*------------------------*/
 
 /* ORGANISATION */
 
 .organization_wrapper {
-	width: 100%;
+	width: 50%;
+	float: left;
 	background-color: #F6F7F8;
 	padding-bottom: 30px;
 	border-top: 1px solid #DFE0E4;
+	border: 1px solid red;
 }
 
 .organization_block {
@@ -361,6 +358,11 @@ ul.organisation li.organisation_logo img {
 
 	ul.advert_main_info li.description {
 		margin-bottom: 0px;
+	}
+
+	.organization_wrapper,
+	.table_wrapper {
+		width: 100%;
 	}
 
 	ul.organisation li.organisation_contact,
