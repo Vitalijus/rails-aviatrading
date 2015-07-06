@@ -1,62 +1,37 @@
-<!--<div class="sticky_nav">
-  <div id="sticky_nav_header">
-    <ul>
+<% unless current_user.adverts.size >= 1 %>
+  <ul class="registration_steps step2">
+    <li>
+      <span><!--line--></span>
+      <b>Step 1</b> Register
+    </li>
 
-      <a href="#aircraft_information">
-        <li>Aircraft information</li>
-      </a>
-
-      <a href="#engine_propeller">
-        <li>Engine/propeller</li>
-      </a>
-
-      <a href="#price_seller">
-        <li>Price/seller info</li>
-      </a>
-
-      <a href="#images_video_pdf">
-        <li>Images/video/PDF</li>
-      </a>
-
-      <a href="#other">
-        <li>Other</li>
-      </a>
-
-    </ul>
-  </div>
-</div>-->
+    <li>
+      <span class="active"><!--line--></span>
+      <b>Step 2</b> Create an advert
+    </li>
+  </ul>
+<% end %>
 
 <% if current_user.id == @advert.user_id or current_user %>
 
 <%= form_for(@advert, :html => { multipart: true }) do |f| %>
   <div class="new_advert_form_wrapper">
-    <div class="new_advert_nav">
-      <ul class="tabs_links">
-        <li class="active"><a href="#tab1">General details</a></li>
-        <li><a href="#tab2">Engine / Propeller</a></li>
-        <li><a href="#tab3">Additional info</a></li>
-        <li><a href="#tab4">Add Images</a></li>
-        <li>
-          <% if (current_user.plan_id == 1 || current_user.plan_id == 0) && current_user.adverts.size >= 1 && current_page?(controller: 'adverts', action: 'new') %>
-            <%= link_to subscription_path do %>
-            <div class="sub_button">
-              <%= f.submit "Show plans", :class => "new_advert_submit_button" %>
-            </div>
-            <% end %>
-          <% else %>
-            <div class="sub_button">
-              <%= f.submit "Advertise", :class => "new_advert_submit_button" %>
-            </div>
-          <% end %>
-        </li>
-      </ul>
-    </div>
+  <div class="new_advert_page">
+      <div class="new_advert_nav">
+        <ul class="tabs_links">
+          <li class="active"><a href="#tab1">General details</a></li>
+          <li><a href="#tab2">Engine / Propeller</a></li>
+          <li><a href="#tab3">Additional info</a></li>
+          <li><a href="#tab4">Images / Submit</a></li>
+        </ul>
+      </div>
 
-  <div class="new_advert_wrapper">
-    <%= render "adverts/new_form/general_details",  f: f %>
-    <%= render "adverts/new_form/engine_propeller",  f: f %>
-    <%= render "adverts/new_form/additional_info",  f: f %>
-    <%= render "adverts/new_form/add_images",  f: f %>
+    <div class="new_advert_wrapper">
+      <%= render "adverts/new_form/general_details",  f: f %>
+      <%= render "adverts/new_form/engine_propeller",  f: f %>
+      <%= render "adverts/new_form/additional_info",  f: f %>
+      <%= render "adverts/new_form/add_images",  f: f %>
+    </div>
   </div>
 </div>
 

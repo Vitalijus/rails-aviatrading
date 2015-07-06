@@ -286,20 +286,22 @@
     </div>
 
       <div class="organization_wrapper">
-        <div class="organization_block">
-          For sale by <%= @advert.user.organisation %>
-        </div>
-
         <ul class="organisation">
             <li class="organisation_logo">
               <%= image_tag @advert.user.avatar_url(:avatar_big) %>
             </li>
 
-            <li class="organisation_contact">
-              <b><%= @advert.user.organisation %><br>
-              <%= @advert.user.phone %><br>
-              <%= @advert.user.country %>, <%= @advert.user.state %>, <%= @advert.user.city %> -
-              <%= @advert.user.postal_code %></b>
+            <li class="organisation_name">
+              <%= @advert.user.organisation %>
+            </li>
+
+            <li>
+              Phone: <%= @advert.user.phone %>
+            </li>
+
+            <li>
+              Location: <%= @advert.user.country %>, <%= @advert.user.state %>, <%= @advert.user.city %> -
+              <%= @advert.user.postal_code %>
             </li>
 
             <li class="organisation_about">

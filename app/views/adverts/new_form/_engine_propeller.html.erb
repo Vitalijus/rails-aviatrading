@@ -4,20 +4,20 @@
             Aircraft engine
           </li>
 
+          <li class="form_field">  
+            <%= f.text_field :engine_make, :class => "new_field", :placeholder => "Manufacturer" %>
+          </li>
+          
+          <li class="form_field">  
+            <%= f.text_field :engine_model, :class => "new_field", :placeholder => "Model" %>
+          </li>
+
           <li class="form_field select_field">
             <%= f.select :engine_type, ['In-line engine', "V-type engine", "Horizontally opposed engine", "Radial engine", "Turboprop", "Turboshaft", "Turbojet", "Turbofan", "Other"], :prompt => 'Engine type' %>
           </li>
 
           <li class="form_field">
             <%= f.number_field :number_of_engines, :class => "new_field", :placeholder => "Number of engines" %>
-          </li>
-
-          <li class="form_field">  
-            <%= f.text_field :engine_model, :class => "new_field", :placeholder => "Model" %>
-          </li>
-
-          <li class="form_field">  
-            <%= f.text_field :engine_make, :class => "new_field", :placeholder => "Manufacturer" %>
           </li>
 
           <li class="form_field">  
@@ -28,25 +28,18 @@
             <%= f.number_field :tbo, :class => "new_field", :placeholder => "Time between overhaul (TBO)" %>
           </li>
 
-          <li class="form_field select_field">
-            <%= f.select :engine_power_unit, ['kW', "HP", "BHP", "SHP", "kN", "RPM", "lbs"], :prompt => 'Engine power unit' %>
-          </li>
-
           <li class="form_field">
             <%= f.text_field :engine_power, :class => "new_field", :placeholder => "Engine power" %>
+          </li>
+
+          <li class="form_field select_field">
+            <%= f.select :engine_power_unit, ['kW', "HP", "BHP", "SHP", "kN", "RPM", "lbs"], :prompt => 'Engine power unit' %>
           </li>
         </ul>
 
         <ul class="form">
           <li class="form_label">
             Propeller
-          </li>
-          <li class="form_field">
-            <%= f.number_field :number_of_propellers, :class => "new_field", :placeholder => "Number of propellers" %>
-          </li>
-
-          <li class="form_field">
-            <%= f.number_field :propeller_hours, :class => "new_field", :placeholder => "Propeller hours" %>
           </li>
 
           <li class="form_field">
@@ -55,6 +48,14 @@
 
           <li class="form_field">
             <%= f.text_field :propeller_model, :class => "new_field", :placeholder => "Propeller model" %>
+          </li>
+          
+          <li class="form_field">
+            <%= f.number_field :number_of_propellers, :class => "new_field", :placeholder => "Number of propellers" %>
+          </li>
+
+          <li class="form_field">
+            <%= f.number_field :propeller_hours, :class => "new_field", :placeholder => "Propeller hours" %>
           </li>
         </ul>
 

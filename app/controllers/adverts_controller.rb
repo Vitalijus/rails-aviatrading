@@ -135,7 +135,7 @@ class AdvertsController < ApplicationController
       :engine_hours, :engine_notes, :tbo, :engine_power, :number_of_propellers, 
       :propeller_make, :propeller_model, :propeller_hours, :serial_number, 
       :registration_number, :aircraft_hours, :landings, :nearest_airport, 
-      :aircraft_status, :last_inspection, :price_on_request, :airport_code,
+      :VAT, :last_inspection, :price_options, :airport_code,
       :number_of_passengers, :aircraft_usage, :phone, :user_id, :show_advert, 
       :avionics, :interior, :exterior, :add_info, :engine_power_unit, 
       photos_attributes: [:id, :image, :advert_id, :public_token])

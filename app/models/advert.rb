@@ -7,6 +7,7 @@ class Advert < ActiveRecord::Base
 	#validates :name, :aircraft_type, :aircraft_usage, :year, :country, 
 	#		  :city, :price, presence: true
 	#validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, on: :create }, presence: true
+	#as well validate nr. of passengers...
 
 	#validate :validate_for_basic
 

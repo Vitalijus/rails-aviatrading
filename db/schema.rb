@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150613204258) do
+ActiveRecord::Schema.define(version: 20150706184759) do
 
   create_table "adverts", force: true do |t|
     t.string   "title"
@@ -45,9 +45,9 @@ ActiveRecord::Schema.define(version: 20150613204258) do
     t.integer  "aircraft_hours"
     t.integer  "landings"
     t.string   "nearest_airport"
-    t.string   "aircraft_status"
+    t.string   "VAT"
     t.datetime "last_inspection"
-    t.boolean  "price_on_request"
+    t.string   "price_options"
     t.string   "airport_code"
     t.string   "number_of_passengers"
     t.string   "aircraft_usage"
@@ -126,6 +126,7 @@ ActiveRecord::Schema.define(version: 20150613204258) do
     t.boolean  "active_account",            default: true
     t.boolean  "setup_billing",             default: false
     t.string   "phone"
+    t.string   "website_url"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

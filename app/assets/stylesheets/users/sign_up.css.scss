@@ -1,11 +1,52 @@
+/* REGISTRATION STEPS */
+
+ul.registration_steps {
+  width: 480px;
+  max-width: 90%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+ul.registration_steps.step2 {
+  width: 720px;
+}
+
+ul.registration_steps li {
+  width: 50%;
+  display: inline-block;
+  margin-right: -4px;
+  font-family: "Open Sans", helvetica, arial;
+  font-size: 13px;
+} 
+
+ul.registration_steps li:first-child {
+  padding-right: 5px;
+}
+
+ul.registration_steps li:last-child {
+  padding-left: 5px;
+}
+
+ul.registration_steps span {
+  margin-bottom: 5px;
+  display: block;
+  border: 2px solid #d1d2d5;
+}
+
+ul.registration_steps span.active {
+  border: 2px solid #F16164;
+}
+
+/*--------------------*/
+
 /* USER SIGN UP*/
 
-.registration_form_wrapper {
+.registration_form_wrapper,
+.sign_up_section {
 	width: 480px;
 	max-width: 90%;
 	margin: 20px auto;
-	margin-bottom: 60px;
-	padding: 20px 60px 20px 60px;
+	padding: 20px;
 	background-color: #fff;
 	overflow: hidden;
 	border: 1px solid #DFE0E4;
@@ -13,6 +54,10 @@
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
+}
+
+.sign_up_section {
+  margin-bottom: 60px;
 }
 
 .registration_form_tagline {
@@ -30,6 +75,13 @@
 
 .registration_form_tagline a:hover {
 	color: #589FC3;
+}
+
+.registr_required_fields {
+  font-family: "Open Sans", helvetica, arial;
+  font-size: 12px;
+  float: right;
+  color: #F05053;
 }
 
 .registration_form_header {
@@ -54,15 +106,28 @@
 .auth_field {
   width: 100%;
   margin-top: 3px;
-  padding: 10px;
-  font-family: 'Roboto', sans-serif;
-  font-size: 13px;
+  height: 40px;
+  padding: 0 10px 0 10px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
   background-color: #fefafa;
   border:  1px solid #fdeded;
 
   -webkit-box-shadow: inset 0px 0px 2px 0px rgba(250,229,229,0.5);
   -moz-box-shadow: inset 0px 0px 2px 0px rgba(250,229,229,0.5);
   box-shadow: inset 0px 0px 2px 0px rgba(250,229,229,0.5);
+}
+
+ul.sign_up_form li {
+  width: 48.8%;
+  display: inline-block;
+  margin-right: 6px;
+  margin-bottom: 15px;
+  border: 0px solid red;
+}
+
+ul.sign_up_form li:nth-child(even) {
+  margin-right: 0px;
 }
 
 .registration_submit_button {
@@ -102,3 +167,15 @@
 }
 
 /*----------------------*/
+
+/* MEDIA */
+
+@media (max-width: 520px) {
+
+  ul.sign_up_form li {
+    width: 100% !important; /* over-ride all li styles */
+  }
+
+}
+
+/*-----------------*/

@@ -6,7 +6,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   process :tags => ['user_avatar']
 
   version :avatar do
-     process :resize_to_fill => [120, 120]
+     process :resize_to_fill => [436, 146]
   end
 
   version :avatar_small do

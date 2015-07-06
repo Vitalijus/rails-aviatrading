@@ -19,7 +19,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   version :upload_images do
-     process :resize_to_fill => [150, 85]
+     process :resize_to_fill => [800, 380]
   end
 
   def extension_white_list

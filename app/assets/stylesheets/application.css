@@ -134,10 +134,12 @@ header {
     content: "\e605";
 }*/
 
+/* ICONS CONVERTED TO FONT */
+
 .icon-logo:before {
     font-size: 45px;
     color: #F05053;
-    content: "\e602";
+    content: "\e600";
 
     -webkit-transition: color 150ms linear;
     -moz-transition: color 150ms linear;
@@ -148,6 +150,12 @@ header {
 
 .website_logo:hover .icon-logo:before{
     color: #ec2125;
+    content: "\e600";
+}
+
+.icon-propeller:before {
+    font-size: 50px;
+    color: #F05053;
     content: "\e602";
 }
 

@@ -1,7 +1,19 @@
+<ul class="registration_steps">
+  <li>
+    <span class="active"><!--line--></span>
+    <b>Step 1</b> Register
+  </li>
+
+  <li>
+    <span><!--line--></span>
+    <b>Step 2</b> Create an advert
+  </li>
+</ul>
+
 <div class="registration_form_wrapper">
       <div class="registration_form_header">
         <div class="registration_form_logo">
-          <span class="icon-propeller-big"></span>
+          <span class="icon-propeller"></span>
         </div>
 
         <% if params[:plan] == "1" %>
@@ -12,7 +24,7 @@
 
         <div class="registration_form_tagline">
         	<% if params[:plan] == "1" %>
-          		<b><%= link_to "Subscribe for premium plan", sign_up_path(plan: 2) %></b> to sell aircraft faster 
+          		<b><%= link_to "Subscribe for premium plan", sign_up_path(plan: 2) %></b> to sell more aircrafts 
           	<% elsif params[:plan] == "2" %>
           		you can <b><%= link_to "downgrade to basic", sign_up_path(plan: 1) %></b> plan anytime
           	<% end %>
@@ -26,7 +38,7 @@
         <%= hidden_field_tag 'plan', params[:plan] %>
 
         <div class="auth_form">
-          <%= f.label :email, "Email*", :class => "auth_label" %>
+          <%= f.label :email, "Email*", :class => "auth_label" %><span class="registr_required_fields">Required fields*</span>
           <%= f.email_field :email, :class => "auth_field" %>
         </div>
 
@@ -41,14 +53,77 @@
         </div>
 
         <div class="auth_form">
-          <%= f.label :coupon, "Discount number", :class => "auth_label" %>
+          <%= f.label :coupon, "Coupon number", :class => "auth_label" %>
           <%= f.text_field :coupon, :class => "auth_field" %>
         </div>
+</div>
 
-          <%= f.submit "Continue", :class => "registration_submit_button" %>
-      <% end %>
+<div class="sign_up_section">
 
-      <div class="registration_form_links">
-        Already signed up? <%= link_to "Sing in", sign_in_path %>
-      </div>
+  <div class="auth_form">
+    <%= f.label :organisation, "Company name", :class => "auth_label" %>
+    <%= f.text_field :organisation, :class => "auth_field" %>
+  </div>
+
+  <div class="auth_form">
+    <%= f.label :website_url, "Website URL", :class => "auth_label" %>
+    <%= f.text_field :website_url, :class => "auth_field" %>
+  </div>
+
+  <div class="auth_form">
+    <ul>
+      <li class="select_field">
+        <%= f.label :country, "Country", :class => "auth_label" %>
+        <%= f.select :country, ["Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Colombia", "Comoros", "Congo", "D. R. Congo", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic","Denmark", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Finland", "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "South Korea", " North Korea", "Kuwait", "Kyrgyzstan", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macao", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Martinique", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Norway", "Oman", "Pakistan", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Puerto Rico", "Qatar", "Romania", "Russia", "Rwanda", "Samoa", "San Marino", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Somalia", "South Africa", "Spain", "Sri Lanka", "Sudan", "Suriname", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Venezuela", "Vietnam", "Virgin Islands, British", "Virgin Islands, U.S.", "Yemen", "Zambia","Zimbabwe"], :prompt => 'Select country'  %>
+      </li>
+    </ul>
+  </div>
+
+  <ul class="sign_up_form">
+    <li>
+      <%= f.label :state, "State", :class => "auth_label" %>
+      <%= f.text_field :state, :class => "auth_field" %>
+    </li>
+
+    <li>
+      <%= f.label :city, "City", :class => "auth_label" %>
+      <%= f.text_field :city, :class => "auth_field" %>
+    </li>
+  
+    <li>
+      <%= f.label :street, "Street", :class => "auth_label" %>
+      <%= f.text_field :street, :class => "auth_field" %>
+    </li>
+
+    <li>
+      <%= f.label :postal_code, "Postal code", :class => "auth_label" %>
+      <%= f.text_field :postal_code, :class => "auth_field" %>
+    </li>
+  </ul>
+
+  <!--<ul>
+    <li class="user_profile_form_label">
+      <%= f.label :avatar, "Company logo" %><br/>
+      <span class="user_profile_label_small">JPEG, JPG, GIF or PNG, 2MB max.</span>
+      <div class="status_avatar"></div>
+    </li>
+
+    <label class="myLabel">
+      <li>
+        <%= f.cl_image_upload(:avatar, :return_delete_token => true, :html => {:class => "avatar_upload"}) %>
+      </li>
+      <span><%= image_tag "cloud_upload.png", width: 20 %> Upload logo</span>
+    </label>
+    
+    <li class="preview_logo">
+      <%= image_tag @user.avatar_url(:avatar) %> 
+    </li>
+  </ul>-->
+
+  <%= f.submit "Continue", :class => "registration_submit_button" %>
+  <% end %>
+
+  <div class="registration_form_links">
+    Already signed up? <%= link_to "Sing in", sign_in_path %>
+  </div>
 </div>

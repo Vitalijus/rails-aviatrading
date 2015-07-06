@@ -4,7 +4,7 @@
   <div class="subscription_container">
     <div class="subscription_header">
       <div class="subscription_form_logo">
-        <span class="icon-propeller-big"></span>
+        <span class="icon-propeller"></span>
       </div>
 
       <% if @user.plan_id == 2 && @user.setup_billing %>
@@ -20,7 +20,7 @@
       <% elsif (@user.plan_id == 1 or @user.plan_id == 2) && !@user.setup_billing %>
         Setup Billing
           <div class="subscription_title_small">
-            Setup billing info before <span class="trial_end_highlight"><%= @user.trial_end.strftime("%b %d, %Y") %></span>
+            Setup billing info until <span class="trial_end_highlight"><%= @user.trial_end.strftime("%b %d, %Y") %></span>
           </div>
       <% elsif @user.plan_id == 0 && !@user.setup_billing %>
         Subscribe to a Plan

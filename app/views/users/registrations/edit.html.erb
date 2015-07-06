@@ -1,161 +1,175 @@
  <%= render 'user_navigation_panel' %>
 
-<div class="settings_container">
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
+<div class="settings_container_wrapper">
+  <div class="settings_container">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
 
-<div class="user_profile_wrapper">  
-  <div class="user_profile_form_header">
-    PROFILE SETTINGS 
-  </div>
-
-  <div class="user_profile_form_wrapper">
-    <ul>
-      <li class="user_profile_form_label">
-        Organisation name<br/>
-        <span class="user_profile_label_small">Spaces and special characters are fine.</span>
-      </li>
-      <li class="user_profile_form"><%= f.text_field :organisation %></li>
-    </ul>
-
-    <ul>
-      <li class="user_profile_form_label">
-        Office address
-      </li>
-      <li class="user_profile_office_address">
-        <%= f.text_field :country, :class => 'user_form_country', :placeholder => "Country" %>
-        <%= f.text_field :state, :class => 'user_form_state', :placeholder => "State"  %> 
-        <%= f.text_field :street, :class => 'user_form_street', :placeholder => "Street" %>
-        <%= f.text_field :postal_code, :class => 'user_form_postal_code', :placeholder => "Postal code" %>
-        <%= f.text_field :city, :class => 'user_form_city', :placeholder => "City"  %>
-      </li>
-    </ul>
-
-    <ul>
-      <li class="user_profile_form_label">
-        Account email / phone
-      </li>
-      <li class="user_profile_contact">
-        <%= f.email_field :email, autofocus: false, :class => "user_form_email" %>
-        <%= f.text_field :phone, :class => "user_form_phone", :placeholder => "Phone" %>
-      </li>
-    </ul>
-
-    <ul>
-      <li class="user_profile_form_label">
-        About<br/>
-        <span class="user_profile_label_small">Up to 1,000 characters.</span>
-      </li>
-      <li class="user_profile_form"><%= f.text_area :about, :class => "user_profile_about" %></li>
-    </ul>
-
-    <ul>
-      <li class="user_profile_form_label">
-        <%= f.label :avatar, "Profile image" %><br/>
-        <span class="user_profile_label_small">JPEG, JPG, GIF or PNG, 10MB max.</span>
-        <div class="status_avatar"></div>
-      </li>
-
-      <label class="myLabel">
-        <li>
-          <%= f.cl_image_upload(:avatar, :return_delete_token => true, :html => {:class => "avatar_upload"}) %>
-        </li>
-        <span><%= image_tag "cloud_upload.png", width: 20 %> Add Photo</span>
-      </label>
-      
-      <li>
-        <div class="preview_avatar">
-          <%= image_tag @user.avatar_url(:avatar) %> 
-        </div>
-      </li>
-    </ul>
-
-    <ul>
-      <li class="user_profile_form_label">
-        Cover image<br/>
-        <span class="user_profile_label_small">The cover image for the top of your profile page.
-Must be at least 1600px wide and 270px tall.</span>
-        <div class="status_cover"></div>
-      </li>
-
-      <label class="myLabel">
-        <li>
-          <%= f.cl_image_upload(:cover_image, :return_delete_token => true, :html => {:class => "cover_upload"}) %>
-        </li>
-        <span><%= image_tag "cloud_upload.png", width: 20 %> Add Photo</span>
-      </label>
-
-      <li>
-        <div class="preview_cover">
-          <%= image_tag @user.cover_image_url(:cover_small) %> 
-        </div>
-      </li>
-    </ul>
-  </div>
-</div>
-
-
-<!-- ---------------- -->
-
-
-<div class="user_profile_change_password_wrapper">
-  <div class="user_profile_form_header">
-    CHANGE PASSWORD 
-  </div>
-
-  <div class="user_profile_form_wrapper">
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-    <% end %>
-
-    <ul>
-      <li class="user_profile_form_label">
-        <%= f.label :password, "New password" %><br/>
-        <span class="user_profile_label_small">Leave blank if you don't want to change it.</span>
-      </li>
-      <li class="user_profile_form"><%= f.password_field :password, autocomplete: "off" %></li>
-    </ul>
-
-    <ul>
-      <li class="user_profile_form_label">
-        <%= f.label :password_confirmation, "New password confirmation" %><br/>
-        <span class="user_profile_label_small"></span>
-      </li>
-      <li class="user_profile_form"><%= f.password_field :password_confirmation, autocomplete: "off" %></li>
-    </ul>
-  </div>
-</div>
-
-
-<!-------------- -->
-
-
-<div class="user_profile_save_changes_wrapper">
-  <div class="user_profile_form_header">
-    SAVE ACCOUNT CHANGES 
-  </div>
-
-  <div class="user_profile_form_wrapper">
-    <ul>
-      <li class="user_profile_form_label">
-        <%= f.label :current_password %><br/>
-        <span class="user_profile_label_small">We need your current password to save your changes.</span>
-      </li>
-      <li class = "user_profile_form">
-        <%= f.password_field :current_password, autocomplete: "off" %>
-      </li>
-    </ul>
-
-    <div class="button_wrapper">
-      <%= f.submit "Save account changes", :class => "user_form_update_button"  %>
+  <div class="user_profile_wrapper">  
+    <div class="user_profile_form_header">
+      Profile Settings
     </div>
 
+    <%= devise_error_messages! %>
+
+    <div class="user_profile_form_wrapper">
+      <ul>
+        <li class="user_profile_form_label">
+          Company
+
+          <span class="user_profile_label_small">
+            Spaces and special characters are fine.
+          </span>
+        </li>
+
+        <li class="one_column">
+          <%= f.text_field :organisation, :placeholder => "Company name" %>
+        </li>
+
+        <li class="one_column">
+          <%= f.text_field :website_url, :placeholder => "Website URL" %>
+        </li>
+      </ul>
+
+      <ul>
+        <li class="user_profile_form_label">
+          Office address
+        </li>
+
+        <li class="one_column select_field">
+        <%= f.select :country, ["Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Colombia", "Comoros", "Congo", "D. R. Congo", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic","Denmark", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Finland", "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "South Korea", " North Korea", "Kuwait", "Kyrgyzstan", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macao", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Martinique", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Norway", "Oman", "Pakistan", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Puerto Rico", "Qatar", "Romania", "Russia", "Rwanda", "Samoa", "San Marino", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Somalia", "South Africa", "Spain", "Sri Lanka", "Sudan", "Suriname", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Venezuela", "Vietnam", "Virgin Islands, British", "Virgin Islands, U.S.", "Yemen", "Zambia","Zimbabwe"], :prompt => 'Country'  %>
+      </li>
+
+        <li class="two_columns">
+          <%= f.text_field :state, :placeholder => "State"  %> 
+        </li>
+
+        <li class="two_columns">
+          <%= f.text_field :city, :placeholder => "City"  %>
+        </li>
+
+        <li class="two_columns">
+          <%= f.text_field :street, :placeholder => "Street" %>
+        </li>
+
+        <li class="two_columns">
+          <%= f.text_field :postal_code, :placeholder => "Postal code" %>
+        </li>
+      </ul>
+
+      <ul>
+        <li class="user_profile_form_label">
+          Account email / phone
+        </li>
+
+        <li class="one_column">
+          <%= f.email_field :email, autofocus: false %>
+        </li>
+
+        <li class="one_column">
+          <%= f.text_field :phone, :placeholder => "Phone" %>
+        </li>
+      </ul>
+
+      <ul>
+        <li class="user_profile_form_label">
+          About
+
+          <span class="user_profile_label_small">
+            Up to 1,000 characters.
+          </span>
+        </li>
+
+        <li class="one_column">
+          <%= f.text_area :about, :class => "user_profile_about" %>
+        </li>
+      </ul>
+
+      <ul>
+        <li class="user_profile_form_label">
+          <%= f.label :avatar, "Company logo" %><br/>
+          <span class="user_profile_label_small">JPEG, JPG, GIF or PNG, 2MB max.</span>
+          <div class="status_avatar"></div>
+        </li>
+
+        <label class="myLabel">
+          <li>
+            <%= f.cl_image_upload(:avatar, :return_delete_token => true, :html => {:class => "avatar_upload"}) %>
+          </li>
+          <span><%= image_tag "cloud_upload.png", width: 20 %> Upload logo</span>
+        </label>
+        
+        <li class="preview_logo">
+          <%= image_tag @user.avatar_url(:avatar) %> 
+        </li>
+      </ul>
+    </div>
   </div>
-</div>
+
+
+  <!-- ---------------- -->
+
+
+  <div class="user_profile_change_password_wrapper">
+    <div class="user_profile_form_header">
+      Change Password 
+    </div>
+
+    <div class="user_profile_form_wrapper">
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %>
+
+      <ul>
+        <li class="user_profile_form_label">
+          <%= f.label :password, "New password" %><br/>
+          <span class="user_profile_label_small">Leave blank if you don't want to change it.</span>
+        </li>
+        <li class="one_column"><%= f.password_field :password, autocomplete: "off" %></li>
+      </ul>
+
+      <ul>
+        <li class="user_profile_form_label">
+          <%= f.label :password_confirmation, "New password confirmation" %><br/>
+          <span class="user_profile_label_small"></span>
+        </li>
+        <li class="one_column"><%= f.password_field :password_confirmation, autocomplete: "off" %></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <!-------------- -->
+
+
+  <div class="user_profile_save_changes_wrapper">
+    <div class="user_profile_form_header">
+      Save Account Changes 
+    </div>
+
+    <div class="user_profile_form_wrapper">
+      <ul>
+        <li class="user_profile_form_label">
+          <%= f.label :current_password %>
+
+          <span class="user_profile_label_small">
+            We need your current password to save your changes.
+          </span>
+        </li>
+
+        <li class = "one_column">
+          <%= f.password_field :current_password, autocomplete: "off" %>
+        </li>
+      </ul>
+    </div>
+
+    <div class="button_wrapper">
+      <%= f.submit "Save changes", :class => "user_form_update_button"  %>
+    </div>
+  </div>
 <% end %>
 
-<div class="delete_user_account_button_wrapper">
-  <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, :class => "delete_user_account_button" %>
+    <div class="delete_user_account_button_wrapper">
+      <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, :class => "delete_user_account_button" %>
+    </div>
+  </div>
 </div>
-</div>
-

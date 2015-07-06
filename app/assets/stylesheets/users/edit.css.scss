@@ -1,202 +1,103 @@
 /* USER PROFILE */
 
-.settings_container {
-	width: 1000px;
-	margin: auto;
-	margin-top: 20px;
-	border: 1px solid #DFE0E4;
+.settings_container_wrapper {
+	margin: 20px;
 }
 
 .user_profile_wrapper,
 .user_profile_change_password_wrapper,
 .user_profile_save_changes_wrapper {
-	padding: 0 20px 0 20px;
+	max-width: 480px;
+	margin: auto;
+	margin-bottom: 20px;
+	padding: 20px;
 	background-color: #fff;
-	
-}
+	border: 1px solid #DFE0E4;
 
-.user_profile_change_password_wrapper {
-	margin-top: 20px;
-}
-
-.user_profile_save_changes_wrapper {
-	margin-top: 20px;
-}
-
-.delete_user_account_button_wrapper {
-	margin-top: 40px;
-	margin-bottom: 80px;
-	text-align: center;
-	border: 0px solid red;
-}
-
-.delete_user_account_button {
-	font-family: 'PT Sans', sans-serif;
-	background-color: transparent;
-	cursor: pointer;
-	color: #999999;
-	border: 0px solid red;
-
-	-webkit-transition: color 150ms linear;
-  	-moz-transition: color 150ms linear;
-  	-o-transition: color 150ms linear;
-  	-ms-transition: color 150ms linear;
-  	transition: color 150ms linear;
-}
-
-.delete_user_account_button:hover {
-	color: #F05053;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
 }
 
 .user_profile_form_header {
-	font-family: 'PT Sans', sans-serif;
-	font-size: 18px;
-	font-weight: bold;
-	padding: 20px 0px 15px 0;
+	font-family: "Open Sans", helvetica, arial;
+	font-size: 25px;
+  	color: #F05053;
+  	margin-bottom: 20px;
+  	text-align: center;
 	border-bottom: 0px solid #f2f2f4;
-}
-
-.user_profile_form_wrapper ul {
-	border-bottom: 1px solid #f2f2f4;
-}
-
-.user_profile_form_wrapper li {
-	display: inline-block;
-	margin: 20px -4px 20px 0;
-	vertical-align: top;
 	border: 0px solid red;
 }
 
+.user_profile_form_wrapper ul {
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #f2f2f4;
+}
+
+.user_profile_form_wrapper ul:last-child {
+	border-bottom: 0;
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+
+.user_profile_form_wrapper li.one_column,
+.user_profile_form_wrapper li.two_columns {
+	width: 100%;
+	display: inline-block;
+	padding-bottom: 10px;
+	margin-right: 6px;
+}
+
+.user_profile_form_wrapper li.two_columns {
+	width: 48.8%;
+}
+
+.user_profile_form_wrapper li:last-child {
+	padding-bottom: 0;
+}
+
+.user_profile_form_wrapper li:nth-child(even) {
+	margin-right: 0;
+}
+
 .user_profile_form_label {
-	width: 30%;
-	font-family: 'PT Sans', sans-serif;
-	font-size: 14px;
+	width: 100%;
+	font-size: 12px;
+	margin-bottom: 5px;
 	font-weight: bold;
 }
 
 .user_profile_label_small {
 	font-family: "Open Sans", helvetica, arial;
 	font-size: 12px;
+	margin-top: 5px;
+	display: block;
 	font-weight: normal;
-	border: 0px solid red;
 }
 
-.user_profile_form {
-	width: 70%;
-	border: 0px solid red;
-}
-
-.user_profile_form input {
+.one_column input,
+.two_columns input,
+.user_profile_about {
 	width: 100%;
-	padding: 8px;
-	font-family: "Open Sans", helvetica, arial;
-	font-size: 12px;
-	border: 1px solid #DFE0E4;
-}
-
-.user_profile_office_address {
-	width: 70%;
-	border: 10px solid #DFE0E4;
-}
-
-.user_form_street, 
-.user_form_postal_code, 
-.user_form_city,
-.user_form_state,
-.user_form_country {
-	font-family: "Open Sans", helvetica, arial;
-	font-size: 12px;
-	padding: 8px;
-	margin-right: -4px;
-	margin-bottom: 10px;
-	border: 1px solid #DFE0E4;
-}
-
-.user_form_postal_code {
-	width: 17.3%;
-}
-
-.user_form_street {
-	width: 49.2%;
-}
- 
-.user_form_city {
-	width: 30.3%;
-}
-
-.user_form_state,
-.user_form_country  {
-	width: 49.2%;
-}
-
-.user_form_postal_code, 
-.user_form_city,
-.user_form_state {
-	margin-left: 10px;
-}
-
-.user_form_postal_code, 
-.user_form_city,
-.user_form_street {
-	margin-bottom: 0;
-}
-
-.user_profile_contact {
-	width: 70%;
-}
-
-.user_form_email, .user_form_phone {
-	width: 49.3%;
-	font-family: "Open Sans", helvetica, arial;
-	font-size: 12px;
-	padding: 8px;
-	margin-right: -4px;
-	border: 1px solid #DFE0E4;
-}
-
-.user_form_phone {
-	margin-left: 10px;
-}
-
-.user_profile_form .user_profile_about {
-	width: 100%;
-	height: 150px;
+	height: 40px;
 	padding: 10px;
 	font-family: "Open Sans", helvetica, arial;
 	font-size: 12px;
 	border: 1px solid #DFE0E4;
+
+	background-color: #fefafa;
+  	border:  1px solid #fdeded;
+
+  	-webkit-box-shadow: inset 0px 0px 2px 0px rgba(250,229,229,0.5);
+  	-moz-box-shadow: inset 0px 0px 2px 0px rgba(250,229,229,0.5);
+  	box-shadow: inset 0px 0px 2px 0px rgba(250,229,229,0.5);
 }
 
-.button_wrapper {
-	width: 100%;
-	text-align: right;
-	border: 0px solid red;
+.user_profile_about {
+	height: 150px;
 }
-
-.user_form_update_button {
-	width: 200px;
-	height: 45px;
-	margin: 20px 0 20px 0;
-	color: #fff;
-	font-family: "Open Sans", helvetica, arial;
-	font-weight: bold;
-  	font-size: 16px;
-  	cursor: pointer;
-	background-color: #26ae5a;
-	border: 0;
-
-	-webkit-transition: background-color 150ms linear;
-  	-moz-transition: background-color 150ms linear;
-  	-o-transition: background-color 150ms linear;
-  	-ms-transition: background-color 150ms linear;
-  	transition: background-color 150ms linear;
-}
-
-.user_form_update_button:hover {
-	background-color: #229c51;
-}
-
-/* -------------- */
+/*---------------*/
 
 /* IMAGE UPLOAD BUTTON */
 
@@ -207,10 +108,11 @@ label.myLabel input[type="file"] {
 
 /***** Example custom styling *****/
 .myLabel {
-	width: 160px;
-	height: 40px;
-	line-height: 38px;
-	margin-top: 20px;
+	width: 100%;
+	height: 45px;
+	line-height: 45px;
+	margin-top: 10px;
+	margin-bottom: 20px;
     border: none;
     cursor: pointer;
     text-align: center;
@@ -250,24 +152,98 @@ label.myLabel input[type="file"] {
 	border: 0px solid yellow;
 }
 
-.preview_avatar  {
-	width: 120px;
-	height: 120px;
-	margin-left: 190px;
+li.preview_logo {
+	max-width: 100%;
+	max-height: 150px;
 	border: 1px solid #ececec;
 }
 
-.preview_cover {
-	width: 460px;
-	height: 120px;
-	margin-left: 15px;
-	border: 1px solid #ececec;
+li.preview_logo img {
+	max-width: 100%;
+	height: auto;
+	width: auto\9; /* ie8 */
 }
 
-.status_avatar,
-.status_cover {
+.status_avatar {
 	color: #F05053;
 	font-weight: normal;
 }
 
 /*----------------------*/
+
+/* SAVE CHANGES BUTTON */
+
+.button_wrapper {
+	width: 100%;
+	margin-top: 20px;
+}
+
+.user_form_update_button {
+	width: 100%;
+	height: 45px;
+	color: #fff;
+	font-family: "Open Sans", helvetica, arial;
+  	font-size: 16px;
+  	cursor: pointer;
+	background-color: #F16164;
+	border: 0;
+	border-bottom: 2px solid #B14739;
+
+	-webkit-transition: background-color 150ms linear;
+  	-moz-transition: background-color 150ms linear;
+  	-o-transition: background-color 150ms linear;
+  	-ms-transition: background-color 150ms linear;
+  	transition: background-color 150ms linear;
+
+  	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+
+.user_form_update_button:hover {
+	background-color: #F05053;
+}
+
+/* -------------- */
+
+/* DELETE PROFILE BUTTON */
+
+.delete_user_account_button_wrapper {
+	margin-top: 40px;
+	margin-bottom: 80px;
+	text-align: center;
+	border: 0px solid red;
+}
+
+.delete_user_account_button {
+	font-family: 'PT Sans', sans-serif;
+	background-color: transparent;
+	cursor: pointer;
+	color: #999999;
+	border: 0px solid red;
+
+	-webkit-transition: color 150ms linear;
+  	-moz-transition: color 150ms linear;
+  	-o-transition: color 150ms linear;
+  	-ms-transition: color 150ms linear;
+  	transition: color 150ms linear;
+}
+
+.delete_user_account_button:hover {
+	color: #F05053;
+}
+
+/*-------------------*/
+
+@media (max-width: 500px) {
+
+	.user_profile_form_wrapper li.two_columns {
+		width: 100% !important; /* over-ride all li styles */
+	}
+
+	.user_profile_form_header {
+		font-size: 18px;
+	}
+}
+
+/*-----------------*/

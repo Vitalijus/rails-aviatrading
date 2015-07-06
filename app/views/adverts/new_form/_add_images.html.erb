@@ -2,17 +2,17 @@
   <div class="new_form_border_helper">
 
     <div id="progress_bar">
+      <div class="bar_wrapper">
+        <div class="full_bar">
+          <div class="bar"></div>
+        </div>
+      </div>
+
       <div id="upload_image_button_in_progress">
         <label class="upload_image">
           <%= cl_image_upload_tag("images[]", :return_delete_token => true, :html => { :multiple => true }) %>
           <span><%= image_tag "cloud_upload.png", width: 20 %> Add Images</span>
         </label>
-      </div>
-      
-      <div class="bar_wrapper">
-        <div class="full_bar">
-          <div class="bar"></div>
-        </div>
       </div>
     </div>
 
@@ -46,6 +46,18 @@
         <% end %>
       </ul>
    </div>
+
+    <% if (current_user.plan_id == 1 || current_user.plan_id == 0) && current_user.adverts.size >= 1 && current_page?(controller: 'adverts', action: 'new') %>
+      <%= link_to subscription_path do %>
+      <div class="sub_button">
+        <%= f.submit "Show plans", :class => "new_advert_submit_button" %>
+      </div>
+      <% end %>
+    <% else %>
+      <div class="sub_button">
+        <%= f.submit "Advertise", :class => "new_advert_submit_button" %>
+      </div>
+    <% end %>
 </div>
 
   <script>
@@ -54,10 +66,10 @@
     });
   </script>
 
-    <div class="status"></div>
+    <!--<div class="status"></div>
 
 
-    <div class="preview"></div>
+    <div class="preview"></div>-->
 
   <script>
   $(document).ready(function() { $(".cloudinary-fileupload").fileupload({ 
@@ -84,7 +96,7 @@
       .off("cloudinarydone").on("cloudinarydone", function (e, data) {
             var preview = $('<li></li>').prependTo('.uploaded_image ul');
             $.cloudinary.image(data.result.public_id, {
-              format: data.result.format, width: 214, height: 120, crop: "fill"
+              format: data.result.format, width: 800, height: 380, crop: "fill"
             }).appendTo(preview);
 
         /*$("#photo_bytes").val(data.result.bytes);
