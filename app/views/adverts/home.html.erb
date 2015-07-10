@@ -1,401 +1,163 @@
-<div class="home_banner_wrapper">
-	<div class="home_banner_phrase">
-		Aircraft Market
-		<div class="banner_phrase_small">Buy and sell new and used aircrafts</div>
-	</div>
+<div class="google_map" style="height: 100vh; position: relative; margin-top: -60px;">
+    <div id="map_home" style='width: 100%; height: 100%;'></div>
 
-</div>
+    <!--<div id="home_shadow">
 
-<div class="search_container_wrapper">
+	</div>-->
 
-	<div class="outline_border_helper">
-	<div class="search_container_benchmark">
-		<ul>
-			<li>
-				<%= image_tag "aircraft_type/jet.png", width: 40 %>
-				<span class="search_plane_title">Jet</span>
-			</li>
-			<li>
-				<%= image_tag "aircraft_type/piston.png", width: 40 %>
-				<span class="search_plane_title">Piston</span>
-			</li>
-			<li>
-				<%= image_tag "aircraft_type/multi_piston.png", width: 40 %>
-				<span class="search_plane_title">Multi-piston</span>
-			</li>
-			<li>
-				<%= image_tag "aircraft_type/turbo_prop.png", width: 40 %>
-				<span class="search_plane_title">TurboProp</span>
-			</li>
-			<li>
-				<%= image_tag "aircraft_type/helicopter.png", width: 40 %>
-				<span class="search_plane_title">Helicopter</span>
-			</li>
-			<li>
-				<%= image_tag "aircraft_type/light_sport.png", width: 40 %>
-				<span class="search_plane_title">Light sport</span>
-			</li>
-			<li>
-				<%= image_tag "aircraft_type/ultralight.png", width: 40 %>
-				<span class="search_plane_title">Ultralight</span>
-			</li>
-			<li>
-				<%= image_tag "aircraft_type/glider.png", width: 40 %>
-				<span class="search_plane_title">Glider</span>
-			</li>
-			<li>
-				<%= image_tag "aircraft_type/airship.png", width: 40 %>
-				<span class="search_plane_title">Airship</span>
-			</li>
-			<li>
-				<%= image_tag "aircraft_type/hot_air_balloon.png", width: 40 %>
-				<span class="search_plane_title">Balloon</span>
-			</li>
-		</ul>
-	</div>
+    <div id="home_wrapper">
+    	<div class="home_title">
+    		Aircraft Market
+    	</div>
 
-	<div class="search_container">
-
-		<%= search_form_for @q do |f| %>
-		    <ul>
-		      <li><%= f.text_field :make_cont, :placeholder => "Manufacturer" %></li>
-
-		      <li><%= f.text_field :model_cont, :placeholder => "Model" %></li>
-
-		      <li>
-		      	<div class="dropdown_list">
-		      		<%= f.select :aircraft_usage_cont, ['Cessna', "Airbus"], :prompt => 'Aircraft usage' %>
-		      	</div>
-		     </li>
-
-		      <li>
-		      	<div class="dropdown_list">
-		      		<%= f.select :country_cont, ['Cessna', "Airbus"], :prompt => 'Country' %>
-		      	</div>
-		     </li>
-
-		     	<%= f.submit :class => "search_container_button" %>
-		    </ul>
-		    
-		<% end %>
-	</div>
+	  <%= search_form_for @q do |f| %>
+	    <%= f.select :country_cont, ["Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Colombia", "Comoros", "Congo", "D. R. Congo", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic","Denmark", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Finland", "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "South Korea", " North Korea", "Kuwait", "Kyrgyzstan", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macao", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Martinique", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Norway", "Oman", "Pakistan", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Puerto Rico", "Qatar", "Romania", "Russia", "Rwanda", "Samoa", "San Marino", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Somalia", "South Africa", "Spain", "Sri Lanka", "Sudan", "Suriname", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Venezuela", "Vietnam", "Virgin Islands, British", "Virgin Islands, U.S.", "Yemen", "Zambia","Zimbabwe"], :prompt => 'Select country' %>
+	            <%= f.submit :class => "home_search_button" %>
+	  <% end %>
 	</div>
 </div>
 
-<div class="home_wrapper">
-	<div class="home_container">
-	  <div class="home_box_header">
-	  	<ul>
-	  		<li><%= image_tag "aircraft_type/jet.png", width: 25 %></li>
-	  		<li>Jets</li>
-	  	</ul>
-	  </div>
 
-<div class="box_home">
-	<ul>
-		<% @jets.each do |jet| %>
-	
-  			<li>
-			    <%= link_to advert_path(jet), data: { no_turbolink: true } do %>
-			      <div class="box_image">
+<!-- GOOGLE MAP -->
+<script>
+  // Create an array of styles.
+    var mapStyle = [
+  {
+    "featureType": "water",
+    "stylers": [
+      { "color": "#DCE8FC" }
+    ]
+  },{
+    "featureType": "administrative",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      { "color": "#777777" }
+    ]
+  },{
+    "featureType": "poi.park",
+    "stylers": [
+      { "color": "#E3ECD5" }
+    ]
+  },{
+    "featureType": "road",
+    "elementType": "labels.icon",
+    "stylers": [
+      { "visibility": "off" }
+    ]
+  },{
+    "featureType": "administrative.locality",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      { "color": "#777777" }
+    ]
+  },{
+    "featureType": "administrative.country",
+    "elementType": "geometry.stroke",
+    "stylers": [
+      { "color": "#a1a1a1" }
+    ]
+  },{
+    "featureType": "road.highway",
+    "elementType": "geometry.fill",
+    "stylers": [
+      { "color": "#ffffff" }
+    ]
+  },{
+    "featureType": "road.highway",
+    "elementType": "geometry.stroke"
+  }
+];
 
-			      	<% jet.photos.each do |photo| %>
-			          	<%= image_tag photo.image_url(:advert_image) %>
-			        <% end %>
+  handler = Gmaps.build('Google');
+  var centerpoint = new google.maps.LatLng(48.1549107,11.5418357);
+  handler.buildMap({ provider: {streetViewControl: false,
+  								center: centerpoint, 
+  								zoom: 6,
+  								mapTypeControl: false, 
+  								panControl: false,
+      							zoomControl: false,
+      							scrollwheel: false,
+  								styles: mapStyle }, internal: {id: 'map_home'}}, function(){
 
-			        <div class="box_price">
-			          <%= number_to_currency(jet.price, precision: 0, unit: "") %> <%= jet.currency %>
-			        </div>
-			      </div>
+    markers = handler.addMarkers(<%=raw @hash.to_json %>);
+    handler.bounds.extendWith(markers);
+    //handler.fitMapToBounds();
+    handler.getMap().setZoom(6);    // set the default zoom of the map
+  });
+</script>
 
-			 
-		      	<div class="box_make">
-		        	<%= jet.make %>
+<script type="text/javascript">
+ /* function initialize() {
+  	var centerLatlng = new google.maps.LatLng(48.1549107,11.5418357);
+  	var markerLatlng = new google.maps.LatLng(48.3536621,11.7750279);
+    var mapOptions = {
+      center: centerLatlng,
+      zoom: 6,
+      streetViewControl: false,
+      mapTypeControl: false,
+      panControl: false,
+      zoomControl: false,
+      scrollwheel: false
+    };
 
-		        	<div class="box_model">
-		            	<%= jet.model %>
-		        	</div>
-		      	</div>
-			    <% end %>
+      // Create an array of styles.
+    var mapStyle = [
+  {
+    "featureType": "water",
+    "stylers": [
+      { "color": "#DCE8FC" }
+    ]
+  },{
+    "featureType": "administrative",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      { "color": "#777777" }
+    ]
+  },{
+    "featureType": "poi.park",
+    "stylers": [
+      { "color": "#E3ECD5" }
+    ]
+  },{
+    "featureType": "road",
+    "elementType": "labels.icon",
+    "stylers": [
+      { "visibility": "off" }
+    ]
+  },{
+    "featureType": "administrative.locality",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      { "color": "#777777" }
+    ]
+  },{
+    "featureType": "administrative.country",
+    "elementType": "geometry.stroke",
+    "stylers": [
+      { "color": "#a1a1a1" }
+    ]
+  },{
+    "featureType": "road.highway",
+    "elementType": "geometry.fill",
+    "stylers": [
+      { "color": "#ffffff" }
+    ]
+  },{
+    "featureType": "road.highway",
+    "elementType": "geometry.stroke"
+  }
+];
 
-		      	<div class="box_footer_wrapper">
-		        	<div class="box_footer none">
-		          		<%= jet.country %>, <%= jet.city %>
-		        	</div>
-		      	</div>
-			</li>
-		<% end %>
- 	</ul>
-</div>
+    var map = new google.maps.Map(document.getElementById('map_home'),
+        mapOptions);
 
-<div class="box_separator_helper">
+    map.setOptions({styles: mapStyle});
 
-</div>
-
-  <div class="home_box_header">
-    <ul>
-  		<li><%= image_tag "aircraft_type/piston.png", width: 25 %></li>
-  		<li>Single piston</li>
-  	</ul>
-  </div>
-
-<div class="box_home">
-	<ul>
-		<% @single_pistons.each do |single_piston| %>
-	
-  			<li>
-  			
-			    <%= link_to advert_path(single_piston), data: { no_turbolink: true } do %>
-			      <div class="box_image">
-			      	
-			        <% if single_piston.advert_image.blank? %>
-			          default pic
-			        <% else %>
-			        	<% single_piston.photos.each do |photo| %>
-			          		<%= image_tag photo.image_url(:advert_image) %>
-			          	<% end %>
-			        <% end %>
-
-			        <div class="box_price">
-			          <%= number_to_currency(single_piston.price, precision: 0, unit: "") %> <%= single_piston.currency %>
-			        </div>
-			      </div>
-
-			 
-		      	<div class="box_make">
-		        	<%= single_piston.make %>
-
-		        	<div class="box_model">
-		            	<%= single_piston.model %>
-		        	</div>
-		      	</div>
-			    <% end %>
-
-		      	<div class="box_footer_wrapper">
-		        	<div class="box_footer none">
-		          		<%= single_piston.country %>, <%= single_piston.city %>
-		        	</div>
-		      	</div>
-			</li>
-		<% end %>
- 	</ul>
-</div>
-
-<div class="box_separator_helper">
-
-</div>
-
-  <div class="home_box_header">
-    <ul>
-  		<li><%= image_tag "aircraft_type/multi_piston.png", width: 25 %></li>
-  		<li>Multi piston</li>
-  	</ul>
-  </div>
-
-<div class="box_home">
-	<ul>
-		<% @multi_pistons.each do |multi_piston| %>
-	
-  			<li>
-  			
-			    <%= link_to advert_path(multi_piston), data: { no_turbolink: true } do %>
-			      <div class="box_image">
-
-			        <% if multi_piston.advert_image.blank? %>
-			          default pic
-			        <% else %>
-			        	<% multi_piston.photos.each do |photo| %>
-			          		<%= image_tag photo.image_url(:advert_image) %>
-			          	<% end %>
-			        <% end %>
-
-			        <div class="box_price">
-			          <%= number_to_currency(multi_piston.price, precision: 0, unit: "") %> <%= multi_piston.currency %>
-			        </div>
-			      </div>
-
-			 
-		      	<div class="box_make">
-		        	<%= multi_piston.make %>
-
-		        	<div class="box_model">
-		            	<%= multi_piston.model %>
-		        	</div>
-		      	</div>
-			    <% end %>
-
-		      	<div class="box_footer_wrapper">
-		        	<div class="box_footer none">
-		          		<%= multi_piston.country %>, <%= multi_piston.city %>
-		        	</div>
-		      	</div>
-			</li>
-		<% end %>
- 	</ul>
-</div>
-
-
-<div class="box_separator_helper">
-
-</div>
-
-  <div class="home_box_header">
-    <ul>
-  		<li><%= image_tag "aircraft_type/turbo_prop.png", width: 25 %></li>
-  		<li>TurboProp</li>
-  	</ul>
-  </div>
-
-<div class="box_home">
-	<ul>
-		<% @turbo_props.each do |turbo_prop| %>
-	
-  			<li>
-  			
-			    <%= link_to advert_path(turbo_prop), data: { no_turbolink: true } do %>
-			      <div class="box_image">
-
-			        <% if turbo_prop.advert_image.blank? %>
-			          default pic
-			        <% else %>
-			        	<% turbo_prop.photos.each do |photo| %>
-			          		<%= image_tag photo.image_url(:advert_image) %>
-			          	<% end %>
-			        <% end %>
-
-			        <div class="box_price">
-			          <%= number_to_currency(turbo_prop.price, precision: 0, unit: "") %> <%= turbo_prop.currency %>
-			        </div>
-			      </div>
-
-			 
-		      	<div class="box_make">
-		        	<%= turbo_prop.make %>
-
-		        	<div class="box_model">
-		            	<%= turbo_prop.model %>
-		        	</div>
-		      	</div>
-			    <% end %>
-
-		      	<div class="box_footer_wrapper">
-		        	<div class="box_footer none">
-		          		<%= turbo_prop.country %>, <%= turbo_prop.city %>
-		        	</div>
-		      	</div>
-			</li>
-		<% end %>
- 	</ul>
-</div>
-
-
-<div class="box_separator_helper">
-
-</div>
-
-  <div class="home_box_header">
-    <ul>
-  		<li><%= image_tag "aircraft_type/helicopter.png", width: 25 %></li>
-  		<li>Helicopters</li>
-  	</ul> 
-  </div>
-
-<div class="box_home">
-	<ul>
-		<% @helicopters.each do |helicopter| %>
-	
-  			<li>
-  			
-			    <%= link_to advert_path(helicopter), data: { no_turbolink: true } do %>
-			      <div class="box_image">
-
-			        <% if helicopter.advert_image.blank? %>
-			          default pic
-			        <% else %>
-			        	<% helicopter.photos.each do |photo| %>
-			          		<%= image_tag photo.image_url(:advert_image) %>
-			          	<% end %>
-			        <% end %>
-
-			        <div class="box_price">
-			          <%= number_to_currency(helicopter.price, precision: 0, unit: "") %> <%= helicopter.currency %>
-			        </div>
-			      </div>
-
-			 
-		      	<div class="box_make">
-		        	<%= helicopter.make %>
-
-		        	<div class="box_model">
-		            	<%= helicopter.model %>
-		        	</div>
-		      	</div>
-			    <% end %>
-
-		      	<div class="box_footer_wrapper">
-		        	<div class="box_footer none">
-		          		<%= helicopter.country %>, <%= helicopter.city %>
-		        	</div>
-		      	</div>
-			</li>
-		<% end %>
- 	</ul>
-</div>
-</div>
-
-<div class="home_sidebar">
-	<div class="home_sidebar_header">
-		Adverts
-	</div>
-</div>
-
-<div class="home_sidebar">
-	<div class="home_sidebar_header">
-		Latest adverts
-	</div>
-
-	<div class="home_sidebar_content">
-		<ul>
-			<% @latest_adverts.each do |latest_advert| %>
-				<li>
-					<%= link_to advert_path(latest_advert), data: { no_turbolink: true } do %> 
-						<div class="home_sidebar_img">
-							<% latest_advert.photos.each do |photo| %>
-								<%= image_tag photo.image_url(:latest_adverts) %>
-							<% end %>
-
-							<div class="home_sidebar_price">
-								<%= number_to_currency(latest_advert.price, precision: 0, unit: "") %> <%= latest_advert.currency %>
-							</div>
-						</div>
-
-					
-						<div class="home_sidebar_title">
-							<div class="home_sidebar_make">
-								<%= latest_advert.make %>
-
-								<div class="home_sidebar_model">
-									<%= latest_advert.model %>
-								</div>
-							</div>
-
-							<div class="home_sidebar_location">
-								<%= latest_advert.country %><br/><%= latest_advert.city %>
-							</div>
-						</div>
-					<% end %>
-				</li>
-			<% end %>
-		</ul>
-	</div>
-</div>
-
-<div class="home_sidebar">
-
-</div>
-
-<div class="home_sidebar">
-
-</div>
-	
-</div>
+    // Marker is placed on the map 
+    var marker = new google.maps.Marker({
+        position: markerLatlng,
+        map: map // To add the marker to the map, alternatively call marker.setMap(map);
+    });
+  }
+  google.maps.event.addDomListener(window, 'load', initialize);
+</script>

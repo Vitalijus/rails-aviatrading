@@ -1,8 +1,19 @@
 class AdvertsController < ApplicationController
   before_action :set_advert, only: [:show, :edit, :update, :show_advert, :destroy]
   before_action :set_plan
-  before_action :authenticate_user!, except: [:index, :show, :pricing]
+  before_action :authenticate_user!, except: [:index, :show, :pricing, :home]
   require 'will_paginate/array'
+
+
+  def home
+    @adverts = Advert.all
+
+    @hash = Gmaps4rails.build_markers(@adverts) do |advert, marker|
+      marker.lat advert.latitude
+      marker.lng advert.longitude
+    end
+  end
+
 
   def pricing
     @basic_plan

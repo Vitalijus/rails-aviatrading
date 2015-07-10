@@ -1,4 +1,4 @@
-<%= search_form_for @q, :id => "adverts_search" do |f| %>
+<%= search_form_for @q do |f| %>
   <div id="search_nav_container">
       <ul class="search_nav">
           <li>
@@ -74,6 +74,10 @@
               <li class="search_label">
                 Engine:
               </li>
+
+              <div id="search_button_wrapper">
+      <%= f.submit :class => "search_button" %>
+    </div>
 
               <li class="search_field search_select">
                 <%= f.select :engine_type_cont, ['In-line engine', "V-type engine", "Horizontally opposed engine", "Radial engine", "Turboprop", "Turboshaft", "Turbojet", "Turbofan", "Other"], :prompt => 'Select engine' %>
