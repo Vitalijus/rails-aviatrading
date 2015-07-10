@@ -29,7 +29,7 @@
   	$(".status_avatar").text("File uploaded successfully");
  	var preview = $(".preview_avatar").html('');
   	$.cloudinary.image(data.result.public_id, {
-  		format: data.result.format, width: 120, height: 120, crop: "fill"
+  		format: data.result.format, width: 436, height: 146, crop: "fill"
   	}).appendTo(preview);
 
   	view_upload_details(data.result);

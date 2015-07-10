@@ -69,31 +69,78 @@
 
 /*------------------*/
 
+/* ADVERT DETAILS */
+
+.advert_details {
+	margin-top: -1px;
+	padding-left: 20px;
+	border-bottom: 15px solid #F16164;
+}
+
+.aircraft_title {
+	width: 70%;
+	display: inline-block;
+	margin-right: -4px;
+	color: #565A5C;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	font-size: 25px;
+	padding: 17px 20px 0 20px;
+}
+
+.aircraft_location {
+	color: #82888A;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	padding: 0;
+	font-size: 12px;
+}
+
+ul.aircraft_details {
+	color: #82888A;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	font-size: 10px;
+	padding: 20px 0 20px 0;
+}
+
+ul.aircraft_details li {
+	width: 20%;
+	display: inline-block;
+	margin-right: -4px;
+	text-align: center;
+}
+
+.icon_title {
+	text-transform: uppercase;
+	display: block;
+}
+
+/*----------------------*/
+
 /* EMAIL SELLER */
 
-ul.adv_display li.seller {
+ul.seller_display {
 	width: 30%;
-	height: 100%;
+	color: #565A5C;
+	font-size: 12px;
 	vertical-align: top;
 	margin-right: -4px;
 	margin-top: -39px;
 	display: inline-block;
-	padding: 0 10px 0 30px;
-	border: 0px solid yellow;
-}
+	overflow: hidden;
 
-ul.seller_display {
-	width: 100%;
-	color: #565A5C;
-	font-size: 12px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
 }
 
 ul.seller_display li {
-	border-left: 1px solid #dfe3e3;
-	border-right: 1px solid #dfe3e3;
-	border-bottom: 1px solid #dfe3e3;
+	border-left: 1px solid #ebeeee;
+	border-right: 1px solid #ebeeee;
+	border-bottom: 1px solid #ebeeee;
 	text-align: center;
-	background-color: #fff;
+	background-color: #f9f9f9;
 }
 
 ul.seller_display li:nth-child(0n+2) {
@@ -103,11 +150,11 @@ ul.seller_display li:nth-child(0n+2) {
 ul.seller_display li.aircraft_price {
 	width: 100%;
 	font-family: 'Roboto', sans-serif;
-	font-size: 15px;
-	text-align: left;
+	font-size: 16px;
+	text-align: center;
 	padding: 10px 20px 10px 20px;
 	color: #fff;
-	background-color:rgba(255,0,0,0.6);
+	background-color:rgba(255,77,77,0.8);
 	border: 0px solid red;
 }
 
@@ -116,9 +163,10 @@ ul.seller_display li.seller_contact {
 }
 
 .seller_name a {
-	font-size: 15px;
-	font-family: 'PT Sans', sans-serif;
-	color: #336f8c;
+	font-size: 14px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	color: #666;
 	margin-bottom: 7px;
 
 	-webkit-transition: color 150ms linear;
@@ -136,8 +184,9 @@ ul.seller_display li.seller_contact {
 	margin-top: 7px;
 	display: block;
 	font-size: 14px;
-	color: #444;
-	font-family: 'Roboto', sans-serif;
+	color: #666;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
 }
 
 ul.seller_display li.email_seller {
@@ -151,7 +200,7 @@ ul.seller_display li.email_seller .email_button {
 	color: #fff;
 	display: block;
 	padding: 10px 20px 10px 20px;
-	background-color: #F04F54;
+	background-color: #F16164;
 	cursor: pointer;
 	border-bottom: 2px solid #d8474b;
 
@@ -167,87 +216,27 @@ ul.seller_display li.email_seller .email_button {
 }
 
 ul.seller_display li.email_seller .email_button:hover {
-	background-color: #F16164;
-}
-
-/* --------------------*/
-
-/* DISPLAY */
-
-ul.adv_display {
-	width: 100%;
-	background-color: #F6F7F8;
-	border-bottom: 1px solid #DFE0E4;
-}
-
-ul.adv_display li.aircraft {
-	width: 70%;
-	height: 100%;
-	vertical-align: top;
-	margin-right: -4px;
-	display: inline-block;
-}
-
-.aircraft_title {
-	color: #565A5C;
-	font-family: 'PT Sans', sans-serif;
-	font-weight: bold;
-	font-size: 25px;
-	padding: 17px 20px 0 20px;
-}
-
-.aircraft_location {
-	color: #82888A;
-	font-family: 'PT Sans', sans-serif;
-	font-weight: bold;
-	padding: 0 20px 0 20px;
-	font-size: 12px;
-}
-
-ul.aircraft_details {
-	color: #82888A;
-	font-family: 'PT Sans', sans-serif;
-	font-weight: bold;
-	font-size: 12px;
-	padding: 20px 0 20px 20px;
-	border: 0px solid red;
-}
-
-ul.aircraft_details li {
-	width: 20%;
-	display: inline-block;
-	margin-right: -4px;
-	text-align: center;
-}
-
-.icon_title {
-	display: block;
-}
-
-.advert_separator_helper {
-	height: 15px;
 	background-color: #F04F54;
 }
 
-/*----------------------*/
+/* --------------------*/
 
 /* MAIN INFO*/
 
 .advert_main_info_wrapper {
 	width: 100%;
 	background-color: #fff;
-	padding: 10px 30px 10px 30px;
+	padding: 10px 20px 10px 20px;
 	overflow: hidden;
-}
-
-.table_wrapper {
-	width: 50%;
-	padding-right: 30px;
-	float: left;
+	border: 0px solid red;
 }
 
 ul.advert_main_info {
 	padding: 20px 0 20px 0;
+	width: 50%;
+	display: inline-block;
+	vertical-align: top;
+	margin-right: -4px;
 	border-top: 1px solid #edefef;
 }
 
@@ -263,6 +252,7 @@ ul.advert_main_info li {
 	margin-right: -4px;
 	font-family: 'PT Sans', sans-serif;
 	font-size: 13px;
+	border: 1px solid red;
 }
 
 ul.advert_main_info:first-child {
@@ -283,52 +273,59 @@ ul.advert_main_info li.description {
 }
 /*------------------------*/
 
-/* ORGANISATION */
+/* GOOGLE MAP */
 
-.organization_wrapper {
-	width: 50%;
-	float: left;
-	margin-top: 20px;
-	background-color: #f5f5f5;
-	border-top: 1px solid #DFE0E4;
+.google_map {
+	position: relative;
 	border: 0px solid red;
 }
 
-ul.organisation {
-	padding: 20px;
-	border: 0px solid red;
+.google_map_info {
+	position: absolute;
+	top: 40px;
+	left: 150px;
+	width: 200px;
+	padding: 15px;
+	background-color: #fff;
+	border: 1px solid #DFE0E4;
 }
 
-ul.organisation li {
-	font-size: 14px;
-	vertical-align: top;
+.info_title {
+	width: 130px;
+	height: 25px;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin-left: -65px;
+	line-height: 25px;
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
 	font-weight: bold;
-	margin-bottom: 3px;
-	font-family: 'PT Sans', sans-serif;
+	font-size: 12px;
+	background-color: #FFAA91;
+	color: #fff;
+}
+
+.info_location {
+	width: 100%;
+	margin-top: 20px;
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #EEF0F0;
+}
+
+.info_airport {
+	width: 100%;
+	margin-top: 10px;
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 12px;
 	border: 0px solid red;
 }
 
-ul.organisation li.organisation_logo {
-	max-width: 100%;
-	max-height: 300px;
-	padding: 0;
-}
-
-ul.organisation li.organisation_logo img {
-	max-width: 100%;
-	height: auto;
-	width: auto\9; /* ie8 */
-}
-
-ul.organisation li.organisation_name {
-	font-size: 24px;
-}
-
-ul.organisation li.organisation_about {
-	font-weight: normal;
-}
-
-/*-------------------------*/
+/*----------------*/
 
 /* SIMILAR LISTING */
 
@@ -354,25 +351,6 @@ ul.organisation li.organisation_about {
 
 	ul.advert_main_info li.description {
 		margin-bottom: 0px;
-	}
-
-	.organization_wrapper,
-	.table_wrapper {
-		width: 100%;
-	}
-
-	ul.organisation li.organisation_contact,
-	ul.organisation li.organisation_about {
-		width: 100% !important; /* over-ride all li styles */
-		padding-left: 0px;
-		margin-bottom: 20px;
-	}
-
-	ul.organisation li.organisation_logo {
-		width: 100% !important; /* over-ride all li styles */
-		max-width: 100%;
-		max-height: 300px;
-		margin-bottom: 20px;
 	}
 }
 

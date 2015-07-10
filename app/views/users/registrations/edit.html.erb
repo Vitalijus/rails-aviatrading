@@ -26,7 +26,7 @@
         </li>
 
         <li class="one_column">
-          <%= f.text_field :website_url, :placeholder => "Website URL" %>
+          <%= f.text_field :web_url, :placeholder => "Website URL" %>
         </li>
       </ul>
 
@@ -87,7 +87,7 @@
       <ul>
         <li class="user_profile_form_label">
           <%= f.label :avatar, "Company logo" %><br/>
-          <span class="user_profile_label_small">JPEG, JPG, GIF or PNG, 2MB max.</span>
+          <span class="user_profile_label_small">JPEG, JPG, GIF or PNG, 1MB max. Best size 440px wide and 150px tall.</span>
           <div class="status_avatar"></div>
         </li>
 
@@ -98,7 +98,7 @@
           <span><%= image_tag "cloud_upload.png", width: 20 %> Upload logo</span>
         </label>
         
-        <li class="preview_logo">
+        <li class="preview_avatar preview_logo">
           <%= image_tag @user.avatar_url(:avatar) %> 
         </li>
       </ul>

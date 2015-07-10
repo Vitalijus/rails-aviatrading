@@ -38,6 +38,11 @@ class AdvertsController < ApplicationController
                             adverts: {show_advert: true} },
                             order: {created_at: :desc})
                             .paginate(:page => params[:page], :per_page => 20)
+
+    @hash = Gmaps4rails.build_markers(@adverts) do |advert, marker|
+      marker.lat advert.latitude
+      marker.lng advert.longitude
+    end
   end
 
   # GET /adverts/1
@@ -137,7 +142,7 @@ class AdvertsController < ApplicationController
       :registration_number, :aircraft_hours, :landings, :nearest_airport, 
       :VAT, :last_inspection, :price_options, :airport_code,
       :number_of_passengers, :aircraft_usage, :phone, :user_id, :show_advert, 
-      :avionics, :interior, :exterior, :add_info, :engine_power_unit, 
-      photos_attributes: [:id, :image, :advert_id, :public_token])
+      :avionics, :interior, :exterior, :add_info, :engine_power_unit, :latitude, 
+      :longitude, photos_attributes: [:id, :image, :advert_id, :public_token])
     end
 end

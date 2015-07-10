@@ -10,7 +10,7 @@ module AdvertsHelper
 			image_tag "aircraft_type/helicopter.png",	width: size
 		when "Jet"
 			image_tag "aircraft_type/jet.png", 			width: size
-		when "Light Sport"
+		when "Light sport"
 			image_tag "aircraft_type/light_sport.png",	width: size
 		when "Piston"
 			image_tag "aircraft_type/piston.png", 		width: size

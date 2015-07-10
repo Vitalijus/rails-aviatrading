@@ -66,8 +66,27 @@
   </div>
 
   <div class="auth_form">
-    <%= f.label :website_url, "Website URL", :class => "auth_label" %>
-    <%= f.text_field :website_url, :class => "auth_field" %>
+    <%= f.label :web_url, "Website URL", :class => "auth_label" %>
+    <%= f.text_field :web_url, :class => "auth_field" %>
+  </div>
+
+  <div class="auth_form">
+    <%= f.label :avatar, "Company logo", :class => "auth_label" %>
+    <span class="user_profile_label_small">JPEG, JPG, GIF or PNG, 1MB max. Best size 440px wide and 150px tall.</span>
+    <div class="status_avatar sign_up"></div>
+  </div>
+
+    <label class="myLabel">
+      <%= f.cl_image_upload(:avatar, :return_delete_token => true, :html => {:class => "avatar_upload"}) %>
+      <span><%= image_tag "cloud_upload.png", width: 20 %> Upload logo</span>
+    </label>
+    
+    <!--<li class="preview_logo">
+      <%= image_tag @user.avatar_url(:avatar) %> 
+    </li>-->
+
+  <div class="preview_avatar sign_up_logo">
+    <%= image_tag @user.avatar_url(:avatar) %>
   </div>
 
   <div class="auth_form">
@@ -100,25 +119,6 @@
       <%= f.text_field :postal_code, :class => "auth_field" %>
     </li>
   </ul>
-
-  <!--<ul>
-    <li class="user_profile_form_label">
-      <%= f.label :avatar, "Company logo" %><br/>
-      <span class="user_profile_label_small">JPEG, JPG, GIF or PNG, 2MB max.</span>
-      <div class="status_avatar"></div>
-    </li>
-
-    <label class="myLabel">
-      <li>
-        <%= f.cl_image_upload(:avatar, :return_delete_token => true, :html => {:class => "avatar_upload"}) %>
-      </li>
-      <span><%= image_tag "cloud_upload.png", width: 20 %> Upload logo</span>
-    </label>
-    
-    <li class="preview_logo">
-      <%= image_tag @user.avatar_url(:avatar) %> 
-    </li>
-  </ul>-->
 
   <%= f.submit "Continue", :class => "registration_submit_button" %>
   <% end %>

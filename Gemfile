@@ -17,6 +17,9 @@ gem 'ransack'
 gem 'will_paginate', '~> 3.0'
 gem 'sidekiq'
 gem "jquery-fileupload-rails"
+gem 'geocoder'
+gem 'gmaps4rails', '~> 2.1.2'
+gem 'underscore-rails', '~> 1.8.3'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

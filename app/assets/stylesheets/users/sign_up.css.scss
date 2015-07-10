@@ -99,7 +99,7 @@ ul.registration_steps span.active {
 .auth_label {
   font-weight: bold;
   font-size: 12px;
-  color: #999;
+  color: #444;
   border: 0px solid red;
 }
 
@@ -116,6 +116,26 @@ ul.registration_steps span.active {
   -webkit-box-shadow: inset 0px 0px 2px 0px rgba(250,229,229,0.5);
   -moz-box-shadow: inset 0px 0px 2px 0px rgba(250,229,229,0.5);
   box-shadow: inset 0px 0px 2px 0px rgba(250,229,229,0.5);
+}
+
+.preview_avatar.sign_up_logo {
+  max-width: 100%;
+  max-height: 148px;
+  margin-bottom: 20px;
+  border: 0px dashed #f1f1f1;
+}
+
+.preview_avatar.sign_up_logo img {
+  max-width: 100%;
+  height: auto;
+  width: auto\9; /* ie8 */
+}
+
+.status_avatar.sign_up {
+  color: #F05053;
+  font-size: 12px;
+  margin-top: 5px;
+  font-weight: normal;
 }
 
 ul.sign_up_form li {

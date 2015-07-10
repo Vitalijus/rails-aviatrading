@@ -32,7 +32,7 @@ html {
   font-family: 'Ubuntu', sans-serif;
   color: #444444;  
   min-height: 100%;
-  margin: 0px 0 0px 0; /* bottom = footer height */
+  margin: 60px 0 0px 0; /* bottom = footer height */
 }
 
 *,
@@ -80,7 +80,10 @@ header {
   width: 100%;
   background-color: #fff;
   padding: 0 20px 0 20px;
-  border-bottom: 1px solid #DFE0E4;
+  position: fixed;
+  top: 0;
+  z-index: 99999;
+  border-bottom: 1px solid #c8c9cd;
 }
 
 #header_wrapper,

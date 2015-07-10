@@ -3,7 +3,20 @@
 <div class="user_grid_wrapper">
 	<div class="user_grid_container">
 	  	<ul class="user_panel">
-	  		<li><%= @user.organisation %></li>
+	  		<% if @user.avatar.nil? or @user.avatar.blank? %>
+	  			<li class="company_logo">
+		  			Company logo
+		  		</li>
+		  	<% else %>
+		  		<li class="company_logo">
+		  			<%= image_tag @user.avatar_url(:avatar_big) %>
+		  		</li>
+		  	<% end %>
+
+	  		<li class="company_info">
+	  			<span class="company_attributes"><%= @user.organisation %></span>
+	  			<span class="company_attributes"><%= @user.organisation %></span>
+	  		</li>
 	  		<li><%= pluralize(@user.adverts.count, "Advert") %></li>
 		</ul>
 

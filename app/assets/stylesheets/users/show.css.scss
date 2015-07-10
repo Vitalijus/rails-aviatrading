@@ -42,22 +42,42 @@ ul.usr_prfl_nav li:hover {
 ul.user_panel {
 	margin: 10px;
 	background-color: #fff;
-	position: relative;
-	font-family: 'PT Sans', sans-serif;
-	font-size: 18px;
-	padding: 15px;
-	font-weight: bold;
 	border: 1px solid #DFE0E4;
+
+	-webkit-border-radius: 2px;
+  	-moz-border-radius: 2px;
+  	border-radius: 2px;
 }
 
 ul.user_panel li {
 	display: inline-block;
 	margin-right: -4px;
+	vertical-align: top;
+	border: 0px solid red;
 }
 
 ul.user_panel li:last-child {
 	float: right;
 	margin-right: 0;
+}
+
+ul.user_panel li.company_logo {
+	width: 300px;
+	height: 150px;
+	background-color: #DBDDE2;
+}
+
+ul.user_panel li.company_info {
+	padding: 20px;
+	border: 0px solid red;
+}
+
+ul.user_panel li.company_info .company_attributes {
+	font-family: 'PT Sans', sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	display: block;
+	border: 0px solid green;
 }
 
 ul.user_ad_dlt_edit {
