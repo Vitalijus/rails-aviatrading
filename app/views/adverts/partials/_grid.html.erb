@@ -1,4 +1,4 @@
-  <div id="google_map">
+  <div id="google_map_index">
     <div id="map_index" style='width: 100%; height: 100%;'></div>
 </div>
 
@@ -64,6 +64,13 @@
 
   <div class="user_grid_wrapper">
     <div class="user_grid_container">
+
+      <% if @adverts.count == 0 %>
+        <div id="record_not_found">
+          Record not found
+        </div>
+      <% end %>
+
       <div class="frame">
         <% @adverts.each do |advert| %>
             <div class="bit-3">

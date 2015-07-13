@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  geocoded_by :city   # can also be an IP address
+  after_validation :geocode, :if => :city_changed?
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

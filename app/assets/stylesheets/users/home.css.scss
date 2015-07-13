@@ -1,0 +1,130 @@
+#home_logo {
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+#home_wrapper {
+	width: 480px;
+	max-width: 90%;
+	position: absolute;
+	top: 70px;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 20px;
+	background-color: #fff;
+	border: 1px solid #DFE0E4;
+
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+#home_wrapper select {
+	-webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -webkit-padding-end: 20px;
+    -moz-padding-end: 20px;
+    -webkit-padding-start: 2px;
+    -moz-padding-start: 2px;
+    /*background-image: url(image-path('arrow_down.png'));*/
+    background: url(image-path('arrow_down.png')) no-repeat;
+    background-position: center right;
+    border: 1px solid #AAA;
+    width: 100%;
+    height: 40px;
+    font-family: "Open Sans", helvetica, arial;
+    font-size: 13px;
+    color: #444;
+    overflow: hidden;
+    padding: 0 10px 0 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    background-color: #fefafa;
+    border:  1px solid #fdeded;
+
+    -webkit-box-shadow: inset 0px 0px 2px 0px rgba(250,229,229,0.5);
+    -moz-box-shadow: inset 0px 0px 2px 0px rgba(250,229,229,0.5);
+    box-shadow: inset 0px 0px 2px 0px rgba(250,229,229,0.5);
+}
+
+.home_title {
+	font-family: "Open Sans", helvetica, arial;
+    font-size: 25px;
+    color: #F05053;
+    margin-bottom: 15px;
+	text-align: center;
+}
+
+ul.home_search_box {
+    margin-bottom: 20px;
+    border: 0px solid red;
+}
+
+ul.home_search_box li.search_field {
+    margin-bottom: 10px;
+}
+
+ul.home_search_box li.search_label {
+    width: 100%;
+    padding: 5px 20px 3px 0px;
+    color: #444;
+    font-size: 12px;
+    font-weight: bold;
+    border: 0px solid red;
+}
+
+.home_search_button {
+	width: 100%;
+	height: 40px;
+	background-color: #F16164;
+	border: 0;
+	color: #fff;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+	cursor: pointer;
+	border-bottom: 2px solid #B14739;
+
+	-webkit-transition: background-color 150ms linear;
+  	-moz-transition: background-color 150ms linear;
+  	-o-transition: background-color 150ms linear;
+  	-ms-transition: background-color 150ms linear;
+  	transition: background-color 150ms linear;
+
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+
+.home_search_button:hover {
+	background-color: #F05053;
+}
+
+#hide_home {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+}
+
+#show_home {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-top: 17px;
+    background-color: #fff;
+    border: 1px solid #DFE0E4;
+    display: none;
+    cursor: pointer;
+}

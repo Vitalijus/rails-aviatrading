@@ -1,18 +1,8 @@
 class AdvertsController < ApplicationController
   before_action :set_advert, only: [:show, :edit, :update, :show_advert, :destroy]
   before_action :set_plan
-  before_action :authenticate_user!, except: [:index, :show, :pricing, :home]
+  before_action :authenticate_user!, except: [:index, :show, :pricing]
   require 'will_paginate/array'
-
-
-  def home
-    @adverts = Advert.all
-
-    @hash = Gmaps4rails.build_markers(@adverts) do |advert, marker|
-      marker.lat advert.latitude
-      marker.lng advert.longitude
-    end
-  end
 
 
   def pricing
@@ -53,6 +43,11 @@ class AdvertsController < ApplicationController
     @hash = Gmaps4rails.build_markers(@adverts) do |advert, marker|
       marker.lat advert.latitude
       marker.lng advert.longitude
+      marker.picture({
+        url: view_context.image_path("location.png"),
+        width: 25,
+        height: 38
+      })
     end
   end
 

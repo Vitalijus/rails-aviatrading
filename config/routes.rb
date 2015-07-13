@@ -26,7 +26,7 @@ School::Application.routes.draw do
   resources :contacts, only: [:create, :new]
   
   
-  root 'adverts#home'
+  root 'users#home'
 
 
 

@@ -8,7 +8,7 @@
               </li>
 
               <li class="search_field">
-                <%= f.text_field :make_cont, :class => "input_field", :placeholder => "Cessna" %>
+                <%= f.text_field :make_cont, :class => "input_field" %>
               </li>
 
               <li class="search_label">
@@ -16,7 +16,7 @@
               </li>
 
               <li class="search_field">
-                <%= f.text_field :model_cont, :class => "input_field", :placeholder => "Cessna 177" %>
+                <%= f.text_field :model_cont, :class => "input_field" %>
               </li>
             </ul>
           </li>
@@ -32,25 +32,17 @@
               </li>
 
               <li class="search_label">
-                Price:
-              </li>
-
-              <li class="search_field">
-                <%= f.text_field :price_lteq, :class => "input_field", :placeholder => "Show price less than" %>
-              </li>
-            </ul>
-          </li>
-
-          <li>
-            <ul class="inner_search_nav">
-              <li class="search_label">
                 Aircraft type:
               </li>
 
               <li class="search_field search_select">
                 <%= f.select :aircraft_type_cont, ["Airship / Blimp", "Glider / Sailplane", "Jet", "Helicopter", "Light sport", "Single piston", "Multi piston", "TurboProp", "Ultralight", "Hot air balloon", "Other"], :prompt => 'Select type' %>
               </li>
+            </ul>
+          </li>
 
+          <li>
+            <ul class="inner_search_nav">
               <li class="search_label">
                 Aircraft usage:
               </li>
@@ -58,29 +50,9 @@
               <li class="search_field search_select">
                 <%= f.select :aircraft_usage_cont, ["Aerobatic", "Aerial survey", "Agriculture", "Amphibian/Float", "Antique/Classic", "Business/VIP", "Homebuilt", "EMS/SAR/Fire/Police", "Cargo/Freighter", "Passenger", "Warbird/Military", "Other"], :prompt => 'Select usage' %>
               </li>
-            </ul>
-          </li>
-          
-          <li>
-            <ul class="inner_search_nav">
-              <li class="search_label">
-                Year:
-              </li>
 
-              <li class="search_field search_select">
-                <%= f.select :year_eq, options_for_select((Date.today.year-100..Date.today.year+1).step(1).reverse_each), :prompt => 'Select year' %>
-              </li>
-
-              <li class="search_label">
-                Engine:
-              </li>
-
-              <div id="search_button_wrapper">
-      <%= f.submit :class => "search_button" %>
-    </div>
-
-              <li class="search_field search_select">
-                <%= f.select :engine_type_cont, ['In-line engine', "V-type engine", "Horizontally opposed engine", "Radial engine", "Turboprop", "Turboshaft", "Turbojet", "Turbofan", "Other"], :prompt => 'Select engine' %>
+              <li class="search_label button">
+                <%= f.submit :class => "search_button" %>
               </li>
             </ul>
           </li>
