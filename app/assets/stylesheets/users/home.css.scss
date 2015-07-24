@@ -1,9 +1,22 @@
-#home_logo {
-	text-align: center;
-	margin-bottom: 5px;
+#landing_shadow {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 88888;
+    background: rgb(54, 25, 25); /* Fall-back for browsers that don't support rgba */
+    background: rgba(72, 95, 105, .7);
+    border: 0px solid red;
 }
 
-#home_wrapper {
+#landing_map {
+    height: 100vh; 
+    position: relative; 
+    margin-top: -50px; 
+    padding-top: 50px;
+    border: 0px solid red;
+}
+
+#landing_box {
 	width: 480px;
 	max-width: 90%;
 	position: absolute;
@@ -13,6 +26,7 @@
 	margin-left: auto;
 	margin-right: auto;
 	padding: 20px;
+    z-index: 99999;
 	background-color: #fff;
 	border: 1px solid #DFE0E4;
 
@@ -21,7 +35,12 @@
 	border-radius: 3px;
 }
 
-#home_wrapper select {
+#landing_logo {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+#landing_box select {
 	-webkit-appearance: button;
     -moz-appearance: button;
     appearance: none;
@@ -36,7 +55,7 @@
     background-position: center right;
     border: 1px solid #AAA;
     width: 100%;
-    height: 40px;
+    height: 45px;
     font-family: "Open Sans", helvetica, arial;
     font-size: 13px;
     color: #444;
@@ -53,7 +72,7 @@
     box-shadow: inset 0px 0px 2px 0px rgba(250,229,229,0.5);
 }
 
-.home_title {
+.landing_title {
 	font-family: "Open Sans", helvetica, arial;
     font-size: 25px;
     color: #F05053;
@@ -61,16 +80,16 @@
 	text-align: center;
 }
 
-ul.home_search_box {
+ul.landing_search_box {
     margin-bottom: 20px;
     border: 0px solid red;
 }
 
-ul.home_search_box li.search_field {
+ul.landing_search_box li.search_field {
     margin-bottom: 10px;
 }
 
-ul.home_search_box li.search_label {
+ul.landing_search_box li.search_label {
     width: 100%;
     padding: 5px 20px 3px 0px;
     color: #444;
@@ -79,40 +98,14 @@ ul.home_search_box li.search_label {
     border: 0px solid red;
 }
 
-.home_search_button {
-	width: 100%;
-	height: 40px;
-	background-color: #F16164;
-	border: 0;
-	color: #fff;
-	font-family: 'Open Sans', sans-serif;
-	font-size: 18px;
-	cursor: pointer;
-	border-bottom: 2px solid #B14739;
-
-	-webkit-transition: background-color 150ms linear;
-  	-moz-transition: background-color 150ms linear;
-  	-o-transition: background-color 150ms linear;
-  	-ms-transition: background-color 150ms linear;
-  	transition: background-color 150ms linear;
-
-	-webkit-border-radius: 2px;
-	-moz-border-radius: 2px;
-	border-radius: 2px;
-}
-
-.home_search_button:hover {
-	background-color: #F05053;
-}
-
-#hide_home {
+#hide_map {
     position: absolute;
     right: 20px;
     top: 20px;
     cursor: pointer;
 }
 
-#show_home {
+#show_map {
     width: 50px;
     height: 50px;
     position: absolute;

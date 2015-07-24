@@ -1,4 +1,4 @@
-.email_seller_wrapper {
+/*.email_seller_wrapper {
 	margin: 20px;
 }
 
@@ -33,15 +33,41 @@
 	font-weight: bold;
 	font-size: 12px;
 	color: #8e8e8e;
-}
+}*/
 
 .seller_form {
-	margin-top: 20px;
+	margin-top: 0px;
 }
 
 .seller_field label {
   width: 100%;
   font-weight: bold;
   font-size: 12px;
-  color: #999;
+  color: #444;
+}
+
+.email_seller_button {
+	width: 100%;
+	font-size: 15px;
+	font-family: 'PT Sans', sans-serif;
+	color: #fff;
+	padding: 12px;
+	text-align: center;
+	background-color: #F16164;
+	cursor: pointer;
+	border-bottom: 2px solid #d8474b;
+
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+
+	-webkit-transition: background-color 150ms linear;
+  	-moz-transition: background-color 150ms linear;
+  	-o-transition: background-color 150ms linear;
+  	-ms-transition: background-color 150ms linear;
+  	transition: background-color 150ms linear;
+}
+
+.email_seller_button:hover {
+	background-color: #F04F54;
 }

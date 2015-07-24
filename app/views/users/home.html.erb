@@ -1,67 +1,54 @@
-<div class="google_map" style="height: 100vh; position: relative; margin-top: -50px; padding-top: 50px;">
-    <div id="map_home" style='width: 100%; height: 100%;'></div>
+<div id="landing_shadow"></div>
 
-    <div id="show_home">
+<div id="landing_map">
+    <div id="map" style='width: 100%; height: 100%;'></div>
+
+    <div id="show_map">
       <%= image_tag "double_down.png", width: 20 %>
     </div>
 
-    <div id="home_wrapper">
-      <div id="hide_home">
+    <div id="landing_box">
+      <div id="hide_map">
         <%= image_tag "double_up.png", width: 20 %>
       </div>
 
-    	<div id="home_logo">
-    		<span class="icon-propeller"></span>
-		  </div>
+      <div id="landing_logo">
+        <span class="icon-propeller"></span>
+      </div>
 
-    	<div class="home_title">
-    		Aircraft Market
-    	</div>
+      <div class="landing_title">
+        Aircraft Market
+      </div>
 
-	  <%= search_form_for @q do |f| %>
-      <ul class="home_search_box">
-        <!--<li class="search_label">
-          Country:
-        </li>-->
-
+    <%= search_form_for @q do |f| %>
+      <ul class="landing_search_box">
         <li class="search_field">
-	        <%= f.select :country_cont, ["Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Colombia", "Comoros", "Congo", "D. R. Congo", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic","Denmark", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Finland", "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "South Korea", " North Korea", "Kuwait", "Kyrgyzstan", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macao", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Martinique", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Norway", "Oman", "Pakistan", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Puerto Rico", "Qatar", "Romania", "Russia", "Rwanda", "Samoa", "San Marino", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Somalia", "South Africa", "Spain", "Sri Lanka", "Sudan", "Suriname", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Venezuela", "Vietnam", "Virgin Islands, British", "Virgin Islands, U.S.", "Yemen", "Zambia","Zimbabwe"], :prompt => 'Select country' %>
-        </li>
-            
-            
-        <!--<li class="search_label">
-          Make:
+          <%= f.select :country_cont, options_for_countries, :prompt => 'Select country'%>
         </li>
 
         <li class="search_field">
-          <%= f.text_field :make_cont, :class => "input_field" %>
+          <%= f.select :aircraft_type_cont, ["Airship / Blimp", "Glider / Sailplane", "Jet", "Helicopter", "Light sport", "Single piston", "Multi piston", "TurboProp", "Ultralight", "Hot air balloon", "Other"], :prompt => 'Aircraft type' %>
         </li>
-
-        <li class="search_label">
-          Model:
-        </li>
-
-        <li class="search_field">
-          <%= f.text_field :model_cont, :class => "input_field" %>
-        </li>-->
       </ul>
 
-      <%= f.submit :class => "home_search_button" %>
-          <% end %>
-	</div>
+      <%= f.submit :class => "landing_search_button" %>
+    <% end %>
+  </div>
 </div>
 
 <script>
 $(document).ready(function() {
-  $("#hide_home").on("click", function() {
-    $("#home_wrapper").hide();
-    $("#show_home").show();
+  $("#hide_map").on("click", function() {
+    $("#landing_box").hide();
+    $("#show_map").show();
+    $("#landing_shadow").hide();
 
   });
 
-  $("#show_home").on("click", function() {
-    $("#home_wrapper").show();
-    $("#show_home").hide();
+  $("#show_map").on("click", function() {
+    $("#landing_box").show();
+    $("#show_map").hide();
+    $("#landing_shadow").show();
   });
 });
 </script>
@@ -117,7 +104,7 @@ $(document).ready(function() {
 ];
 
   handler = Gmaps.build('Google');
-  var centerpoint = new google.maps.LatLng(48.1549107,11.5418357);
+  var centerpoint = new google.maps.LatLng(48.1549107, 11.5418357);
   handler.buildMap({ provider: {streetViewControl: false,
   								center: centerpoint, 
   								zoom: 6,
@@ -126,7 +113,7 @@ $(document).ready(function() {
   								mapTypeControl: false,
   								auto_adjust: false,
       							scrollwheel: false,
-  								styles: mapStyle }, internal: {id: 'map_home'}}, function(){
+  								styles: mapStyle }, internal: {id: 'map'}}, function(){
 
     markers = handler.addMarkers(<%=raw @hash.to_json %>);
     handler.bounds.extendWith(markers);

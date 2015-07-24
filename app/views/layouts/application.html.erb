@@ -53,7 +53,7 @@
 
 <%= yield %>
 
-<% unless current_page?(adverts_path) || current_page?(root_path) %>
+<% unless current_page?(adverts_path) %>
   <%= render "layouts/footer" %>
 <% end %>
 

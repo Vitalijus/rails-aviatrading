@@ -16,7 +16,7 @@
 
 .white-popup {
   position: relative;
-  background: #FFF;
+  background: #fdfdfd;
   padding: 20px;
   width: auto;
   max-width: 500px;
@@ -32,13 +32,6 @@
 	max-width: 1000px;
 	margin: 0 auto;
 	margin-bottom: 60px;
-	background-color: #fff;
-	overflow: hidden;
-	border: 1px solid #DFE0E4;
-
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
 }
 
 /* DISPLAY AN IMAGE */
@@ -58,7 +51,9 @@
 .lightbox { 
 	max-width: 960px;
     max-height: 100%;
-    margin: 0 auto;
+    margin: auto;
+    margin-top: 20px;
+    border: 0px solid red;
 }
 
 .lightbox img {
@@ -69,54 +64,151 @@
 
 /*------------------*/
 
-/* ADVERT DETAILS */
-
-.advert_details {
-	margin-top: -1px;
-	padding-left: 20px;
-	border-bottom: 15px solid #F16164;
-}
+/* AIRCRAFT NAME AND LOCATION */
 
 .aircraft_title {
-	width: 70%;
-	display: inline-block;
-	margin-right: -4px;
 	color: #565A5C;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: bold;
-	font-size: 25px;
-	padding: 17px 20px 0 20px;
+	font-size: 30px;
+	margin: 0px 0 20px 0;
+	background-color: #fdfdfd;
+	padding: 10px 20px 10px 20px;
+	border: 1px solid #DFE0E4;
 }
 
 .aircraft_location {
-	color: #82888A;
+	color: #666;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: bold;
 	padding: 0;
 	font-size: 12px;
 }
 
+/*----------------*/
+
+/* ADVERT DETAILS */
+
+.details_wrapper {
+	width: 100%;
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+
+.advert_details {
+	width: 63%;
+	float: left;
+	margin-right: 20px;
+	background-color: #fdfdfd;
+	border: 1px solid #DFE0E4;
+}
+
 ul.aircraft_details {
-	color: #82888A;
-	font-family: 'Open Sans', sans-serif;
-	font-weight: bold;
-	font-size: 10px;
-	padding: 20px 0 20px 0;
+	width: 100%;
+	display: table;
+	background-color: #F6F7F8;
+	padding: 20px 10px 20px 10px;
+	border-bottom: 1px solid #DCDEE3;
 }
 
 ul.aircraft_details li {
 	width: 20%;
-	display: inline-block;
-	margin-right: -4px;
-	text-align: center;
+	display: table-cell;
+	padding: 0 10px 0 10px;
+	color: #666;/*#82888A;*/
+	font-family: 'Open Sans', sans-serif;
+	font-size: 12px;
+	border-right: 1px solid #DCDEE3;
 }
 
-.icon_title {
+ul.aircraft_details li:last-child {
+	border: 0;
+}
+
+.attr {
+	color: #3997DC;
+	font-weight: bold;
+	font-size: 14px;
+	display: block;
+}
+
+.attr_title {
 	text-transform: uppercase;
 	display: block;
 }
 
+ul.aircraft_main_details {
+	margin: 20px;
+	border-bottom: 0px solid #DCDEE3;
+}
+
+ul.aircraft_main_details li {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 12px;
+	margin-bottom: 5px;
+	color: #000;
+	border: 0px solid red;
+}
+
+.main_attr {
+	font-weight: bold;
+}
+
+.advert_engine_notes {
+	margin-top: 10px;
+}
 /*----------------------*/
+
+/* RIGHT SIDE COLUMN */
+
+.right_side_column {
+	width: 35%;
+	float: right;
+}
+
+.advertiser_contact {
+	width: 100%;
+	padding: 20px;
+	background-color: #fdfdfd;
+	border: 1px solid #DFE0E4;
+}
+
+.seller_info {
+	background-color: #fdfdfd;
+	border-top: 1px solid #DFE0E4;
+	border-left: 1px solid #DFE0E4;
+	border-right: 1px solid #DFE0E4;
+}
+
+.seller_logo {
+	width: 100%;
+	border: 0px solid red;
+}
+
+ul.seller_attr {
+	padding: 15px 20px 5px 20px;
+	overflow: hidden;
+	border: 0px solid transparent;
+}
+
+ul.seller_attr li {
+	width: 100%;
+	position: relative;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 12px;
+	color: #222;
+	margin-bottom: 10px;
+	padding-left: 25px;
+	border: 0px solid green;
+}
+
+.seller_icon {
+	position: absolute;
+	left: 0;
+	border: 0px solid red;
+}
+
+/*-----------------*/
 
 /* EMAIL SELLER */
 
@@ -126,7 +218,6 @@ ul.seller_display {
 	font-size: 12px;
 	vertical-align: top;
 	margin-right: -4px;
-	margin-top: -39px;
 	display: inline-block;
 	overflow: hidden;
 
@@ -154,7 +245,7 @@ ul.seller_display li.aircraft_price {
 	text-align: center;
 	padding: 10px 20px 10px 20px;
 	color: #fff;
-	background-color:rgba(255,77,77,0.8);
+	background-color:rgba(255,77,77,0.7);
 	border: 0px solid red;
 }
 
@@ -225,19 +316,29 @@ ul.seller_display li.email_seller .email_button:hover {
 
 .advert_main_info_wrapper {
 	width: 100%;
-	background-color: #fff;
-	padding: 10px 20px 10px 20px;
+	background-color: #fdfdfd;
 	overflow: hidden;
 	border: 0px solid red;
 }
 
-ul.advert_main_info {
-	padding: 20px 0 20px 0;
+.main_info_left {
 	width: 50%;
+	height: 550px;
+	overflow: auto;
 	display: inline-block;
 	vertical-align: top;
 	margin-right: -4px;
-	border-top: 1px solid #edefef;
+	border: 0px solid green;
+}
+
+ul.advert_main_info {
+	width: 100%;
+	padding: 20px;
+	border-bottom: 1px solid #edefef;
+}
+
+ul.advert_main_info:last-child {
+    border-bottom: none;
 }
 
 ul.advert_main_info.engine_note {
@@ -246,26 +347,25 @@ ul.advert_main_info.engine_note {
 }
 
 ul.advert_main_info li {
-	width: 50%;
-	display: inline-block;
-	vertical-align: top;
-	margin-right: -4px;
+	width: 100%;
+	margin-bottom: 5px;
 	font-family: 'PT Sans', sans-serif;
+	font-family: 'Roboto', sans-serif;
+	font-family: 'Open Sans', sans-serif;
+	line-height: 18px;
 	font-size: 13px;
-	border: 1px solid red;
-}
-
-ul.advert_main_info:first-child {
-    border-top: none;
+	border: 0px solid red;
 }
 
 ul.advert_main_info li.info_label {
 	width: 100%;
 	font-family: 'PT Sans', sans-serif;
+	font-family: 'Roboto', sans-serif;
     font-weight: bold;
-    font-size: 13px;
-    text-transform: uppercase;
-	border: 0px solid green;
+    font-size: 16px;
+    text-align: center;
+    /*background-color: #FFAA91;*/
+	border-top: 0px solid #DFE0E4;
 }
 
 ul.advert_main_info li.description {
@@ -281,7 +381,7 @@ ul.advert_main_info li.description {
 	left: 150px;
 	width: 200px;
 	padding: 15px;
-	background-color: #fff;
+	background-color: #fdfdfd;
 	border: 1px solid #DFE0E4;
 }
 

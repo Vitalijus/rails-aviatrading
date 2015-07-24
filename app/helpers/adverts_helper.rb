@@ -1,54 +1,18 @@
 module AdvertsHelper
 
-	def aircraft_type_helper(value, size)
-		case value
-		when "Airship / Blimp"
-			image_tag "aircraft_type/airship.png", 		width: size
-		when "Glider / Sailplane"
-			image_tag "aircraft_type/glider.png",		width: size
-		when "Helicopter"
-			image_tag "aircraft_type/helicopter.png",	width: size
-		when "Jet"
-			image_tag "aircraft_type/jet.png", 			width: size
-		when "Light sport"
-			image_tag "aircraft_type/light_sport.png",	width: size
-		when "Piston"
-			image_tag "aircraft_type/piston.png", 		width: size
-		when "TurboProp"
-			image_tag "aircraft_type/turbo_prop.png", 	width: size
-		when "Ultralight"
-			image_tag "aircraft_type/ultralight.png", 	width: size
-		when "Hot air balloon"
-			image_tag "aircraft_type/hot_air_balloon.png", width: size
+	def currency_to_symbol_helper(currency)
+		case currency
+		when "USD - U.S. dollar"
+			"$"
+		when "EUR - Euro"
+			"€"
+		when "GBP - Pound sterling"
+			"£"
 		end
 	end
 
-	def aircraft_usage_helper(value, size)
-		case value
-		when "Aerobatic"
-			image_tag "aircraft_usage/aerobatic.png", 			width: size
-		when "Aerial survey"
-			image_tag "aircraft_usage/aerial_survey.png", 		width: size
-		when "Agriculture"
-			image_tag "aircraft_usage/agriculture.png", 		width: size
-		when "Amphibian/Float"
-			image_tag "aircraft_usage/amphibian_float.png", 	width: size
-		when "Antique/Classic"
-			image_tag "aircraft_usage/antique_classic.png", 	width: size
-		when "Business/VIP"
-			image_tag "aircraft_usage/business_vip.png", 		width: size
-		when "Homebuilt"
-			image_tag "aircraft_usage/homebuilt.png", 			width: size
-		when "EMS/SAR/Fire/Police"
-			image_tag "aircraft_usage/ems.png", 				width: size
-		when "Cargo/Freighter"
-			image_tag "aircraft_usage/cargo.png", 				width: size
-		when "Passenger"
-			image_tag "aircraft_usage/passenger.png", 			width: size
-		when "Warbird/Military"
-			image_tag "aircraft_usage/warbird.png", 			width: size
-		when "Other"
-			image_tag "aircraft_usage/warbird.png", 			width: size
-		end
+	def select_for_countries_helper
+		["Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Colombia", "Comoros", "Congo", "D. R. Congo", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic","Denmark", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Finland", "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "South Korea", " North Korea", "Kuwait", "Kyrgyzstan", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macao", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Martinique", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Norway", "Oman", "Pakistan", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Puerto Rico", "Qatar", "Romania", "Russia", "Rwanda", "Samoa", "San Marino", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Somalia", "South Africa", "Spain", "Sri Lanka", "Sudan", "Suriname", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Venezuela", "Vietnam", "Virgin Islands, British", "Virgin Islands, U.S.", "Yemen", "Zambia","Zimbabwe"]
 	end
+
 end

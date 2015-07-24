@@ -10,16 +10,15 @@
 	margin-top: 70px;
 	padding-bottom: 30px;
 	margin-bottom: 60px;
-	background-color: #fff;
 	overflow: hidden;
-	border: 1px solid #DFE0E4;
+	border: 0px solid #DFE0E4;
 
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
 }
 
-.plan_banner {
+/*.plan_banner {
 	height: 350px;
 	padding-top: 120px;
 	position: relative;
@@ -29,7 +28,7 @@
 	font-size: 50px;
 	color: #fff;
 	font-family: 'Lora', serif;
-}
+}*/
 
 .plan_small_banner_text {
 	font-size: 25px;
@@ -40,14 +39,12 @@ b.text_highlight {
 }
 
 .plan_text {
-	margin: 40px 4% 0 4%;
+	margin: 20px 4% 0 4%;
 	color: #3F5672;
 	color: #555;
 	text-align: center;
-	letter-spacing: 1px;
 	font-family: 'Open Sans', sans-serif;
-	text-transform: uppercase;
-	font-size: 30px;
+	font-size: 35px;
 	border: 0px solid red;
 }
 
@@ -56,9 +53,9 @@ b.text_highlight {
 	color: #555;
 	text-align: center;
 	font-family: 'Open Sans', sans-serif;
-	padding: 20px 10px 0 10px;
+	padding: 10px 10px 0 10px;
 	margin: 0 auto;
-	margin-bottom: 40px;
+	margin-bottom: 30px;
 	font-size: 14px;
 	border: 0px solid red;
 }
@@ -66,7 +63,7 @@ b.text_highlight {
 ul.micro_benefits {
 	max-width: 960px;
 	margin: 0 auto;
-	margin-bottom: 40px;
+	margin-bottom: 20px;
 	text-align: center;
 	padding: 0 20px 0 20px;
 	border: 0px solid red;
@@ -83,11 +80,11 @@ ul.micro_benefits li {
 	padding: 10px;
 	color: #444;
 	background-color: #FDFDFD;
-	border: 1px solid #eef0f2;
+	border: 1px solid #DFE0E4;
 
-	-webkit-border-radius: 40px;
-	-moz-border-radius: 40px;
-	border-radius: 40px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
 }
 
 ul.plan_wrapper {
@@ -107,11 +104,11 @@ ul.plan_wrapper li {
 	padding-top: 20px;
 	overflow: hidden;
 	background-color: #fdfdfd;
-	border-bottom: 0px solid #F16164;
+	border: 1px solid #DFE0E4;
 
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
 }
 
 .plan_basic {
@@ -119,11 +116,11 @@ ul.plan_wrapper li {
 	padding-top: 20px;
 	overflow: hidden;
 	background-color: #fdfdfd;
-	border-bottom: 0px solid #5ECF7F;
+	border: 1px solid #DFE0E4;
 
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
 }
 
 .plan_title {
@@ -246,24 +243,24 @@ ul.plan_wrapper li {
 	width: 100%;
 	height: 60px;
 	line-height: 60px;
-	background-color: #fff;
 	background-color: #F6F7F8;
 	text-align: center;
 	font-size: 14px;
 	color: #3F5672;
 	text-transform: uppercase;
 	font-family: 'PT Sans', sans-serif;
+	border-top: 1px solid #edeef1;
 }
 
 .reassurance_text {
 	text-align: center;
 	margin: 0 4% 0 4%;
-	padding: 20px 0 40px 0;
+	padding: 0px 0 20px 0;
 	font-family: 'PT Sans', sans-serif;
 	text-transform: uppercase;
 	font-size: 12px;
 	color: #8e8e8e;
-	border-bottom: 1px solid #DFE0E4;
+	border-bottom: 1px solid #c8c9cd;
 }
 
 .billing_markup {
@@ -335,14 +332,13 @@ ul.q_and_a  {
 ul.q_and_a li {
 	display: inline-block;
 	margin: 0 0 2.5% 2.5%;
-	padding: 20px;
 	vertical-align: top;
-	background-color: #F6F7F8;
-	border: 0px solid #e8e9ec;
+	background-color: #fdfdfd;
+	border: 1px solid #DFE0E4;
 
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
 }
 
  ul.q_and_a.columns_2 li {
@@ -355,13 +351,16 @@ ul.q_and_a li {
  	font-size: 18px;
  	font-family: 'Lora', serif;
  	font-weight: bold;
- 	border: 0px solid red;
+ 	padding: 20px;
+ 	background-color: #F6F7F8;
+ 	border-bottom: 1px solid #edeef1;
  }
 
  ul.q_and_a li .answer {
  	display: block;
  	line-height: 25px;
- 	font-size: 16px;
+ 	font-size: 14px;
+ 	padding: 20px;
  	color: #777;
  	font-family: 'Open Sans', sans-serif;
  	border: 0px solid red;
@@ -375,7 +374,7 @@ ul.q_and_a li {
  	font-size: 12px;
  	color: #8e8e8e;
  	text-transform: uppercase;
- 	border-bottom: 1px solid #DFE0E4;
+ 	border-bottom: 1px solid #c8c9cd;
  }
 
 .message_to_us a {
@@ -384,13 +383,14 @@ ul.q_and_a li {
 	text-decoration: underline;
 }
 
+/* TESTIMONIALS */
 
  .testimonials_wrapper {
  	margin: 0 4% 0 4%;
  }
 
  .testimonials {
- 	max-width: 750px;
+ 	max-width: 100%;
  	margin: 0 auto;
  	text-align: justify;
  	line-height: 30px;
@@ -398,18 +398,25 @@ ul.q_and_a li {
 	color: #777;
 	font-style: italic;
 	font-size: 16px;
-	border: 0px solid red;
+	padding: 20px;
+	background-color: #fdfdfd;
+	border-top: 1px solid #DFE0E4;
+	border-left: 1px solid #DFE0E4;
+	border-right: 1px solid #DFE0E4;
  }
 
  .testimonials_seller {
- 	max-width: 750px;
+ 	max-width: 100%;
  	font-family: 'Lora', serif;
  	font-size: 14px;
  	margin: 0 auto;
- 	margin-top: 10px;
  	color: #444;
- 	padding-left: 20px;
+ 	background-color: #fdfdfd;
+ 	padding: 0 20px 20px 20px;
  	margin-bottom: 40px;
+ 	border-bottom: 1px solid #DFE0E4;
+	border-left: 1px solid #DFE0E4;
+	border-right: 1px solid #DFE0E4;
  }
 
  .rating_stars {

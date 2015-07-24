@@ -41,11 +41,12 @@ ul.registration_steps span.active {
 
 /* USER SIGN UP*/
 
-.registration_form_wrapper,
-.sign_up_section {
+.registration_form_wrapper {
 	width: 480px;
 	max-width: 90%;
-	margin: 20px auto;
+	margin: auto;
+  margin-top: 20px;
+  margin-bottom: 60px;
 	padding: 20px;
 	background-color: #fff;
 	overflow: hidden;
@@ -56,8 +57,10 @@ ul.registration_steps span.active {
 	border-radius: 3px;
 }
 
-.sign_up_section {
-  margin-bottom: 60px;
+.sign_up_section.company {
+  width: 100%;
+  display: none;
+  border: 0px solid red;
 }
 
 .registration_form_tagline {
@@ -136,6 +139,20 @@ ul.registration_steps span.active {
   font-size: 12px;
   margin-top: 5px;
   font-weight: normal;
+}
+
+ul.account_type li {
+  width: 48.8%;
+  display: inline-block;
+  margin-top: 3px;
+  margin-right: -4px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  border: 0px solid red;
+}
+
+ul.account_type li:nth-child(even) {
+  margin-right: 0px;
 }
 
 ul.sign_up_form li {

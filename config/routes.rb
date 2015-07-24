@@ -20,13 +20,13 @@ School::Application.routes.draw do
   resources :users, only: [:show]
 
   resources :adverts do
-    resources :email_sellers, only: [:create, :new]
+    resources :email_sellers, only: [:create]
   end
   resources :photos, only: [:destroy]
   resources :contacts, only: [:create, :new]
   
   
-  root 'users#home'
+  root 'adverts#landing_page'
 
 
 

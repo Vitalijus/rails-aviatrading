@@ -1,9 +1,19 @@
 class AdvertsController < ApplicationController
   before_action :set_advert, only: [:show, :edit, :update, :show_advert, :destroy]
   before_action :set_plan
-  before_action :authenticate_user!, except: [:index, :show, :pricing]
+  #before_action :authenticate_user!, except: [:index, :show, :pricing, :landing_page]
   require 'will_paginate/array'
 
+  def landing_page
+  	@jets = Advert.where(aircraft_type: "Jet").limit(6)
+  	@turbo_prop = Advert.where(aircraft_type: "TurboProp").limit(6)
+  	@helicopters = Advert.where(aircraft_type: "Helicopter").limit(6)
+  	@single_piston = Advert.where(aircraft_type: "Single piston").limit(6)
+  	@multi_piston = Advert.where(aircraft_type: "Multi piston").limit(6)
+
+    @select_for_country = Advert.select("DISTINCT(COUNTRY)").order("country ASC")
+    @select_for_model = Advert.select("DISTINCT(MODEL)").order("model ASC")
+  end
 
   def pricing
     @basic_plan
@@ -55,6 +65,7 @@ class AdvertsController < ApplicationController
   # GET /adverts/1.json
   def show
     @adverts = Advert.all
+    @email_seller = @advert.email_sellers.build
   end
 
   # GET /adverts/new
@@ -71,6 +82,7 @@ class AdvertsController < ApplicationController
   # POST /adverts.json
   def create
     @advert = Advert.new(advert_params)
+
     current_user.adverts << @advert
 
     respond_to do |format|

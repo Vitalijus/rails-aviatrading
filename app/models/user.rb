@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   has_many :adverts, dependent: :destroy
   belongs_to :plan
 
-  validates_presence_of :plan_id
+  validates_presence_of :plan_id, :account_type
   validate :validate_for_coupon
 
   attr_accessor :stripe_card_token

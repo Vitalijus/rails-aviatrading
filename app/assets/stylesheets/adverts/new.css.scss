@@ -8,7 +8,8 @@
 
 .new_advert_page {
 	max-width: 720px;
-	margin: 0 auto;
+	margin: auto;
+	margin-top: 20px;
 	overflow: hidden;
 	border: 0px solid green;
 }
@@ -47,7 +48,7 @@
 
 .new_advert_nav ul {
 	width: 100%;
-	background-color: #fff;
+	background-color: #fdfdfd;
 	border: 1px solid #DFE0E4;
 	position: relative;
 
@@ -87,7 +88,7 @@ li.active a, li.active a:hover {
 .new_form_wrapper {
 	width: 480px;
 	float: left;
-	background-color: #fff;
+	background-color: #fdfdfd;
 	padding: 0 20px 20px 20px;
 	border: 1px solid #DFE0E4;
 

@@ -87,12 +87,6 @@
                     <% end %>
                   <% end %>
 
-                  <% unless advert.price.nil? %>
-                      <div class="user_ad_price">
-                          <%= number_to_currency(advert.price, precision: 0, unit: "") %> <%= advert.currency %>
-                      </div>
-                  <% end %>
-
                   <div class="user_ad_footer">
                     <div class="user_ad_avatar">
                         <%= link_to user_path(advert.user) do %>
@@ -114,6 +108,20 @@
                         </div>
                     <% end %>
                   </div>
+
+                  <% unless advert.price.nil? or advert.price.blank? %>
+                    <div class="user_ad_price">
+                      <ul>
+                        <li>
+                          <%= number_to_currency(advert.price, precision: 0, unit: "") %><%= currency_to_symbol_helper(advert.currency) %>
+                        </li>
+
+                        <li class="user_ad_price_location">
+                          <%= advert.city %>, <%= advert.country %>
+                        </li>
+                      </ul>
+                    </div>
+                  <% end %>
                 </div>
             </div>
         <% end %>

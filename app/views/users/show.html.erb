@@ -2,23 +2,60 @@
 
 <div class="user_grid_wrapper">
 	<div class="user_grid_in_profile">
-	  	<ul class="user_panel">
+
+	  	<div class="user_panel">
 	  		<% if @user.avatar.nil? or @user.avatar.blank? %>
-	  			<li class="company_logo">
-		  			Company logo
-		  		</li>
+	  			<div class="company_logo">
+		  			<%= image_tag "user_profile/paper_plane.png", width: 300 %>
+		  		</div>
 		  	<% else %>
-		  		<li class="company_logo">
+		  		<div class="company_logo">
 		  			<%= image_tag @user.avatar_url(:avatar_big) %>
-		  		</li>
+		  		</div>
 		  	<% end %>
 
-	  		<li class="company_info">
-	  			<span class="company_attributes"><%= @user.organisation %></span>
-	  			<span class="company_attributes"><%= @user.organisation %></span>
-	  		</li>
-	  		<li><%= pluralize(@user.adverts.count, "Advert") %></li>
-		</ul>
+	  		<ul class="company_info">
+	  			<% unless @user.organisation.nil? or @user.organisation.blank? %>
+		  			<li>
+		  				<span class="info_icon"><%= image_tag "user_profile/user.png", width: 20 %></span>
+			  			<%= @user.organisation %>
+			  		</li>
+			  	<% end %>
+
+			  	<% unless @user.email.nil? or @user.email.blank? %>
+			  		<li>
+			  			<span class="info_icon"><%= image_tag "user_profile/mail.png", width: 20 %></span>
+			  			<%= @user.email %>
+			  		</li>
+			  	<% end %>
+
+		  		<% unless @user.phone.nil? or @user.phone.blank? %>
+			  		<li>
+			  			<span class="info_icon"><%= image_tag "user_profile/phone.png", width: 20 %></span>
+			  			<%= @user.phone %> 
+			  		</li>
+			  	<% end %>
+			  		
+			  	<% unless (@user.street.nil? or @user.street.blank?) and (@user.postal_code.nil? or @user.postal_code.blank?) and (@user.city.nil? or @user.city.blank?) and (@user.country.nil? or @user.country.blank?) %>	
+		  			<li>
+		  				<span class="info_icon"><%= image_tag "user_profile/pin.png", width: 20 %></span>
+		  				<%= @user.street %> <%= @user.postal_code %> <%= @user.city %> <%= @user.country %> 
+		  			</li>
+		  		<% end %>
+
+			  	<% unless @user.web_url.nil? or @user.web_url.blank? %>
+			  		<li>
+			  			<span class="info_icon"><%= image_tag "user_profile/globe.png", width: 20 %></span>
+			  			<%= @user.web_url %> 
+			  		</li>
+			  	<% end %>
+
+		  		<li>
+		  			<span class="info_icon"><%= image_tag "user_profile/layers.png", width: 20 %></span>
+		  			<%= pluralize(@user.adverts.count, "Advert") %>
+		  		</li>
+	  		</ul>
+		</div>
 
 		<div class="frame">
 			<% @user.adverts.reverse_each do |advert| %>
@@ -35,12 +72,6 @@
 					       		<% end %>
 					       	<% end %>
 				       	<% end %>
-
-				       	<% unless advert.price.nil? %>
-				            <div class="user_ad_price">
-				                <%= number_to_currency(advert.price, precision: 0, unit: "") %> <%= advert.currency %>
-				            </div>
-				        <% end %>
 
 				       	<div class="user_ad_footer">
 			       			<div class="user_ad_avatar">
@@ -63,6 +94,20 @@
 					          	</div>
 					        <% end %>
 			       		</div>
+
+			       		<% unless advert.price.nil? or advert.price.blank? %>
+		                    <div class="user_ad_price">
+		                      <ul>
+		                        <li>
+		                          <%= number_to_currency(advert.price, precision: 0, unit: "") %><%= currency_to_symbol_helper(advert.currency) %>
+		                        </li>
+
+		                        <li class="user_ad_price_location">
+		                          <%= advert.city %>, <%= advert.country %>
+		                        </li>
+		                      </ul>
+		                    </div>
+		                <% end %>
 
 			       		<% if user_signed_in? && current_user == @user %>
 				       		<ul class="user_ad_dlt_edit">
