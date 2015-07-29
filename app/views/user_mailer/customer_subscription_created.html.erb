@@ -43,11 +43,31 @@
                                             <b>Your paid subscription has been activated.</b><br>
 
                                             <ul>
-                                                <li style="padding-bottom: 3px;">Subscription activation date: <%= Time.at(@subscription_created).to_datetime.strftime("%b %d, %Y") %></li>
-                                                <li style="padding-bottom: 3px;">Setup billing until: <%= Time.at(@trial_end).to_datetime.strftime("%b %d, %Y") %> </li>
-                                                <li style="padding-bottom: 3px;">Billing cycle: <%= @plan_interval %></li>
-                                                <li style="padding-bottom: 3px;">Plan name: <%= @plan_name %></li>
-                                                <li>Plan price: $<%= @plan_price %></li>
+                                                <li style="padding-bottom: 3px;">
+                                                    Subscription activation date: <%= Time.at(@subscription_created).to_datetime.strftime("%b %d, %Y") %>
+                                                </li>
+
+                                                <li style="padding-bottom: 3px;">
+                                                    Setup billing until: <%= Time.at(@trial_end).to_datetime.strftime("%b %d, %Y") %> 
+                                                </li>
+
+                                                <li style="padding-bottom: 3px;">
+                                                    Billing cycle: <%= @plan_interval %>
+                                                </li>
+
+                                                <li style="padding-bottom: 3px;">
+                                                    Plan name: <%= @plan_name %>
+                                                </li>
+
+                                                <li>
+                                                    <% if @plan_price == "5000" %>
+                                                        Plan price: €50
+                                                    <% elsif @plan_price == "15000" %>
+                                                        Plan price: €150
+                                                    <% else %> 
+                                                        -
+                                                    <% end %>
+                                                </li>
                                             </ul>
 
                                             <br>
@@ -56,7 +76,7 @@
                                             <br><br><br>
                                             Sincerely, <br><b>AviaTrading Team</b>
 
-                                            </br></br>
+                                            <br><br>
                                             <%= @customer_email %>
                                         </td>
                                     </tr>
