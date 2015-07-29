@@ -48,7 +48,7 @@ class AdvertsController < ApplicationController
                             users: { active_account: true }, 
                             adverts: {show_advert: true} },
                             order: {created_at: :desc})
-                            .paginate(:page => params[:page], :per_page => 20)
+                            .paginate(:page => params[:page], :per_page => 18)
 
     @hash = Gmaps4rails.build_markers(@adverts) do |advert, marker|
       marker.lat advert.latitude

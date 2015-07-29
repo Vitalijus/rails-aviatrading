@@ -39,7 +39,9 @@
 .advert_image {
 	max-width: 100%;
 	max-height: 320px;
-	border: 0px solid red;
+	border-top: 1px solid #DFE0E4;
+	border-left: 1px solid #DFE0E4;
+	border-right: 1px solid #DFE0E4;
 }
 
 .advert_image img {
@@ -71,10 +73,12 @@
 	font-family: 'Open Sans', sans-serif;
 	font-weight: bold;
 	font-size: 30px;
-	margin: 0px 0 20px 0;
+	margin: -5px 0 20px 0;
 	background-color: #fdfdfd;
 	padding: 10px 20px 10px 20px;
-	border: 1px solid #DFE0E4;
+	border-right: 1px solid #DFE0E4;
+	border-left: 1px solid #DFE0E4;
+	border-bottom: 1px solid #DFE0E4;
 }
 
 .aircraft_location {
@@ -89,15 +93,30 @@
 
 /* ADVERT DETAILS */
 
-.details_wrapper {
+ul.details_wrapper {
 	width: 100%;
 	margin-bottom: 20px;
 	overflow: hidden;
+	display: table;
+	border: 0px solid red;
+}
+
+ul.details_wrapper li.left {
+	width: 65%;
+	display: table-cell;
+	vertical-align: top;
+	border: 0px solid red;
+}
+
+ul.details_wrapper li.right {
+	width: 35%;
+	display: table-cell;
+	vertical-align: top;
+	border: 0px solid red;
 }
 
 .advert_details {
-	width: 63%;
-	float: left;
+	max-width: 100%;
 	margin-right: 20px;
 	background-color: #fdfdfd;
 	border: 1px solid #DFE0E4;
@@ -105,7 +124,6 @@
 
 ul.aircraft_details {
 	width: 100%;
-	display: table;
 	background-color: #F6F7F8;
 	padding: 20px 10px 20px 10px;
 	border-bottom: 1px solid #DCDEE3;
@@ -113,7 +131,8 @@ ul.aircraft_details {
 
 ul.aircraft_details li {
 	width: 20%;
-	display: table-cell;
+	display: inline-block;
+	margin-right: -4px;
 	padding: 0 10px 0 10px;
 	color: #666;/*#82888A;*/
 	font-family: 'Open Sans', sans-serif;
@@ -162,8 +181,7 @@ ul.aircraft_main_details li {
 /* RIGHT SIDE COLUMN */
 
 .right_side_column {
-	width: 35%;
-	float: right;
+	width: 100%;
 }
 
 .advertiser_contact {
@@ -174,6 +192,7 @@ ul.aircraft_main_details li {
 }
 
 .seller_info {
+	width: 100%;
 	background-color: #fdfdfd;
 	border-top: 1px solid #DFE0E4;
 	border-left: 1px solid #DFE0E4;
@@ -181,14 +200,19 @@ ul.aircraft_main_details li {
 }
 
 .seller_logo {
-	width: 100%;
-	border: 0px solid red;
+	max-width: 100%;
+	max-height: 320px;
+}
+
+.seller_logo img {
+	max-width: 100%;
+	height: auto;
+	width: auto\9; /* ie8 */
 }
 
 ul.seller_attr {
+	width: 100%;
 	padding: 15px 20px 5px 20px;
-	overflow: hidden;
-	border: 0px solid transparent;
 }
 
 ul.seller_attr li {
@@ -446,6 +470,25 @@ ul.advert_main_info li.description {
 
 	ul.advert_main_info li.description {
 		margin-bottom: 0px;
+	}
+}
+
+@media (max-width: 900px) {
+	ul.details_wrapper li.left {
+		width: 100% !important; /* over-ride all li styles */
+		display: inline-block;
+		margin-bottom: 20px;
+		border: 0px solid red;
+	}
+
+	ul.details_wrapper li.right {
+		width: 100% !important; /* over-ride all li styles */
+		display: inline-block;
+		border: 0px solid red;
+	}
+
+	.advert_details {
+		margin-right: 0;
 	}
 }
 

@@ -36,11 +36,11 @@
 			<div id="landing_search">
 				<ul>
 					<li>
-			          <%= f.select :country_cont, options_from_collection_for_select(@select_for_country, "country", "country", @q.country_cont), :prompt => 'Select country' %>
+			          <%= f.select :country_cont, options_from_collection_for_select(@select_for_country, "country", "country", @q.country_cont), :prompt => 'Select a country' %>
 			        </li>
 
 			        <li>
-			          <%= f.select :model_cont, options_from_collection_for_select(@select_for_model, "model", "model", @q.model_cont), :prompt => 'Select model' %>
+			          <%= f.select :model_cont, options_from_collection_for_select(@select_for_model, "model", "model", @q.model_cont), :prompt => 'Select a model' %>
 			        </li>
 			    </ul>
 
@@ -58,7 +58,7 @@
 
 	<div class="frame">
 		<% @jets.each do |advert| %>
-		    <div class="bit-3">
+		    <div class="bit-4">
 		    	<div class="user_ad">
 		    		<% if advert.photos.empty? or advert.photos.nil?%>
 		    			<%= link_to advert_path(advert), data: { no_turbolink: true } do %>
@@ -120,7 +120,7 @@
 
 	<div class="frame">
 		<% @turbo_prop.each do |advert| %>
-		    <div class="bit-3">
+		    <div class="bit-4">
 		    	<div class="user_ad">
 		    		<% if advert.photos.empty? or advert.photos.nil?%>
 		    			<%= link_to advert_path(advert), data: { no_turbolink: true } do %>
@@ -182,7 +182,7 @@
 
 	<div class="frame">
 		<% @helicopters.each do |advert| %>
-		    <div class="bit-3">
+		    <div class="bit-4">
 		    	<div class="user_ad">
 		    		<% if advert.photos.empty? or advert.photos.nil?%>
 		    			<%= link_to advert_path(advert), data: { no_turbolink: true } do %>
@@ -244,7 +244,7 @@
 
 	<div class="frame">
 		<% @single_piston.each do |advert| %>
-		    <div class="bit-3">
+		    <div class="bit-4">
 		    	<div class="user_ad">
 		    		<% if advert.photos.empty? or advert.photos.nil?%>
 		    			<%= link_to advert_path(advert), data: { no_turbolink: true } do %>
@@ -306,7 +306,7 @@
 
 	<div class="frame">
 		<% @multi_piston.each do |advert| %>
-		    <div class="bit-3">
+		    <div class="bit-4">
 		    	<div class="user_ad">
 		    		<% if advert.photos.empty? or advert.photos.nil?%>
 		    			<%= link_to advert_path(advert), data: { no_turbolink: true } do %>

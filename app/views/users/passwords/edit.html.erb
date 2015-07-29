@@ -1,22 +1,31 @@
-<h2>Change your password</h2>
+<div class="login_form_wrapper">
+  <div class="registration_form_header">
+    <div class="registration_form_logo">
+      <span class="icon-propeller"></span>
+    </div>
+
+    Change your password
+  </div>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
   <%= f.hidden_field :reset_password_token %>
 
-  <div class="field">
-    <%= f.label :password, "New password" %><br />
-    <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
+ <div class="sign_up_form_wrapper">
+  <div class="auth_form">
+    <%= f.label :password, "New password", :class => "auth_label" %><br />
+    <%= f.password_field :password, autofocus: true, autocomplete: "off", :class => "auth_field" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  <div class="auth_form">
+    <%= f.label :password_confirmation, "Confirm new password", :class => "auth_label" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off", :class => "auth_field" %>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Change my password" %>
-  </div>
+</div>
+    <%= f.submit "Change my password", :class => "registration_submit_button" %>
 <% end %>
 
-<%= render "users/shared/links" %>
+<div class="registration_form_links">
+  <%= render "users/shared/links" %>
+</div>
+</div>

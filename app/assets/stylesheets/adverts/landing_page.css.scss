@@ -6,7 +6,7 @@
 
 #landing_advert {
 	width: 100%;
-	padding-top: 20px;
+	padding: 20px 10px 0 10px;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 20px;
 	color: #204056;
@@ -21,7 +21,7 @@
 }
 
 .landing_small_text {
-	width: 650px;
+	max-width: 650px;
 	margin: auto;
 	display: block;
 	margin-top: 10px;
@@ -29,6 +29,7 @@
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
 	text-align: center;
+	border: 0px solid red;
 }		
 
 #advert_example {
@@ -90,23 +91,31 @@ ul.advert_user_benefit li:last-child {
 }
 
 #landing_search {
-	max-width: 500px;
+	max-width: 520px;
 	margin: auto;
+	text-align: left;
+	padding: 0 10px 0 10px;
 	margin-top: 20px;
 	margin-bottom: 20px;
 	border: 0px solid red;
 }
 
-#landing_search li {
-	width: 48.5%;
-	margin-right: 6px;
-	display: inline-block;
-	position: relative;
+#landing_search ul {
 	border: 0px solid red;
 }
 
+#landing_search li {
+	width: 49%;
+	display: inline-block;
+	border: 0px solid green;
+}
+
+#landing_search li:first-child {
+	margin-right: 5px;
+}
+
 #landing_search li:last-child {
-	margin-right: -4px;
+	margin-right: -5px;
 }
 
 #landing_search select {
@@ -186,7 +195,7 @@ ul.advert_user_benefit li:last-child {
 /*-----------------------*/
 
 .adverts_wrapper {
-	max-width: 1000px;
+	max-width: 1200px;
 	margin: auto;
 	margin-top: 10px;
 	margin-bottom: 70px;
@@ -202,3 +211,14 @@ ul.advert_user_benefit li:last-child {
 	text-align: center;
 	border: 0px solid red;
 }
+
+/* Media */
+
+@media (max-width: 500px) {
+
+  ul.advert_user_benefit {
+  	display: none;
+  }
+}
+
+/*------------------*/
