@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150723135326) do
+ActiveRecord::Schema.define(version: 20150730190827) do
 
   create_table "adverts", force: true do |t|
     t.string   "title"
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20150723135326) do
     t.integer  "aircraft_hours"
     t.integer  "landings"
     t.string   "nearest_airport"
-    t.string   "VAT"
+    t.string   "value_added_tax"
     t.datetime "last_inspection"
     t.string   "price_options"
     t.string   "airport_code"

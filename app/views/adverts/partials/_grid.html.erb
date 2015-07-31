@@ -109,19 +109,23 @@
                     <% end %>
                   </div>
 
-                  <% unless advert.price.nil? or advert.price.blank? %>
-                    <div class="user_ad_price">
-                      <ul>
+                  <div class="user_ad_price">
+                    <ul>
+                      <% if advert.price_options.nil? or advert.price_options.blank? %>
                         <li>
                           <%= number_to_currency(advert.price, precision: 0, unit: "") %><%= currency_to_symbol_helper(advert.currency) %>
                         </li>
-
-                        <li class="user_ad_price_location">
-                          <%= advert.city %>, <%= advert.country %>
+                      <% else %>
+                        <li>
+                          <%= advert.price_options %>
                         </li>
-                      </ul>
-                    </div>
-                  <% end %>
+                      <% end %>
+
+                      <li class="user_ad_price_location">
+                        <%= advert.city %>, <%= advert.country %>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
             </div>
         <% end %>

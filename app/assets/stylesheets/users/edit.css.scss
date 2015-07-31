@@ -53,6 +53,17 @@
 	width: 48.8%;
 }
 
+.user_profile_form_wrapper li.account_type {
+	width: 50%;
+	margin-top: 10px;
+	margin-right: -4px;
+	text-align: center;
+	font-family: "Open Sans", helvetica, arial;
+	font-size: 14px;
+	display: inline-block;
+	border: 0px solid green;
+}
+
 .user_profile_form_wrapper li:last-child {
 	padding-bottom: 0;
 }

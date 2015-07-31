@@ -26,6 +26,7 @@ class ImageUploader < CarrierWave::Uploader::Base
     %w(jpg jpeg gif png)
   end
 
+
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick

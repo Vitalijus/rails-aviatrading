@@ -1,3 +1,5 @@
+<% page_heading_helper "#{@advert.make} #{@advert.model}" %>
+
 <div class="advert_wrapper">
   <div class="advert">
     <div id="advert-image" class="mfp-hide">
@@ -34,8 +36,13 @@
       <div class="advert_details">
         <ul class="aircraft_details">
           <li>
-            <span class="attr"><%= number_to_currency(@advert.price, precision: 0, unit: "") %><%= currency_to_symbol_helper(@advert.currency) %></span>
-            <span class="attr_title">Price</span>
+            <% if @advert.price_options.nil? or @advert.price_options.blank? %>
+              <span class="attr"><%= number_to_currency(@advert.price, precision: 0, unit: "") %><%= currency_to_symbol_helper(@advert.currency) %></span>
+              <span class="attr_title">Price</span>
+            <% else %>
+              <span class="attr"><%= @advert.price_options %></span>
+              <span class="attr_title">Price</span>
+            <% end %>
           </li>
 
           <li>
@@ -92,6 +99,13 @@
             <li>
               <span class="">Airport name:</span>
               <span class="main_attr"><%= @advert.nearest_airport %> <%= @advert.airport_code %></span>
+            </li>
+          <% end %>
+
+          <% unless @advert.value_added_tax.nil? or @advert.value_added_tax.blank? %>
+            <li>
+              <span class="">Value-added tax:</span>
+              <span class="main_attr"><%= @advert.value_added_tax %></span>
             </li>
           <% end %>
 

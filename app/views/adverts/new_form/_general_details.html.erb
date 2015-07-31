@@ -97,7 +97,7 @@
     <ul class="form">
       <li class="form_label">
         Aircraft price
-        <span class="form_label_small">If you don't wish to show aircraft price please select "Price options".</span>
+        <span class="form_label_small">If you don't wish to show aircraft price please select "Price options". To show aircraft price again please select "Show aircraft price" option.</span>
       </li>
 
       <li class="form_field four_columns">
@@ -109,11 +109,11 @@
       </li>   
 
       <li class="form_field select_field">
-        <%= f.select :VAT, ["incl. VAT", "excl. VAT"], :prompt => 'Select VAT' %>
+        <%= f.select :value_added_tax, ["incl. VAT", "excl. VAT"], :prompt => 'Select VAT' %>
       </li>
 
       <li class="form_field select_field">
-        <%= f.select :price_options, ["Make offer", "Contact Seller", "Sold" ], :prompt => 'Price options'  %>
+        <%= f.select :price_options, ["Make offer", "Contact Seller", "Sold" ], :prompt => 'Price options', :include_blank => 'Show aircraft price'  %>
       </li>
     </ul>
 

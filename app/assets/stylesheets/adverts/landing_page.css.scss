@@ -121,14 +121,12 @@ ul.advert_user_benefit li:last-child {
 #landing_search select {
 	-webkit-appearance: button;
     -moz-appearance: button;
-    appearance: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     -webkit-padding-end: 20px;
     -moz-padding-end: 20px;
     -webkit-padding-start: 2px;
     -moz-padding-start: 2px;
-    /*background-image: url(image-path('arrow_down.png'));*/
     background: url(image-path('arrow_down.png')) no-repeat;
     background-position: center right;
     border: 1px solid #AAA;

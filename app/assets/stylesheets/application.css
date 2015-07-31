@@ -85,7 +85,7 @@ header {
   padding: 0 20px 0 20px;
   position: fixed;
   top: 0;
-  z-index: 99999;
+  z-index: 999;
   border-bottom: 1px solid #DFE0E4;
 }
 
@@ -123,8 +123,10 @@ header {
   border: 0px solid red;
 }
 
+
+
 .header_search select {
-  -webkit-appearance: button;
+    -webkit-appearance: button;
     -moz-appearance: button;
     appearance: none;
     -webkit-user-select: none;

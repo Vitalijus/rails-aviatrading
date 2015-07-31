@@ -12,49 +12,53 @@
     <%= devise_error_messages! %>
 
     <div class="user_profile_form_wrapper">
-      <ul>
-        <li class="user_profile_form_label">
-          Company
+      <% if @user.account_type == "Company" %>
+        <ul>
+          <li class="user_profile_form_label">
+            Company
 
-          <span class="user_profile_label_small">
-            Spaces and special characters are fine.
-          </span>
+            <span class="user_profile_label_small">
+              Spaces and special characters are fine.
+            </span>
+          </li>
+
+          <li class="one_column">
+            <%= f.text_field :organisation, :placeholder => "Company name" %>
+          </li>
+
+          <li class="one_column">
+            <%= f.text_field :web_url, :placeholder => "Website URL" %>
+          </li>
+        </ul>
+      <% end %>
+
+      <% if @user.account_type == "Company" %>
+        <ul>
+          <li class="user_profile_form_label">
+            Office address
+          </li>
+
+          <li class="one_column select_field">
+          <%= f.select :country, select_for_countries_helper, :prompt => 'Country'  %>
         </li>
 
-        <li class="one_column">
-          <%= f.text_field :organisation, :placeholder => "Company name" %>
-        </li>
+          <li class="two_columns">
+            <%= f.text_field :state, :placeholder => "State"  %> 
+          </li>
 
-        <li class="one_column">
-          <%= f.text_field :web_url, :placeholder => "Website URL" %>
-        </li>
-      </ul>
+          <li class="two_columns">
+            <%= f.text_field :city, :placeholder => "City"  %>
+          </li>
 
-      <ul>
-        <li class="user_profile_form_label">
-          Office address
-        </li>
+          <li class="two_columns">
+            <%= f.text_field :street, :placeholder => "Street" %>
+          </li>
 
-        <li class="one_column select_field">
-        <%= f.select :country, ["Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Colombia", "Comoros", "Congo", "D. R. Congo", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic","Denmark", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Finland", "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "South Korea", " North Korea", "Kuwait", "Kyrgyzstan", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macao", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Martinique", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Norway", "Oman", "Pakistan", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Puerto Rico", "Qatar", "Romania", "Russia", "Rwanda", "Samoa", "San Marino", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Somalia", "South Africa", "Spain", "Sri Lanka", "Sudan", "Suriname", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Venezuela", "Vietnam", "Virgin Islands, British", "Virgin Islands, U.S.", "Yemen", "Zambia","Zimbabwe"], :prompt => 'Country'  %>
-      </li>
-
-        <li class="two_columns">
-          <%= f.text_field :state, :placeholder => "State"  %> 
-        </li>
-
-        <li class="two_columns">
-          <%= f.text_field :city, :placeholder => "City"  %>
-        </li>
-
-        <li class="two_columns">
-          <%= f.text_field :street, :placeholder => "Street" %>
-        </li>
-
-        <li class="two_columns">
-          <%= f.text_field :postal_code, :placeholder => "Postal code" %>
-        </li>
-      </ul>
+          <li class="two_columns">
+            <%= f.text_field :postal_code, :placeholder => "Postal code" %>
+          </li>
+        </ul>
+      <% end %>
 
       <ul>
         <li class="user_profile_form_label">
@@ -86,7 +90,24 @@
 
       <ul>
         <li class="user_profile_form_label">
-          <%= f.label :avatar, "Company logo" %><br/>
+          Account type
+
+          <span class="user_profile_label_small">
+            Change account type
+          </span>
+        </li>
+
+        <% [ 'Personal', 'Company' ].each do |account_type| %>
+          <li class="account_type">
+            <%= f.radio_button :account_type, account_type, :class => "type_#{account_type}" %><br>
+            <%= f.label account_type %>
+          </li>
+        <% end %>
+      </ul>
+
+      <ul>
+        <li class="user_profile_form_label">
+          <%= f.label :avatar, "User image" %><br/>
           <span class="user_profile_label_small">JPEG, JPG, GIF or PNG, 1MB max. Best size 440px wide and 150px tall.</span>
           <div class="status_avatar"></div>
         </li>
@@ -95,7 +116,7 @@
           <li>
             <%= f.cl_image_upload(:avatar, :return_delete_token => true, :html => {:class => "avatar_upload"}) %>
           </li>
-          <span><%= image_tag "cloud_upload.png", width: 20 %> Upload logo</span>
+          <span><%= image_tag "cloud_upload.png", width: 20 %> Upload image</span>
         </label>
         
         <li class="preview_avatar preview_logo">
