@@ -102,10 +102,10 @@
             </li>
           <% end %>
 
-          <% unless @advert.value_added_tax.nil? or @advert.value_added_tax.blank? %>
+          <% unless @advert.vat.nil? or @advert.vat.blank? %>
             <li>
               <span class="">Value-added tax:</span>
-              <span class="main_attr"><%= @advert.value_added_tax %></span>
+              <span class="main_attr"><%= @advert.vat %></span>
             </li>
           <% end %>
 
