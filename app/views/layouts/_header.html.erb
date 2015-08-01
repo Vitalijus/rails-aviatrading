@@ -7,68 +7,74 @@
 		<% end %>
 
 		<% unless current_page?(root_path) || current_page?(adverts_path) %>
-			<div class="header_search">
-				<%= search_form_for @q do |f| %>
-					<%= f.select :country_cont, select_for_countries_helper, :prompt => 'Select a country' %>
+			<%= search_form_for @q do |f| %>
+				<div class="header_search">
+					<ul>
+						<li class="header_search_select">
+							<%= f.select :country_cont, select_for_countries_helper, :prompt => 'Select a country' %>
+						</li>
 
-				    <%= f.submit :class => "header_search_button" %>
-				<% end %>
-			</div>
+					    <li>
+					    	<%= f.submit :class => "header_search_button" %>
+					    </li>
+					</ul>
+			    </div>
+			<% end %>
 		<% end %>
 
-			<nav class="header_nav">
-				<ul class="active">
-					<% if !user_signed_in? %>
-						<li>
-							<%= link_to pricing_path, data: { no_turbolink: true } do %>
-								<span class="new_advert_button">SELL AIRCRAFT</span>
-							<% end %>
-						</li>
-					<% end %>
-
-					<% if user_signed_in? %>
-						<li>
-							<%= link_to new_advert_path, data: { no_turbolink: true } do %>
-								<span class="new_advert_button">
-									New Advert
-								</span>
-							<% end %>
-						</li>
-					<% end %>
-
-					<% if user_signed_in? %>
-						<li>
-							<%= link_to user_path(current_user), data: { no_turbolink: true } do %>
-								<span class="my_aircrafts_button">
-									My Aircrafts 
-								</span>
-							<% end %>
-						</li>
-					<% end %>	
-					
+		<nav class="header_nav">
+			<ul class="active">
+				<% if !user_signed_in? %>
 					<li>
-						<%= link_to new_contact_path, data: { no_turbolink: true } do %>
-							Contact
+						<%= link_to pricing_path, data: { no_turbolink: true } do %>
+							<span class="new_advert_button">SELL AIRCRAFT</span>
 						<% end %>
 					</li>
+				<% end %>
 
-					<% if !user_signed_in? %>
-						<li>
-							<%= link_to sign_in_path, data: { no_turbolink: true } do %>
-								Sign in
-							<% end %>
-						</li>
-					<% end %>
+				<% if user_signed_in? %>
+					<li>
+						<%= link_to new_advert_path, data: { no_turbolink: true } do %>
+							<span class="new_advert_button">
+								New Advert
+							</span>
+						<% end %>
+					</li>
+				<% end %>
 
-					<% if user_signed_in? %>
-					  <li>
-					  	<%= link_to destroy_user_session_path, method: :delete do %>
-					  		Sign out
-					  	<% end %>
-					  </li>
+				<% if user_signed_in? %>
+					<li>
+						<%= link_to user_path(current_user), data: { no_turbolink: true } do %>
+							<span class="my_aircrafts_button">
+								My Aircrafts 
+							</span>
+						<% end %>
+					</li>
+				<% end %>	
+				
+				<li>
+					<%= link_to new_contact_path, data: { no_turbolink: true } do %>
+						Contact
 					<% end %>
-				</ul>
-				<a class="toggle-nav" href="#">&#9776;</a>
-			</nav>
+				</li>
+
+				<% if !user_signed_in? %>
+					<li>
+						<%= link_to sign_in_path, data: { no_turbolink: true } do %>
+							Sign in
+						<% end %>
+					</li>
+				<% end %>
+
+				<% if user_signed_in? %>
+				  <li>
+				  	<%= link_to destroy_user_session_path, method: :delete do %>
+				  		Sign out
+				  	<% end %>
+				  </li>
+				<% end %>
+			</ul>
+			<a class="toggle-nav" href="#">&#9776;</a>
+		</nav>
 	</div>
 </header>

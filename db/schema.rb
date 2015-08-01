@@ -11,15 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150731144050) do
+ActiveRecord::Schema.define(version: 20150731150039) do
 
   create_table "adverts", force: true do |t|
-    t.string   "title"
     t.string   "name"
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "advert_image"
     t.string   "make"
     t.string   "model"
     t.string   "aircraft_type"

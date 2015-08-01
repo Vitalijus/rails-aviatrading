@@ -55,48 +55,6 @@ $(document).ready(function() {
 
 //--------------------------------------------------------
 
-// SNIPPET IS USER TO SHOW OR HIDE SEARCH FIELDS
-
-$(document).ready(function() {
-	$(".search_show_more").click(function() {
-		$('#search_form_general ul li').slice(-1).show(50);
-		$('.search_show_more').hide();
-		$('.search_show_less').show();
-	});
-
-	$(".search_show_less").click(function() {
-		$('#search_form_general ul li').slice(-1).hide(50);
-		$('.search_show_more').show();
-		$('.search_show_less').hide();
-	});
-
-	$(".search_show_more_price").click(function() {
-		$('#search_form_price ul li').slice(-2).show(50);
-		$('.search_show_more_price').hide();
-		$('.search_show_less_price').show();
-	});
-
-	$(".search_show_less_price").click(function() {
-		$('#search_form_price ul li').slice(-2).hide(50);
-		$('.search_show_more_price').show();
-		$('.search_show_less_price').hide();
-	});
-
-	$(".search_show_more_engine").click(function() {
-		$('#search_form_engine ul li').slice(-1).show(50);
-		$('.search_show_more_engine').hide();
-		$('.search_show_less_engine').show();
-	});
-
-	$(".search_show_less_engine").click(function() {
-		$('#search_form_engine ul li').slice(-1).hide(50);
-		$('.search_show_more_engine').show();
-		$('.search_show_less_engine').hide();
-	});
-});
-
-//---------------------------------------------------
-
 // RESPONSIVE NAVIGATION MENU IN HEADER
 
 jQuery(document).ready(function() {
@@ -134,7 +92,7 @@ $(document).ready(function() {
 
 //--------------------------------
 
-// FLASH MESSAGE ERROR OR SUCESS
+// FLASH MESSAGE ERROR OR SUCCESS
 
 $(document).ready(function() {
   var flash_message = $('.success_message');
@@ -161,3 +119,38 @@ $(document).ready(function() {
 
 //-------------------------
 
+// CHOOSE ACCOUNT TYPE. PERSONAL OR COMPANY
+
+$(document).ready(function() {
+    $('.type_Company').click(function() {
+    	$(".sign_up_section.company").show();
+    });
+
+    $('.type_Personal').click(function() {
+       $(".sign_up_section.company").hide();
+    });
+});
+
+//----------------------------
+
+// CUSTOM SELECT MENU 
+
+$(document).ready(function(){			
+	
+// Custom Select
+var select = $('select');
+	select.each(function() {
+	   		var firstSelectedText = $(this).find(':selected').text();
+	   		$(this).wrap('<div class="selectWrapper"/>');
+	   		selectWrapper = $(this).parent();
+	   		customSelectCont = $('<span class="customSelectCont"/>').appendTo(selectWrapper);      
+	   		customSelectCont.text(firstSelectedText);
+	   		$(this).change(function() {
+	   			var newOption = $(this).find('option:selected').text()
+	            $(this).next(customSelectCont).text(newOption);
+	      })             		
+	});  
+
+});
+
+//--------------------------------

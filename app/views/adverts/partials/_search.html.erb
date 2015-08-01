@@ -16,6 +16,7 @@
               </li>
 
               <li class="search_field">
+                <!--<%= f.select :model_cont, options_from_collection_for_select(@select_for_model, "model", "model", @q.model_cont), :prompt => 'Select a model', :include_blank => '' %>-->
                 <%= f.text_field :model_cont, :class => "input_field" %>
               </li>
             </ul>
@@ -28,7 +29,7 @@
               </li>
 
               <li class="search_field search_select">
-                    <%= f.select :country_cont, select_for_countries_helper, :prompt => 'Select' %>
+                    <%= f.select :country_cont, options_from_collection_for_select(@select_for_country, "country", "country", @q.country_cont), :prompt => 'Select' %>
               </li>
 
               <li class="search_label">

@@ -59,6 +59,9 @@ class AdvertsController < ApplicationController
         height: 38
       })
     end
+
+    @select_for_country = Advert.select("DISTINCT(COUNTRY)").order("country ASC")
+    @select_for_model = Advert.select("DISTINCT(MODEL)").order("model ASC")
   end
 
   # GET /adverts/1
@@ -152,13 +155,13 @@ class AdvertsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def advert_params
-      params.require(:advert).permit(:title, :name, :email, :advert_image,
-      :year, :price, :currency, :make, :model, :aircraft_type, :country, 
+      params.require(:advert).permit(:name, :email, :year, :price, :currency,
+      :make, :model, :aircraft_type, :country, 
       :city, :engine_type, :number_of_engines, :engine_make, :engine_model, 
       :engine_hours, :engine_notes, :tbo, :engine_power, :number_of_propellers, 
       :propeller_make, :propeller_model, :propeller_hours, :serial_number, 
       :registration_number, :aircraft_hours, :landings, :nearest_airport, 
-      :VAT, :last_inspection, :price_options, :airport_code,
+      :vat, :last_inspection, :price_options, :airport_code,
       :number_of_passengers, :aircraft_usage, :phone, :user_id, :show_advert, 
       :avionics, :interior, :exterior, :add_info, :engine_power_unit, :latitude, 
       :longitude, photos_attributes: [:id, :image, :advert_id, :public_token])

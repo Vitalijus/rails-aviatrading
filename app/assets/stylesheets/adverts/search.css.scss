@@ -61,7 +61,7 @@ ul.inner_search_nav li.search_field {
 
 .input_field {
 	width: 100%;
-	height: 35px;
+	height: 40px;
 	padding: 0 10px 0 10px;
 	color: #444444;
 	font-family: "Open Sans", helvetica, arial;
@@ -72,42 +72,6 @@ ul.inner_search_nav li.search_field {
     -webkit-box-shadow: inset 0px 0px 2px 0px rgba(250,229,229,0.5);
     -moz-box-shadow: inset 0px 0px 2px 0px rgba(250,229,229,0.5);
     box-shadow: inset 0px 0px 2px 0px rgba(250,229,229,0.5);
-}
-
-.search_select select {
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -webkit-padding-end: 20px;
-    -moz-padding-end: 20px;
-    -webkit-padding-start: 2px;
-    -moz-padding-start: 2px;
-    /*background-image: url(image-path('arrow_down.png'));*/
-    background: url(image-path('arrow_down.png')) no-repeat;
-    background-position: center right;
-    font-family: "Open Sans", helvetica, arial;
-	font-size: 12px;
-    width: 100%;
-    height: 35px;
-    color: #444;
-    margin: 0;
-    overflow: hidden;
-    padding: 0 5px 0 5px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    cursor: pointer;
-    background-color: #fefafa;
-    border:  1px solid #fdeded;
-
-    -webkit-box-shadow: inset 0px 0px 2px 0px rgba(250,229,229,0.5);
-    -moz-box-shadow: inset 0px 0px 2px 0px rgba(250,229,229,0.5);
-    box-shadow: inset 0px 0px 2px 0px rgba(250,229,229,0.5);
-}
-
-select::-ms-expand { /* for IE 11 */
-    display: none;
 }
 
 /* MEDIA */

@@ -102,6 +102,7 @@ ul.advert_user_benefit li:last-child {
 
 #landing_search ul {
 	border: 0px solid red;
+	margin-bottom: 20px;
 }
 
 #landing_search li {
@@ -118,7 +119,7 @@ ul.advert_user_benefit li:last-child {
 	margin-right: -5px;
 }
 
-#landing_search select {
+/*#landing_search select {
 	-webkit-appearance: button;
     -moz-appearance: button;
     -webkit-user-select: none;
@@ -149,7 +150,7 @@ ul.advert_user_benefit li:last-child {
     box-shadow: inset 0px 0px 2px 0px rgba(250,229,229,0.5);
 }
 
-/*.landing_input_field {
+.landing_input_field {
 	width: 100%;
 	height: 45px;
 	padding: 0 10px 0 10px;
