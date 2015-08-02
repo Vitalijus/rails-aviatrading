@@ -1,7 +1,7 @@
 class AdvertsController < ApplicationController
   before_action :set_advert, only: [:show, :edit, :update, :show_advert, :destroy]
   before_action :set_plan
-  #before_action :authenticate_user!, except: [:index, :show, :pricing, :landing_page]
+  before_action :authenticate_user!, except: [:index, :show, :pricing, :landing_page]
   require 'will_paginate/array'
 
   def landing_page

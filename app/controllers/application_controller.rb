@@ -8,6 +8,8 @@ class ApplicationController < ActionController::Base
 
   def set_search
     @q = Advert.search(params[:q])
+
+    @select_for_country = Advert.select("DISTINCT(COUNTRY)").order("country ASC")
   end
 
   protected

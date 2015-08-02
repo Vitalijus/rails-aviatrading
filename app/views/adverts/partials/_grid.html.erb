@@ -113,7 +113,7 @@
                     <ul>
                       <% if advert.price_options.nil? or advert.price_options.blank? %>
                         <li>
-                          <%= number_to_currency(advert.price, precision: 0, unit: "") %><%= currency_to_symbol_helper(advert.currency) %>
+                          <%= number_to_currency(advert.price, precision: 0, unit: "") %> <%= currency_to_symbol_helper(advert.currency) %>
                         </li>
                       <% else %>
                         <li>

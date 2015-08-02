@@ -24,7 +24,7 @@
 
     <% if (current_user.plan_id == 1 || current_user.plan_id == 0) && current_user.adverts.size >= 1 && current_page?(controller: 'adverts', action: 'new') %>
       <div class="new_advert_note">
-        Please subscribe to Premium plan to able to post more adverts.
+        Please subscribe to Premium plan to be able to post more adverts.
       </div>
     <% end %>
 
@@ -54,7 +54,7 @@
       </li>
 
       <li class="form_field one_column">
-        <%= f.text_field :make, :class => "new_field", :placeholder => "Manufacturer*" %>
+        <%= f.text_field :make, :class => "new_field", :placeholder => "Make*" %>
       </li>
 
       <li class="form_field one_column">
@@ -78,7 +78,7 @@
       </li>
 
       <li class="form_field four_columns">
-        <%= f.text_field :number_of_passengers, :class => "new_field", :placeholder => "Nr. of passengers*" %>
+        <%= f.text_field :number_of_passengers, :class => "new_field", :placeholder => "Nr. of seats*" %>
       </li>
 
       <li class="form_field select_field four_columns">
@@ -105,7 +105,7 @@
       </li>   
       
       <li class="form_field select_field four_columns">
-        <%= f.select :currency, ["EUR - Euro",'USD - U.S. dollar', "GBP - Pound sterling", "CAD", "AUD", "CHF", "SEK", "PLN", "RUB", "TRY", "JPY", "CNY", "INR", "KRW", "HKD", "SGD", "TWD", "ZAR"] %>
+        <%= f.select :currency, select_for_currencies_helper %>
       </li>   
 
       <li class="form_field select_field">
@@ -123,7 +123,7 @@
       </li>
 
       <li class="form_field select_field">
-        <%= f.select :country, ["Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Colombia", "Comoros", "Congo", "D. R. Congo", "Costa Rica", "Cote d'Ivoire", "Croatia", "Cuba", "Cyprus", "Czech Republic","Denmark", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Finland", "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "South Korea", " North Korea", "Kuwait", "Kyrgyzstan", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macao", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Martinique", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Norway", "Oman", "Pakistan", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Puerto Rico", "Qatar", "Romania", "Russia", "Rwanda", "Samoa", "San Marino", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Somalia", "South Africa", "Spain", "Sri Lanka", "Sudan", "Suriname", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Venezuela", "Vietnam", "Virgin Islands, British", "Virgin Islands, U.S.", "Yemen", "Zambia","Zimbabwe"], :prompt => 'Country*'  %>
+        <%= f.select :country, select_for_countries_helper, :prompt => 'Country*'  %>
       </li>
 
        <li class="form_field">
@@ -131,7 +131,7 @@
       </li>
 
       <li class="form_field">
-        <%= f.text_field :nearest_airport, :class => "new_field", :placeholder => "Airport name" %>
+        <%= f.text_field :nearest_airport, :class => "new_field", :placeholder => "Airport name*  " %>
       </li>
 
       <li class="form_field">

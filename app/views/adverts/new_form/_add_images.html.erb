@@ -31,21 +31,25 @@
       </div>
     </div>
 
-   <div class="uploaded_image">
-      <ul>     
+    <div class="uploaded_image">
+      <ul>
         <% if current_page?(edit_advert_path(@advert)) %>
           <% @advert.photos.each do |image| %>
-                <li class="delete">
-                  <%= image_tag image.image_url(:upload_images) %>
-                  <%= link_to photo_path(image), :method => :delete, :remote => true, :class => "delete_image" do %>
-                    <%= image_tag "delete_image.png" %>
-                  <% end %>
-                </li>
+            <li>
+              <%= image_tag image.image_url(:upload_images) %>
 
+              <span class="delete">
+                <%= link_to photo_path(image), :method => :delete, :remote => true, :class => "delete_image_button" do %>
+                  <%= image_tag "delete_image.png" %>
+                <% end %>
+              </span>
+            </li>
           <% end %>
         <% end %>
       </ul>
-   </div>
+    </div>
+   
+      <div class="status"><!--removes image--></div>
 
     <% if (current_user.plan_id == 1 || current_user.plan_id == 0) && current_user.adverts.size >= 1 && current_page?(controller: 'adverts', action: 'new') %>
       <%= link_to subscription_path do %>
@@ -61,15 +65,11 @@
 </div>
 
   <script>
-    $('li.delete').click(function() {
-      $(this).hide(150);
+    $('.delete').click(function() {
+      $(this).parent().hide(150);
     });
   </script>
 
-    <!--<div class="status"></div>
-
-
-    <div class="preview"></div>-->
 
   <script>
   $(document).ready(function() { $(".cloudinary-fileupload").fileupload({ 
@@ -99,34 +99,23 @@
               format: data.result.format, width: 800, height: 380, crop: "fill"
             }).appendTo(preview);
 
-        /*$("#photo_bytes").val(data.result.bytes);
-        $(".status").text("");
-        var preview = $(".uploaded_image ul").append('<li>' + "text" + '</li>');
-        $.cloudinary.image(data.result.public_id, {
-          format: data.result.format, width: 250, height: 135, crop: "fill"
-        }).appendTo(preview);*/
 
-        $('<a/>').
-          addClass('delete_by_token').
-          attr({href: '#'}).
+        $('<a/>').attr({href: '#'}).
           data({delete_token: data.result.delete_token}).
-          addClass('delete_image img').html('<%= escape_javascript(image_tag "delete_image.png") %>').
-          appendTo(preview).
-          click(function(e) {
+          addClass('delete_image_button img').html('<%= escape_javascript(image_tag "delete_image.png") %>').appendTo(preview).
+            click(function(e) {
             e.preventDefault();
             $.cloudinary.delete_by_token($(this).data('delete_token')).done(function(){
-              $('.preview').html('text');
-              $('li.delete').click(function() {
-                $(this).hide(150);
-              });
-              $('#info').html('');
-              $("#photo_bytes").val('');
               $('input[name="photo[image]"]').remove();
+
+                $(this).parent().hide();
+            
+
             }).fail(function() {
               $('.status').text("Cannot delete image");
           });
-        });
-        view_upload_details(data.result);
+            $(this).parent().hide();
+        });  
       });
     });
 </script>

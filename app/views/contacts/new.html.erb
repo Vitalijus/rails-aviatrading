@@ -1,3 +1,23 @@
+<% if user_signed_in? %>
+  <ul class="usr_prfl_nav">
+    <%= link_to user_path(current_user) do %>
+      <li>My Adverts</li>
+    <% end %>
+
+    <%= link_to subscription_path do %>
+      <li>Subscription</li>
+    <% end %>
+
+    <%= link_to new_contact_path do %>
+      <li>Contact</li>
+    <% end %>
+
+    <%= link_to edit_user_registration_path do %>
+      <li class="last_child_helper">Settings</li>
+    <% end %>
+  </ul>
+<% end %>
+
 <div id="contact_wrapper">
   <div id="contact">
   	<div id="contact_header">

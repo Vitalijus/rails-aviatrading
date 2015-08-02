@@ -11,7 +11,7 @@
 				<div class="header_search">
 					<ul>
 						<li class="header_search_select">
-							<%= f.select :country_cont, select_for_countries_helper, :prompt => 'Select a country' %>
+							<%= f.select :country_cont, options_from_collection_for_select(@select_for_country, "country", "country", @q.country_cont), :prompt => 'Select a country' %>
 						</li>
 
 					    <li>
@@ -51,12 +51,6 @@
 						<% end %>
 					</li>
 				<% end %>	
-				
-				<li>
-					<%= link_to new_contact_path, data: { no_turbolink: true } do %>
-						Contact
-					<% end %>
-				</li>
 
 				<% if !user_signed_in? %>
 					<li>

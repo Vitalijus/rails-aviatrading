@@ -23,13 +23,12 @@
         </div>
 
         <% if devise_mapping.rememberable? -%>
-
-          <div class="new_advert_checkbox">
+          <!--<div class="new_advert_checkbox">
             <%= f.check_box :remember_me, {:id => "remember_me"} %>
             <label for="remember_me"></label>
             <span class="login_remember_me">Remember me</span>
-          </div>
-        <% end %><br>
+          </div>-->
+        <% end %>
 
         <%= f.submit "Sign in", :class => "registration_submit_button" %>
 
