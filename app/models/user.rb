@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
   attr_accessor :stripe_card_token
 
   def validate_for_coupon
-    if !coupon.blank? && coupon != "38710141505"
+    if !coupon.blank? && coupon != "C12P100MTH"
       errors[:base] << "Coupon number is incorrect" 
     end 
   end
