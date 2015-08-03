@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
 # create a customer and subscription without credit card info
   def create_customer(coupon_id)
     if valid?
-      if coupon_id == "38710141505"
+      if coupon_id == "C12P100MTH"
         customer = Stripe::Customer.create(description: "Customer subscribed without setup billing",
                                            email: email,
                                            plan: plan_id,
