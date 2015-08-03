@@ -18,7 +18,7 @@ class UserMailer < ActionMailer::Base
   def charge_succeeded(customer_email)
     @customer_email = customer_email
     mail(to: @customer_email, 
-         subject: "AviaTrading billing.Charge succeeded.",
+         subject: "AviaTrading billing. Charge succeeded.",
          bcc: "info@aviatrading.com")
   end
 
