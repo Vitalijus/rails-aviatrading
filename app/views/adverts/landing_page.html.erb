@@ -54,192 +54,6 @@
 
 <div class="adverts_wrapper">
 	<div class="aircraft_type">
-		Jets
-	</div>
-
-	<div class="frame">
-		<% @jets.each do |advert| %>
-		    <div class="bit-4">
-		    	<div class="user_ad">
-		    		<% if advert.photos.empty? or advert.photos.nil?%>
-		    			<%= link_to advert_path(advert), data: { no_turbolink: true } do %>
-				        	<%= image_tag "paper_plane.png" %>
-				        <% end %>
-			       	<% else %>
-			       		<%= link_to advert_path(advert), data: { no_turbolink: true } do %>
-				       		<% advert.photos.first(1).each do |photo| %>
-				          		<%= image_tag photo.image_url(:advert_image) %>
-				       		<% end %>
-				       	<% end %>
-			       	<% end %>
-
-			       	<div class="user_ad_footer">
-		       			<div class="user_ad_avatar">
-				          	<%= link_to user_path(advert.user) do %>
-				            	<% if advert.user.avatar.blank? or advert.user.avatar.nil? %>
-				            	  	<%= image_tag "avatar.png" %>
-				            	<% else %>
-				              		<%= image_tag advert.user.avatar_url(:avatar_small) %>
-				            	<% end %>
-				          	<% end %>
-				        </div>
-
-				        <%= link_to advert_path(advert), data: { no_turbolink: true } do %>
-				          	<div class="user_ad_make">
-				            	<%= advert.make %>
-
-				            	<div class="user_ad_model">
-				                	<%= advert.model %>
-				            	</div>
-				          	</div>
-				        <% end %>
-		       		</div>
-
-		       		<% unless advert.price.nil? or advert.price.blank? %>
-	                    <div class="user_ad_price">
-	                      <ul>
-	                        <li>
-	                          <%= number_to_currency(advert.price, precision: 0, unit: "") %> <%= currency_to_symbol_helper(advert.currency) %>
-	                        </li>
-
-	                        <li class="user_ad_price_location">
-	                          <%= advert.city %>, <%= advert.country %>
-	                        </li>
-	                      </ul>
-	                    </div>
-	                 <% end %>
-	       		</div>
-		    </div>
-		<% end %>
-	</div>
-
-
-
-	<div class="aircraft_type">
-		TurboProp
-	</div>
-
-	<div class="frame">
-		<% @turbo_prop.each do |advert| %>
-		    <div class="bit-4">
-		    	<div class="user_ad">
-		    		<% if advert.photos.empty? or advert.photos.nil?%>
-		    			<%= link_to advert_path(advert), data: { no_turbolink: true } do %>
-				        	<%= image_tag "paper_plane.png" %>
-				        <% end %>
-			       	<% else %>
-			       		<%= link_to advert_path(advert), data: { no_turbolink: true } do %>
-				       		<% advert.photos.first(1).each do |photo| %>
-				          		<%= image_tag photo.image_url(:advert_image) %>
-				       		<% end %>
-				       	<% end %>
-			       	<% end %>
-
-			       	<div class="user_ad_footer">
-		       			<div class="user_ad_avatar">
-				          	<%= link_to user_path(advert.user) do %>
-				            	<% if advert.user.avatar.blank? or advert.user.avatar.nil? %>
-				            	  	<%= image_tag "avatar.png" %>
-				            	<% else %>
-				              		<%= image_tag advert.user.avatar_url(:avatar_small) %>
-				            	<% end %>
-				          	<% end %>
-				        </div>
-
-				        <%= link_to advert_path(advert), data: { no_turbolink: true } do %>
-				          	<div class="user_ad_make">
-				            	<%= advert.make %>
-
-				            	<div class="user_ad_model">
-				                	<%= advert.model %>
-				            	</div>
-				          	</div>
-				        <% end %>
-		       		</div>
-
-		       		<% unless advert.price.nil? or advert.price.blank? %>
-	                    <div class="user_ad_price">
-	                      <ul>
-	                        <li>
-	                          <%= number_to_currency(advert.price, precision: 0, unit: "") %><%= currency_to_symbol_helper(advert.currency) %>
-	                        </li>
-
-	                        <li class="user_ad_price_location">
-	                          <%= advert.city %>, <%= advert.country %>
-	                        </li>
-	                      </ul>
-	                    </div>
-	                <% end %>
-	       		</div>
-		    </div>
-		<% end %>
-	</div>
-
-
-
-	<div class="aircraft_type">
-		Helicopters
-	</div>
-
-	<div class="frame">
-		<% @helicopters.each do |advert| %>
-		    <div class="bit-4">
-		    	<div class="user_ad">
-		    		<% if advert.photos.empty? or advert.photos.nil?%>
-		    			<%= link_to advert_path(advert), data: { no_turbolink: true } do %>
-				        	<%= image_tag "paper_plane.png" %>
-				        <% end %>
-			       	<% else %>
-			       		<%= link_to advert_path(advert), data: { no_turbolink: true } do %>
-				       		<% advert.photos.first(1).each do |photo| %>
-				          		<%= image_tag photo.image_url(:advert_image) %>
-				       		<% end %>
-				       	<% end %>
-			       	<% end %>
-
-			       	<div class="user_ad_footer">
-		       			<div class="user_ad_avatar">
-				          	<%= link_to user_path(advert.user) do %>
-				            	<% if advert.user.avatar.blank? or advert.user.avatar.nil? %>
-				            	  	<%= image_tag "avatar.png" %>
-				            	<% else %>
-				              		<%= image_tag advert.user.avatar_url(:avatar_small) %>
-				            	<% end %>
-				          	<% end %>
-				        </div>
-
-				        <%= link_to advert_path(advert), data: { no_turbolink: true } do %>
-				          	<div class="user_ad_make">
-				            	<%= advert.make %>
-
-				            	<div class="user_ad_model">
-				                	<%= advert.model %>
-				            	</div>
-				          	</div>
-				        <% end %>
-		       		</div>
-
-		       		<% unless advert.price.nil? or advert.price.blank? %>
-	                    <div class="user_ad_price">
-	                      <ul>
-	                        <li>
-	                          <%= number_to_currency(advert.price, precision: 0, unit: "") %><%= currency_to_symbol_helper(advert.currency) %>
-	                        </li>
-
-	                        <li class="user_ad_price_location">
-	                          <%= advert.city %>, <%= advert.country %>
-	                        </li>
-	                      </ul>
-	                    </div>
-	                <% end %>
-	       		</div>
-		    </div>
-		<% end %>
-	</div>
-
-
-
-	<div class="aircraft_type">
 		Single Piston
 	</div>
 
@@ -281,81 +95,21 @@
 				        <% end %>
 		       		</div>
 
-		       		<% unless advert.price.nil? or advert.price.blank? %>
-	                    <div class="user_ad_price">
-	                      <ul>
-	                        <li>
-	                          <%= number_to_currency(advert.price, precision: 0, unit: "") %><%= currency_to_symbol_helper(advert.currency) %>
-	                        </li>
+		       		<div class="user_ad_price">
+                      <ul>
+                        <li>
+                        	<% if advert.price_options.nil? or advert.price_options.blank? %>
+                          		<%= number_to_currency(advert.price, precision: 0, unit: "") %><%= currency_to_symbol_helper(advert.currency) %>
+                          	 <% else %>
+                          	 	<%= advert.price_options %>
+                          	<% end %>
+                        </li>
 
-	                        <li class="user_ad_price_location">
-	                          <%= advert.city %>, <%= advert.country %>
-	                        </li>
-	                      </ul>
-	                    </div>
-	                <% end %>
-	       		</div>
-		    </div>
-		<% end %>
-	</div>
-
-
-
-	<div class="aircraft_type">
-		Multi Piston
-	</div>
-
-	<div class="frame">
-		<% @multi_piston.each do |advert| %>
-		    <div class="bit-4">
-		    	<div class="user_ad">
-		    		<% if advert.photos.empty? or advert.photos.nil?%>
-		    			<%= link_to advert_path(advert), data: { no_turbolink: true } do %>
-				        	<%= image_tag "paper_plane.png" %>
-				        <% end %>
-			       	<% else %>
-			       		<%= link_to advert_path(advert), data: { no_turbolink: true } do %>
-				       		<% advert.photos.first(1).each do |photo| %>
-				          		<%= image_tag photo.image_url(:advert_image) %>
-				       		<% end %>
-				       	<% end %>
-			       	<% end %>
-
-			       	<div class="user_ad_footer">
-		       			<div class="user_ad_avatar">
-				          	<%= link_to user_path(advert.user) do %>
-				            	<% if advert.user.avatar.blank? or advert.user.avatar.nil? %>
-				            	  	<%= image_tag "avatar.png" %>
-				            	<% else %>
-				              		<%= image_tag advert.user.avatar_url(:avatar_small) %>
-				            	<% end %>
-				          	<% end %>
-				        </div>
-
-				        <%= link_to advert_path(advert), data: { no_turbolink: true } do %>
-				          	<div class="user_ad_make">
-				            	<%= advert.make %>
-
-				            	<div class="user_ad_model">
-				                	<%= advert.model %>
-				            	</div>
-				          	</div>
-				        <% end %>
-		       		</div>
-
-		       		<% unless advert.price.nil? or advert.price.blank? %>
-	                    <div class="user_ad_price">
-	                      <ul>
-	                        <li>
-	                          <%= number_to_currency(advert.price, precision: 0, unit: "") %><%= currency_to_symbol_helper(advert.currency) %>
-	                        </li>
-
-	                        <li class="user_ad_price_location">
-	                          <%= advert.city %>, <%= advert.country %>
-	                        </li>
-	                      </ul>
-	                    </div>
-	                <% end %>
+                        <li class="user_ad_price_location">
+                          <%= advert.city %>, <%= advert.country %>
+                        </li>
+                      </ul>
+                    </div>
 	       		</div>
 		    </div>
 		<% end %>

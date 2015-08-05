@@ -13,8 +13,8 @@ module ApplicationHelper
   	end
 
   	# page title helper
-  	def page_title_helper(separator = " – ")
-  		[content_for(:title), 'Aircraft For Sale'].compact.join(separator)
+	def page_title_helper(separator = " – ")
+		[content_for(:title), 'Sell Aircraft Online'].compact.join(separator)
 	end
 
 	# page header helper

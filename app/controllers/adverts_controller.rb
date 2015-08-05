@@ -5,11 +5,11 @@ class AdvertsController < ApplicationController
   require 'will_paginate/array'
 
   def landing_page
-  	@jets = Advert.where(aircraft_type: "Jet").limit(6)
-  	@turbo_prop = Advert.where(aircraft_type: "TurboProp").limit(6)
-  	@helicopters = Advert.where(aircraft_type: "Helicopter").limit(6)
-  	@single_piston = Advert.where(aircraft_type: "Single piston").limit(6)
-  	@multi_piston = Advert.where(aircraft_type: "Multi piston").limit(6)
+  	@jets = Advert.where(aircraft_type: "Jet").limit(4)
+  	@turbo_prop = Advert.where(aircraft_type: "TurboProp").limit(4)
+  	@helicopters = Advert.where(aircraft_type: "Helicopter").limit(4)
+  	@single_piston = Advert.where(aircraft_type: "Single piston").limit(4)
+  	@multi_piston = Advert.where(aircraft_type: "Multi piston").limit(4)
 
     @select_for_country = Advert.select("DISTINCT(COUNTRY)").order("country ASC")
     @select_for_model = Advert.select("DISTINCT(MODEL)").order("model ASC")

@@ -40,7 +40,7 @@ class StripeController < ApplicationController
 		stripe_customer_token = event.data.object.customer
   		customer = Stripe::Customer.retrieve(stripe_customer_token)
       
-  		UserMailer.charge_succeeded(customer.email).deliver 
+  		#UserMailer.charge_succeeded(customer.email).deliver 
 	end
 
 	def invoice_payment_failed(event)
