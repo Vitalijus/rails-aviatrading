@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
   end
 
   def trial_timestamp
-    Time.now.to_i + 240 #604800 #current time + one week in seconds 
+    Time.now.to_i + 1209600 #current time + two weeks in seconds 
   end
 
 # create a customer and subscription without credit card info
