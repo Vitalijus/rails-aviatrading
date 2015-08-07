@@ -22,13 +22,6 @@
 			  		</li>
 			  	<% end %>
 
-			  	<% unless @user.email.nil? or @user.email.blank? %>
-			  		<li>
-			  			<span class="info_icon"><%= image_tag "user_profile/mail.png", width: 20 %></span>
-			  			<%= @user.email %>
-			  		</li>
-			  	<% end %>
-
 		  		<% unless @user.phone.nil? or @user.phone.blank? %>
 			  		<li>
 			  			<span class="info_icon"><%= image_tag "user_profile/phone.png", width: 20 %></span>

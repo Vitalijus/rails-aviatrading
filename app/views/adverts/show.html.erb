@@ -282,13 +282,6 @@
                 </li>
               <% end %>
 
-              <% unless @advert.user.email.nil? or @advert.user.email.blank? %>
-                <li>
-                  <span class="seller_icon"><%= image_tag "user_profile/mail.png", width: 17 %></span>
-                  <%= @advert.user.email %>
-                </li>
-              <% end %>
-
               <% unless @advert.user.phone.nil? or @advert.user.phone.blank? %>
                 <li>
                   <span class="seller_icon"><%= image_tag "user_profile/phone.png", width: 17 %></span>
