@@ -89,7 +89,7 @@
 				            	<%= advert.make %>
 
 				            	<div class="user_ad_model">
-				                	<%= advert.model %>
+				            		<%= truncate(advert.model, :length => 25, :omission => '...') %>
 				            	</div>
 				          	</div>
 				        <% end %>
