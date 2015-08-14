@@ -92,7 +92,11 @@
 	                      <ul>
 	                      	<% if advert.price_options.nil? or advert.price_options.blank? %>
 		                        <li>
-		                          <%= number_to_currency(advert.price, precision: 0, unit: "") %> <%= currency_to_symbol_helper(advert.currency) %>
+		                          <% if advert.price.nil? or advert.price.blank? %>
+					                  Contact Seller
+					                <% else %>
+					                  <%= number_to_currency(advert.price, precision: 0, unit: "") %> <%= currency_to_symbol_helper(advert.currency) %>
+					                <% end %>
 		                        </li>
 		                    <% else %>
 		                    	<li>

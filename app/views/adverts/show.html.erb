@@ -37,11 +37,25 @@
         <ul class="aircraft_details">
           <li>
             <% if @advert.price_options.nil? or @advert.price_options.blank? %>
-              <span class="attr"><%= number_to_currency(@advert.price, precision: 0, unit: "") %> <%= currency_to_symbol_helper(@advert.currency) %></span>
-              <span class="attr_title">Price</span>
+              <span class="attr">
+                <% if @advert.price.nil? or @advert.price.blank? %>
+                  Contact Seller
+                <% else %>
+                <%= number_to_currency(@advert.price, precision: 0, unit: "") %> <%= currency_to_symbol_helper(@advert.currency) %>
+                <% end %>
+              </span>
+
+              <span class="attr_title">
+                Price
+              </span>
             <% else %>
-              <span class="attr"><%= @advert.price_options %></span>
-              <span class="attr_title">Price</span>
+              <span class="attr">
+                <%= @advert.price_options %>
+              </span>
+
+              <span class="attr_title">
+                Price
+              </span>
             <% end %>
           </li>
 
