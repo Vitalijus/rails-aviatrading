@@ -6,8 +6,7 @@ class Advert < ActiveRecord::Base
 	has_many :photos, :dependent => :destroy
 	has_many :email_sellers
 
-	validates :name, :aircraft_type, :aircraft_usage, :year, :country, 
-			  :city, :nearest_airport, :number_of_passengers,
-			  :make, :model, :aircraft_hours, :landings, presence: true
+	validates :name, :aircraft_type, :year, :country, 
+			  :city, :nearest_airport, :make, :model, :aircraft_hours, presence: true
 	validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, on: :create }, presence: true
 end

@@ -66,7 +66,7 @@
       </li>
 
       <li class="form_field select_field">
-        <%= f.select :aircraft_usage, ["Aerobatic", "Aerial survey", "Agriculture", "Amphibian/Float", "Antique/Classic", "Business/VIP", "Homebuilt", "EMS/SAR/Fire/Police", "Cargo/Freighter", "Passenger", "Warbird/Military", "Other" ], :prompt => 'Aircraft usage*'  %>
+        <%= f.select :aircraft_usage, ["Aerobatic", "Aerial survey", "Agriculture", "Amphibian/Float", "Antique/Classic", "Business/VIP", "Homebuilt", "EMS/SAR/Fire/Police", "Cargo/Freighter", "Passenger", "Warbird/Military", "Other" ], :prompt => 'Aircraft usage'  %>
       </li>
 
       <li class="form_field four_columns">
@@ -74,11 +74,11 @@
       </li>
 
       <li class="form_field four_columns">
-        <%= f.text_field :landings, :class => "new_field", :placeholder => "Nr. of landings*" %>
+        <%= f.text_field :landings, :class => "new_field", :placeholder => "Nr. of landings" %>
       </li>
 
       <li class="form_field four_columns">
-        <%= f.text_field :number_of_passengers, :class => "new_field", :placeholder => "Nr. of seats*" %>
+        <%= f.text_field :number_of_passengers, :class => "new_field", :placeholder => "Nr. of seats" %>
       </li>
 
       <li class="form_field select_field four_columns">

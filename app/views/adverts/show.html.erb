@@ -70,13 +70,23 @@
           </li>
 
           <li>
-            <span class="attr"><%= @advert.landings %></span>
-            <span class="attr_title">Landings</span>
+            <% if @advert.landings.nil? || @advert.landings.blank? %>
+              <span class="attr">&mdash;</span>
+              <span class="attr_title">Landings</span>
+            <% else %>
+              <span class="attr"><%= @advert.landings %></span>
+              <span class="attr_title">Landings</span>
+            <% end %>
           </li>
 
           <li>
-            <span class="attr"><%= pluralize(@advert.number_of_passengers, "") %></span>
-            <span class="attr_title">Seats</span>
+            <% if @advert.number_of_passengers.nil? || @advert.number_of_passengers.blank? %>
+              <span class="attr">&mdash;</span>
+              <span class="attr_title">Seats</span>
+            <% else %>
+              <span class="attr"><%= pluralize(@advert.number_of_passengers, "") %></span>
+              <span class="attr_title">Seats</span>
+            <% end %>
           </li>
         </ul>
 
