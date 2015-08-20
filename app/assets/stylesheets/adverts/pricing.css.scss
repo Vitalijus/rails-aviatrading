@@ -1,5 +1,12 @@
 /* PRICING */
 
+.header_box {
+	background-color: #FDFDFD;
+	margin: 0 0 20px 0;
+	overflow: hidden;
+	border: 1px solid #DFE0E4;
+}
+
 .pricing_wrapper {
 	margin: 20px;
 }
@@ -7,26 +14,9 @@
 .pricing {
 	max-width: 1000px;
 	margin: 0 auto;
-	margin-top: 70px;
 	padding-bottom: 30px;
 	margin-bottom: 60px;
 	overflow: hidden;
-}
-
-/*.plan_banner {
-	height: 350px;
-	padding-top: 120px;
-	position: relative;
-	text-align: center;
-	background-color: #314359;
-	background-image: url(image-path('avia_sell_24.png'));
-	font-size: 50px;
-	color: #fff;
-	font-family: 'Lora', serif;
-}*/
-
-.plan_small_banner_text {
-	font-size: 25px;
 }
 
 b.text_highlight {
@@ -34,9 +24,8 @@ b.text_highlight {
 }
 
 .plan_text {
-	margin: 20px 4% 0 4%;
-	color: #3F5672;
-	color: #555;
+	margin: 40px 0 20px 0;
+	color: #3E4056;
 	text-align: center;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 35px;
@@ -45,13 +34,13 @@ b.text_highlight {
 
 .plan_text_small {
 	max-width: 600px;
-	color: #555;
+	color: #3E4056;
 	text-align: center;
 	font-family: 'Open Sans', sans-serif;
-	padding: 10px 10px 0 10px;
+	padding: 10px 0 0 0;
 	margin: 0 auto;
 	margin-bottom: 30px;
-	font-size: 14px;
+	font-size: 16px;
 	border: 0px solid red;
 }
 
@@ -70,9 +59,9 @@ ul.micro_benefits li {
 	margin: 0 0 2% 2%;
 	font-size: 14px;
 	font-style: italic;
+	color: #3E4056;
 	font-family: 'Open Sans', sans-serif;
 	padding: 10px;
-	color: #444;
 	background-color: #FDFDFD;
 	border: 1px solid #DFE0E4;
 
@@ -82,15 +71,17 @@ ul.micro_benefits li {
 }
 
 ul.plan_wrapper {
-	margin-left: -2.5%; /* should match li left margin */
-	padding: 0 0 20px 0;
+	margin-left: -2%; /* should match li left margin */
+	margin-bottom: 40px;
+	border: 0px solid red;
 }
 
 ul.plan_wrapper li {
-	width: 47.2%;
-	margin: 0 0 2.5% 2.5%;
+	width: 47.7%;
+	margin: 0 0 0 2%;
 	display: inline-block;
 	vertical-align: top;
+	border: 0px solid red;
 }
 
 .plan_premium {
@@ -249,6 +240,7 @@ ul.plan_wrapper li {
 .reassurance_text {
 	text-align: center;
 	padding: 0px 0 20px 0;
+	margin-bottom: 40px;
 	font-family: 'PT Sans', sans-serif;
 	text-transform: uppercase;
 	font-size: 12px;
@@ -316,14 +308,14 @@ ul.plan_wrapper li {
 
 ul.q_and_a  {
 	font-size: 0px;
-	margin-left: -2.5%; /* should match li left margin */
+	margin-left: -2%; /* should match li left margin */
 	padding: 0 0 20px 0;
 	border: 0px solid red;
 }
 
 ul.q_and_a li {
 	display: inline-block;
-	margin: 0 0 2.5% 2.5%;
+	margin: 0 0 2% 2%;
 	vertical-align: top;
 	background-color: #fdfdfd;
 	border: 1px solid #DFE0E4;
@@ -334,7 +326,7 @@ ul.q_and_a li {
 }
 
  ul.q_and_a.columns_2 li {
- 	width: 47.5%;
+ 	width: 48%;
  }
 
  ul.q_and_a li .question {
