@@ -223,7 +223,7 @@
 
           <% unless @advert.engine_notes.nil? or @advert.engine_notes.blank? %>
             <li class="advert_engine_notes">
-              <%= @advert.engine_notes.html_safe %>
+              <%= simple_format(@advert.engine_notes.html_safe) %>
             </li>
           <% end %>
         </ul>
@@ -235,7 +235,7 @@
             </li>
 
             <li class="description">
-              <%= @advert.avionics.html_safe %>
+              <%= simple_format(@advert.avionics.html_safe) %>
             </li>
           </ul>
         <% end %>
@@ -247,7 +247,7 @@
             </li>
 
             <li class="description">
-              <%= @advert.interior.html_safe %>
+              <%= simple_format(@advert.interior.html_safe) %>
             </li>
           </ul>
         <% end %>
@@ -259,7 +259,7 @@
             </li>
 
             <li class="description">
-              <%= @advert.exterior.html_safe %>
+              <%= simple_format(@advert.exterior.html_safe) %>
             </li>
           </ul>
         <% end %>
@@ -271,7 +271,7 @@
             </li>
 
             <li class="description">
-              <%= @advert.add_info.html_safe %>
+              <%= simple_format(@advert.add_info.html_safe) %>
             </li>
           </ul>
         <% end %>
