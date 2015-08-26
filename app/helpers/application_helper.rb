@@ -14,7 +14,7 @@ module ApplicationHelper
 
   	# page title helper
 	def page_title_helper(separator = " – ")
-		[content_for(:title), 'Sell Aircraft Online'].compact.join(separator)
+		[content_for(:title), 'Aircraft For Sale at aviatrading.com | helicopter for sale, airplanes for sale, private jets for sale, planes for sale'].compact.join(separator)
 	end
 
 	# page header helper

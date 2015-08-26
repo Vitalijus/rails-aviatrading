@@ -6,9 +6,12 @@
   <%= javascript_include_tag "https://js.stripe.com/v2/", "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
   <%= tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY %>
+  
   <!-- Cloudinary config params in view -->
-  <%= cloudinary_js_config %>
-  <!-- ---------------------- --> 
+  <%= cloudinary_js_config %> 
+
+  <!-- Meta description -->
+  <meta name="description" content="Searchable database of aircraft for sale. Most popular new and used airplanes on the marker, private jets for sale, helicopters. Advertise your own aircraft." />
 
   <!-- Magnific Popup core CSS file -->
   <link rel="stylesheet" href="/assets/gallery/magnific-popup.css"> 
@@ -26,7 +29,6 @@
 
 	  ga('create', 'UA-44443978-1', 'auto');
 	  ga('send', 'pageview');
-
 	</script>
 
   <!-- FAVICON -->

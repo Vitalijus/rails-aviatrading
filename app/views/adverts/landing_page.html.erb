@@ -1,61 +1,63 @@
-<div id="landing_page">
-	<div id="landing_advert">
-		Find, Buy or Sell any type of aviation<br>
+<div id="landing_page_wrapper">
+	<div class="landing_heading">
+		<h1>New & Used Aircraft For Sale</h1>
+	</div>
 
-		<div id="advert_example">
-			<%= image_tag "paper_plane.png", width: 280 %>
+	<div id="advert_example">
+		<%= image_tag "paper_plane.png", width: 280 %>
 
-			<div id="advert_example_footer">
-			<%= image_tag "advert_footer.png", width: 280 %>
-			</div>
-
-			<ul class="advert_user_benefit">
-				<li>
-					Geo location
-				</li>
-
-				<li>
-					Email seller
-				</li>
-
-				<li>
-					Ad filtering
-				</li>
-			</ul>
+		<div id="advert_example_footer">
+		<%= image_tag "advert_footer.png", width: 280 %>
 		</div>
 
-		<span class="landing_big_text">
-			Aircraft Market
-		</span>
+		<ul class="advert_user_benefit">
+			<li>
+				Geo location
+			</li>
 
-		<span class="landing_small_text">
-			Our goal is to connect aircraft sellers and buyers to allow you to find and sell your aircraft not only to your local market but to the worldwide market as well. 
-		</span>
-		
-		<%= search_form_for @q do |f| %>
-		
-			<div id="landing_search">
-				<ul>
-					<li>
-			          <%= f.select :country_cont, options_from_collection_for_select(@select_for_country, "country", "country", @q.country_cont), :prompt => 'Select a country' %>
-			        </li>
+			<li>
+				Email seller
+			</li>
 
-			        <!--<li>
-			          <%= f.select :model_cont, options_from_collection_for_select(@select_for_model, "model", "model", @q.model_cont), :prompt => 'Select a model' %>
-			        </li>-->
-			    </ul>
-
-	    		<%= f.submit :class => "landing_search_button" %>
-	    	</div>
-	    <% end %>
-		
+			<li>
+				Ad filtering
+			</li>
+		</ul>
 	</div>
+
+	<div class="landing_subheading">
+		<h2>Find, Buy or Sell any type of aviation</h2>
+	</div>
+
+	<div class="landing_text">
+		<p>Our goal is to connect sellers and buyers to allow you to find and sell your aircraft. If you have an aircraft you would like to sell, publishing an advert on AviaTrading will help you to sell your plane quickly.</p>
+	</div>
+	
+	<%= search_form_for @q do |f| %>
+	
+		<div id="landing_search">
+			<ul>
+				<li>
+		          <%= f.select :country_cont, options_from_collection_for_select(@select_for_country, "country", "country", @q.country_cont), :prompt => 'Select a country' %>
+		        </li>
+
+		        <!--<li>
+		          <%= f.select :model_cont, options_from_collection_for_select(@select_for_model, "model", "model", @q.model_cont), :prompt => 'Select a model' %>
+		        </li>-->
+		    </ul>
+
+    		<%= f.submit :class => "landing_search_button" %>
+    	</div>
+    <% end %>
+	
 </div>
 
 <div class="adverts_wrapper">
-	<div class="aircraft_type">
-		Aircraft
-	</div>
+	<h3>
+		<div class="aircraft_heading">
+			Airplanes listing
+		</div>
+	</h3>
 
 	<div class="frame">
 		<% @adverts.each do |advert| %>
@@ -85,13 +87,90 @@
 				        </div>
 
 				        <%= link_to advert_path(advert), data: { no_turbolink: true } do %>
-				          	<div class="user_ad_make">
-				            	<%= advert.make %>
+				          	<h2>
+				          		<div class="user_ad_make">
+				            		<%= advert.make %>
 
-				            	<div class="user_ad_model">
-				            		<%= truncate(advert.model, :length => 25, :omission => '...') %>
-				            	</div>
-				          	</div>
+					            	<div class="user_ad_model">
+					            		<%= truncate(advert.model, :length => 25, :omission => '...') %>
+					            	</div>
+					            </div>
+					        </h2> 	
+				        <% end %>
+		       		</div>
+
+		       		<div class="user_ad_price">
+                      <ul>
+                        <li>
+                        	<% if advert.price_options.nil? or advert.price_options.blank? %>
+                          		<% if advert.price.nil? or advert.price.blank? %>
+				                  Contact Seller
+				                <% else %>
+				                <%= number_to_currency(advert.price, precision: 0, unit: "") %> <%= currency_to_symbol_helper(advert.currency) %>
+				                <% end %>
+                          	 <% else %>
+                          	 	<%= advert.price_options %>
+                          	<% end %>
+                        </li>
+
+                        <li class="user_ad_price_location">
+                          <%= advert.city %>, <%= advert.country %>
+                        </li>
+                      </ul>
+                    </div>
+	       		</div>
+		    </div>
+		<% end %>
+	</div>
+
+
+
+
+
+
+	<h3>
+		<div class="aircraft_heading">
+			Helicopters listing
+		</div>
+	</h3>
+
+	<div class="frame">
+		<% @helicopters.each do |advert| %>
+		    <div class="bit-4">
+		    	<div class="user_ad">
+		    		<% if advert.photos.empty? or advert.photos.nil?%>
+		    			<%= link_to advert_path(advert), data: { no_turbolink: true } do %>
+				        	<%= image_tag "paper_plane.png" %>
+				        <% end %>
+			       	<% else %>
+			       		<%= link_to advert_path(advert), data: { no_turbolink: true } do %>
+				       		<% advert.photos.first(1).each do |photo| %>
+				          		<%= image_tag photo.image_url(:advert_image) %>
+				       		<% end %>
+				       	<% end %>
+			       	<% end %>
+
+			       	<div class="user_ad_footer">
+		       			<div class="user_ad_avatar">
+				          	<%= link_to user_path(advert.user) do %>
+				            	<% if advert.user.avatar.blank? or advert.user.avatar.nil? %>
+				            	  	<%= image_tag "avatar.png" %>
+				            	<% else %>
+				              		<%= image_tag advert.user.avatar_url(:avatar_small) %>
+				            	<% end %>
+				          	<% end %>
+				        </div>
+
+				        <%= link_to advert_path(advert), data: { no_turbolink: true } do %>
+				          	<h2>
+				          		<div class="user_ad_make">
+				            		<%= advert.make %>
+
+					            	<div class="user_ad_model">
+					            		<%= truncate(advert.model, :length => 25, :omission => '...') %>
+					            	</div>
+					            </div>
+					        </h2> 	
 				        <% end %>
 		       		</div>
 
