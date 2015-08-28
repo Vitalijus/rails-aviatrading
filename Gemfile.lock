@@ -59,6 +59,7 @@ GEM
       warden (~> 1.2.3)
     domain_name (0.5.24)
       unf (>= 0.0.5, < 1.0.0)
+    dynamic_sitemaps (2.0.0)
     erubis (2.7.0)
     eventmachine (1.0.7)
     excon (0.45.3)
@@ -301,6 +302,7 @@ DEPENDENCIES
   cloudinary
   coffee-rails (~> 4.0.0)
   devise
+  dynamic_sitemaps
   fog
   geocoder
   gmaps4rails (~> 2.1.2)
