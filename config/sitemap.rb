@@ -14,6 +14,7 @@ end
 #
 
 sitemap_for Advert.scoped
+sitemap_for User.scoped
 
 # For products with special sitemap name and priority, and link to comments:
 #
