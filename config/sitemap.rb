@@ -2,7 +2,7 @@
 # for examples of multiple hosts and folders.
 host "aviatrading.com"
 
-sitemap :sitemaps do
+sitemap :homepage do
   url root_url, last_mod: Time.now, change_freq: "daily", priority: 1.0
 end
 
@@ -13,13 +13,13 @@ end
 # automatically set <lastmod> to the date and time in page.updated_at:
 #
 
-# sitemap_for Page.scoped
+sitemap_for Advert.scoped
 
 # For products with special sitemap name and priority, and link to comments:
 #
-#   sitemap_for Product.published, name: :published_products do |product|
-#     url product, last_mod: product.updated_at, priority: (product.featured? ? 1.0 : 0.7)
-#     url product_comments_url(product)
+#   sitemap_for Advert.published, name: :published_adverts do |advert|
+#     url advert, last_mod: advert.updated_at, priority: (advert.featured? ? 1.0 : 0.7)
+#     url advert_comments_url(advert)
 #   end
 
 # If you want to generate multiple sitemaps in different folders (for example if you have
