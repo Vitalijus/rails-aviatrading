@@ -2,8 +2,17 @@
 # for examples of multiple hosts and folders.
 host "aviatrading.com"
 
-sitemap :homepage do
+sitemap :site do
   url root_url, last_mod: Time.now, change_freq: "daily", priority: 1.0
+  url new_contact_url, last_mod: Time.now, change_freq: "daily", priority: 1.0
+  url pricing_url, last_mod: Time.now, change_freq: "daily", priority: 1.0
+  url sign_up_url, last_mod: Time.now, change_freq: "daily", priority: 1.0
+  url sign_in_url, last_mod: Time.now, change_freq: "daily", priority: 1.0
+  url subscription_url, last_mod: Time.now, change_freq: "daily", priority: 1.0
+  url resubscription_url, last_mod: Time.now, change_freq: "daily", priority: 1.0
+  url new_advert_url, last_mod: Time.now, change_freq: "daily", priority: 1.0
+  url adverts_url, last_mod: Time.now, change_freq: "daily", priority: 1.0
+
 end
 
 # You can have multiple sitemaps like the above – just make sure their names are different.

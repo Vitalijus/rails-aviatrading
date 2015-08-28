@@ -7,7 +7,7 @@
     <div id="advert-image" class="mfp-hide">
       <% @advert.photos.each do |photo| %>
         <div class="lightbox">
-          <%= image_tag photo.image_url(:lightbox), alt: "#{advert.year} #{advert.make} #{advert.model} for sale" %>
+          <%= image_tag photo.image_url(:lightbox), alt: "#{@advert.year} #{@advert.make} #{@advert.model} for sale" %>
         </div>
       <% end %>
     </div>
@@ -18,7 +18,7 @@
       <% else %>
         <a href="#advert-image" class="open-images-link">
           <% @advert.photos.first(1).each do |photo| %>
-            <%= image_tag photo.image_url(:advert_image_big), alt: "#{advert.year} #{advert.make} #{advert.model} for sale" %>
+            <%= image_tag photo.image_url(:advert_image_big), alt: "#{@advert.year} #{@advert.make} #{@advert.model} for sale" %>
           <% end %>
         </a>
       <% end %>
@@ -32,7 +32,7 @@
       </h1>
 
       <div class="aircraft_location">
-        <span><%= image_tag "pin.png", width: 17, alt: "Location: #{@advert.country, @advert.city}" %> </span>
+        <span><%= image_tag "pin.png", width: 17, alt: "Location: #{@advert.country}, #{@advert.city}" %> </span>
         <%= @advert.country %>, <%= @advert.city %>
       </div>
     </div>

@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <sitemap>
-<loc>http://aviatrading.com/sitemaps/homepage.xml</loc>
+<loc>http://aviatrading.com/sitemaps/site.xml</loc>
 </sitemap>
 <sitemap>
 <loc>http://aviatrading.com/sitemaps/adverts.xml</loc>
+</sitemap>
+<sitemap>
+<loc>http://aviatrading.com/sitemaps/users.xml</loc>
 </sitemap>
 </sitemapindex>
