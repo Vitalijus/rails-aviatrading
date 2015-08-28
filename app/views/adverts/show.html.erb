@@ -1,4 +1,6 @@
-<% page_heading_helper "#{@advert.make} #{@advert.model}" %>
+<% page_title_helper "#{@advert.make} #{@advert.model} for sale at AviaTrading" %>
+
+<% meta_description_helper "#{@advert.year} #{@advert.make} #{@advert.model} for sale in #{@advert.country}, #{@advert.city}. Similar and other aircraft for sale at www.aviatrading.com" %>
 
 <div class="advert_wrapper">
   <div class="advert">
@@ -22,8 +24,12 @@
       <% end %>
     </div>
 
-    <div class="aircraft_title">
-      <%= @advert.make %> <%= @advert.model %>
+    <div class="aircraft_heading_show">
+      <h1>
+        <div class="aircraft_title">
+          <%= @advert.make %> <%= @advert.model %>
+        </div>
+      </h1>
 
       <div class="aircraft_location">
         <span><%= image_tag "pin.png", width: 17 %> </span>

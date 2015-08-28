@@ -5,7 +5,7 @@ class AdvertsController < ApplicationController
   require 'will_paginate/array'
 
   def landing_page
-    @adverts = Advert.limit(16)
+    @adverts = Advert.limit(12)
   	#@jets = Advert.where(aircraft_type: "Jet").limit(4)
   	#@turbo_prop = Advert.where(aircraft_type: "TurboProp").limit(4)
   	@helicopters = Advert.where(aircraft_type: "Helicopter").limit(8)

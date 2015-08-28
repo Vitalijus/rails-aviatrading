@@ -68,24 +68,26 @@
 
 /* AIRCRAFT NAME AND LOCATION */
 
-.aircraft_title {
-	color: #565A5C;
-	font-family: 'Open Sans', sans-serif;
-	font-weight: bold;
-	font-size: 30px;
+.aircraft_heading_show {
 	margin: -5px 0 20px 0;
 	background-color: #fdfdfd;
-	padding: 10px 20px 10px 20px;
 	border-right: 1px solid #DFE0E4;
 	border-left: 1px solid #DFE0E4;
 	border-bottom: 1px solid #DFE0E4;
 }
 
+.aircraft_title,
 .aircraft_location {
-	color: #666;
+	color: #565A5C;
+	padding: 15px 20px 0 20px;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: bold;
-	padding: 0;
+	font-size: 30px;
+}
+
+.aircraft_location {
+	color: #666;
+	padding: 0 20px 15px 20px;
 	font-size: 12px;
 }
 
