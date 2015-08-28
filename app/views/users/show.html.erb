@@ -10,45 +10,45 @@
 	  	<div class="user_panel">
 	  		<% if @user.avatar.nil? or @user.avatar.blank? %>
 	  			<div class="company_logo">
-		  			<%= image_tag "user_profile/paper_plane.png", width: 300 %>
+		  			<%= image_tag "user_profile/paper_plane.png", width: 300, alt: "Paper plane" %>
 		  		</div>
 		  	<% else %>
 		  		<div class="company_logo">
-		  			<%= image_tag @user.avatar_url(:avatar_big) %>
+		  			<%= image_tag @user.avatar_url(:avatar_big), alt: "Profile image" %>
 		  		</div>
 		  	<% end %>
 
 	  		<ul class="company_info">
 	  			<% unless @user.organisation.nil? or @user.organisation.blank? %>
 		  			<li>
-		  				<span class="info_icon"><%= image_tag "user_profile/user.png", width: 20 %></span>
+		  				<span class="info_icon"><%= image_tag "user_profile/user.png", width: 20, alt: "Company name: #{@user.organisation}" %></span>
 			  			<%= @user.organisation %>
 			  		</li>
 			  	<% end %>
 
 		  		<% unless @user.phone.nil? or @user.phone.blank? %>
 			  		<li>
-			  			<span class="info_icon"><%= image_tag "user_profile/phone.png", width: 20 %></span>
+			  			<span class="info_icon"><%= image_tag "user_profile/phone.png", width: 20, alt: "Phone: #{@user.phone}" %></span>
 			  			<%= @user.phone %> 
 			  		</li>
 			  	<% end %>
 			  		
 			  	<% unless (@user.street.nil? or @user.street.blank?) and (@user.postal_code.nil? or @user.postal_code.blank?) and (@user.city.nil? or @user.city.blank?) and (@user.country.nil? or @user.country.blank?) %>	
 		  			<li>
-		  				<span class="info_icon"><%= image_tag "user_profile/pin.png", width: 20 %></span>
+		  				<span class="info_icon"><%= image_tag "user_profile/pin.png", width: 20, alt: "Company address: #{@user.street} #{@user.postal_code} #{@user.city} #{@user.country}" %></span>
 		  				<%= @user.street %> <%= @user.postal_code %> <%= @user.city %> <%= @user.country %> 
 		  			</li>
 		  		<% end %>
 
 			  	<% unless @user.web_url.nil? or @user.web_url.blank? %>
 			  		<li>
-			  			<span class="info_icon"><%= image_tag "user_profile/globe.png", width: 20 %></span>
+			  			<span class="info_icon"><%= image_tag "user_profile/globe.png", width: 20, alt: "Company website: #{@user.web_url}" %></span>
 			  			<%= @user.web_url %> 
 			  		</li>
 			  	<% end %>
 
 		  		<li>
-		  			<span class="info_icon"><%= image_tag "user_profile/layers.png", width: 20 %></span>
+		  			<span class="info_icon"><%= image_tag "user_profile/layers.png", width: 20, alt: "Number of adverts: #{@user.adverts.count}" %></span>
 		  			<%= pluralize(@user.adverts.count, "Advert") %>
 		  		</li>
 	  		</ul>
@@ -60,12 +60,12 @@
 			    	<div class="user_ad">
 			    		<% if advert.photos.empty? or advert.photos.nil?%>
 			    			<%= link_to advert_path(advert), data: { no_turbolink: true } do %>
-					        	<%= image_tag "paper_plane.png" %>
+					        	<%= image_tag "paper_plane.png", alt: "Paper plane" %>
 					        <% end %>
 				       	<% else %>
 				       		<%= link_to advert_path(advert), data: { no_turbolink: true } do %>
 					       		<% advert.photos.first(1).each do |photo| %>
-					          		<%= image_tag photo.image_url(:advert_image) %>
+					          		<%= image_tag photo.image_url(:advert_image), alt: "#{advert.year} #{advert.make} #{advert.model} for sale" %>
 					       		<% end %>
 					       	<% end %>
 				       	<% end %>
@@ -74,9 +74,9 @@
 			       			<div class="user_ad_avatar">
 					          	<%= link_to user_path(advert.user) do %>
 					            	<% if advert.user.avatar.blank? or advert.user.avatar.nil? %>
-					            	  	<%= image_tag "avatar.png" %>
+					            	  	<%= image_tag "avatar.png", alt: "Profile image" %>
 					            	<% else %>
-					              		<%= image_tag advert.user.avatar_url(:avatar_small) %>
+					              		<%= image_tag advert.user.avatar_url(:avatar_small), alt: "Profile image" %>
 					            	<% end %>
 					          	<% end %>
 					        </div>
@@ -118,7 +118,7 @@
 				       		<ul class="user_ad_dlt_edit">
 								<%= link_to edit_advert_path(advert) do %>
 									<li class="edit_icon">
-										<%= image_tag "pen_1.png", width: 14 %>
+										<%= image_tag "pen_1.png", width: 14, alt: "Edit advert" %>
 										<span class="icon_tooltip">Edit</span>
 									</li>
 								<% end %>
@@ -126,14 +126,14 @@
 								<% if advert.show_advert == true %>
 									<%= link_to show_advert_path(advert) do %> 
 										<li class="hide_icon">
-											<%= image_tag "hide.png", width: 12 %>
+											<%= image_tag "hide.png", width: 12, alt: "Hide advert from search" %>
 											<span class="icon_tooltip">Hide</span>
 										</li>
 									<% end %>
 								<% else advert.show_advert == false %>
 									<%= link_to show_advert_path(advert) do %> 
 										<li class="show_icon">
-											<%= image_tag "show.png", width: 12 %>
+											<%= image_tag "show.png", width: 12, alt: "Show advert in search" %>
 											<span class="icon_tooltip">Show</span>
 										</li>
 									<% end %>
@@ -141,7 +141,7 @@
 
 								<%= link_to advert, method: :delete, data: {confirm: "Are you sure?"} do %>
 					        		<li class="last_child_delete delete_icon">
-					        			<%= image_tag "delete.png", width: 10 %>
+					        			<%= image_tag "delete.png", width: 10, alt: "Delete advert" %>
 					        			<span class="icon_tooltip">Delete</span>
 					        		</li>
 					        	<% end %>

@@ -7,18 +7,18 @@
     <div id="advert-image" class="mfp-hide">
       <% @advert.photos.each do |photo| %>
         <div class="lightbox">
-          <%= image_tag photo.image_url(:lightbox) %>
+          <%= image_tag photo.image_url(:lightbox), alt: "#{advert.year} #{advert.make} #{advert.model} for sale" %>
         </div>
       <% end %>
     </div>
 
     <div class="advert_image">
       <% if @advert.photos.blank? or @advert.photos.nil?%>
-        <%= image_tag "paper_plane_big.png" %>
+        <%= image_tag "paper_plane_big.png", alt: "Paper plane" %>
       <% else %>
         <a href="#advert-image" class="open-images-link">
           <% @advert.photos.first(1).each do |photo| %>
-            <%= image_tag photo.image_url(:advert_image_big) %>
+            <%= image_tag photo.image_url(:advert_image_big), alt: "#{advert.year} #{advert.make} #{advert.model} for sale" %>
           <% end %>
         </a>
       <% end %>
@@ -32,7 +32,7 @@
       </h1>
 
       <div class="aircraft_location">
-        <span><%= image_tag "pin.png", width: 17 %> </span>
+        <span><%= image_tag "pin.png", width: 17, alt: "Location: #{@advert.country, @advert.city}" %> </span>
         <%= @advert.country %>, <%= @advert.city %>
       </div>
     </div>
@@ -292,13 +292,13 @@
               <% if @advert.user.avatar.nil? or @advert.user.avatar.blank? %>
                 <%= link_to user_path(@advert.user.id), data: { no_turbolink: true } do %>
                   <div class="company_logo">
-                    <%= image_tag "user_profile/paper_plane.png", width: 300 %>
+                    <%= image_tag "user_profile/paper_plane.png", width: 300, alt: "Paper plane" %>
                   </div>
                 <% end %>
               <% else %>
                 <%= link_to user_path(@advert.user.id), data: { no_turbolink: true } do %>
                   <div class="company_logo">
-                    <%= image_tag @advert.user.avatar_url(:avatar_big) %>
+                    <%= image_tag @advert.user.avatar_url(:avatar_big), alt: "Profile image" %>
                   </div>
                 <% end %>
               <% end %>
@@ -307,34 +307,34 @@
             <ul class="seller_attr">
               <% unless @advert.user.organisation.nil? or @advert.user.organisation.blank? %>
                 <li>
-                  <span class="seller_icon"><%= image_tag "user_profile/user.png", width: 17 %></span>
+                  <span class="seller_icon"><%= image_tag "user_profile/user.png", width: 17, alt: "Company name: #{@advert.user.organisation}" %></span>
                   <%= @advert.user.organisation %>
                 </li>
               <% end %>
 
               <% unless @advert.user.phone.nil? or @advert.user.phone.blank? %>
                 <li>
-                  <span class="seller_icon"><%= image_tag "user_profile/phone.png", width: 17 %></span>
+                  <span class="seller_icon"><%= image_tag "user_profile/phone.png", width: 17, alt: "Phone: #{@advert.user.phone}" %></span>
                   <%= @advert.user.phone %> 
                 </li>
               <% end %>
                 
               <% unless (@advert.user.street.nil? or @advert.user.street.blank?) and (@advert.user.postal_code.nil? or @advert.user.postal_code.blank?) and (@advert.user.city.nil? or @advert.user.city.blank?) and (@advert.user.country.nil? or @advert.user.country.blank?) %>  
                 <li>
-                  <span class="seller_icon"><%= image_tag "user_profile/pin.png", width: 17 %></span>
+                  <span class="seller_icon"><%= image_tag "user_profile/pin.png", width: 17, alt: "Seller address: #{@advert.user.street} #{@advert.user.postal_code} #{@advert.user.city} #{@advert.user.country}" %></span>
                   <%= @advert.user.street %> <%= @advert.user.postal_code %> <%= @advert.user.city %> <%= @advert.user.country %> 
                 </li>
               <% end %>
 
               <% unless @advert.user.web_url.nil? or @advert.user.web_url.blank? %>
                 <li>
-                  <span class="seller_icon"><%= image_tag "user_profile/globe.png", width: 17 %></span>
+                  <span class="seller_icon"><%= image_tag "user_profile/globe.png", width: 17, alt: "Website address: #{@advert.user.web_url}" %></span>
                   <%= @advert.user.web_url %> 
                 </li>
               <% end %>
 
               <li>
-                <span class="seller_icon"><%= image_tag "user_profile/layers.png", width: 17 %></span>
+                <span class="seller_icon"><%= image_tag "user_profile/layers.png", width: 17, alt: "Number of adverts: #{@advert.user.adverts.count}" %></span>
                 <%= pluralize(@advert.user.adverts.count, "Advert") %>
               </li>
             </ul>
