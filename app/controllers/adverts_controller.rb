@@ -75,11 +75,12 @@ class AdvertsController < ApplicationController
   # GET /adverts/new
   def new
     @advert = Advert.new
-    @advert.photos.build
+    @photo = @advert.photos.build
   end
 
   # GET /adverts/1/edit
   def edit
+    #@photo = @advert.photos.build
   end
 
   # POST /adverts
@@ -165,6 +166,7 @@ class AdvertsController < ApplicationController
       :vat, :last_inspection, :price_options, :airport_code,
       :number_of_passengers, :aircraft_usage, :phone, :user_id, :show_advert, 
       :avionics, :interior, :exterior, :add_info, :engine_power_unit, :latitude, 
-      :longitude, photos_attributes: [:id, :image, :advert_id, :public_token])
+      :longitude, photos_attributes: [:id, :image, :advert_id, :main_image,
+      :description])
     end
 end

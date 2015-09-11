@@ -37,23 +37,58 @@ $(function() {
 
 //---------------------------------------------
 
-// SNIPPET IS USED FOR SWITCHING BETWEEN TABS WHEN CREATING NEW ADVERT
+// SNIPPET IS USED FOR FIXED NAVIGATION IN NEW ADVERT
 
 $(document).ready(function() {
-	$('.new_advert_form_wrapper .tabs_links a').on('click', function(e) {
-		var currentAttrValue = $(this).attr('href');
-
-		// Show/Hide Tabs
-        $('.new_advert_form_wrapper ' + currentAttrValue).show().siblings().hide();
-
-        // Change/remove current tab to active
-        $(this).parent('li').addClass('active').siblings().removeClass('active');
-
-        e.preventDefault();
-	});
-});
+  $(function(){ // document ready
+    if (!!$('.sticky').offset()) { // make sure ".sticky" element exists
+      var stickyTop = $('.sticky').offset().top; // returns number
+        $(window).scroll(function(){ // scroll event
+          var windowTop = $(window).scrollTop(); // returns number
+            if (stickyTop < windowTop){
+              $('.sticky').css({ position: 'fixed', top: 20 });
+              }
+            else {
+              $('.sticky').css('position','static');
+            }
+          });
+        }
+      });
+    });
 
 //--------------------------------------------------------
+
+// SMOOTH SCROLLING IN NEW ADVERT
+
+$(document).ready(function() {
+  /** 
+   * This part does the "fixed navigation after scroll" functionality
+   * We use the jQuery function scroll() to recalculate our variables as the 
+   * page is scrolled/
+   */
+  $(window).scroll(function(){
+      var window_top = $(window).scrollTop() + 70; // the "20" should equal the margin-top value for nav.stick
+      var div_top = $('.new_advert_nav').offset().top;
+          if (window_top > div_top) {
+              $('nav').addClass('stick');
+          } else {
+              $('nav').removeClass('stick');
+          }
+  });
+
+  /**
+     * This part causes smooth scrolling using scrollto.js
+     * We target all a tags inside the nav, and apply the scrollto.js to it.
+     */
+    $('a').click(function(){
+      $('html, body').animate({
+          scrollTop: $( $(this).attr('href') ).offset().top
+      }, 350);
+      return false;
+    });    
+});
+
+//----------------------------------
 
 // RESPONSIVE NAVIGATION MENU IN HEADER
 
@@ -154,3 +189,6 @@ var select = $('select');
 });
 
 //--------------------------------
+
+// Jquery file upload | New photo of advert
+

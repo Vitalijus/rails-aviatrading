@@ -1,71 +1,112 @@
-  <div id="tab2" class="new_form_wrapper">
-        <ul class="form">
-          <li class="form_label">
-            Aircraft engine
-          </li>
+<div class="nav_link">
+  Engine / Propeller
+</div>
 
-          <li class="form_field">  
-            <%= f.text_field :engine_make, :class => "new_field", :placeholder => "Manufacturer" %>
+  <div class="new_form_wrapper">
+    <div class="form_subheader">
+      Aircraft engine
+    </div>
+
+        <ul class="form">
+          <li class="form_field">
+            <div class="form_label">
+              Manufacturer <span class="required_fields asterix"></span>
+            </div>  
+            <%= f.text_field :engine_make, :class => "new_field" %>
           </li>
           
-          <li class="form_field">  
-            <%= f.text_field :engine_model, :class => "new_field", :placeholder => "Model" %>
+          <li class="form_field"> 
+            <div class="form_label">
+              Model <span class="required_fields asterix"></span>
+            </div> 
+            <%= f.text_field :engine_model, :class => "new_field" %>
           </li>
 
           <li class="form_field select_field">
-            <%= f.select :engine_type, ['In-line engine', "V-type engine", "Horizontally opposed engine", "Radial engine", "Turboprop", "Turboshaft", "Turbojet", "Turbofan", "Other"], :prompt => 'Engine type' %>
+            <div class="form_label">
+              Engine type <span class="required_fields asterix"></span>
+            </div>
+            <%= f.select :engine_type, ['In-line engine', "V-type engine", "Horizontally opposed engine", "Radial engine", "Turboprop", "Turboshaft", "Turbojet", "Turbofan", "Other"], :prompt => ' ' %>
           </li>
 
           <li class="form_field">
-            <%= f.number_field :number_of_engines, :class => "new_field", :placeholder => "Number of engines" %>
+            <div class="form_label">
+              Number of engines <span class="required_fields asterix"></span>
+            </div>
+            <%= f.number_field :number_of_engines, :class => "new_field" %>
           </li>
 
           <li class="form_field">  
-            <%= f.number_field :engine_hours, :class => "new_field", :placeholder => "Engine hours" %>
+            <div class="form_label">
+              Number of engines <span class="required_fields asterix"></span>
+            </div>
+            <%= f.number_field :engine_hours, :class => "new_field" %>
           </li>
 
           <li class="form_field">
-            <%= f.number_field :tbo, :class => "new_field", :placeholder => "Time between overhaul (TBO)" %>
+            <div class="form_label">
+              Time between overhaul (TBO) <span class="required_fields asterix"></span>
+            </div>
+            <%= f.number_field :tbo, :class => "new_field" %>
           </li>
 
           <li class="form_field">
-            <%= f.text_field :engine_power, :class => "new_field", :placeholder => "Engine power" %>
+            <div class="form_label">
+              Engine power <span class="required_fields asterix"></span>
+            </div>
+            <%= f.text_field :engine_power, :class => "new_field" %>
           </li>
 
           <li class="form_field select_field">
-            <%= f.select :engine_power_unit, ['kW', "HP", "BHP", "SHP", "kN", "RPM", "lbs"], :prompt => 'Engine power unit' %>
+            <div class="form_label">
+              Engine power unit <span class="required_fields asterix"></span>
+            </div>
+            <%= f.select :engine_power_unit, ['kW', "HP", "BHP", "SHP", "kN", "RPM", "lbs"], :prompt => ' ' %>
+          </li>
+        </ul>
+
+        <div class="form_subheader">
+          Aircraft propeller
+        </div>
+
+        <ul class="form">
+          <li class="form_field">
+            <div class="form_label">
+              Propeller manufacturer <span class="required_fields asterix"></span>
+            </div>
+            <%= f.text_field :propeller_make, :class => "new_field" %>
+          </li>
+
+          <li class="form_field">
+            <div class="form_label">
+              Propeller model <span class="required_fields asterix"></span>
+            </div>
+            <%= f.text_field :propeller_model, :class => "new_field" %>
+          </li>
+          
+          <li class="form_field">
+            <div class="form_label">
+              Number of blades <span class="required_fields asterix"></span>
+            </div>
+            <%= f.number_field :number_of_propellers, :class => "new_field" %>
+          </li>
+
+          <li class="form_field">
+            <div class="form_label">
+              Propeller hours <span class="required_fields asterix"></span>
+            </div>
+            <%= f.number_field :propeller_hours, :class => "new_field" %>
           </li>
         </ul>
 
         <ul class="form">
-          <li class="form_label">
-            Propeller
-          </li>
-
-          <li class="form_field">
-            <%= f.text_field :propeller_make, :class => "new_field", :placeholder => "Propeller manufacturer" %>
-          </li>
-
-          <li class="form_field">
-            <%= f.text_field :propeller_model, :class => "new_field", :placeholder => "Propeller model" %>
-          </li>
-          
-          <li class="form_field">
-            <%= f.number_field :number_of_propellers, :class => "new_field", :placeholder => "Number of blades" %>
-          </li>
-
-          <li class="form_field">
-            <%= f.number_field :propeller_hours, :class => "new_field", :placeholder => "Propeller hours" %>
-          </li>
-        </ul>
-
-        <ul class="form">
-          <li class="form_label">
-            Extra information
-          </li>
-
           <li class="form_field one_column">
+            <div class="form_label">
+              Extra information <span class="required_fields asterix"></span>
+            </div>
             <%= f.text_area :engine_notes, :class => "new_field_text"%>
           </li>
         </ul>
+
+        <a id="additional_info" class="nav_link"></a>
   </div>

@@ -1,5 +1,12 @@
-<div id="tab4" class="new_form_wrapper">
-  <div class="new_form_border_helper">
+<div class="nav_link">
+  Photos
+</div>
+
+<a id="submit" class="nav_link">
+  <!--Submit-->
+</a>
+
+<div class="new_form_wrapper">
 
     <div id="progress_bar">
       <div class="bar_wrapper">
@@ -11,7 +18,7 @@
       <div id="upload_image_button_in_progress">
         <label class="upload_image">
           <%= cl_image_upload_tag("images[]", :return_delete_token => true, :html => { :multiple => true }) %>
-          <span><%= image_tag "cloud_upload.png", width: 20 %> Add Images</span>
+          <span><%= image_tag "cloud_upload.png", width: 20 %> Add Photos</span>
         </label>
       </div>
     </div>
@@ -19,14 +26,14 @@
     <div id="upload_image_wrapper">
       <div id="upload_image">
         <span id="upload_image_icon"><%= image_tag "108.png",width: 45 %></span>
-        <span id="big_text">Add an image or two!</span>
-        <span id="small_text">Or three, or more! Buyers love images that highlight features of your aircraft.</span>
+        <span id="big_text">Good photos can bring you more visitors!</span>
+        <span id="small_text">Add a photo, two or more! Buyers love photos that highlight features of your aircraft.</span>
       </div>
 
       <div id="upload_image_button">
         <label class="upload_image">
           <%= cl_image_upload_tag("images[]", :return_delete_token => true, :html => { :multiple => true }) %>
-          <span><%= image_tag "cloud_upload.png", width: 20 %> Add Images</span>
+          <span><%= image_tag "cloud_upload.png", width: 20 %> Add Photos</span>
         </label>
       </div>
     </div>
@@ -38,11 +45,9 @@
             <li>
               <%= image_tag image.image_url(:upload_images) %>
 
-              <span class="delete">
-                <%= link_to photo_path(image), :method => :delete, :remote => true, :class => "delete_image_button" do %>
-                  <%= image_tag "delete_image.png" %>
-                <% end %>
-              </span>
+              <%= link_to photo_path(image), :method => :delete, :remote => true, :class => "delete_image_button" do %>
+                <%= image_tag "delete_image.png" %>
+              <% end %>
             </li>
           <% end %>
         <% end %>
@@ -64,14 +69,7 @@
     <% end %>
 </div>
 
-  <script>
-    $('.delete').click(function() {
-      $(this).parent().hide(150);
-    });
-  </script>
-
-
-  <script>
+<script>
   $(document).ready(function() { $(".cloudinary-fileupload").fileupload({ 
         // Uncomment the following lines to enable client side image resizing and valiation.
         // Make sure cloudinary/processing is included the js file
@@ -94,23 +92,16 @@
         }
       })
       .off("cloudinarydone").on("cloudinarydone", function (e, data) {
-            var preview = $('<li></li>').prependTo('.uploaded_image ul');
+            var preview = $('<li></li>').appendTo('.uploaded_image ul');
             $.cloudinary.image(data.result.public_id, {
               format: data.result.format, width: 800, height: 380, crop: "fill"
             }).appendTo(preview);
 
 
-        $('<a/>').attr({href: '#'}).
-          data({delete_token: data.result.delete_token}).
-          addClass('delete_image_button img').html('<%= escape_javascript(image_tag "delete_image.png") %>').appendTo(preview).
-            click(function(e) {
+        $('<a/>').attr({href: '#'}).data({delete_token: data.result.delete_token}).addClass('delete_image_button img').html('<%= escape_javascript(image_tag "delete_image.png") %>').appendTo(preview).click(function(e) {
             e.preventDefault();
             $.cloudinary.delete_by_token($(this).data('delete_token')).done(function(){
               $('input[name="photo[image]"]').remove();
-
-                $(this).parent().hide();
-            
-
             }).fail(function() {
               $('.status').text("Cannot delete image");
           });
@@ -119,5 +110,3 @@
       });
     });
 </script>
-
-  

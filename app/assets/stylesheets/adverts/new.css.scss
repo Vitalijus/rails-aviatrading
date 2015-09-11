@@ -1,25 +1,19 @@
 /* NEW FORM ADVERT NAV*/
 
-.new_advert_form_wrapper {
-	margin: 20px 20px 60px 20px;
-	height: 100%;
-	overflow: hidden;
-}
-
 .new_advert_page {
 	max-width: 720px;
+	width: 90%;
 	margin: auto;
-	margin-top: 20px;
 	overflow: hidden;
 	border: 0px solid green;
 }
 
 .new_advert_header {
-  font-family: "Open Sans", helvetica, arial;
-  font-size: 25px;
-  color: #F05053;
-  margin-top: 20px;
-  text-align: center;
+  	font-family: "Open Sans", helvetica, arial;
+	font-size: 25px;
+	color: #F05053;
+	margin-top: 20px;
+	text-align: center;
 }
 
 .new_advert_note {
@@ -41,16 +35,15 @@
 /* JS navigation */
 
 .new_advert_nav {
-	float: left;
-	margin-right: 20px;	
 	width: 220px;
+	float: right;
+	margin: 20px 0 20px 0;
 }
 
 .new_advert_nav ul {
-	width: 100%;
+	width: 220px;
 	background-color: #fdfdfd;
 	border: 1px solid #DFE0E4;
-	position: relative;
 
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
@@ -61,33 +54,44 @@
 	padding: 15px;
 	font-size: 14px;
 	font-weight: bold;
-	font-family: 'Open Sans', sans-serif;
 	border-bottom: 1px solid #DFE0E4;
 }
 
-.new_advert_nav li:last-child {
-	border-bottom: none;
+nav a li {
+    color: #999;
 }
 
-.new_advert_nav li a {
-	color: #444;
+nav a:hover li {
+    color: #F16164;
 }
 
-.new_advert_nav li a:hover {
-	color: #F04F54;
+nav.stick {
+    position: fixed;
+    top: 0;
+    z-index: 10000;
+    margin-top: 70px;
 }
 
-li.active a, li.active a:hover {
-    color: #F04F54;
+.nav_link {
+	font-family: 'Lato', sans-serif;
+	font-size: 25px;
+	font-weight: 900;
+	color: #777;
 }
 
 /*------------------*/
 
 /* NEW ADVERT FORM */
 
-.new_form_wrapper {
+.new_advert_wrapper {
 	width: 480px;
 	float: left;
+	margin-top: 10px;
+	border: 0px solid blue;
+}
+
+.new_form_wrapper {
+	margin: 10px 0 20px 0;
 	background-color: #fdfdfd;
 	padding: 0 20px 20px 20px;
 	border: 1px solid #DFE0E4;
@@ -97,22 +101,10 @@ li.active a, li.active a:hover {
 	border-radius: 2px;
 }
 
-.new_form_wrapper li {
-	display: inline-block;
-}
-
-.new_form_wrapper {
-    display:none;
-}
- 
-.new_form_wrapper.active {
-    display:block;
-}
-
 ul.form {
 	width: 100%;
 	overflow: hidden;
-	padding: 20px 0 10px 0;
+	padding: 10px 0 10px 0;
 	border-bottom: 1px solid #F2F2F4;
 }
 
@@ -127,10 +119,10 @@ ul.form li.form_field {
 	margin-right: 10px;
 	margin-bottom: 10px;
 	width: 48.8%;
-	border: 0px solid red;
+	border: 0px solid green;
 }
 
-ul.form li.form_field:nth-child(odd) {
+ul.form li.form_field:nth-child(even) {
 	margin-right: 0px;
 }
 
@@ -170,45 +162,14 @@ li.four_columns {
 	height: 125px;
 }
 
-/*.select_field select {
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -webkit-padding-end: 20px;
-    -moz-padding-end: 20px;
-    -webkit-padding-start: 2px;
-    -moz-padding-start: 2px;
-    background: url(image-path('arrow_down.png')) no-repeat;
-    background-position: center right;
-    border: 1px solid #AAA;
-    width: 100%;
-	height: 40px;
-  	font-family: 'Open Sans', sans-serif;
-  	font-size: 12px;
-  	color: #777;
-    cursor: pointer;
-    margin: 0;
-    overflow: hidden;
-    padding: 0 5px 0 5px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    cursor: pointer;
-
-    background-color: #fefafa;
-  	border:  1px solid #fdeded;
-
-  	-webkit-box-shadow: inset 0px 0px 2px 0px rgba(250,229,229,0.5);
-  	-moz-box-shadow: inset 0px 0px 2px 0px rgba(250,229,229,0.5);
-  	box-shadow: inset 0px 0px 2px 0px rgba(250,229,229,0.5);
-}*/
-
-ul.form li.form_label {
+.form_label {
 	width: 100%;
 	font-size: 12px;
 	font-weight: bold;
-	padding-bottom: 10px;
+	padding: 0 0 5px 0;
+	margin-top: 5px;
+	color: #777;
+	border: 0px solid red;
 }
 
 .new_form_wrapper .form_label_small {
@@ -225,6 +186,22 @@ ul.form li.form_label {
 	font-family: "Open Sans", helvetica, arial;
 	font-weight: normal;
 	font-size: 12px;
+}
+
+.required_fields.asterix {
+	float: none;
+	font-weight: bold;
+}
+
+.form_subheader {
+	font-weight: bold;
+	text-align: center;
+	font-size: 16px;
+	/*color: #204056;*/
+	color: #666;
+	margin-top: 20px;
+	margin-bottom: -5px;
+	border: 0px solid red;
 }
 
 /*--------------------*/

@@ -22,9 +22,9 @@ School::Application.routes.draw do
   resources :adverts do
     resources :email_sellers, only: [:create]
   end
+
   resources :photos, only: [:destroy]
   resources :contacts, only: [:create, :new]
-  
   
   root 'adverts#landing_page'
 

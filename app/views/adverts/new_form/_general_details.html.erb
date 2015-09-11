@@ -1,5 +1,8 @@
-  <div id="tab1" class="new_form_wrapper active">
-    <div class="new_form_border_helper">
+<a id="general_info" class="nav_link">
+  <!--Additional info-->
+</a>
+
+  <div class="new_form_wrapper">
       <% if @advert.errors.any? %>
         <div id="error_explanation">
           <ul>
@@ -28,114 +31,175 @@
       </div>
     <% end %>
 
+    <div class="form_subheader">
+      Advertiser's info
+    </div>
 
     <ul class="form">
-      
-      <li class="form_label">
-        Advertiser info <span class="required_fields">Required fields*</span>
-      </li>  
-
       <li class="form_field one_column">
-        <%= f.text_field :name, :placeholder => "Name Surname*", :class => "new_field" %>
+        <div class="form_label">
+          Name Surname <span class="required_fields asterix">*</span> <span class="required_fields">Required fields*</span>
+        </div>
+        <%= f.text_field :name, :class => "new_field" %>
       </li>  
 
       <li class="form_field email_helper">
-        <%= f.text_field :email, :placeholder => "Email address*", :class => "new_field" %>
+        <div class="form_label">
+          Email address <span class="required_fields asterix">*</span>
+        </div>
+        <%= f.text_field :email, :class => "new_field" %>
       </li>
 
       <li class="form_field phone_helper">
-        <%= f.text_field :phone, :placeholder => "Phone number", :class => "new_field" %>
+        <div class="form_label">
+          Phone number <span class="required_fields asterix"></span>
+        </div>
+        <%= f.text_field :phone, :class => "new_field" %>
       </li>
     </ul>
 
+    <div class="form_subheader">
+      Aircraft details
+    </div>
+
     <ul class="form">
-      <li class="form_label">
-        Aircraft details
+      <li class="form_field one_column">
+        <div class="form_label">
+          Make <span class="required_fields asterix">*</span>
+        </div>
+        <%= f.text_field :make, :class => "new_field" %>
       </li>
 
       <li class="form_field one_column">
-        <%= f.text_field :make, :class => "new_field", :placeholder => "Make*" %>
-      </li>
-
-      <li class="form_field one_column">
-        <%= f.text_field :model, :class => "new_field", :placeholder => "Model*" %>
+        <div class="form_label">
+          Model <span class="required_fields asterix">*</span>
+        </div>
+        <%= f.text_field :model, :class => "new_field" %>
       </li>   
 
       <li class="form_field select_field">
-        <%= f.select :aircraft_type, ["Airship / Blimp", "Glider / Sailplane", "Jet", "Helicopter", "Light sport", "Single piston", "Multi piston", "TurboProp", "Ultralight", "Hot air balloon", "Other"], :prompt => 'Aircraft type*' %>
+        <div class="form_label">
+          Aircraft type <span class="required_fields asterix">*</span>
+        </div>
+        <%= f.select :aircraft_type, ["Airship / Blimp", "Glider / Sailplane", "Jet", "Helicopter", "Light sport", "Single piston", "Multi piston", "TurboProp", "Ultralight", "Hot air balloon", "Other"], :prompt => ' ' %>
       </li>
 
       <li class="form_field select_field">
-        <%= f.select :aircraft_usage, ["Aerobatic", "Aerial survey", "Agriculture", "Amphibian/Float", "Antique/Classic", "Business/VIP", "Homebuilt", "EMS/SAR/Fire/Police", "Cargo/Freighter", "Passenger", "Warbird/Military", "Other" ], :prompt => 'Aircraft usage'  %>
+        <div class="form_label">
+          Aircraft usage <span class="required_fields asterix"></span>
+        </div>
+        <%= f.select :aircraft_usage, ["Aerobatic", "Aerial survey", "Agriculture", "Amphibian/Float", "Antique/Classic", "Business/VIP", "Homebuilt", "EMS/SAR/Fire/Police", "Cargo/Freighter", "Passenger", "Warbird/Military", "Other" ], :prompt => ' '  %>
       </li>
 
       <li class="form_field four_columns">
-        <%= f.text_field :aircraft_hours, :class => "new_field", :placeholder => "Airframe time (TTAF)*" %>
-      </li>
-
-      <li class="form_field four_columns">
-        <%= f.text_field :landings, :class => "new_field", :placeholder => "Nr. of landings" %>
-      </li>
-
-      <li class="form_field four_columns">
-        <%= f.text_field :number_of_passengers, :class => "new_field", :placeholder => "Nr. of seats" %>
+        <div class="form_label">
+          Airframe time (TTAF) <span class="required_fields asterix">*</span>
+        </div>
+        <%= f.text_field :aircraft_hours, :class => "new_field" %>
       </li>
 
       <li class="form_field select_field four_columns">
-        <%= f.select :year, options_for_select((Date.today.year-100..Date.today.year+1).step(1).reverse_each), :prompt => 'Built year*' %>
+        <div class="form_label">
+          Built year <span class="required_fields asterix">*</span>
+        </div>
+        <%= f.select :year, options_for_select((Date.today.year-100..Date.today.year+1).step(1).reverse_each), :prompt => ' ' %>
       </li>
 
       <li class="form_field four_columns">
-        <%= f.text_field :registration_number, :class => "new_field", :placeholder => "Registration number" %>
+        <div class="form_label">
+          Number of landings <span class="required_fields asterix"></span>
+        </div>
+        <%= f.text_field :landings, :class => "new_field" %>
       </li>
 
       <li class="form_field four_columns">
-        <%= f.text_field :serial_number, :class => "new_field", :placeholder => "Serial number" %>
+        <div class="form_label">
+          Number of seats <span class="required_fields asterix"></span>
+        </div>
+        <%= f.text_field :number_of_passengers, :class => "new_field" %>
+      </li>
+
+      <li class="form_field four_columns">
+        <div class="form_label">
+          Registration number <span class="required_fields asterix"></span>
+        </div>
+        <%= f.text_field :registration_number, :class => "new_field" %>
+      </li>
+
+      <li class="form_field four_columns">
+        <div class="form_label">
+          Serial number <span class="required_fields asterix"></span>
+        </div>
+        <%= f.text_field :serial_number, :class => "new_field" %>
       </li>
     </ul>
 
-    <ul class="form">
-      <li class="form_label">
-        Aircraft price
-        <span class="form_label_small">If you don't wish to show aircraft price please select "Price options". To show aircraft price again please select "Show aircraft price" option.</span>
-      </li>
+    <div class="form_subheader">
+      Aircraft price
+      <span class="form_label_small"></span>
+    </div>
 
+    <ul class="form">
       <li class="form_field four_columns">
-        <%= f.number_field :price, :placeholder => "Price", :class => "new_field" %>
+        <div class="form_label">
+          Price <span class="required_fields asterix"></span>
+        </div>
+        <%= f.number_field :price, :class => "new_field" %>
       </li>   
       
       <li class="form_field select_field four_columns">
-        <%= f.select :currency, select_for_currencies_helper %>
+        <div class="form_label">
+          Currency <span class="required_fields asterix"></span>
+        </div>
+        <%= f.select :currency, select_for_currencies_helper, :prompt => ' ' %>
       </li>   
 
       <li class="form_field select_field">
-        <%= f.select :vat, ["incl. VAT", "excl. VAT"], :prompt => 'Select VAT' %>
+        <div class="form_label">
+          Value-added tax (VAT) <span class="required_fields asterix"></span>
+        </div>
+        <%= f.select :vat, ["incl. VAT", "excl. VAT"], :prompt => ' ' %>
       </li>
 
       <li class="form_field select_field">
-        <%= f.select :price_options, ["Contact seller", "Sold", "Charter", "Lease", "Share", "Rental" ], :prompt => 'Price options', :include_blank => 'Show aircraft price'  %>
+        <div class="form_label">
+          Price options <span class="required_fields asterix"></span>
+        </div>
+        <%= f.select :price_options, ["Contact seller", "Sold", "Charter", "Lease", "Share", "Rental" ], :prompt => 'Price options', :include_blank => 'Show aircraft price', :prompt => ' '  %>
       </li>
     </ul>
 
-    <ul class="form">
-      <li class="form_label">
-        Aircraft location
-      </li>
+    <div class="form_subheader">
+      Aircraft location
+    </div>
 
+    <ul class="form">
       <li class="form_field select_field">
-        <%= f.select :country, select_for_countries_helper, :prompt => 'Country*'  %>
+        <div class="form_label">
+          Country <span class="required_fields asterix">*</span>
+        </div>
+        <%= f.select :country, select_for_countries_helper, :prompt => ''  %>
       </li>
 
        <li class="form_field">
-        <%= f.text_field :city, :class => "new_field", :placeholder => "City*" %>
+        <div class="form_label">
+          City <span class="required_fields asterix">*</span>
+        </div>
+        <%= f.text_field :city, :class => "new_field" %>
       </li>
 
       <li class="form_field">
-        <%= f.text_field :nearest_airport, :class => "new_field", :placeholder => "Airport name*  " %>
+        <div class="form_label">
+          Airport name <span class="required_fields asterix">*</span>
+        </div>
+        <%= f.text_field :nearest_airport, :class => "new_field" %>
       </li>
 
       <li class="form_field">
-        <%= f.text_field :airport_code, :class => "new_field", :placeholder => "Airport code" %>
+        <div class="form_label">
+          Airport code <span class="required_fields asterix"></span>
+        </div>
+        <%= f.text_field :airport_code, :class => "new_field" %>
       </li>
     </ul>
 
@@ -177,5 +241,6 @@
           <%= f.date_select :last_inspection, {:order => [:day, :month, :year], start_year: Date.today.year, end_year: Date.today.year-100} %>
         </li>
     </ul>-->
-  </div>
+
+    <a id="engine_propeller" class="nav_link">
 </div>
