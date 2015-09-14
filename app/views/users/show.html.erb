@@ -10,7 +10,7 @@
 	  	<div class="user_panel">
 	  		<% if @user.avatar.nil? or @user.avatar.blank? %>
 	  			<div class="company_logo">
-		  			<%= image_tag "user_profile/paper_plane.png", width: 300, alt: "Paper plane" %>
+		  			<%= image_tag "user_profile/paper-plane.png", width: 300, alt: "Paper plane" %>
 		  		</div>
 		  	<% else %>
 		  		<div class="company_logo">
@@ -60,7 +60,7 @@
 			    	<div class="user_ad">
 			    		<% if advert.photos.empty? or advert.photos.nil?%>
 			    			<%= link_to advert_path(advert), data: { no_turbolink: true } do %>
-					        	<%= image_tag "paper_plane.png", alt: "Paper plane" %>
+					        	<%= image_tag "paper-plane.png", alt: "Paper plane" %>
 					        <% end %>
 				       	<% else %>
 				       		<%= link_to advert_path(advert), data: { no_turbolink: true } do %>

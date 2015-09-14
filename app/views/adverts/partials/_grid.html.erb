@@ -81,7 +81,7 @@
               <div class="user_ad">
                 <% if advert.photos.empty? or advert.photos.nil?%>
                   <%= link_to advert_path(advert), data: { no_turbolink: true } do %>
-                      <%= image_tag "paper_plane.png", alt: "Paper plane" %>
+                      <%= image_tag "paper-plane.png", alt: "Paper plane" %>
                     <% end %>
                   <% else %>
                     <%= link_to advert_path(advert), data: { no_turbolink: true } do %>

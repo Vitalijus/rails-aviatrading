@@ -2,397 +2,419 @@
 
 <% meta_description_helper "#{@advert.year} #{@advert.make} #{@advert.model} for sale in #{@advert.country}, #{@advert.city}. Similar and other aircraft for sale at www.aviatrading.com" %>
 
-<div class="advert_wrapper">
-  <div class="advert">
-    <div id="advert-image" class="mfp-hide">
-      <% @advert.photos.each do |photo| %>
-        <div class="lightbox">
-          <%= image_tag photo.image_url(:lightbox), alt: "#{@advert.year} #{@advert.make} #{@advert.model} for sale" %>
-        </div>
-      <% end %>
-    </div>
 
-    <div class="advert_image">
-      <% if @advert.photos.blank? or @advert.photos.nil?%>
-        <%= image_tag "paper_plane_big.png", alt: "Paper plane" %>
-      <% else %>
-        <a href="#advert-image" class="open-images-link">
-          <% @advert.photos.first(1).each do |photo| %>
-            <%= image_tag photo.image_url(:advert_image_big), alt: "#{@advert.year} #{@advert.make} #{@advert.model} for sale" %>
-          <% end %>
-        </a>
-      <% end %>
-    </div>
-
-    <div class="aircraft_heading_show">
-      <h1>
-        <div class="aircraft_title">
-          <%= @advert.make %> <%= @advert.model %>
-        </div>
-      </h1>
-
-      <div class="aircraft_location">
-        <span><%= image_tag "pin.png", width: 17, alt: "Location: #{@advert.country}, #{@advert.city}" %> </span>
-        <%= @advert.country %>, <%= @advert.city %>
+<div itemscope itemtype="http://schema.org/Product">
+<meta itemprop="name" content="AviaTrading">
+  <div class="advert_wrapper">
+    <div class="advert">
+      <div id="advert-image" class="mfp-hide">
+        <% @advert.photos.each do |photo| %>
+          <div class="lightbox">
+            <%= image_tag photo.image_url(:lightbox), alt: "#{@advert.year} #{@advert.make} #{@advert.model} for sale" %>
+          </div>
+        <% end %>
       </div>
-    </div>
-    
-  <ul class="details_wrapper">
-    <li class="left">
-      <div class="advert_details">
-        <ul class="aircraft_details">
-          <li>
-            <% if @advert.price_options.nil? or @advert.price_options.blank? %>
-              <span class="attr">
-                <% if @advert.price.nil? or @advert.price.blank? %>
-                  Contact Seller
+
+      <div class="advert_image">
+        <% if @advert.photos.blank? or @advert.photos.nil?%>
+          <%= image_tag "paper-plane_big.png", alt: "Paper plane" %>
+        <% else %>
+          <a href="#advert-image" class="open-images-link">
+            <% @advert.photos.first(1).each do |photo| %>
+              <%= image_tag photo.image_url(:advert_image_big), alt: "#{@advert.year} #{@advert.make} #{@advert.model} for sale", itemprop: "image" %>
+            <% end %>
+          </a>
+        <% end %>
+      </div>
+
+      <div class="aircraft_heading_show">
+        <h1>
+          <div class="aircraft_title">
+            <span itemprop="manufacturer">
+              <%= @advert.make %>
+            </span> 
+
+            <span itemprop="model">
+              <%= @advert.model %>
+            </span>
+          </div>
+        </h1>
+
+        <div class="aircraft_location">
+          <span><%= image_tag "pin.png", width: 17, alt: "Location: #{@advert.country}, #{@advert.city}" %> </span>
+          <%= @advert.country %>, <%= @advert.city %>
+        </div>
+      </div>
+      
+    <ul class="details_wrapper">
+      <li class="left">
+        <div class="advert_details">
+          <span itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+            <ul class="aircraft_details">
+              <li>
+                <% if @advert.price_options.nil? or @advert.price_options.blank? %>
+                  <span class="attr">
+                    <% if @advert.price.nil? or @advert.price.blank? %>
+                      Contact Seller
+                    <% else %>
+                      <span itemprop="price">
+                        <%= number_to_currency(@advert.price, precision: 0, unit: "") %> 
+                      </span>
+                      <span itemprop="priceCurrency">
+                        <%= currency_to_symbol_helper(@advert.currency) %>
+                      </span>
+                    <% end %>
+                  </span>
+
+                  <span class="attr_title">
+                    Price
+                  </span>
                 <% else %>
-                <%= number_to_currency(@advert.price, precision: 0, unit: "") %> <%= currency_to_symbol_helper(@advert.currency) %>
+                  <span class="attr">
+                    <%= @advert.price_options %>
+                  </span>
+
+                  <span class="attr_title">
+                    Price
+                  </span>
                 <% end %>
-              </span>
-
-              <span class="attr_title">
-                Price
-              </span>
-            <% else %>
-              <span class="attr">
-                <%= @advert.price_options %>
-              </span>
-
-              <span class="attr_title">
-                Price
-              </span>
-            <% end %>
-          </li>
-
-          <li>
-            <span class="attr"><%= @advert.year %></span>
-            <span class="attr_title">Year Built</span>
-          </li>
-
-          <li>
-            <span class="attr"><%= pluralize(@advert.aircraft_hours, "") %></span>
-            <span class="attr_title">TTAF hours</span>
-          </li>
-
-          <li>
-            <% if @advert.landings.nil? || @advert.landings.blank? %>
-              <span class="attr">&mdash;</span>
-              <span class="attr_title">Landings</span>
-            <% else %>
-              <span class="attr"><%= @advert.landings %></span>
-              <span class="attr_title">Landings</span>
-            <% end %>
-          </li>
-
-          <li>
-            <% if @advert.number_of_passengers.nil? || @advert.number_of_passengers.blank? %>
-              <span class="attr">&mdash;</span>
-              <span class="attr_title">Seats</span>
-            <% else %>
-              <span class="attr"><%= pluralize(@advert.number_of_passengers, "") %></span>
-              <span class="attr_title">Seats</span>
-            <% end %>
-          </li>
-        </ul>
-
-        <ul class="aircraft_main_details">
-          <% unless @advert.aircraft_type.nil? or @advert.aircraft_type.blank? %>
-            <li>
-              <span class="">Aircraft type:</span>
-              <span class="main_attr"><%= @advert.aircraft_type %></span>
-            </li>
-          <% end %>
-          
-          <% unless @advert.aircraft_usage.nil? or @advert.aircraft_usage.blank? %>  
-            <li>
-              <span class="">Aircraft usage:</span>
-              <span class="main_attr"><%= @advert.aircraft_usage %></span>
-            </li>
-          <% end %>
-
-          <% unless @advert.serial_number.nil? or @advert.serial_number.blank? %>
-            <li>
-              <span class="">Serial number:</span>
-              <span class="main_attr"><%= @advert.serial_number %></span>
-            </li>
-          <% end %>
-
-          <% unless @advert.registration_number.nil? or @advert.registration_number.blank? %>
-            <li>
-              <span class="">Registration number:</span>
-              <span class="main_attr"><%= @advert.registration_number %></span>
-            </li>
-          <% end %>
-
-          <% unless (@advert.nearest_airport.nil? or @advert.airport_code.blank?) and (@advert.nearest_airport.blank? or @advert.airport_code.nil?) %>
-            <li>
-              <span class="">Airport name:</span>
-              <span class="main_attr"><%= @advert.nearest_airport %> <%= @advert.airport_code %></span>
-            </li>
-          <% end %>
-
-          <% unless @advert.vat.nil? or @advert.vat.blank? %>
-            <li>
-              <span class="">Value-added tax:</span>
-              <span class="main_attr"><%= @advert.vat %></span>
-            </li>
-          <% end %>
-
-          <% unless @advert.last_inspection.nil? or @advert.last_inspection.blank? %>
-            <li>
-              <span class="">Last inspection:</span>
-              <span class="main_attr"><%= @advert.last_inspection %></span>
-            </li>
-          <% end %>
-        </ul>
-
-        <ul class="aircraft_main_details">
-          <% unless @advert.engine_make.nil? or @advert.engine_make.blank? %>
-            <li>
-              <span class="">Engine manufacturer:</span>
-              <span class="main_attr"><%= @advert.engine_make %></span>
-            </li>
-          <% end %>
-
-          <% unless @advert.engine_model.nil? or @advert.engine_model.blank? %>
-            <li>
-              <span class="">Engine model:</span>
-              <span class="main_attr"><%= @advert.engine_model %></span>
-            </li>
-          <% end %>
-
-          <% unless @advert.number_of_engines.nil? or @advert.number_of_engines.blank? %>
-            <li>
-              <span class="">Number of engines:</span>
-              <span class="main_attr"><%= @advert.number_of_engines %></span>
-            </li>
-          <% end %>
-
-          <% unless @advert.engine_type.nil? or @advert.engine_type.blank? %>
-            <li>
-              <span class="">Engine type:</span>
-              <span class="main_attr"><%= @advert.engine_type %></span>
-            </li>
-          <% end %>
-
-          <% unless @advert.engine_hours.nil? or @advert.engine_hours.blank? %>
-            <li>
-              <span class="">Engine hours:</span>
-              <span class="main_attr"><%= @advert.engine_hours %></span>
-            </li>
-          <% end %>
-
-          <% unless @advert.tbo.nil? or @advert.tbo.blank? %>
-            <li>
-              <span class="">Engine TBO:</span>
-              <span class="main_attr"><%= @advert.tbo %></span>
-            </li>
-          <% end %>
-
-          <% unless @advert.engine_power.nil? or @advert.engine_power.blank? %>
-            <li>
-              <span class="">Engine power:</span>
-              <span class="main_attr"><%= @advert.engine_power %> <%= @advert.engine_power_unit %></span>
-            </li>
-          <% end %>
-        </ul>
-
-        <ul class="aircraft_main_details">
-          <% unless @advert.engine_power.nil? or @advert.engine_power.blank? %>
-            <li>
-              <span class="">Propeller manufacturer:</span>
-              <span class="main_attr"><%= @advert.propeller_make %></span>
-            </li>
-          <% end %>
-
-          <% unless @advert.engine_power.nil? or @advert.engine_power.blank? %>
-            <li>
-              <span class="">Propeller model:</span>
-              <span class="main_attr"><%= @advert.propeller_model %></span>
-            </li>
-          <% end %>
-
-          <% unless @advert.engine_power.nil? or @advert.engine_power.blank? %>
-            <li>
-              <span class="">Number of blades:</span>
-              <span class="main_attr"><%= @advert.number_of_propellers %></span>
-            </li>
-          <% end %>
-
-          <% unless @advert.engine_power.nil? or @advert.engine_power.blank? %>
-            <li>
-              <span class="">Propeller hours:</span>
-              <span class="main_attr"><%= @advert.propeller_hours %></span>
-            </li>
-          <% end %>
-
-          <% unless @advert.engine_notes.nil? or @advert.engine_notes.blank? %>
-            <li class="advert_engine_notes">
-              <%= simple_format(@advert.engine_notes.html_safe) %>
-            </li>
-          <% end %>
-        </ul>
-
-        <% unless @advert.avionics.nil? or @advert.avionics.blank? %> 
-          <ul class="aircraft_main_details">
-            <li class="main_attr">
-              Avionics:
-            </li>
-
-            <li class="description">
-              <%= simple_format(@advert.avionics.html_safe) %>
-            </li>
-          </ul>
-        <% end %>
-
-        <% unless @advert.interior.nil? or @advert.interior.blank? %>
-          <ul class="aircraft_main_details">
-            <li class="main_attr">
-              Interior:
-            </li>
-
-            <li class="description">
-              <%= simple_format(@advert.interior.html_safe) %>
-            </li>
-          </ul>
-        <% end %>
-
-        <% unless @advert.exterior.nil? or @advert.exterior.blank? %> 
-          <ul class="aircraft_main_details">
-            <li class="main_attr">
-              Exterior:
-            </li>
-
-            <li class="description">
-              <%= simple_format(@advert.exterior.html_safe) %>
-            </li>
-          </ul>
-        <% end %>
-
-        <% unless @advert.add_info.nil? or @advert.add_info.blank? %>
-          <ul class="aircraft_main_details">
-            <li class="main_attr">
-              Additional information:
-            </li>
-
-            <li class="description">
-              <%= simple_format(@advert.add_info.html_safe) %>
-            </li>
-          </ul>
-        <% end %>
-      </div>
-    </li>
-
-    <li class="right">
-      <div class="right_side_column">
-        <% if @advert.user.account_type == "Company" %>
-          <div class="seller_info">
-            <div class="seller_logo">
-              <% if @advert.user.avatar.nil? or @advert.user.avatar.blank? %>
-                <%= link_to user_path(@advert.user.id), data: { no_turbolink: true } do %>
-                  <div class="company_logo">
-                    <%= image_tag "user_profile/paper_plane.png", width: 300, alt: "Paper plane" %>
-                  </div>
-                <% end %>
-              <% else %>
-                <%= link_to user_path(@advert.user.id), data: { no_turbolink: true } do %>
-                  <div class="company_logo">
-                    <%= image_tag @advert.user.avatar_url(:avatar_big), alt: "Profile image" %>
-                  </div>
-                <% end %>
-              <% end %>
-            </div>
-
-            <ul class="seller_attr">
-              <% unless @advert.user.organisation.nil? or @advert.user.organisation.blank? %>
-                <li>
-                  <span class="seller_icon"><%= image_tag "user_profile/user.png", width: 17, alt: "Company name: #{@advert.user.organisation}" %></span>
-                  <%= @advert.user.organisation %>
-                </li>
-              <% end %>
-
-              <% unless @advert.user.phone.nil? or @advert.user.phone.blank? %>
-                <li>
-                  <span class="seller_icon"><%= image_tag "user_profile/phone.png", width: 17, alt: "Phone: #{@advert.user.phone}" %></span>
-                  <%= @advert.user.phone %> 
-                </li>
-              <% end %>
-                
-              <% unless (@advert.user.street.nil? or @advert.user.street.blank?) and (@advert.user.postal_code.nil? or @advert.user.postal_code.blank?) and (@advert.user.city.nil? or @advert.user.city.blank?) and (@advert.user.country.nil? or @advert.user.country.blank?) %>  
-                <li>
-                  <span class="seller_icon"><%= image_tag "user_profile/pin.png", width: 17, alt: "Seller address: #{@advert.user.street} #{@advert.user.postal_code} #{@advert.user.city} #{@advert.user.country}" %></span>
-                  <%= @advert.user.street %> <%= @advert.user.postal_code %> <%= @advert.user.city %> <%= @advert.user.country %> 
-                </li>
-              <% end %>
-
-              <% unless @advert.user.web_url.nil? or @advert.user.web_url.blank? %>
-                <li>
-                  <span class="seller_icon"><%= image_tag "user_profile/globe.png", width: 17, alt: "Website address: #{@advert.user.web_url}" %></span>
-                  <%= @advert.user.web_url %> 
-                </li>
-              <% end %>
+              </li>
 
               <li>
-                <span class="seller_icon"><%= image_tag "user_profile/layers.png", width: 17, alt: "Number of adverts: #{@advert.user.adverts.count}" %></span>
-                <%= pluralize(@advert.user.adverts.count, "Advert") %>
+                <span class="attr"> 
+                  <%= @advert.year %>
+                </span>
+                <span class="attr_title">Year Built</span>
+              </li>
+
+              <li>
+                <span class="attr"><%= pluralize(@advert.aircraft_hours, "") %></span>
+                <span class="attr_title">TTAF hours</span>
+              </li>
+
+              <li>
+                <% if @advert.landings.nil? || @advert.landings.blank? %>
+                  <span class="attr">&mdash;</span>
+                  <span class="attr_title">Landings</span>
+                <% else %>
+                  <span class="attr"><%= @advert.landings %></span>
+                  <span class="attr_title">Landings</span>
+                <% end %>
+              </li>
+
+              <li>
+                <% if @advert.number_of_passengers.nil? || @advert.number_of_passengers.blank? %>
+                  <span class="attr">&mdash;</span>
+                  <span class="attr_title">Seats</span>
+                <% else %>
+                  <span class="attr"><%= pluralize(@advert.number_of_passengers, "") %></span>
+                  <span class="attr_title">Seats</span>
+                <% end %>
               </li>
             </ul>
-          </div>
-        <% end %>
+          </span>
 
-        <div class="advertiser_contact">
-          <%= form_for [@advert, @email_seller] do |f| %>
-          
-            <% if @email_seller.errors.any? %>
-              <div id="error_explanation">
-                <ul>
-                <% @email_seller.errors.full_messages.each do |msg| %>
-                  <li><%= msg %></li>
-                <% end %>
-                </ul>
-              </div>
+          <ul class="aircraft_main_details">
+            <% unless @advert.aircraft_type.nil? or @advert.aircraft_type.blank? %>
+              <li>
+                <span class="">Aircraft type:</span>
+                <span class="main_attr">
+                  <span itemprop="category">
+                    <%= @advert.aircraft_type %></span>
+                  </span>
+              </li>
+            <% end %>
+            
+            <% unless @advert.aircraft_usage.nil? or @advert.aircraft_usage.blank? %>  
+              <li>
+                <span class="">Aircraft usage:</span>
+                <span class="main_attr"><%= @advert.aircraft_usage %></span>
+              </li>
             <% end %>
 
-            <div class="seller_form">
-              <div class="seller_field">
-                <%= f.label :email, "Your email*" %>
-                <%= f.email_field :email, :class => "new_contact_field" %>
-              </div>
+            <% unless @advert.serial_number.nil? or @advert.serial_number.blank? %>
+              <li>
+                <span class="">Serial number:</span>
+                <span class="main_attr"><%= @advert.serial_number %></span>
+              </li>
+            <% end %>
 
-              <div class="seller_field">
-                <%= f.label :name, "Your name*" %>
-                <%= f.text_field :name, :class => "new_contact_field" %> 
-              </div>
+            <% unless @advert.registration_number.nil? or @advert.registration_number.blank? %>
+              <li>
+                <span class="">Registration number:</span>
+                <span class="main_attr"><%= @advert.registration_number %></span>
+              </li>
+            <% end %>
 
-              <div class="seller_field">
-                <%= f.label :message, "Your Message*" %>
-                <%= f.text_area :message, :class => "contact_message_field" %>
-              </div>
-            </div>
+            <% unless (@advert.nearest_airport.nil? or @advert.airport_code.blank?) and (@advert.nearest_airport.blank? or @advert.airport_code.nil?) %>
+              <li>
+                <span class="">Airport name:</span>
+                <span class="main_attr"><%= @advert.nearest_airport %> <%= @advert.airport_code %></span>
+              </li>
+            <% end %>
 
-            <%= f.submit "Email Seller", :class => "new_contact_create_button" %>
+            <% unless @advert.vat.nil? or @advert.vat.blank? %>
+              <li>
+                <span class="">Value-added tax:</span>
+                <span class="main_attr"><%= @advert.vat %></span>
+              </li>
+            <% end %>
+
+            <% unless @advert.last_inspection.nil? or @advert.last_inspection.blank? %>
+              <li>
+                <span class="">Last inspection:</span>
+                <span class="main_attr"><%= @advert.last_inspection %></span>
+              </li>
+            <% end %>
+          </ul>
+
+          <ul class="aircraft_main_details">
+            <% unless @advert.engine_make.nil? or @advert.engine_make.blank? %>
+              <li>
+                <span class="">Engine manufacturer:</span>
+                <span class="main_attr"><%= @advert.engine_make %></span>
+              </li>
+            <% end %>
+
+            <% unless @advert.engine_model.nil? or @advert.engine_model.blank? %>
+              <li>
+                <span class="">Engine model:</span>
+                <span class="main_attr"><%= @advert.engine_model %></span>
+              </li>
+            <% end %>
+
+            <% unless @advert.number_of_engines.nil? or @advert.number_of_engines.blank? %>
+              <li>
+                <span class="">Number of engines:</span>
+                <span class="main_attr"><%= @advert.number_of_engines %></span>
+              </li>
+            <% end %>
+
+            <% unless @advert.engine_type.nil? or @advert.engine_type.blank? %>
+              <li>
+                <span class="">Engine type:</span>
+                <span class="main_attr"><%= @advert.engine_type %></span>
+              </li>
+            <% end %>
+
+            <% unless @advert.engine_hours.nil? or @advert.engine_hours.blank? %>
+              <li>
+                <span class="">Engine hours:</span>
+                <span class="main_attr"><%= @advert.engine_hours %></span>
+              </li>
+            <% end %>
+
+            <% unless @advert.tbo.nil? or @advert.tbo.blank? %>
+              <li>
+                <span class="">Engine TBO:</span>
+                <span class="main_attr"><%= @advert.tbo %></span>
+              </li>
+            <% end %>
+
+            <% unless @advert.engine_power.nil? or @advert.engine_power.blank? %>
+              <li>
+                <span class="">Engine power:</span>
+                <span class="main_attr"><%= @advert.engine_power %> <%= @advert.engine_power_unit %></span>
+              </li>
+            <% end %>
+          </ul>
+
+          <ul class="aircraft_main_details">
+            <% unless @advert.engine_power.nil? or @advert.engine_power.blank? %>
+              <li>
+                <span class="">Propeller manufacturer:</span>
+                <span class="main_attr"><%= @advert.propeller_make %></span>
+              </li>
+            <% end %>
+
+            <% unless @advert.engine_power.nil? or @advert.engine_power.blank? %>
+              <li>
+                <span class="">Propeller model:</span>
+                <span class="main_attr"><%= @advert.propeller_model %></span>
+              </li>
+            <% end %>
+
+            <% unless @advert.engine_power.nil? or @advert.engine_power.blank? %>
+              <li>
+                <span class="">Number of blades:</span>
+                <span class="main_attr"><%= @advert.number_of_propellers %></span>
+              </li>
+            <% end %>
+
+            <% unless @advert.engine_power.nil? or @advert.engine_power.blank? %>
+              <li>
+                <span class="">Propeller hours:</span>
+                <span class="main_attr"><%= @advert.propeller_hours %></span>
+              </li>
+            <% end %>
+
+            <% unless @advert.engine_notes.nil? or @advert.engine_notes.blank? %>
+              <li class="advert_engine_notes">
+                <%= simple_format(@advert.engine_notes.html_safe) %>
+              </li>
+            <% end %>
+          </ul>
+
+          <% unless @advert.avionics.nil? or @advert.avionics.blank? %> 
+            <ul class="aircraft_main_details">
+              <li class="main_attr">
+                Avionics:
+              </li>
+
+              <li class="description">
+                <%= simple_format(@advert.avionics.html_safe) %>
+              </li>
+            </ul>
+          <% end %>
+
+          <% unless @advert.interior.nil? or @advert.interior.blank? %>
+            <ul class="aircraft_main_details">
+              <li class="main_attr">
+                Interior:
+              </li>
+
+              <li class="description">
+                <%= simple_format(@advert.interior.html_safe) %>
+              </li>
+            </ul>
+          <% end %>
+
+          <% unless @advert.exterior.nil? or @advert.exterior.blank? %> 
+            <ul class="aircraft_main_details">
+              <li class="main_attr">
+                Exterior:
+              </li>
+
+              <li class="description">
+                <%= simple_format(@advert.exterior.html_safe) %>
+              </li>
+            </ul>
+          <% end %>
+
+          <% unless @advert.add_info.nil? or @advert.add_info.blank? %>
+            <ul class="aircraft_main_details">
+              <li class="main_attr">
+                Additional information:
+              </li>
+
+              <li class="description">
+                <%= simple_format(@advert.add_info.html_safe) %>
+              </li>
+            </ul>
           <% end %>
         </div>
-      </div>
-    </li>
-  </ul>
-  
-    <div class="google_map" style="width: 100%; height: 550px; position: relative; border: 1px solid #DFE0E4; background-color: #fdfdfd;">
-      <div id="map" style='width: 100%; height: 100%;'></div>
-        <div class="google_map_info">
-          <div class="info_title">
-            Aircraft Location
-          </div>
+      </li>
 
-          <div class="info_location">
-            <%= @advert.country %>, <%= @advert.city %>
-          </div>
+      <li class="right">
+        <div class="right_side_column">
+          <% if @advert.user.account_type == "Company" %>
+            <div class="seller_info">
+              <div class="seller_logo">
+                <% if @advert.user.avatar.nil? or @advert.user.avatar.blank? %>
+                  <%= link_to user_path(@advert.user.id), data: { no_turbolink: true } do %>
+                    <div class="company_logo">
+                      <%= image_tag "user_profile/paper-plane.png", width: 300, alt: "Paper plane" %>
+                    </div>
+                  <% end %>
+                <% else %>
+                  <%= link_to user_path(@advert.user.id), data: { no_turbolink: true } do %>
+                    <div class="company_logo">
+                      <%= image_tag @advert.user.avatar_url(:avatar_big), alt: "Profile image" %>
+                    </div>
+                  <% end %>
+                <% end %>
+              </div>
 
-          <div class="info_airport">
-            <%= @advert.nearest_airport %> <%= @advert.airport_code %>
+              <ul class="seller_attr">
+                <% unless @advert.user.organisation.nil? or @advert.user.organisation.blank? %>
+                  <li>
+                    <span class="seller_icon"><%= image_tag "user_profile/user.png", width: 17, alt: "Company name: #{@advert.user.organisation}" %></span>
+                    <%= @advert.user.organisation %>
+                  </li>
+                <% end %>
+
+                <% unless @advert.user.phone.nil? or @advert.user.phone.blank? %>
+                  <li>
+                    <span class="seller_icon"><%= image_tag "user_profile/phone.png", width: 17, alt: "Phone: #{@advert.user.phone}" %></span>
+                    <%= @advert.user.phone %> 
+                  </li>
+                <% end %>
+                  
+                <% unless (@advert.user.street.nil? or @advert.user.street.blank?) and (@advert.user.postal_code.nil? or @advert.user.postal_code.blank?) and (@advert.user.city.nil? or @advert.user.city.blank?) and (@advert.user.country.nil? or @advert.user.country.blank?) %>  
+                  <li>
+                    <span class="seller_icon"><%= image_tag "user_profile/pin.png", width: 17, alt: "Seller address: #{@advert.user.street} #{@advert.user.postal_code} #{@advert.user.city} #{@advert.user.country}" %></span>
+                    <%= @advert.user.street %> <%= @advert.user.postal_code %> <%= @advert.user.city %> <%= @advert.user.country %> 
+                  </li>
+                <% end %>
+
+                <% unless @advert.user.web_url.nil? or @advert.user.web_url.blank? %>
+                  <li>
+                    <span class="seller_icon"><%= image_tag "user_profile/globe.png", width: 17, alt: "Website address: #{@advert.user.web_url}" %></span>
+                    <%= @advert.user.web_url %> 
+                  </li>
+                <% end %>
+
+                <li>
+                  <span class="seller_icon"><%= image_tag "user_profile/layers.png", width: 17, alt: "Number of adverts: #{@advert.user.adverts.count}" %></span>
+                  <%= pluralize(@advert.user.adverts.count, "Advert") %>
+                </li>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="advertiser_contact">
+            <%= form_for [@advert, @email_seller] do |f| %>
+            
+              <% if @email_seller.errors.any? %>
+                <div id="error_explanation">
+                  <ul>
+                  <% @email_seller.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                  <% end %>
+                  </ul>
+                </div>
+              <% end %>
+
+              <div class="seller_form">
+                <div class="seller_field">
+                  <%= f.label :email, "Your email*" %>
+                  <%= f.email_field :email, :class => "new_contact_field" %>
+                </div>
+
+                <div class="seller_field">
+                  <%= f.label :name, "Your name*" %>
+                  <%= f.text_field :name, :class => "new_contact_field" %> 
+                </div>
+
+                <div class="seller_field">
+                  <%= f.label :message, "Your Message*" %>
+                  <%= f.text_area :message, :class => "contact_message_field" %>
+                </div>
+              </div>
+
+              <%= f.submit "Email Seller", :class => "new_contact_create_button" %>
+            <% end %>
           </div>
         </div>
+      </li>
+    </ul>
+    
+      <div class="google_map" style="width: 100%; height: 550px; position: relative; border: 1px solid #DFE0E4; background-color: #fdfdfd;">
+        <div id="map" style='width: 100%; height: 100%;'></div>
+          <div class="google_map_info">
+            <div class="info_title">
+              Aircraft Location
+            </div>
+
+            <div class="info_location">
+              <%= @advert.country %>, <%= @advert.city %>
+            </div>
+
+            <div class="info_airport">
+              <%= @advert.nearest_airport %> <%= @advert.airport_code %>
+            </div>
+          </div>
+      </div>
     </div>
   </div>
 </div>
