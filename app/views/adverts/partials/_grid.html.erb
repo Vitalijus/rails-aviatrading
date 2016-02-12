@@ -56,87 +56,83 @@
   }
 ];
 
+  markers_json = <%=raw @hash.to_json %>;
   handler = Gmaps.build('Google');
-  handler.buildMap({ provider: {streetViewControl: false, mapTypeControl: false, styles: mapStyle }, internal: {id: 'map_index'}}, function(){
+  handler.buildMap({ provider: {scaleControl: false,
+                                streetViewControl: false,
+                                overviewMapControl: false, 
+                                panControl: false, 
+                                zoomControl: false, 
+                                scrollwheel: false, 
+                                streetViewControl: false, 
+                                mapTypeControl: false, 
+                                styles: mapStyle }, 
+                                internal: {id: 'map_index'}}, function(){
 
-    markers = handler.addMarkers(<%=raw @hash.to_json %>);
+    markers = handler.addMarkers(markers_json);
     handler.bounds.extendWith(markers);
+    for (var i = 0; i < markers.length; i++) {
+      link = markers_json[i].link;
+      google.maps.event.addListener(markers[i].getServiceObject(), 'click', function(){
+        
+        var listBar = $("#list-bar");
+        var navBar = $("#nav-bar");
+
+        navBar.hide(0);
+        listBar.animate({
+          left: 0
+        }, 100);
+
+        window.location.assign(link);
+
+      })
+    }
     handler.fitMapToBounds();
     handler.getMap().setZoom(6);    // set the default zoom of the map
   });
 </script>
 
-  <div class="user_grid_wrapper">
-    <div class="user_grid_container">
+<div id="list-bar">
+  <div id="close-list-btn">
+    close
+  </div>
+</div>
 
-      <% if @adverts.count == 0 %>
-        <div id="record_not_found">
-          Record not found
-        </div>
-      <% end %>
-
-      <div class="frame">
-        <% @adverts.each do |advert| %>
-            <div class="bit-3">
-              <div class="user_ad">
-                <% if advert.photos.empty? or advert.photos.nil?%>
-                  <%= link_to advert_path(advert), data: { no_turbolink: true } do %>
-                      <%= image_tag "paper-plane.png", alt: "Paper plane" %>
-                    <% end %>
-                  <% else %>
-                    <%= link_to advert_path(advert), data: { no_turbolink: true } do %>
-                      <% advert.photos.first(1).each do |photo| %>
-                          <%= image_tag photo.image_url(:advert_image), alt: "#{advert.year} #{advert.make} #{advert.model} for sale" %>
-                      <% end %>
-                    <% end %>
-                  <% end %>
-
-                  <div class="user_ad_footer">
-                    <div class="user_ad_avatar">
-                        <%= link_to user_path(advert.user) do %>
-                          <% if advert.user.avatar.blank? or advert.user.avatar.nil? %>
-                              <%= image_tag "avatar.png", alt: "Seller profile image" %>
-                          <% else %>
-                              <%= image_tag advert.user.avatar_url(:avatar_small), alt: "Seller profile image" %>
-                          <% end %>
-                        <% end %>
-                    </div>
-
-                    <%= link_to advert_path(advert), data: { no_turbolink: true } do %>
-                        <div class="user_ad_make">
-                          <%= advert.make %>
-
-                          <div class="user_ad_model">
-                              <%= truncate(advert.model, :length => 25, :omission => '...') %>
-                          </div>
-                        </div>
-                    <% end %>
-                  </div>
-
-                  <div class="user_ad_price">
-                    <ul>
-                      <% if advert.price_options.nil? or advert.price_options.blank? %>
-                        <li>
-                          <%= number_to_currency(advert.price, precision: 0, unit: "") %> <%= currency_to_symbol_helper(advert.currency) %>
-                        </li>
-                      <% else %>
-                        <li>
-                          <%= advert.price_options %>
-                        </li>
-                      <% end %>
-
-                      <li class="user_ad_price_location">
-                        <%= advert.city %>, <%= advert.country %>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-            </div>
-        <% end %>
-      </div>
-        <div class="pagination">
-          <%= will_paginate @adverts, :previous_label => 'Previous', :next_label => 'Next', :page_links => false %>
-      </div>
-    </div>
+<div id="nav-bar">
+  <div id="menu-open">
+    &equiv;
   </div>
 
+  <div id="search-field">
+    Search country, airport name, model or maker
+  </div>
+
+  <div id="open-list-btn">
+    open
+  </div>
+</div>
+
+
+<script>
+  $(document).ready(function() {
+    $("#open-list-btn").click(function() {
+      var listBar = $("#list-bar");
+      var navBar = $("#nav-bar");
+
+      navBar.hide(0);
+      listBar.animate({
+        left: 0
+      }, 100);
+    });
+
+    $("#close-list-btn").click(function() {
+      var listBar = $("#list-bar");
+      var navBar = $("#nav-bar");
+
+      navBar.show(100);
+      listBar.animate({
+        left: -450
+      }, 100);
+    });
+  });
+</script>

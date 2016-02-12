@@ -58,7 +58,8 @@ class AdvertsController < ApplicationController
         url: view_context.image_path("location.png"),
         width: 25,
         height: 38
-      })
+        })
+      marker.json({ link: advert_url(advert) })
     end
 
     @select_for_country = Advert.select("DISTINCT(COUNTRY)").order("country ASC")
